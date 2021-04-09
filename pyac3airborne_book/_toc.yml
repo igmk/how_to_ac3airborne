@@ -6,3 +6,9 @@
   sections:
     - file: markdown
     - file: notebooks
+- file: guidelines_for_yaml_files
+  sections:
+    - file: flights
+    - file: gps_ins
+    - file: dropsondes
+- file: code
