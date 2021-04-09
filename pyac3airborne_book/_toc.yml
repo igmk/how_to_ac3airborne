@@ -6,9 +6,13 @@
   sections:
     - file: markdown
     - file: notebooks
-- file: guidelines_for_yaml_files
+- file: guidelines
+  title: guidelines for yaml files
   sections:
-    - file: flights
-    - file: gps_ins
-    - file: dropsondes
+    - file: yamls/flights
+    - file: yamls/gps_ins
+    - file: yamls/dropsondes
 - file: code
+  title: code examples
+  sections:
+    - file: examples/get_segments
