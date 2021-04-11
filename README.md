@@ -11,15 +11,20 @@ If you'd like to develop on and build the pyac3airborne_book book, you should:
 - Clone this repository and run
 - Run `pip install -r requirements.txt` (it is recommended you do this within a virtual environment)
 - (Recommended) Remove the existing `pyac3airborne_book/_build/` directory
+- Run `jupyter-book toc pyac3airborne_book/`
 - Run `jupyter-book build pyac3airborne_book/`
 
 A fully-rendered HTML version of the book will be built in `pyac3airborne-book/_build/html/`.
 
+Now you need to add it to git, commit is and push it back.
+
+- `git add .`
+- `git commit -m "describe your work"`
+- `git push`
+ 
 ### Hosting the book
 
-The html version of the book is hosted on the `gh-pages` branch of this repo. A GitHub actions workflow has been created that automatically builds and pushes the book to this branch on a push or pull request to main.
-
-If you wish to disable this automation, you may remove the GitHub actions workflow and build the book manually by:
+The html version of the book is hosted on the `gh-pages` branch of this repo.
 
 - Navigating to your local build; and running,
 - `ghp-import -n -p -f pyac3airborne_book/_build/html`
