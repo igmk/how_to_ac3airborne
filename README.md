@@ -11,7 +11,6 @@ If you'd like to develop on and build the pyac3airborne_book book, you should:
 - Clone this repository and run
 - Run `pip install -r requirements.txt` (it is recommended you do this within a virtual environment)
 - (Recommended) Remove the existing `pyac3airborne_book/_build/` directory
-- Run `jupyter-book toc pyac3airborne_book/`
 - Run `jupyter-book build pyac3airborne_book/`
 
 A fully-rendered HTML version of the book will be built in `pyac3airborne-book/_build/html/`.

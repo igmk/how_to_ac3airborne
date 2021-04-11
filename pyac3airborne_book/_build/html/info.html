@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Search &#8212; pyac3airborne-book</title>
+    <title>SYNTAX &#8212; pyac3airborne-book</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -36,7 +36,6 @@
     
   <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
 
-    
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
@@ -53,16 +52,13 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script src="_static/searchtools.js"></script>
-    <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="#" />
-  <script src="searchindex.js" defer></script>
-  
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Markdown Files" href="markdown.html" />
+    <link rel="prev" title="How to read flight segments" href="examples/get_segments.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
 
 
 
@@ -84,7 +80,7 @@
   <h1 class="site-logo" id="site-title">pyac3airborne-book</h1>
   
 </a>
-</div><form class="bd-search d-flex align-items-center" action="#" method="get">
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form>
@@ -96,7 +92,7 @@
   </a>
  </li>
 </ul>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="guidelines.html">
    yaml file design
@@ -104,7 +100,7 @@
   <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="yamls/flights.html">
-     description of the flight yaml files
+     description of the filght yaml files
     </a>
    </li>
    <li class="toctree-l2">
@@ -135,8 +131,8 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="info.html">
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="current reference internal" href="#">
    SYNTAX
   </a>
   <ul class="collapse-ul">
@@ -186,6 +182,23 @@
             </button>
             
             
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/info.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
             <!-- Source interaction buttons -->
 
 
@@ -210,33 +223,39 @@
         
               <div>
                 
-  <h1 id="search-documentation">Search</h1>
-  <div id="fallback" class="admonition warning">
-  <script>$('#fallback').hide();</script>
-  <p>
-    Please activate JavaScript to enable the search
-    functionality.
-  </p>
-  </div>
-  <p>
-    Searching for multiple words only shows matches that contain
-    all words.
-  </p>
-  <form action="" method="get">
-    <input type="text" name="q" aria-labelledby="search-documentation" value="" />
-    <input type="submit" value="search" />
-    <span id="search-progress" style="padding-left: 10px"></span>
-  </form>
-  
-  <div id="search-results">
-  
-  </div>
+  <div class="section" id="syntax">
+<h1>SYNTAX<a class="headerlink" href="#syntax" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
 
               </div>
               
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="examples/get_segments.html" title="previous page">How to read flight segments</a>
+    <a class='right-next' id="next-link" href="markdown.html" title="next page">Markdown Files</a>
 
         </div>
         

@@ -1,12 +1,14 @@
-file: content
-sections:
 - file: intro
-- file: markdown
-- file: notebooks
 - file: guidelines
-- file: code
-- file: yamls/flights
+  title: yaml file design
   sections:
+  - file: yamls/flights
   - file: yamls/gps_ins
   - file: yamls/dropsondes
-- file: examples/get_segments
+- file: code
+  sections:
+  - file: examples/get_segments
+- file: info
+  sections:
+  - file: markdown
+  - file: notebooks
