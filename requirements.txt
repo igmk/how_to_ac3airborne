@@ -1,4 +1,4 @@
-jupyter-book
+jupyter-book>=0.7.0b
 matplotlib
 numpy
 ghp-import

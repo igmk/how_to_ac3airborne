@@ -1,18 +1,12 @@
-# Table of content
-# Learn more at https://jupyterbook.org/customize/toc.html
-#
+file: content
+sections:
 - file: intro
-- file: content
-  sections:
-    - file: markdown
-    - file: notebooks
+- file: markdown
+- file: notebooks
 - file: guidelines
-  title: guidelines for yaml files
-  sections:
-    - file: yamls/flights
-    - file: yamls/gps_ins
-    - file: yamls/dropsondes
 - file: code
-  title: code examples
+- file: yamls/flights
   sections:
-    - file: examples/get_segments
+  - file: yamls/gps_ins
+  - file: yamls/dropsondes
+- file: examples/get_segments
