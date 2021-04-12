@@ -51,3 +51,69 @@ segments:
     BAD: []
     UGLY: []
 ```
+## Progress
+
+| Name | Creator | Checker | Issues |
+| :------------------------------------------- | --------- | ------- | --------: |
+| ACLOUD_P5_Flight-Segments_20170523_RF04.yaml | | | |
+| ACLOUD_P5_Flight-Segments_20170525_RF05.yaml | | | |
+| ACLOUD_P5_Flight-Segments_20170527_RF06.yaml | | | |
+| ACLOUD_P5_Flight-Segments_20170527_RF07.yaml | | | |
+| ACLOUD_P5_Flight-Segments_20170529_RF08.yaml | | | |
+| ACLOUD_P5_Flight-Segments_20170531_RF10.yaml | | | |
+| ACLOUD_P5_Flight-Segments_20170602_RF11.yaml | | | |
+| ACLOUD_P5_Flight-Segments_20170605_RF13.yaml | | | |
+| ACLOUD_P5_Flight-Segments_20170608_RF14.yaml | | | |
+| ACLOUD_P5_Flight-Segments_20170609_RF15.yaml | | | |
+| ACLOUD_P5_Flight-Segments_20170613_RF16.yaml | | | |
+| ACLOUD_P5_Flight-Segments_20170614_RF17.yaml | | | |
+| ACLOUD_P5_Flight-Segments_20170616_RF18.yaml | | | |
+| ACLOUD_P5_Flight-Segments_20170617_RF19.yaml | | | |
+| ACLOUD_P5_Flight-Segments_20170618_RF20.yaml | | | |
+| ACLOUD_P5_Flight-Segments_20170620_RF21.yaml | | | |
+| ACLOUD_P5_Flight-Segments_20170623_RF22.yaml | | | |
+| ACLOUD_P5_Flight-Segments_20170625_RF23.yaml | | | |
+| ACLOUD_P5_Flight-Segments_20170626_RF25.yaml | | | |
+| ACLOUD_P6_Flight-Segments_20170527_RF07.yaml | | | |
+| ACLOUD_P6_Flight-Segments_20170529_RF08.yaml | | | |
+| ACLOUD_P6_Flight-Segments_20170530_RF09.yaml | | | |
+| ACLOUD_P6_Flight-Segments_20170531_RF10.yaml | | | |
+| ACLOUD_P6_Flight-Segments_20170602_RF11.yaml | | | |
+| ACLOUD_P6_Flight-Segments_20170604_RF12.yaml | | | |
+| ACLOUD_P6_Flight-Segments_20170605_RF13.yaml | | | |
+| ACLOUD_P6_Flight-Segments_20170608_RF14.yaml | | | |
+| ACLOUD_P6_Flight-Segments_20170609_RF15.yaml | | | |
+| ACLOUD_P6_Flight-Segments_20170613_RF16.yaml | | | |
+| ACLOUD_P6_Flight-Segments_20170614_RF17.yaml | | | |
+| ACLOUD_P6_Flight-Segments_20170616_RF18.yaml | | | |
+| ACLOUD_P6_Flight-Segments_20170617_RF19.yaml | | | |
+| ACLOUD_P6_Flight-Segments_20170618_RF20.yaml | | | |
+| ACLOUD_P6_Flight-Segments_20170620_RF21.yaml | | | |
+| ACLOUD_P6_Flight-Segments_20170623_RF22.yaml | | | |
+| ACLOUD_P6_Flight-Segments_20170625_RF23.yaml | | | |
+| ACLOUD_P6_Flight-Segments_20170626_RF24.yaml | | | |
+| ACLOUD_P6_Flight-Segments_20170626_RF25.yaml | | | |
+| AFLUX_P5_Flight-Segments_20190319_RF02.yaml | | | |
+| AFLUX_P5_Flight-Segments_20190321_RF03.yaml | | | |
+| AFLUX_P5_Flight-Segments_20190323_RF04.yaml | | | |
+| AFLUX_P5_Flight-Segments_20190324_RF05.yaml | | | |
+| AFLUX_P5_Flight-Segments_20190325_RF06.yaml | | | |
+| AFLUX_P5_Flight-Segments_20190330_RF07.yaml | | | |
+| AFLUX_P5_Flight-Segments_20190331_RF08.yaml | | | |
+| AFLUX_P5_Flight-Segments_20190401_RF09.yaml | | | |
+| AFLUX_P5_Flight-Segments_20190403_RF10.yaml | | | |
+| AFLUX_P5_Flight-Segments_20190404_RF11.yaml | | | |
+| AFLUX_P5_Flight-Segments_20190406_RF12.yaml | | | |
+| AFLUX_P5_Flight-Segments_20190407_RF13.yaml | | | |
+| AFLUX_P5_Flight-Segments_20190408_RF14.yaml | | | |
+| AFLUX_P5_Flight-Segments_20190411_RF15.yaml | | | |
+| MOSAiC-ACA_P5_Flight-Segments_20200830_RF02.yaml | | | |
+| MOSAiC-ACA_P5_Flight-Segments_20200831_RF03.yaml | | | |
+| MOSAiC-ACA_P5_Flight-Segments_20200831_RF04.yaml | | | |
+| MOSAiC-ACA_P5_Flight-Segments_20200902_RF05.yaml | | | |
+| MOSAiC-ACA_P5_Flight-Segments_20200904_RF06.yaml | | | |
+| MOSAiC-ACA_P5_Flight-Segments_20200907_RF07.yaml | | | |
+| MOSAiC-ACA_P5_Flight-Segments_20200908_RF08.yaml | | | |
+| MOSAiC-ACA_P5_Flight-Segments_20200910_RF09.yaml | | | |
+| MOSAiC-ACA_P5_Flight-Segments_20200911_RF10.yaml | | | |
+| MOSAiC-ACA_P5_Flight-Segments_20200913_RF11.yaml | | | |
