@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>description of the flight yaml files &#8212; pyac3airborne-book</title>
+    <title>&lt;no title&gt; &#8212; pyac3airborne-book</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -54,8 +54,6 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Description of the GPS_INS data files" href="gps_ins.html" />
-    <link rel="prev" title="Guideline to design yaml files" href="../guidelines.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -92,38 +90,24 @@
   </a>
  </li>
 </ul>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../campaigns.html">
-   Campaigns
-  </a>
- </li>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="../datasets.html">
-   Datasets
-  </a>
-  <ul class="simple collapse-ul">
-  </ul>
-  <i class="fas fa-chevron-down">
-  </i>
- </li>
- <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="../guidelines.html">
    yaml file design
   </a>
-  <ul class="current collapse-ul">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../yamls/flights.html">
      description of the flight yaml files
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="gps_ins.html">
+    <a class="reference internal" href="../yamls/gps_ins.html">
      Description of the GPS_INS data files
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="dropsondes.html">
+    <a class="reference internal" href="../yamls/dropsondes.html">
      Description of the dropsonde yaml files
     </a>
    </li>
@@ -133,11 +117,30 @@
  </li>
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../code.html">
-   Code
+   Code examples to work with the data
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="../examples/get_segments.html">
+     How to read flight segments
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../info.html">
+   SYNTAX
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../markdown.html">
+     Markdown Files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../notebooks.html">
      Content with notebooks
     </a>
    </li>
@@ -185,7 +188,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/yamls/flights.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/campaigns/mosaic-aca.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
@@ -210,6 +213,16 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="simple nav section-nav flex-column">
+</ul>
+
+        </nav>
+        
         </div>
     </div>
 </div>
@@ -218,68 +231,7 @@
         
               <div>
                 
-  <div class="section" id="description-of-the-flight-yaml-files">
-<h1>description of the flight yaml files<a class="headerlink" href="#description-of-the-flight-yaml-files" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">:</span> <span class="n">RF04</span> <span class="c1"># number of research flight within campaign</span>
-<span class="n">mission</span><span class="p">:</span> <span class="n">ACLOUD</span> <span class="c1"># name of campaign [ACLOUD|AFLUX|MOSAiC-ACA]</span>
-<span class="n">platform</span><span class="p">:</span> <span class="n">P5</span> <span class="c1"># platform short name [P5|P6|HALO]</span>
-<span class="n">flight_id</span><span class="p">:</span> <span class="n">ACLOUD_P5_RF04</span> <span class="c1"># campaign_platform_name</span>
-<span class="n">contacts</span><span class="p">:</span>
-<span class="o">-</span> <span class="n">name</span><span class="p">:</span> <span class="n">null</span> <span class="c1"># PI o flight</span>
-  <span class="n">email</span><span class="p">:</span> <span class="n">null</span>
-<span class="o">-</span> <span class="n">name</span><span class="p">:</span> <span class="n">null</span> <span class="c1"># creator of yaml</span>
-  <span class="n">email</span><span class="p">:</span> <span class="n">null</span>
-<span class="n">date</span><span class="p">:</span> <span class="mi">2017</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">23</span> <span class="c1"># date of flight (take off day)</span>
-<span class="n">flight_report</span><span class="p">:</span> <span class="n">null</span> <span class="c1"># url of public flight report</span>
-<span class="n">takeoff</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">id001</span> <span class="mi">2017</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">23</span> <span class="mi">09</span><span class="p">:</span><span class="mi">11</span><span class="p">:</span><span class="mi">47</span> <span class="c1"># datetime object of take off</span>
-<span class="n">landing</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">id002</span> <span class="mi">2017</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">23</span> <span class="mi">14</span><span class="p">:</span><span class="mi">23</span><span class="p">:</span><span class="mi">40</span> <span class="c1"># datetime object of landing</span>
-<span class="n">events</span><span class="p">:</span> <span class="p">[]</span>
-<span class="n">remarks</span><span class="p">:</span>
-<span class="o">-</span> <span class="n">Clouds</span> <span class="n">above</span> <span class="nb">open</span> <span class="n">water</span> <span class="ow">and</span> <span class="n">sea</span> <span class="n">ice</span>
-<span class="n">segments</span><span class="p">:</span>
-<span class="o">-</span> <span class="n">kinds</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">major_ascend</span>
-  <span class="n">name</span><span class="p">:</span> <span class="n">major</span> <span class="n">ascend</span> <span class="mi">1</span>
-  <span class="n">irregularities</span><span class="p">:</span> <span class="p">[]</span>
-  <span class="n">segment_id</span><span class="p">:</span> <span class="n">ACLOUD_P5_RF04_ma1</span>
-  <span class="n">start</span><span class="p">:</span> <span class="o">*</span><span class="n">id001</span>
-  <span class="n">end</span><span class="p">:</span> <span class="n">null</span>
-  <span class="n">dropsondes</span><span class="p">:</span>
-    <span class="n">GOOD</span><span class="p">:</span> <span class="p">[]</span>
-    <span class="n">BAD</span><span class="p">:</span> <span class="p">[]</span>
-    <span class="n">UGLY</span><span class="p">:</span> <span class="p">[]</span>
-<span class="o">-</span> <span class="n">kinds</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">add_new_segments_here</span>
-  <span class="n">name</span><span class="p">:</span> <span class="n">null</span>
-  <span class="n">irregularities</span><span class="p">:</span> <span class="p">[]</span>
-  <span class="n">segment_id</span><span class="p">:</span> <span class="n">null</span>
-  <span class="n">start</span><span class="p">:</span> <span class="n">null</span>
-  <span class="n">end</span><span class="p">:</span> <span class="n">null</span>
-  <span class="n">dropsondes</span><span class="p">:</span>
-    <span class="n">GOOD</span><span class="p">:</span> <span class="p">[]</span>
-    <span class="n">BAD</span><span class="p">:</span> <span class="p">[]</span>
-    <span class="n">UGLY</span><span class="p">:</span> <span class="p">[]</span>
-<span class="o">-</span> <span class="n">kinds</span><span class="p">:</span>
-  <span class="o">-</span> <span class="n">major_descend</span>
-  <span class="n">name</span><span class="p">:</span> <span class="n">major</span> <span class="n">descend</span> <span class="mi">1</span>
-  <span class="n">irregularities</span><span class="p">:</span> <span class="p">[]</span>
-  <span class="n">segment_id</span><span class="p">:</span> <span class="n">ACLOUD_P5_RF04_md1</span>
-  <span class="n">start</span><span class="p">:</span> <span class="n">null</span>
-  <span class="n">end</span><span class="p">:</span> <span class="o">*</span><span class="n">id002</span>
-  <span class="n">dropsondes</span><span class="p">:</span>
-    <span class="n">GOOD</span><span class="p">:</span> <span class="p">[]</span>
-    <span class="n">BAD</span><span class="p">:</span> <span class="p">[]</span>
-    <span class="n">UGLY</span><span class="p">:</span> <span class="p">[]</span>
-</pre></div>
-</div>
-<p>import numpy as np
-import matplotlib.pyplot as plt
-plt.ion()</p>
-<p>data = np.random.randn(2, 100)
-fig, ax = plt.subplots()
-ax.scatter(<em>data, c=data[1], s=100</em>np.abs(data[0]));</p>
-</div>
-
+  
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
@@ -293,7 +245,7 @@ ax.scatter(<em>data, c=data[1], s=100</em>np.abs(data[0]));</p>
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./yamls"
+            path: "./campaigns"
         },
         predefinedOutput: true
     }
@@ -305,8 +257,6 @@ ax.scatter(<em>data, c=data[1], s=100</em>np.abs(data[0]));</p>
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="../guidelines.html" title="previous page">Guideline to design yaml files</a>
-    <a class='right-next' id="next-link" href="gps_ins.html" title="next page">Description of the GPS_INS data files</a>
 
         </div>
         

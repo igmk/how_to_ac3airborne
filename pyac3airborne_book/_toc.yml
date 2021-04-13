@@ -1,14 +1,34 @@
 - file: intro
+- file: campaigns
+  title: Campaigns
+  # sections:
+  #   - file: campaigns/acloud
+  #     title: ACLOUD
+  #   - file: campaigns/aflux
+  #     title: AFLUX
+  #   - file: campaigns/mosaic-aca
+  #     title: MOSAiC-ACA
+- file: datasets
+  title: Datasets
+  sections:
+    - file: flight_tracks
+      title: Flight tracks
+    - file: dropsondes
+      title: Dropsondes
+    - file: mirac
+      title: MiRAC
+    - file: amali
+      title: AMALi
+    - file: kt19
+      title: KT-19
 - file: guidelines
+  title: Guidelines
   title: yaml file design
   sections:
   - file: yamls/flights
   - file: yamls/gps_ins
   - file: yamls/dropsondes
 - file: code
+  title: Code
   sections:
   - file: examples/get_segments
-- file: info
-  sections:
-  - file: markdown
-  - file: notebooks

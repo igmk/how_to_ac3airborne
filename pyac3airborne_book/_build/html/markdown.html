@@ -86,11 +86,25 @@
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
-   Welcome to pyac3airborne book
+   Introduction
   </a>
  </li>
 </ul>
 <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="campaigns.html">
+   Campaigns
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="datasets.html">
+   Datasets
+  </a>
+  <ul class="simple collapse-ul">
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="guidelines.html">
    yaml file design
@@ -98,7 +112,7 @@
   <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="yamls/flights.html">
-     description of the filght yaml files
+     description of the flight yaml files
     </a>
    </li>
    <li class="toctree-l2">
@@ -117,12 +131,12 @@
  </li>
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="code.html">
-   Code examples to work with the data
+   Code
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="examples/get_segments.html">
-     How to read flight segments
+     Content with notebooks
     </a>
    </li>
   </ul>
@@ -301,7 +315,7 @@ this pattern:</p>
 <p>Again, roles will only work if <code class="docutils literal notranslate"><span class="pre">rolename</span></code> is a valid role’s name. For example,
 the <code class="docutils literal notranslate"><span class="pre">doc</span></code> role can be used to refer to another page in your book. You can
 refer directly to another page by its relative path. For example, the
-role syntax <code class="docutils literal notranslate"><span class="pre">{doc}`intro`</span></code> will result in: <a class="reference internal" href="intro.html"><span class="doc">Welcome to pyac3airborne book</span></a>.</p>
+role syntax <code class="docutils literal notranslate"><span class="pre">{doc}`intro`</span></code> will result in: <a class="reference internal" href="intro.html"><span class="doc">Introduction</span></a>.</p>
 <p>For more information on writing roles, see the
 <a class="reference external" href="https://myst-parser.readthedocs.io/">MyST documentation</a>.</p>
 </div>

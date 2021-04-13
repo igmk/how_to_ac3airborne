@@ -1,6 +1,8 @@
 # pyac3airborne_book
 
-This bo the data from the AC3 related airborne campaigns
+This book describes the data from the AC3 related airborne campaigns.
+
+The compiled book with the data description and the examples can be found [here](https://igmk.github.io/pyac3airborne_book/intro.html)
 
 ## Usage
 
