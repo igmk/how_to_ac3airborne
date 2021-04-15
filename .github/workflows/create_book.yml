@@ -3,7 +3,7 @@ name: Publish JupyterBook to GitHub Pages
 on: 
   push: # trigger build only when push to master
     branches:
-      - master
+      - main
 
 jobs:
   build:
@@ -20,10 +20,6 @@ jobs:
         sudo apt-get install python3-pip
         pip install ghp-import
         PATH="${PATH}:${HOME}/.local/bin"
-
-    - name: Build book TOC file 
-      run: |
-        jupyter-book toc ./pyac3airborne_book
 
     - name: Build book HTML 
       run: |
