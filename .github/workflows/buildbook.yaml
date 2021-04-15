@@ -1,0 +1,28 @@
+name: buildbook
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.8]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: build book
+      run: |
+          jupyter-book build -W -n --keep-going pyac3airborne_book
+    - name: Push _build/html to gh-pages
+      run: |
+          ghp-import ./pyac3airborne_book/_build/html -f -p -n
