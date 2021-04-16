@@ -34,7 +34,7 @@ This will automatically push your build to the `gh-pages` branch. More informati
 
 ## Contributors
 
-We welcome and recognize all contributions. You can see a list of current contributors in the [contributors tab](https://github.com/mariomech/pyac3airborne_book/graphs/contributors).
+You can see a list of current contributors in the [contributors tab](https://github.com/mariomech/pyac3airborne_book/graphs/contributors).
 
 ## Credits
 
