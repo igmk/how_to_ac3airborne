@@ -45,6 +45,8 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -165,6 +167,11 @@
      Content with notebooks
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/flight_tracks.html">
+     Flight tracks from segment files
+    </a>
+   </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
@@ -259,7 +266,7 @@
                 
   <div class="section" id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
-<p>Welcome to the world of AC3 airborne data! This is a collection of python code examples to get you started with the data. It follows the concept and ideass of the work done within the <a class="reference external" href="https://eurec4a.pages.gwdg.de/how_to_eurec4a/intro.html">EUREC4A</a> community.</p>
+<p>Welcome to the world of AC3 airborne data! It’s a collection of python code examples to get you started with the airborne data. It follows the concept and ideass of the work done within the <a class="reference external" href="https://eurec4a.pages.gwdg.de/how_to_eurec4a/intro.html">EUREC4A</a> community.</p>
 <div class="section" id="idea">
 <h2>Idea<a class="headerlink" href="#idea" title="Permalink to this headline">¶</a></h2>
 <p>The book chapters show datasets that are accessible online, i.e. you don’t have to download anything. Most datasets are accessed via the <a class="reference external" href="https://github.com/igmk/ac3airborne-intake">ac3airborne intake catalog</a>, which simply said takes care of the links to datasets in their most recent version. The scripts typically contain at minimum how to get a specific dataset and some simple plots of basic quantities. Most chapters include additional information from aircraft flight segments or further eurec4a meta data, sometimes more sophisticated plots, or also a combination of variables from different datasets.</p>
