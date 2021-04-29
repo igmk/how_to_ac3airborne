@@ -7,7 +7,6 @@ The compiled book with the data description and the examples can be found [here]
 ## Usage
 
 
-
 ### Building the book
 
 If you'd like to develop on and build the pyac3airborne_book book, you should:
