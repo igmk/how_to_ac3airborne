@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Flight description &#8212; pyac3airborne-book</title>
+    <title>Flight segment description &#8212; pyac3airborne-book</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -257,6 +257,55 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#flight-segments">
+   Flight segments
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#keyword-kinds">
+     Keyword: kinds
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ascends-and-descends">
+       ascends and descends
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#flight-altitude">
+       flight altitude
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#overflights-and-underflights">
+       overflights and underflights
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pattern">
+       pattern
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#turn">
+       turn
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
         </div>
     </div>
 </div>
@@ -265,12 +314,138 @@
         
               <div>
                 
-  <div class="section" id="flight-description">
-<h1>Flight description<a class="headerlink" href="#flight-description" title="Permalink to this headline">¶</a></h1>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ac3airborne</span>
-</pre></div>
+  <div class="section" id="flight-segment-description">
+<h1>Flight segment description<a class="headerlink" href="#flight-segment-description" title="Permalink to this headline">¶</a></h1>
+<p>The idea behind floght phase separation is to be able to select segments of flights according to their properties. The selection can be done by attributes like names and further on levels and is applied to the platform and instrument data by using start and end datetime objects belonging to the segment.</p>
+<div class="section" id="flight-segments">
+<h2>Flight segments<a class="headerlink" href="#flight-segments" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="keyword-kinds">
+<h3>Keyword: kinds<a class="headerlink" href="#keyword-kinds" title="Permalink to this headline">¶</a></h3>
+<p>This table provides an overview of the keywords used to describe the flight segments. Multiple keywords can be used for one flight segment.</p>
+<div class="section" id="ascends-and-descends">
+<h4>ascends and descends<a class="headerlink" href="#ascends-and-descends" title="Permalink to this headline">¶</a></h4>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>kinds</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>major_ascend</p></td>
+<td><p>takeoff from the airport until a constant flight level is reached</p></td>
+</tr>
+<tr class="row-odd"><td><p>major_descend</p></td>
+<td><p>last descend from a constant flight level befor landing at the airport</p></td>
+</tr>
+<tr class="row-even"><td><p>small_ascend</p></td>
+<td><p>ascend of less than 1 km height difference between start and end times</p></td>
+</tr>
+<tr class="row-odd"><td><p>small_descend</p></td>
+<td><p>descend of less than 1 km height difference between start and end times</p></td>
+</tr>
+<tr class="row-even"><td><p>large_ascend</p></td>
+<td><p>ascend of more than 1 km height difference between start and end times</p></td>
+</tr>
+<tr class="row-odd"><td><p>large_descend</p></td>
+<td><p>descend of more than 1 km height difference between start and end times</p></td>
+</tr>
+<tr class="row-even"><td><p>profiling</p></td>
+<td><p>ascend or descend with vertical speed mostly between 5-10 m/s</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="flight-altitude">
+<h4>flight altitude<a class="headerlink" href="#flight-altitude" title="Permalink to this headline">¶</a></h4>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>kinds</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>low_level</p></td>
+<td><p>constant flight level at &lt; 1 km altitude</p></td>
+</tr>
+<tr class="row-odd"><td><p>mid_level</p></td>
+<td><p>constant flight level at 1-2 km altitude</p></td>
+</tr>
+<tr class="row-even"><td><p>high_level</p></td>
+<td><p>constant flight level at &gt; 2 km altitude</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="overflights-and-underflights">
+<h4>overflights and underflights<a class="headerlink" href="#overflights-and-underflights" title="Permalink to this headline">¶</a></h4>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>kinds</p></th>
+<th class="head"><p>description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>nya_overflight</p></td>
+<td><p>Overflight over the Ny-Alesund research station. Might be combined or together with <em>cross_pattern</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>ps_overflight</p></td>
+<td><p>Overflight over the Ny-Alesund research station. Might be combined or together with <em>cross_pattern</em></p></td>
+</tr>
+<tr class="row-even"><td><p>a-train_underflight</p></td>
+<td><p>test</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="pattern">
+<h4>pattern<a class="headerlink" href="#pattern" title="Permalink to this headline">¶</a></h4>
+<p>Pattern usually consist of parts like legs and turns named accordingly.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>kinds</p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>cross_pattern</p></td>
+<td><p>rectangular crosses with transfer legs in between. Usually flown over Ny-Alesund, Polarstern, or once over Longyearbyen airport.</p></td>
+</tr>
+<tr class="row-odd"><td><p>racetrack_pattern</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>holding_pattern</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>staircase_pattern</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>sawtooth_pattern</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="turn">
+<h4>turn<a class="headerlink" href="#turn" title="Permalink to this headline">¶</a></h4>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>kinds</p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>short_turn</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>long_turn</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>procedure_turn</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p>This table is just a template!</p>
 </div>
 </div>
 </div>
