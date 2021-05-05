@@ -45,6 +45,8 @@
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -374,13 +376,13 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>nya_overflight</p></td>
-<td><p>Overflight over the Ny-Alesund research station. Might be combined or together with <em>cross_pattern</em></p></td>
+<td><p>Overflight over the Ny-Alesund research station. Might be combined or together with <em>cross_pattern</em> or <em>high_level</em>.</p></td>
 </tr>
 <tr class="row-odd"><td><p>ps_overflight</p></td>
-<td><p>Overflight over the Ny-Alesund research station. Might be combined or together with <em>cross_pattern</em></p></td>
+<td><p>Overflight over the Ny-Alesund research station. Might be combined or together with <em>cross_pattern</em>.</p></td>
 </tr>
 <tr class="row-even"><td><p>a-train_underflight</p></td>
-<td><p>test</p></td>
+<td><p>Underflight of the A-Train satellite constellation. For Polar 5, it is usually combined with <em>high_level</em>. For Polar 6 it might be any profiling pattern.</p></td>
 </tr>
 </tbody>
 </table>
@@ -399,19 +401,20 @@
 <td><p>rectangular crosses with transfer legs in between. Usually flown over Ny-Alesund, Polarstern, or once over Longyearbyen airport.</p></td>
 </tr>
 <tr class="row-odd"><td><p>racetrack_pattern</p></td>
-<td><p></p></td>
+<td><p>Back and forth on the same track.</p></td>
 </tr>
 <tr class="row-even"><td><p>holding_pattern</p></td>
-<td><p></p></td>
+<td><p>Spending time with waiting.</p></td>
 </tr>
-<tr class="row-odd"><td><p>staircase_pattern</p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p>stairstep_pattern</p></td>
+<td><p>Stepwise up or down along a straight line.</p></td>
 </tr>
 <tr class="row-even"><td><p>sawtooth_pattern</p></td>
-<td><p></p></td>
+<td><p>Continious climbing follow by descending or the other way round.</p></td>
 </tr>
 </tbody>
 </table>
+<p><img alt="alt text" src="../_images/racetrack_pattern.png" /></p>
 </div>
 <div class="section" id="turn">
 <h4>turn<a class="headerlink" href="#turn" title="Permalink to this headline">¶</a></h4>
@@ -423,16 +426,18 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>short_turn</p></td>
-<td><p></p></td>
+<td><p>Turn directly to next straight leg - cutting corners.</p></td>
 </tr>
 <tr class="row-odd"><td><p>long_turn</p></td>
-<td><p></p></td>
+<td><p>Turn on the long way to the next direction without cutting the corner.</p></td>
 </tr>
 <tr class="row-even"><td><p>procedure_turn</p></td>
-<td><p></p></td>
+<td><p>Perform 180 deg turn to be directly on track again in opposite direction.</p></td>
 </tr>
 </tbody>
 </table>
+<p><img alt="alt text" src="../_images/short_turn.png" />
+<img alt="alt text" src="../_images/procedure_turn.png" /></p>
 <p>This table is just a template!</p>
 </div>
 </div>

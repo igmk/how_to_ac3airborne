@@ -27,9 +27,9 @@ This table provides an overview of the keywords used to describe the flight segm
 #### overflights and underflights
 | kinds               | description                                                                                         |
 | ------------------- | --------------------------------------------------------------------------------------------------- |
-| nya_overflight      | Overflight over the Ny-Alesund research station. Might be combined or together with *cross_pattern* |
-| ps_overflight       | Overflight over the Ny-Alesund research station. Might be combined or together with *cross_pattern* |
-| a-train_underflight | test        |
+| nya_overflight      | Overflight over the Ny-Alesund research station. Might be combined or together with *cross_pattern* or *high_level*.|
+| ps_overflight       | Overflight over the Ny-Alesund research station. Might be combined or together with *cross_pattern*. |
+| a-train_underflight | Underflight of the A-Train satellite constellation. For Polar 5, it is usually combined with *high_level*. For Polar 6 it might be any profiling pattern.        |
 
 #### pattern
 
@@ -37,17 +37,22 @@ Pattern usually consist of parts like legs and turns named accordingly.
 | kinds                 |                                                                                                                                  |
 | ----------------------|----------------------------------------------------------------------------------------------------------------------------------|
 | cross_pattern         | rectangular crosses with transfer legs in between. Usually flown over Ny-Alesund, Polarstern, or once over Longyearbyen airport. | 
-| racetrack_pattern     | |
-| holding_pattern       | |
-| staircase_pattern     | |
-| sawtooth_pattern      | |
+| racetrack_pattern     | Back and forth on the same track.|
+| holding_pattern       | Spending time with waiting.|
+| stairstep_pattern     | Stepwise up or down along a straight line.|
+| sawtooth_pattern      | Continious climbing follow by descending or the other way round.|
+
+![alt text](racetrack_pattern.png "race track pattern")
 
 #### turn
 | kinds          |             |
 |----------------|-------------|
-| short_turn     |             |
-| long_turn      |             |
-| procedure_turn |             |
+| short_turn     | Turn directly to next straight leg - cutting corners.|
+| long_turn      | Turn on the long way to the next direction without cutting the corner. |
+| procedure_turn | Perform 180 deg turn to be directly on track again in opposite direction. |
+
+![alt text](short_turn.png "Short turn")
+![alt text](procedure_turn.png "procedure turns")
 
 This table is just a template!
 
