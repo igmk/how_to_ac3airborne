@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quering the flight phase files &#8212; pyac3airborne-book</title>
+    <title>Querying the flight phase files &#8212; pyac3airborne-book</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -45,6 +45,8 @@
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -257,8 +259,8 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#query-all-segments-of-a-specific-kinds">
-   Query all segments of a specific kinds
+  <a class="reference internal nav-link" href="#query-all-segments-of-a-specific-kind">
+   Query all segments of a specific kind
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -277,13 +279,8 @@
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-2-specific-remark">
-     Example 2: Specific remark
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-3-specific-level">
-     Example 3: Specific level
+    <a class="reference internal nav-link" href="#example-2-specific-level">
+     Example 2: Specific level
     </a>
    </li>
   </ul>
@@ -305,41 +302,109 @@
         
               <div>
                 
-  <div class="section" id="quering-the-flight-phase-files">
-<h1>Quering the <em>flight phase files</em><a class="headerlink" href="#quering-the-flight-phase-files" title="Permalink to this headline">¶</a></h1>
-<p>The <em>flight segments</em> are stored in <em>YAML</em> files. In order to read these files:</p>
+  <div class="section" id="querying-the-flight-phase-files">
+<h1>Querying the <em>flight phase files</em><a class="headerlink" href="#querying-the-flight-phase-files" title="Permalink to this headline">¶</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">load_ext</span> autoreload
-<span class="o">%</span><span class="k">autoreload</span> 2
-
+<span class="o">%</span><span class="k">autoreload</span> 2;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s import some modules, that we need for the following examples:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ac3airborne</span> <span class="k">as</span> <span class="nn">ac3a</span>
 <span class="kn">import</span> <span class="nn">flightphase</span> <span class="k">as</span> <span class="nn">fp</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> <span class="c1"># only for showing the results in a table</span>
-
-
-<span class="n">filepath</span> <span class="o">=</span> <span class="s1">&#39;ACLOUD_P5_Flight-Segments_20170608_RF14.yaml&#39;</span>
-
-<span class="n">ds</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">FlightPhaseFile</span><span class="p">(</span><span class="n">filepath</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
+<span class="kn">import</span> <span class="nn">cartopy.feature</span> <span class="k">as</span> <span class="nn">cfeature</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="mi">2119</span><span class="n">cdfd4460</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">get_ipython</span><span class="p">()</span><span class="o">.</span><span class="n">run_line_magic</span><span class="p">(</span><span class="s1">&#39;autoreload&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> 
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">flightphase</span> <span class="kn">as</span> <span class="nn">fp</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span> <span class="c1"># only for showing the results in a table</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> 
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">2</span><span class="o">-</span><span class="mf">8e3</span><span class="n">a49a133fc</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">ac3airborne</span> <span class="kn">as</span> <span class="nn">ac3a</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">flightphase</span> <span class="kn">as</span> <span class="nn">fp</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="kn">as</span> <span class="nn">ccrs</span>
 
 <span class="ne">ModuleNotFoundError</span>: No module named &#39;flightphase&#39;
 </pre></div>
 </div>
 </div>
 </div>
-<div class="section" id="query-all-segments-of-a-specific-kinds">
-<h2>Query all segments of a specific kinds<a class="headerlink" href="#query-all-segments-of-a-specific-kinds" title="Permalink to this headline">¶</a></h2>
+<p>In order to select a flight and import its flight segments just use the corresponding method of the module <em>ac3airborne</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">campaign</span> <span class="o">=</span> <span class="s1">&#39;ACLOUD&#39;</span>
+<span class="n">aircraft</span> <span class="o">=</span> <span class="s1">&#39;P5&#39;</span>
+<span class="n">number</span>   <span class="o">=</span> <span class="s1">&#39;RF14&#39;</span>
+<span class="n">date</span>     <span class="o">=</span> <span class="s1">&#39;20170608&#39;</span>
+<span class="n">flight</span>   <span class="o">=</span> <span class="n">campaign</span> <span class="o">+</span> <span class="s1">&#39;_&#39;</span> <span class="o">+</span> <span class="n">aircraft</span> <span class="o">+</span> <span class="s1">&#39;_&#39;</span> <span class="o">+</span> <span class="n">number</span>
+
+<span class="n">meta</span> <span class="o">=</span> <span class="n">ac3a</span><span class="o">.</span><span class="n">get_flight_segments</span><span class="p">()</span>
+
+<span class="n">yaml_content</span> <span class="o">=</span> <span class="n">meta</span><span class="p">[</span><span class="n">aircraft</span><span class="p">][</span><span class="n">flight</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We introduce here some new methods, that we will use to select the flight segments, querying for different criteria.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">FlightPhaseFile</span><span class="p">(</span><span class="n">yaml_content</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We read the gps data of the whole flight</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># read gps data</span>
+<span class="n">file</span> <span class="o">=</span> <span class="s1">&#39;~/ac3airborne/campaigns/&#39;</span><span class="o">+</span><span class="n">campaign</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">+</span><span class="s1">&#39;/&#39;</span><span class="o">+</span><span class="n">aircraft</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">+</span><span class="s1">&#39;/gps_ins/&#39;</span><span class="o">+</span><span class="n">campaign</span><span class="o">+</span><span class="s1">&#39;_polar&#39;</span><span class="o">+</span><span class="n">aircraft</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39;_&#39;</span><span class="o">+</span><span class="n">date</span><span class="o">+</span><span class="s1">&#39;_&#39;</span><span class="o">+</span><span class="n">number</span><span class="o">+</span><span class="s1">&#39;.nc&#39;</span>
+<span class="n">ds_gps</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Plot the flight</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">proj</span>   <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">NorthPolarStereo</span><span class="p">()</span>
+<span class="n">extent</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">24.0</span><span class="p">,</span> <span class="mf">78.0</span><span class="p">,</span> <span class="mf">83.0</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">15</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">proj</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">extent</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="o">.</span><span class="n">OCEAN</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="o">.</span><span class="n">LAND</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">()</span>
+
+<span class="n">nya_lat</span> <span class="o">=</span> <span class="mf">78.924444</span>
+<span class="n">nya_lon</span> <span class="o">=</span> <span class="mf">11.928611</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">nya_lon</span><span class="p">,</span> <span class="n">nya_lat</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">nya_lon</span><span class="p">,</span> <span class="n">nya_lat</span><span class="o">+</span><span class="mf">0.05</span><span class="p">,</span> <span class="s1">&#39;Ny-Ålesund&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+
+<span class="n">line_all</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds_gps</span><span class="o">.</span><span class="n">lon</span><span class="p">,</span> <span class="n">ds_gps</span><span class="o">.</span><span class="n">lat</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Reading_the_flight_phase_files_11_0.png" src="../_images/Reading_the_flight_phase_files_11_0.png" />
+</div>
+</div>
+<div class="section" id="query-all-segments-of-a-specific-kind">
+<h2>Query all segments of a specific kind<a class="headerlink" href="#query-all-segments-of-a-specific-kind" title="Permalink to this headline">¶</a></h2>
 <p>Example with one kind</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -369,118 +434,134 @@
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>kinds</th>
-      <th>name</th>
+      <th>dropsondes</th>
+      <th>end</th>
       <th>irregularities</th>
+      <th>kinds</th>
+      <th>levels</th>
+      <th>name</th>
+      <th>parts</th>
       <th>segment_id</th>
       <th>start</th>
-      <th>end</th>
-      <th>levels</th>
-      <th>dropsondes</th>
-      <th>parts</th>
-      <th>remark</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
+      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
+      <td>2017-06-08 08:25:57</td>
+      <td>[]</td>
       <td>[high_level]</td>
-      <td>high level leg 1</td>
+      <td>[9800]</td>
+      <td>high level 1</td>
       <td>[]</td>
       <td>ACLOUD_P5_RF14_hl01</td>
       <td>2017-06-08 08:08:54</td>
-      <td>2017-06-08 08:25:57</td>
-      <td>[9800]</td>
-      <td>{'GOOD': [], 'BAD': [], 'UGLY': []}</td>
-      <td>[]</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>1</th>
+      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde02'], 'UGLY...</td>
+      <td>2017-06-08 08:58:26</td>
+      <td>[]</td>
       <td>[high_level]</td>
-      <td>high level2</td>
+      <td>[9800]</td>
+      <td>high level 2</td>
       <td>[]</td>
       <td>ACLOUD_P5_RF14_hl02</td>
       <td>2017-06-08 08:36:30</td>
-      <td>2017-06-08 08:58:26</td>
-      <td>[9800]</td>
-      <td>{'GOOD': ['P5_RF14_sonde02'], 'BAD': [], 'UGLY...</td>
-      <td>[]</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>[high_level]</td>
+      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde03'], 'UGLY...</td>
+      <td>2017-06-08 09:30:30</td>
+      <td>[]</td>
+      <td>[high_level, a-train_underflight]</td>
+      <td>[9700]</td>
       <td>high level 3</td>
       <td>[]</td>
       <td>ACLOUD_P5_RF14_hl03</td>
       <td>2017-06-08 08:59:08</td>
-      <td>2017-06-08 09:30:30</td>
-      <td>[9800]</td>
-      <td>{'GOOD': ['P5_RF14_sonde03'], 'BAD': [], 'UGLY...</td>
-      <td>[]</td>
-      <td>Satellite underflight (A-Train)</td>
     </tr>
     <tr>
       <th>3</th>
+      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde04'], 'UGLY...</td>
+      <td>2017-06-08 09:51:04</td>
+      <td>[]</td>
       <td>[high_level]</td>
+      <td>[9700]</td>
       <td>high level 4</td>
       <td>[]</td>
       <td>ACLOUD_P5_RF14_hl04</td>
       <td>2017-06-08 09:31:41</td>
-      <td>2017-06-08 09:51:04</td>
-      <td>[9800]</td>
-      <td>{'GOOD': ['P5_RF14_sonde04'], 'BAD': [], 'UGLY...</td>
-      <td>[]</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>4</th>
+      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde05'], 'UGLY...</td>
+      <td>2017-06-08 10:00:14</td>
+      <td>[]</td>
       <td>[high_level]</td>
+      <td>[9800]</td>
       <td>high level 5</td>
       <td>[]</td>
       <td>ACLOUD_P5_RF14_hl05</td>
       <td>2017-06-08 09:51:33</td>
-      <td>2017-06-08 10:00:14</td>
-      <td>[9800]</td>
-      <td>{'GOOD': ['P5_RF14_sonde05'], 'BAD': [], 'UGLY...</td>
-      <td>[]</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>[high_level]</td>
-      <td>high level 8</td>
+      <td>{'BAD': ['P5_RF14_sonde06'], 'GOOD': [], 'UGLY...</td>
+      <td>2017-06-08 11:52:57</td>
       <td>[]</td>
+      <td>[high_level]</td>
+      <td>[9700]</td>
+      <td>high level 8</td>
+      <td>NaN</td>
       <td>ACLOUD_P5_RF14_hl08</td>
       <td>2017-06-08 11:11:20</td>
-      <td>2017-06-08 11:52:57</td>
-      <td>[9700]</td>
-      <td>{'GOOD': [], 'BAD': ['P5_RF14_sonde06'], 'UGLY...</td>
-      <td>NaN</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>[high_level]</td>
-      <td>high level 9</td>
+      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde07'], 'UGLY...</td>
+      <td>2017-06-08 12:05:14</td>
       <td>[]</td>
+      <td>[high_level]</td>
+      <td>[9800]</td>
+      <td>high level 9</td>
+      <td>NaN</td>
       <td>ACLOUD_P5_RF14_hl09</td>
       <td>2017-06-08 11:53:38</td>
-      <td>2017-06-08 12:05:14</td>
-      <td>[9700]</td>
-      <td>{'GOOD': ['P5_RF14_sonde07'], 'BAD': [], 'UGLY...</td>
-      <td>NaN</td>
-      <td>NaN</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
+<p>Plot the selected segments:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ll</span> <span class="o">=</span> <span class="n">line_all</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">ll</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+
+<span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">queried</span><span class="p">:</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">]</span>
+    <span class="n">end</span>   <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="s1">&#39;end&#39;</span><span class="p">]</span>
+    
+    <span class="n">line</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds_gps</span><span class="o">.</span><span class="n">lon</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)),</span>
+                   <span class="n">ds_gps</span><span class="o">.</span><span class="n">lat</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)),</span>
+                   <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+    <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    
+<span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Reading_the_flight_phase_files_16_0.png" src="../_images/Reading_the_flight_phase_files_16_0.png" />
+</div>
+</div>
 <p>Example with more than one kind</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kinds</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;high_level&#39;</span><span class="p">,</span> <span class="s1">&#39;nya_overflight&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kinds</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a-train_underflight&#39;</span><span class="p">,</span> <span class="s1">&#39;nya_overflight&#39;</span><span class="p">,</span> <span class="s1">&#39;polarstern_overflight&#39;</span><span class="p">]</span>
 
 <span class="n">queried</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">selectKind</span><span class="p">(</span><span class="n">kinds</span><span class="p">)</span>
 
@@ -508,146 +589,101 @@
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>kinds</th>
-      <th>name</th>
+      <th>dropsondes</th>
+      <th>end</th>
       <th>irregularities</th>
+      <th>kinds</th>
+      <th>levels</th>
+      <th>name</th>
       <th>segment_id</th>
       <th>start</th>
-      <th>end</th>
-      <th>levels</th>
-      <th>dropsondes</th>
       <th>parts</th>
-      <th>remark</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>[major_ascend, nya_overflight, low_level_Sveab...</td>
-      <td>major ascend 1</td>
-      <td>[whale-watching loop]</td>
-      <td>ACLOUD_P5_RF14_ma1</td>
-      <td>2017-06-08 07:36:50</td>
+      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
       <td>2017-06-08 08:08:54</td>
-      <td>[100, 9800]</td>
-      <td>{'GOOD': [], 'BAD': [], 'UGLY': []}</td>
-      <td>NaN</td>
+      <td>[whale-watching loop]</td>
+      <td>[major_ascend, nya_overflight, low_level_Sveab...</td>
+      <td>[100, 9700]</td>
+      <td>major ascend</td>
+      <td>ACLOUD_P5_RF14_ma</td>
+      <td>2017-06-08 07:36:50</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>[high_level]</td>
-      <td>high level leg 1</td>
+      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde03'], 'UGLY...</td>
+      <td>2017-06-08 09:30:30</td>
       <td>[]</td>
-      <td>ACLOUD_P5_RF14_hl01</td>
-      <td>2017-06-08 08:08:54</td>
-      <td>2017-06-08 08:25:57</td>
-      <td>[9800]</td>
-      <td>{'GOOD': [], 'BAD': [], 'UGLY': []}</td>
+      <td>[high_level, a-train_underflight]</td>
+      <td>[9700]</td>
+      <td>high level 3</td>
+      <td>ACLOUD_P5_RF14_hl03</td>
+      <td>2017-06-08 08:59:08</td>
       <td>[]</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>[high_level]</td>
-      <td>high level2</td>
-      <td>[]</td>
-      <td>ACLOUD_P5_RF14_hl02</td>
-      <td>2017-06-08 08:36:30</td>
-      <td>2017-06-08 08:58:26</td>
-      <td>[9800]</td>
-      <td>{'GOOD': ['P5_RF14_sonde02'], 'BAD': [], 'UGLY...</td>
-      <td>[]</td>
       <td>NaN</td>
+      <td>2017-06-08 10:10:51</td>
+      <td>[]</td>
+      <td>[cross_pattern, polarstern_overflight]</td>
+      <td>[9600, 9700]</td>
+      <td>cross pattern 1</td>
+      <td>ACLOUD_P5_RF14_cp01</td>
+      <td>2017-06-08 10:00:14</td>
+      <td>[{'end': 2017-06-08 10:03:14, 'irregularities'...</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>[high_level]</td>
-      <td>high level 3</td>
+      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
+      <td>2017-06-08 12:25:40</td>
       <td>[]</td>
-      <td>ACLOUD_P5_RF14_hl03</td>
-      <td>2017-06-08 08:59:08</td>
-      <td>2017-06-08 09:30:30</td>
-      <td>[9800]</td>
-      <td>{'GOOD': ['P5_RF14_sonde03'], 'BAD': [], 'UGLY...</td>
-      <td>[]</td>
-      <td>Satellite underflight (A-Train)</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>[high_level]</td>
-      <td>high level 4</td>
-      <td>[]</td>
-      <td>ACLOUD_P5_RF14_hl04</td>
-      <td>2017-06-08 09:31:41</td>
-      <td>2017-06-08 09:51:04</td>
-      <td>[9800]</td>
-      <td>{'GOOD': ['P5_RF14_sonde04'], 'BAD': [], 'UGLY...</td>
-      <td>[]</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>[high_level]</td>
-      <td>high level 5</td>
-      <td>[]</td>
-      <td>ACLOUD_P5_RF14_hl05</td>
-      <td>2017-06-08 09:51:33</td>
-      <td>2017-06-08 10:00:14</td>
-      <td>[9800]</td>
-      <td>{'GOOD': ['P5_RF14_sonde05'], 'BAD': [], 'UGLY...</td>
-      <td>[]</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>[high_level]</td>
-      <td>high level 8</td>
-      <td>[]</td>
-      <td>ACLOUD_P5_RF14_hl08</td>
-      <td>2017-06-08 11:11:20</td>
-      <td>2017-06-08 11:52:57</td>
-      <td>[9700]</td>
-      <td>{'GOOD': [], 'BAD': ['P5_RF14_sonde06'], 'UGLY...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>[high_level]</td>
-      <td>high level 9</td>
-      <td>[]</td>
-      <td>ACLOUD_P5_RF14_hl09</td>
-      <td>2017-06-08 11:53:38</td>
-      <td>2017-06-08 12:05:14</td>
-      <td>[9700]</td>
-      <td>{'GOOD': ['P5_RF14_sonde07'], 'BAD': [], 'UGLY...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>8</th>
       <td>[cross_pattern, nya_overflight]</td>
+      <td>[9800, 9800, 9800]</td>
       <td>cross pattern 2</td>
-      <td>[]</td>
       <td>ACLOUD_P5_RF14_cp02</td>
       <td>2017-06-08 12:05:14</td>
-      <td>2017-06-08 12:25:40</td>
-      <td>[9700]</td>
-      <td>{'GOOD': [], 'BAD': [], 'UGLY': []}</td>
-      <td>[{'kinds': ['cross_pattern_leg'], 'name': 'cro...</td>
-      <td>NaN</td>
+      <td>[{'end': 2017-06-08 12:10:14, 'irregularities'...</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
+</div>
+<p>Plot the selected segments:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+    <span class="n">ll</span> <span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">ll</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+    
+<span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">queried</span><span class="p">:</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">]</span>
+    <span class="n">end</span>   <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="s1">&#39;end&#39;</span><span class="p">]</span>
+    
+    <span class="n">line</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds_gps</span><span class="o">.</span><span class="n">lon</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)),</span>
+                   <span class="n">ds_gps</span><span class="o">.</span><span class="n">lat</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)),</span>
+                   <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+    <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    
+<span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Reading_the_flight_phase_files_20_0.png" src="../_images/Reading_the_flight_phase_files_20_0.png" />
+</div>
 </div>
 </div>
 <div class="section" id="sorting-out-all-segments-given-a-list-of-kinds">
 <h2>Sorting out all segments given a list of kinds<a class="headerlink" href="#sorting-out-all-segments-given-a-list-of-kinds" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sort_out</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;short_turn&#39;</span><span class="p">,</span> <span class="s1">&#39;holding_pattern&#39;</span><span class="p">,</span> <span class="s1">&#39;major_ascend&#39;</span><span class="p">,</span> <span class="s1">&#39;major_descend&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sort_out</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;short_turn&#39;</span><span class="p">,</span> <span class="s1">&#39;holding_pattern&#39;</span><span class="p">,</span> <span class="s1">&#39;major_ascend&#39;</span><span class="p">,</span> <span class="s1">&#39;major_descend&#39;</span><span class="p">,</span> <span class="s1">&#39;high_level&#39;</span><span class="p">]</span>
 
 <span class="n">queried</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">selectKind</span><span class="p">(</span><span class="n">sort_out</span><span class="p">,</span> <span class="n">invertSelection</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
@@ -675,178 +711,106 @@
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>kinds</th>
-      <th>name</th>
+      <th>end</th>
       <th>irregularities</th>
+      <th>kinds</th>
+      <th>levels</th>
+      <th>name</th>
+      <th>parts</th>
       <th>segment_id</th>
       <th>start</th>
-      <th>end</th>
-      <th>levels</th>
       <th>dropsondes</th>
-      <th>parts</th>
-      <th>remark</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>[high_level]</td>
-      <td>high level leg 1</td>
+      <td>2017-06-08 10:10:51</td>
       <td>[]</td>
-      <td>ACLOUD_P5_RF14_hl01</td>
-      <td>2017-06-08 08:08:54</td>
-      <td>2017-06-08 08:25:57</td>
-      <td>[9800]</td>
-      <td>{'GOOD': [], 'BAD': [], 'UGLY': []}</td>
-      <td>[]</td>
+      <td>[cross_pattern, polarstern_overflight]</td>
+      <td>[9600, 9700]</td>
+      <td>cross pattern 1</td>
+      <td>[{'end': 2017-06-08 10:03:14, 'irregularities'...</td>
+      <td>ACLOUD_P5_RF14_cp01</td>
+      <td>2017-06-08 10:00:14</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>[high_level]</td>
-      <td>high level2</td>
-      <td>[]</td>
-      <td>ACLOUD_P5_RF14_hl02</td>
-      <td>2017-06-08 08:36:30</td>
-      <td>2017-06-08 08:58:26</td>
-      <td>[9800]</td>
-      <td>{'GOOD': ['P5_RF14_sonde02'], 'BAD': [], 'UGLY...</td>
-      <td>[]</td>
+      <td>2017-06-08 10:22:44</td>
+      <td>[not along straight line]</td>
+      <td>[large_descend]</td>
+      <td>[9700, 200]</td>
+      <td>large descend</td>
       <td>NaN</td>
+      <td>ACLOUD_P5_RF14_ld01</td>
+      <td>2017-06-08 10:10:51</td>
+      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>[high_level]</td>
-      <td>high level 3</td>
+      <td>2017-06-08 11:02:02</td>
       <td>[]</td>
-      <td>ACLOUD_P5_RF14_hl03</td>
-      <td>2017-06-08 08:59:08</td>
-      <td>2017-06-08 09:30:30</td>
-      <td>[9800]</td>
-      <td>{'GOOD': ['P5_RF14_sonde03'], 'BAD': [], 'UGLY...</td>
-      <td>[]</td>
-      <td>Satellite underflight (A-Train)</td>
+      <td>[racetrack pattern]</td>
+      <td>[200, 300, 1500, 2400]</td>
+      <td>racetrack pattern 1</td>
+      <td>[{'end': 2017-06-08 10:29:21, 'irregularities'...</td>
+      <td>ACLOUD_P5_RF14_rt01</td>
+      <td>2017-06-08 10:22:44</td>
+      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>[high_level]</td>
-      <td>high level 4</td>
+      <td>2017-06-08 11:11:20</td>
       <td>[]</td>
-      <td>ACLOUD_P5_RF14_hl04</td>
-      <td>2017-06-08 09:31:41</td>
-      <td>2017-06-08 09:51:04</td>
-      <td>[9800]</td>
-      <td>{'GOOD': ['P5_RF14_sonde04'], 'BAD': [], 'UGLY...</td>
-      <td>[]</td>
+      <td>[large_ascend]</td>
+      <td>[2400, 9700]</td>
+      <td>large ascend 2</td>
       <td>NaN</td>
+      <td>ACLOUD_P5_RF14_la02</td>
+      <td>2017-06-08 11:02:25</td>
+      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>[high_level]</td>
-      <td>high level 5</td>
+      <td>2017-06-08 12:25:40</td>
       <td>[]</td>
-      <td>ACLOUD_P5_RF14_hl05</td>
-      <td>2017-06-08 09:51:33</td>
-      <td>2017-06-08 10:00:14</td>
-      <td>[9800]</td>
-      <td>{'GOOD': ['P5_RF14_sonde05'], 'BAD': [], 'UGLY...</td>
-      <td>[]</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>[cross_pattern, polarstern_overflight]</td>
-      <td>cross pattern 1</td>
-      <td>[]</td>
-      <td>ACLOUD_P5_RF14_cp01</td>
-      <td>2017-06-08 10:00:14</td>
-      <td>2017-06-08 10:10:51</td>
-      <td>[9800]</td>
-      <td>NaN</td>
-      <td>[{'kinds': ['cross_pattern_leg'], 'name': 'cro...</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>[large_descend]</td>
-      <td>large descend</td>
-      <td>[not along straight line]</td>
-      <td>ACLOUD_P5_RF14_ld01</td>
-      <td>2017-06-08 10:10:51</td>
-      <td>2017-06-08 10:22:44</td>
-      <td>[9800, 200]</td>
-      <td>{'GOOD': [], 'BAD': [], 'UGLY': []}</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>[racetrack pattern]</td>
-      <td>racetrack pattern 1</td>
-      <td>[]</td>
-      <td>ACLOUD_P5_RF14_rt01</td>
-      <td>2017-06-08 10:22:44</td>
-      <td>2017-06-08 11:02:02</td>
-      <td>[200, 400, 1500, 2400]</td>
-      <td>{'GOOD': [], 'BAD': [], 'UGLY': []}</td>
-      <td>[{'kinds': ['racetrack_leg'], 'name': 'racetra...</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>[large_ascend]</td>
-      <td>large ascend</td>
-      <td>[]</td>
-      <td>ACLOUD_P5_RF14_la01</td>
-      <td>2017-06-08 11:02:25</td>
-      <td>2017-06-08 11:11:20</td>
-      <td>[2400, 9700]</td>
-      <td>{'GOOD': [], 'BAD': [], 'UGLY': []}</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>[high_level]</td>
-      <td>high level 8</td>
-      <td>[]</td>
-      <td>ACLOUD_P5_RF14_hl08</td>
-      <td>2017-06-08 11:11:20</td>
-      <td>2017-06-08 11:52:57</td>
-      <td>[9700]</td>
-      <td>{'GOOD': [], 'BAD': ['P5_RF14_sonde06'], 'UGLY...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>[high_level]</td>
-      <td>high level 9</td>
-      <td>[]</td>
-      <td>ACLOUD_P5_RF14_hl09</td>
-      <td>2017-06-08 11:53:38</td>
-      <td>2017-06-08 12:05:14</td>
-      <td>[9700]</td>
-      <td>{'GOOD': ['P5_RF14_sonde07'], 'BAD': [], 'UGLY...</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>11</th>
       <td>[cross_pattern, nya_overflight]</td>
+      <td>[9800, 9800, 9800]</td>
       <td>cross pattern 2</td>
-      <td>[]</td>
+      <td>[{'end': 2017-06-08 12:10:14, 'irregularities'...</td>
       <td>ACLOUD_P5_RF14_cp02</td>
       <td>2017-06-08 12:05:14</td>
-      <td>2017-06-08 12:25:40</td>
-      <td>[9700]</td>
-      <td>{'GOOD': [], 'BAD': [], 'UGLY': []}</td>
-      <td>[{'kinds': ['cross_pattern_leg'], 'name': 'cro...</td>
-      <td>NaN</td>
+      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
+</div>
+<p>Plot the selected segments:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+    <span class="n">ll</span> <span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">ll</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+    
+<span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">queried</span><span class="p">:</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">]</span>
+    <span class="n">end</span>   <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="s1">&#39;end&#39;</span><span class="p">]</span>
+    
+    <span class="n">line</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds_gps</span><span class="o">.</span><span class="n">lon</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)),</span>
+                   <span class="n">ds_gps</span><span class="o">.</span><span class="n">lat</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)),</span>
+                   <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+    <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    
+<span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Reading_the_flight_phase_files_24_0.png" src="../_images/Reading_the_flight_phase_files_24_0.png" />
+</div>
 </div>
 </div>
 <div class="section" id="query-a-segment-with-a-specific-value-in-a-specific-attribute">
@@ -884,33 +848,58 @@
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>kinds</th>
-      <th>name</th>
+      <th>dropsondes</th>
+      <th>end</th>
       <th>irregularities</th>
+      <th>kinds</th>
+      <th>levels</th>
+      <th>name</th>
+      <th>parts</th>
       <th>segment_id</th>
       <th>start</th>
-      <th>end</th>
-      <th>levels</th>
-      <th>dropsondes</th>
-      <th>parts</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>[racetrack pattern]</td>
-      <td>racetrack pattern 1</td>
+      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
+      <td>2017-06-08 11:02:02</td>
       <td>[]</td>
+      <td>[racetrack pattern]</td>
+      <td>[200, 300, 1500, 2400]</td>
+      <td>racetrack pattern 1</td>
+      <td>[{'end': 2017-06-08 10:29:21, 'irregularities'...</td>
       <td>ACLOUD_P5_RF14_rt01</td>
       <td>2017-06-08 10:22:44</td>
-      <td>2017-06-08 11:02:02</td>
-      <td>[200, 400, 1500, 2400]</td>
-      <td>{'GOOD': [], 'BAD': [], 'UGLY': []}</td>
-      <td>[{'kinds': ['racetrack_leg'], 'name': 'racetra...</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
+</div>
+<p>Plot the selected elements:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+    <span class="n">ll</span> <span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">ll</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+    
+<span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">queried</span><span class="p">:</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">]</span>
+    <span class="n">end</span>   <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="s1">&#39;end&#39;</span><span class="p">]</span>
+    
+    <span class="n">line</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds_gps</span><span class="o">.</span><span class="n">lon</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)),</span>
+                   <span class="n">ds_gps</span><span class="o">.</span><span class="n">lat</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)),</span>
+                   <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+    <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    
+<span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Reading_the_flight_phase_files_29_0.png" src="../_images/Reading_the_flight_phase_files_29_0.png" />
+</div>
 </div>
 <p>Also with inverted selection</p>
 <div class="cell docutils container">
@@ -941,337 +930,278 @@
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>kinds</th>
-      <th>name</th>
+      <th>dropsondes</th>
+      <th>end</th>
       <th>irregularities</th>
+      <th>kinds</th>
+      <th>levels</th>
+      <th>name</th>
       <th>segment_id</th>
       <th>start</th>
-      <th>end</th>
-      <th>levels</th>
-      <th>dropsondes</th>
       <th>parts</th>
-      <th>remark</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>[major_ascend, nya_overflight, low_level_Sveab...</td>
-      <td>major ascend 1</td>
-      <td>[whale-watching loop]</td>
-      <td>ACLOUD_P5_RF14_ma1</td>
-      <td>2017-06-08 07:36:50</td>
+      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
       <td>2017-06-08 08:08:54</td>
-      <td>[100, 9800]</td>
-      <td>{'GOOD': [], 'BAD': [], 'UGLY': []}</td>
-      <td>NaN</td>
+      <td>[whale-watching loop]</td>
+      <td>[major_ascend, nya_overflight, low_level_Sveab...</td>
+      <td>[100, 9700]</td>
+      <td>major ascend</td>
+      <td>ACLOUD_P5_RF14_ma</td>
+      <td>2017-06-08 07:36:50</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>[high_level]</td>
-      <td>high level leg 1</td>
+      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
+      <td>2017-06-08 08:25:57</td>
       <td>[]</td>
+      <td>[high_level]</td>
+      <td>[9800]</td>
+      <td>high level 1</td>
       <td>ACLOUD_P5_RF14_hl01</td>
       <td>2017-06-08 08:08:54</td>
-      <td>2017-06-08 08:25:57</td>
-      <td>[9800]</td>
-      <td>{'GOOD': [], 'BAD': [], 'UGLY': []}</td>
       <td>[]</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>[holding_pattern]</td>
-      <td>holding pattern 1</td>
+      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
+      <td>2017-06-08 08:36:30</td>
       <td>[]</td>
+      <td>[holding_pattern]</td>
+      <td>[9800, 9800]</td>
+      <td>holding pattern 1</td>
       <td>ACLOUD_P5_RF14_ho01</td>
       <td>2017-06-08 08:25:57</td>
-      <td>2017-06-08 08:36:30</td>
-      <td>[9800]</td>
-      <td>{'GOOD': [], 'BAD': [], 'UGLY': []}</td>
-      <td>[{'kinds': ['short_turn'], 'start': 2017-06-08...</td>
-      <td>NaN</td>
+      <td>[{'end': 2017-06-08 08:27:33, 'kinds': ['short...</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>[high_level]</td>
-      <td>high level2</td>
+      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde02'], 'UGLY...</td>
+      <td>2017-06-08 08:58:26</td>
       <td>[]</td>
+      <td>[high_level]</td>
+      <td>[9800]</td>
+      <td>high level 2</td>
       <td>ACLOUD_P5_RF14_hl02</td>
       <td>2017-06-08 08:36:30</td>
-      <td>2017-06-08 08:58:26</td>
-      <td>[9800]</td>
-      <td>{'GOOD': ['P5_RF14_sonde02'], 'BAD': [], 'UGLY...</td>
       <td>[]</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>[short_turn]</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2017-06-08 08:58:26</td>
       <td>2017-06-08 08:59:08</td>
       <td>NaN</td>
+      <td>[short_turn]</td>
       <td>NaN</td>
+      <td>short turn</td>
       <td>NaN</td>
+      <td>2017-06-08 08:58:26</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>5</th>
-      <td>[high_level]</td>
-      <td>high level 3</td>
+      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde03'], 'UGLY...</td>
+      <td>2017-06-08 09:30:30</td>
       <td>[]</td>
+      <td>[high_level, a-train_underflight]</td>
+      <td>[9700]</td>
+      <td>high level 3</td>
       <td>ACLOUD_P5_RF14_hl03</td>
       <td>2017-06-08 08:59:08</td>
-      <td>2017-06-08 09:30:30</td>
-      <td>[9800]</td>
-      <td>{'GOOD': ['P5_RF14_sonde03'], 'BAD': [], 'UGLY...</td>
       <td>[]</td>
-      <td>Satellite underflight (A-Train)</td>
     </tr>
     <tr>
       <th>6</th>
-      <td>[short_turn]</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2017-06-08 09:30:30</td>
       <td>2017-06-08 09:31:41</td>
       <td>NaN</td>
+      <td>[short_turn]</td>
       <td>NaN</td>
+      <td>short turn</td>
       <td>NaN</td>
+      <td>2017-06-08 09:30:30</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>7</th>
-      <td>[high_level]</td>
-      <td>high level 4</td>
+      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde04'], 'UGLY...</td>
+      <td>2017-06-08 09:51:04</td>
       <td>[]</td>
+      <td>[high_level]</td>
+      <td>[9700]</td>
+      <td>high level 4</td>
       <td>ACLOUD_P5_RF14_hl04</td>
       <td>2017-06-08 09:31:41</td>
-      <td>2017-06-08 09:51:04</td>
-      <td>[9800]</td>
-      <td>{'GOOD': ['P5_RF14_sonde04'], 'BAD': [], 'UGLY...</td>
       <td>[]</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>8</th>
-      <td>[short_turn]</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2017-06-08 09:51:04</td>
       <td>2017-06-08 09:51:33</td>
       <td>NaN</td>
+      <td>[short_turn]</td>
       <td>NaN</td>
+      <td>short turn</td>
       <td>NaN</td>
+      <td>2017-06-08 09:51:04</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>9</th>
-      <td>[high_level]</td>
-      <td>high level 5</td>
+      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde05'], 'UGLY...</td>
+      <td>2017-06-08 10:00:14</td>
       <td>[]</td>
+      <td>[high_level]</td>
+      <td>[9800]</td>
+      <td>high level 5</td>
       <td>ACLOUD_P5_RF14_hl05</td>
       <td>2017-06-08 09:51:33</td>
-      <td>2017-06-08 10:00:14</td>
-      <td>[9800]</td>
-      <td>{'GOOD': ['P5_RF14_sonde05'], 'BAD': [], 'UGLY...</td>
       <td>[]</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>10</th>
-      <td>[cross_pattern, polarstern_overflight]</td>
-      <td>cross pattern 1</td>
+      <td>NaN</td>
+      <td>2017-06-08 10:10:51</td>
       <td>[]</td>
+      <td>[cross_pattern, polarstern_overflight]</td>
+      <td>[9600, 9700]</td>
+      <td>cross pattern 1</td>
       <td>ACLOUD_P5_RF14_cp01</td>
       <td>2017-06-08 10:00:14</td>
-      <td>2017-06-08 10:10:51</td>
-      <td>[9800]</td>
-      <td>NaN</td>
-      <td>[{'kinds': ['cross_pattern_leg'], 'name': 'cro...</td>
-      <td>NaN</td>
+      <td>[{'end': 2017-06-08 10:03:14, 'irregularities'...</td>
     </tr>
     <tr>
       <th>11</th>
-      <td>[large_descend]</td>
-      <td>large descend</td>
+      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
+      <td>2017-06-08 10:22:44</td>
       <td>[not along straight line]</td>
+      <td>[large_descend]</td>
+      <td>[9700, 200]</td>
+      <td>large descend</td>
       <td>ACLOUD_P5_RF14_ld01</td>
       <td>2017-06-08 10:10:51</td>
-      <td>2017-06-08 10:22:44</td>
-      <td>[9800, 200]</td>
-      <td>{'GOOD': [], 'BAD': [], 'UGLY': []}</td>
-      <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>12</th>
-      <td>[short_turn]</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2017-06-08 11:02:02</td>
       <td>2017-06-08 11:02:25</td>
       <td>NaN</td>
+      <td>[short_turn]</td>
       <td>NaN</td>
+      <td>short turn</td>
       <td>NaN</td>
+      <td>2017-06-08 11:02:02</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>13</th>
-      <td>[large_ascend]</td>
-      <td>large ascend</td>
-      <td>[]</td>
-      <td>ACLOUD_P5_RF14_la01</td>
-      <td>2017-06-08 11:02:25</td>
+      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
       <td>2017-06-08 11:11:20</td>
+      <td>[]</td>
+      <td>[large_ascend]</td>
       <td>[2400, 9700]</td>
-      <td>{'GOOD': [], 'BAD': [], 'UGLY': []}</td>
-      <td>NaN</td>
+      <td>large ascend 2</td>
+      <td>ACLOUD_P5_RF14_la02</td>
+      <td>2017-06-08 11:02:25</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>14</th>
-      <td>[high_level]</td>
-      <td>high level 8</td>
+      <td>{'BAD': ['P5_RF14_sonde06'], 'GOOD': [], 'UGLY...</td>
+      <td>2017-06-08 11:52:57</td>
       <td>[]</td>
+      <td>[high_level]</td>
+      <td>[9700]</td>
+      <td>high level 8</td>
       <td>ACLOUD_P5_RF14_hl08</td>
       <td>2017-06-08 11:11:20</td>
-      <td>2017-06-08 11:52:57</td>
-      <td>[9700]</td>
-      <td>{'GOOD': [], 'BAD': ['P5_RF14_sonde06'], 'UGLY...</td>
-      <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>15</th>
-      <td>[short_turn]</td>
       <td>NaN</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>2017-06-08 11:52:57</td>
       <td>2017-06-08 11:53:38</td>
       <td>NaN</td>
+      <td>[short_turn]</td>
       <td>NaN</td>
+      <td>short turn</td>
       <td>NaN</td>
+      <td>2017-06-08 11:52:57</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>16</th>
-      <td>[high_level]</td>
-      <td>high level 9</td>
+      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde07'], 'UGLY...</td>
+      <td>2017-06-08 12:05:14</td>
       <td>[]</td>
+      <td>[high_level]</td>
+      <td>[9800]</td>
+      <td>high level 9</td>
       <td>ACLOUD_P5_RF14_hl09</td>
       <td>2017-06-08 11:53:38</td>
-      <td>2017-06-08 12:05:14</td>
-      <td>[9700]</td>
-      <td>{'GOOD': ['P5_RF14_sonde07'], 'BAD': [], 'UGLY...</td>
-      <td>NaN</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>17</th>
-      <td>[cross_pattern, nya_overflight]</td>
-      <td>cross pattern 2</td>
+      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
+      <td>2017-06-08 12:25:40</td>
       <td>[]</td>
+      <td>[cross_pattern, nya_overflight]</td>
+      <td>[9800, 9800, 9800]</td>
+      <td>cross pattern 2</td>
       <td>ACLOUD_P5_RF14_cp02</td>
       <td>2017-06-08 12:05:14</td>
-      <td>2017-06-08 12:25:40</td>
-      <td>[9700]</td>
-      <td>{'GOOD': [], 'BAD': [], 'UGLY': []}</td>
-      <td>[{'kinds': ['cross_pattern_leg'], 'name': 'cro...</td>
-      <td>NaN</td>
+      <td>[{'end': 2017-06-08 12:10:14, 'irregularities'...</td>
     </tr>
     <tr>
       <th>18</th>
-      <td>[major_descend]</td>
-      <td>major descend 1</td>
-      <td>[]</td>
-      <td>ACLOUD_P5_RF14_md1</td>
-      <td>2017-06-08 12:25:40</td>
+      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
       <td>2017-06-08 12:51:25</td>
-      <td>[9700, 100]</td>
-      <td>{'GOOD': [], 'BAD': [], 'UGLY': []}</td>
-      <td>NaN</td>
+      <td>[]</td>
+      <td>[major_descend]</td>
+      <td>[9800, 100]</td>
+      <td>major descend</td>
+      <td>ACLOUD_P5_RF14_md</td>
+      <td>2017-06-08 12:25:40</td>
       <td>NaN</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-</div>
-<div class="section" id="example-2-specific-remark">
-<h3>Example 2: Specific remark<a class="headerlink" href="#example-2-specific-remark" title="Permalink to this headline">¶</a></h3>
+<p>Plot the selected elements:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">attribute</span> <span class="o">=</span> <span class="s1">&#39;remark&#39;</span>
-<span class="n">value</span> <span class="o">=</span> <span class="s1">&#39;Satellite underflight (A-Train)&#39;</span>
-
-<span class="n">queried</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">attribute</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">queried</span><span class="p">)</span>
-<span class="n">df</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+    <span class="n">ll</span> <span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">ll</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+    
+<span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">queried</span><span class="p">:</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">]</span>
+    <span class="n">end</span>   <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="s1">&#39;end&#39;</span><span class="p">]</span>
+    
+    <span class="n">line</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds_gps</span><span class="o">.</span><span class="n">lon</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)),</span>
+                   <span class="n">ds_gps</span><span class="o">.</span><span class="n">lat</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)),</span>
+                   <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+    <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    
+<span class="n">fig</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>kinds</th>
-      <th>name</th>
-      <th>remark</th>
-      <th>irregularities</th>
-      <th>segment_id</th>
-      <th>start</th>
-      <th>end</th>
-      <th>levels</th>
-      <th>dropsondes</th>
-      <th>parts</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>[high_level]</td>
-      <td>high level 3</td>
-      <td>Satellite underflight (A-Train)</td>
-      <td>[]</td>
-      <td>ACLOUD_P5_RF14_hl03</td>
-      <td>2017-06-08 08:59:08</td>
-      <td>2017-06-08 09:30:30</td>
-      <td>[9800]</td>
-      <td>{'GOOD': ['P5_RF14_sonde03'], 'BAD': [], 'UGLY...</td>
-      <td>[]</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<img alt="../_images/Reading_the_flight_phase_files_33_0.png" src="../_images/Reading_the_flight_phase_files_33_0.png" />
 </div>
 </div>
-<div class="section" id="example-3-specific-level">
-<h3>Example 3: Specific level<a class="headerlink" href="#example-3-specific-level" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="example-2-specific-level">
+<h3>Example 2: Specific level<a class="headerlink" href="#example-2-specific-level" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">attribute</span> <span class="o">=</span> <span class="s1">&#39;levels&#39;</span>
@@ -1303,139 +1233,130 @@
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>kinds</th>
-      <th>name</th>
+      <th>dropsondes</th>
+      <th>end</th>
       <th>irregularities</th>
+      <th>kinds</th>
+      <th>levels</th>
+      <th>name</th>
+      <th>parts</th>
       <th>segment_id</th>
       <th>start</th>
-      <th>end</th>
-      <th>levels</th>
-      <th>dropsondes</th>
-      <th>parts</th>
-      <th>remark</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>[major_ascend, nya_overflight, low_level_Sveab...</td>
-      <td>major ascend 1</td>
-      <td>[whale-watching loop]</td>
-      <td>ACLOUD_P5_RF14_ma1</td>
-      <td>2017-06-08 07:36:50</td>
-      <td>2017-06-08 08:08:54</td>
-      <td>[100, 9800]</td>
-      <td>{'GOOD': [], 'BAD': [], 'UGLY': []}</td>
-      <td>NaN</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
+      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
+      <td>2017-06-08 08:25:57</td>
+      <td>[]</td>
       <td>[high_level]</td>
-      <td>high level leg 1</td>
+      <td>[9800]</td>
+      <td>high level 1</td>
       <td>[]</td>
       <td>ACLOUD_P5_RF14_hl01</td>
       <td>2017-06-08 08:08:54</td>
-      <td>2017-06-08 08:25:57</td>
-      <td>[9800]</td>
-      <td>{'GOOD': [], 'BAD': [], 'UGLY': []}</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
+      <td>2017-06-08 08:36:30</td>
       <td>[]</td>
-      <td>NaN</td>
+      <td>[holding_pattern]</td>
+      <td>[9800, 9800]</td>
+      <td>holding pattern 1</td>
+      <td>[{'end': 2017-06-08 08:27:33, 'kinds': ['short...</td>
+      <td>ACLOUD_P5_RF14_ho01</td>
+      <td>2017-06-08 08:25:57</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>[holding_pattern]</td>
-      <td>holding pattern 1</td>
+      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde02'], 'UGLY...</td>
+      <td>2017-06-08 08:58:26</td>
       <td>[]</td>
-      <td>ACLOUD_P5_RF14_ho01</td>
-      <td>2017-06-08 08:25:57</td>
-      <td>2017-06-08 08:36:30</td>
-      <td>[9800]</td>
-      <td>{'GOOD': [], 'BAD': [], 'UGLY': []}</td>
-      <td>[{'kinds': ['short_turn'], 'start': 2017-06-08...</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>3</th>
       <td>[high_level]</td>
-      <td>high level2</td>
+      <td>[9800]</td>
+      <td>high level 2</td>
       <td>[]</td>
       <td>ACLOUD_P5_RF14_hl02</td>
       <td>2017-06-08 08:36:30</td>
-      <td>2017-06-08 08:58:26</td>
-      <td>[9800]</td>
-      <td>{'GOOD': ['P5_RF14_sonde02'], 'BAD': [], 'UGLY...</td>
-      <td>[]</td>
-      <td>NaN</td>
     </tr>
     <tr>
-      <th>4</th>
-      <td>[high_level]</td>
-      <td>high level 3</td>
+      <th>3</th>
+      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde05'], 'UGLY...</td>
+      <td>2017-06-08 10:00:14</td>
       <td>[]</td>
-      <td>ACLOUD_P5_RF14_hl03</td>
-      <td>2017-06-08 08:59:08</td>
-      <td>2017-06-08 09:30:30</td>
+      <td>[high_level]</td>
       <td>[9800]</td>
-      <td>{'GOOD': ['P5_RF14_sonde03'], 'BAD': [], 'UGLY...</td>
-      <td>[]</td>
-      <td>Satellite underflight (A-Train)</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>[high_level]</td>
-      <td>high level 4</td>
-      <td>[]</td>
-      <td>ACLOUD_P5_RF14_hl04</td>
-      <td>2017-06-08 09:31:41</td>
-      <td>2017-06-08 09:51:04</td>
-      <td>[9800]</td>
-      <td>{'GOOD': ['P5_RF14_sonde04'], 'BAD': [], 'UGLY...</td>
-      <td>[]</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>[high_level]</td>
       <td>high level 5</td>
       <td>[]</td>
       <td>ACLOUD_P5_RF14_hl05</td>
       <td>2017-06-08 09:51:33</td>
-      <td>2017-06-08 10:00:14</td>
-      <td>[9800]</td>
-      <td>{'GOOD': ['P5_RF14_sonde05'], 'BAD': [], 'UGLY...</td>
-      <td>[]</td>
-      <td>NaN</td>
     </tr>
     <tr>
-      <th>7</th>
-      <td>[cross_pattern, polarstern_overflight]</td>
-      <td>cross pattern 1</td>
+      <th>4</th>
+      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde07'], 'UGLY...</td>
+      <td>2017-06-08 12:05:14</td>
       <td>[]</td>
-      <td>ACLOUD_P5_RF14_cp01</td>
-      <td>2017-06-08 10:00:14</td>
-      <td>2017-06-08 10:10:51</td>
+      <td>[high_level]</td>
       <td>[9800]</td>
+      <td>high level 9</td>
       <td>NaN</td>
-      <td>[{'kinds': ['cross_pattern_leg'], 'name': 'cro...</td>
-      <td>NaN</td>
+      <td>ACLOUD_P5_RF14_hl09</td>
+      <td>2017-06-08 11:53:38</td>
     </tr>
     <tr>
-      <th>8</th>
-      <td>[large_descend]</td>
-      <td>large descend</td>
-      <td>[not along straight line]</td>
-      <td>ACLOUD_P5_RF14_ld01</td>
-      <td>2017-06-08 10:10:51</td>
-      <td>2017-06-08 10:22:44</td>
-      <td>[9800, 200]</td>
-      <td>{'GOOD': [], 'BAD': [], 'UGLY': []}</td>
+      <th>5</th>
+      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
+      <td>2017-06-08 12:25:40</td>
+      <td>[]</td>
+      <td>[cross_pattern, nya_overflight]</td>
+      <td>[9800, 9800, 9800]</td>
+      <td>cross pattern 2</td>
+      <td>[{'end': 2017-06-08 12:10:14, 'irregularities'...</td>
+      <td>ACLOUD_P5_RF14_cp02</td>
+      <td>2017-06-08 12:05:14</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
+      <td>2017-06-08 12:51:25</td>
+      <td>[]</td>
+      <td>[major_descend]</td>
+      <td>[9800, 100]</td>
+      <td>major descend</td>
       <td>NaN</td>
-      <td>NaN</td>
+      <td>ACLOUD_P5_RF14_md</td>
+      <td>2017-06-08 12:25:40</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
+</div>
+<p>Plot the selected elements:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+    <span class="n">ll</span> <span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">ll</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+    
+<span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">queried</span><span class="p">:</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">]</span>
+    <span class="n">end</span>   <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="s1">&#39;end&#39;</span><span class="p">]</span>
+    
+    <span class="n">line</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds_gps</span><span class="o">.</span><span class="n">lon</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)),</span>
+                   <span class="n">ds_gps</span><span class="o">.</span><span class="n">lat</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)),</span>
+                   <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+    <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    
+<span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Reading_the_flight_phase_files_37_0.png" src="../_images/Reading_the_flight_phase_files_37_0.png" />
+</div>
 </div>
 <p>But what if we want only a specific level without ascend and descend? We can require that the attribute value is strictly equal to the one, that we give, i.e. thare no other values:</p>
 <div class="cell docutils container">
@@ -1466,115 +1387,95 @@
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>kinds</th>
-      <th>name</th>
+      <th>dropsondes</th>
+      <th>end</th>
       <th>irregularities</th>
+      <th>kinds</th>
+      <th>levels</th>
+      <th>name</th>
+      <th>parts</th>
       <th>segment_id</th>
       <th>start</th>
-      <th>end</th>
-      <th>levels</th>
-      <th>dropsondes</th>
-      <th>parts</th>
-      <th>remark</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
+      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
+      <td>2017-06-08 08:25:57</td>
+      <td>[]</td>
       <td>[high_level]</td>
-      <td>high level leg 1</td>
+      <td>[9800]</td>
+      <td>high level 1</td>
       <td>[]</td>
       <td>ACLOUD_P5_RF14_hl01</td>
       <td>2017-06-08 08:08:54</td>
-      <td>2017-06-08 08:25:57</td>
-      <td>[9800]</td>
-      <td>{'GOOD': [], 'BAD': [], 'UGLY': []}</td>
-      <td>[]</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>[holding_pattern]</td>
-      <td>holding pattern 1</td>
+      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde02'], 'UGLY...</td>
+      <td>2017-06-08 08:58:26</td>
       <td>[]</td>
-      <td>ACLOUD_P5_RF14_ho01</td>
-      <td>2017-06-08 08:25:57</td>
-      <td>2017-06-08 08:36:30</td>
-      <td>[9800]</td>
-      <td>{'GOOD': [], 'BAD': [], 'UGLY': []}</td>
-      <td>[{'kinds': ['short_turn'], 'start': 2017-06-08...</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2</th>
       <td>[high_level]</td>
-      <td>high level2</td>
+      <td>[9800]</td>
+      <td>high level 2</td>
       <td>[]</td>
       <td>ACLOUD_P5_RF14_hl02</td>
       <td>2017-06-08 08:36:30</td>
-      <td>2017-06-08 08:58:26</td>
-      <td>[9800]</td>
-      <td>{'GOOD': ['P5_RF14_sonde02'], 'BAD': [], 'UGLY...</td>
-      <td>[]</td>
-      <td>NaN</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>[high_level]</td>
-      <td>high level 3</td>
+      <th>2</th>
+      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde05'], 'UGLY...</td>
+      <td>2017-06-08 10:00:14</td>
       <td>[]</td>
-      <td>ACLOUD_P5_RF14_hl03</td>
-      <td>2017-06-08 08:59:08</td>
-      <td>2017-06-08 09:30:30</td>
+      <td>[high_level]</td>
       <td>[9800]</td>
-      <td>{'GOOD': ['P5_RF14_sonde03'], 'BAD': [], 'UGLY...</td>
-      <td>[]</td>
-      <td>Satellite underflight (A-Train)</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>[high_level]</td>
-      <td>high level 4</td>
-      <td>[]</td>
-      <td>ACLOUD_P5_RF14_hl04</td>
-      <td>2017-06-08 09:31:41</td>
-      <td>2017-06-08 09:51:04</td>
-      <td>[9800]</td>
-      <td>{'GOOD': ['P5_RF14_sonde04'], 'BAD': [], 'UGLY...</td>
-      <td>[]</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>[high_level]</td>
       <td>high level 5</td>
       <td>[]</td>
       <td>ACLOUD_P5_RF14_hl05</td>
       <td>2017-06-08 09:51:33</td>
-      <td>2017-06-08 10:00:14</td>
-      <td>[9800]</td>
-      <td>{'GOOD': ['P5_RF14_sonde05'], 'BAD': [], 'UGLY...</td>
-      <td>[]</td>
-      <td>NaN</td>
     </tr>
     <tr>
-      <th>6</th>
-      <td>[cross_pattern, polarstern_overflight]</td>
-      <td>cross pattern 1</td>
+      <th>3</th>
+      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde07'], 'UGLY...</td>
+      <td>2017-06-08 12:05:14</td>
       <td>[]</td>
-      <td>ACLOUD_P5_RF14_cp01</td>
-      <td>2017-06-08 10:00:14</td>
-      <td>2017-06-08 10:10:51</td>
+      <td>[high_level]</td>
       <td>[9800]</td>
+      <td>high level 9</td>
       <td>NaN</td>
-      <td>[{'kinds': ['cross_pattern_leg'], 'name': 'cro...</td>
-      <td>NaN</td>
+      <td>ACLOUD_P5_RF14_hl09</td>
+      <td>2017-06-08 11:53:38</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
-<p>This functions only if the attribute has more values, as for level or kind.</p>
+<p>This functions only if the attribute has more values, as for level or kind. Now plot the selected elements:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+    <span class="n">ll</span> <span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">ll</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+    
+<span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">queried</span><span class="p">:</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">]</span>
+    <span class="n">end</span>   <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="s1">&#39;end&#39;</span><span class="p">]</span>
+    
+    <span class="n">line</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds_gps</span><span class="o">.</span><span class="n">lon</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)),</span>
+                   <span class="n">ds_gps</span><span class="o">.</span><span class="n">lat</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)),</span>
+                   <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+    <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    
+<span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Reading_the_flight_phase_files_41_0.png" src="../_images/Reading_the_flight_phase_files_41_0.png" />
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="query-all-segments-with-good-or-bad-dropsondes">
@@ -1607,87 +1508,106 @@
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>kinds</th>
-      <th>name</th>
+      <th>dropsondes</th>
+      <th>end</th>
       <th>irregularities</th>
+      <th>kinds</th>
+      <th>levels</th>
+      <th>name</th>
+      <th>parts</th>
       <th>segment_id</th>
       <th>start</th>
-      <th>end</th>
-      <th>levels</th>
-      <th>dropsondes</th>
-      <th>parts</th>
-      <th>remark</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
+      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde02'], 'UGLY...</td>
+      <td>2017-06-08 08:58:26</td>
+      <td>[]</td>
       <td>[high_level]</td>
-      <td>high level2</td>
+      <td>[9800]</td>
+      <td>high level 2</td>
       <td>[]</td>
       <td>ACLOUD_P5_RF14_hl02</td>
       <td>2017-06-08 08:36:30</td>
-      <td>2017-06-08 08:58:26</td>
-      <td>[9800]</td>
-      <td>{'GOOD': ['P5_RF14_sonde02'], 'BAD': [], 'UGLY...</td>
-      <td>[]</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>[high_level]</td>
+      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde03'], 'UGLY...</td>
+      <td>2017-06-08 09:30:30</td>
+      <td>[]</td>
+      <td>[high_level, a-train_underflight]</td>
+      <td>[9700]</td>
       <td>high level 3</td>
       <td>[]</td>
       <td>ACLOUD_P5_RF14_hl03</td>
       <td>2017-06-08 08:59:08</td>
-      <td>2017-06-08 09:30:30</td>
-      <td>[9800]</td>
-      <td>{'GOOD': ['P5_RF14_sonde03'], 'BAD': [], 'UGLY...</td>
-      <td>[]</td>
-      <td>Satellite underflight (A-Train)</td>
     </tr>
     <tr>
       <th>2</th>
+      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde04'], 'UGLY...</td>
+      <td>2017-06-08 09:51:04</td>
+      <td>[]</td>
       <td>[high_level]</td>
+      <td>[9700]</td>
       <td>high level 4</td>
       <td>[]</td>
       <td>ACLOUD_P5_RF14_hl04</td>
       <td>2017-06-08 09:31:41</td>
-      <td>2017-06-08 09:51:04</td>
-      <td>[9800]</td>
-      <td>{'GOOD': ['P5_RF14_sonde04'], 'BAD': [], 'UGLY...</td>
-      <td>[]</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>3</th>
+      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde05'], 'UGLY...</td>
+      <td>2017-06-08 10:00:14</td>
+      <td>[]</td>
       <td>[high_level]</td>
+      <td>[9800]</td>
       <td>high level 5</td>
       <td>[]</td>
       <td>ACLOUD_P5_RF14_hl05</td>
       <td>2017-06-08 09:51:33</td>
-      <td>2017-06-08 10:00:14</td>
-      <td>[9800]</td>
-      <td>{'GOOD': ['P5_RF14_sonde05'], 'BAD': [], 'UGLY...</td>
-      <td>[]</td>
-      <td>NaN</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>[high_level]</td>
-      <td>high level 9</td>
+      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde07'], 'UGLY...</td>
+      <td>2017-06-08 12:05:14</td>
       <td>[]</td>
+      <td>[high_level]</td>
+      <td>[9800]</td>
+      <td>high level 9</td>
+      <td>NaN</td>
       <td>ACLOUD_P5_RF14_hl09</td>
       <td>2017-06-08 11:53:38</td>
-      <td>2017-06-08 12:05:14</td>
-      <td>[9700]</td>
-      <td>{'GOOD': ['P5_RF14_sonde07'], 'BAD': [], 'UGLY...</td>
-      <td>NaN</td>
-      <td>NaN</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
+</div>
+<p>Plot the selected elements:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+    <span class="n">ll</span> <span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">ll</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+    
+<span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">queried</span><span class="p">:</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">]</span>
+    <span class="n">end</span>   <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="s1">&#39;end&#39;</span><span class="p">]</span>
+    
+    <span class="n">line</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds_gps</span><span class="o">.</span><span class="n">lon</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)),</span>
+                   <span class="n">ds_gps</span><span class="o">.</span><span class="n">lat</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)),</span>
+                   <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+    <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    
+<span class="n">fig</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/Reading_the_flight_phase_files_45_0.png" src="../_images/Reading_the_flight_phase_files_45_0.png" />
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1717,66 +1637,56 @@
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>kinds</th>
-      <th>name</th>
+      <th>dropsondes</th>
+      <th>end</th>
       <th>irregularities</th>
+      <th>kinds</th>
+      <th>levels</th>
+      <th>name</th>
       <th>segment_id</th>
       <th>start</th>
-      <th>end</th>
-      <th>levels</th>
-      <th>dropsondes</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>[high_level]</td>
-      <td>high level 8</td>
+      <td>{'BAD': ['P5_RF14_sonde06'], 'GOOD': [], 'UGLY...</td>
+      <td>2017-06-08 11:52:57</td>
       <td>[]</td>
+      <td>[high_level]</td>
+      <td>[9700]</td>
+      <td>high level 8</td>
       <td>ACLOUD_P5_RF14_hl08</td>
       <td>2017-06-08 11:11:20</td>
-      <td>2017-06-08 11:52:57</td>
-      <td>[9700]</td>
-      <td>{'GOOD': [], 'BAD': ['P5_RF14_sonde06'], 'UGLY...</td>
     </tr>
   </tbody>
 </table>
 </div></div></div>
 </div>
+<p>Plot the selected elements:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">queried</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">selectDropSondes</span><span class="p">(</span><span class="s1">&#39;UGLY&#39;</span><span class="p">)</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">queried</span><span class="p">)</span>
-<span class="n">df</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+    <span class="n">ll</span> <span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">ll</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
+    
+<span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">queried</span><span class="p">:</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">]</span>
+    <span class="n">end</span>   <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="s1">&#39;end&#39;</span><span class="p">]</span>
+    
+    <span class="n">line</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds_gps</span><span class="o">.</span><span class="n">lon</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)),</span>
+                   <span class="n">ds_gps</span><span class="o">.</span><span class="n">lat</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)),</span>
+                   <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+    <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+    
+<span class="n">fig</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-  </tbody>
-</table>
-</div></div></div>
+<img alt="../_images/Reading_the_flight_phase_files_48_0.png" src="../_images/Reading_the_flight_phase_files_48_0.png" />
+</div>
 </div>
 </div>
 </div>
