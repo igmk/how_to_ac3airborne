@@ -33,3 +33,5 @@
   sections:
   - file: examples/get_segments
   - file: examples/flight_tracks
+  - file: exmaples/Reading_the_flight_phase_files
+  - file: exmaples/land_ocean
