@@ -44,7 +44,7 @@ Pattern usually consist of parts like legs and turns named accordingly.
 | sawtooth_pattern      | Continious climbing follow by descending or the other way round.| _st01 |
 | waiting_pattern       | Anything to waist time | |
 
-![alt text](racetrack_pattern.png "race track pattern")
+Race track: ![alt text](racetrack_pattern.png "race track pattern")
 
 #### turn
 | kinds          |             |
@@ -53,8 +53,8 @@ Pattern usually consist of parts like legs and turns named accordingly.
 | long_turn      | Turn on the long way to the next direction without cutting the corner. |
 | procedure_turn | Perform 180 deg turn to be directly on track again in opposite direction. |
 
-![alt text](short_turn.png "Short turn")
-![alt text](procedure_turn.png "procedure turns")
+Short turn: ![alt text](short_turn.png "Short turn")
+Procedure turn: ![alt text](procedure_turn.png "procedure turns")
 
 This table is just a template!
 
