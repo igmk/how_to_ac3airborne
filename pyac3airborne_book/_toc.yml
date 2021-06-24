@@ -11,26 +11,27 @@
 - file: datasets
   title: Datasets
   sections:
-    - file: flight_tracks
-      title: Flight tracks
-    - file: dropsondes
+    - file: datasets/dropsondes
       title: Dropsondes
-    - file: mirac
+    - file: datasets/mirac
       title: MiRAC
-    - file: amali
+    - file: datasets/amali
       title: AMALi
-    - file: kt19
+    - file: datasets/kt19
       title: KT-19
+    - file: datasets/dropsondes
+      title: Dropsondes
+    - file: datasets/gps_ins
+      title: GPS/INS
+
 - file: guidelines
   title: Guidelines
   title: yaml file design
   sections:
   - file: yamls/flights
-  - file: yamls/gps_ins
-  - file: yamls/dropsondes
 - file: code
   title: Code
   sections:
   - file: examples/flight_tracks
-  - file: examples/Reading_the_flight_phase_files
+  - file: examples/reading_the_flight_phase_files
   - file: examples/land_ocean
