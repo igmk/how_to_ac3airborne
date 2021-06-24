@@ -11,8 +11,6 @@
 - file: datasets
   title: Datasets
   sections:
-    - file: datasets/dropsondes
-      title: Dropsondes
     - file: datasets/mirac
       title: MiRAC
     - file: datasets/amali
