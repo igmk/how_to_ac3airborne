@@ -42,7 +42,7 @@ Pattern usually consist of parts like legs and turns named accordingly.
 | holding_pattern       | Spending time with waiting.| _ho01 |
 | stairstep_pattern     | Stepwise up or down along a straight line.| _ss01 |
 | sawtooth_pattern      | Continious climbing follow by descending or the other way round.| _st01 |
-| waiting_pattern       | Anything to waist time | |
+| waiting_pattern       | Anything to waist time or new alignment | |
 
 Race track: ![alt text](racetrack_pattern.png "race track pattern")
 
@@ -112,11 +112,3 @@ segments:
     BAD: []
     UGLY: []
 ```
-
-import numpy as np
-import matplotlib.pyplot as plt
-plt.ion()
-
-data = np.random.randn(2, 100)
-fig, ax = plt.subplots()
-ax.scatter(*data, c=data[1], s=100*np.abs(data[0]));
