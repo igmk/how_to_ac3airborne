@@ -31,7 +31,6 @@
 - file: code
   title: Code
   sections:
-  - file: examples/get_segments
   - file: examples/flight_tracks
   - file: examples/Reading_the_flight_phase_files
   - file: examples/land_ocean
