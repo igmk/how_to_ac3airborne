@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MiRAC-A dataset &#8212; pyac3airborne-book</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -20,10 +19,14 @@
 
     
       
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -31,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -41,7 +44,9 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -53,14 +58,14 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="MiRAC-P" href="../datasets/mirac-p.html" />
     <link rel="prev" title="Datasets" href="../datasets.html" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-    
+
+
+
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
-
     
 
     <div class="container-xl">
@@ -69,42 +74,37 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
-      
-      <img src="../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">pyac3airborne-book</h1>
-      
-    </a>
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">pyac3airborne-book</h1>
+  
+</a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
    Introduction
   </a>
  </li>
 </ul>
-<ul class="current nav bd-sidenav">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../campaigns.html">
    Campaigns
   </a>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="../datasets.html">
    Datasets
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
+  <ul class="current collapse-ul">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      MiRAC-A dataset
@@ -136,34 +136,28 @@
     </a>
    </li>
   </ul>
+  <i class="fas fa-chevron-down">
+  </i>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../guidelines.html">
    yaml file design
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
+  <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="../yamls/flights.html">
      flight-phase-separation
     </a>
    </li>
   </ul>
+  <i class="fas fa-chevron-down">
+  </i>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../code.html">
    Code
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
+  <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="flight_tracks.html">
      Flight tracks from segment files
@@ -183,10 +177,11 @@
     </a>
    </li>
   </ul>
+  <i class="fas fa-chevron-down">
+  </i>
  </li>
 </ul>
 
-    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -236,12 +231,12 @@
 
             <!-- Source interaction buttons -->
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -267,11 +262,12 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav">
-                <ul class="visible nav section-nav flex-column">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#data-access">
    Data access
@@ -289,7 +285,8 @@
  </li>
 </ul>
 
-            </nav>
+        </nav>
+        
         </div>
     </div>
 </div>
@@ -751,12 +748,12 @@ Attributes: (12/14)
     instrument:   MiRAC-A: Microwave Radar/radiometer for Arctic Clouds (active)
     author:       Nils Risse
     contact:      n.risse@uni-koeln.de, l.kliesch@uni-koeln.de, mario.mech@un...
-    created:      2021-08-09</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-4334f79b-13f0-48c7-bdb1-a848ea28ba96' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-4334f79b-13f0-48c7-bdb1-a848ea28ba96' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>height</span>: 1400</li><li><span class='xr-has-index'>time</span>: 11765</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-c368da60-4e3c-4ddb-a9bb-91d5624c87d1' class='xr-section-summary-in' type='checkbox'  checked><label for='section-c368da60-4e3c-4ddb-a9bb-91d5624c87d1' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2017-05-25T08:18:18 ... 2017-05-...</div><input id='attrs-efb64c92-6300-4f63-bbb2-6a1fdc5a53f9' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-efb64c92-6300-4f63-bbb2-6a1fdc5a53f9' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c744d68a-727e-4b91-bfef-167c54eee16a' class='xr-var-data-in' type='checkbox'><label for='data-c744d68a-727e-4b91-bfef-167c54eee16a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>time</dd><dt><span>long_name :</span></dt><dd>time in seconds since epoch</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;2017-05-25T08:18:18.000000000&#x27;, &#x27;2017-05-25T08:18:19.000000000&#x27;,
+    created:      2021-08-09</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-b09e3562-712a-42c6-a676-ddfeca31a7e0' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-b09e3562-712a-42c6-a676-ddfeca31a7e0' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>height</span>: 1400</li><li><span class='xr-has-index'>time</span>: 11765</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-a8d589ed-5237-4e01-8e21-010afdc2e18e' class='xr-section-summary-in' type='checkbox'  checked><label for='section-a8d589ed-5237-4e01-8e21-010afdc2e18e' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2017-05-25T08:18:18 ... 2017-05-...</div><input id='attrs-98f2314f-4b01-422e-ae52-640bce7ffb74' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-98f2314f-4b01-422e-ae52-640bce7ffb74' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-7d306093-0011-4805-8609-3317faa011c8' class='xr-var-data-in' type='checkbox'><label for='data-7d306093-0011-4805-8609-3317faa011c8' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>time</dd><dt><span>long_name :</span></dt><dd>time in seconds since epoch</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;2017-05-25T08:18:18.000000000&#x27;, &#x27;2017-05-25T08:18:19.000000000&#x27;,
        &#x27;2017-05-25T08:18:20.000000000&#x27;, ..., &#x27;2017-05-25T12:40:20.000000000&#x27;,
        &#x27;2017-05-25T12:40:21.000000000&#x27;, &#x27;2017-05-25T12:40:22.000000000&#x27;],
-      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>height</span></div><div class='xr-var-dims'>(height)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>-1e+03 -995.0 ... 5.995e+03</div><input id='attrs-5fe58aea-836c-4c81-bb71-bd2ae47db087' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-5fe58aea-836c-4c81-bb71-bd2ae47db087' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e8df6d67-c3f7-48a2-bbda-73fe34a688a6' class='xr-var-data-in' type='checkbox'><label for='data-e8df6d67-c3f7-48a2-bbda-73fe34a688a6' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>height</dd><dt><span>long_name :</span></dt><dd>radar bin height</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>comment :</span></dt><dd>radar bins with resolution of 5 m</dd></dl></div><div class='xr-var-data'><pre>array([-1000.,  -995.,  -990., ...,  5985.,  5990.,  5995.], dtype=float32)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-6ba9285d-bf40-4300-a692-387c8dcee7d2' class='xr-section-summary-in' type='checkbox'  checked><label for='section-6ba9285d-bf40-4300-a692-387c8dcee7d2' class='xr-section-summary' >Data variables: <span>(7)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>Ze_unfiltered</span></div><div class='xr-var-dims'>(time, height)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-4bb2eaa6-2083-4138-8b83-d59d8c22d62a' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-4bb2eaa6-2083-4138-8b83-d59d8c22d62a' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c271147b-adfa-4329-9841-da6f3b210bff' class='xr-var-data-in' type='checkbox'><label for='data-c271147b-adfa-4329-9841-da6f3b210bff' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>equivalent_reflectivity_factor</dd><dt><span>long_name :</span></dt><dd>equivalent radar reflectivity factor</dd><dt><span>units :</span></dt><dd>mm^6/m^3</dd><dt><span>comment :</span></dt><dd>original measurements corrected by +3 dB according to radar-manufacturer note (RPG-Radiometer Physics GmbH, 2018-08-30), interpolated to regular height grid and transformed to quasi-nadir observations</dd></dl></div><div class='xr-var-data'><pre>[16471000 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Ze</span></div><div class='xr-var-dims'>(time, height)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-f6f86178-00f1-4d2b-a4c9-679f0cf15a91' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f6f86178-00f1-4d2b-a4c9-679f0cf15a91' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ab1dc70b-1f44-4701-ba7f-fc93874ada4e' class='xr-var-data-in' type='checkbox'><label for='data-ab1dc70b-1f44-4701-ba7f-fc93874ada4e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>equivalent_reflectivity_factor</dd><dt><span>long_name :</span></dt><dd>equivalent radar reflectivity factor</dd><dt><span>units :</span></dt><dd>mm^6/m^3</dd><dt><span>comment :</span></dt><dd>original measurements corrected by +3 dB according to radar-manufacturer note (RPG-Radiometer Physics GmbH, 2018-08-30), interpolated to regular height grid, transformed to quasi-nadir observations and filtered for disturbances (see Ze_flag)</dd></dl></div><div class='xr-var-data'><pre>[16471000 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>TB_89</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-f00aa9f5-828b-4991-bd1d-91e9b29e7ce9' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f00aa9f5-828b-4991-bd1d-91e9b29e7ce9' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-24bb6263-00a4-4a2b-98bf-56cbc4d48890' class='xr-var-data-in' type='checkbox'><label for='data-24bb6263-00a4-4a2b-98bf-56cbc4d48890' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>brightness_temperature</dd><dt><span>long_name :</span></dt><dd>brightness temperature</dd><dt><span>units :</span></dt><dd>K</dd><dt><span>description :</span></dt><dd>89 GHz brightness temperature</dd></dl></div><div class='xr-var-data'><pre>array([234.79802, 278.25922, 262.102  , ..., 170.66077, 170.50888, 170.42293],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Ze_flag</span></div><div class='xr-var-dims'>(time, height)</div><div class='xr-var-dtype'>int32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-d161f369-15f7-4f44-98c6-a5f4e14c07a0' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-d161f369-15f7-4f44-98c6-a5f4e14c07a0' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-396756bc-883f-4433-a4e7-a8c6f3c4237f' class='xr-var-data-in' type='checkbox'><label for='data-396756bc-883f-4433-a4e7-a8c6f3c4237f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>Ze_flag</dd><dt><span>long_name :</span></dt><dd>flag for equivalent radar reflectivity factor</dd><dt><span>flag_masks :</span></dt><dd>1 2 4 8 16 32 64 128</dd><dt><span>flag_meanings :</span></dt><dd>defective_gate_filter snr_filter speckle_filter subsurface_reflection_filter quality_disturbance_possible_range quality_surface_influence_range quality_disturbance_in_cloud quality_disturbance</dd><dt><span>description :</span></dt><dd>values 1, 2, 4, 8: filtered signals; values 16, 64: deteriorated signals; values 32, 128: recommended for cloud analyses</dd></dl></div><div class='xr-var-data'><pre>[16471000 values with dtype=int32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>altitude</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-3e52814f-cd63-4bde-bc7b-4b91876b3002' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-3e52814f-cd63-4bde-bc7b-4b91876b3002' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-61082589-7908-4021-a26f-1b322f2a44aa' class='xr-var-data-in' type='checkbox'><label for='data-61082589-7908-4021-a26f-1b322f2a44aa' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>altitude</dd><dt><span>long_name :</span></dt><dd>aircraft flight altitude above mean sea level</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([150.03773, 158.23862, 165.955  , ..., 855.40424, 850.99915, 846.541  ],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lon</span></div><div class='xr-var-dims'>(time, height)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-db5ebd54-1a93-409b-9aca-78cd2b710e04' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-db5ebd54-1a93-409b-9aca-78cd2b710e04' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f04f159b-13fc-4d16-b8d7-10d963f8bbc2' class='xr-var-data-in' type='checkbox'><label for='data-f04f159b-13fc-4d16-b8d7-10d963f8bbc2' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd></dl></div><div class='xr-var-data'><pre>[16471000 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat</span></div><div class='xr-var-dims'>(time, height)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-77dbbf91-3aba-4654-8e20-d3d5e309b1e8' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-77dbbf91-3aba-4654-8e20-d3d5e309b1e8' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0f8c0818-bf69-4c20-8956-a6a38703f8c9' class='xr-var-data-in' type='checkbox'><label for='data-0f8c0818-bf69-4c20-8956-a6a38703f8c9' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd></dl></div><div class='xr-var-data'><pre>[16471000 values with dtype=float32]</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-6d05f211-beb5-466b-a76b-3c55c220e609' class='xr-section-summary-in' type='checkbox'  ><label for='section-6d05f211-beb5-466b-a76b-3c55c220e609' class='xr-section-summary' >Attributes: <span>(14)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>title :</span></dt><dd>MiRAC-A observations onboard Polar 5 during ACLOUD</dd><dt><span>institution :</span></dt><dd>Institute of Geophysics and Meteorology (IGM), University of Cologne</dd><dt><span>source :</span></dt><dd>airborne observation</dd><dt><span>history :</span></dt><dd>measured onboard Polar 5 during ACLOUD campaign; processed, quality-checked and reformatted by University of Cologne</dd><dt><span>comment :</span></dt><dd>the radar system and the 89 GHz channel were inclined by 25 degrees. However, only Ze is already transformed to nadir.</dd><dt><span>convention :</span></dt><dd>CF-1.8</dd><dt><span>featureType :</span></dt><dd>trajectory</dd><dt><span>mission :</span></dt><dd>ACLOUD</dd><dt><span>platform :</span></dt><dd>Polar 5</dd><dt><span>flight_id :</span></dt><dd>RF05</dd><dt><span>instrument :</span></dt><dd>MiRAC-A: Microwave Radar/radiometer for Arctic Clouds (active)</dd><dt><span>author :</span></dt><dd>Nils Risse</dd><dt><span>contact :</span></dt><dd>n.risse@uni-koeln.de, l.kliesch@uni-koeln.de, mario.mech@uni-koeln.de</dd><dt><span>created :</span></dt><dd>2021-08-09</dd></dl></div></li></ul></div></div></div></div>
+      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>height</span></div><div class='xr-var-dims'>(height)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>-1e+03 -995.0 ... 5.995e+03</div><input id='attrs-e3d0e4ef-2363-4977-927e-984abce06637' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e3d0e4ef-2363-4977-927e-984abce06637' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-fd131e11-dbad-406a-b317-79c9a33da865' class='xr-var-data-in' type='checkbox'><label for='data-fd131e11-dbad-406a-b317-79c9a33da865' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>height</dd><dt><span>long_name :</span></dt><dd>radar bin height</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>comment :</span></dt><dd>radar bins with resolution of 5 m</dd></dl></div><div class='xr-var-data'><pre>array([-1000.,  -995.,  -990., ...,  5985.,  5990.,  5995.], dtype=float32)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-99b1b1aa-dbaa-4cc5-9246-05fd915fa57a' class='xr-section-summary-in' type='checkbox'  checked><label for='section-99b1b1aa-dbaa-4cc5-9246-05fd915fa57a' class='xr-section-summary' >Data variables: <span>(7)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>Ze_unfiltered</span></div><div class='xr-var-dims'>(time, height)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-c092753d-040c-49a8-b4a1-96631171435b' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c092753d-040c-49a8-b4a1-96631171435b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c5df4cea-bf59-4826-ae56-aa3dc5e3aa94' class='xr-var-data-in' type='checkbox'><label for='data-c5df4cea-bf59-4826-ae56-aa3dc5e3aa94' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>equivalent_reflectivity_factor</dd><dt><span>long_name :</span></dt><dd>equivalent radar reflectivity factor</dd><dt><span>units :</span></dt><dd>mm^6/m^3</dd><dt><span>comment :</span></dt><dd>original measurements corrected by +3 dB according to radar-manufacturer note (RPG-Radiometer Physics GmbH, 2018-08-30), interpolated to regular height grid and transformed to quasi-nadir observations</dd></dl></div><div class='xr-var-data'><pre>[16471000 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Ze</span></div><div class='xr-var-dims'>(time, height)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-674c8ff0-8d7e-429b-b93e-dfbe8cc99193' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-674c8ff0-8d7e-429b-b93e-dfbe8cc99193' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-068ffa43-ad71-4575-bcc3-c40a6f8789d3' class='xr-var-data-in' type='checkbox'><label for='data-068ffa43-ad71-4575-bcc3-c40a6f8789d3' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>equivalent_reflectivity_factor</dd><dt><span>long_name :</span></dt><dd>equivalent radar reflectivity factor</dd><dt><span>units :</span></dt><dd>mm^6/m^3</dd><dt><span>comment :</span></dt><dd>original measurements corrected by +3 dB according to radar-manufacturer note (RPG-Radiometer Physics GmbH, 2018-08-30), interpolated to regular height grid, transformed to quasi-nadir observations and filtered for disturbances (see Ze_flag)</dd></dl></div><div class='xr-var-data'><pre>[16471000 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>TB_89</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-971f458d-73bb-4bc2-9cc0-663daee6d67b' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-971f458d-73bb-4bc2-9cc0-663daee6d67b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-daaa0f6e-597c-415f-8676-37529fee91b5' class='xr-var-data-in' type='checkbox'><label for='data-daaa0f6e-597c-415f-8676-37529fee91b5' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>brightness_temperature</dd><dt><span>long_name :</span></dt><dd>brightness temperature</dd><dt><span>units :</span></dt><dd>K</dd><dt><span>description :</span></dt><dd>89 GHz brightness temperature</dd></dl></div><div class='xr-var-data'><pre>array([234.79802, 278.25922, 262.102  , ..., 170.66077, 170.50888, 170.42293],
+      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Ze_flag</span></div><div class='xr-var-dims'>(time, height)</div><div class='xr-var-dtype'>int32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-e112bfe3-f5ce-4c2e-a3e3-c18bd4c4c821' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e112bfe3-f5ce-4c2e-a3e3-c18bd4c4c821' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c4220feb-e23a-4bb7-a5f7-56b0dd039d82' class='xr-var-data-in' type='checkbox'><label for='data-c4220feb-e23a-4bb7-a5f7-56b0dd039d82' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>Ze_flag</dd><dt><span>long_name :</span></dt><dd>flag for equivalent radar reflectivity factor</dd><dt><span>flag_masks :</span></dt><dd>1 2 4 8 16 32 64 128</dd><dt><span>flag_meanings :</span></dt><dd>defective_gate_filter snr_filter speckle_filter subsurface_reflection_filter quality_disturbance_possible_range quality_surface_influence_range quality_disturbance_in_cloud quality_disturbance</dd><dt><span>description :</span></dt><dd>values 1, 2, 4, 8: filtered signals; values 16, 64: deteriorated signals; values 32, 128: recommended for cloud analyses</dd></dl></div><div class='xr-var-data'><pre>[16471000 values with dtype=int32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>altitude</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-ea20bb68-bfb4-44f8-a460-deae11f35e18' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ea20bb68-bfb4-44f8-a460-deae11f35e18' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-13d9db94-3288-447e-a863-cf2aa517589a' class='xr-var-data-in' type='checkbox'><label for='data-13d9db94-3288-447e-a863-cf2aa517589a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>altitude</dd><dt><span>long_name :</span></dt><dd>aircraft flight altitude above mean sea level</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([150.03773, 158.23862, 165.955  , ..., 855.40424, 850.99915, 846.541  ],
+      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lon</span></div><div class='xr-var-dims'>(time, height)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-bdace09e-cbe0-4f66-a39c-6fe2b20d50ba' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-bdace09e-cbe0-4f66-a39c-6fe2b20d50ba' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-077b9d97-940d-4fb5-bcc9-649f4eeea46d' class='xr-var-data-in' type='checkbox'><label for='data-077b9d97-940d-4fb5-bcc9-649f4eeea46d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd></dl></div><div class='xr-var-data'><pre>[16471000 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat</span></div><div class='xr-var-dims'>(time, height)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-4d848089-c987-45d5-b69b-1d60b3bc4c9d' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-4d848089-c987-45d5-b69b-1d60b3bc4c9d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-7933d19f-dd10-4152-a569-af70bd0631f2' class='xr-var-data-in' type='checkbox'><label for='data-7933d19f-dd10-4152-a569-af70bd0631f2' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd></dl></div><div class='xr-var-data'><pre>[16471000 values with dtype=float32]</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-53a32e37-0a27-44da-a5f8-f26ed0c2d824' class='xr-section-summary-in' type='checkbox'  ><label for='section-53a32e37-0a27-44da-a5f8-f26ed0c2d824' class='xr-section-summary' >Attributes: <span>(14)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>title :</span></dt><dd>MiRAC-A observations onboard Polar 5 during ACLOUD</dd><dt><span>institution :</span></dt><dd>Institute of Geophysics and Meteorology (IGM), University of Cologne</dd><dt><span>source :</span></dt><dd>airborne observation</dd><dt><span>history :</span></dt><dd>measured onboard Polar 5 during ACLOUD campaign; processed, quality-checked and reformatted by University of Cologne</dd><dt><span>comment :</span></dt><dd>the radar system and the 89 GHz channel were inclined by 25 degrees. However, only Ze is already transformed to nadir.</dd><dt><span>convention :</span></dt><dd>CF-1.8</dd><dt><span>featureType :</span></dt><dd>trajectory</dd><dt><span>mission :</span></dt><dd>ACLOUD</dd><dt><span>platform :</span></dt><dd>Polar 5</dd><dt><span>flight_id :</span></dt><dd>RF05</dd><dt><span>instrument :</span></dt><dd>MiRAC-A: Microwave Radar/radiometer for Arctic Clouds (active)</dd><dt><span>author :</span></dt><dd>Nils Risse</dd><dt><span>contact :</span></dt><dd>n.risse@uni-koeln.de, l.kliesch@uni-koeln.de, mario.mech@uni-koeln.de</dd><dt><span>created :</span></dt><dd>2021-08-09</dd></dl></div></li></ul></div></div></div></div>
 </div>
 <p>The dataset includes the radar reflectivity (<code class="docutils literal notranslate"><span class="pre">Ze</span></code>, <code class="docutils literal notranslate"><span class="pre">Ze_unfiltered</span></code>), the radar reflectivity filter mask (<code class="docutils literal notranslate"><span class="pre">Ze_flag</span></code>), the 89 GHz brightness temperature (<code class="docutils literal notranslate"><span class="pre">TB_89</span></code>) as well as information on the aircraft’s flight altitude (<code class="docutils literal notranslate"><span class="pre">altitude</span></code>). The radar reflectivity is defined on a regular <code class="docutils literal notranslate"><span class="pre">time</span></code>-<code class="docutils literal notranslate"><span class="pre">height</span></code> grid with corresponding target positions (<code class="docutils literal notranslate"><span class="pre">lat</span></code>, <code class="docutils literal notranslate"><span class="pre">lon</span></code>). The full dataset is available on PANGAEA.</p>
 </div>
@@ -808,7 +805,7 @@ Attributes: (12/14)
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">matplotlib.dates</span> <span class="k">as</span> <span class="nn">mdates</span>
-<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">log10</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="k">import</span> <span class="n">log10</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;../mplstyle/book&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -894,9 +891,11 @@ Attributes: (12/14)
 
       </div>
     </div>
-  
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-  
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
   </body>
 </html>
