@@ -18,7 +18,7 @@ Traceback (most recent call last):
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
 import ac3airborne as ac3a
-import flightphase as fp
+import ac3airborne.tools.flightphase as fp
 import pandas as pd
 import matplotlib.pyplot as plt
 import cartopy.crs as ccrs
@@ -28,13 +28,13 @@ import xarray as xr
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-[0;32m<ipython-input-2-8e3a49a133fc>[0m in [0;36m<module>[0;34m[0m
+[0;32m<ipython-input-2-0162c904ee80>[0m in [0;36m<module>[0;34m[0m
 [1;32m      1[0m [0;32mimport[0m [0mac3airborne[0m [0;32mas[0m [0mac3a[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 2[0;31m [0;32mimport[0m [0mflightphase[0m [0;32mas[0m [0mfp[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 2[0;31m [0;32mimport[0m [0mac3airborne[0m[0;34m.[0m[0mtools[0m[0;34m.[0m[0mflightphase[0m [0;32mas[0m [0mfp[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m      3[0m [0;32mimport[0m [0mpandas[0m [0;32mas[0m [0mpd[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      4[0m [0;32mimport[0m [0mmatplotlib[0m[0;34m.[0m[0mpyplot[0m [0;32mas[0m [0mplt[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      5[0m [0;32mimport[0m [0mcartopy[0m[0;34m.[0m[0mcrs[0m [0;32mas[0m [0mccrs[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mModuleNotFoundError[0m: No module named 'flightphase'
-ModuleNotFoundError: No module named 'flightphase'
+[0;31mModuleNotFoundError[0m: No module named 'ac3airborne.tools'
+ModuleNotFoundError: No module named 'ac3airborne.tools'
 
