@@ -11,8 +11,11 @@
 - file: datasets
   title: Datasets
   sections:
-    - file: datasets/mirac
-      title: MiRAC
+    #- file: datasets/mirac-a
+    #  title: MiRAC-A
+    - file: examples/mirac_a
+    - file: datasets/mirac-p
+      title: MiRAC-P
     - file: datasets/amali
       title: AMALi
     - file: datasets/kt19
