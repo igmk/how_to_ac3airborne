@@ -12,7 +12,7 @@
   title: Datasets
   sections:
     - file: examples/mirac_a
-    - file: examples/mirac-p
+    - file: examples/mirac_p
     - file: examples/hatpro
     - file: examples/amali_cloud_top_height
     - file: datasets/kt19
