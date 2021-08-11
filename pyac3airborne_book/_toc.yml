@@ -11,13 +11,10 @@
 - file: datasets
   title: Datasets
   sections:
-    #- file: datasets/mirac-a
-    #  title: MiRAC-A
     - file: examples/mirac_a
-    - file: datasets/mirac-p
-      title: MiRAC-P
-    - file: datasets/amali
-      title: AMALi
+    - file: examples/mirac-p
+    - file: examples/hatpro
+    - file: examples/amali_cloud_top_height
     - file: datasets/kt19
       title: KT-19
     - file: datasets/dropsondes
