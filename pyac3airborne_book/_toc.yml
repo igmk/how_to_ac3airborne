@@ -33,3 +33,4 @@
   - file: examples/flight_tracks
   - file: examples/reading_the_flight_phase_files
   - file: examples/land_ocean
+- file: references 
