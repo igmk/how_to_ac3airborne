@@ -1,20 +1,17 @@
 - file: intro
 - file: campaigns
   title: Campaigns
-  # sections:
-  #   - file: campaigns/acloud
-  #     title: ACLOUD
-  #   - file: campaigns/aflux
-  #     title: AFLUX
-  #   - file: campaigns/mosaic-aca
-  #     title: MOSAiC-ACA
 - file: datasets
   title: Datasets
   sections:
-    - file: examples/mirac_a
-    - file: examples/mirac_p
-    - file: examples/hatpro
-    - file: examples/amali_cloud_top_height
+    - file: datasets/mirac_a
+      title: MiRAC-A
+    - file: datasets/mirac_p
+      title: MiRAC-P
+    - file: datasets/hatpro
+      title: HATPRO
+    - file: datasets/amali_cloud_top_height
+      title: AMALi
     - file: datasets/kt19
       title: KT-19
     - file: datasets/dropsondes
@@ -30,7 +27,11 @@
 - file: code
   title: Code
   sections:
-  - file: examples/flight_tracks
   - file: examples/reading_the_flight_phase_files
+    title: Reading the flight phase files
+  - file: examples/flight_tracks
+    title: Flight tracks
   - file: examples/land_ocean
-- file: references 
+    title: land/ocean mask
+- file: references
+  title: References 

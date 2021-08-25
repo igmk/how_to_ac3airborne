@@ -7,4 +7,4 @@ The book chapters show datasets that are accessible online, i.e., you don’t ha
 ## Some links
 * [AC3 webpage](http://www.ac3-tr.de/)
 * Campaign wikis: [ACLOUD](https://home.uni-leipzig.de/~ehrlich/ACLOUD_wiki_doku/doku.php), [AFLUX](https://home.uni-leipzig.de/~ehrlich/AFLUX_wiki_doku/doku.php?id=start), and [MOSAiC-ACA](https://home.uni-leipzig.de/~ehrlich/MOSAiC_ACA_wiki_doku/doku.php?id=start)
-* Master data collections on PANGAEA: ACLOUD {cite:p}`EhrlichCollectionDataSources2019`, AFLUX {cite:p}`MechCollectionDataSets2021`, and MOSAiC-ACA {cite:p}`MechCollectionDataSets2021a`
+* Master data collections on PANGAEA: ACLOUD {cite}`EhrlichCollectionDataSources2019`, AFLUX {cite}`MechCollectionDataSets2021`, and MOSAiC-ACA {cite}`MechCollectionDataSets2021a`
