@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Check if the aircraft is over land or ocean &#8212; pyac3airborne-book</title>
+    <title>land-ocean mask &#8212; pyac3airborne-book</title>
     
   <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -45,8 +45,6 @@
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -57,7 +55,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="References" href="../references.html" />
-    <link rel="prev" title="Querying the flight phase files" href="reading_the_flight_phase_files.html" />
+    <link rel="prev" title="Flight tracks" href="flight_tracks.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -106,23 +104,23 @@
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
-    <a class="reference internal" href="mirac_a.html">
+    <a class="reference internal" href="../datasets/mirac_a.html">
      MiRAC-A
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="mirac_p.html">
+    <a class="reference internal" href="../datasets/mirac_p.html">
      MiRAC-P
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="hatpro.html">
+    <a class="reference internal" href="../datasets/hatpro.html">
      HATPRO
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="amali_cloud_top_height.html">
-     AMALi cloud top height
+    <a class="reference internal" href="../datasets/amali_cloud_top_height.html">
+     AMALi
     </a>
    </li>
    <li class="toctree-l2">
@@ -164,21 +162,18 @@
   </a>
   <ul class="current collapse-ul">
    <li class="toctree-l2">
+    <a class="reference internal" href="reading_the_flight_phase_files.html">
+     Reading the flight phase files
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="flight_tracks.html">
      Flight tracks
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="reading_the_flight_phase_files.html">
-     Querying the
-     <em>
-      flight phase files
-     </em>
-    </a>
-   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Check if the aircraft is over land or ocean
+     land/ocean mask
     </a>
    </li>
   </ul>
@@ -280,9 +275,9 @@
         
               <div>
                 
-  <div class="section" id="check-if-the-aircraft-is-over-land-or-ocean">
-<h1>Check if the aircraft is over land or ocean<a class="headerlink" href="#check-if-the-aircraft-is-over-land-or-ocean" title="Permalink to this headline">¶</a></h1>
-<p>We can achieve this just using the function <em>is_land()</em></p>
+  <div class="section" id="land-ocean-mask">
+<h1>land-ocean mask<a class="headerlink" href="#land-ocean-mask" title="Permalink to this headline">¶</a></h1>
+<p>In this example we show how a land ocean mask can be applied to the flight path. The decission is made based on <code class="docutils literal notranslate"><span class="pre">cartopy.io.shapereader.natural_earth(resolution='10m',</span> <span class="pre">category='physical',</span> <span class="pre">name='land')</span></code>. All functionality is packed into a routine <code class="docutils literal notranslate"><span class="pre">is_land()</span></code>, which is part of the ac3airborne toolbox.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ac3airborne.tools.is_land</span> <span class="k">as</span> <span class="nn">il</span>
@@ -398,7 +393,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/land_ocean_12_0.png" src="../_images/land_ocean_12_0.png" />
+<img alt="../_images/land_ocean_11_0.png" src="../_images/land_ocean_11_0.png" />
 </div>
 </div>
 </div>
@@ -428,7 +423,7 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="reading_the_flight_phase_files.html" title="previous page">Querying the <em>flight phase files</em></a>
+    <a class='left-prev' id="prev-link" href="flight_tracks.html" title="previous page">Flight tracks</a>
     <a class='right-next' id="next-link" href="../references.html" title="next page">References</a>
 
         </div>
