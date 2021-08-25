@@ -56,7 +56,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Land/Ocean mask" href="land_ocean.html" />
+    <link rel="next" title="Check if the aircraft is over land or ocean" href="land_ocean.html" />
     <link rel="prev" title="Flight tracks" href="flight_tracks.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -178,12 +178,17 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="land_ocean.html">
-     Land/Ocean mask
+     Check if the aircraft is over land or ocean
     </a>
    </li>
   </ul>
   <i class="fas fa-chevron-down">
   </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   References
+  </a>
  </li>
 </ul>
 
@@ -795,10 +800,10 @@ Attributes: (12/14)
     platform:     Polar5
     flight_id:    RF14
     title:        Polar5 position and attitude data
-    history:      acquired by Polar5 during ACLOUD campaign, quality checked ...</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-86a90c1a-efbd-45da-84b1-906472ebe700' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-86a90c1a-efbd-45da-84b1-906472ebe700' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 20211</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-5d855a31-b527-4097-b1b2-9ee9c208db39' class='xr-section-summary-in' type='checkbox'  checked><label for='section-5d855a31-b527-4097-b1b2-9ee9c208db39' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2017-06-08T07:22:07 ... 2017-06-...</div><input id='attrs-93aff9c2-df49-43d1-b22d-7269f955327e' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-93aff9c2-df49-43d1-b22d-7269f955327e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-884425b6-3090-489c-8413-db703e8963ba' class='xr-var-data-in' type='checkbox'><label for='data-884425b6-3090-489c-8413-db703e8963ba' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>time</dd><dt><span>long_name :</span></dt><dd>time in seconds since epoch</dd><dt><span>axis :</span></dt><dd>T</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;2017-06-08T07:22:07.000000000&#x27;, &#x27;2017-06-08T07:22:08.000000000&#x27;,
+    history:      acquired by Polar5 during ACLOUD campaign, quality checked ...</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-77f9edc0-d4f8-4051-a9a0-ecd1e89e9bd5' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-77f9edc0-d4f8-4051-a9a0-ecd1e89e9bd5' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 20211</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-1b512b1a-a0d4-4c3f-9ff1-855f3d6d4245' class='xr-section-summary-in' type='checkbox'  checked><label for='section-1b512b1a-a0d4-4c3f-9ff1-855f3d6d4245' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2017-06-08T07:22:07 ... 2017-06-...</div><input id='attrs-05078995-70be-4b72-b776-1ae0f11205df' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-05078995-70be-4b72-b776-1ae0f11205df' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-07c2e61a-b64c-4626-97b4-0d277282a772' class='xr-var-data-in' type='checkbox'><label for='data-07c2e61a-b64c-4626-97b4-0d277282a772' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>time</dd><dt><span>long_name :</span></dt><dd>time in seconds since epoch</dd><dt><span>axis :</span></dt><dd>T</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;2017-06-08T07:22:07.000000000&#x27;, &#x27;2017-06-08T07:22:08.000000000&#x27;,
        &#x27;2017-06-08T07:22:09.000000000&#x27;, ..., &#x27;2017-06-08T12:59:05.000000000&#x27;,
        &#x27;2017-06-08T12:59:06.000000000&#x27;, &#x27;2017-06-08T12:59:07.000000000&#x27;],
-      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-c32a53c1-264e-4bc6-81bf-7692c9635130' class='xr-section-summary-in' type='checkbox'  checked><label for='section-c32a53c1-264e-4bc6-81bf-7692c9635130' class='xr-section-summary' >Data variables: <span>(11)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>alt</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-e911d4fa-af94-4965-a35f-68935ff51080' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e911d4fa-af94-4965-a35f-68935ff51080' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f61d31a7-d164-46c5-bf4b-c47a71c95ef1' class='xr-var-data-in' type='checkbox'><label for='data-f61d31a7-d164-46c5-bf4b-c47a71c95ef1' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>height_above_reference_ellipsoid</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/elliptical height</dd><dt><span>positive :</span></dt><dd>up</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>axis :</span></dt><dd>Z</dd></dl></div><div class='xr-var-data'><pre>array([  nan, 28.83, 28.85, ..., 24.57, 24.55,   nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>tas</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-5f287302-8b45-4042-b610-f9c27857c2ef' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-5f287302-8b45-4042-b610-f9c27857c2ef' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-2670ba43-cbe4-4746-820d-9572533456f1' class='xr-var-data-in' type='checkbox'><label for='data-2670ba43-cbe4-4746-820d-9572533456f1' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_speed_wrt_air</dd><dt><span>long_name :</span></dt><dd>calculated true airspeed</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>m/s</dd></dl></div><div class='xr-var-data'><pre>array([nan,  0.,  0., ...,  0.,  0., nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-e2889e5e-9cce-4f06-8855-812b17ae3dcc' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e2889e5e-9cce-4f06-8855-812b17ae3dcc' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4d450548-6602-4fb1-8544-f6235ea09e93' class='xr-var-data-in' type='checkbox'><label for='data-4d450548-6602-4fb1-8544-f6235ea09e93' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>axis :</span></dt><dd>Y</dd></dl></div><div class='xr-var-data'><pre>array([      nan, 78.24576 , 78.24576 , ..., 78.245787, 78.245788,       nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat_dir</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>object</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-aa72d726-1b30-4e00-bafc-56e084337a1b' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-aa72d726-1b30-4e00-bafc-56e084337a1b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c158d0cf-8d6b-4408-9ade-495081caa851' class='xr-var-data-in' type='checkbox'><label for='data-c158d0cf-8d6b-4408-9ade-495081caa851' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;&#x27;, &#x27;N&#x27;, &#x27;N&#x27;, ..., &#x27;N&#x27;, &#x27;N&#x27;, &#x27;&#x27;], dtype=object)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lon</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-3a381362-606d-4aee-9959-9f7013bed5fe' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-3a381362-606d-4aee-9959-9f7013bed5fe' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-16523f7a-e9b6-4a8c-9c76-3c0e5b17765f' class='xr-var-data-in' type='checkbox'><label for='data-16523f7a-e9b6-4a8c-9c76-3c0e5b17765f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/longitude</dd><dt><span>units :</span></dt><dd>degree_east</dd><dt><span>axis :</span></dt><dd>X</dd></dl></div><div class='xr-var-data'><pre>array([      nan, 15.504153, 15.504153, ..., 15.50407 , 15.50407 ,       nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lon_dir</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>object</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-eb7920c3-179f-44a3-8309-bb8ceb928d75' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-eb7920c3-179f-44a3-8309-bb8ceb928d75' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9fe0199c-ae06-4519-a30a-a605aea12f64' class='xr-var-data-in' type='checkbox'><label for='data-9fe0199c-ae06-4519-a30a-a605aea12f64' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;&#x27;, &#x27;E&#x27;, &#x27;E&#x27;, ..., &#x27;E&#x27;, &#x27;E&#x27;, &#x27;&#x27;], dtype=object)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>vs</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-b0c50cbd-5c70-4232-b250-91d5cf850cc9' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-b0c50cbd-5c70-4232-b250-91d5cf850cc9' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-5e0388e5-ba31-4944-b0d9-4d38984db473' class='xr-var-data-in' type='checkbox'><label for='data-5e0388e5-ba31-4944-b0d9-4d38984db473' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_vertical_speed</dd><dt><span>long_name :</span></dt><dd>vertical speed</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>m/s</dd></dl></div><div class='xr-var-data'><pre>array([nan, 0.1, 0.1, ..., 0.1, 0. , nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>gs</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-83401640-6835-4072-8d72-d87a281af57b' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-83401640-6835-4072-8d72-d87a281af57b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4875b4bf-f56c-49ea-ab18-0f505cddc577' class='xr-var-data-in' type='checkbox'><label for='data-4875b4bf-f56c-49ea-ab18-0f505cddc577' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_speed_wrt_ground</dd><dt><span>long_name :</span></dt><dd>groundspeed of platform</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>kts</dd></dl></div><div class='xr-var-data'><pre>array([0.  , 0.  , 0.  , ..., 1.95, 1.98, 1.98])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>pitch</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-3a55a89e-9693-4708-aa50-a3135a9d91c0' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-3a55a89e-9693-4708-aa50-a3135a9d91c0' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-60fe87d4-7da8-4953-bcad-21b61b1ae032' class='xr-var-data-in' type='checkbox'><label for='data-60fe87d4-7da8-4953-bcad-21b61b1ae032' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_pitch_fore_up</dd><dt><span>long_name :</span></dt><dd>pitch angle of platform</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>degrees</dd></dl></div><div class='xr-var-data'><pre>array([12.23, 12.23, 12.23, ..., 11.72, 11.72, 11.72])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>roll</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-5faf08c2-1060-4b6a-a12c-7a643aac7db0' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-5faf08c2-1060-4b6a-a12c-7a643aac7db0' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a1f90af6-429f-4eb7-83ec-3679aa03363c' class='xr-var-data-in' type='checkbox'><label for='data-a1f90af6-429f-4eb7-83ec-3679aa03363c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_roll_starboard_down</dd><dt><span>long_name :</span></dt><dd>roll angle of platform</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>degrees</dd></dl></div><div class='xr-var-data'><pre>array([1.82, 1.82, 1.83, ..., 1.92, 1.93, 1.94])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>heading</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-82e44475-3fd9-4500-ba38-a60d0b8fc17c' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-82e44475-3fd9-4500-ba38-a60d0b8fc17c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3617d5ac-d249-4589-89a6-f0ad0872c650' class='xr-var-data-in' type='checkbox'><label for='data-3617d5ac-d249-4589-89a6-f0ad0872c650' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_yaw_fore_starboard</dd><dt><span>long_name :</span></dt><dd>true heading</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>degrees</dd></dl></div><div class='xr-var-data'><pre>array([  0.  ,   0.  ,   0.  , ..., -73.84, -73.84, -73.83])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-fa0be281-c3bf-426c-8901-7eaae6df19c2' class='xr-section-summary-in' type='checkbox'  ><label for='section-fa0be281-c3bf-426c-8901-7eaae6df19c2' class='xr-section-summary' >Attributes: <span>(14)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>1Hz subset based on GPS1 and INS data processed by AWI engineers</dd><dt><span>instruments :</span></dt><dd>GPS1 and INS</dd><dt><span>version :</span></dt><dd>[0.1]</dd><dt><span>contact :</span></dt><dd>mario.mech@uni-koeln.de, martin.gehrmann@awi.de</dd><dt><span>institution :</span></dt><dd>[&#x27;Alfred-Wegener-Institut Helmholtz-Zentrum für Polar- und Meeresforschung&#x27;]</dd><dt><span>author :</span></dt><dd>Dr. Mario Mech</dd><dt><span>source :</span></dt><dd>DSHIP excerpt</dd><dt><span>Convention :</span></dt><dd>CF-1.8</dd><dt><span>featureType :</span></dt><dd>trajectory</dd><dt><span>mission :</span></dt><dd>ACLOUD</dd><dt><span>platform :</span></dt><dd>Polar5</dd><dt><span>flight_id :</span></dt><dd>RF14</dd><dt><span>title :</span></dt><dd>Polar5 position and attitude data</dd><dt><span>history :</span></dt><dd>acquired by Polar5 during ACLOUD campaign, quality checked by AWI and uploaded to DSHIP database, extracted and reformated by Mario Mech</dd></dl></div></li></ul></div></div></div></div>
+      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-21c81057-04f7-4f76-990f-62f9ef290fd6' class='xr-section-summary-in' type='checkbox'  checked><label for='section-21c81057-04f7-4f76-990f-62f9ef290fd6' class='xr-section-summary' >Data variables: <span>(11)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>alt</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-1e0816a4-555b-40a9-9e34-3baa12808d3d' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-1e0816a4-555b-40a9-9e34-3baa12808d3d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a6999959-9192-4bfd-96b1-eda9145eca5b' class='xr-var-data-in' type='checkbox'><label for='data-a6999959-9192-4bfd-96b1-eda9145eca5b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>height_above_reference_ellipsoid</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/elliptical height</dd><dt><span>positive :</span></dt><dd>up</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>axis :</span></dt><dd>Z</dd></dl></div><div class='xr-var-data'><pre>array([  nan, 28.83, 28.85, ..., 24.57, 24.55,   nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>tas</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-84e497e0-503e-4c43-ba55-d9cff8c9e090' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-84e497e0-503e-4c43-ba55-d9cff8c9e090' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ca138b27-268d-4b6f-8658-9c1dce4a7db7' class='xr-var-data-in' type='checkbox'><label for='data-ca138b27-268d-4b6f-8658-9c1dce4a7db7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_speed_wrt_air</dd><dt><span>long_name :</span></dt><dd>calculated true airspeed</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>m/s</dd></dl></div><div class='xr-var-data'><pre>array([nan,  0.,  0., ...,  0.,  0., nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-e98dfea9-3b92-4096-a6b8-4f45e5e7ad37' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e98dfea9-3b92-4096-a6b8-4f45e5e7ad37' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d36326c6-61e7-4451-8bed-691779c4f9b6' class='xr-var-data-in' type='checkbox'><label for='data-d36326c6-61e7-4451-8bed-691779c4f9b6' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>axis :</span></dt><dd>Y</dd></dl></div><div class='xr-var-data'><pre>array([      nan, 78.24576 , 78.24576 , ..., 78.245787, 78.245788,       nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat_dir</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>object</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-34563b49-ed9d-49ec-b60e-40f873dcdab2' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-34563b49-ed9d-49ec-b60e-40f873dcdab2' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a60f2d08-e325-4cb9-aee0-fab278d701a7' class='xr-var-data-in' type='checkbox'><label for='data-a60f2d08-e325-4cb9-aee0-fab278d701a7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;&#x27;, &#x27;N&#x27;, &#x27;N&#x27;, ..., &#x27;N&#x27;, &#x27;N&#x27;, &#x27;&#x27;], dtype=object)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lon</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-0ec09396-9cb5-44ac-85f7-d4b845973dfb' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-0ec09396-9cb5-44ac-85f7-d4b845973dfb' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3519b481-ddc3-451b-9ee2-08c8bd0b9325' class='xr-var-data-in' type='checkbox'><label for='data-3519b481-ddc3-451b-9ee2-08c8bd0b9325' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/longitude</dd><dt><span>units :</span></dt><dd>degree_east</dd><dt><span>axis :</span></dt><dd>X</dd></dl></div><div class='xr-var-data'><pre>array([      nan, 15.504153, 15.504153, ..., 15.50407 , 15.50407 ,       nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lon_dir</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>object</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-3897d98e-77c6-43dd-acad-2fd26c9e78b9' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-3897d98e-77c6-43dd-acad-2fd26c9e78b9' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4e769332-e39c-485a-bda8-ebfead86be90' class='xr-var-data-in' type='checkbox'><label for='data-4e769332-e39c-485a-bda8-ebfead86be90' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;&#x27;, &#x27;E&#x27;, &#x27;E&#x27;, ..., &#x27;E&#x27;, &#x27;E&#x27;, &#x27;&#x27;], dtype=object)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>vs</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-f8bf9780-e786-4747-bdd3-aadfd2403aed' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f8bf9780-e786-4747-bdd3-aadfd2403aed' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-fbf5fd53-edf8-462e-9325-760bb1b6f485' class='xr-var-data-in' type='checkbox'><label for='data-fbf5fd53-edf8-462e-9325-760bb1b6f485' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_vertical_speed</dd><dt><span>long_name :</span></dt><dd>vertical speed</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>m/s</dd></dl></div><div class='xr-var-data'><pre>array([nan, 0.1, 0.1, ..., 0.1, 0. , nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>gs</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-2a3b047b-1cd1-4384-826f-eb11d6331eee' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-2a3b047b-1cd1-4384-826f-eb11d6331eee' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a9fefbe0-e519-4949-bf76-d231faa49fa0' class='xr-var-data-in' type='checkbox'><label for='data-a9fefbe0-e519-4949-bf76-d231faa49fa0' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_speed_wrt_ground</dd><dt><span>long_name :</span></dt><dd>groundspeed of platform</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>kts</dd></dl></div><div class='xr-var-data'><pre>array([0.  , 0.  , 0.  , ..., 1.95, 1.98, 1.98])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>pitch</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-3f4049a1-d1e8-4a60-92f1-ff2238f3a2f0' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-3f4049a1-d1e8-4a60-92f1-ff2238f3a2f0' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0c8e61ea-05a4-46c6-be7d-e91f122353d6' class='xr-var-data-in' type='checkbox'><label for='data-0c8e61ea-05a4-46c6-be7d-e91f122353d6' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_pitch_fore_up</dd><dt><span>long_name :</span></dt><dd>pitch angle of platform</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>degrees</dd></dl></div><div class='xr-var-data'><pre>array([12.23, 12.23, 12.23, ..., 11.72, 11.72, 11.72])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>roll</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-1fd263fa-0f97-4cde-bfe1-e6d78c309b4f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-1fd263fa-0f97-4cde-bfe1-e6d78c309b4f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-7a8632de-d87e-4f87-a6fc-f7690556c97f' class='xr-var-data-in' type='checkbox'><label for='data-7a8632de-d87e-4f87-a6fc-f7690556c97f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_roll_starboard_down</dd><dt><span>long_name :</span></dt><dd>roll angle of platform</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>degrees</dd></dl></div><div class='xr-var-data'><pre>array([1.82, 1.82, 1.83, ..., 1.92, 1.93, 1.94])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>heading</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-beb81bb9-0fba-47ab-899b-8879359c5e01' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-beb81bb9-0fba-47ab-899b-8879359c5e01' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-7c25e4b8-d99b-45a1-986d-d135cc01994f' class='xr-var-data-in' type='checkbox'><label for='data-7c25e4b8-d99b-45a1-986d-d135cc01994f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_yaw_fore_starboard</dd><dt><span>long_name :</span></dt><dd>true heading</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>degrees</dd></dl></div><div class='xr-var-data'><pre>array([  0.  ,   0.  ,   0.  , ..., -73.84, -73.84, -73.83])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-28b680c2-a658-4be3-a280-a79600a41e02' class='xr-section-summary-in' type='checkbox'  ><label for='section-28b680c2-a658-4be3-a280-a79600a41e02' class='xr-section-summary' >Attributes: <span>(14)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>1Hz subset based on GPS1 and INS data processed by AWI engineers</dd><dt><span>instruments :</span></dt><dd>GPS1 and INS</dd><dt><span>version :</span></dt><dd>[0.1]</dd><dt><span>contact :</span></dt><dd>mario.mech@uni-koeln.de, martin.gehrmann@awi.de</dd><dt><span>institution :</span></dt><dd>[&#x27;Alfred-Wegener-Institut Helmholtz-Zentrum für Polar- und Meeresforschung&#x27;]</dd><dt><span>author :</span></dt><dd>Dr. Mario Mech</dd><dt><span>source :</span></dt><dd>DSHIP excerpt</dd><dt><span>Convention :</span></dt><dd>CF-1.8</dd><dt><span>featureType :</span></dt><dd>trajectory</dd><dt><span>mission :</span></dt><dd>ACLOUD</dd><dt><span>platform :</span></dt><dd>Polar5</dd><dt><span>flight_id :</span></dt><dd>RF14</dd><dt><span>title :</span></dt><dd>Polar5 position and attitude data</dd><dt><span>history :</span></dt><dd>acquired by Polar5 during ACLOUD campaign, quality checked by AWI and uploaded to DSHIP database, extracted and reformated by Mario Mech</dd></dl></div></li></ul></div></div></div></div>
 </div>
 </div>
 <div class="section" id="import-flightphase-module">
@@ -925,7 +930,7 @@ Attributes: (12/14)
     <tr>
       <th>0</th>
       <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 08:25:57</td>
+      <td>2017-06-08 08:25:56</td>
       <td>[]</td>
       <td>[high_level]</td>
       <td>[9800]</td>
@@ -935,8 +940,8 @@ Attributes: (12/14)
     </tr>
     <tr>
       <th>1</th>
-      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde02'], 'UGLY...</td>
-      <td>2017-06-08 08:58:26</td>
+      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde01'], 'UGLY...</td>
+      <td>2017-06-08 08:58:25</td>
       <td>[]</td>
       <td>[high_level]</td>
       <td>[9800]</td>
@@ -946,8 +951,8 @@ Attributes: (12/14)
     </tr>
     <tr>
       <th>2</th>
-      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde03'], 'UGLY...</td>
-      <td>2017-06-08 09:30:30</td>
+      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde02', 'P5_RF...</td>
+      <td>2017-06-08 09:30:29</td>
       <td>[]</td>
       <td>[high_level, a-train_underflight]</td>
       <td>[9700]</td>
@@ -958,7 +963,7 @@ Attributes: (12/14)
     <tr>
       <th>3</th>
       <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde04'], 'UGLY...</td>
-      <td>2017-06-08 09:51:04</td>
+      <td>2017-06-08 09:51:03</td>
       <td>[]</td>
       <td>[high_level]</td>
       <td>[9700]</td>
@@ -969,7 +974,7 @@ Attributes: (12/14)
     <tr>
       <th>4</th>
       <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde05'], 'UGLY...</td>
-      <td>2017-06-08 10:00:14</td>
+      <td>2017-06-08 10:00:13</td>
       <td>[]</td>
       <td>[high_level]</td>
       <td>[9800]</td>
@@ -979,8 +984,8 @@ Attributes: (12/14)
     </tr>
     <tr>
       <th>5</th>
-      <td>{'BAD': ['P5_RF14_sonde06'], 'GOOD': [], 'UGLY...</td>
-      <td>2017-06-08 11:52:57</td>
+      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
+      <td>2017-06-08 11:52:56</td>
       <td>[]</td>
       <td>[high_level]</td>
       <td>[9700]</td>
@@ -990,8 +995,8 @@ Attributes: (12/14)
     </tr>
     <tr>
       <th>6</th>
-      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde07'], 'UGLY...</td>
-      <td>2017-06-08 12:05:14</td>
+      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde06'], 'UGLY...</td>
+      <td>2017-06-08 12:05:13</td>
       <td>[]</td>
       <td>[high_level]</td>
       <td>[9800]</td>
@@ -1073,7 +1078,7 @@ Attributes: (12/14)
     <tr>
       <th>0</th>
       <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 08:08:54</td>
+      <td>2017-06-08 08:08:53</td>
       <td>[whale-watching loop]</td>
       <td>[major_ascend, nya_overflight, sveabreen_glaci...</td>
       <td>[100, 9700]</td>
@@ -1084,8 +1089,8 @@ Attributes: (12/14)
     </tr>
     <tr>
       <th>1</th>
-      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde03'], 'UGLY...</td>
-      <td>2017-06-08 09:30:30</td>
+      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde02', 'P5_RF...</td>
+      <td>2017-06-08 09:30:29</td>
       <td>[]</td>
       <td>[high_level, a-train_underflight]</td>
       <td>[9700]</td>
@@ -1097,26 +1102,26 @@ Attributes: (12/14)
     <tr>
       <th>2</th>
       <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 10:10:51</td>
+      <td>2017-06-08 10:10:50</td>
       <td>[]</td>
       <td>[cross_pattern, polarstern_overflight]</td>
       <td>[9600, 9700]</td>
       <td>cross pattern 1</td>
       <td>ACLOUD_P5_RF14_cr01</td>
       <td>2017-06-08 10:00:14</td>
-      <td>[{'end': 2017-06-08 10:03:14, 'irregularities'...</td>
+      <td>[{'end': 2017-06-08 10:03:13, 'irregularities'...</td>
     </tr>
     <tr>
       <th>3</th>
       <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 12:25:40</td>
+      <td>2017-06-08 12:25:39</td>
       <td>[]</td>
       <td>[cross_pattern, nya_overflight]</td>
       <td>[9800, 9800, 9800]</td>
       <td>cross pattern 2</td>
       <td>ACLOUD_P5_RF14_cr02</td>
       <td>2017-06-08 12:05:14</td>
-      <td>[{'end': 2017-06-08 12:10:14, 'irregularities'...</td>
+      <td>[{'end': 2017-06-08 12:10:13, 'irregularities'...</td>
     </tr>
   </tbody>
 </table>
@@ -1195,19 +1200,19 @@ Attributes: (12/14)
     <tr>
       <th>0</th>
       <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 10:10:51</td>
+      <td>2017-06-08 10:10:50</td>
       <td>[]</td>
       <td>[cross_pattern, polarstern_overflight]</td>
       <td>[9600, 9700]</td>
       <td>cross pattern 1</td>
-      <td>[{'end': 2017-06-08 10:03:14, 'irregularities'...</td>
+      <td>[{'end': 2017-06-08 10:03:13, 'irregularities'...</td>
       <td>ACLOUD_P5_RF14_cr01</td>
       <td>2017-06-08 10:00:14</td>
     </tr>
     <tr>
       <th>1</th>
       <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 10:22:44</td>
+      <td>2017-06-08 10:22:43</td>
       <td>[not along straight line]</td>
       <td>[large_descend]</td>
       <td>[9700, 200]</td>
@@ -1219,19 +1224,19 @@ Attributes: (12/14)
     <tr>
       <th>2</th>
       <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 11:02:02</td>
+      <td>2017-06-08 11:02:01</td>
       <td>[]</td>
       <td>[racetrack_pattern]</td>
       <td>[200, 300, 1500, 2400]</td>
       <td>racetrack pattern 1</td>
-      <td>[{'end': 2017-06-08 10:29:21, 'irregularities'...</td>
+      <td>[{'end': 2017-06-08 10:29:20, 'irregularities'...</td>
       <td>ACLOUD_P5_RF14_rt01</td>
       <td>2017-06-08 10:22:44</td>
     </tr>
     <tr>
       <th>3</th>
       <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 11:11:20</td>
+      <td>2017-06-08 11:11:19</td>
       <td>[]</td>
       <td>[large_ascend]</td>
       <td>[2400, 9700]</td>
@@ -1243,12 +1248,12 @@ Attributes: (12/14)
     <tr>
       <th>4</th>
       <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 12:25:40</td>
+      <td>2017-06-08 12:25:39</td>
       <td>[]</td>
       <td>[cross_pattern, nya_overflight]</td>
       <td>[9800, 9800, 9800]</td>
       <td>cross pattern 2</td>
-      <td>[{'end': 2017-06-08 12:10:14, 'irregularities'...</td>
+      <td>[{'end': 2017-06-08 12:10:13, 'irregularities'...</td>
       <td>ACLOUD_P5_RF14_cr02</td>
       <td>2017-06-08 12:05:14</td>
     </tr>
@@ -1332,12 +1337,12 @@ Attributes: (12/14)
     <tr>
       <th>0</th>
       <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 11:02:02</td>
+      <td>2017-06-08 11:02:01</td>
       <td>[]</td>
       <td>[racetrack_pattern]</td>
       <td>[200, 300, 1500, 2400]</td>
       <td>racetrack pattern 1</td>
-      <td>[{'end': 2017-06-08 10:29:21, 'irregularities'...</td>
+      <td>[{'end': 2017-06-08 10:29:20, 'irregularities'...</td>
       <td>ACLOUD_P5_RF14_rt01</td>
       <td>2017-06-08 10:22:44</td>
     </tr>
@@ -1414,7 +1419,7 @@ Attributes: (12/14)
     <tr>
       <th>0</th>
       <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 08:08:54</td>
+      <td>2017-06-08 08:08:53</td>
       <td>[whale-watching loop]</td>
       <td>[major_ascend, nya_overflight, sveabreen_glaci...</td>
       <td>[100, 9700]</td>
@@ -1426,7 +1431,7 @@ Attributes: (12/14)
     <tr>
       <th>1</th>
       <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 08:25:57</td>
+      <td>2017-06-08 08:25:56</td>
       <td>[]</td>
       <td>[high_level]</td>
       <td>[9800]</td>
@@ -1438,19 +1443,19 @@ Attributes: (12/14)
     <tr>
       <th>2</th>
       <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 08:36:30</td>
+      <td>2017-06-08 08:36:29</td>
       <td>[]</td>
       <td>[holding_pattern]</td>
       <td>[9800, 9800]</td>
       <td>holding pattern 1</td>
       <td>ACLOUD_P5_RF14_ho01</td>
       <td>2017-06-08 08:25:57</td>
-      <td>[{'end': 2017-06-08 08:27:33, 'kinds': ['short...</td>
+      <td>[{'end': 2017-06-08 08:27:32, 'kinds': ['short...</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde02'], 'UGLY...</td>
-      <td>2017-06-08 08:58:26</td>
+      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde01'], 'UGLY...</td>
+      <td>2017-06-08 08:58:25</td>
       <td>[]</td>
       <td>[high_level]</td>
       <td>[9800]</td>
@@ -1462,7 +1467,7 @@ Attributes: (12/14)
     <tr>
       <th>4</th>
       <td>NaN</td>
-      <td>2017-06-08 08:59:08</td>
+      <td>2017-06-08 08:59:07</td>
       <td>NaN</td>
       <td>[short_turn]</td>
       <td>NaN</td>
@@ -1473,8 +1478,8 @@ Attributes: (12/14)
     </tr>
     <tr>
       <th>5</th>
-      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde03'], 'UGLY...</td>
-      <td>2017-06-08 09:30:30</td>
+      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde02', 'P5_RF...</td>
+      <td>2017-06-08 09:30:29</td>
       <td>[]</td>
       <td>[high_level, a-train_underflight]</td>
       <td>[9700]</td>
@@ -1486,7 +1491,7 @@ Attributes: (12/14)
     <tr>
       <th>6</th>
       <td>NaN</td>
-      <td>2017-06-08 09:31:41</td>
+      <td>2017-06-08 09:31:40</td>
       <td>NaN</td>
       <td>[short_turn]</td>
       <td>NaN</td>
@@ -1498,7 +1503,7 @@ Attributes: (12/14)
     <tr>
       <th>7</th>
       <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde04'], 'UGLY...</td>
-      <td>2017-06-08 09:51:04</td>
+      <td>2017-06-08 09:51:03</td>
       <td>[]</td>
       <td>[high_level]</td>
       <td>[9700]</td>
@@ -1510,7 +1515,7 @@ Attributes: (12/14)
     <tr>
       <th>8</th>
       <td>NaN</td>
-      <td>2017-06-08 09:51:33</td>
+      <td>2017-06-08 09:51:32</td>
       <td>NaN</td>
       <td>[short_turn]</td>
       <td>NaN</td>
@@ -1522,7 +1527,7 @@ Attributes: (12/14)
     <tr>
       <th>9</th>
       <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde05'], 'UGLY...</td>
-      <td>2017-06-08 10:00:14</td>
+      <td>2017-06-08 10:00:13</td>
       <td>[]</td>
       <td>[high_level]</td>
       <td>[9800]</td>
@@ -1534,19 +1539,19 @@ Attributes: (12/14)
     <tr>
       <th>10</th>
       <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 10:10:51</td>
+      <td>2017-06-08 10:10:50</td>
       <td>[]</td>
       <td>[cross_pattern, polarstern_overflight]</td>
       <td>[9600, 9700]</td>
       <td>cross pattern 1</td>
       <td>ACLOUD_P5_RF14_cr01</td>
       <td>2017-06-08 10:00:14</td>
-      <td>[{'end': 2017-06-08 10:03:14, 'irregularities'...</td>
+      <td>[{'end': 2017-06-08 10:03:13, 'irregularities'...</td>
     </tr>
     <tr>
       <th>11</th>
       <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 10:22:44</td>
+      <td>2017-06-08 10:22:43</td>
       <td>[not along straight line]</td>
       <td>[large_descend]</td>
       <td>[9700, 200]</td>
@@ -1558,7 +1563,7 @@ Attributes: (12/14)
     <tr>
       <th>12</th>
       <td>NaN</td>
-      <td>2017-06-08 11:02:25</td>
+      <td>2017-06-08 11:02:24</td>
       <td>NaN</td>
       <td>[short_turn]</td>
       <td>NaN</td>
@@ -1570,7 +1575,7 @@ Attributes: (12/14)
     <tr>
       <th>13</th>
       <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 11:11:20</td>
+      <td>2017-06-08 11:11:19</td>
       <td>[]</td>
       <td>[large_ascend]</td>
       <td>[2400, 9700]</td>
@@ -1581,8 +1586,8 @@ Attributes: (12/14)
     </tr>
     <tr>
       <th>14</th>
-      <td>{'BAD': ['P5_RF14_sonde06'], 'GOOD': [], 'UGLY...</td>
-      <td>2017-06-08 11:52:57</td>
+      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
+      <td>2017-06-08 11:52:56</td>
       <td>[]</td>
       <td>[high_level]</td>
       <td>[9700]</td>
@@ -1594,7 +1599,7 @@ Attributes: (12/14)
     <tr>
       <th>15</th>
       <td>NaN</td>
-      <td>2017-06-08 11:53:38</td>
+      <td>2017-06-08 11:53:37</td>
       <td>NaN</td>
       <td>[short_turn]</td>
       <td>NaN</td>
@@ -1605,8 +1610,8 @@ Attributes: (12/14)
     </tr>
     <tr>
       <th>16</th>
-      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde07'], 'UGLY...</td>
-      <td>2017-06-08 12:05:14</td>
+      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde06'], 'UGLY...</td>
+      <td>2017-06-08 12:05:13</td>
       <td>[]</td>
       <td>[high_level]</td>
       <td>[9800]</td>
@@ -1618,14 +1623,14 @@ Attributes: (12/14)
     <tr>
       <th>17</th>
       <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 12:25:40</td>
+      <td>2017-06-08 12:25:39</td>
       <td>[]</td>
       <td>[cross_pattern, nya_overflight]</td>
       <td>[9800, 9800, 9800]</td>
       <td>cross pattern 2</td>
       <td>ACLOUD_P5_RF14_cr02</td>
       <td>2017-06-08 12:05:14</td>
-      <td>[{'end': 2017-06-08 12:10:14, 'irregularities'...</td>
+      <td>[{'end': 2017-06-08 12:10:13, 'irregularities'...</td>
     </tr>
     <tr>
       <th>18</th>
@@ -1717,7 +1722,7 @@ Attributes: (12/14)
     <tr>
       <th>0</th>
       <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 08:25:57</td>
+      <td>2017-06-08 08:25:56</td>
       <td>[]</td>
       <td>[high_level]</td>
       <td>[9800]</td>
@@ -1729,19 +1734,19 @@ Attributes: (12/14)
     <tr>
       <th>1</th>
       <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 08:36:30</td>
+      <td>2017-06-08 08:36:29</td>
       <td>[]</td>
       <td>[holding_pattern]</td>
       <td>[9800, 9800]</td>
       <td>holding pattern 1</td>
       <td>ACLOUD_P5_RF14_ho01</td>
       <td>2017-06-08 08:25:57</td>
-      <td>[{'end': 2017-06-08 08:27:33, 'kinds': ['short...</td>
+      <td>[{'end': 2017-06-08 08:27:32, 'kinds': ['short...</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde02'], 'UGLY...</td>
-      <td>2017-06-08 08:58:26</td>
+      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde01'], 'UGLY...</td>
+      <td>2017-06-08 08:58:25</td>
       <td>[]</td>
       <td>[high_level]</td>
       <td>[9800]</td>
@@ -1753,7 +1758,7 @@ Attributes: (12/14)
     <tr>
       <th>3</th>
       <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde05'], 'UGLY...</td>
-      <td>2017-06-08 10:00:14</td>
+      <td>2017-06-08 10:00:13</td>
       <td>[]</td>
       <td>[high_level]</td>
       <td>[9800]</td>
@@ -1764,8 +1769,8 @@ Attributes: (12/14)
     </tr>
     <tr>
       <th>4</th>
-      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde07'], 'UGLY...</td>
-      <td>2017-06-08 12:05:14</td>
+      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde06'], 'UGLY...</td>
+      <td>2017-06-08 12:05:13</td>
       <td>[]</td>
       <td>[high_level]</td>
       <td>[9800]</td>
@@ -1777,14 +1782,14 @@ Attributes: (12/14)
     <tr>
       <th>5</th>
       <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 12:25:40</td>
+      <td>2017-06-08 12:25:39</td>
       <td>[]</td>
       <td>[cross_pattern, nya_overflight]</td>
       <td>[9800, 9800, 9800]</td>
       <td>cross pattern 2</td>
       <td>ACLOUD_P5_RF14_cr02</td>
       <td>2017-06-08 12:05:14</td>
-      <td>[{'end': 2017-06-08 12:10:14, 'irregularities'...</td>
+      <td>[{'end': 2017-06-08 12:10:13, 'irregularities'...</td>
     </tr>
     <tr>
       <th>6</th>
@@ -1870,7 +1875,7 @@ Attributes: (12/14)
     <tr>
       <th>0</th>
       <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 08:25:57</td>
+      <td>2017-06-08 08:25:56</td>
       <td>[]</td>
       <td>[high_level]</td>
       <td>[9800]</td>
@@ -1880,8 +1885,8 @@ Attributes: (12/14)
     </tr>
     <tr>
       <th>1</th>
-      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde02'], 'UGLY...</td>
-      <td>2017-06-08 08:58:26</td>
+      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde01'], 'UGLY...</td>
+      <td>2017-06-08 08:58:25</td>
       <td>[]</td>
       <td>[high_level]</td>
       <td>[9800]</td>
@@ -1892,7 +1897,7 @@ Attributes: (12/14)
     <tr>
       <th>2</th>
       <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde05'], 'UGLY...</td>
-      <td>2017-06-08 10:00:14</td>
+      <td>2017-06-08 10:00:13</td>
       <td>[]</td>
       <td>[high_level]</td>
       <td>[9800]</td>
@@ -1902,8 +1907,8 @@ Attributes: (12/14)
     </tr>
     <tr>
       <th>3</th>
-      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde07'], 'UGLY...</td>
-      <td>2017-06-08 12:05:14</td>
+      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde06'], 'UGLY...</td>
+      <td>2017-06-08 12:05:13</td>
       <td>[]</td>
       <td>[high_level]</td>
       <td>[9800]</td>
@@ -1985,8 +1990,8 @@ Attributes: (12/14)
   <tbody>
     <tr>
       <th>0</th>
-      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde02'], 'UGLY...</td>
-      <td>2017-06-08 08:58:26</td>
+      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde01'], 'UGLY...</td>
+      <td>2017-06-08 08:58:25</td>
       <td>[]</td>
       <td>[high_level]</td>
       <td>[9800]</td>
@@ -1996,8 +2001,8 @@ Attributes: (12/14)
     </tr>
     <tr>
       <th>1</th>
-      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde03'], 'UGLY...</td>
-      <td>2017-06-08 09:30:30</td>
+      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde02', 'P5_RF...</td>
+      <td>2017-06-08 09:30:29</td>
       <td>[]</td>
       <td>[high_level, a-train_underflight]</td>
       <td>[9700]</td>
@@ -2008,7 +2013,7 @@ Attributes: (12/14)
     <tr>
       <th>2</th>
       <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde04'], 'UGLY...</td>
-      <td>2017-06-08 09:51:04</td>
+      <td>2017-06-08 09:51:03</td>
       <td>[]</td>
       <td>[high_level]</td>
       <td>[9700]</td>
@@ -2019,7 +2024,7 @@ Attributes: (12/14)
     <tr>
       <th>3</th>
       <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde05'], 'UGLY...</td>
-      <td>2017-06-08 10:00:14</td>
+      <td>2017-06-08 10:00:13</td>
       <td>[]</td>
       <td>[high_level]</td>
       <td>[9800]</td>
@@ -2029,8 +2034,8 @@ Attributes: (12/14)
     </tr>
     <tr>
       <th>4</th>
-      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde07'], 'UGLY...</td>
-      <td>2017-06-08 12:05:14</td>
+      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde06'], 'UGLY...</td>
+      <td>2017-06-08 12:05:13</td>
       <td>[]</td>
       <td>[high_level]</td>
       <td>[9800]</td>
@@ -2095,28 +2100,9 @@ Attributes: (12/14)
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>dropsondes</th>
-      <th>end</th>
-      <th>irregularities</th>
-      <th>kinds</th>
-      <th>levels</th>
-      <th>name</th>
-      <th>segment_id</th>
-      <th>start</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th>0</th>
-      <td>{'BAD': ['P5_RF14_sonde06'], 'GOOD': [], 'UGLY...</td>
-      <td>2017-06-08 11:52:57</td>
-      <td>[]</td>
-      <td>[high_level]</td>
-      <td>[9700]</td>
-      <td>high level 6</td>
-      <td>ACLOUD_P5_RF14_hl06</td>
-      <td>2017-06-08 11:11:20</td>
-    </tr>
   </tbody>
 </table>
 </div></div></div>
@@ -2176,7 +2162,7 @@ Attributes: (12/14)
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="flight_tracks.html" title="previous page">Flight tracks</a>
-    <a class='right-next' id="next-link" href="land_ocean.html" title="next page">Land/Ocean mask</a>
+    <a class='right-next' id="next-link" href="land_ocean.html" title="next page">Check if the aircraft is over land or ocean</a>
 
         </div>
         
