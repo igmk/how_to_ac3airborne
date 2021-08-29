@@ -15,6 +15,7 @@
     - file: examples/mirac_p
     - file: examples/hatpro
     - file: examples/amali_cloud_top_height
+    - file: examples/dropsondes
     - file: datasets/kt19
       title: KT-19
     - file: datasets/dropsondes
