@@ -9,3 +9,9 @@ title                       : pyac3airborne-book  # The title of the book. Will 
 author                      : Mario Mech  # The author of the book
 copyright                   : "2021"  # Copyright year to be placed in the footer
 logo                        : logo.png  # A path to the book logo
+# bib file
+bibtex_bibfiles:
+    - references.bib
+sphinx:
+  config:
+    bibtex_reference_style: author_year
