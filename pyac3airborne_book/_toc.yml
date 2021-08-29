@@ -20,8 +20,9 @@
       title: GPS/INS
 - file: guidelines
   title: Guidelines
-  title: yaml file design
+  title: Flight-phase Separation
   sections:
+  - 
   - file: yamls/flights
 - file: code
   title: Code
