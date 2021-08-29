@@ -322,11 +322,6 @@
      </li>
     </ul>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#query-all-segments-with-good-or-bad-dropsondes">
-     Query all segments with good (or bad) dropsondes
-    </a>
-   </li>
   </ul>
  </li>
 </ul>
@@ -359,7 +354,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">=</span> <span class="n">ac3airborne</span><span class="o">.</span><span class="n">get_intake_catalog</span><span class="p">()</span>
-<span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="o">.</span><span class="n">Polar5</span><span class="o">.</span><span class="n">MIRAC_A</span><span class="p">)</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="o">.</span><span class="n">Polar5</span><span class="o">.</span><span class="n">GPS_INS</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -371,7 +366,10 @@
  &#39;ACLOUD_P5_RF08&#39;,
  &#39;ACLOUD_P5_RF10&#39;,
  &#39;ACLOUD_P5_RF11&#39;,
+ &#39;ACLOUD_P5_RF13&#39;,
+ &#39;ACLOUD_P5_RF14&#39;,
  &#39;ACLOUD_P5_RF15&#39;,
+ &#39;ACLOUD_P5_RF16&#39;,
  &#39;ACLOUD_P5_RF17&#39;,
  &#39;ACLOUD_P5_RF18&#39;,
  &#39;ACLOUD_P5_RF19&#39;,
@@ -380,6 +378,7 @@
  &#39;ACLOUD_P5_RF22&#39;,
  &#39;ACLOUD_P5_RF23&#39;,
  &#39;ACLOUD_P5_RF25&#39;,
+ &#39;AFLUX_P5_RF02&#39;,
  &#39;AFLUX_P5_RF03&#39;,
  &#39;AFLUX_P5_RF04&#39;,
  &#39;AFLUX_P5_RF05&#39;,
@@ -393,6 +392,9 @@
  &#39;AFLUX_P5_RF13&#39;,
  &#39;AFLUX_P5_RF14&#39;,
  &#39;AFLUX_P5_RF15&#39;,
+ &#39;MOSAiC-ACA_P5_RF02&#39;,
+ &#39;MOSAiC-ACA_P5_RF03&#39;,
+ &#39;MOSAiC-ACA_P5_RF04&#39;,
  &#39;MOSAiC-ACA_P5_RF05&#39;,
  &#39;MOSAiC-ACA_P5_RF06&#39;,
  &#39;MOSAiC-ACA_P5_RF07&#39;,
@@ -406,7 +408,7 @@
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Have a look at the attributes of the xarray dataset <code class="docutils literal notranslate"><span class="pre">ds_mirac_a</span></code> for all relevant information on the dataset, such as author, contact, or citation infromation.</p>
+<p>Have a look at the attributes of the xarray dataset <code class="docutils literal notranslate"><span class="pre">ds_gps</span></code> for all relevant information on the dataset, such as author, contact, or citation infromation.</p>
 </div>
 <p>In this example we want to look at <code class="docutils literal notranslate"><span class="pre">ACLOUD_P5_RF14</span></code>. First we read the GPS information:</p>
 <div class="cell docutils container">
@@ -797,27 +799,27 @@ Attributes: (12/14)
     platform:     Polar5
     flight_id:    RF14
     title:        Polar5 position and attitude data
-    history:      acquired by Polar5 during ACLOUD campaign, quality checked ...</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-8a2ba0aa-043f-4047-8b4c-2a78adfb98e8' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-8a2ba0aa-043f-4047-8b4c-2a78adfb98e8' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 20211</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-37fa71d6-6cdd-4814-bd1e-f1738dd02b27' class='xr-section-summary-in' type='checkbox'  checked><label for='section-37fa71d6-6cdd-4814-bd1e-f1738dd02b27' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2017-06-08T07:22:07 ... 2017-06-...</div><input id='attrs-da4bf750-2499-4b4f-8145-edecb2c03afc' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-da4bf750-2499-4b4f-8145-edecb2c03afc' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-afefbaf6-c1c0-450d-8c21-29c8c621517a' class='xr-var-data-in' type='checkbox'><label for='data-afefbaf6-c1c0-450d-8c21-29c8c621517a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>time</dd><dt><span>long_name :</span></dt><dd>time in seconds since epoch</dd><dt><span>axis :</span></dt><dd>T</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;2017-06-08T07:22:07.000000000&#x27;, &#x27;2017-06-08T07:22:08.000000000&#x27;,
+    history:      acquired by Polar5 during ACLOUD campaign, quality checked ...</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-124bde9d-9bc3-485c-a5f7-1f36384d78b9' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-124bde9d-9bc3-485c-a5f7-1f36384d78b9' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 20211</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-bc28531a-0be5-4bd7-8704-ae43ca855bbb' class='xr-section-summary-in' type='checkbox'  checked><label for='section-bc28531a-0be5-4bd7-8704-ae43ca855bbb' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2017-06-08T07:22:07 ... 2017-06-...</div><input id='attrs-334f1750-2d40-4efd-bc13-7e49e5c60af6' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-334f1750-2d40-4efd-bc13-7e49e5c60af6' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-fb832f85-8e5a-4260-a00c-85693b837804' class='xr-var-data-in' type='checkbox'><label for='data-fb832f85-8e5a-4260-a00c-85693b837804' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>time</dd><dt><span>long_name :</span></dt><dd>time in seconds since epoch</dd><dt><span>axis :</span></dt><dd>T</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;2017-06-08T07:22:07.000000000&#x27;, &#x27;2017-06-08T07:22:08.000000000&#x27;,
        &#x27;2017-06-08T07:22:09.000000000&#x27;, ..., &#x27;2017-06-08T12:59:05.000000000&#x27;,
        &#x27;2017-06-08T12:59:06.000000000&#x27;, &#x27;2017-06-08T12:59:07.000000000&#x27;],
-      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-f9f36b76-bf9a-43fa-bf99-49e28a1b4014' class='xr-section-summary-in' type='checkbox'  checked><label for='section-f9f36b76-bf9a-43fa-bf99-49e28a1b4014' class='xr-section-summary' >Data variables: <span>(11)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>alt</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-0e72cc12-5106-416b-a6af-3eb0e1a38df8' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-0e72cc12-5106-416b-a6af-3eb0e1a38df8' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1bada916-fac1-4360-81ca-cd2231570acf' class='xr-var-data-in' type='checkbox'><label for='data-1bada916-fac1-4360-81ca-cd2231570acf' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>height_above_reference_ellipsoid</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/elliptical height</dd><dt><span>positive :</span></dt><dd>up</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>axis :</span></dt><dd>Z</dd></dl></div><div class='xr-var-data'><pre>array([  nan, 28.83, 28.85, ..., 24.57, 24.55,   nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>tas</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-2c5ec757-a094-4e56-b8ba-18a67b624a9d' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-2c5ec757-a094-4e56-b8ba-18a67b624a9d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d2c842c5-5f92-4006-8fee-e2103a2c8c0c' class='xr-var-data-in' type='checkbox'><label for='data-d2c842c5-5f92-4006-8fee-e2103a2c8c0c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_speed_wrt_air</dd><dt><span>long_name :</span></dt><dd>calculated true airspeed</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>m/s</dd></dl></div><div class='xr-var-data'><pre>array([nan,  0.,  0., ...,  0.,  0., nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-1e57fc18-d9e4-4fa6-aab2-1628d7da73f9' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-1e57fc18-d9e4-4fa6-aab2-1628d7da73f9' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e37714a1-faf0-4d4c-9c75-680b78f89a95' class='xr-var-data-in' type='checkbox'><label for='data-e37714a1-faf0-4d4c-9c75-680b78f89a95' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>axis :</span></dt><dd>Y</dd></dl></div><div class='xr-var-data'><pre>array([      nan, 78.24576 , 78.24576 , ..., 78.245787, 78.245788,       nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat_dir</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>object</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-0a738b3c-f814-4046-8855-62fe16e65e7a' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-0a738b3c-f814-4046-8855-62fe16e65e7a' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-cfdcc617-8a8d-480b-85a8-3aeb33a872c6' class='xr-var-data-in' type='checkbox'><label for='data-cfdcc617-8a8d-480b-85a8-3aeb33a872c6' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;&#x27;, &#x27;N&#x27;, &#x27;N&#x27;, ..., &#x27;N&#x27;, &#x27;N&#x27;, &#x27;&#x27;], dtype=object)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lon</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-2238dcf1-8dba-48da-83e0-24967d70a8f8' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-2238dcf1-8dba-48da-83e0-24967d70a8f8' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6c5d444a-cada-4149-8ac2-26d5f30a8e4d' class='xr-var-data-in' type='checkbox'><label for='data-6c5d444a-cada-4149-8ac2-26d5f30a8e4d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/longitude</dd><dt><span>units :</span></dt><dd>degree_east</dd><dt><span>axis :</span></dt><dd>X</dd></dl></div><div class='xr-var-data'><pre>array([      nan, 15.504153, 15.504153, ..., 15.50407 , 15.50407 ,       nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lon_dir</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>object</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-325b6cc7-5505-4766-a6fe-092495cce769' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-325b6cc7-5505-4766-a6fe-092495cce769' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b9384a20-fba3-4daf-824b-423426b473e7' class='xr-var-data-in' type='checkbox'><label for='data-b9384a20-fba3-4daf-824b-423426b473e7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;&#x27;, &#x27;E&#x27;, &#x27;E&#x27;, ..., &#x27;E&#x27;, &#x27;E&#x27;, &#x27;&#x27;], dtype=object)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>vs</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-aeaf9e7c-2180-4093-a0cd-fb05fb0b3f10' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-aeaf9e7c-2180-4093-a0cd-fb05fb0b3f10' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d7a2d1b0-3b4f-46d7-a234-2a86186df4b4' class='xr-var-data-in' type='checkbox'><label for='data-d7a2d1b0-3b4f-46d7-a234-2a86186df4b4' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_vertical_speed</dd><dt><span>long_name :</span></dt><dd>vertical speed</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>m/s</dd></dl></div><div class='xr-var-data'><pre>array([nan, 0.1, 0.1, ..., 0.1, 0. , nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>gs</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-2123b51e-b7e6-4d70-b772-722927dc2919' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-2123b51e-b7e6-4d70-b772-722927dc2919' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-2909a2a9-1bb1-4956-bc8b-25221e139770' class='xr-var-data-in' type='checkbox'><label for='data-2909a2a9-1bb1-4956-bc8b-25221e139770' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_speed_wrt_ground</dd><dt><span>long_name :</span></dt><dd>groundspeed of platform</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>kts</dd></dl></div><div class='xr-var-data'><pre>array([0.  , 0.  , 0.  , ..., 1.95, 1.98, 1.98])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>pitch</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-1da224e0-f224-4d76-858b-f75469ac28e6' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-1da224e0-f224-4d76-858b-f75469ac28e6' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ee01f77f-da3e-44a8-aeaa-c9a59d315ea9' class='xr-var-data-in' type='checkbox'><label for='data-ee01f77f-da3e-44a8-aeaa-c9a59d315ea9' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_pitch_fore_up</dd><dt><span>long_name :</span></dt><dd>pitch angle of platform</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>degrees</dd></dl></div><div class='xr-var-data'><pre>array([12.23, 12.23, 12.23, ..., 11.72, 11.72, 11.72])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>roll</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-6efd75ec-28b1-46ed-ad1f-432f2d53ad51' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-6efd75ec-28b1-46ed-ad1f-432f2d53ad51' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-04264267-01ef-4cb1-8448-f23498ae4a71' class='xr-var-data-in' type='checkbox'><label for='data-04264267-01ef-4cb1-8448-f23498ae4a71' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_roll_starboard_down</dd><dt><span>long_name :</span></dt><dd>roll angle of platform</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>degrees</dd></dl></div><div class='xr-var-data'><pre>array([1.82, 1.82, 1.83, ..., 1.92, 1.93, 1.94])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>heading</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-15219abe-375c-473f-a7df-e2f1094d265f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-15219abe-375c-473f-a7df-e2f1094d265f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0cefa49e-5ce0-4c9f-b8c2-9adda8e99b31' class='xr-var-data-in' type='checkbox'><label for='data-0cefa49e-5ce0-4c9f-b8c2-9adda8e99b31' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_yaw_fore_starboard</dd><dt><span>long_name :</span></dt><dd>true heading</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>degrees</dd></dl></div><div class='xr-var-data'><pre>array([  0.  ,   0.  ,   0.  , ..., -73.84, -73.84, -73.83])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-1bc27b86-0ac0-4e10-883a-677404d65a44' class='xr-section-summary-in' type='checkbox'  ><label for='section-1bc27b86-0ac0-4e10-883a-677404d65a44' class='xr-section-summary' >Attributes: <span>(14)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>1Hz subset based on GPS1 and INS data processed by AWI engineers</dd><dt><span>instruments :</span></dt><dd>GPS1 and INS</dd><dt><span>version :</span></dt><dd>[0.1]</dd><dt><span>contact :</span></dt><dd>mario.mech@uni-koeln.de, martin.gehrmann@awi.de</dd><dt><span>institution :</span></dt><dd>[&#x27;Alfred-Wegener-Institut Helmholtz-Zentrum für Polar- und Meeresforschung&#x27;]</dd><dt><span>author :</span></dt><dd>Dr. Mario Mech</dd><dt><span>source :</span></dt><dd>DSHIP excerpt</dd><dt><span>Convention :</span></dt><dd>CF-1.8</dd><dt><span>featureType :</span></dt><dd>trajectory</dd><dt><span>mission :</span></dt><dd>ACLOUD</dd><dt><span>platform :</span></dt><dd>Polar5</dd><dt><span>flight_id :</span></dt><dd>RF14</dd><dt><span>title :</span></dt><dd>Polar5 position and attitude data</dd><dt><span>history :</span></dt><dd>acquired by Polar5 during ACLOUD campaign, quality checked by AWI and uploaded to DSHIP database, extracted and reformated by Mario Mech</dd></dl></div></li></ul></div></div></div></div>
+      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-dfe578b0-47ae-4d17-a5e3-26a6020ce9c1' class='xr-section-summary-in' type='checkbox'  checked><label for='section-dfe578b0-47ae-4d17-a5e3-26a6020ce9c1' class='xr-section-summary' >Data variables: <span>(11)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>alt</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-118baa37-919a-4f6d-a33d-a4c3d6694c69' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-118baa37-919a-4f6d-a33d-a4c3d6694c69' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c4065056-48bc-4de4-b897-c686236c7e80' class='xr-var-data-in' type='checkbox'><label for='data-c4065056-48bc-4de4-b897-c686236c7e80' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>height_above_reference_ellipsoid</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/elliptical height</dd><dt><span>positive :</span></dt><dd>up</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>axis :</span></dt><dd>Z</dd></dl></div><div class='xr-var-data'><pre>array([  nan, 28.83, 28.85, ..., 24.57, 24.55,   nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>tas</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-95018b96-0e51-4d20-90b4-ef6f63493831' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-95018b96-0e51-4d20-90b4-ef6f63493831' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1589f272-5e90-4e29-b6cf-34281bb8dd57' class='xr-var-data-in' type='checkbox'><label for='data-1589f272-5e90-4e29-b6cf-34281bb8dd57' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_speed_wrt_air</dd><dt><span>long_name :</span></dt><dd>calculated true airspeed</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>m/s</dd></dl></div><div class='xr-var-data'><pre>array([nan,  0.,  0., ...,  0.,  0., nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-6729e419-8b1e-401e-ad1a-670bae611e67' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-6729e419-8b1e-401e-ad1a-670bae611e67' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c8a821a1-6218-456d-b7c4-8a95a710e398' class='xr-var-data-in' type='checkbox'><label for='data-c8a821a1-6218-456d-b7c4-8a95a710e398' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>axis :</span></dt><dd>Y</dd></dl></div><div class='xr-var-data'><pre>array([      nan, 78.24576 , 78.24576 , ..., 78.245787, 78.245788,       nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat_dir</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>object</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-f0da25a1-0a15-4746-93fc-f731c1b83cf4' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-f0da25a1-0a15-4746-93fc-f731c1b83cf4' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9ca8c0c0-e96b-4bc8-b28c-808b5c84a1ab' class='xr-var-data-in' type='checkbox'><label for='data-9ca8c0c0-e96b-4bc8-b28c-808b5c84a1ab' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;&#x27;, &#x27;N&#x27;, &#x27;N&#x27;, ..., &#x27;N&#x27;, &#x27;N&#x27;, &#x27;&#x27;], dtype=object)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lon</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-36f8653f-63e9-49d4-bb0b-62f65f6575b1' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-36f8653f-63e9-49d4-bb0b-62f65f6575b1' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b88d1fa0-4e9c-45b8-8048-d44c39df4d49' class='xr-var-data-in' type='checkbox'><label for='data-b88d1fa0-4e9c-45b8-8048-d44c39df4d49' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/longitude</dd><dt><span>units :</span></dt><dd>degree_east</dd><dt><span>axis :</span></dt><dd>X</dd></dl></div><div class='xr-var-data'><pre>array([      nan, 15.504153, 15.504153, ..., 15.50407 , 15.50407 ,       nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lon_dir</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>object</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-cf812a31-e941-4dc8-b4f4-f039b7b979a5' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-cf812a31-e941-4dc8-b4f4-f039b7b979a5' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e6388c6b-9b6d-48aa-bb1b-3765724b4908' class='xr-var-data-in' type='checkbox'><label for='data-e6388c6b-9b6d-48aa-bb1b-3765724b4908' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;&#x27;, &#x27;E&#x27;, &#x27;E&#x27;, ..., &#x27;E&#x27;, &#x27;E&#x27;, &#x27;&#x27;], dtype=object)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>vs</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-946989e1-60f9-4eb6-8ef0-74f67fd41d26' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-946989e1-60f9-4eb6-8ef0-74f67fd41d26' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-126dba7a-0886-4a82-a88f-9bd619d59146' class='xr-var-data-in' type='checkbox'><label for='data-126dba7a-0886-4a82-a88f-9bd619d59146' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_vertical_speed</dd><dt><span>long_name :</span></dt><dd>vertical speed</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>m/s</dd></dl></div><div class='xr-var-data'><pre>array([nan, 0.1, 0.1, ..., 0.1, 0. , nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>gs</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-dd5010bf-0d19-4a45-92df-56b5a72805c0' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-dd5010bf-0d19-4a45-92df-56b5a72805c0' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d823504e-f67b-438b-ab0d-6d8b2d0b034b' class='xr-var-data-in' type='checkbox'><label for='data-d823504e-f67b-438b-ab0d-6d8b2d0b034b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_speed_wrt_ground</dd><dt><span>long_name :</span></dt><dd>groundspeed of platform</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>kts</dd></dl></div><div class='xr-var-data'><pre>array([0.  , 0.  , 0.  , ..., 1.95, 1.98, 1.98])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>pitch</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-9a2bad0e-d259-49e5-ac81-dc04ed95f8f3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-9a2bad0e-d259-49e5-ac81-dc04ed95f8f3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6597f6bf-29a8-49f1-8752-46d01e2a9e0f' class='xr-var-data-in' type='checkbox'><label for='data-6597f6bf-29a8-49f1-8752-46d01e2a9e0f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_pitch_fore_up</dd><dt><span>long_name :</span></dt><dd>pitch angle of platform</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>degrees</dd></dl></div><div class='xr-var-data'><pre>array([12.23, 12.23, 12.23, ..., 11.72, 11.72, 11.72])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>roll</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-427d5b74-7560-406e-90eb-3b50dcd5bea9' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-427d5b74-7560-406e-90eb-3b50dcd5bea9' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-5f12173a-9ff6-43b1-b966-aff43d7e07db' class='xr-var-data-in' type='checkbox'><label for='data-5f12173a-9ff6-43b1-b966-aff43d7e07db' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_roll_starboard_down</dd><dt><span>long_name :</span></dt><dd>roll angle of platform</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>degrees</dd></dl></div><div class='xr-var-data'><pre>array([1.82, 1.82, 1.83, ..., 1.92, 1.93, 1.94])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>heading</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-149165d9-28e8-4c62-827e-0b5c5331a7fd' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-149165d9-28e8-4c62-827e-0b5c5331a7fd' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d7f3cc73-da0d-4078-8d73-08ef9a71843f' class='xr-var-data-in' type='checkbox'><label for='data-d7f3cc73-da0d-4078-8d73-08ef9a71843f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_yaw_fore_starboard</dd><dt><span>long_name :</span></dt><dd>true heading</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>degrees</dd></dl></div><div class='xr-var-data'><pre>array([  0.  ,   0.  ,   0.  , ..., -73.84, -73.84, -73.83])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-225169cd-c19a-4cba-b6ba-0f15f2452408' class='xr-section-summary-in' type='checkbox'  ><label for='section-225169cd-c19a-4cba-b6ba-0f15f2452408' class='xr-section-summary' >Attributes: <span>(14)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>1Hz subset based on GPS1 and INS data processed by AWI engineers</dd><dt><span>instruments :</span></dt><dd>GPS1 and INS</dd><dt><span>version :</span></dt><dd>[0.1]</dd><dt><span>contact :</span></dt><dd>mario.mech@uni-koeln.de, martin.gehrmann@awi.de</dd><dt><span>institution :</span></dt><dd>[&#x27;Alfred-Wegener-Institut Helmholtz-Zentrum für Polar- und Meeresforschung&#x27;]</dd><dt><span>author :</span></dt><dd>Dr. Mario Mech</dd><dt><span>source :</span></dt><dd>DSHIP excerpt</dd><dt><span>Convention :</span></dt><dd>CF-1.8</dd><dt><span>featureType :</span></dt><dd>trajectory</dd><dt><span>mission :</span></dt><dd>ACLOUD</dd><dt><span>platform :</span></dt><dd>Polar5</dd><dt><span>flight_id :</span></dt><dd>RF14</dd><dt><span>title :</span></dt><dd>Polar5 position and attitude data</dd><dt><span>history :</span></dt><dd>acquired by Polar5 during ACLOUD campaign, quality checked by AWI and uploaded to DSHIP database, extracted and reformated by Mario Mech</dd></dl></div></li></ul></div></div></div></div>
 </div>
 </div>
 <div class="section" id="import-flightphase-module">
 <h2>Import flightphase module<a class="headerlink" href="#import-flightphase-module" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ac3airborne.tools</span> <span class="k">import</span> <span class="n">flightphase</span> <span class="k">as</span> <span class="n">fp</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ac3airborne.tools</span> <span class="k">import</span> <span class="n">flightphase</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
 <span class="kn">import</span> <span class="nn">cartopy.feature</span> <span class="k">as</span> <span class="nn">cfeature</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;../mplstyle/book&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -844,7 +846,7 @@ Attributes: (12/14)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">FlightPhaseFile</span><span class="p">(</span><span class="n">flight</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">flight_query</span> <span class="o">=</span> <span class="n">flightphase</span><span class="o">.</span><span class="n">FlightPhaseFile</span><span class="p">(</span><span class="n">flight</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -854,7 +856,7 @@ Attributes: (12/14)
 <h2>Plot entire flight<a class="headerlink" href="#plot-entire-flight" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">proj</span>   <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">NorthPolarStereo</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">proj</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">NorthPolarStereo</span><span class="p">()</span>
 <span class="n">extent</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">24.0</span><span class="p">,</span> <span class="mf">78.0</span><span class="p">,</span> <span class="mf">83.0</span><span class="p">)</span>
 
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
@@ -879,7 +881,221 @@ Attributes: (12/14)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/reading_the_flight_phase_files_15_0.png" src="../_images/reading_the_flight_phase_files_15_0.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="mi">08</span><span class="n">edf3d4a726</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span> <span class="n">line_all</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds_gps</span><span class="o">.</span><span class="n">lon</span><span class="p">,</span> <span class="n">ds_gps</span><span class="o">.</span><span class="n">lat</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+<span class="g g-Whitespace">     </span><span class="mi">20</span> 
+<span class="ne">---&gt; </span><span class="mi">21</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/matplotlib/pyplot.py</span> in <span class="ni">show</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">351</span>     <span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">352</span><span class="sd">     _warn_if_gui_out_of_main_thread()</span>
+<span class="ne">--&gt; </span><span class="mi">353</span><span class="sd">     return _backend_mod.show(*args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">354</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">355</span><span class="sd"> </span>
+
+<span class="nn">/usr/lib/python3/dist-packages/ipykernel/pylab/backend_inline.py</span> in <span class="ni">show</span><span class="nt">(close, block)</span>
+<span class="g g-Whitespace">     </span><span class="mi">39</span><span class="sd">     try:</span>
+<span class="g g-Whitespace">     </span><span class="mi">40</span><span class="sd">         for figure_manager in Gcf.get_all_fig_managers():</span>
+<span class="ne">---&gt; </span><span class="mi">41</span><span class="sd">             display(</span>
+<span class="g g-Whitespace">     </span><span class="mi">42</span><span class="sd">                 figure_manager.canvas.figure,</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span><span class="sd">                 metadata=_fetch_figure_metadata(figure_manager.canvas.figure)</span>
+
+<span class="nn">/usr/lib/python3/dist-packages/IPython/core/display.py</span> in <span class="ni">display</span><span class="nt">(include, exclude, metadata, transient, display_id, *objs, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">311</span><span class="sd">             publish_display_data(data=obj, metadata=metadata, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">312</span><span class="sd">         else:</span>
+<span class="ne">--&gt; </span><span class="mi">313</span><span class="sd">             format_dict, md_dict = format(obj, include=include, exclude=exclude)</span>
+<span class="g g-Whitespace">    </span><span class="mi">314</span><span class="sd">             if not format_dict:</span>
+<span class="g g-Whitespace">    </span><span class="mi">315</span><span class="sd">                 # nothing to display (e.g. _ipython_display_ took over)</span>
+
+<span class="nn">/usr/lib/python3/dist-packages/IPython/core/formatters.py</span> in <span class="ni">format</span><span class="nt">(self, obj, include, exclude)</span>
+<span class="g g-Whitespace">    </span><span class="mi">178</span><span class="sd">             md = None</span>
+<span class="g g-Whitespace">    </span><span class="mi">179</span><span class="sd">             try:</span>
+<span class="ne">--&gt; </span><span class="mi">180</span><span class="sd">                 data = formatter(obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">181</span><span class="sd">             except:</span>
+<span class="g g-Whitespace">    </span><span class="mi">182</span><span class="sd">                 # FIXME: log the exception</span>
+
+<span class="nn">&lt;decorator-gen-9&gt;</span> in <span class="ni">__call__</span><span class="nt">(self, obj)</span>
+
+<span class="nn">/usr/lib/python3/dist-packages/IPython/core/formatters.py</span> in <span class="ni">catch_format_error</span><span class="nt">(method, self, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">222</span><span class="sd">     &quot;&quot;&quot;</span><span class="n">show</span> <span class="n">traceback</span> <span class="n">on</span> <span class="n">failed</span> <span class="n">format</span> <span class="n">call</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">223</span><span class="s2">     try:</span>
+<span class="ne">--&gt; </span><span class="mi">224</span><span class="s2">         r = method(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">225</span><span class="s2">     except NotImplementedError:</span>
+<span class="g g-Whitespace">    </span><span class="mi">226</span><span class="s2">         # don&#39;t warn on NotImplementedErrors</span>
+
+<span class="nn">/usr/lib/python3/dist-packages/IPython/core/formatters.py</span> in <span class="ni">__call__</span><span class="nt">(self, obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">339</span><span class="s2">                 pass</span>
+<span class="g g-Whitespace">    </span><span class="mi">340</span><span class="s2">             else:</span>
+<span class="ne">--&gt; </span><span class="mi">341</span><span class="s2">                 return printer(obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span><span class="s2">             # Finally look for special method names</span>
+<span class="g g-Whitespace">    </span><span class="mi">343</span><span class="s2">             method = get_real_method(obj, self.print_method)</span>
+
+<span class="nn">/usr/lib/python3/dist-packages/IPython/core/pylabtools.py</span> in <span class="ni">&lt;lambda&gt;</span><span class="nt">(fig)</span>
+<span class="g g-Whitespace">    </span><span class="mi">246</span><span class="s2"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">247</span><span class="s2">     if &#39;png&#39; in formats:</span>
+<span class="ne">--&gt; </span><span class="mi">248</span><span class="s2">         png_formatter.for_type(Figure, lambda fig: print_figure(fig, &#39;png&#39;, **kwargs))</span>
+<span class="g g-Whitespace">    </span><span class="mi">249</span><span class="s2">     if &#39;retina&#39; in formats or &#39;png2x&#39; in formats:</span>
+<span class="g g-Whitespace">    </span><span class="mi">250</span><span class="s2">         png_formatter.for_type(Figure, lambda fig: retina_figure(fig, **kwargs))</span>
+
+<span class="nn">/usr/lib/python3/dist-packages/IPython/core/pylabtools.py</span> in <span class="ni">print_figure</span><span class="nt">(fig, fmt, bbox_inches, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">130</span><span class="s2">         FigureCanvasBase(fig)</span>
+<span class="g g-Whitespace">    </span><span class="mi">131</span><span class="s2"> </span>
+<span class="ne">--&gt; </span><span class="mi">132</span><span class="s2">     fig.canvas.print_figure(bytes_io, **kw)</span>
+<span class="g g-Whitespace">    </span><span class="mi">133</span><span class="s2">     data = bytes_io.getvalue()</span>
+<span class="g g-Whitespace">    </span><span class="mi">134</span><span class="s2">     if fmt == &#39;svg&#39;:</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/matplotlib/backend_bases.py</span> in <span class="ni">print_figure</span><span class="nt">(self, filename, dpi, facecolor, edgecolor, orientation, format, bbox_inches, pad_inches, bbox_extra_artists, backend, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2208</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">2209</span><span class="s2">             try:</span>
+<span class="ne">-&gt; </span><span class="mi">2210</span><span class="s2">                 result = print_method(</span>
+<span class="g g-Whitespace">   </span><span class="mi">2211</span><span class="s2">                     filename,</span>
+<span class="g g-Whitespace">   </span><span class="mi">2212</span><span class="s2">                     dpi=dpi,</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/matplotlib/backend_bases.py</span> in <span class="ni">wrapper</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1637</span><span class="s2">             kwargs.pop(arg)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1638</span><span class="s2"> </span>
+<span class="ne">-&gt; </span><span class="mi">1639</span><span class="s2">         return func(*args, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1640</span><span class="s2"> </span>
+<span class="g g-Whitespace">   </span><span class="mi">1641</span><span class="s2">     return wrapper</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/matplotlib/backends/backend_agg.py</span> in <span class="ni">print_png</span><span class="nt">(self, filename_or_obj, metadata, pil_kwargs, *args)</span>
+<span class="g g-Whitespace">    </span><span class="mi">507</span><span class="s2">             *metadata*, including the default &#39;Software&#39; key.</span>
+<span class="g g-Whitespace">    </span><span class="mi">508</span><span class="s2">         &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">509</span>         <span class="n">FigureCanvasAgg</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">510</span>         <span class="n">mpl</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">imsave</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">511</span>             <span class="n">filename_or_obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">buffer_rgba</span><span class="p">(),</span> <span class="n">format</span><span class="o">=</span><span class="s2">&quot;png&quot;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s2">&quot;upper&quot;</span><span class="p">,</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/matplotlib/backends/backend_agg.py</span> in <span class="ni">draw</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">405</span>              <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">toolbar</span><span class="o">.</span><span class="n">_wait_cursor_for_draw_cm</span><span class="p">()</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">toolbar</span>
+<span class="g g-Whitespace">    </span><span class="mi">406</span>               <span class="k">else</span> <span class="n">nullcontext</span><span class="p">()):</span>
+<span class="ne">--&gt; </span><span class="mi">407</span>             <span class="bp">self</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">renderer</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">408</span>             <span class="c1"># A GUI class may be need to update a window using this draw, so</span>
+<span class="g g-Whitespace">    </span><span class="mi">409</span>             <span class="c1"># don&#39;t forget to call the superclass.</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/matplotlib/artist.py</span> in <span class="ni">draw_wrapper</span><span class="nt">(artist, renderer, *args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">39</span>                 <span class="n">renderer</span><span class="o">.</span><span class="n">start_filter</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">40</span> 
+<span class="ne">---&gt; </span><span class="mi">41</span>             <span class="k">return</span> <span class="n">draw</span><span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="n">renderer</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">42</span>         <span class="k">finally</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span>             <span class="k">if</span> <span class="n">artist</span><span class="o">.</span><span class="n">get_agg_filter</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/matplotlib/figure.py</span> in <span class="ni">draw</span><span class="nt">(self, renderer)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1861</span> 
+<span class="g g-Whitespace">   </span><span class="mi">1862</span>             <span class="bp">self</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">renderer</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1863</span>             <span class="n">mimage</span><span class="o">.</span><span class="n">_draw_list_compositing_images</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1864</span>                 <span class="n">renderer</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">artists</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">suppressComposite</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1865</span> 
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/matplotlib/image.py</span> in <span class="ni">_draw_list_compositing_images</span><span class="nt">(renderer, parent, artists, suppress_composite)</span>
+<span class="g g-Whitespace">    </span><span class="mi">129</span>     <span class="k">if</span> <span class="n">not_composite</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">has_images</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">130</span>         <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">artists</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">131</span>             <span class="n">a</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">renderer</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">132</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">133</span>         <span class="c1"># Composite any adjacent images together</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/matplotlib/artist.py</span> in <span class="ni">draw_wrapper</span><span class="nt">(artist, renderer, *args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">39</span>                 <span class="n">renderer</span><span class="o">.</span><span class="n">start_filter</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">40</span> 
+<span class="ne">---&gt; </span><span class="mi">41</span>             <span class="k">return</span> <span class="n">draw</span><span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="n">renderer</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">42</span>         <span class="k">finally</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span>             <span class="k">if</span> <span class="n">artist</span><span class="o">.</span><span class="n">get_agg_filter</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/cartopy/mpl/geoaxes.py</span> in <span class="ni">draw</span><span class="nt">(self, renderer, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">477</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_done_img_factory</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="g g-Whitespace">    </span><span class="mi">478</span> 
+<span class="ne">--&gt; </span><span class="mi">479</span>         <span class="k">return</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">Axes</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">renderer</span><span class="o">=</span><span class="n">renderer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">480</span> 
+<span class="g g-Whitespace">    </span><span class="mi">481</span>     <span class="k">def</span> <span class="nf">_update_title_position</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">renderer</span><span class="p">):</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/matplotlib/artist.py</span> in <span class="ni">draw_wrapper</span><span class="nt">(artist, renderer, *args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">39</span>                 <span class="n">renderer</span><span class="o">.</span><span class="n">start_filter</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">40</span> 
+<span class="ne">---&gt; </span><span class="mi">41</span>             <span class="k">return</span> <span class="n">draw</span><span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="n">renderer</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">42</span>         <span class="k">finally</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span>             <span class="k">if</span> <span class="n">artist</span><span class="o">.</span><span class="n">get_agg_filter</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/matplotlib/cbook/deprecation.py</span> in <span class="ni">wrapper</span><span class="nt">(*inner_args, **inner_kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">409</span>                          <span class="k">else</span> <span class="n">deprecation_addendum</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">410</span>                 <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">411</span>         <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">inner_args</span><span class="p">,</span> <span class="o">**</span><span class="n">inner_kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">412</span> 
+<span class="g g-Whitespace">    </span><span class="mi">413</span>     <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/matplotlib/axes/_base.py</span> in <span class="ni">draw</span><span class="nt">(self, renderer, inframe)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2745</span>             <span class="n">renderer</span><span class="o">.</span><span class="n">stop_rasterizing</span><span class="p">()</span>
+<span class="g g-Whitespace">   </span><span class="mi">2746</span> 
+<span class="ne">-&gt; </span><span class="mi">2747</span>         <span class="n">mimage</span><span class="o">.</span><span class="n">_draw_list_compositing_images</span><span class="p">(</span><span class="n">renderer</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">artists</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2748</span> 
+<span class="g g-Whitespace">   </span><span class="mi">2749</span>         <span class="n">renderer</span><span class="o">.</span><span class="n">close_group</span><span class="p">(</span><span class="s1">&#39;axes&#39;</span><span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/matplotlib/image.py</span> in <span class="ni">_draw_list_compositing_images</span><span class="nt">(renderer, parent, artists, suppress_composite)</span>
+<span class="g g-Whitespace">    </span><span class="mi">129</span>     <span class="k">if</span> <span class="n">not_composite</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">has_images</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">130</span>         <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">artists</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">131</span>             <span class="n">a</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">renderer</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">132</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">133</span>         <span class="c1"># Composite any adjacent images together</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/matplotlib/artist.py</span> in <span class="ni">draw_wrapper</span><span class="nt">(artist, renderer, *args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">39</span>                 <span class="n">renderer</span><span class="o">.</span><span class="n">start_filter</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">40</span> 
+<span class="ne">---&gt; </span><span class="mi">41</span>             <span class="k">return</span> <span class="n">draw</span><span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="n">renderer</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">42</span>         <span class="k">finally</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span>             <span class="k">if</span> <span class="n">artist</span><span class="o">.</span><span class="n">get_agg_filter</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/cartopy/mpl/feature_artist.py</span> in <span class="ni">draw</span><span class="nt">(self, renderer, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">216</span>             <span class="n">c</span><span class="o">.</span><span class="n">set_clip_path</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">patch</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">217</span>             <span class="n">c</span><span class="o">.</span><span class="n">set_figure</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">figure</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">218</span>             <span class="n">c</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">renderer</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">219</span> 
+<span class="g g-Whitespace">    </span><span class="mi">220</span>         <span class="c1"># n.b. matplotlib.collection.Collection.draw returns None</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/matplotlib/artist.py</span> in <span class="ni">draw_wrapper</span><span class="nt">(artist, renderer, *args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">39</span>                 <span class="n">renderer</span><span class="o">.</span><span class="n">start_filter</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">40</span> 
+<span class="ne">---&gt; </span><span class="mi">41</span>             <span class="k">return</span> <span class="n">draw</span><span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="n">renderer</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">42</span>         <span class="k">finally</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span>             <span class="k">if</span> <span class="n">artist</span><span class="o">.</span><span class="n">get_agg_filter</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/matplotlib/collections.py</span> in <span class="ni">draw</span><span class="nt">(self, renderer)</span>
+<span class="g g-Whitespace">    </span><span class="mi">929</span>     <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">renderer</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">930</span>         <span class="bp">self</span><span class="o">.</span><span class="n">set_sizes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_sizes</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">dpi</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">931</span>         <span class="n">Collection</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">renderer</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">932</span> 
+<span class="g g-Whitespace">    </span><span class="mi">933</span> 
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/matplotlib/artist.py</span> in <span class="ni">draw_wrapper</span><span class="nt">(artist, renderer, *args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">39</span>                 <span class="n">renderer</span><span class="o">.</span><span class="n">start_filter</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">40</span> 
+<span class="ne">---&gt; </span><span class="mi">41</span>             <span class="k">return</span> <span class="n">draw</span><span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="n">renderer</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">42</span>         <span class="k">finally</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span>             <span class="k">if</span> <span class="n">artist</span><span class="o">.</span><span class="n">get_agg_filter</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/matplotlib/collections.py</span> in <span class="ni">draw</span><span class="nt">(self, renderer)</span>
+<span class="g g-Whitespace">    </span><span class="mi">404</span>                 <span class="n">mpath</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="n">offsets</span><span class="p">),</span> <span class="n">transOffset</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">facecolors</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="g g-Whitespace">    </span><span class="mi">405</span>         <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">406</span>             <span class="n">renderer</span><span class="o">.</span><span class="n">draw_path_collection</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">407</span>                 <span class="n">gc</span><span class="p">,</span> <span class="n">transform</span><span class="o">.</span><span class="n">frozen</span><span class="p">(),</span> <span class="n">paths</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">408</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">get_transforms</span><span class="p">(),</span> <span class="n">offsets</span><span class="p">,</span> <span class="n">transOffset</span><span class="p">,</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/matplotlib/backends/backend_agg.py</span> in <span class="ni">draw_path_collection</span><span class="nt">(self, gc, master_transform, paths, all_transforms, offsets, offsetTrans, facecolors, edgecolors, linewidths, linestyles, antialiaseds, urls, offset_position)</span>
+<span class="g g-Whitespace">    </span><span class="mi">170</span>                 <span class="s2">&quot;3.3&quot;</span><span class="p">,</span> <span class="n">message</span><span class="o">=</span><span class="s2">&quot;Support for offset_position=&#39;data&#39; is &quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">171</span>                 <span class="s2">&quot;deprecated since </span><span class="si">%(since)s</span><span class="s2"> and will be removed </span><span class="si">%(removal)s</span><span class="s2">.&quot;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">172</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_renderer</span><span class="o">.</span><span class="n">draw_path_collection</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">173</span>             <span class="n">gc</span><span class="p">,</span> <span class="n">master_transform</span><span class="p">,</span> <span class="n">paths</span><span class="p">,</span> <span class="n">all_transforms</span><span class="p">,</span> <span class="n">offsets</span><span class="p">,</span> <span class="n">offsetTrans</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">174</span>             <span class="n">facecolors</span><span class="p">,</span> <span class="n">edgecolors</span><span class="p">,</span> <span class="n">linewidths</span><span class="p">,</span> <span class="n">linestyles</span><span class="p">,</span> <span class="n">antialiaseds</span><span class="p">,</span> <span class="n">urls</span><span class="p">,</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/matplotlib/path.py</span> in <span class="ni">vertices</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">200</span>         <span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">201</span> 
+<span class="ne">--&gt; </span><span class="mi">202</span>     <span class="nd">@property</span>
+<span class="g g-Whitespace">    </span><span class="mi">203</span>     <span class="k">def</span> <span class="nf">vertices</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">204</span>         <span class="s2">&quot;&quot;&quot;</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="query-all-segments-of-a-specific-kind">
@@ -887,123 +1103,71 @@ Attributes: (12/14)
 <p>Example with one kind</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">queried</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">selectKind</span><span class="p">([</span><span class="s1">&#39;high_level&#39;</span><span class="p">])</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">queried</span><span class="p">)</span>
-<span class="n">df</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">queried</span> <span class="o">=</span> <span class="n">flight_query</span><span class="o">.</span><span class="n">selectKind</span><span class="p">([</span><span class="s1">&#39;high_level&#39;</span><span class="p">])</span>
+<span class="n">queried</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>dropsondes</th>
-      <th>end</th>
-      <th>irregularities</th>
-      <th>kinds</th>
-      <th>levels</th>
-      <th>name</th>
-      <th>segment_id</th>
-      <th>start</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 08:25:56</td>
-      <td>[]</td>
-      <td>[high_level]</td>
-      <td>[9800]</td>
-      <td>high level 1</td>
-      <td>ACLOUD_P5_RF14_hl01</td>
-      <td>2017-06-08 08:08:54</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde01'], 'UGLY...</td>
-      <td>2017-06-08 08:58:25</td>
-      <td>[]</td>
-      <td>[high_level]</td>
-      <td>[9800]</td>
-      <td>high level 2</td>
-      <td>ACLOUD_P5_RF14_hl02</td>
-      <td>2017-06-08 08:36:30</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde02', 'P5_RF...</td>
-      <td>2017-06-08 09:30:29</td>
-      <td>[]</td>
-      <td>[high_level, a-train_underflight]</td>
-      <td>[9700]</td>
-      <td>high level 3</td>
-      <td>ACLOUD_P5_RF14_hl03</td>
-      <td>2017-06-08 08:59:08</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde04'], 'UGLY...</td>
-      <td>2017-06-08 09:51:03</td>
-      <td>[]</td>
-      <td>[high_level]</td>
-      <td>[9700]</td>
-      <td>high level 4</td>
-      <td>ACLOUD_P5_RF14_hl04</td>
-      <td>2017-06-08 09:31:41</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde05'], 'UGLY...</td>
-      <td>2017-06-08 10:00:13</td>
-      <td>[]</td>
-      <td>[high_level]</td>
-      <td>[9800]</td>
-      <td>high level 5</td>
-      <td>ACLOUD_P5_RF14_hl05</td>
-      <td>2017-06-08 09:51:33</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 11:52:56</td>
-      <td>[]</td>
-      <td>[high_level]</td>
-      <td>[9700]</td>
-      <td>high level 6</td>
-      <td>ACLOUD_P5_RF14_hl06</td>
-      <td>2017-06-08 11:11:20</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde06'], 'UGLY...</td>
-      <td>2017-06-08 12:05:13</td>
-      <td>[]</td>
-      <td>[high_level]</td>
-      <td>[9800]</td>
-      <td>high level 7</td>
-      <td>ACLOUD_P5_RF14_hl07</td>
-      <td>2017-06-08 11:53:38</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;dropsondes&#39;: [],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 8, 25, 56),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;high_level&#39;],
+  &#39;levels&#39;: [9800],
+  &#39;name&#39;: &#39;high level 1&#39;,
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_hl01&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 8, 8, 54)},
+ {&#39;dropsondes&#39;: [&#39;ACLOUD_P5_RF14_DS01&#39;],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 8, 58, 25),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;high_level&#39;],
+  &#39;levels&#39;: [9800],
+  &#39;name&#39;: &#39;high level 2&#39;,
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_hl02&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 8, 36, 30)},
+ {&#39;dropsondes&#39;: [&#39;ACLOUD_P5_RF14_DS02&#39;, &#39;ACLOUD_P5_RF14_DS03&#39;],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 9, 30, 29),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;high_level&#39;, &#39;a-train_underflight&#39;],
+  &#39;levels&#39;: [9700],
+  &#39;name&#39;: &#39;high level 3&#39;,
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_hl03&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 8, 59, 8)},
+ {&#39;dropsondes&#39;: [&#39;ACLOUD_P5_RF14_DS04&#39;],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 9, 51, 3),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;high_level&#39;],
+  &#39;levels&#39;: [9700],
+  &#39;name&#39;: &#39;high level 4&#39;,
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_hl04&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 9, 31, 41)},
+ {&#39;dropsondes&#39;: [&#39;ACLOUD_P5_RF14_DS05&#39;],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 0, 13),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;high_level&#39;],
+  &#39;levels&#39;: [9800],
+  &#39;name&#39;: &#39;high level 5&#39;,
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_hl05&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 9, 51, 33)},
+ {&#39;dropsondes&#39;: [],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 11, 52, 56),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;high_level&#39;],
+  &#39;levels&#39;: [9700],
+  &#39;name&#39;: &#39;high level 6&#39;,
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_hl06&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 11, 11, 20)},
+ {&#39;dropsondes&#39;: [&#39;ACLOUD_P5_RF14_DS06&#39;],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 12, 5, 13),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;high_level&#39;],
+  &#39;levels&#39;: [9800],
+  &#39;name&#39;: &#39;high level 7&#39;,
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_hl07&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 11, 53, 38)}]
+</pre></div>
+</div>
+</div>
 </div>
 <p>Plot the selected segments:</p>
 <div class="cell docutils container">
@@ -1034,95 +1198,94 @@ Attributes: (12/14)
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kinds</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a-train_underflight&#39;</span><span class="p">,</span> <span class="s1">&#39;nya_overflight&#39;</span><span class="p">,</span> <span class="s1">&#39;polarstern_overflight&#39;</span><span class="p">]</span>
 
-<span class="n">queried</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">selectKind</span><span class="p">(</span><span class="n">kinds</span><span class="p">)</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">queried</span><span class="p">)</span>
-<span class="n">df</span>
+<span class="n">queried</span> <span class="o">=</span> <span class="n">flight_query</span><span class="o">.</span><span class="n">selectKind</span><span class="p">(</span><span class="n">kinds</span><span class="p">)</span>
+<span class="n">queried</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>dropsondes</th>
-      <th>end</th>
-      <th>irregularities</th>
-      <th>kinds</th>
-      <th>levels</th>
-      <th>name</th>
-      <th>segment_id</th>
-      <th>start</th>
-      <th>parts</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 08:08:53</td>
-      <td>[whale-watching loop]</td>
-      <td>[major_ascend, nya_overflight, sveabreen_glaci...</td>
-      <td>[100, 9700]</td>
-      <td>major ascend</td>
-      <td>ACLOUD_P5_RF14_ma</td>
-      <td>2017-06-08 07:36:50</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde02', 'P5_RF...</td>
-      <td>2017-06-08 09:30:29</td>
-      <td>[]</td>
-      <td>[high_level, a-train_underflight]</td>
-      <td>[9700]</td>
-      <td>high level 3</td>
-      <td>ACLOUD_P5_RF14_hl03</td>
-      <td>2017-06-08 08:59:08</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 10:10:50</td>
-      <td>[]</td>
-      <td>[cross_pattern, polarstern_overflight]</td>
-      <td>[9600, 9700]</td>
-      <td>cross pattern 1</td>
-      <td>ACLOUD_P5_RF14_cr01</td>
-      <td>2017-06-08 10:00:14</td>
-      <td>[{'end': 2017-06-08 10:03:13, 'irregularities'...</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 12:25:39</td>
-      <td>[]</td>
-      <td>[cross_pattern, nya_overflight]</td>
-      <td>[9800, 9800, 9800]</td>
-      <td>cross pattern 2</td>
-      <td>ACLOUD_P5_RF14_cr02</td>
-      <td>2017-06-08 12:05:14</td>
-      <td>[{'end': 2017-06-08 12:10:13, 'irregularities'...</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;dropsondes&#39;: [],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 8, 8, 53),
+  &#39;irregularities&#39;: [&#39;whale-watching loop&#39;],
+  &#39;kinds&#39;: [&#39;major_ascend&#39;, &#39;nya_overflight&#39;, &#39;sveabreen_glacier_overflight&#39;],
+  &#39;levels&#39;: [100, 9700],
+  &#39;name&#39;: &#39;major ascend&#39;,
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_ma&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 7, 36, 50)},
+ {&#39;dropsondes&#39;: [&#39;ACLOUD_P5_RF14_DS02&#39;, &#39;ACLOUD_P5_RF14_DS03&#39;],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 9, 30, 29),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;high_level&#39;, &#39;a-train_underflight&#39;],
+  &#39;levels&#39;: [9700],
+  &#39;name&#39;: &#39;high level 3&#39;,
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_hl03&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 8, 59, 8)},
+ {&#39;dropsondes&#39;: [],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 10, 50),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;cross_pattern&#39;, &#39;polarstern_overflight&#39;],
+  &#39;levels&#39;: [9600, 9700],
+  &#39;name&#39;: &#39;cross pattern 1&#39;,
+  &#39;parts&#39;: [{&#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 3, 13),
+    &#39;irregularities&#39;: [],
+    &#39;kinds&#39;: [&#39;high_level&#39;],
+    &#39;levels&#39;: [9600],
+    &#39;name&#39;: &#39;cross pattern 1 leg 1&#39;,
+    &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_cr01_l01&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 0, 14)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 8, 12),
+    &#39;kinds&#39;: [&#39;cross_pattern_turn&#39;],
+    &#39;name&#39;: &#39;cross pattern turn&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 3, 14)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 10, 50),
+    &#39;irregularities&#39;: [],
+    &#39;kinds&#39;: [&#39;high_level&#39;],
+    &#39;levels&#39;: [9700],
+    &#39;name&#39;: &#39;cross pattern 1 leg 2&#39;,
+    &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_cr01_l02&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 8, 13)}],
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_cr01&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 0, 14)},
+ {&#39;dropsondes&#39;: [],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 12, 25, 39),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;cross_pattern&#39;, &#39;nya_overflight&#39;],
+  &#39;levels&#39;: [9800, 9800, 9800],
+  &#39;name&#39;: &#39;cross pattern 2&#39;,
+  &#39;parts&#39;: [{&#39;end&#39;: datetime.datetime(2017, 6, 8, 12, 10, 13),
+    &#39;irregularities&#39;: [],
+    &#39;kinds&#39;: [&#39;high_level&#39;],
+    &#39;levels&#39;: [9800],
+    &#39;name&#39;: &#39;cross pattern 2 leg 1&#39;,
+    &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_cr02_l01&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 12, 5, 14)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 12, 14, 41),
+    &#39;kinds&#39;: [&#39;cross_pattern_turn&#39;],
+    &#39;name&#39;: &#39;cross pattern turn&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 12, 10, 14)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 12, 18, 50),
+    &#39;irregularities&#39;: [],
+    &#39;kinds&#39;: [&#39;high_level&#39;],
+    &#39;levels&#39;: [9800],
+    &#39;name&#39;: &#39;cross pattern 2 leg 2&#39;,
+    &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_cr02_l02&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 12, 14, 42)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 12, 24, 14),
+    &#39;kinds&#39;: [&#39;cross_pattern_turn&#39;],
+    &#39;name&#39;: &#39;cross pattern turn&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 12, 18, 51)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 12, 25, 39),
+    &#39;irregularities&#39;: [],
+    &#39;kinds&#39;: [&#39;high_level&#39;],
+    &#39;levels&#39;: [9800],
+    &#39;name&#39;: &#39;cross pattern 2 leg 3&#39;,
+    &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_cr02_l03&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 12, 24, 15)}],
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_cr02&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 12, 5, 14)}]
+</pre></div>
+</div>
+</div>
 </div>
 <p>Plot the selected segments:</p>
 <div class="cell docutils container">
@@ -1156,107 +1319,151 @@ Attributes: (12/14)
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sort_out</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;short_turn&#39;</span><span class="p">,</span> <span class="s1">&#39;holding_pattern&#39;</span><span class="p">,</span> <span class="s1">&#39;major_ascend&#39;</span><span class="p">,</span> <span class="s1">&#39;major_descend&#39;</span><span class="p">,</span> <span class="s1">&#39;high_level&#39;</span><span class="p">]</span>
 
-<span class="n">queried</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">selectKind</span><span class="p">(</span><span class="n">sort_out</span><span class="p">,</span> <span class="n">invertSelection</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">queried</span><span class="p">)</span>
-<span class="n">df</span>
+<span class="n">queried</span> <span class="o">=</span> <span class="n">flight_query</span><span class="o">.</span><span class="n">selectKind</span><span class="p">(</span><span class="n">sort_out</span><span class="p">,</span> <span class="n">invertSelection</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">queried</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>dropsondes</th>
-      <th>end</th>
-      <th>irregularities</th>
-      <th>kinds</th>
-      <th>levels</th>
-      <th>name</th>
-      <th>parts</th>
-      <th>segment_id</th>
-      <th>start</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 10:10:50</td>
-      <td>[]</td>
-      <td>[cross_pattern, polarstern_overflight]</td>
-      <td>[9600, 9700]</td>
-      <td>cross pattern 1</td>
-      <td>[{'end': 2017-06-08 10:03:13, 'irregularities'...</td>
-      <td>ACLOUD_P5_RF14_cr01</td>
-      <td>2017-06-08 10:00:14</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 10:22:43</td>
-      <td>[not along straight line]</td>
-      <td>[large_descend]</td>
-      <td>[9700, 200]</td>
-      <td>large descend 1</td>
-      <td>NaN</td>
-      <td>ACLOUD_P5_RF14_ld01</td>
-      <td>2017-06-08 10:10:51</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 11:02:01</td>
-      <td>[]</td>
-      <td>[racetrack_pattern]</td>
-      <td>[200, 300, 1500, 2400]</td>
-      <td>racetrack pattern 1</td>
-      <td>[{'end': 2017-06-08 10:29:20, 'irregularities'...</td>
-      <td>ACLOUD_P5_RF14_rt01</td>
-      <td>2017-06-08 10:22:44</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 11:11:19</td>
-      <td>[]</td>
-      <td>[large_ascend]</td>
-      <td>[2400, 9700]</td>
-      <td>large ascend 1</td>
-      <td>NaN</td>
-      <td>ACLOUD_P5_RF14_la01</td>
-      <td>2017-06-08 11:02:25</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 12:25:39</td>
-      <td>[]</td>
-      <td>[cross_pattern, nya_overflight]</td>
-      <td>[9800, 9800, 9800]</td>
-      <td>cross pattern 2</td>
-      <td>[{'end': 2017-06-08 12:10:13, 'irregularities'...</td>
-      <td>ACLOUD_P5_RF14_cr02</td>
-      <td>2017-06-08 12:05:14</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;dropsondes&#39;: [],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 10, 50),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;cross_pattern&#39;, &#39;polarstern_overflight&#39;],
+  &#39;levels&#39;: [9600, 9700],
+  &#39;name&#39;: &#39;cross pattern 1&#39;,
+  &#39;parts&#39;: [{&#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 3, 13),
+    &#39;irregularities&#39;: [],
+    &#39;kinds&#39;: [&#39;high_level&#39;],
+    &#39;levels&#39;: [9600],
+    &#39;name&#39;: &#39;cross pattern 1 leg 1&#39;,
+    &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_cr01_l01&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 0, 14)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 8, 12),
+    &#39;kinds&#39;: [&#39;cross_pattern_turn&#39;],
+    &#39;name&#39;: &#39;cross pattern turn&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 3, 14)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 10, 50),
+    &#39;irregularities&#39;: [],
+    &#39;kinds&#39;: [&#39;high_level&#39;],
+    &#39;levels&#39;: [9700],
+    &#39;name&#39;: &#39;cross pattern 1 leg 2&#39;,
+    &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_cr01_l02&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 8, 13)}],
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_cr01&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 0, 14)},
+ {&#39;dropsondes&#39;: [],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 22, 43),
+  &#39;irregularities&#39;: [&#39;not along straight line&#39;],
+  &#39;kinds&#39;: [&#39;large_descend&#39;],
+  &#39;levels&#39;: [9700, 200],
+  &#39;name&#39;: &#39;large descend 1&#39;,
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_ld01&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 10, 51)},
+ {&#39;dropsondes&#39;: [],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 11, 2, 1),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;racetrack_pattern&#39;],
+  &#39;levels&#39;: [200, 300, 1500, 2400],
+  &#39;name&#39;: &#39;racetrack pattern 1&#39;,
+  &#39;parts&#39;: [{&#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 29, 20),
+    &#39;irregularities&#39;: [],
+    &#39;kinds&#39;: [&#39;low_level&#39;],
+    &#39;levels&#39;: [200],
+    &#39;name&#39;: &#39;racetrack pattern 1 leg 1&#39;,
+    &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_rt01_l01&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 22, 44)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 31, 40),
+    &#39;irregularities&#39;: [],
+    &#39;kinds&#39;: [&#39;procedure_turn&#39;, &#39;small_ascend&#39;],
+    &#39;levels&#39;: [200, 300],
+    &#39;name&#39;: &#39;racetrack pattern 1 ascend 1&#39;,
+    &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_rt01_a01&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 29, 21)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 40, 26),
+    &#39;irregularities&#39;: [],
+    &#39;kinds&#39;: [&#39;low_level&#39;],
+    &#39;levels&#39;: [300],
+    &#39;name&#39;: &#39;racetrack pattern 1 leg 2&#39;,
+    &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_rt01_l02&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 31, 41)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 42, 40),
+    &#39;irregularities&#39;: [],
+    &#39;kinds&#39;: [&#39;procedure_turn&#39;, &#39;small_ascend&#39;],
+    &#39;levels&#39;: [300, 1500],
+    &#39;name&#39;: &#39;racetrack pattern 1 ascend 2&#39;,
+    &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_rt01_a02&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 40, 27)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 50, 3),
+    &#39;irregularities&#39;: [],
+    &#39;kinds&#39;: [&#39;low_level&#39;],
+    &#39;levels&#39;: [1500],
+    &#39;name&#39;: &#39;racetrack pattern 1 leg 3&#39;,
+    &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_rt01_l03&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 42, 41)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 52, 53),
+    &#39;irregularities&#39;: [],
+    &#39;kinds&#39;: [&#39;procedure_turn&#39;, &#39;small_ascend&#39;],
+    &#39;levels&#39;: [1500, 2400],
+    &#39;name&#39;: &#39;racetrack pattern 1 ascend 3&#39;,
+    &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_rt01_a03&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 50, 4)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 11, 2, 1),
+    &#39;irregularities&#39;: [],
+    &#39;kinds&#39;: [&#39;low_level&#39;],
+    &#39;levels&#39;: [2400],
+    &#39;name&#39;: &#39;racetrack pattern 1 leg 4&#39;,
+    &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_rt01_l04&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 52, 54)}],
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_rt01&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 22, 44)},
+ {&#39;dropsondes&#39;: [],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 11, 11, 19),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;large_ascend&#39;],
+  &#39;levels&#39;: [2400, 9700],
+  &#39;name&#39;: &#39;large ascend 1&#39;,
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_la01&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 11, 2, 25)},
+ {&#39;dropsondes&#39;: [],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 12, 25, 39),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;cross_pattern&#39;, &#39;nya_overflight&#39;],
+  &#39;levels&#39;: [9800, 9800, 9800],
+  &#39;name&#39;: &#39;cross pattern 2&#39;,
+  &#39;parts&#39;: [{&#39;end&#39;: datetime.datetime(2017, 6, 8, 12, 10, 13),
+    &#39;irregularities&#39;: [],
+    &#39;kinds&#39;: [&#39;high_level&#39;],
+    &#39;levels&#39;: [9800],
+    &#39;name&#39;: &#39;cross pattern 2 leg 1&#39;,
+    &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_cr02_l01&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 12, 5, 14)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 12, 14, 41),
+    &#39;kinds&#39;: [&#39;cross_pattern_turn&#39;],
+    &#39;name&#39;: &#39;cross pattern turn&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 12, 10, 14)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 12, 18, 50),
+    &#39;irregularities&#39;: [],
+    &#39;kinds&#39;: [&#39;high_level&#39;],
+    &#39;levels&#39;: [9800],
+    &#39;name&#39;: &#39;cross pattern 2 leg 2&#39;,
+    &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_cr02_l02&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 12, 14, 42)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 12, 24, 14),
+    &#39;kinds&#39;: [&#39;cross_pattern_turn&#39;],
+    &#39;name&#39;: &#39;cross pattern turn&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 12, 18, 51)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 12, 25, 39),
+    &#39;irregularities&#39;: [],
+    &#39;kinds&#39;: [&#39;high_level&#39;],
+    &#39;levels&#39;: [9800],
+    &#39;name&#39;: &#39;cross pattern 2 leg 3&#39;,
+    &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_cr02_l03&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 12, 24, 15)}],
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_cr02&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 12, 5, 14)}]
+</pre></div>
+</div>
+</div>
 </div>
 <p>Plot the selected segments:</p>
 <div class="cell docutils container">
@@ -1293,59 +1500,72 @@ Attributes: (12/14)
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">attribute</span> <span class="o">=</span> <span class="s1">&#39;name&#39;</span>
 <span class="n">value</span> <span class="o">=</span> <span class="s1">&#39;racetrack pattern 1&#39;</span>
 
-<span class="n">queried</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">attribute</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> 
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">queried</span><span class="p">)</span>
-<span class="n">df</span>
+<span class="n">queried</span> <span class="o">=</span> <span class="n">flight_query</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">attribute</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span> 
+<span class="n">queried</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>dropsondes</th>
-      <th>end</th>
-      <th>irregularities</th>
-      <th>kinds</th>
-      <th>levels</th>
-      <th>name</th>
-      <th>parts</th>
-      <th>segment_id</th>
-      <th>start</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 11:02:01</td>
-      <td>[]</td>
-      <td>[racetrack_pattern]</td>
-      <td>[200, 300, 1500, 2400]</td>
-      <td>racetrack pattern 1</td>
-      <td>[{'end': 2017-06-08 10:29:20, 'irregularities'...</td>
-      <td>ACLOUD_P5_RF14_rt01</td>
-      <td>2017-06-08 10:22:44</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;dropsondes&#39;: [],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 11, 2, 1),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;racetrack_pattern&#39;],
+  &#39;levels&#39;: [200, 300, 1500, 2400],
+  &#39;name&#39;: &#39;racetrack pattern 1&#39;,
+  &#39;parts&#39;: [{&#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 29, 20),
+    &#39;irregularities&#39;: [],
+    &#39;kinds&#39;: [&#39;low_level&#39;],
+    &#39;levels&#39;: [200],
+    &#39;name&#39;: &#39;racetrack pattern 1 leg 1&#39;,
+    &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_rt01_l01&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 22, 44)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 31, 40),
+    &#39;irregularities&#39;: [],
+    &#39;kinds&#39;: [&#39;procedure_turn&#39;, &#39;small_ascend&#39;],
+    &#39;levels&#39;: [200, 300],
+    &#39;name&#39;: &#39;racetrack pattern 1 ascend 1&#39;,
+    &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_rt01_a01&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 29, 21)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 40, 26),
+    &#39;irregularities&#39;: [],
+    &#39;kinds&#39;: [&#39;low_level&#39;],
+    &#39;levels&#39;: [300],
+    &#39;name&#39;: &#39;racetrack pattern 1 leg 2&#39;,
+    &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_rt01_l02&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 31, 41)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 42, 40),
+    &#39;irregularities&#39;: [],
+    &#39;kinds&#39;: [&#39;procedure_turn&#39;, &#39;small_ascend&#39;],
+    &#39;levels&#39;: [300, 1500],
+    &#39;name&#39;: &#39;racetrack pattern 1 ascend 2&#39;,
+    &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_rt01_a02&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 40, 27)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 50, 3),
+    &#39;irregularities&#39;: [],
+    &#39;kinds&#39;: [&#39;low_level&#39;],
+    &#39;levels&#39;: [1500],
+    &#39;name&#39;: &#39;racetrack pattern 1 leg 3&#39;,
+    &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_rt01_l03&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 42, 41)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 52, 53),
+    &#39;irregularities&#39;: [],
+    &#39;kinds&#39;: [&#39;procedure_turn&#39;, &#39;small_ascend&#39;],
+    &#39;levels&#39;: [1500, 2400],
+    &#39;name&#39;: &#39;racetrack pattern 1 ascend 3&#39;,
+    &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_rt01_a03&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 50, 4)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 11, 2, 1),
+    &#39;irregularities&#39;: [],
+    &#39;kinds&#39;: [&#39;low_level&#39;],
+    &#39;levels&#39;: [2400],
+    &#39;name&#39;: &#39;racetrack pattern 1 leg 4&#39;,
+    &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_rt01_l04&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 52, 54)}],
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_rt01&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 22, 44)}]
+</pre></div>
+</div>
+</div>
 </div>
 <p>Plot the selected elements:</p>
 <div class="cell docutils container">
@@ -1375,275 +1595,220 @@ Attributes: (12/14)
 <p>Also with inverted selection</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">queried</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">attribute</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">invertSelection</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">queried</span><span class="p">)</span>
-<span class="n">df</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">queried</span> <span class="o">=</span> <span class="n">flight_query</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">attribute</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">invertSelection</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
+<span class="n">queried</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>dropsondes</th>
-      <th>end</th>
-      <th>irregularities</th>
-      <th>kinds</th>
-      <th>levels</th>
-      <th>name</th>
-      <th>segment_id</th>
-      <th>start</th>
-      <th>parts</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 08:08:53</td>
-      <td>[whale-watching loop]</td>
-      <td>[major_ascend, nya_overflight, sveabreen_glaci...</td>
-      <td>[100, 9700]</td>
-      <td>major ascend</td>
-      <td>ACLOUD_P5_RF14_ma</td>
-      <td>2017-06-08 07:36:50</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 08:25:56</td>
-      <td>[]</td>
-      <td>[high_level]</td>
-      <td>[9800]</td>
-      <td>high level 1</td>
-      <td>ACLOUD_P5_RF14_hl01</td>
-      <td>2017-06-08 08:08:54</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 08:36:29</td>
-      <td>[]</td>
-      <td>[holding_pattern]</td>
-      <td>[9800, 9800]</td>
-      <td>holding pattern 1</td>
-      <td>ACLOUD_P5_RF14_ho01</td>
-      <td>2017-06-08 08:25:57</td>
-      <td>[{'end': 2017-06-08 08:27:32, 'kinds': ['short...</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde01'], 'UGLY...</td>
-      <td>2017-06-08 08:58:25</td>
-      <td>[]</td>
-      <td>[high_level]</td>
-      <td>[9800]</td>
-      <td>high level 2</td>
-      <td>ACLOUD_P5_RF14_hl02</td>
-      <td>2017-06-08 08:36:30</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>NaN</td>
-      <td>2017-06-08 08:59:07</td>
-      <td>NaN</td>
-      <td>[short_turn]</td>
-      <td>NaN</td>
-      <td>short turn</td>
-      <td>NaN</td>
-      <td>2017-06-08 08:58:26</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde02', 'P5_RF...</td>
-      <td>2017-06-08 09:30:29</td>
-      <td>[]</td>
-      <td>[high_level, a-train_underflight]</td>
-      <td>[9700]</td>
-      <td>high level 3</td>
-      <td>ACLOUD_P5_RF14_hl03</td>
-      <td>2017-06-08 08:59:08</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>NaN</td>
-      <td>2017-06-08 09:31:40</td>
-      <td>NaN</td>
-      <td>[short_turn]</td>
-      <td>NaN</td>
-      <td>short turn</td>
-      <td>NaN</td>
-      <td>2017-06-08 09:30:30</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde04'], 'UGLY...</td>
-      <td>2017-06-08 09:51:03</td>
-      <td>[]</td>
-      <td>[high_level]</td>
-      <td>[9700]</td>
-      <td>high level 4</td>
-      <td>ACLOUD_P5_RF14_hl04</td>
-      <td>2017-06-08 09:31:41</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>NaN</td>
-      <td>2017-06-08 09:51:32</td>
-      <td>NaN</td>
-      <td>[short_turn]</td>
-      <td>NaN</td>
-      <td>short turn</td>
-      <td>NaN</td>
-      <td>2017-06-08 09:51:04</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde05'], 'UGLY...</td>
-      <td>2017-06-08 10:00:13</td>
-      <td>[]</td>
-      <td>[high_level]</td>
-      <td>[9800]</td>
-      <td>high level 5</td>
-      <td>ACLOUD_P5_RF14_hl05</td>
-      <td>2017-06-08 09:51:33</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 10:10:50</td>
-      <td>[]</td>
-      <td>[cross_pattern, polarstern_overflight]</td>
-      <td>[9600, 9700]</td>
-      <td>cross pattern 1</td>
-      <td>ACLOUD_P5_RF14_cr01</td>
-      <td>2017-06-08 10:00:14</td>
-      <td>[{'end': 2017-06-08 10:03:13, 'irregularities'...</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 10:22:43</td>
-      <td>[not along straight line]</td>
-      <td>[large_descend]</td>
-      <td>[9700, 200]</td>
-      <td>large descend 1</td>
-      <td>ACLOUD_P5_RF14_ld01</td>
-      <td>2017-06-08 10:10:51</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>NaN</td>
-      <td>2017-06-08 11:02:24</td>
-      <td>NaN</td>
-      <td>[short_turn]</td>
-      <td>NaN</td>
-      <td>short turn</td>
-      <td>NaN</td>
-      <td>2017-06-08 11:02:02</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 11:11:19</td>
-      <td>[]</td>
-      <td>[large_ascend]</td>
-      <td>[2400, 9700]</td>
-      <td>large ascend 1</td>
-      <td>ACLOUD_P5_RF14_la01</td>
-      <td>2017-06-08 11:02:25</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 11:52:56</td>
-      <td>[]</td>
-      <td>[high_level]</td>
-      <td>[9700]</td>
-      <td>high level 6</td>
-      <td>ACLOUD_P5_RF14_hl06</td>
-      <td>2017-06-08 11:11:20</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>NaN</td>
-      <td>2017-06-08 11:53:37</td>
-      <td>NaN</td>
-      <td>[short_turn]</td>
-      <td>NaN</td>
-      <td>short turn</td>
-      <td>NaN</td>
-      <td>2017-06-08 11:52:57</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde06'], 'UGLY...</td>
-      <td>2017-06-08 12:05:13</td>
-      <td>[]</td>
-      <td>[high_level]</td>
-      <td>[9800]</td>
-      <td>high level 7</td>
-      <td>ACLOUD_P5_RF14_hl07</td>
-      <td>2017-06-08 11:53:38</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 12:25:39</td>
-      <td>[]</td>
-      <td>[cross_pattern, nya_overflight]</td>
-      <td>[9800, 9800, 9800]</td>
-      <td>cross pattern 2</td>
-      <td>ACLOUD_P5_RF14_cr02</td>
-      <td>2017-06-08 12:05:14</td>
-      <td>[{'end': 2017-06-08 12:10:13, 'irregularities'...</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 12:51:25</td>
-      <td>[]</td>
-      <td>[major_descend]</td>
-      <td>[9800, 100]</td>
-      <td>major descend</td>
-      <td>ACLOUD_P5_RF14_md</td>
-      <td>2017-06-08 12:25:40</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;dropsondes&#39;: [],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 8, 8, 53),
+  &#39;irregularities&#39;: [&#39;whale-watching loop&#39;],
+  &#39;kinds&#39;: [&#39;major_ascend&#39;, &#39;nya_overflight&#39;, &#39;sveabreen_glacier_overflight&#39;],
+  &#39;levels&#39;: [100, 9700],
+  &#39;name&#39;: &#39;major ascend&#39;,
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_ma&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 7, 36, 50)},
+ {&#39;dropsondes&#39;: [],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 8, 25, 56),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;high_level&#39;],
+  &#39;levels&#39;: [9800],
+  &#39;name&#39;: &#39;high level 1&#39;,
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_hl01&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 8, 8, 54)},
+ {&#39;dropsondes&#39;: [],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 8, 36, 29),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;holding_pattern&#39;],
+  &#39;levels&#39;: [9800, 9800],
+  &#39;name&#39;: &#39;holding pattern 1&#39;,
+  &#39;parts&#39;: [{&#39;end&#39;: datetime.datetime(2017, 6, 8, 8, 27, 32),
+    &#39;kinds&#39;: [&#39;short_turn&#39;],
+    &#39;name&#39;: &#39;short turn&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 8, 25, 57)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 8, 29, 27),
+    &#39;irregularities&#39;: [],
+    &#39;kinds&#39;: [&#39;high_level&#39;],
+    &#39;levels&#39;: [9800],
+    &#39;name&#39;: &#39;holding pattern 1 leg 1&#39;,
+    &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_ho01_l01&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 8, 27, 33)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 8, 31, 9),
+    &#39;kinds&#39;: [&#39;short_turn&#39;],
+    &#39;name&#39;: &#39;short turn&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 8, 29, 28)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 8, 33, 20),
+    &#39;irregularities&#39;: [],
+    &#39;kinds&#39;: [&#39;high_level&#39;],
+    &#39;levels&#39;: [9800],
+    &#39;name&#39;: &#39;holding pattern 1 leg 2&#39;,
+    &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_ho01_l02&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 8, 31, 10)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 8, 36, 29),
+    &#39;kinds&#39;: [&#39;circle&#39;],
+    &#39;name&#39;: &#39;circle&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 8, 33, 21)}],
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_ho01&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 8, 25, 57)},
+ {&#39;dropsondes&#39;: [&#39;ACLOUD_P5_RF14_DS01&#39;],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 8, 58, 25),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;high_level&#39;],
+  &#39;levels&#39;: [9800],
+  &#39;name&#39;: &#39;high level 2&#39;,
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_hl02&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 8, 36, 30)},
+ {&#39;end&#39;: datetime.datetime(2017, 6, 8, 8, 59, 7),
+  &#39;kinds&#39;: [&#39;short_turn&#39;],
+  &#39;name&#39;: &#39;short turn&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 8, 58, 26)},
+ {&#39;dropsondes&#39;: [&#39;ACLOUD_P5_RF14_DS02&#39;, &#39;ACLOUD_P5_RF14_DS03&#39;],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 9, 30, 29),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;high_level&#39;, &#39;a-train_underflight&#39;],
+  &#39;levels&#39;: [9700],
+  &#39;name&#39;: &#39;high level 3&#39;,
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_hl03&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 8, 59, 8)},
+ {&#39;end&#39;: datetime.datetime(2017, 6, 8, 9, 31, 40),
+  &#39;kinds&#39;: [&#39;short_turn&#39;],
+  &#39;name&#39;: &#39;short turn&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 9, 30, 30)},
+ {&#39;dropsondes&#39;: [&#39;ACLOUD_P5_RF14_DS04&#39;],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 9, 51, 3),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;high_level&#39;],
+  &#39;levels&#39;: [9700],
+  &#39;name&#39;: &#39;high level 4&#39;,
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_hl04&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 9, 31, 41)},
+ {&#39;end&#39;: datetime.datetime(2017, 6, 8, 9, 51, 32),
+  &#39;kinds&#39;: [&#39;short_turn&#39;],
+  &#39;name&#39;: &#39;short turn&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 9, 51, 4)},
+ {&#39;dropsondes&#39;: [&#39;ACLOUD_P5_RF14_DS05&#39;],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 0, 13),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;high_level&#39;],
+  &#39;levels&#39;: [9800],
+  &#39;name&#39;: &#39;high level 5&#39;,
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_hl05&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 9, 51, 33)},
+ {&#39;dropsondes&#39;: [],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 10, 50),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;cross_pattern&#39;, &#39;polarstern_overflight&#39;],
+  &#39;levels&#39;: [9600, 9700],
+  &#39;name&#39;: &#39;cross pattern 1&#39;,
+  &#39;parts&#39;: [{&#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 3, 13),
+    &#39;irregularities&#39;: [],
+    &#39;kinds&#39;: [&#39;high_level&#39;],
+    &#39;levels&#39;: [9600],
+    &#39;name&#39;: &#39;cross pattern 1 leg 1&#39;,
+    &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_cr01_l01&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 0, 14)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 8, 12),
+    &#39;kinds&#39;: [&#39;cross_pattern_turn&#39;],
+    &#39;name&#39;: &#39;cross pattern turn&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 3, 14)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 10, 50),
+    &#39;irregularities&#39;: [],
+    &#39;kinds&#39;: [&#39;high_level&#39;],
+    &#39;levels&#39;: [9700],
+    &#39;name&#39;: &#39;cross pattern 1 leg 2&#39;,
+    &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_cr01_l02&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 8, 13)}],
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_cr01&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 0, 14)},
+ {&#39;dropsondes&#39;: [],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 22, 43),
+  &#39;irregularities&#39;: [&#39;not along straight line&#39;],
+  &#39;kinds&#39;: [&#39;large_descend&#39;],
+  &#39;levels&#39;: [9700, 200],
+  &#39;name&#39;: &#39;large descend 1&#39;,
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_ld01&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 10, 51)},
+ {&#39;end&#39;: datetime.datetime(2017, 6, 8, 11, 2, 24),
+  &#39;kinds&#39;: [&#39;short_turn&#39;],
+  &#39;name&#39;: &#39;short turn&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 11, 2, 2)},
+ {&#39;dropsondes&#39;: [],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 11, 11, 19),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;large_ascend&#39;],
+  &#39;levels&#39;: [2400, 9700],
+  &#39;name&#39;: &#39;large ascend 1&#39;,
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_la01&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 11, 2, 25)},
+ {&#39;dropsondes&#39;: [],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 11, 52, 56),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;high_level&#39;],
+  &#39;levels&#39;: [9700],
+  &#39;name&#39;: &#39;high level 6&#39;,
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_hl06&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 11, 11, 20)},
+ {&#39;end&#39;: datetime.datetime(2017, 6, 8, 11, 53, 37),
+  &#39;kinds&#39;: [&#39;short_turn&#39;],
+  &#39;name&#39;: &#39;short turn&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 11, 52, 57)},
+ {&#39;dropsondes&#39;: [&#39;ACLOUD_P5_RF14_DS06&#39;],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 12, 5, 13),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;high_level&#39;],
+  &#39;levels&#39;: [9800],
+  &#39;name&#39;: &#39;high level 7&#39;,
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_hl07&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 11, 53, 38)},
+ {&#39;dropsondes&#39;: [],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 12, 25, 39),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;cross_pattern&#39;, &#39;nya_overflight&#39;],
+  &#39;levels&#39;: [9800, 9800, 9800],
+  &#39;name&#39;: &#39;cross pattern 2&#39;,
+  &#39;parts&#39;: [{&#39;end&#39;: datetime.datetime(2017, 6, 8, 12, 10, 13),
+    &#39;irregularities&#39;: [],
+    &#39;kinds&#39;: [&#39;high_level&#39;],
+    &#39;levels&#39;: [9800],
+    &#39;name&#39;: &#39;cross pattern 2 leg 1&#39;,
+    &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_cr02_l01&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 12, 5, 14)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 12, 14, 41),
+    &#39;kinds&#39;: [&#39;cross_pattern_turn&#39;],
+    &#39;name&#39;: &#39;cross pattern turn&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 12, 10, 14)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 12, 18, 50),
+    &#39;irregularities&#39;: [],
+    &#39;kinds&#39;: [&#39;high_level&#39;],
+    &#39;levels&#39;: [9800],
+    &#39;name&#39;: &#39;cross pattern 2 leg 2&#39;,
+    &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_cr02_l02&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 12, 14, 42)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 12, 24, 14),
+    &#39;kinds&#39;: [&#39;cross_pattern_turn&#39;],
+    &#39;name&#39;: &#39;cross pattern turn&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 12, 18, 51)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 12, 25, 39),
+    &#39;irregularities&#39;: [],
+    &#39;kinds&#39;: [&#39;high_level&#39;],
+    &#39;levels&#39;: [9800],
+    &#39;name&#39;: &#39;cross pattern 2 leg 3&#39;,
+    &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_cr02_l03&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 12, 24, 15)}],
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_cr02&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 12, 5, 14)},
+ {&#39;dropsondes&#39;: [],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 12, 51, 25),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;major_descend&#39;],
+  &#39;levels&#39;: [9800, 100],
+  &#39;name&#39;: &#39;major descend&#39;,
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_md&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 12, 25, 40)}]
+</pre></div>
+</div>
+</div>
 </div>
 <p>Plot the selected elements:</p>
 <div class="cell docutils container">
@@ -1678,131 +1843,126 @@ Attributes: (12/14)
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">attribute</span> <span class="o">=</span> <span class="s1">&#39;levels&#39;</span>
 <span class="n">value</span> <span class="o">=</span> <span class="mi">9800</span>
 
-<span class="n">queried</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">attribute</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">queried</span><span class="p">)</span>
-<span class="n">df</span>
+<span class="n">queried</span> <span class="o">=</span> <span class="n">flight_query</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">attribute</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+<span class="n">queried</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>dropsondes</th>
-      <th>end</th>
-      <th>irregularities</th>
-      <th>kinds</th>
-      <th>levels</th>
-      <th>name</th>
-      <th>segment_id</th>
-      <th>start</th>
-      <th>parts</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 08:25:56</td>
-      <td>[]</td>
-      <td>[high_level]</td>
-      <td>[9800]</td>
-      <td>high level 1</td>
-      <td>ACLOUD_P5_RF14_hl01</td>
-      <td>2017-06-08 08:08:54</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 08:36:29</td>
-      <td>[]</td>
-      <td>[holding_pattern]</td>
-      <td>[9800, 9800]</td>
-      <td>holding pattern 1</td>
-      <td>ACLOUD_P5_RF14_ho01</td>
-      <td>2017-06-08 08:25:57</td>
-      <td>[{'end': 2017-06-08 08:27:32, 'kinds': ['short...</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde01'], 'UGLY...</td>
-      <td>2017-06-08 08:58:25</td>
-      <td>[]</td>
-      <td>[high_level]</td>
-      <td>[9800]</td>
-      <td>high level 2</td>
-      <td>ACLOUD_P5_RF14_hl02</td>
-      <td>2017-06-08 08:36:30</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde05'], 'UGLY...</td>
-      <td>2017-06-08 10:00:13</td>
-      <td>[]</td>
-      <td>[high_level]</td>
-      <td>[9800]</td>
-      <td>high level 5</td>
-      <td>ACLOUD_P5_RF14_hl05</td>
-      <td>2017-06-08 09:51:33</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde06'], 'UGLY...</td>
-      <td>2017-06-08 12:05:13</td>
-      <td>[]</td>
-      <td>[high_level]</td>
-      <td>[9800]</td>
-      <td>high level 7</td>
-      <td>ACLOUD_P5_RF14_hl07</td>
-      <td>2017-06-08 11:53:38</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 12:25:39</td>
-      <td>[]</td>
-      <td>[cross_pattern, nya_overflight]</td>
-      <td>[9800, 9800, 9800]</td>
-      <td>cross pattern 2</td>
-      <td>ACLOUD_P5_RF14_cr02</td>
-      <td>2017-06-08 12:05:14</td>
-      <td>[{'end': 2017-06-08 12:10:13, 'irregularities'...</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 12:51:25</td>
-      <td>[]</td>
-      <td>[major_descend]</td>
-      <td>[9800, 100]</td>
-      <td>major descend</td>
-      <td>ACLOUD_P5_RF14_md</td>
-      <td>2017-06-08 12:25:40</td>
-      <td>NaN</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;dropsondes&#39;: [],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 8, 25, 56),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;high_level&#39;],
+  &#39;levels&#39;: [9800],
+  &#39;name&#39;: &#39;high level 1&#39;,
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_hl01&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 8, 8, 54)},
+ {&#39;dropsondes&#39;: [],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 8, 36, 29),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;holding_pattern&#39;],
+  &#39;levels&#39;: [9800, 9800],
+  &#39;name&#39;: &#39;holding pattern 1&#39;,
+  &#39;parts&#39;: [{&#39;end&#39;: datetime.datetime(2017, 6, 8, 8, 27, 32),
+    &#39;kinds&#39;: [&#39;short_turn&#39;],
+    &#39;name&#39;: &#39;short turn&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 8, 25, 57)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 8, 29, 27),
+    &#39;irregularities&#39;: [],
+    &#39;kinds&#39;: [&#39;high_level&#39;],
+    &#39;levels&#39;: [9800],
+    &#39;name&#39;: &#39;holding pattern 1 leg 1&#39;,
+    &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_ho01_l01&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 8, 27, 33)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 8, 31, 9),
+    &#39;kinds&#39;: [&#39;short_turn&#39;],
+    &#39;name&#39;: &#39;short turn&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 8, 29, 28)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 8, 33, 20),
+    &#39;irregularities&#39;: [],
+    &#39;kinds&#39;: [&#39;high_level&#39;],
+    &#39;levels&#39;: [9800],
+    &#39;name&#39;: &#39;holding pattern 1 leg 2&#39;,
+    &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_ho01_l02&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 8, 31, 10)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 8, 36, 29),
+    &#39;kinds&#39;: [&#39;circle&#39;],
+    &#39;name&#39;: &#39;circle&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 8, 33, 21)}],
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_ho01&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 8, 25, 57)},
+ {&#39;dropsondes&#39;: [&#39;ACLOUD_P5_RF14_DS01&#39;],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 8, 58, 25),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;high_level&#39;],
+  &#39;levels&#39;: [9800],
+  &#39;name&#39;: &#39;high level 2&#39;,
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_hl02&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 8, 36, 30)},
+ {&#39;dropsondes&#39;: [&#39;ACLOUD_P5_RF14_DS05&#39;],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 0, 13),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;high_level&#39;],
+  &#39;levels&#39;: [9800],
+  &#39;name&#39;: &#39;high level 5&#39;,
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_hl05&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 9, 51, 33)},
+ {&#39;dropsondes&#39;: [&#39;ACLOUD_P5_RF14_DS06&#39;],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 12, 5, 13),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;high_level&#39;],
+  &#39;levels&#39;: [9800],
+  &#39;name&#39;: &#39;high level 7&#39;,
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_hl07&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 11, 53, 38)},
+ {&#39;dropsondes&#39;: [],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 12, 25, 39),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;cross_pattern&#39;, &#39;nya_overflight&#39;],
+  &#39;levels&#39;: [9800, 9800, 9800],
+  &#39;name&#39;: &#39;cross pattern 2&#39;,
+  &#39;parts&#39;: [{&#39;end&#39;: datetime.datetime(2017, 6, 8, 12, 10, 13),
+    &#39;irregularities&#39;: [],
+    &#39;kinds&#39;: [&#39;high_level&#39;],
+    &#39;levels&#39;: [9800],
+    &#39;name&#39;: &#39;cross pattern 2 leg 1&#39;,
+    &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_cr02_l01&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 12, 5, 14)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 12, 14, 41),
+    &#39;kinds&#39;: [&#39;cross_pattern_turn&#39;],
+    &#39;name&#39;: &#39;cross pattern turn&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 12, 10, 14)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 12, 18, 50),
+    &#39;irregularities&#39;: [],
+    &#39;kinds&#39;: [&#39;high_level&#39;],
+    &#39;levels&#39;: [9800],
+    &#39;name&#39;: &#39;cross pattern 2 leg 2&#39;,
+    &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_cr02_l02&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 12, 14, 42)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 12, 24, 14),
+    &#39;kinds&#39;: [&#39;cross_pattern_turn&#39;],
+    &#39;name&#39;: &#39;cross pattern turn&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 12, 18, 51)},
+   {&#39;end&#39;: datetime.datetime(2017, 6, 8, 12, 25, 39),
+    &#39;irregularities&#39;: [],
+    &#39;kinds&#39;: [&#39;high_level&#39;],
+    &#39;levels&#39;: [9800],
+    &#39;name&#39;: &#39;cross pattern 2 leg 3&#39;,
+    &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_cr02_l03&#39;,
+    &#39;start&#39;: datetime.datetime(2017, 6, 8, 12, 24, 15)}],
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_cr02&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 12, 5, 14)},
+ {&#39;dropsondes&#39;: [],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 12, 51, 25),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;major_descend&#39;],
+  &#39;levels&#39;: [9800, 100],
+  &#39;name&#39;: &#39;major descend&#39;,
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_md&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 12, 25, 40)}]
+</pre></div>
+</div>
+</div>
 </div>
 <p>Plot the selected elements:</p>
 <div class="cell docutils container">
@@ -1832,90 +1992,47 @@ Attributes: (12/14)
 <p>But what if we want only a specific level without ascend and descend? We can require that the attribute value is strictly equal to the one, that we give, i.e. thare no other values:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">queried</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">attribute</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">queried</span><span class="p">)</span>
-<span class="n">df</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">queried</span> <span class="o">=</span> <span class="n">flight_query</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="n">attribute</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="n">strict</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">queried</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>dropsondes</th>
-      <th>end</th>
-      <th>irregularities</th>
-      <th>kinds</th>
-      <th>levels</th>
-      <th>name</th>
-      <th>segment_id</th>
-      <th>start</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>{'BAD': [], 'GOOD': [], 'UGLY': []}</td>
-      <td>2017-06-08 08:25:56</td>
-      <td>[]</td>
-      <td>[high_level]</td>
-      <td>[9800]</td>
-      <td>high level 1</td>
-      <td>ACLOUD_P5_RF14_hl01</td>
-      <td>2017-06-08 08:08:54</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde01'], 'UGLY...</td>
-      <td>2017-06-08 08:58:25</td>
-      <td>[]</td>
-      <td>[high_level]</td>
-      <td>[9800]</td>
-      <td>high level 2</td>
-      <td>ACLOUD_P5_RF14_hl02</td>
-      <td>2017-06-08 08:36:30</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde05'], 'UGLY...</td>
-      <td>2017-06-08 10:00:13</td>
-      <td>[]</td>
-      <td>[high_level]</td>
-      <td>[9800]</td>
-      <td>high level 5</td>
-      <td>ACLOUD_P5_RF14_hl05</td>
-      <td>2017-06-08 09:51:33</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde06'], 'UGLY...</td>
-      <td>2017-06-08 12:05:13</td>
-      <td>[]</td>
-      <td>[high_level]</td>
-      <td>[9800]</td>
-      <td>high level 7</td>
-      <td>ACLOUD_P5_RF14_hl07</td>
-      <td>2017-06-08 11:53:38</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;dropsondes&#39;: [],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 8, 25, 56),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;high_level&#39;],
+  &#39;levels&#39;: [9800],
+  &#39;name&#39;: &#39;high level 1&#39;,
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_hl01&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 8, 8, 54)},
+ {&#39;dropsondes&#39;: [&#39;ACLOUD_P5_RF14_DS01&#39;],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 8, 58, 25),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;high_level&#39;],
+  &#39;levels&#39;: [9800],
+  &#39;name&#39;: &#39;high level 2&#39;,
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_hl02&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 8, 36, 30)},
+ {&#39;dropsondes&#39;: [&#39;ACLOUD_P5_RF14_DS05&#39;],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 0, 13),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;high_level&#39;],
+  &#39;levels&#39;: [9800],
+  &#39;name&#39;: &#39;high level 5&#39;,
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_hl05&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 9, 51, 33)},
+ {&#39;dropsondes&#39;: [&#39;ACLOUD_P5_RF14_DS06&#39;],
+  &#39;end&#39;: datetime.datetime(2017, 6, 8, 12, 5, 13),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;high_level&#39;],
+  &#39;levels&#39;: [9800],
+  &#39;name&#39;: &#39;high level 7&#39;,
+  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_hl07&#39;,
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 11, 53, 38)}]
+</pre></div>
+</div>
+</div>
 </div>
 <p>This functions only if the attribute has more values, as for level or kind. Now plot the selected elements:</p>
 <div class="cell docutils container">
@@ -1941,192 +2058,6 @@ Attributes: (12/14)
 <div class="cell_output docutils container">
 <img alt="../_images/reading_the_flight_phase_files_45_0.png" src="../_images/reading_the_flight_phase_files_45_0.png" />
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="query-all-segments-with-good-or-bad-dropsondes">
-<h3>Query all segments with good (or bad) dropsondes<a class="headerlink" href="#query-all-segments-with-good-or-bad-dropsondes" title="Permalink to this headline">¶</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">queried</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">selectDropSondes</span><span class="p">(</span><span class="s1">&#39;GOOD&#39;</span><span class="p">)</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">queried</span><span class="p">)</span>
-<span class="n">df</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>dropsondes</th>
-      <th>end</th>
-      <th>irregularities</th>
-      <th>kinds</th>
-      <th>levels</th>
-      <th>name</th>
-      <th>segment_id</th>
-      <th>start</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde01'], 'UGLY...</td>
-      <td>2017-06-08 08:58:25</td>
-      <td>[]</td>
-      <td>[high_level]</td>
-      <td>[9800]</td>
-      <td>high level 2</td>
-      <td>ACLOUD_P5_RF14_hl02</td>
-      <td>2017-06-08 08:36:30</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde02', 'P5_RF...</td>
-      <td>2017-06-08 09:30:29</td>
-      <td>[]</td>
-      <td>[high_level, a-train_underflight]</td>
-      <td>[9700]</td>
-      <td>high level 3</td>
-      <td>ACLOUD_P5_RF14_hl03</td>
-      <td>2017-06-08 08:59:08</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde04'], 'UGLY...</td>
-      <td>2017-06-08 09:51:03</td>
-      <td>[]</td>
-      <td>[high_level]</td>
-      <td>[9700]</td>
-      <td>high level 4</td>
-      <td>ACLOUD_P5_RF14_hl04</td>
-      <td>2017-06-08 09:31:41</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde05'], 'UGLY...</td>
-      <td>2017-06-08 10:00:13</td>
-      <td>[]</td>
-      <td>[high_level]</td>
-      <td>[9800]</td>
-      <td>high level 5</td>
-      <td>ACLOUD_P5_RF14_hl05</td>
-      <td>2017-06-08 09:51:33</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>{'BAD': [], 'GOOD': ['P5_RF14_sonde06'], 'UGLY...</td>
-      <td>2017-06-08 12:05:13</td>
-      <td>[]</td>
-      <td>[high_level]</td>
-      <td>[9800]</td>
-      <td>high level 7</td>
-      <td>ACLOUD_P5_RF14_hl07</td>
-      <td>2017-06-08 11:53:38</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<p>Plot the selected elements:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
-    <span class="n">ll</span> <span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-    <span class="n">ll</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
-    
-<span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">queried</span><span class="p">:</span>
-    <span class="n">start</span> <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">]</span>
-    <span class="n">end</span>   <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="s1">&#39;end&#39;</span><span class="p">]</span>
-    
-    <span class="n">line</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds_gps</span><span class="o">.</span><span class="n">lon</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)),</span>
-                   <span class="n">ds_gps</span><span class="o">.</span><span class="n">lat</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)),</span>
-                   <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
-    <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
-    
-<span class="n">fig</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/reading_the_flight_phase_files_49_0.png" src="../_images/reading_the_flight_phase_files_49_0.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">queried</span> <span class="o">=</span> <span class="n">ds</span><span class="o">.</span><span class="n">selectDropSondes</span><span class="p">(</span><span class="s1">&#39;BAD&#39;</span><span class="p">)</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">queried</span><span class="p">)</span>
-<span class="n">df</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-  </tbody>
-</table>
-</div></div></div>
-</div>
-<p>Plot the selected elements:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
-    <span class="n">ll</span> <span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-    <span class="n">ll</span><span class="o">.</span><span class="n">remove</span><span class="p">()</span>
-    
-<span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">q</span> <span class="ow">in</span> <span class="n">queried</span><span class="p">:</span>
-    <span class="n">start</span> <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">]</span>
-    <span class="n">end</span>   <span class="o">=</span> <span class="n">q</span><span class="p">[</span><span class="s1">&#39;end&#39;</span><span class="p">]</span>
-    
-    <span class="n">line</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds_gps</span><span class="o">.</span><span class="n">lon</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)),</span>
-                   <span class="n">ds_gps</span><span class="o">.</span><span class="n">lat</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)),</span>
-                   <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
-    <span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
-    
-<span class="n">fig</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/reading_the_flight_phase_files_52_0.png" src="../_images/reading_the_flight_phase_files_52_0.png" />
 </div>
 </div>
 </div>
