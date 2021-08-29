@@ -14,7 +14,7 @@
       title: AMALi
     - file: datasets/kt19
       title: KT-19
-    - file: examples/dropsondes
+    - file: datasets/dropsondes
       title: Dropsondes
     - file: datasets/gps_ins
       title: GPS/INS
