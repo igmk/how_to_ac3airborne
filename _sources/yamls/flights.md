@@ -85,10 +85,7 @@ segments:
   segment_id: ACLOUD_P5_RF04_ma1
   start: 
   end: null
-  dropsondes:
-    GOOD: []
-    BAD: []
-    UGLY: []
+  dropsondes: []
 - kinds:
   - add_new_segments_here
   name: null
@@ -96,10 +93,7 @@ segments:
   segment_id: null
   start: null
   end: null
-  dropsondes:
-    GOOD: []
-    BAD: []
-    UGLY: []
+  dropsondes: []
 - kinds:
   - major_descend
   name: major descend 1
@@ -107,8 +101,5 @@ segments:
   segment_id: ACLOUD_P5_RF04_md1
   start: null
   end: 
-  dropsondes:
-    GOOD: []
-    BAD: []
-    UGLY: []
+  dropsondes: []
 ```
