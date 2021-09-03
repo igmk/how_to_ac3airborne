@@ -27,7 +27,7 @@
   sections:
   - file: examples/reading_the_flight_phase_files
     title: Reading the flight phase files
-  - file: examples/flight_tracks
+  - file: exmaples/flight_tracks
     title: Flight tracks
   - file: examples/land_ocean
     title: land-mask
