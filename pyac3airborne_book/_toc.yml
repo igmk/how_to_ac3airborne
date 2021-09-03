@@ -20,19 +20,16 @@
       title: Dropsondes
     - file: datasets/gps_ins
       title: GPS/INS
-- file: guidelines
-  title: Guidelines
-  title: Flight-phase Separation
-  sections:
-  - file: yamls/flights
+- file: flight_segmentation
+  title: Flight-phase separation
 - file: code
-  title: Code
+  title: Toolbox and Examples
   sections:
   - file: examples/reading_the_flight_phase_files
     title: Reading the flight phase files
   - file: examples/flight_tracks
     title: Flight tracks
   - file: examples/land_ocean
-    title: land/ocean mask
+    title: land-mask
 - file: references
   title: References 
