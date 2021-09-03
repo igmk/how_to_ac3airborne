@@ -12,3 +12,5 @@ logo                        : logo.png  # A path to the book logo
 # bib file
 bibtex_bibfiles:
     - references.bib
+execute:
+  timeout: 120
