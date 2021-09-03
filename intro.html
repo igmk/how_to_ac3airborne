@@ -148,23 +148,14 @@
   <i class="fas fa-chevron-down">
   </i>
  </li>
- <li class="toctree-l1 collapsible-parent">
-  <a class="reference internal" href="guidelines.html">
-   Flight-phase Separation
+ <li class="toctree-l1">
+  <a class="reference internal" href="flight_segmentation.html">
+   Flight-phase separation
   </a>
-  <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="yamls/flights.html">
-     flight-phase-separation
-    </a>
-   </li>
-  </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
  <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="code.html">
-   Code
+   Toolbox and Examples
   </a>
   <ul class="collapse-ul">
    <li class="toctree-l2">
@@ -173,13 +164,8 @@
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="examples/flight_tracks.html">
-     Flight tracks
-    </a>
-   </li>
-   <li class="toctree-l2">
     <a class="reference internal" href="examples/land_ocean.html">
-     land/ocean mask
+     land-mask
     </a>
    </li>
   </ul>
@@ -286,17 +272,18 @@
                 
   <div class="section" id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
-<p>Welcome to the world of AC3 airborne data! It’s a collection of python code examples to get you started with the airborne data. It follows the concept and ideas of the work done within the <a class="reference external" href="https://howto.eurec4a.eu/intro.html">EUREC4A</a> community.</p>
+<p>Welcome to the world of AC3 airborne data! It’s a collection of python code examples to get you started with the airborne data. It is a permantently growing and changing document and might never be finished. It follows the concept and ideas of the work done within the <a class="reference external" href="https://howto.eurec4a.eu/intro.html">EUREC4A</a> community.</p>
 <div class="section" id="idea">
 <h2>Idea<a class="headerlink" href="#idea" title="Permalink to this headline">¶</a></h2>
-<p>The book chapters show datasets that are accessible online, i.e., you don’t have to download anything. Most datasets are accessed via the <a class="reference external" href="https://github.com/igmk/ac3airborne-intake">ac3airborne intake catalog</a>, which simply said takes care of the links to datasets in their most recent version. The scripts typically contain at minimum how to get a specific dataset and some simple plots of basic quantities. Most chapters include additional information from aircraft flight segments or further meta data, sometimes more sophisticated plots, or also a combination of variables from different datasets. In addition, some small tools are included to work with auxilliary data like land-mask.</p>
+<p>The book chapters show datasets that are accessible online, i.e., you don’t have to download anything in advance. Most datasets are accessed via the <a class="reference external" href="https://github.com/igmk/ac3airborne-intake">ac3airborne intake catalog</a>, which simply said takes care of the links to datasets in their most recent version. By implemented caching capabilities, it is only necessary to download the data the first time they are used. The scripts typically contain at minimum how to get a specific dataset and some simple plots of basic quantities. Most chapters include additional information from aircraft flight segments or further meta data, sometimes more sophisticated plots, or also a combination of variables from different datasets. In addition, some small tools are included to work with auxilliary data like sea ice coverage or land-mask.</p>
 </div>
 <div class="section" id="some-links">
 <h2>Some links<a class="headerlink" href="#some-links" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="http://www.ac3-tr.de/">AC3 webpage</a></p></li>
+<li><p>The data description papers of ACLOUD <span id="id1">[<a class="reference internal" href="references.html#id2"><span>EWL+19a</span></a>]</span> and for AFLUX and MOSAiC-ACA <span id="id2">[<a class="reference internal" href="references.html#id10"><span>MEH+21</span></a>]</span></p></li>
 <li><p>Campaign wikis: <a class="reference external" href="https://home.uni-leipzig.de/~ehrlich/ACLOUD_wiki_doku/doku.php">ACLOUD</a>, <a class="reference external" href="https://home.uni-leipzig.de/~ehrlich/AFLUX_wiki_doku/doku.php?id=start">AFLUX</a>, and <a class="reference external" href="https://home.uni-leipzig.de/~ehrlich/MOSAiC_ACA_wiki_doku/doku.php?id=start">MOSAiC-ACA</a></p></li>
-<li><p>Master data collections on PANGAEA: ACLOUD <span id="id1">[<a class="reference internal" href="references.html#id5"><span>EWL+19</span></a>]</span>, AFLUX <span id="id2">[<a class="reference internal" href="references.html#id6"><span>MLE+21a</span></a>]</span>, and MOSAiC-ACA <span id="id3">[<a class="reference internal" href="references.html#id8"><span>MLE+21b</span></a>]</span></p></li>
+<li><p>Master data collections on PANGAEA: ACLOUD <span id="id3">[<a class="reference internal" href="references.html#id5"><span>EWL+19b</span></a>]</span>, AFLUX <span id="id4">[<a class="reference internal" href="references.html#id6"><span>MLE+21a</span></a>]</span>, and MOSAiC-ACA <span id="id5">[<a class="reference internal" href="references.html#id8"><span>MLE+21b</span></a>]</span></p></li>
 </ul>
 <div class="toctree-wrapper compound">
 </div>
