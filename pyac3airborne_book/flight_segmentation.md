@@ -1,4 +1,4 @@
-# `flight-phase-separation`
+# Flight-phase separation
 The idea behind `flight-phase-separation` is to easily select segments of research flights based on their properties as required for the user's research. The selection can be done using any combination of attributes. In the following sections, the stored attributes and the structure of files under `flight_phase_files` is presented.
 
 ## Flight keywords
