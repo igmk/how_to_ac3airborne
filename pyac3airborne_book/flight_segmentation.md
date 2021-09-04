@@ -1,90 +1,140 @@
-# flight-phase-separation
+# `flight-phase-separation`
+The idea behind `flight-phase-separation` is to easily select segments of research flights based on their properties as required for the user's research. The selection can be done using any combination of attributes. In the following sections, the stored attributes and the structure of files under `flight_phase_files` is presented.
 
-The idea behind floght phase separation is to be able to select segments of flights according to their properties. The selection can be done by attributes like names and further on levels and is applied to the platform and instrument data by using start and end datetime objects belonging to the segment.
+## Flight keywords
+`name`: research flight number within campaign (e.g. *RF10*)
+`mission`: name of campaign (*ACLOUD*, *AFLUX*, *MOSAiC-ACA*)
+`platform`: aircraft short name (*P5*, *P6*)
+`flight_id`: unique identifier for flight (*campaign_platform_name*)
+`contacts`: information on mission PI and creator of `.yaml` file (name and email contact)
+`date`: date of flight (will be read as python `datetime.date` object)
+`flight_report`: link to the online flight report with detailed information on the flight (flight objectives, quicklooks, photos)
+`takeoff`: flight takeoff at the airport (will be read as python `datetime.datetime` object)
+`landing`: flight landing at the airport (will be read as python `datetime.datetime` object)
+`events`: planned flight features, such as patterns, joint flights between aircraft, satellite overpasses, or instrument calibration
+`remarks` information on atmospheric conditions and instrument status
+`segments`: list of flight segments
 
-## flight segments
-### Keyword: kinds
-This table provides an overview of the keywords used to describe the flight segments. Multiple keywords can be used for one flight segment.
+## Keyword `segments`
+The following section provides an overview of the flight `segments` and their properties. They are ordered chronologically in a list, with the first segment starting at flight `takeoff` and the last segment ending at flight `landing`. The given `start` and `end` times of each segment are included.
 
-#### ascends and descends
-| kinds           | description                                                              | id ending |
+### Segment keywords
+`kinds`: list of properties, which describe the flight segment (see next section)
+`name`: name of segment, that is unique within the flight
+`irregularities`: list of irregularities in the flight track or caused by other factors, such as icing
+`segment_id`: unique id of flight segment
+`start`: start of segment (will be read as python `datetime.datetime` object)
+`end`: end of segment (will be read as python `datetime.datetime` object)
+`levels`: median flight level(s) or highest and lowest flight level for ascends/descends [in feet]
+`dropsondes`: list of dropsondes released during that segment
+`parts`: list of sub-segments (parts), which belong to a flight pattern (see next section).
+
+### Keyword `kinds`
+Making `flight-phase-separation` a useful tool for various communities, either working on in-situ or remotely sensed data, the various flight maneuvers are classified and separated. The following sections aims at providing an overview of the `kinds` used to describe the flight segments. Multiple keywords can be used for one flight segment. In total, 33 `kinds` are defined to classify the segments.
+
+#### Takeoff and landing maneuvers
+The takeoff and landing maneuvers are labelled as `major_ascend` (takeoff) and `major_descend` (landing). Their `start` and `end` times correspond to the flight `takeoff` and `landing` keyword, respectively.
+
+| Name           | Description                                                              | Ending of `segment_id` |
 | --------------- | ------------------------------------------------------------------------ |-----------|
-| major_ascend    | takeoff from the airport until a constant flight level is reached        | _ma   |
-| major_descend   | last descend from a constant flight level befor landing at the airport   | _md   |
-| small_ascend    | ascend of less than 1 km height difference between start and end times   | _sa01 |
-| small_descend   | descend of less than 1 km height difference between start and end times  | _sd01 |
-| large_ascend    | ascend of more than 1 km height difference between start and end times   | _la01 |
-| large_descend   | descend of more than 1 km height difference between start and end times  | _ld01 |
-| profiling       | ascend or descend with vertical speed mostly between 5-10 m/s            |       |
-
-#### flight altitude
-| kinds         | description                                     | id ending |
+| `major_ascend`    | takeoff from the airport until a constant flight level is reached        | `ma`   |
+| `major_descend`   | last descend from a constant flight level before landing at the airport   | `md`   |
+ 
+#### Straight segment with constant flight altitude
+Straight flight segments with constant flight altitude are classified into three height levels.
+| Name         | Description                                     | Ending of `segment_id` |
 | ------------- | ----------------------------------------------- |-----------|
-| low_level     | constant flight level at < 1 km altitude        | _ll01 |
-| mid_level     | constant flight level at 1-2 km altitude        | _ml01 |
-| high_level    | constant flight level at > 2 km altitude        | _hl01 |
+| `low_level`     | Constant flight level at < 1 km altitude        | `ll` |
+| `mid_level`     | Constant flight level at 1-2 km altitude        | `ml` |
+| `high_level`    | Constant flight level at > 2 km altitude        | `hl` |
 
-#### overflights, underflights, and co-location
-| kinds               | description                                                                                         |
-| ------------------- | --------------------------------------------------------------------------------------------------- |
-| nya_overflight      | Overflight over the Ny-Alesund research station. Might be combined or together with *cross_pattern* or *high_level*.|
-| ps_overflight       | Overflight over the Ny-Alesund research station. Might be combined or together with *cross_pattern*. |
-| a-train_underflight | Underflight of the A-Train satellite constellation. For Polar 5, it is usually combined with *high_level*. For Polar 6 it might be any profiling pattern.        |
-| [p5|6]_co-location  | co-location with the other aircraft | 
 
-#### pattern
+#### Ascends and descends
+Ascends and descends are classified by two properties: (1) the height difference between lowest and highest point, and (2) the vertical velocity. Note, that sometimes ascends or descends may be flown within curves.
 
-Pattern usually consist of parts like legs and turns named accordingly. 
-| kinds                 |                  | id ending |
-| ----------------------|-------------------------------------------------------------------------------------------------|---------|
-| cross_pattern         | rectangular crosses with transfer legs in between. Usually flown over Ny-Alesund or Polarstern. | _cp01 | 
-| racetrack_pattern     | Back and forth on the same track, with possible height changes| _rt01 |
-| holding_pattern       | Spending time with waiting.| _ho01 |
-| stairstep_pattern     | Stepwise up or down along a straight line.| _ss01 |
-| sawtooth_pattern      | Continious climbing follow by descending or the other way round.| _st01 |
-| waiting_pattern       | Anything to waist time or new alignment | |
+| Name         | Description                                     | Ending of `segment_id` |
+| --------------- | ------------------------------------------------------------------------ |-----------|
+| `small_ascend`    | Ascend with height difference < 1 km   | `sa` |
+| `small_descend`   | Descend with height difference < 1 km  | `sd` |
+| `medium_ascend`    | Ascend with height difference of 1-2 km   | `ma` |
+| `medium_descend`   | Descend with height difference of 1-2 km  | `md` |
+| `large_ascend`    | Ascend with height difference > 2 km   | `la` |
+| `large_descend`   | Descend with height difference > 2 km  | `ld` |
+| `profiling`       | Ascend or descend with vertical speed mostly between 5-10 m/s            |       |
 
-Race track: ![alt text](racetrack_pattern.png "race track pattern")
+#### Overflights, underflights, co-locations
+During many research flights, the research station in Ny-Alesund and the research vessel Polarstern are overflown, or the satellite constellation A-train is underflown. These segments are marked and easily accessible. Additionally, co-locations between aircraft are marked.
 
-#### turn
-| kinds          |             |
-|----------------|-------------|
-| short_turn     | Turn directly to next straight leg - cutting corners.|
-| long_turn      | Turn on the long way to the next direction without cutting the corner. |
-| procedure_turn | Perform 180 deg turn to be directly on track again in opposite direction. |
+| Name         | Description                                     | Ending of `segment_id` |
+| --------------- | ------------------------------------------------------------------------ |-----------|
+| `nya_overflight`      | Overflight over the Ny-Alesund research station. Might be combined with `cross_pattern` or `high_level`|
+| `ps_overflight`       | Overflight over RV Polarstern. Might be combined with `cross_pattern` |
+| `a-train_underflight` | Underflight of the A-Train satellite constellation. For Polar 5, it is usually combined with `high_level`. For Polar 6 it might be any profiling pattern        |
+| `sveabreen_glacier_overflight`       | Overflight over the Sveabreen glacier, Svalbard, mostly during `major_ascend` |
+| `p6_co-location`  | Co-location of Polar 5 with Polar 6 | 
+| `p5_co-location`  | Co-location of Polar 6 with Polar 5 | 
 
-Short turn: ![alt text](short_turn.png "Short turn")
-Procedure turn: ![alt text](procedure_turn.png "procedure turns")
+#### Instrument calibration and testing
+Especially in the beginning of campaigns, maneuvers are flown to test or calibrate instrumentation. The keywords for these segments are listed in the table below. 
+| Name         | Description                                     | Ending of `segment_id` |
+| --------------- | ------------------------------------------------------------------------ |-----------|
+| `radiometer_calibration`      | Segment dedicated for radiometer calibration |
+| `instrument_testing`      | Segment for instrument testing, usually at the beginning of campaigns, where various maneuvers are flown | `it` |
 
-This table is just a template!
+#### Curves and circles
+Different curves and circles are flown, depending of the angle or flight direction. These segments are not described by further keywords. Note, that segments, which are only curves (without ascend or descend), do not have the keywords `irregularities`, `segment_id`, `levels`, and `dropsondes`.
 
-### description of the flight yaml files
+| Name         | Description                                     | Ending of `segment_id` |
+| --------------- | ------------------------------------------------------------------------ |-----------|
+| `short_turn`     | Turn directly to another flight direction (cutting corner) | |
+| `long_turn`      | Turn on the long way to another flight direction (without cutting corner) | |
+| `procedure_turn` | Turn of 180° to be directly on track again in opposite direction | |
+| `cirle` | 360° circle, which is not part of a specific pattern | |
+| `cross_pattern_turn` | Transfer leg during `cross_pattern` | |
+
+#### Patterns
+Different flight patterns with each specific properties were flown during the campaigns. Each pattern segment consists of sub-segments, which are listed under the keyword `parts`.  Every part can be one of the above mentioned segments.
+| Name         | Description                                     | Ending of `segment_id` |
+| --------------- | ------------------------------------------------------------------------ |-----------|
+| `cross_pattern`         | Rectangular crosses with transfer legs in between, usually flown over Ny-Alesund or Polarstern | `cr` | 
+| `racetrack_pattern`     | Back and forth on the same track, with possible height changes | `rt` |
+| `holding_pattern`       | Time spending or waiting | `ho` |
+| `stairstep_pattern`     | Step wise ascending or descending along a straight line | `ss` |
+| `sawtooth_pattern`      | Alternating ascends and descends along a straight line| `st` |
+| `radiation_square`      | Square pattern at high altitude for radiation measurements | `rs` |
+| `noseboom_calibration_pattern`       | Pattern dedicated to calibrate the nose boom | `np` |
+
+## Template of `.yaml` file
+Below, a template of a `flight-phase-separation` `.yaml`file is shown. A description of the keywords is presented in the previous sections.
 ```
-name: RF04 # number of research flight within campaign
-mission: ACLOUD # name of campaign [ACLOUD|AFLUX|MOSAiC-ACA]
-platform: P5 # platform short name [P5|P6|HALO]
-flight_id: ACLOUD_P5_RF04 # campaign_platform_name
+name: RF04
+mission: ACLOUD
+platform: P5
+flight_id: ACLOUD_P5_RF04
 contacts:
-- name: Name of PI # PI o flight
-  email: email_address
-
-- name: null # creator of yaml
-  email: null
-date: 2017-05-23 # date of flight (take off day)
-flight_report: null # url of public flight report
-takeoff: 2017-05-23 09:11:47 # datetime object of take off
-landing: 2017-05-23 14:23:40 # datetime object of landing
+- name:
+  email:
+  tags:
+  - pi  # PI of flight
+- name:
+  email:
+  tags:
+  - lc  # list creator
+date: 2017-05-23
+flight_report: null
+takeoff: 2017-05-23 09:11:47
+landing: 2017-05-23 14:23:40
 events: []
-remarks:
-- Clouds above open water and sea ice
+remarks: []
 segments:
 - kinds:
   - major_ascend
   name: major ascend 1
   irregularities: []
-  segment_id: ACLOUD_P5_RF04_ma1
-  start: 
+  segment_id: ACLOUD_P5_RF04_ma
+  start: 2017-05-23 09:11:47
   end: null
+  levels: []
   dropsondes: []
 - kinds:
   - add_new_segments_here
@@ -93,13 +143,16 @@ segments:
   segment_id: null
   start: null
   end: null
+  levels: []
   dropsondes: []
 - kinds:
   - major_descend
   name: major descend 1
   irregularities: []
-  segment_id: ACLOUD_P5_RF04_md1
+  segment_id: ACLOUD_P5_RF04_md
   start: null
-  end: 
+  end: 2017-05-23 14:23:40
+  levels: []
   dropsondes: []
 ```
+
