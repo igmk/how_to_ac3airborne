@@ -3,16 +3,27 @@ The idea behind `flight-phase-separation` is to easily select segments of resear
 
 ## Flight keywords
 `name`: research flight number within campaign (e.g. *RF10*)
+
 `mission`: name of campaign (*ACLOUD*, *AFLUX*, *MOSAiC-ACA*)
+
 `platform`: aircraft short name (*P5*, *P6*)
+
 `flight_id`: unique identifier for flight (*campaign_platform_name*)
+
 `contacts`: information on mission PI and creator of `.yaml` file (name and email contact)
+
 `date`: date of flight (will be read as python `datetime.date` object)
+
 `flight_report`: link to the online flight report with detailed information on the flight (flight objectives, quicklooks, photos)
+
 `takeoff`: flight takeoff at the airport (will be read as python `datetime.datetime` object)
+
 `landing`: flight landing at the airport (will be read as python `datetime.datetime` object)
+
 `events`: planned flight features, such as patterns, joint flights between aircraft, satellite overpasses, or instrument calibration
+
 `remarks` information on atmospheric conditions and instrument status
+
 `segments`: list of flight segments
 
 ## Keyword `segments`
@@ -20,13 +31,21 @@ The following section provides an overview of the flight `segments` and their pr
 
 ### Segment keywords
 `kinds`: list of properties, which describe the flight segment (see next section)
+
 `name`: name of segment, that is unique within the flight
+
 `irregularities`: list of irregularities in the flight track or caused by other factors, such as icing
+
 `segment_id`: unique id of flight segment
+
 `start`: start of segment (will be read as python `datetime.datetime` object)
+
 `end`: end of segment (will be read as python `datetime.datetime` object)
+
 `levels`: median flight level(s) or highest and lowest flight level for ascends/descends [in feet]
+
 `dropsondes`: list of dropsondes released during that segment
+
 `parts`: list of sub-segments (parts), which belong to a flight pattern (see next section).
 
 ### Keyword `kinds`
@@ -155,4 +174,3 @@ segments:
   levels: []
   dropsondes: []
 ```
-
