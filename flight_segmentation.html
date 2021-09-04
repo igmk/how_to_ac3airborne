@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>flight-phase-separation &#8212; pyac3airborne-book</title>
+    <title>Flight-phase separation &#8212; pyac3airborne-book</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -57,7 +57,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Code examples to work with the data" href="code.html" />
-    <link rel="prev" title="Description of the GPS_INS data files" href="datasets/gps_ins.html" />
+    <link rel="prev" title="GPS + INS" href="datasets/gps_ins.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -165,6 +165,11 @@
     </a>
    </li>
    <li class="toctree-l2">
+    <a class="reference internal" href="examples/flight_tracks.html">
+     Flight tracks
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="examples/land_ocean.html">
      land-mask
     </a>
@@ -250,48 +255,84 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#flight-segments">
-   flight segments
+  <a class="reference internal nav-link" href="#flight-keywords">
+   Flight keywords
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#keyword-segments">
+   Keyword
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     segments
+    </span>
+   </code>
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#segment-keywords">
+     Segment keywords
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#keyword-kinds">
-     Keyword: kinds
+     Keyword
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       kinds
+      </span>
+     </code>
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#takeoff-and-landing-maneuvers">
+       Takeoff and landing maneuvers
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#straight-segment-with-constant-flight-altitude">
+       Straight segment with constant flight altitude
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#ascends-and-descends">
-       ascends and descends
+       Ascends and descends
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#flight-altitude">
-       flight altitude
+      <a class="reference internal nav-link" href="#overflights-underflights-co-locations">
+       Overflights, underflights, co-locations
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#overflights-underflights-and-co-location">
-       overflights, underflights, and co-location
+      <a class="reference internal nav-link" href="#instrument-calibration-and-testing">
+       Instrument calibration and testing
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#pattern">
-       pattern
+      <a class="reference internal nav-link" href="#curves-and-circles">
+       Curves and circles
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#turn">
-       turn
+      <a class="reference internal nav-link" href="#patterns">
+       Patterns
       </a>
      </li>
     </ul>
    </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#description-of-the-flight-yaml-files">
-     description of the flight yaml files
-    </a>
-   </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#template-of-yaml-file">
+   Template of
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     .yaml
+    </span>
+   </code>
+   file
+  </a>
  </li>
 </ul>
 
@@ -306,194 +347,300 @@
               <div>
                 
   <div class="section" id="flight-phase-separation">
-<h1>flight-phase-separation<a class="headerlink" href="#flight-phase-separation" title="Permalink to this headline">¶</a></h1>
-<p>The idea behind floght phase separation is to be able to select segments of flights according to their properties. The selection can be done by attributes like names and further on levels and is applied to the platform and instrument data by using start and end datetime objects belonging to the segment.</p>
-<div class="section" id="flight-segments">
-<h2>flight segments<a class="headerlink" href="#flight-segments" title="Permalink to this headline">¶</a></h2>
+<h1>Flight-phase separation<a class="headerlink" href="#flight-phase-separation" title="Permalink to this headline">¶</a></h1>
+<p>The idea behind <code class="docutils literal notranslate"><span class="pre">flight-phase-separation</span></code> is to easily select segments of research flights based on their properties as required for the user’s research. The selection can be done using any combination of attributes. In the following sections, the stored attributes and the structure of files under <code class="docutils literal notranslate"><span class="pre">flight_phase_files</span></code> is presented.</p>
+<div class="section" id="flight-keywords">
+<h2>Flight keywords<a class="headerlink" href="#flight-keywords" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">name</span></code>: research flight number within campaign (e.g. <em>RF10</em>)</p>
+<p><code class="docutils literal notranslate"><span class="pre">mission</span></code>: name of campaign (<em>ACLOUD</em>, <em>AFLUX</em>, <em>MOSAiC-ACA</em>)</p>
+<p><code class="docutils literal notranslate"><span class="pre">platform</span></code>: aircraft short name (<em>P5</em>, <em>P6</em>)</p>
+<p><code class="docutils literal notranslate"><span class="pre">flight_id</span></code>: unique identifier for flight (<em>campaign_platform_name</em>)</p>
+<p><code class="docutils literal notranslate"><span class="pre">contacts</span></code>: information on mission PI and creator of <code class="docutils literal notranslate"><span class="pre">.yaml</span></code> file (name and email contact)</p>
+<p><code class="docutils literal notranslate"><span class="pre">date</span></code>: date of flight (will be read as python <code class="docutils literal notranslate"><span class="pre">datetime.date</span></code> object)</p>
+<p><code class="docutils literal notranslate"><span class="pre">flight_report</span></code>: link to the online flight report with detailed information on the flight (flight objectives, quicklooks, photos)</p>
+<p><code class="docutils literal notranslate"><span class="pre">takeoff</span></code>: flight takeoff at the airport (will be read as python <code class="docutils literal notranslate"><span class="pre">datetime.datetime</span></code> object)</p>
+<p><code class="docutils literal notranslate"><span class="pre">landing</span></code>: flight landing at the airport (will be read as python <code class="docutils literal notranslate"><span class="pre">datetime.datetime</span></code> object)</p>
+<p><code class="docutils literal notranslate"><span class="pre">events</span></code>: planned flight features, such as patterns, joint flights between aircraft, satellite overpasses, or instrument calibration</p>
+<p><code class="docutils literal notranslate"><span class="pre">remarks</span></code> information on atmospheric conditions and instrument status</p>
+<p><code class="docutils literal notranslate"><span class="pre">segments</span></code>: list of flight segments</p>
+</div>
+<div class="section" id="keyword-segments">
+<h2>Keyword <code class="docutils literal notranslate"><span class="pre">segments</span></code><a class="headerlink" href="#keyword-segments" title="Permalink to this headline">¶</a></h2>
+<p>The following section provides an overview of the flight <code class="docutils literal notranslate"><span class="pre">segments</span></code> and their properties. They are ordered chronologically in a list, with the first segment starting at flight <code class="docutils literal notranslate"><span class="pre">takeoff</span></code> and the last segment ending at flight <code class="docutils literal notranslate"><span class="pre">landing</span></code>. The given <code class="docutils literal notranslate"><span class="pre">start</span></code> and <code class="docutils literal notranslate"><span class="pre">end</span></code> times of each segment are included.</p>
+<div class="section" id="segment-keywords">
+<h3>Segment keywords<a class="headerlink" href="#segment-keywords" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">kinds</span></code>: list of properties, which describe the flight segment (see next section)</p>
+<p><code class="docutils literal notranslate"><span class="pre">name</span></code>: name of segment, that is unique within the flight</p>
+<p><code class="docutils literal notranslate"><span class="pre">irregularities</span></code>: list of irregularities in the flight track or caused by other factors, such as icing</p>
+<p><code class="docutils literal notranslate"><span class="pre">segment_id</span></code>: unique id of flight segment</p>
+<p><code class="docutils literal notranslate"><span class="pre">start</span></code>: start of segment (will be read as python <code class="docutils literal notranslate"><span class="pre">datetime.datetime</span></code> object)</p>
+<p><code class="docutils literal notranslate"><span class="pre">end</span></code>: end of segment (will be read as python <code class="docutils literal notranslate"><span class="pre">datetime.datetime</span></code> object)</p>
+<p><code class="docutils literal notranslate"><span class="pre">levels</span></code>: median flight level(s) or highest and lowest flight level for ascends/descends [in feet]</p>
+<p><code class="docutils literal notranslate"><span class="pre">dropsondes</span></code>: list of dropsondes released during that segment</p>
+<p><code class="docutils literal notranslate"><span class="pre">parts</span></code>: list of sub-segments (parts), which belong to a flight pattern (see next section).</p>
+</div>
 <div class="section" id="keyword-kinds">
-<h3>Keyword: kinds<a class="headerlink" href="#keyword-kinds" title="Permalink to this headline">¶</a></h3>
-<p>This table provides an overview of the keywords used to describe the flight segments. Multiple keywords can be used for one flight segment.</p>
-<div class="section" id="ascends-and-descends">
-<h4>ascends and descends<a class="headerlink" href="#ascends-and-descends" title="Permalink to this headline">¶</a></h4>
+<h3>Keyword <code class="docutils literal notranslate"><span class="pre">kinds</span></code><a class="headerlink" href="#keyword-kinds" title="Permalink to this headline">¶</a></h3>
+<p>Making <code class="docutils literal notranslate"><span class="pre">flight-phase-separation</span></code> a useful tool for various communities, either working on in-situ or remotely sensed data, the various flight maneuvers are classified and separated. The following sections aims at providing an overview of the <code class="docutils literal notranslate"><span class="pre">kinds</span></code> used to describe the flight segments. Multiple keywords can be used for one flight segment. In total, 33 <code class="docutils literal notranslate"><span class="pre">kinds</span></code> are defined to classify the segments.</p>
+<div class="section" id="takeoff-and-landing-maneuvers">
+<h4>Takeoff and landing maneuvers<a class="headerlink" href="#takeoff-and-landing-maneuvers" title="Permalink to this headline">¶</a></h4>
+<p>The takeoff and landing maneuvers are labelled as <code class="docutils literal notranslate"><span class="pre">major_ascend</span></code> (takeoff) and <code class="docutils literal notranslate"><span class="pre">major_descend</span></code> (landing). Their <code class="docutils literal notranslate"><span class="pre">start</span></code> and <code class="docutils literal notranslate"><span class="pre">end</span></code> times correspond to the flight <code class="docutils literal notranslate"><span class="pre">takeoff</span></code> and <code class="docutils literal notranslate"><span class="pre">landing</span></code> keyword, respectively.</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head"><p>kinds</p></th>
-<th class="head"><p>description</p></th>
-<th class="head"><p>id ending</p></th>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Ending of <code class="docutils literal notranslate"><span class="pre">segment_id</span></code></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>major_ascend</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">major_ascend</span></code></p></td>
 <td><p>takeoff from the airport until a constant flight level is reached</p></td>
-<td><p>_ma</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ma</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>major_descend</p></td>
-<td><p>last descend from a constant flight level befor landing at the airport</p></td>
-<td><p>_md</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">major_descend</span></code></p></td>
+<td><p>last descend from a constant flight level before landing at the airport</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">md</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>small_ascend</p></td>
-<td><p>ascend of less than 1 km height difference between start and end times</p></td>
-<td><p>_sa01</p></td>
+</tbody>
+</table>
+</div>
+<div class="section" id="straight-segment-with-constant-flight-altitude">
+<h4>Straight segment with constant flight altitude<a class="headerlink" href="#straight-segment-with-constant-flight-altitude" title="Permalink to this headline">¶</a></h4>
+<p>Straight flight segments with constant flight altitude are classified into three height levels.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Ending of <code class="docutils literal notranslate"><span class="pre">segment_id</span></code></p></th>
 </tr>
-<tr class="row-odd"><td><p>small_descend</p></td>
-<td><p>descend of less than 1 km height difference between start and end times</p></td>
-<td><p>_sd01</p></td>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">low_level</span></code></p></td>
+<td><p>Constant flight level at &lt; 1 km altitude</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ll</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>large_ascend</p></td>
-<td><p>ascend of more than 1 km height difference between start and end times</p></td>
-<td><p>_la01</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">mid_level</span></code></p></td>
+<td><p>Constant flight level at 1-2 km altitude</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ml</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>large_descend</p></td>
-<td><p>descend of more than 1 km height difference between start and end times</p></td>
-<td><p>_ld01</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">high_level</span></code></p></td>
+<td><p>Constant flight level at &gt; 2 km altitude</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">hl</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>profiling</p></td>
-<td><p>ascend or descend with vertical speed mostly between 5-10 m/s</p></td>
+</tbody>
+</table>
+</div>
+<div class="section" id="ascends-and-descends">
+<h4>Ascends and descends<a class="headerlink" href="#ascends-and-descends" title="Permalink to this headline">¶</a></h4>
+<p>Ascends and descends are classified by two properties: (1) the height difference between lowest and highest point, and (2) the vertical velocity. Note, that sometimes ascends or descends may be flown within curves.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Ending of <code class="docutils literal notranslate"><span class="pre">segment_id</span></code></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">small_ascend</span></code></p></td>
+<td><p>Ascend with height difference &lt; 1 km</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sa</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">small_descend</span></code></p></td>
+<td><p>Descend with height difference &lt; 1 km</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">sd</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">medium_ascend</span></code></p></td>
+<td><p>Ascend with height difference of 1-2 km</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ma</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">medium_descend</span></code></p></td>
+<td><p>Descend with height difference of 1-2 km</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">md</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">large_ascend</span></code></p></td>
+<td><p>Ascend with height difference &gt; 2 km</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">la</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">large_descend</span></code></p></td>
+<td><p>Descend with height difference &gt; 2 km</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ld</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">profiling</span></code></p></td>
+<td><p>Ascend or descend with vertical speed mostly between 5-10 m/s</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="section" id="flight-altitude">
-<h4>flight altitude<a class="headerlink" href="#flight-altitude" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="overflights-underflights-co-locations">
+<h4>Overflights, underflights, co-locations<a class="headerlink" href="#overflights-underflights-co-locations" title="Permalink to this headline">¶</a></h4>
+<p>During many research flights, the research station in Ny-Alesund and the research vessel Polarstern are overflown, or the satellite constellation A-train is underflown. These segments are marked and easily accessible. Additionally, co-locations between aircraft are marked.</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head"><p>kinds</p></th>
-<th class="head"><p>description</p></th>
-<th class="head"><p>id ending</p></th>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Ending of <code class="docutils literal notranslate"><span class="pre">segment_id</span></code></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>low_level</p></td>
-<td><p>constant flight level at &lt; 1 km altitude</p></td>
-<td><p>_ll01</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">nya_overflight</span></code></p></td>
+<td><p>Overflight over the Ny-Alesund research station. Might be combined with <code class="docutils literal notranslate"><span class="pre">cross_pattern</span></code> or <code class="docutils literal notranslate"><span class="pre">high_level</span></code></p></td>
+<td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p>mid_level</p></td>
-<td><p>constant flight level at 1-2 km altitude</p></td>
-<td><p>_ml01</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ps_overflight</span></code></p></td>
+<td><p>Overflight over RV Polarstern. Might be combined with <code class="docutils literal notranslate"><span class="pre">cross_pattern</span></code></p></td>
+<td><p></p></td>
 </tr>
-<tr class="row-even"><td><p>high_level</p></td>
-<td><p>constant flight level at &gt; 2 km altitude</p></td>
-<td><p>_hl01</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">a-train_underflight</span></code></p></td>
+<td><p>Underflight of the A-Train satellite constellation. For Polar 5, it is usually combined with <code class="docutils literal notranslate"><span class="pre">high_level</span></code>. For Polar 6 it might be any profiling pattern</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sveabreen_glacier_overflight</span></code></p></td>
+<td><p>Overflight over the Sveabreen glacier, Svalbard, mostly during <code class="docutils literal notranslate"><span class="pre">major_ascend</span></code></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">p6_co-location</span></code></p></td>
+<td><p>Co-location of Polar 5 with Polar 6</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">p5_co-location</span></code></p></td>
+<td><p>Co-location of Polar 6 with Polar 5</p></td>
+<td><p></p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="section" id="overflights-underflights-and-co-location">
-<h4>overflights, underflights, and co-location<a class="headerlink" href="#overflights-underflights-and-co-location" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="instrument-calibration-and-testing">
+<h4>Instrument calibration and testing<a class="headerlink" href="#instrument-calibration-and-testing" title="Permalink to this headline">¶</a></h4>
+<p>Especially in the beginning of campaigns, maneuvers are flown to test or calibrate instrumentation. The keywords for these segments are listed in the table below.</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head"><p>kinds</p></th>
-<th class="head"><p>description</p></th>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Ending of <code class="docutils literal notranslate"><span class="pre">segment_id</span></code></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>nya_overflight</p></td>
-<td><p>Overflight over the Ny-Alesund research station. Might be combined or together with <em>cross_pattern</em> or <em>high_level</em>.</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">radiometer_calibration</span></code></p></td>
+<td><p>Segment dedicated for radiometer calibration</p></td>
+<td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p>ps_overflight</p></td>
-<td><p>Overflight over the Ny-Alesund research station. Might be combined or together with <em>cross_pattern</em>.</p></td>
-</tr>
-<tr class="row-even"><td><p>a-train_underflight</p></td>
-<td><p>Underflight of the A-Train satellite constellation. For Polar 5, it is usually combined with <em>high_level</em>. For Polar 6 it might be any profiling pattern.</p></td>
-</tr>
-<tr class="row-odd"><td><p>[p5</p></td>
-<td><p>6]_co-location</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">instrument_testing</span></code></p></td>
+<td><p>Segment for instrument testing, usually at the beginning of campaigns, where various maneuvers are flown</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">it</span></code></p></td>
 </tr>
 </tbody>
 </table>
 </div>
-<div class="section" id="pattern">
-<h4>pattern<a class="headerlink" href="#pattern" title="Permalink to this headline">¶</a></h4>
-<p>Pattern usually consist of parts like legs and turns named accordingly.</p>
+<div class="section" id="curves-and-circles">
+<h4>Curves and circles<a class="headerlink" href="#curves-and-circles" title="Permalink to this headline">¶</a></h4>
+<p>Different curves and circles are flown, depending of the angle or flight direction. These segments are not described by further keywords. Note, that segments, which are only curves (without ascend or descend), do not have the keywords <code class="docutils literal notranslate"><span class="pre">irregularities</span></code>, <code class="docutils literal notranslate"><span class="pre">segment_id</span></code>, <code class="docutils literal notranslate"><span class="pre">levels</span></code>, and <code class="docutils literal notranslate"><span class="pre">dropsondes</span></code>.</p>
 <table class="colwidths-auto table">
 <thead>
-<tr class="row-odd"><th class="head"><p>kinds</p></th>
-<th class="head"><p></p></th>
-<th class="head"><p>id ending</p></th>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Ending of <code class="docutils literal notranslate"><span class="pre">segment_id</span></code></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>cross_pattern</p></td>
-<td><p>rectangular crosses with transfer legs in between. Usually flown over Ny-Alesund or Polarstern.</p></td>
-<td><p>_cp01</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">short_turn</span></code></p></td>
+<td><p>Turn directly to another flight direction (cutting corner)</p></td>
+<td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p>racetrack_pattern</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">long_turn</span></code></p></td>
+<td><p>Turn on the long way to another flight direction (without cutting corner)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">procedure_turn</span></code></p></td>
+<td><p>Turn of 180° to be directly on track again in opposite direction</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cirle</span></code></p></td>
+<td><p>360° circle, which is not part of a specific pattern</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">cross_pattern_turn</span></code></p></td>
+<td><p>Transfer leg during <code class="docutils literal notranslate"><span class="pre">cross_pattern</span></code></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="patterns">
+<h4>Patterns<a class="headerlink" href="#patterns" title="Permalink to this headline">¶</a></h4>
+<p>Different flight patterns with each specific properties were flown during the campaigns. Each pattern segment consists of sub-segments, which are listed under the keyword <code class="docutils literal notranslate"><span class="pre">parts</span></code>.  Every part can be one of the above mentioned segments.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Name</p></th>
+<th class="head"><p>Description</p></th>
+<th class="head"><p>Ending of <code class="docutils literal notranslate"><span class="pre">segment_id</span></code></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">cross_pattern</span></code></p></td>
+<td><p>Rectangular crosses with transfer legs in between, usually flown over Ny-Alesund or Polarstern</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">cr</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">racetrack_pattern</span></code></p></td>
 <td><p>Back and forth on the same track, with possible height changes</p></td>
-<td><p>_rt01</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">rt</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>holding_pattern</p></td>
-<td><p>Spending time with waiting.</p></td>
-<td><p>_ho01</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">holding_pattern</span></code></p></td>
+<td><p>Time spending or waiting</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ho</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>stairstep_pattern</p></td>
-<td><p>Stepwise up or down along a straight line.</p></td>
-<td><p>_ss01</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">stairstep_pattern</span></code></p></td>
+<td><p>Step wise ascending or descending along a straight line</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ss</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>sawtooth_pattern</p></td>
-<td><p>Continious climbing follow by descending or the other way round.</p></td>
-<td><p>_st01</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sawtooth_pattern</span></code></p></td>
+<td><p>Alternating ascends and descends along a straight line</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">st</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>waiting_pattern</p></td>
-<td><p>Anything to waist time or new alignment</p></td>
-<td><p></p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">radiation_square</span></code></p></td>
+<td><p>Square pattern at high altitude for radiation measurements</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">rs</span></code></p></td>
 </tr>
-</tbody>
-</table>
-<p>Race track: <img alt="alt text" src="_images/racetrack_pattern.png" /></p>
-</div>
-<div class="section" id="turn">
-<h4>turn<a class="headerlink" href="#turn" title="Permalink to this headline">¶</a></h4>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>kinds</p></th>
-<th class="head"><p></p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>short_turn</p></td>
-<td><p>Turn directly to next straight leg - cutting corners.</p></td>
-</tr>
-<tr class="row-odd"><td><p>long_turn</p></td>
-<td><p>Turn on the long way to the next direction without cutting the corner.</p></td>
-</tr>
-<tr class="row-even"><td><p>procedure_turn</p></td>
-<td><p>Perform 180 deg turn to be directly on track again in opposite direction.</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">noseboom_calibration_pattern</span></code></p></td>
+<td><p>Pattern dedicated to calibrate the nose boom</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">np</span></code></p></td>
 </tr>
 </tbody>
 </table>
-<p>Short turn: <img alt="alt text" src="_images/short_turn.png" />
-Procedure turn: <img alt="alt text" src="_images/procedure_turn.png" /></p>
-<p>This table is just a template!</p>
 </div>
 </div>
-<div class="section" id="description-of-the-flight-yaml-files">
-<h3>description of the flight yaml files<a class="headerlink" href="#description-of-the-flight-yaml-files" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">:</span> <span class="n">RF04</span> <span class="c1"># number of research flight within campaign</span>
-<span class="n">mission</span><span class="p">:</span> <span class="n">ACLOUD</span> <span class="c1"># name of campaign [ACLOUD|AFLUX|MOSAiC-ACA]</span>
-<span class="n">platform</span><span class="p">:</span> <span class="n">P5</span> <span class="c1"># platform short name [P5|P6|HALO]</span>
-<span class="n">flight_id</span><span class="p">:</span> <span class="n">ACLOUD_P5_RF04</span> <span class="c1"># campaign_platform_name</span>
+</div>
+<div class="section" id="template-of-yaml-file">
+<h2>Template of <code class="docutils literal notranslate"><span class="pre">.yaml</span></code> file<a class="headerlink" href="#template-of-yaml-file" title="Permalink to this headline">¶</a></h2>
+<p>Below, a template of a <code class="docutils literal notranslate"><span class="pre">flight-phase-separation</span></code> <code class="docutils literal notranslate"><span class="pre">.yaml</span></code>file is shown. A description of the keywords is presented in the previous sections.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">:</span> <span class="n">RF04</span>
+<span class="n">mission</span><span class="p">:</span> <span class="n">ACLOUD</span>
+<span class="n">platform</span><span class="p">:</span> <span class="n">P5</span>
+<span class="n">flight_id</span><span class="p">:</span> <span class="n">ACLOUD_P5_RF04</span>
 <span class="n">contacts</span><span class="p">:</span>
-<span class="o">-</span> <span class="n">name</span><span class="p">:</span> <span class="n">Name</span> <span class="n">of</span> <span class="n">PI</span> <span class="c1"># PI o flight</span>
-  <span class="n">email</span><span class="p">:</span> <span class="n">email_address</span>
-
-<span class="o">-</span> <span class="n">name</span><span class="p">:</span> <span class="n">null</span> <span class="c1"># creator of yaml</span>
-  <span class="n">email</span><span class="p">:</span> <span class="n">null</span>
-<span class="n">date</span><span class="p">:</span> <span class="mi">2017</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">23</span> <span class="c1"># date of flight (take off day)</span>
-<span class="n">flight_report</span><span class="p">:</span> <span class="n">null</span> <span class="c1"># url of public flight report</span>
-<span class="n">takeoff</span><span class="p">:</span> <span class="mi">2017</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">23</span> <span class="mi">09</span><span class="p">:</span><span class="mi">11</span><span class="p">:</span><span class="mi">47</span> <span class="c1"># datetime object of take off</span>
-<span class="n">landing</span><span class="p">:</span> <span class="mi">2017</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">23</span> <span class="mi">14</span><span class="p">:</span><span class="mi">23</span><span class="p">:</span><span class="mi">40</span> <span class="c1"># datetime object of landing</span>
+<span class="o">-</span> <span class="n">name</span><span class="p">:</span>
+  <span class="n">email</span><span class="p">:</span>
+  <span class="n">tags</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">pi</span>  <span class="c1"># PI of flight</span>
+<span class="o">-</span> <span class="n">name</span><span class="p">:</span>
+  <span class="n">email</span><span class="p">:</span>
+  <span class="n">tags</span><span class="p">:</span>
+  <span class="o">-</span> <span class="n">lc</span>  <span class="c1"># list creator</span>
+<span class="n">date</span><span class="p">:</span> <span class="mi">2017</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">23</span>
+<span class="n">flight_report</span><span class="p">:</span> <span class="n">null</span>
+<span class="n">takeoff</span><span class="p">:</span> <span class="mi">2017</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">23</span> <span class="mi">09</span><span class="p">:</span><span class="mi">11</span><span class="p">:</span><span class="mi">47</span>
+<span class="n">landing</span><span class="p">:</span> <span class="mi">2017</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">23</span> <span class="mi">14</span><span class="p">:</span><span class="mi">23</span><span class="p">:</span><span class="mi">40</span>
 <span class="n">events</span><span class="p">:</span> <span class="p">[]</span>
-<span class="n">remarks</span><span class="p">:</span>
-<span class="o">-</span> <span class="n">Clouds</span> <span class="n">above</span> <span class="nb">open</span> <span class="n">water</span> <span class="ow">and</span> <span class="n">sea</span> <span class="n">ice</span>
+<span class="n">remarks</span><span class="p">:</span> <span class="p">[]</span>
 <span class="n">segments</span><span class="p">:</span>
 <span class="o">-</span> <span class="n">kinds</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">major_ascend</span>
   <span class="n">name</span><span class="p">:</span> <span class="n">major</span> <span class="n">ascend</span> <span class="mi">1</span>
   <span class="n">irregularities</span><span class="p">:</span> <span class="p">[]</span>
-  <span class="n">segment_id</span><span class="p">:</span> <span class="n">ACLOUD_P5_RF04_ma1</span>
-  <span class="n">start</span><span class="p">:</span> 
+  <span class="n">segment_id</span><span class="p">:</span> <span class="n">ACLOUD_P5_RF04_ma</span>
+  <span class="n">start</span><span class="p">:</span> <span class="mi">2017</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">23</span> <span class="mi">09</span><span class="p">:</span><span class="mi">11</span><span class="p">:</span><span class="mi">47</span>
   <span class="n">end</span><span class="p">:</span> <span class="n">null</span>
+  <span class="n">levels</span><span class="p">:</span> <span class="p">[]</span>
   <span class="n">dropsondes</span><span class="p">:</span> <span class="p">[]</span>
 <span class="o">-</span> <span class="n">kinds</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">add_new_segments_here</span>
@@ -502,17 +649,18 @@ Procedure turn: <img alt="alt text" src="_images/procedure_turn.png" /></p>
   <span class="n">segment_id</span><span class="p">:</span> <span class="n">null</span>
   <span class="n">start</span><span class="p">:</span> <span class="n">null</span>
   <span class="n">end</span><span class="p">:</span> <span class="n">null</span>
+  <span class="n">levels</span><span class="p">:</span> <span class="p">[]</span>
   <span class="n">dropsondes</span><span class="p">:</span> <span class="p">[]</span>
 <span class="o">-</span> <span class="n">kinds</span><span class="p">:</span>
   <span class="o">-</span> <span class="n">major_descend</span>
   <span class="n">name</span><span class="p">:</span> <span class="n">major</span> <span class="n">descend</span> <span class="mi">1</span>
   <span class="n">irregularities</span><span class="p">:</span> <span class="p">[]</span>
-  <span class="n">segment_id</span><span class="p">:</span> <span class="n">ACLOUD_P5_RF04_md1</span>
+  <span class="n">segment_id</span><span class="p">:</span> <span class="n">ACLOUD_P5_RF04_md</span>
   <span class="n">start</span><span class="p">:</span> <span class="n">null</span>
-  <span class="n">end</span><span class="p">:</span> 
+  <span class="n">end</span><span class="p">:</span> <span class="mi">2017</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">23</span> <span class="mi">14</span><span class="p">:</span><span class="mi">23</span><span class="p">:</span><span class="mi">40</span>
+  <span class="n">levels</span><span class="p">:</span> <span class="p">[]</span>
   <span class="n">dropsondes</span><span class="p">:</span> <span class="p">[]</span>
 </pre></div>
-</div>
 </div>
 </div>
 </div>
@@ -542,7 +690,7 @@ Procedure turn: <img alt="alt text" src="_images/procedure_turn.png" /></p>
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="datasets/gps_ins.html" title="previous page">Description of the GPS_INS data files</a>
+    <a class='left-prev' id="prev-link" href="datasets/gps_ins.html" title="previous page">GPS + INS</a>
     <a class='right-next' id="next-link" href="code.html" title="next page">Code examples to work with the data</a>
 
         </div>
