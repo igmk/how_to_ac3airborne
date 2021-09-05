@@ -223,9 +223,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/datasets.md"><button type="button"
+        <a class="dropdown-buttons" href="_sources/datasets.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -243,6 +243,23 @@
 
             <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/datasets.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
         </div>
 
         <!-- Table of contents -->
@@ -258,7 +275,56 @@
                 
   <div class="section" id="datasets">
 <h1>Datasets<a class="headerlink" href="#datasets" title="Permalink to this headline">¶</a></h1>
-<p>During the campaigns several datasets have been created on differnet levels.</p>
+<p>During the campaigns several datasets have been collected. The overview below shows the datasets available via the intake catalog for each research flight.</p>
+<div class="cell tag_hide_input docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span> <span class="nn">ac3airborne</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;mplstyle/book&quot;</span><span class="p">)</span>
+
+<span class="c1"># load intake catalog and flight segments</span>
+<span class="n">cat</span> <span class="o">=</span> <span class="n">ac3airborne</span><span class="o">.</span><span class="n">get_intake_catalog</span><span class="p">()</span>
+<span class="n">meta</span> <span class="o">=</span> <span class="n">ac3airborne</span><span class="o">.</span><span class="n">get_flight_segments</span><span class="p">()</span>
+
+<span class="c1"># store data availability in a matrix</span>
+<span class="n">data_availability</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="p">[</span><span class="s1">&#39;Polar5&#39;</span><span class="p">])),</span>
+                                    <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">]))))</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">dataset</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="p">[</span><span class="s1">&#39;Polar5&#39;</span><span class="p">])):</span>
+    <span class="n">data_availability</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">]),</span> 
+                                      <span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="p">[</span><span class="s1">&#39;Polar5&#39;</span><span class="p">][</span><span class="n">dataset</span><span class="p">]))</span>
+
+<span class="c1"># plot data availability</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+                       <span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">data_availability</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> 
+              <span class="nb">range</span><span class="p">(</span><span class="n">data_availability</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> 
+              <span class="n">data_availability</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> 
+              <span class="n">shading</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">,</span>
+              <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> 
+              <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+              <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdYlGn&#39;</span><span class="p">,</span> 
+              <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;#eeeeee&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">data_availability</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">data_availability</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="p">[</span><span class="s1">&#39;Polar5&#39;</span><span class="p">])),</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">])))</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labeltop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/datasets_1_0.png" src="_images/datasets_1_0.png" />
+</div>
+</div>
 <div class="toctree-wrapper compound">
 </div>
 </div>
