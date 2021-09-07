@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>running pyac3airborne locally &#8212; pyac3airborne-book</title>
+    <title>running pyac3airborne_book locally &#8212; pyac3airborne-book</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -45,8 +45,6 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -161,7 +159,7 @@
   <ul class="current collapse-ul">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     running pyac3airborne locally
+     running pyac3airborne_book locally
     </a>
    </li>
    <li class="toctree-l2">
@@ -315,8 +313,8 @@
         
               <div>
                 
-  <div class="section" id="running-pyac3airborne-locally">
-<h1>running pyac3airborne locally<a class="headerlink" href="#running-pyac3airborne-locally" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="running-pyac3airborne-book-locally">
+<h1>running pyac3airborne_book locally<a class="headerlink" href="#running-pyac3airborne-book-locally" title="Permalink to this headline">¶</a></h1>
 <p>There are multiple options to run the Code examples from this book locally.
 In any case, it will involve the following steps:</p>
 <ul class="simple">
@@ -330,45 +328,14 @@ In any case, it will involve the following steps:</p>
 <h2>quick and dirty<a class="headerlink" href="#quick-and-dirty" title="Permalink to this headline">¶</a></h2>
 <p>If you just like to run the code of a single notebook and don’t care to much about the details, the quickest option might be to download the chapter you are viewing as an ipython notebook (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) via the download button (<i class="fas fa-download"></i>) on the top right of the page. If you don’t see the <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> option here, that’s because the source of the page can not be interpreted as a notebook and thus is not available for direct execution.</p>
 <p>If you would just run the downloaded code, the chance is high that some required libraries are not yet installed on your system. You can either do try and error to find out which libraries are required for the chapter you downloaded, or you can simply installed all requirements for the entire book by running the following command on your command line:</p>
-<div class="sphinx-bs container pb-4 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
-<div class="card w-100 shadow docutils">
-<div class="card-header docutils">
-<p class="card-text">Using pip</p>
-</div>
-<div class="card-body docutils">
+<p>Using pip</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install jupyter
 pip install -r https://raw.githubusercontent.com/igmk/pyac3airborne_book/main/requirements.txt
+pip install -i https://test.pypi.org/simple/ ac3airborne
 </pre></div>
 </div>
-</div>
-<div class="card-footer docutils">
-<p class="card-text">This won’t work with any notebooks that use <code class="docutils literal notranslate"><span class="pre">cartopy</span></code> to make maps,  <code class="docutils literal notranslate"><span class="pre">pip</span></code> does not manage
+<p>This won’t work with any notebooks that use <code class="docutils literal notranslate"><span class="pre">cartopy</span></code> to make maps,  <code class="docutils literal notranslate"><span class="pre">pip</span></code> does not manage
 their dependencies well.</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
-<div class="card w-100 shadow docutils">
-<div class="card-header docutils">
-<p class="card-text">Using conda</p>
-</div>
-<div class="card-body docutils">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget https://raw.githubusercontent.com/igmk/pyac3airborne_book/main/requirements.txt
-conda create -f requirements.txt
-conda activate pyac3airborne
-</pre></div>
-</div>
-</div>
-<div class="card-footer docutils">
-<p class="card-text">This creates a conda environment called <code class="docutils literal notranslate"><span class="pre">pyac3airborne</span></code> which contains all dependencies including
-<code class="docutils literal notranslate"><span class="pre">cartopy</span></code></p>
-</div>
-</div>
-</div>
-</div>
-</div>
 <p>Afterwards, you can start a local notebook server (either <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> or <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">lab</span></code>) and run and modify the chapter locally.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -379,17 +346,17 @@ conda activate pyac3airborne
 <h2>via git<a class="headerlink" href="#via-git" title="Permalink to this headline">¶</a></h2>
 <p>If you like to do it more properly, you can also clone the repository via git. Depending on if you have SSH public key authentication set up or not, you can do this via SSH or HTTPS:</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="4549edc6-2953-44ff-b153-de26e2767c78" name="6ac25c71-2cee-49db-85bf-e22a8ad3ca8c" type="radio">
-</input><label class="tabbed-label" for="4549edc6-2953-44ff-b153-de26e2767c78">
+<input checked="checked" id="3a18bc6b-4a88-4aac-a449-c40454a788fa" name="4033d9ab-82f3-406a-9fa1-e70e8099e7de" type="radio">
+</input><label class="tabbed-label" for="3a18bc6b-4a88-4aac-a449-c40454a788fa">
 SSH</label><div class="tabbed-content docutils">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone git@github.com:igmk/pyac3airborne_book.git
 </pre></div>
 </div>
 </div>
-<input id="239120c2-f592-43ba-9880-5a68999dd4d3" name="6ac25c71-2cee-49db-85bf-e22a8ad3ca8c" type="radio">
-</input><label class="tabbed-label" for="239120c2-f592-43ba-9880-5a68999dd4d3">
+<input id="d181738f-27f5-4d0a-b15c-2a4ef5e3a280" name="4033d9ab-82f3-406a-9fa1-e70e8099e7de" type="radio">
+</input><label class="tabbed-label" for="d181738f-27f5-4d0a-b15c-2a4ef5e3a280">
 HTTPS</label><div class="tabbed-content docutils">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/igmk/pyac3airborne.git
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/igmk/pyac3airborne_book.git
 </pre></div>
 </div>
 </div>
@@ -408,44 +375,13 @@ Using virtualenv, you could create and activate an environment like:</p>
 <p>and the continue normally.</p>
 </div>
 <p>You’ll have to install the dependencies as above, but as you already have all the files on your machine, you can also install it directly via:</p>
-<div class="sphinx-bs container pb-4 docutils">
-<div class="row docutils">
-<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
-<div class="card w-100 shadow docutils">
-<div class="card-header docutils">
-<p class="card-text">Using pip</p>
-</div>
-<div class="card-body docutils">
+<p>Using pip</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install jupyter
 pip install -r requirements.txt
 </pre></div>
 </div>
-</div>
-<div class="card-footer docutils">
-<p class="card-text">This won’t work with any notebooks that use <code class="docutils literal notranslate"><span class="pre">cartopy</span></code> to make maps,  <code class="docutils literal notranslate"><span class="pre">pip</span></code> does not manage
+<p>This won’t work with any notebooks that use <code class="docutils literal notranslate"><span class="pre">cartopy</span></code> to make maps,  <code class="docutils literal notranslate"><span class="pre">pip</span></code> does not manage
 their dependencies well.</p>
-</div>
-</div>
-</div>
-<div class="d-flex col-lg-6 col-md-6 col-sm-6 col-xs-12 p-2 docutils">
-<div class="card w-100 shadow docutils">
-<div class="card-header docutils">
-<p class="card-text">Using conda</p>
-</div>
-<div class="card-body docutils">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda create -f requirements.txt
-conda activate pyac3airborne
-</pre></div>
-</div>
-</div>
-<div class="card-footer docutils">
-<p class="card-text">This creates a conda environment called <code class="docutils literal notranslate"><span class="pre">pyac3airborne</span></code> which contains all dependencies including
-<code class="docutils literal notranslate"><span class="pre">cartopy</span></code></p>
-</div>
-</div>
-</div>
-</div>
-</div>
 <p>Depending on your needs, you can continue using <a class="reference external" href="#interactive">interactive notebooks</a> or <a class="reference external" href="#compile-the-book">compile the entire book</a>.</p>
 <div class="dropdown admonition">
 <p class="admonition-title">About MyST notebooks.</p>
@@ -492,7 +428,7 @@ If that does not work, please have a look at the <a class="reference external" h
 <div class="section" id="compile-the-book">
 <h3>compile the book<a class="headerlink" href="#compile-the-book" title="Permalink to this headline">¶</a></h3>
 <p>You can also execute <code class="docutils literal notranslate"><span class="pre">jupyter-book</span></code> directly via:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jb build how_to_eurec4a
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jb build pyac3airborne_book
 </pre></div>
 </div>
 <p>which itself will run all code cells and output the results as HTML pages in a newly created folder.

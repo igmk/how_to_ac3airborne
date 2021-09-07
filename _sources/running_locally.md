@@ -1,4 +1,4 @@
-# running pyac3airborne locally
+# running pyac3airborne_book locally
 
 There are multiple options to run the Code examples from this book locally.
 In any case, it will involve the following steps:
@@ -13,28 +13,17 @@ You can decide between the [quick an dirty](#quick-and-dirty) method and the met
 If you just like to run the code of a single notebook and don't care to much about the details, the quickest option might be to download the chapter you are viewing as an ipython notebook (`.ipynb`) via the download button (<i class="fas fa-download"></i>) on the top right of the page. If you don't see the `.ipynb` option here, that's because the source of the page can not be interpreted as a notebook and thus is not available for direct execution.
 
 If you would just run the downloaded code, the chance is high that some required libraries are not yet installed on your system. You can either do try and error to find out which libraries are required for the chapter you downloaded, or you can simply installed all requirements for the entire book by running the following command on your command line:
-````{panels}
+
 Using pip
-^^^
+
 ```bash
 pip install jupyter
 pip install -r https://raw.githubusercontent.com/igmk/pyac3airborne_book/main/requirements.txt
+pip install -i https://test.pypi.org/simple/ ac3airborne
 ```
 +++
 This won't work with any notebooks that use `cartopy` to make maps,  `pip` does not manage
 their dependencies well.
----
-Using conda
-^^^
-```bash
-wget https://raw.githubusercontent.com/igmk/pyac3airborne_book/main/requirements.txt
-conda create -f requirements.txt
-conda activate pyac3airborne
-```
-+++
-This creates a conda environment called `pyac3airborne` which contains all dependencies including
-`cartopy`
-````
 
 Afterwards, you can start a local notebook server (either `jupyter notebook` or `jupyter lab`) and run and modify the chapter locally.
 
@@ -54,7 +43,7 @@ git clone git@github.com:igmk/pyac3airborne_book.git
 
 ````{tabbed} HTTPS
 ```bash
-git clone https://github.com/igmk/pyac3airborne.git
+git clone https://github.com/igmk/pyac3airborne_book.git
 ```
 ````
 
@@ -74,9 +63,8 @@ and the continue normally.
 ````
 You'll have to install the dependencies as above, but as you already have all the files on your machine, you can also install it directly via:
 
-````{panels}
+
 Using pip
-^^^
 ```bash
 pip install jupyter
 pip install -r requirements.txt
@@ -84,17 +72,6 @@ pip install -r requirements.txt
 +++
 This won't work with any notebooks that use `cartopy` to make maps,  `pip` does not manage
 their dependencies well.
----
-Using conda
-^^^
-```bash
-conda create -f requirements.txt
-conda activate pyac3airborne
-```
-+++
-This creates a conda environment called `pyac3airborne` which contains all dependencies including
-`cartopy`
-````
 
 Depending on your needs, you can continue using [interactive notebooks](#interactive) or [compile the entire book](#compile-the-book).
 
@@ -133,7 +110,7 @@ jupyter lab
 ### compile the book
 You can also execute `jupyter-book` directly via:
 ```bash
-jb build how_to_eurec4a
+jb build pyac3airborne_book
 ```
 which itself will run all code cells and output the results as HTML pages in a newly created folder.
 This variant is especially useful if you like to work directly on the MyST files (see note below) using a text editor and should be done every time before you submit new changes to the book.
