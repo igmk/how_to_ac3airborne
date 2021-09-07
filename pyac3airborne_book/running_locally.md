@@ -1,4 +1,4 @@
-# running pyac3airborne locally
+# running pyac3airborne_book locally
 
 There are multiple options to run the Code examples from this book locally.
 In any case, it will involve the following steps:
