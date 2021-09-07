@@ -25,6 +25,7 @@
 - file: code
   title: Toolbox and Examples
   sections:
+  - file: running_locally
   - file: examples/reading_the_flight_phase_files
     title: Reading the flight phase files
   - file: exmaples/flight_tracks
