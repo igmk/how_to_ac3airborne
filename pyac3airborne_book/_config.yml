@@ -14,3 +14,13 @@ bibtex_bibfiles:
     - references.bib
 execute:
   timeout: 120
+
+# configuration for Binder
+# Information about where the book exists on the web
+repository:
+  url                       : https://github.com/igmk/pyac3airborne_book  # Online location of the book
+  path_to_book              : pyac3airborne_book/  # Optional path to your book, relative to the repository root
+  branch                    : main  # Which branch of the repository should be used when creating links (optional)
+
+launch_buttons:
+  binderhub_url: "https://mybinder.org/v2/gh/igmk/pyac3airborne_book/1bf16fc08037073e7a16b486ef9909859d524774"  # The URL for your BinderHub (e.g., https://mybinder.org)
