@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dropsondes &#8212; pyac3airborne-book</title>
     
-  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -34,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -44,10 +41,10 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
@@ -57,15 +54,15 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="GPS + INS" href="gps_ins.html" />
-    <link rel="prev" title="KT-19" href="kt19.html" />
-
+    <link rel="prev" title="CMP22, CGR4 and KT-19" href="kt19.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -74,37 +71,42 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../index.html">
-  
-  <img src="../_static/logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">pyac3airborne-book</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">pyac3airborne-book</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
    Introduction
   </a>
  </li>
 </ul>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../campaigns.html">
    Campaigns
   </a>
  </li>
- <li class="toctree-l1 current active collapsible-parent">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../datasets.html">
    Datasets
   </a>
-  <ul class="current collapse-ul">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="mirac_a.html">
      MiRAC-A
@@ -146,22 +148,25 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../flight_segmentation.html">
    Flight-phase separation
   </a>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../code.html">
    Toolbox and Examples
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../running_locally.html">
-     running pyac3airborne locally
+     running pyac3airborne_book locally
     </a>
    </li>
    <li class="toctree-l2">
@@ -180,8 +185,6 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../references.html">
@@ -190,6 +193,7 @@
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -239,12 +243,12 @@
 
             <!-- Source interaction buttons -->
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -253,7 +257,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/datasets/dropsondes.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/igmk/pyac3airborne_book/main?urlpath=tree/pyac3airborne_book/datasets/dropsondes.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="../_static/images/logo_binder.svg"
@@ -270,12 +274,11 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#data-access">
    Data access
@@ -322,8 +325,7 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
@@ -773,13 +775,13 @@ Data variables:
 Attributes:
     Dropsonde_number_of_flight:  [1]
     Launch_Time_UTC:             [b&#x27;09:09:10&#x27;]
-    Sonde_ID:                    [b&#x27;162715269/RS904&#x27;]</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-cf0c486c-f526-460b-8972-2777388df71a' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-cf0c486c-f526-460b-8972-2777388df71a' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span>z</span>: 529</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-a99d95cf-3059-4d02-8143-b160be5a2a2e' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-a99d95cf-3059-4d02-8143-b160be5a2a2e' class='xr-section-summary'  title='Expand/collapse section'>Coordinates: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-05bd0d91-97b2-431c-91c6-2a7774bdf13f' class='xr-section-summary-in' type='checkbox'  checked><label for='section-05bd0d91-97b2-431c-91c6-2a7774bdf13f' class='xr-section-summary' >Data variables: <span>(12)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>GPS_Alt</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-a0a52c7c-7424-44b2-a75b-54ef0384358d' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-a0a52c7c-7424-44b2-a75b-54ef0384358d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-aa44c752-06c5-4a03-93da-f413f22d7ee2' class='xr-var-data-in' type='checkbox'><label for='data-aa44c752-06c5-4a03-93da-f413f22d7ee2' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>[b&#x27;GPS Altitude&#x27;]</dd><dt><span>units :</span></dt><dd>[b&#x27;m&#x27;]</dd></dl></div><div class='xr-var-data'><pre>array([2725.4 , 2722.74, 2720.09, ...,   20.91,   16.24,    8.88],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Baro_Alt</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-df013e17-e1d9-40a2-9932-dd89cfcf45ea' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-df013e17-e1d9-40a2-9932-dd89cfcf45ea' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c134eb10-a07d-48e9-a5c7-e5effc0ad59c' class='xr-var-data-in' type='checkbox'><label for='data-c134eb10-a07d-48e9-a5c7-e5effc0ad59c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>[b&#x27;Barometric altitude&#x27;]</dd><dt><span>units :</span></dt><dd>[b&#x27;m&#x27;]</dd></dl></div><div class='xr-var-data'><pre>array([2853.11, 2845.55, 2838.38, ...,   12.64,    7.71,    0.  ],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Time</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-f90dc346-776b-4e18-a534-0bfeceef30e6' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f90dc346-776b-4e18-a534-0bfeceef30e6' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-584263fa-8578-44ab-9f6c-0e4dd6fc7b1b' class='xr-var-data-in' type='checkbox'><label for='data-584263fa-8578-44ab-9f6c-0e4dd6fc7b1b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>[b&#x27;Time UTC&#x27;]</dd><dt><span>units :</span></dt><dd>[b&#x27;decimal hours&#x27;]</dd></dl></div><div class='xr-var-data'><pre>array([9.153178, 9.153317, 9.153456, ..., 9.227137, 9.227276, 9.227494],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Lat</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-b0624c3f-c65e-4164-9727-274352c73b85' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-b0624c3f-c65e-4164-9727-274352c73b85' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-faac323c-1004-4ebe-aa5d-e60129a02d53' class='xr-var-data-in' type='checkbox'><label for='data-faac323c-1004-4ebe-aa5d-e60129a02d53' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>[b&#x27;Latitude (North positive)&#x27;]</dd><dt><span>units :</span></dt><dd>[b&#x27;degree&#x27;]</dd></dl></div><div class='xr-var-data'><pre>array([79.67851, 79.67851, 79.67851, ..., 79.66181, 79.66178, 79.66178],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Lon</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-de89bb22-1366-40c9-8f8a-6868b4e82ad6' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-de89bb22-1366-40c9-8f8a-6868b4e82ad6' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-dcb9bf55-367f-4ee4-a520-42a1de3ce6bf' class='xr-var-data-in' type='checkbox'><label for='data-dcb9bf55-367f-4ee4-a520-42a1de3ce6bf' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>[b&#x27;Longitude (East positive)&#x27;]</dd><dt><span>units :</span></dt><dd>[b&#x27;degree&#x27;]</dd></dl></div><div class='xr-var-data'><pre>array([8.530977, 8.530977, 8.530977, ..., 8.512594, 8.512569, 8.512569],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Pressure</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-7dd7745f-fcf1-47e8-a1cd-9fef1c51908f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-7dd7745f-fcf1-47e8-a1cd-9fef1c51908f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f0205e6d-903d-48d6-806d-81c35fd31f86' class='xr-var-data-in' type='checkbox'><label for='data-f0205e6d-903d-48d6-806d-81c35fd31f86' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>[b&#x27;Air pressure&#x27;]</dd><dt><span>units :</span></dt><dd>[b&#x27;hPa&#x27;]</dd></dl></div><div class='xr-var-data'><pre>array([ 700.9 ,  701.58,  702.23, ..., 1017.28, 1017.93, 1018.95],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Temp</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-9cbdda90-0388-49b6-b9e0-84785ba9add6' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-9cbdda90-0388-49b6-b9e0-84785ba9add6' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-354343bb-bd9a-4112-b6b0-1331edd404cb' class='xr-var-data-in' type='checkbox'><label for='data-354343bb-bd9a-4112-b6b0-1331edd404cb' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>[b&#x27;Air temperarure&#x27;]</dd><dt><span>units :</span></dt><dd>[b&#x27;degC&#x27;]</dd><dt><span>comment :</span></dt><dd>[b&#x27; as processed by ASPEN software V.3.3-543 (config: research-dropsonde)&#x27;]</dd></dl></div><div class='xr-var-data'><pre>array([  nan,   nan,   nan, ..., -9.67, -9.59, -9.54], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Temp_recon</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-e910d382-3968-481f-961e-acfbfa863d20' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e910d382-3968-481f-961e-acfbfa863d20' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-25958989-4a66-4f8f-8f90-1a6c2070280f' class='xr-var-data-in' type='checkbox'><label for='data-25958989-4a66-4f8f-8f90-1a6c2070280f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>[b&#x27;Air temperature reconstructed&#x27;]</dd><dt><span>units :</span></dt><dd>[b&#x27;degC&#x27;]</dd><dt><span>comment :</span></dt><dd>[b&#x27;reconstructed temperature following Miloshevich et al. (2004) with tau=4.0 sek&#x27;]</dd></dl></div><div class='xr-var-data'><pre>array([  nan,   nan,   nan, ..., -9.41, -9.32, -9.2 ], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>RHum</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-65f78544-f4d1-43d8-a9ea-a4f02b2ec64e' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-65f78544-f4d1-43d8-a9ea-a4f02b2ec64e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1b31ade2-7e8a-4ee4-b724-f57f6a5a6fda' class='xr-var-data-in' type='checkbox'><label for='data-1b31ade2-7e8a-4ee4-b724-f57f6a5a6fda' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>[b&#x27;Relative humidity&#x27;]</dd><dt><span>units :</span></dt><dd>[b&#x27;%&#x27;]</dd><dt><span>comment :</span></dt><dd>[b&#x27; as processed by ASPEN software V.3.3-543 (config: research-dropsonde)&#x27;]</dd></dl></div><div class='xr-var-data'><pre>array([  nan,   nan,   nan, ..., 83.55, 83.63, 83.67], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>RHum_recon</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-1f11cf88-b1bd-4282-a5ee-9588bd5aefa6' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-1f11cf88-b1bd-4282-a5ee-9588bd5aefa6' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-01f61ad8-dc74-4729-8621-140a9eb03097' class='xr-var-data-in' type='checkbox'><label for='data-01f61ad8-dc74-4729-8621-140a9eb03097' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>[b&#x27;Relative humidity reconstructed&#x27;]</dd><dt><span>units :</span></dt><dd>[b&#x27;%&#x27;]</dd><dt><span>comment :</span></dt><dd>[b&#x27;reconstructed relative humidity following Miloshevich et al. (2004) with tau=5.0 sek&#x27;]</dd></dl></div><div class='xr-var-data'><pre>array([  nan,   nan,   nan, ..., 81.38, 81.14, 80.85], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Wind_vel</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-d7a8825d-8e49-481a-86b7-6286db60b601' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-d7a8825d-8e49-481a-86b7-6286db60b601' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-db2bae70-a44f-469b-ba7c-0f1b3a1c1067' class='xr-var-data-in' type='checkbox'><label for='data-db2bae70-a44f-469b-ba7c-0f1b3a1c1067' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>[b&#x27;Horizontal wind velocity&#x27;]</dd><dt><span>units :</span></dt><dd>[b&#x27;m s-1&#x27;]</dd><dt><span>comment :</span></dt><dd>[b&#x27; as processed by ASPEN software V.3.3-543 (config: research-dropsonde)&#x27;]</dd></dl></div><div class='xr-var-data'><pre>array([ nan,  nan,  nan, ..., 8.26, 8.11,  nan], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Wind_dir</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-8457e34b-09a2-47f3-84ea-d3082e627995' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-8457e34b-09a2-47f3-84ea-d3082e627995' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-162a63f5-4e92-4836-b623-fd17f8a1d837' class='xr-var-data-in' type='checkbox'><label for='data-162a63f5-4e92-4836-b623-fd17f8a1d837' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>[b&#x27;Horizontal wind direction&#x27;]</dd><dt><span>units :</span></dt><dd>[b&#x27;degree&#x27;]</dd><dt><span>comment :</span></dt><dd>[b&#x27; as processed by ASPEN software V.3.3-543 (config: research-dropsonde)&#x27;]</dd></dl></div><div class='xr-var-data'><pre>array([ nan,  nan,  nan, ..., 8.28, 8.48,  nan], dtype=float32)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-6b0b0855-43c2-434c-82b0-2124ce33d199' class='xr-section-summary-in' type='checkbox'  checked><label for='section-6b0b0855-43c2-434c-82b0-2124ce33d199' class='xr-section-summary' >Attributes: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Dropsonde_number_of_flight :</span></dt><dd>[1]</dd><dt><span>Launch_Time_UTC :</span></dt><dd>[b&#x27;09:09:10&#x27;]</dd><dt><span>Sonde_ID :</span></dt><dd>[b&#x27;162715269/RS904&#x27;]</dd></dl></div></li></ul></div></div></div></div>
+    Sonde_ID:                    [b&#x27;162715269/RS904&#x27;]</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-67c9398c-0122-4612-884f-1c77434662b9' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-67c9398c-0122-4612-884f-1c77434662b9' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span>z</span>: 529</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-6ea90c1b-88f9-476b-bf59-6a58b6c9d2c6' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-6ea90c1b-88f9-476b-bf59-6a58b6c9d2c6' class='xr-section-summary'  title='Expand/collapse section'>Coordinates: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-c62062a7-3597-4edd-afe3-d9b551e2cb04' class='xr-section-summary-in' type='checkbox'  checked><label for='section-c62062a7-3597-4edd-afe3-d9b551e2cb04' class='xr-section-summary' >Data variables: <span>(12)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>GPS_Alt</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-58e5e1e5-f10f-43d1-a0f4-da32d48f9ee5' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-58e5e1e5-f10f-43d1-a0f4-da32d48f9ee5' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a0622953-b6a8-403f-8fe9-e351f75493b9' class='xr-var-data-in' type='checkbox'><label for='data-a0622953-b6a8-403f-8fe9-e351f75493b9' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>[b&#x27;GPS Altitude&#x27;]</dd><dt><span>units :</span></dt><dd>[b&#x27;m&#x27;]</dd></dl></div><div class='xr-var-data'><pre>array([2725.4 , 2722.74, 2720.09, ...,   20.91,   16.24,    8.88],
+      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Baro_Alt</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-fa06bba8-fd93-486d-b47c-28d45e28a754' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-fa06bba8-fd93-486d-b47c-28d45e28a754' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-51aab76b-a3e6-42bf-9e61-be0a85a311cd' class='xr-var-data-in' type='checkbox'><label for='data-51aab76b-a3e6-42bf-9e61-be0a85a311cd' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>[b&#x27;Barometric altitude&#x27;]</dd><dt><span>units :</span></dt><dd>[b&#x27;m&#x27;]</dd></dl></div><div class='xr-var-data'><pre>array([2853.11, 2845.55, 2838.38, ...,   12.64,    7.71,    0.  ],
+      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Time</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-7e0f35ee-6818-47cd-af13-a7efaf27489f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-7e0f35ee-6818-47cd-af13-a7efaf27489f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-23d2aeaa-39a1-42f5-b0fa-c79ea0c95c50' class='xr-var-data-in' type='checkbox'><label for='data-23d2aeaa-39a1-42f5-b0fa-c79ea0c95c50' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>[b&#x27;Time UTC&#x27;]</dd><dt><span>units :</span></dt><dd>[b&#x27;decimal hours&#x27;]</dd></dl></div><div class='xr-var-data'><pre>array([9.153178, 9.153317, 9.153456, ..., 9.227137, 9.227276, 9.227494],
+      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Lat</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-36182ef8-754b-4f53-a91d-ecc7098541b3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-36182ef8-754b-4f53-a91d-ecc7098541b3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-52614898-cf55-4be9-af70-4be4bb4f3f15' class='xr-var-data-in' type='checkbox'><label for='data-52614898-cf55-4be9-af70-4be4bb4f3f15' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>[b&#x27;Latitude (North positive)&#x27;]</dd><dt><span>units :</span></dt><dd>[b&#x27;degree&#x27;]</dd></dl></div><div class='xr-var-data'><pre>array([79.67851, 79.67851, 79.67851, ..., 79.66181, 79.66178, 79.66178],
+      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Lon</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-33a17bff-6c25-4959-adc3-ec1f104b07b2' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-33a17bff-6c25-4959-adc3-ec1f104b07b2' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-298e6c5a-cc3d-41e7-83ce-84310cdbc71f' class='xr-var-data-in' type='checkbox'><label for='data-298e6c5a-cc3d-41e7-83ce-84310cdbc71f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>[b&#x27;Longitude (East positive)&#x27;]</dd><dt><span>units :</span></dt><dd>[b&#x27;degree&#x27;]</dd></dl></div><div class='xr-var-data'><pre>array([8.530977, 8.530977, 8.530977, ..., 8.512594, 8.512569, 8.512569],
+      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Pressure</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-5540af3e-cc93-4707-bb45-b7dae3a3c07c' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-5540af3e-cc93-4707-bb45-b7dae3a3c07c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1bcea679-4cc3-43a9-b2d8-ee0c5b26f485' class='xr-var-data-in' type='checkbox'><label for='data-1bcea679-4cc3-43a9-b2d8-ee0c5b26f485' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>[b&#x27;Air pressure&#x27;]</dd><dt><span>units :</span></dt><dd>[b&#x27;hPa&#x27;]</dd></dl></div><div class='xr-var-data'><pre>array([ 700.9 ,  701.58,  702.23, ..., 1017.28, 1017.93, 1018.95],
+      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Temp</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-dc979dad-6912-4021-98ae-d4bfecbfcc97' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-dc979dad-6912-4021-98ae-d4bfecbfcc97' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-13e29f99-d56d-41de-a8d1-320bbe8e158c' class='xr-var-data-in' type='checkbox'><label for='data-13e29f99-d56d-41de-a8d1-320bbe8e158c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>[b&#x27;Air temperarure&#x27;]</dd><dt><span>units :</span></dt><dd>[b&#x27;degC&#x27;]</dd><dt><span>comment :</span></dt><dd>[b&#x27; as processed by ASPEN software V.3.3-543 (config: research-dropsonde)&#x27;]</dd></dl></div><div class='xr-var-data'><pre>array([  nan,   nan,   nan, ..., -9.67, -9.59, -9.54], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Temp_recon</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-457f988a-891d-4a02-801b-4ea9dfae8775' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-457f988a-891d-4a02-801b-4ea9dfae8775' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e9727602-17e2-4c77-946f-77df4070ac05' class='xr-var-data-in' type='checkbox'><label for='data-e9727602-17e2-4c77-946f-77df4070ac05' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>[b&#x27;Air temperature reconstructed&#x27;]</dd><dt><span>units :</span></dt><dd>[b&#x27;degC&#x27;]</dd><dt><span>comment :</span></dt><dd>[b&#x27;reconstructed temperature following Miloshevich et al. (2004) with tau=4.0 sek&#x27;]</dd></dl></div><div class='xr-var-data'><pre>array([  nan,   nan,   nan, ..., -9.41, -9.32, -9.2 ], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>RHum</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-aa572839-af73-46be-884c-574c67e9d7ab' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-aa572839-af73-46be-884c-574c67e9d7ab' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3702c654-1b82-42cd-9a9b-b4d2d574e7f8' class='xr-var-data-in' type='checkbox'><label for='data-3702c654-1b82-42cd-9a9b-b4d2d574e7f8' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>[b&#x27;Relative humidity&#x27;]</dd><dt><span>units :</span></dt><dd>[b&#x27;%&#x27;]</dd><dt><span>comment :</span></dt><dd>[b&#x27; as processed by ASPEN software V.3.3-543 (config: research-dropsonde)&#x27;]</dd></dl></div><div class='xr-var-data'><pre>array([  nan,   nan,   nan, ..., 83.55, 83.63, 83.67], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>RHum_recon</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-82d21dc4-b4dc-4067-9950-b0bfacba823d' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-82d21dc4-b4dc-4067-9950-b0bfacba823d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-cefd6e37-5444-4c4a-899f-cbacdcc0b0e7' class='xr-var-data-in' type='checkbox'><label for='data-cefd6e37-5444-4c4a-899f-cbacdcc0b0e7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>[b&#x27;Relative humidity reconstructed&#x27;]</dd><dt><span>units :</span></dt><dd>[b&#x27;%&#x27;]</dd><dt><span>comment :</span></dt><dd>[b&#x27;reconstructed relative humidity following Miloshevich et al. (2004) with tau=5.0 sek&#x27;]</dd></dl></div><div class='xr-var-data'><pre>array([  nan,   nan,   nan, ..., 81.38, 81.14, 80.85], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Wind_vel</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-62f4d894-b77b-427b-a712-52fba50c4d19' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-62f4d894-b77b-427b-a712-52fba50c4d19' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-07cd461b-b33c-4cd7-b245-2a78bb8481c7' class='xr-var-data-in' type='checkbox'><label for='data-07cd461b-b33c-4cd7-b245-2a78bb8481c7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>[b&#x27;Horizontal wind velocity&#x27;]</dd><dt><span>units :</span></dt><dd>[b&#x27;m s-1&#x27;]</dd><dt><span>comment :</span></dt><dd>[b&#x27; as processed by ASPEN software V.3.3-543 (config: research-dropsonde)&#x27;]</dd></dl></div><div class='xr-var-data'><pre>array([ nan,  nan,  nan, ..., 8.26, 8.11,  nan], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Wind_dir</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-c4c5701b-8cf9-41d7-90af-a256fc09b41d' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c4c5701b-8cf9-41d7-90af-a256fc09b41d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-bbb738f2-eaaf-4091-bbc6-b493650bf08d' class='xr-var-data-in' type='checkbox'><label for='data-bbb738f2-eaaf-4091-bbc6-b493650bf08d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>[b&#x27;Horizontal wind direction&#x27;]</dd><dt><span>units :</span></dt><dd>[b&#x27;degree&#x27;]</dd><dt><span>comment :</span></dt><dd>[b&#x27; as processed by ASPEN software V.3.3-543 (config: research-dropsonde)&#x27;]</dd></dl></div><div class='xr-var-data'><pre>array([ nan,  nan,  nan, ..., 8.28, 8.48,  nan], dtype=float32)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-18047736-8aa6-48b5-9758-c431294e348b' class='xr-section-summary-in' type='checkbox'  checked><label for='section-18047736-8aa6-48b5-9758-c431294e348b' class='xr-section-summary' >Attributes: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Dropsonde_number_of_flight :</span></dt><dd>[1]</dd><dt><span>Launch_Time_UTC :</span></dt><dd>[b&#x27;09:09:10&#x27;]</dd><dt><span>Sonde_ID :</span></dt><dd>[b&#x27;162715269/RS904&#x27;]</dd></dl></div></li></ul></div></div></div></div>
 </div>
 <div class="section" id="view-variables">
 <h3>View variables<a class="headerlink" href="#view-variables" title="Permalink to this headline">¶</a></h3>
@@ -1601,12 +1603,32 @@ Attributes:
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="kt19.html" title="previous page">KT-19</a>
-    <a class='right-next' id="next-link" href="gps_ins.html" title="next page">GPS + INS</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="kt19.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">CMP22, CGR4 and KT-19</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="gps_ins.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">GPS + INS</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>
@@ -1625,11 +1647,9 @@ Attributes:
 
       </div>
     </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
-
-
-    
+  
   </body>
 </html>
