@@ -5,9 +5,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KT-19 &#8212; pyac3airborne-book</title>
+    <title>CMP22, CGR4 and KT-19 &#8212; pyac3airborne-book</title>
     
-  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -34,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -44,10 +41,10 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
@@ -58,14 +55,14 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Dropsondes" href="dropsondes.html" />
     <link rel="prev" title="Fish-eye camera" href="fish_eye_camera.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -74,37 +71,42 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../index.html">
-  
-  <img src="../_static/logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">pyac3airborne-book</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">pyac3airborne-book</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
    Introduction
   </a>
  </li>
 </ul>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../campaigns.html">
    Campaigns
   </a>
  </li>
- <li class="toctree-l1 current active collapsible-parent">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../datasets.html">
    Datasets
   </a>
-  <ul class="current collapse-ul">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="mirac_a.html">
      MiRAC-A
@@ -146,22 +148,25 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../flight_segmentation.html">
    Flight-phase separation
   </a>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../code.html">
    Toolbox and Examples
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../running_locally.html">
-     running pyac3airborne locally
+     running pyac3airborne_book locally
     </a>
    </li>
    <li class="toctree-l2">
@@ -180,8 +185,6 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../references.html">
@@ -190,6 +193,7 @@
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -228,9 +232,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/datasets/kt19.md"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/datasets/kt19.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -239,20 +243,80 @@
 
             <!-- Source interaction buttons -->
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/datasets/kt19.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
 
         </div>
 
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#broadband-irradiance-cmp-22-pyranometer-and-cgr4-pyrgeometer">
+   Broadband irradiance (CMP 22 pyranometer and CGR4 pyrgeometer)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nadir-brightness-temperature-kt-19">
+   Nadir Brightness Temperature (KT-19)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-access">
+   Data access
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#load-polar-5-flight-phase-information">
+   Load Polar 5 flight phase information¶
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#read-the-gps-information">
+   Read the GPS information
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plot-the-flight-segment">
+   Plot the flight segment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plot-the-data">
+   Plot the data
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -261,8 +325,1551 @@
         
               <div>
                 
-  <div class="section" id="kt-19">
-<h1>KT-19<a class="headerlink" href="#kt-19" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="cmp22-cgr4-and-kt-19">
+<h1>CMP22, CGR4 and KT-19<a class="headerlink" href="#cmp22-cgr4-and-kt-19" title="Permalink to this headline">¶</a></h1>
+<p>The following example demonstrates the use of broadband irradiance data collected during ACLOUD and AFLUX. The dataset includes solar and terrestrial broadband irradiance and nadir brightness temperature. The full dataset is available on PANGAEA for ACLOUD and AFLUX.</p>
+<div class="section" id="broadband-irradiance-cmp-22-pyranometer-and-cgr4-pyrgeometer">
+<h2>Broadband irradiance (CMP 22 pyranometer and CGR4 pyrgeometer)<a class="headerlink" href="#broadband-irradiance-cmp-22-pyranometer-and-cgr4-pyrgeometer" title="Permalink to this headline">¶</a></h2>
+<p>Upward and downward broadband irradiances are measured by pairs of CMP 22 pyranometers and CGR4 pyrgeometers, covering the solar (0.2–3.6 µm) and thermal-infrared (4.5–42 µm) wavelength range, respectively. Data is sampled with a frequency of 20 Hz. In stationary operation, the uncertainty of the sensors is less than 3 %.</p>
+</div>
+<div class="section" id="nadir-brightness-temperature-kt-19">
+<h2>Nadir Brightness Temperature (KT-19)<a class="headerlink" href="#nadir-brightness-temperature-kt-19" title="Permalink to this headline">¶</a></h2>
+<p>Surface brightness temperature was measured by a nadir-looking Kelvin infrared radiation Thermometer (KT-19). These measurements were converted into surface temperature values assuming an emissivity of 1. This is justified due to the small impact of atmospheric absorption in the wavelength range of 9.6 to 11.5 µm for which the KT-19 is sensitive. With a sampling frequency of 20 Hz, the KT-19 resolves small scales of the surface temperature heterogeneities, such as observed in the case of leads in sea ice.</p>
+<p>More information about the dataset is found in <strong><a class="reference external" href="https://essd.copernicus.org/articles/11/1853/2019/">Ehrlich et al. 2019</a>.</strong></p>
+</div>
+<div class="section" id="data-access">
+<h2>Data access<a class="headerlink" href="#data-access" title="Permalink to this headline">¶</a></h2>
+<p>To load the data we first load the (AC)³airborne meta data catalogue. More information on the catalog can be found <a class="reference external" href="https://github.com/igmk/ac3airborne-intake#ac3airborne-intake-catalogue">here</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ac3airborne</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We first want to list the available research flights:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">=</span> <span class="n">ac3airborne</span><span class="o">.</span><span class="n">get_intake_catalog</span><span class="p">()</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="o">.</span><span class="n">Polar5</span><span class="o">.</span><span class="n">BROADBAND_IRRADIANCE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;ACLOUD_P5_RF04&#39;,
+ &#39;ACLOUD_P5_RF05&#39;,
+ &#39;ACLOUD_P5_RF06&#39;,
+ &#39;ACLOUD_P5_RF07&#39;,
+ &#39;ACLOUD_P5_RF08&#39;,
+ &#39;ACLOUD_P5_RF10&#39;,
+ &#39;ACLOUD_P5_RF11&#39;,
+ &#39;ACLOUD_P5_RF13&#39;,
+ &#39;ACLOUD_P5_RF14&#39;,
+ &#39;ACLOUD_P5_RF15&#39;,
+ &#39;ACLOUD_P5_RF16&#39;,
+ &#39;ACLOUD_P5_RF17&#39;,
+ &#39;ACLOUD_P5_RF18&#39;,
+ &#39;ACLOUD_P5_RF19&#39;,
+ &#39;ACLOUD_P5_RF20&#39;,
+ &#39;ACLOUD_P5_RF21&#39;,
+ &#39;ACLOUD_P5_RF22&#39;,
+ &#39;ACLOUD_P5_RF23&#39;,
+ &#39;ACLOUD_P5_RF25&#39;,
+ &#39;AFLUX_P5_RF02&#39;,
+ &#39;AFLUX_P5_RF03&#39;,
+ &#39;AFLUX_P5_RF04&#39;,
+ &#39;AFLUX_P5_RF05&#39;,
+ &#39;AFLUX_P5_RF06&#39;,
+ &#39;AFLUX_P5_RF07&#39;,
+ &#39;AFLUX_P5_RF08&#39;,
+ &#39;AFLUX_P5_RF09&#39;,
+ &#39;AFLUX_P5_RF10&#39;,
+ &#39;AFLUX_P5_RF11&#39;,
+ &#39;AFLUX_P5_RF12&#39;,
+ &#39;AFLUX_P5_RF13&#39;,
+ &#39;AFLUX_P5_RF14&#39;,
+ &#39;AFLUX_P5_RF15&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then we choose to load the Broadband Irradiance dataset of a specific flight. In this case we will look at the data of the <em>research fligth n°3</em> of the <em>AFLUX</em> campaign.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Have a look at the attributes of the xarray dataset <code class="docutils literal notranslate"><span class="pre">ds_broad_irr</span></code> for all relevant information on the dataset, such as author, contact, or citation infromation.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_broad_irr</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="s1">&#39;Polar5&#39;</span><span class="p">][</span><span class="s1">&#39;BROADBAND_IRRADIANCE&#39;</span><span class="p">][</span><span class="s1">&#39;AFLUX_P5_RF03&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
+<span class="n">ds_broad_irr</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewBox="0 0 32 32">
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewBox="0 0 32 32">
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg>
+<style>/* CSS stylesheet for displaying xarray objects in jupyterlab.
+ *
+ */
+
+:root {
+  --xr-font-color0: var(--jp-content-font-color0, rgba(0, 0, 0, 1));
+  --xr-font-color2: var(--jp-content-font-color2, rgba(0, 0, 0, 0.54));
+  --xr-font-color3: var(--jp-content-font-color3, rgba(0, 0, 0, 0.38));
+  --xr-border-color: var(--jp-border-color2, #e0e0e0);
+  --xr-disabled-color: var(--jp-layout-color3, #bdbdbd);
+  --xr-background-color: var(--jp-layout-color0, white);
+  --xr-background-color-row-even: var(--jp-layout-color1, white);
+  --xr-background-color-row-odd: var(--jp-layout-color2, #eeeeee);
+}
+
+html[theme=dark],
+body.vscode-dark {
+  --xr-font-color0: rgba(255, 255, 255, 1);
+  --xr-font-color2: rgba(255, 255, 255, 0.54);
+  --xr-font-color3: rgba(255, 255, 255, 0.38);
+  --xr-border-color: #1F1F1F;
+  --xr-disabled-color: #515151;
+  --xr-background-color: #111111;
+  --xr-background-color-row-even: #111111;
+  --xr-background-color-row-odd: #313131;
+}
+
+.xr-wrap {
+  display: block;
+  min-width: 300px;
+  max-width: 700px;
+}
+
+.xr-text-repr-fallback {
+  /* fallback to plain text repr when CSS is not injected (untrusted notebook) */
+  display: none;
+}
+
+.xr-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+  border-bottom: solid 1px var(--xr-border-color);
+}
+
+.xr-header > div,
+.xr-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.xr-obj-type,
+.xr-array-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.xr-obj-type {
+  color: var(--xr-font-color2);
+}
+
+.xr-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto 1fr 20px 20px;
+}
+
+.xr-section-item {
+  display: contents;
+}
+
+.xr-section-item input {
+  display: none;
+}
+
+.xr-section-item input + label {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-item input:enabled + label {
+  cursor: pointer;
+  color: var(--xr-font-color2);
+}
+
+.xr-section-item input:enabled + label:hover {
+  color: var(--xr-font-color0);
+}
+
+.xr-section-summary {
+  grid-column: 1;
+  color: var(--xr-font-color2);
+  font-weight: 500;
+}
+
+.xr-section-summary > span {
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+.xr-section-summary-in:disabled + label {
+  color: var(--xr-font-color2);
+}
+
+.xr-section-summary-in + label:before {
+  display: inline-block;
+  content: '►';
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.xr-section-summary-in:disabled + label:before {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-summary-in:checked + label:before {
+  content: '▼';
+}
+
+.xr-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.xr-section-summary,
+.xr-section-inline-details {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.xr-section-inline-details {
+  grid-column: 2 / -1;
+}
+
+.xr-section-details {
+  display: none;
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+}
+
+.xr-section-summary-in:checked ~ .xr-section-details {
+  display: contents;
+}
+
+.xr-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.xr-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.xr-preview {
+  color: var(--xr-font-color3);
+}
+
+.xr-array-preview,
+.xr-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.xr-array-data,
+.xr-array-in:checked ~ .xr-array-preview {
+  display: none;
+}
+
+.xr-array-in:checked ~ .xr-array-data,
+.xr-array-preview {
+  display: inline-block;
+}
+
+.xr-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.xr-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.xr-dim-list:before {
+  content: '(';
+}
+
+.xr-dim-list:after {
+  content: ')';
+}
+
+.xr-dim-list li:not(:last-child):after {
+  content: ',';
+  padding-right: 5px;
+}
+
+.xr-has-index {
+  font-weight: bold;
+}
+
+.xr-var-list,
+.xr-var-item {
+  display: contents;
+}
+
+.xr-var-item > div,
+.xr-var-item label,
+.xr-var-item > .xr-var-name span {
+  background-color: var(--xr-background-color-row-even);
+  margin-bottom: 0;
+}
+
+.xr-var-item > .xr-var-name:hover span {
+  padding-right: 5px;
+}
+
+.xr-var-list > li:nth-child(odd) > div,
+.xr-var-list > li:nth-child(odd) > label,
+.xr-var-list > li:nth-child(odd) > .xr-var-name span {
+  background-color: var(--xr-background-color-row-odd);
+}
+
+.xr-var-name {
+  grid-column: 1;
+}
+
+.xr-var-dims {
+  grid-column: 2;
+}
+
+.xr-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-preview {
+  grid-column: 4;
+}
+
+.xr-var-name,
+.xr-var-dims,
+.xr-var-dtype,
+.xr-preview,
+.xr-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.xr-var-name:hover,
+.xr-var-dims:hover,
+.xr-var-dtype:hover,
+.xr-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.xr-var-attrs,
+.xr-var-data {
+  display: none;
+  background-color: var(--xr-background-color) !important;
+  padding-bottom: 5px !important;
+}
+
+.xr-var-attrs-in:checked ~ .xr-var-attrs,
+.xr-var-data-in:checked ~ .xr-var-data {
+  display: block;
+}
+
+.xr-var-data > table {
+  float: right;
+}
+
+.xr-var-name span,
+.xr-var-data,
+.xr-attrs {
+  padding-left: 25px !important;
+}
+
+.xr-attrs,
+.xr-var-attrs,
+.xr-var-data {
+  grid-column: 1 / -1;
+}
+
+dl.xr-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.xr-attrs dt,
+.xr-attrs dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.xr-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.xr-attrs dt:hover span {
+  display: inline-block;
+  background: var(--xr-background-color);
+  padding-right: 10px;
+}
+
+.xr-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.xr-icon-database,
+.xr-icon-file-text2 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt;
+Dimensions:            (Time: 334437)
+Dimensions without coordinates: Time
+Data variables: (12/14)
+    time               (Time) datetime64[ns] ...
+    Lon                (Time) float32 ...
+    Lat                (Time) float32 ...
+    Alt                (Time) float32 ...
+    Solar_F_dw         (Time) float32 ...
+    Solar_F_up         (Time) float32 ...
+    ...                 ...
+    KT19               (Time) float32 ...
+    Attitude_Flag      (Time) int8 ...
+    Amb_T_Flag         (Time) int8 ...
+    Airc_Stab_flag     (Time) int8 ...
+    Pyrano_Icing_Flag  (Time) int8 ...
+    Pyrgeo_Icing_Flag  (Time) int8 ...
+Attributes:
+    description:  ############################### \n             General Info...</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-16c5fa40-9942-4bad-aa31-8a0fa092e328' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-16c5fa40-9942-4bad-aa31-8a0fa092e328' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span>Time</span>: 334437</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-e50f72aa-ecd4-4e2f-bca9-8aa6ddad8a94' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-e50f72aa-ecd4-4e2f-bca9-8aa6ddad8a94' class='xr-section-summary'  title='Expand/collapse section'>Coordinates: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-77017e3d-da35-4ec8-96d1-47c0eca14823' class='xr-section-summary-in' type='checkbox'  checked><label for='section-77017e3d-da35-4ec8-96d1-47c0eca14823' class='xr-section-summary' >Data variables: <span>(14)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>time</span></div><div class='xr-var-dims'>(Time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-47a7fa3f-6c94-4388-960b-82e09cbc3478' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-47a7fa3f-6c94-4388-960b-82e09cbc3478' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-dede2e8b-721e-434f-b184-6b4c80f28b25' class='xr-var-data-in' type='checkbox'><label for='data-dede2e8b-721e-434f-b184-6b4c80f28b25' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>Seconds of day (UTC)</dd></dl></div><div class='xr-var-data'><pre>[334437 values with dtype=datetime64[ns]]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Lon</span></div><div class='xr-var-dims'>(Time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-40a4f4c2-5e5d-4597-a8cb-8e9df43a9ab6' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-40a4f4c2-5e5d-4597-a8cb-8e9df43a9ab6' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-de7984d0-c635-43cd-8ce1-5ae4127ad12f' class='xr-var-data-in' type='checkbox'><label for='data-de7984d0-c635-43cd-8ce1-5ae4127ad12f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>Longitude</dd><dt><span>units :</span></dt><dd>Degrees East</dd></dl></div><div class='xr-var-data'><pre>[334437 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Lat</span></div><div class='xr-var-dims'>(Time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-b1f161eb-8eab-443a-9a10-572c1a18dc40' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-b1f161eb-8eab-443a-9a10-572c1a18dc40' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b441d764-2640-4858-9eb1-c222247b3c1a' class='xr-var-data-in' type='checkbox'><label for='data-b441d764-2640-4858-9eb1-c222247b3c1a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>Latitude</dd><dt><span>units :</span></dt><dd>Degrees North</dd></dl></div><div class='xr-var-data'><pre>[334437 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Alt</span></div><div class='xr-var-dims'>(Time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-92f2d94a-3ceb-4412-9975-00eaa32341bb' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-92f2d94a-3ceb-4412-9975-00eaa32341bb' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-955d0621-10fa-4b4d-978e-666905034068' class='xr-var-data-in' type='checkbox'><label for='data-955d0621-10fa-4b4d-978e-666905034068' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>Flight altitude</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>[334437 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Solar_F_dw</span></div><div class='xr-var-dims'>(Time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-d99f7257-6902-49a6-92cd-871cc8876df2' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-d99f7257-6902-49a6-92cd-871cc8876df2' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8600f133-5b5a-4482-aaf4-4db0fd7b826c' class='xr-var-data-in' type='checkbox'><label for='data-8600f133-5b5a-4482-aaf4-4db0fd7b826c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>Downward solar irradiance measured by pyranometer CMP22.</dd><dt><span>units :</span></dt><dd>W m-2</dd></dl></div><div class='xr-var-data'><pre>[334437 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Solar_F_up</span></div><div class='xr-var-dims'>(Time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-a43b7e30-32e1-4204-a96c-5002734dc25f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-a43b7e30-32e1-4204-a96c-5002734dc25f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-7ecfb879-63a3-4362-8863-b50a89fd8b89' class='xr-var-data-in' type='checkbox'><label for='data-7ecfb879-63a3-4362-8863-b50a89fd8b89' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>Upward solar irradiance measured by pyranometer CMP22.</dd><dt><span>units :</span></dt><dd>W m-2</dd></dl></div><div class='xr-var-data'><pre>[334437 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Terr_F_dw</span></div><div class='xr-var-dims'>(Time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-1325d3b5-3927-4c1a-859e-8e7060ed784e' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-1325d3b5-3927-4c1a-859e-8e7060ed784e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-85e3908d-87af-4f4e-acc3-33579e9407e9' class='xr-var-data-in' type='checkbox'><label for='data-85e3908d-87af-4f4e-acc3-33579e9407e9' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>Downward terrestrial irradiance measured by pyrgeometer CGR4.</dd><dt><span>units :</span></dt><dd>W m-2</dd></dl></div><div class='xr-var-data'><pre>[334437 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Terr_F_up</span></div><div class='xr-var-dims'>(Time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-620d23e7-a027-4e4b-a45d-4fef3d25f57f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-620d23e7-a027-4e4b-a45d-4fef3d25f57f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8c848a75-69c7-48d4-b0af-f8ee2fbb5183' class='xr-var-data-in' type='checkbox'><label for='data-8c848a75-69c7-48d4-b0af-f8ee2fbb5183' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>Upward terrestrial irradiance measured by pyrgeometer CGR4.</dd><dt><span>units :</span></dt><dd>W m-2</dd></dl></div><div class='xr-var-data'><pre>[334437 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>KT19</span></div><div class='xr-var-dims'>(Time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-f67a5073-bb9f-4e67-9268-8bd42a0c9715' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f67a5073-bb9f-4e67-9268-8bd42a0c9715' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f47a8dcf-6c89-4133-85d9-b760e1248ae8' class='xr-var-data-in' type='checkbox'><label for='data-f47a8dcf-6c89-4133-85d9-b760e1248ae8' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>IR Brightness Temperature, nadir direction, measured by Heitronics KT19.85II </dd><dt><span>units :</span></dt><dd>K</dd></dl></div><div class='xr-var-data'><pre>[334437 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Attitude_Flag</span></div><div class='xr-var-dims'>(Time)</div><div class='xr-var-dtype'>int8</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-00735b0f-89d9-4d04-b4c3-3847ccd9211e' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-00735b0f-89d9-4d04-b4c3-3847ccd9211e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6fe03f65-91c0-40b8-ac44-0d4932be1904' class='xr-var-data-in' type='checkbox'><label for='data-6fe03f65-91c0-40b8-ac44-0d4932be1904' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>Aircraft roll and pitch angles larger than +- 5 degrees are flagged (1). Flagged irradiance data must be interpreted with care or discarded.</dd><dt><span>units :</span></dt><dd></dd></dl></div><div class='xr-var-data'><pre>[334437 values with dtype=int8]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Amb_T_Flag</span></div><div class='xr-var-dims'>(Time)</div><div class='xr-var-dtype'>int8</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-6f2c723c-64d6-444d-a92b-8225aa60f013' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-6f2c723c-64d6-444d-a92b-8225aa60f013' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b6e1b6cb-7d35-4749-80b5-3bbbc75c5615' class='xr-var-data-in' type='checkbox'><label for='data-b6e1b6cb-7d35-4749-80b5-3bbbc75c5615' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>Pyranometers and pyrgeometer can be affected by rapid changes in ambient temperature (details general file header). These time periods are flagged (1) and need to be interpreted with care.</dd><dt><span>units :</span></dt><dd></dd></dl></div><div class='xr-var-data'><pre>[334437 values with dtype=int8]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Airc_Stab_flag</span></div><div class='xr-var-dims'>(Time)</div><div class='xr-var-dtype'>int8</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-4aec7e5c-11b8-46b9-b730-61ab4cb4e3a2' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-4aec7e5c-11b8-46b9-b730-61ab4cb4e3a2' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ad983552-5af0-44f7-9785-1758d2708733' class='xr-var-data-in' type='checkbox'><label for='data-ad983552-5af0-44f7-9785-1758d2708733' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>The aircraft tail can cover the direct downward irradiance for certain aircraft attitude and solar position combinations (details general file header). Time periods with those critical combinations are flagged (1).</dd><dt><span>units :</span></dt><dd></dd></dl></div><div class='xr-var-data'><pre>[334437 values with dtype=int8]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Pyrano_Icing_Flag</span></div><div class='xr-var-dims'>(Time)</div><div class='xr-var-dtype'>int8</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-36504043-b219-413f-b22b-4a466b48657f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-36504043-b219-413f-b22b-4a466b48657f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-01d8e9b0-fc93-474b-8738-cf9f2881c0f9' class='xr-var-data-in' type='checkbox'><label for='data-01d8e9b0-fc93-474b-8738-cf9f2881c0f9' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>Obvious influence on the solar irradiance is flagged (1). During unflagged times, icing influence is unsuspicious, but can not be excluded by certainty (0).</dd><dt><span>units :</span></dt><dd></dd></dl></div><div class='xr-var-data'><pre>[334437 values with dtype=int8]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Pyrgeo_Icing_Flag</span></div><div class='xr-var-dims'>(Time)</div><div class='xr-var-dtype'>int8</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-8e89472b-1320-41c9-a1c1-82e5059164a9' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-8e89472b-1320-41c9-a1c1-82e5059164a9' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-77cffc64-53ee-4d5c-b78f-1241c1557cad' class='xr-var-data-in' type='checkbox'><label for='data-77cffc64-53ee-4d5c-b78f-1241c1557cad' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>Obvious icing influence on the terrestrial irradiance is flagged (1). During unflagged times, icing influence is unsuspicious, but can not be excluded by certainty (0).</dd><dt><span>units :</span></dt><dd></dd></dl></div><div class='xr-var-data'><pre>[334437 values with dtype=int8]</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-b002937f-7715-47f2-9924-52cb337ce93e' class='xr-section-summary-in' type='checkbox'  checked><label for='section-b002937f-7715-47f2-9924-52cb337ce93e' class='xr-section-summary' >Attributes: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>############################### 
+             General Information:
+             ############################### 
+             Airborne measurements of broadband irradiance during the AFLUX campaign: Svalbard, March to April 2019 
+             PI: Johannes Stapf (johannes.stapf@uni-leipzig.de)
+             Day: 2019-03-21
+             Involved Aircraft : Polar 5 
+             ############################### 
+             Instruments:
+             Kipp&amp;Zonen CMP22 pyranometer: solar irradiance (0.2 - 3.6 um) in W m-2 
+             Kipp&amp;Zonen CGR4 pyrgeometer: terrestrial irradiance (4.5 - 42.0 um) in W m-2 
+             Heitronics KT19.85II: nadir brightness temperature: (9.6 - 11.5 um) in K 
+             ############################### 
+             Temporal Resolution: 20 Hz 
+             ############################### 
+             Applied Corrections: 
+             Downward solar irradiance corrected for aircraft attitude, following the approach by Bannehr and Schwiesow (1993) and Boers et al. (1998), if irradiance is dominated by direct solar radiation. 
+             Irradiance measurements corrected for instrument inertia time following the approach by Ehrlich and Wendisch (2015) 
+             ############################### 
+             Applied Flags: 
+             Aircraft attitude flag: Aircraft roll and pitch angles larger than |5| degrees are flagged (1). These irradiance data must be interpreted with care or discarded. 
+             Ambient temperature change rate flag: Pyranometers and pyrgeometer can be affected by rapid changes in ambient temperature due to different window (glass dome), body, and sensor temperatures (e.g. zero offset type B Kipp and Zonen) and Albrecht and Cox (1977) (https://doi.org/10.1175/1520-0450(1977)016&lt;0190:PFIPP&gt;2.0.CO;2). These flagged irradiances (1) need to be interpreted with care. Based on the one minute backward running mean of the abosolute, smoothed air temperature gradient (&gt; 0.5 K/min).  
+             Aircraft stabilizer flag: While flying in the opposite direction of the sun (aircraft yaw angle (+- 180 degrees) == solar azimuth angle (+- 2 degrees)) and solar zenith angles plus aircraft pitch angle (nose down positive) larger than 75 degrees, the aircraft vertical stabilizer (at the tail) covers the direct downward irradiance. Time periods with those critical angles are flagged (1) and need to be interpreted with care (short dips in downward irradiance).
+             Icing Flags: 
+             Pyranometers: Obvious icing influence on solar irradiance is flagged (1). During unflagged times, icing influence is unsuspicious, but can not be excluded by certainty (0). Exposed pyranometer glass dome susceptible to icing.  
+             Pyrgeometers: Obvious icing influence on terrestrial irradiance is flagged (1). During unflagged times, icing influence is unsuspicious, but can not be excluded by certainty (0). Pyrgeometers were found iced less frequently (flat window). 
+             ############################## 
+             List of parameters:
+             Time seconds of day (UTC): &quot;time&quot; 
+             Latitude (Degree): &quot;Lat&quot; 
+             Longitude (Degree): &quot;Lon&quot; 
+             Flight Altitude (m): &quot;Alt&quot; 
+             Solar downward irradiance (W m-2): &quot;Solar_F_dw&quot; 
+             Solar upward irradiance (W m-2): &quot;Solar_F_up&quot; 
+             Terrestrial downward irradiance (W m-2): &quot;Terr_F_dw&quot; 
+             Terrestrial upward irradiance (W m-2): &quot;Terr_F_up&quot; 
+             Nadir Brightness Temperature (K): &quot;KT19&quot; 
+             Attitude Flag: &quot;Attitude_Flag&quot; 
+             Ambient Temp Flag: &quot;Amb_T_Flag&quot; 
+             Aircraft Stabilizer flag: &quot;Airc_Stab_flag&quot; 
+             Icing Flag: &quot;Pyrano_Icing_Flag&quot; (solar radiation) 
+             Icing Flag: &quot;Pyrgeo_Icing_Flag&quot; (terrestrial radiation) 
+             Further details in the variable attributes. 
+             ############################### 
+             </dd></dl></div></li></ul></div></div></div></div>
+</div>
+<p>The dataset includes downward and upward, solar and terrestrial irradiance(<code class="docutils literal notranslate"><span class="pre">Solar_F_dw</span></code>, <code class="docutils literal notranslate"><span class="pre">Solar_F_up</span></code>, <code class="docutils literal notranslate"><span class="pre">Terr_F_dw</span></code> and <code class="docutils literal notranslate"><span class="pre">Terr_F_up</span></code>) and IR Brightness Temperature in nadir direction (<code class="docutils literal notranslate"><span class="pre">KT19</span></code>). There are also quality flags where data must be interpreted with care or discarded.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Please check the attributes of the xarray dataset <code class="docutils literal notranslate"><span class="pre">ds_broad_irr</span></code> for the meaning of the data flags.</p>
+</div>
+<p>The full dataset is available on PANGAEA.</p>
+<p>For some reason, the time variable is not set as a coordinate in the dataset, so we should set it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_broad_irr</span> <span class="o">=</span> <span class="n">ds_broad_irr</span><span class="o">.</span><span class="n">assign_coords</span><span class="p">({</span><span class="s2">&quot;Time&quot;</span><span class="p">:</span> <span class="p">(</span><span class="s2">&quot;Time&quot;</span><span class="p">,</span> <span class="n">ds_broad_irr</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">data</span><span class="p">)})</span>
+<span class="n">ds_broad_irr</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewBox="0 0 32 32">
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewBox="0 0 32 32">
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg>
+<style>/* CSS stylesheet for displaying xarray objects in jupyterlab.
+ *
+ */
+
+:root {
+  --xr-font-color0: var(--jp-content-font-color0, rgba(0, 0, 0, 1));
+  --xr-font-color2: var(--jp-content-font-color2, rgba(0, 0, 0, 0.54));
+  --xr-font-color3: var(--jp-content-font-color3, rgba(0, 0, 0, 0.38));
+  --xr-border-color: var(--jp-border-color2, #e0e0e0);
+  --xr-disabled-color: var(--jp-layout-color3, #bdbdbd);
+  --xr-background-color: var(--jp-layout-color0, white);
+  --xr-background-color-row-even: var(--jp-layout-color1, white);
+  --xr-background-color-row-odd: var(--jp-layout-color2, #eeeeee);
+}
+
+html[theme=dark],
+body.vscode-dark {
+  --xr-font-color0: rgba(255, 255, 255, 1);
+  --xr-font-color2: rgba(255, 255, 255, 0.54);
+  --xr-font-color3: rgba(255, 255, 255, 0.38);
+  --xr-border-color: #1F1F1F;
+  --xr-disabled-color: #515151;
+  --xr-background-color: #111111;
+  --xr-background-color-row-even: #111111;
+  --xr-background-color-row-odd: #313131;
+}
+
+.xr-wrap {
+  display: block;
+  min-width: 300px;
+  max-width: 700px;
+}
+
+.xr-text-repr-fallback {
+  /* fallback to plain text repr when CSS is not injected (untrusted notebook) */
+  display: none;
+}
+
+.xr-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+  border-bottom: solid 1px var(--xr-border-color);
+}
+
+.xr-header > div,
+.xr-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.xr-obj-type,
+.xr-array-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.xr-obj-type {
+  color: var(--xr-font-color2);
+}
+
+.xr-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto 1fr 20px 20px;
+}
+
+.xr-section-item {
+  display: contents;
+}
+
+.xr-section-item input {
+  display: none;
+}
+
+.xr-section-item input + label {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-item input:enabled + label {
+  cursor: pointer;
+  color: var(--xr-font-color2);
+}
+
+.xr-section-item input:enabled + label:hover {
+  color: var(--xr-font-color0);
+}
+
+.xr-section-summary {
+  grid-column: 1;
+  color: var(--xr-font-color2);
+  font-weight: 500;
+}
+
+.xr-section-summary > span {
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+.xr-section-summary-in:disabled + label {
+  color: var(--xr-font-color2);
+}
+
+.xr-section-summary-in + label:before {
+  display: inline-block;
+  content: '►';
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.xr-section-summary-in:disabled + label:before {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-summary-in:checked + label:before {
+  content: '▼';
+}
+
+.xr-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.xr-section-summary,
+.xr-section-inline-details {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.xr-section-inline-details {
+  grid-column: 2 / -1;
+}
+
+.xr-section-details {
+  display: none;
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+}
+
+.xr-section-summary-in:checked ~ .xr-section-details {
+  display: contents;
+}
+
+.xr-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.xr-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.xr-preview {
+  color: var(--xr-font-color3);
+}
+
+.xr-array-preview,
+.xr-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.xr-array-data,
+.xr-array-in:checked ~ .xr-array-preview {
+  display: none;
+}
+
+.xr-array-in:checked ~ .xr-array-data,
+.xr-array-preview {
+  display: inline-block;
+}
+
+.xr-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.xr-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.xr-dim-list:before {
+  content: '(';
+}
+
+.xr-dim-list:after {
+  content: ')';
+}
+
+.xr-dim-list li:not(:last-child):after {
+  content: ',';
+  padding-right: 5px;
+}
+
+.xr-has-index {
+  font-weight: bold;
+}
+
+.xr-var-list,
+.xr-var-item {
+  display: contents;
+}
+
+.xr-var-item > div,
+.xr-var-item label,
+.xr-var-item > .xr-var-name span {
+  background-color: var(--xr-background-color-row-even);
+  margin-bottom: 0;
+}
+
+.xr-var-item > .xr-var-name:hover span {
+  padding-right: 5px;
+}
+
+.xr-var-list > li:nth-child(odd) > div,
+.xr-var-list > li:nth-child(odd) > label,
+.xr-var-list > li:nth-child(odd) > .xr-var-name span {
+  background-color: var(--xr-background-color-row-odd);
+}
+
+.xr-var-name {
+  grid-column: 1;
+}
+
+.xr-var-dims {
+  grid-column: 2;
+}
+
+.xr-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-preview {
+  grid-column: 4;
+}
+
+.xr-var-name,
+.xr-var-dims,
+.xr-var-dtype,
+.xr-preview,
+.xr-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.xr-var-name:hover,
+.xr-var-dims:hover,
+.xr-var-dtype:hover,
+.xr-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.xr-var-attrs,
+.xr-var-data {
+  display: none;
+  background-color: var(--xr-background-color) !important;
+  padding-bottom: 5px !important;
+}
+
+.xr-var-attrs-in:checked ~ .xr-var-attrs,
+.xr-var-data-in:checked ~ .xr-var-data {
+  display: block;
+}
+
+.xr-var-data > table {
+  float: right;
+}
+
+.xr-var-name span,
+.xr-var-data,
+.xr-attrs {
+  padding-left: 25px !important;
+}
+
+.xr-attrs,
+.xr-var-attrs,
+.xr-var-data {
+  grid-column: 1 / -1;
+}
+
+dl.xr-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.xr-attrs dt,
+.xr-attrs dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.xr-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.xr-attrs dt:hover span {
+  display: inline-block;
+  background: var(--xr-background-color);
+  padding-right: 10px;
+}
+
+.xr-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.xr-icon-database,
+.xr-icon-file-text2 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt;
+Dimensions:            (Time: 334437)
+Coordinates:
+  * Time               (Time) datetime64[ns] 2019-03-21T09:52:10.050781250 .....
+Data variables: (12/14)
+    time               (Time) datetime64[ns] 2019-03-21T09:52:10.050781250 .....
+    Lon                (Time) float32 ...
+    Lat                (Time) float32 ...
+    Alt                (Time) float32 ...
+    Solar_F_dw         (Time) float32 ...
+    Solar_F_up         (Time) float32 ...
+    ...                 ...
+    KT19               (Time) float32 ...
+    Attitude_Flag      (Time) int8 ...
+    Amb_T_Flag         (Time) int8 ...
+    Airc_Stab_flag     (Time) int8 ...
+    Pyrano_Icing_Flag  (Time) int8 ...
+    Pyrgeo_Icing_Flag  (Time) int8 ...
+Attributes:
+    description:  ############################### \n             General Info...</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-fbbb38d8-5c68-4a7f-9eeb-b22827250491' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-fbbb38d8-5c68-4a7f-9eeb-b22827250491' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>Time</span>: 334437</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-5bc5c377-4cb3-47de-a4fb-f280343e4ff5' class='xr-section-summary-in' type='checkbox'  checked><label for='section-5bc5c377-4cb3-47de-a4fb-f280343e4ff5' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>Time</span></div><div class='xr-var-dims'>(Time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2019-03-21T09:52:10.050781250 .....</div><input id='attrs-28bcc207-2f34-4c0e-a512-dd47c89edda2' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-28bcc207-2f34-4c0e-a512-dd47c89edda2' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-36979d4f-2752-4d8c-8819-9b2fd41f6b05' class='xr-var-data-in' type='checkbox'><label for='data-36979d4f-2752-4d8c-8819-9b2fd41f6b05' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;2019-03-21T09:52:10.050781250&#x27;, &#x27;2019-03-21T09:52:10.101562500&#x27;,
+       &#x27;2019-03-21T09:52:10.148437500&#x27;, ..., &#x27;2019-03-21T14:30:51.851562500&#x27;,
+       &#x27;2019-03-21T14:30:51.898437500&#x27;, &#x27;2019-03-21T14:30:51.949218750&#x27;],
+      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-3a24730d-2563-4c7c-90da-7e97887a1a45' class='xr-section-summary-in' type='checkbox'  checked><label for='section-3a24730d-2563-4c7c-90da-7e97887a1a45' class='xr-section-summary' >Data variables: <span>(14)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>time</span></div><div class='xr-var-dims'>(Time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2019-03-21T09:52:10.050781250 .....</div><input id='attrs-363f3fb7-5ada-44e1-83e3-efc5cb88f089' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-363f3fb7-5ada-44e1-83e3-efc5cb88f089' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b33a1db7-939f-4e31-afc6-24510a1f50f1' class='xr-var-data-in' type='checkbox'><label for='data-b33a1db7-939f-4e31-afc6-24510a1f50f1' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>Seconds of day (UTC)</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;2019-03-21T09:52:10.050781250&#x27;, &#x27;2019-03-21T09:52:10.101562500&#x27;,
+       &#x27;2019-03-21T09:52:10.148437500&#x27;, ..., &#x27;2019-03-21T14:30:51.851562500&#x27;,
+       &#x27;2019-03-21T14:30:51.898437500&#x27;, &#x27;2019-03-21T14:30:51.949218750&#x27;],
+      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Lon</span></div><div class='xr-var-dims'>(Time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-939765c6-ac6c-44c9-9e0f-86b7e04b7d9a' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-939765c6-ac6c-44c9-9e0f-86b7e04b7d9a' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0233bbf1-7068-452a-a75e-4958fc7a34b7' class='xr-var-data-in' type='checkbox'><label for='data-0233bbf1-7068-452a-a75e-4958fc7a34b7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>Longitude</dd><dt><span>units :</span></dt><dd>Degrees East</dd></dl></div><div class='xr-var-data'><pre>[334437 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Lat</span></div><div class='xr-var-dims'>(Time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-d6bb6ef4-ada5-4244-987c-d7d1f14c5c34' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-d6bb6ef4-ada5-4244-987c-d7d1f14c5c34' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-dc2a5120-b0af-482b-a8eb-6c62c423d432' class='xr-var-data-in' type='checkbox'><label for='data-dc2a5120-b0af-482b-a8eb-6c62c423d432' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>Latitude</dd><dt><span>units :</span></dt><dd>Degrees North</dd></dl></div><div class='xr-var-data'><pre>[334437 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Alt</span></div><div class='xr-var-dims'>(Time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-1dda8ce7-d9d5-4a26-af9b-763b22cd11f5' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-1dda8ce7-d9d5-4a26-af9b-763b22cd11f5' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-977849af-3968-466e-a6ea-d72999b4ce18' class='xr-var-data-in' type='checkbox'><label for='data-977849af-3968-466e-a6ea-d72999b4ce18' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>Flight altitude</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>[334437 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Solar_F_dw</span></div><div class='xr-var-dims'>(Time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-67d05b57-94ce-4b94-a4d0-ea328bbc2fc3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-67d05b57-94ce-4b94-a4d0-ea328bbc2fc3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9ea1d9db-d71a-4b83-a609-28401a16332b' class='xr-var-data-in' type='checkbox'><label for='data-9ea1d9db-d71a-4b83-a609-28401a16332b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>Downward solar irradiance measured by pyranometer CMP22.</dd><dt><span>units :</span></dt><dd>W m-2</dd></dl></div><div class='xr-var-data'><pre>[334437 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Solar_F_up</span></div><div class='xr-var-dims'>(Time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-2c75cbb6-b327-497f-9824-f75a8f271e78' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-2c75cbb6-b327-497f-9824-f75a8f271e78' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-5812ac0b-57eb-43c4-bb30-bf8d6135425c' class='xr-var-data-in' type='checkbox'><label for='data-5812ac0b-57eb-43c4-bb30-bf8d6135425c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>Upward solar irradiance measured by pyranometer CMP22.</dd><dt><span>units :</span></dt><dd>W m-2</dd></dl></div><div class='xr-var-data'><pre>[334437 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Terr_F_dw</span></div><div class='xr-var-dims'>(Time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-55e3ed6f-33ce-4b10-a48b-248e33226212' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-55e3ed6f-33ce-4b10-a48b-248e33226212' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-caa552bf-1959-4916-864f-e6c91066108f' class='xr-var-data-in' type='checkbox'><label for='data-caa552bf-1959-4916-864f-e6c91066108f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>Downward terrestrial irradiance measured by pyrgeometer CGR4.</dd><dt><span>units :</span></dt><dd>W m-2</dd></dl></div><div class='xr-var-data'><pre>[334437 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Terr_F_up</span></div><div class='xr-var-dims'>(Time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-aebb4743-1baf-430d-9cef-3dfc6c425b1f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-aebb4743-1baf-430d-9cef-3dfc6c425b1f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9af26562-5311-4514-81c2-63621d857621' class='xr-var-data-in' type='checkbox'><label for='data-9af26562-5311-4514-81c2-63621d857621' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>Upward terrestrial irradiance measured by pyrgeometer CGR4.</dd><dt><span>units :</span></dt><dd>W m-2</dd></dl></div><div class='xr-var-data'><pre>[334437 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>KT19</span></div><div class='xr-var-dims'>(Time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-d6e162db-b038-49ac-83e2-bde8ac06b09d' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-d6e162db-b038-49ac-83e2-bde8ac06b09d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a9652962-51fa-4bfe-b04c-b20581f41f0e' class='xr-var-data-in' type='checkbox'><label for='data-a9652962-51fa-4bfe-b04c-b20581f41f0e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>IR Brightness Temperature, nadir direction, measured by Heitronics KT19.85II </dd><dt><span>units :</span></dt><dd>K</dd></dl></div><div class='xr-var-data'><pre>[334437 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Attitude_Flag</span></div><div class='xr-var-dims'>(Time)</div><div class='xr-var-dtype'>int8</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-224deb2f-cfda-421a-a79f-12fdf1b77ba2' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-224deb2f-cfda-421a-a79f-12fdf1b77ba2' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1a94e97a-8e52-483f-831d-06e0cece8bb5' class='xr-var-data-in' type='checkbox'><label for='data-1a94e97a-8e52-483f-831d-06e0cece8bb5' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>Aircraft roll and pitch angles larger than +- 5 degrees are flagged (1). Flagged irradiance data must be interpreted with care or discarded.</dd><dt><span>units :</span></dt><dd></dd></dl></div><div class='xr-var-data'><pre>[334437 values with dtype=int8]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Amb_T_Flag</span></div><div class='xr-var-dims'>(Time)</div><div class='xr-var-dtype'>int8</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-5e3a4c5d-9834-46b2-81fa-7739edb1f4f7' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-5e3a4c5d-9834-46b2-81fa-7739edb1f4f7' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-451646e9-bab1-47b8-a2ee-74fb83ee5958' class='xr-var-data-in' type='checkbox'><label for='data-451646e9-bab1-47b8-a2ee-74fb83ee5958' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>Pyranometers and pyrgeometer can be affected by rapid changes in ambient temperature (details general file header). These time periods are flagged (1) and need to be interpreted with care.</dd><dt><span>units :</span></dt><dd></dd></dl></div><div class='xr-var-data'><pre>[334437 values with dtype=int8]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Airc_Stab_flag</span></div><div class='xr-var-dims'>(Time)</div><div class='xr-var-dtype'>int8</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-1e029252-9833-4aa4-8d0e-14b0409ca152' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-1e029252-9833-4aa4-8d0e-14b0409ca152' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a22d56e2-4603-47fc-be83-766d0f213cc9' class='xr-var-data-in' type='checkbox'><label for='data-a22d56e2-4603-47fc-be83-766d0f213cc9' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>The aircraft tail can cover the direct downward irradiance for certain aircraft attitude and solar position combinations (details general file header). Time periods with those critical combinations are flagged (1).</dd><dt><span>units :</span></dt><dd></dd></dl></div><div class='xr-var-data'><pre>[334437 values with dtype=int8]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Pyrano_Icing_Flag</span></div><div class='xr-var-dims'>(Time)</div><div class='xr-var-dtype'>int8</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-3c82efa2-c60a-42ac-98ea-24a88e1b6f18' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-3c82efa2-c60a-42ac-98ea-24a88e1b6f18' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-252fd264-3983-48b0-a4c4-fca850d7f243' class='xr-var-data-in' type='checkbox'><label for='data-252fd264-3983-48b0-a4c4-fca850d7f243' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>Obvious influence on the solar irradiance is flagged (1). During unflagged times, icing influence is unsuspicious, but can not be excluded by certainty (0).</dd><dt><span>units :</span></dt><dd></dd></dl></div><div class='xr-var-data'><pre>[334437 values with dtype=int8]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Pyrgeo_Icing_Flag</span></div><div class='xr-var-dims'>(Time)</div><div class='xr-var-dtype'>int8</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-f0c45332-cd39-4265-b209-2b64a48970c2' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f0c45332-cd39-4265-b209-2b64a48970c2' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-488e288d-9eef-4de1-8784-2b327c794937' class='xr-var-data-in' type='checkbox'><label for='data-488e288d-9eef-4de1-8784-2b327c794937' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>Obvious icing influence on the terrestrial irradiance is flagged (1). During unflagged times, icing influence is unsuspicious, but can not be excluded by certainty (0).</dd><dt><span>units :</span></dt><dd></dd></dl></div><div class='xr-var-data'><pre>[334437 values with dtype=int8]</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-6c5cf888-9fc8-4ca6-8e55-d42209d778be' class='xr-section-summary-in' type='checkbox'  checked><label for='section-6c5cf888-9fc8-4ca6-8e55-d42209d778be' class='xr-section-summary' >Attributes: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>############################### 
+             General Information:
+             ############################### 
+             Airborne measurements of broadband irradiance during the AFLUX campaign: Svalbard, March to April 2019 
+             PI: Johannes Stapf (johannes.stapf@uni-leipzig.de)
+             Day: 2019-03-21
+             Involved Aircraft : Polar 5 
+             ############################### 
+             Instruments:
+             Kipp&amp;Zonen CMP22 pyranometer: solar irradiance (0.2 - 3.6 um) in W m-2 
+             Kipp&amp;Zonen CGR4 pyrgeometer: terrestrial irradiance (4.5 - 42.0 um) in W m-2 
+             Heitronics KT19.85II: nadir brightness temperature: (9.6 - 11.5 um) in K 
+             ############################### 
+             Temporal Resolution: 20 Hz 
+             ############################### 
+             Applied Corrections: 
+             Downward solar irradiance corrected for aircraft attitude, following the approach by Bannehr and Schwiesow (1993) and Boers et al. (1998), if irradiance is dominated by direct solar radiation. 
+             Irradiance measurements corrected for instrument inertia time following the approach by Ehrlich and Wendisch (2015) 
+             ############################### 
+             Applied Flags: 
+             Aircraft attitude flag: Aircraft roll and pitch angles larger than |5| degrees are flagged (1). These irradiance data must be interpreted with care or discarded. 
+             Ambient temperature change rate flag: Pyranometers and pyrgeometer can be affected by rapid changes in ambient temperature due to different window (glass dome), body, and sensor temperatures (e.g. zero offset type B Kipp and Zonen) and Albrecht and Cox (1977) (https://doi.org/10.1175/1520-0450(1977)016&lt;0190:PFIPP&gt;2.0.CO;2). These flagged irradiances (1) need to be interpreted with care. Based on the one minute backward running mean of the abosolute, smoothed air temperature gradient (&gt; 0.5 K/min).  
+             Aircraft stabilizer flag: While flying in the opposite direction of the sun (aircraft yaw angle (+- 180 degrees) == solar azimuth angle (+- 2 degrees)) and solar zenith angles plus aircraft pitch angle (nose down positive) larger than 75 degrees, the aircraft vertical stabilizer (at the tail) covers the direct downward irradiance. Time periods with those critical angles are flagged (1) and need to be interpreted with care (short dips in downward irradiance).
+             Icing Flags: 
+             Pyranometers: Obvious icing influence on solar irradiance is flagged (1). During unflagged times, icing influence is unsuspicious, but can not be excluded by certainty (0). Exposed pyranometer glass dome susceptible to icing.  
+             Pyrgeometers: Obvious icing influence on terrestrial irradiance is flagged (1). During unflagged times, icing influence is unsuspicious, but can not be excluded by certainty (0). Pyrgeometers were found iced less frequently (flat window). 
+             ############################## 
+             List of parameters:
+             Time seconds of day (UTC): &quot;time&quot; 
+             Latitude (Degree): &quot;Lat&quot; 
+             Longitude (Degree): &quot;Lon&quot; 
+             Flight Altitude (m): &quot;Alt&quot; 
+             Solar downward irradiance (W m-2): &quot;Solar_F_dw&quot; 
+             Solar upward irradiance (W m-2): &quot;Solar_F_up&quot; 
+             Terrestrial downward irradiance (W m-2): &quot;Terr_F_dw&quot; 
+             Terrestrial upward irradiance (W m-2): &quot;Terr_F_up&quot; 
+             Nadir Brightness Temperature (K): &quot;KT19&quot; 
+             Attitude Flag: &quot;Attitude_Flag&quot; 
+             Ambient Temp Flag: &quot;Amb_T_Flag&quot; 
+             Aircraft Stabilizer flag: &quot;Airc_Stab_flag&quot; 
+             Icing Flag: &quot;Pyrano_Icing_Flag&quot; (solar radiation) 
+             Icing Flag: &quot;Pyrgeo_Icing_Flag&quot; (terrestrial radiation) 
+             Further details in the variable attributes. 
+             ############################### 
+             </dd></dl></div></li></ul></div></div></div></div>
+</div>
+</div>
+<div class="section" id="load-polar-5-flight-phase-information">
+<h2>Load Polar 5 flight phase information¶<a class="headerlink" href="#load-polar-5-flight-phase-information" title="Permalink to this headline">¶</a></h2>
+<p>Polar 5 flights are divided into segments to easily access start and end times of flight patterns. For more information have a look at the respective github repository.</p>
+<p>At first we want to load the flight segments of (AC)³airborne.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span> <span class="o">=</span> <span class="n">ac3airborne</span><span class="o">.</span><span class="n">get_flight_segments</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this example we want to look at <code class="docutils literal notranslate"><span class="pre">AFLUX_P5_RF03</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">flight</span> <span class="o">=</span> <span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;AFLUX_P5_RF03&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We do not want to look into the data of the whole flight. Instead we want to select a specific portion of the flight, for example a <code class="docutils literal notranslate"><span class="pre">high_level</span></code> leg. In order to simplify things we can import the module <code class="docutils literal notranslate"><span class="pre">flightphase</span></code> from the <code class="docutils literal notranslate"><span class="pre">ac3airborne.tools</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ac3airborne.tools</span> <span class="kn">import</span> <span class="n">flightphase</span> <span class="k">as</span> <span class="n">fp</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can now select only the <code class="docutils literal notranslate"><span class="pre">high_level</span></code> legs und show a list of the available legs of this kind.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">flight_query</span> <span class="o">=</span> <span class="n">fp</span><span class="o">.</span><span class="n">FlightPhaseFile</span><span class="p">(</span><span class="n">flight</span><span class="p">)</span>
+
+<span class="n">queried</span> <span class="o">=</span> <span class="n">flight_query</span><span class="o">.</span><span class="n">selectKind</span><span class="p">([</span><span class="s1">&#39;high_level&#39;</span><span class="p">])</span>
+<span class="n">queried</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;dropsondes&#39;: [],
+  &#39;end&#39;: datetime.datetime(2019, 3, 21, 10, 44, 51),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;high_level&#39;],
+  &#39;levels&#39;: [9500],
+  &#39;name&#39;: &#39;high level 1&#39;,
+  &#39;segment_id&#39;: &#39;AFLUX_P5_RF03_hl01&#39;,
+  &#39;start&#39;: datetime.datetime(2019, 3, 21, 10, 5, 48)},
+ {&#39;dropsondes&#39;: [],
+  &#39;end&#39;: datetime.datetime(2019, 3, 21, 12, 53, 41),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;high_level&#39;],
+  &#39;levels&#39;: [9500],
+  &#39;name&#39;: &#39;high level 2&#39;,
+  &#39;segment_id&#39;: &#39;AFLUX_P5_RF03_hl02&#39;,
+  &#39;start&#39;: datetime.datetime(2019, 3, 21, 12, 44, 57)},
+ {&#39;dropsondes&#39;: [],
+  &#39;end&#39;: datetime.datetime(2019, 3, 21, 14, 6, 37),
+  &#39;irregularities&#39;: [],
+  &#39;kinds&#39;: [&#39;high_level&#39;],
+  &#39;levels&#39;: [9500],
+  &#39;name&#39;: &#39;high level 3&#39;,
+  &#39;segment_id&#39;: &#39;AFLUX_P5_RF03_hl03&#39;,
+  &#39;start&#39;: datetime.datetime(2019, 3, 21, 13, 35, 32)}]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We decide to select a specific element of the array:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">queried</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;dropsondes&#39;: [],
+ &#39;end&#39;: datetime.datetime(2019, 3, 21, 12, 53, 41),
+ &#39;irregularities&#39;: [],
+ &#39;kinds&#39;: [&#39;high_level&#39;],
+ &#39;levels&#39;: [9500],
+ &#39;name&#39;: &#39;high level 2&#39;,
+ &#39;segment_id&#39;: &#39;AFLUX_P5_RF03_hl02&#39;,
+ &#39;start&#39;: datetime.datetime(2019, 3, 21, 12, 44, 57)}
+</pre></div>
+</div>
+</div>
+</div>
+<p>We will use later the start and end time in order to select the data that we want to analyze.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">start</span> <span class="o">=</span> <span class="n">queried</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;start&#39;</span><span class="p">]</span>
+<span class="n">end</span>   <span class="o">=</span> <span class="n">queried</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s1">&#39;end&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="read-the-gps-information">
+<h2>Read the GPS information<a class="headerlink" href="#read-the-gps-information" title="Permalink to this headline">¶</a></h2>
+<p>We now want to read the GPS information, because we want to locate the flight segment and visualize it in a plot:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat2</span> <span class="o">=</span> <span class="n">ac3airborne</span><span class="o">.</span><span class="n">get_intake_catalog</span><span class="p">()</span>
+<span class="n">ds_gps</span> <span class="o">=</span> <span class="n">cat2</span><span class="p">[</span><span class="s1">&#39;Polar5&#39;</span><span class="p">][</span><span class="s1">&#39;GPS_INS&#39;</span><span class="p">][</span><span class="s1">&#39;AFLUX_P5_RF03&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
+<span class="n">ds_gps</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
+<defs>
+<symbol id="icon-database" viewBox="0 0 32 32">
+<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
+<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
+</symbol>
+<symbol id="icon-file-text2" viewBox="0 0 32 32">
+<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
+<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
+</symbol>
+</defs>
+</svg>
+<style>/* CSS stylesheet for displaying xarray objects in jupyterlab.
+ *
+ */
+
+:root {
+  --xr-font-color0: var(--jp-content-font-color0, rgba(0, 0, 0, 1));
+  --xr-font-color2: var(--jp-content-font-color2, rgba(0, 0, 0, 0.54));
+  --xr-font-color3: var(--jp-content-font-color3, rgba(0, 0, 0, 0.38));
+  --xr-border-color: var(--jp-border-color2, #e0e0e0);
+  --xr-disabled-color: var(--jp-layout-color3, #bdbdbd);
+  --xr-background-color: var(--jp-layout-color0, white);
+  --xr-background-color-row-even: var(--jp-layout-color1, white);
+  --xr-background-color-row-odd: var(--jp-layout-color2, #eeeeee);
+}
+
+html[theme=dark],
+body.vscode-dark {
+  --xr-font-color0: rgba(255, 255, 255, 1);
+  --xr-font-color2: rgba(255, 255, 255, 0.54);
+  --xr-font-color3: rgba(255, 255, 255, 0.38);
+  --xr-border-color: #1F1F1F;
+  --xr-disabled-color: #515151;
+  --xr-background-color: #111111;
+  --xr-background-color-row-even: #111111;
+  --xr-background-color-row-odd: #313131;
+}
+
+.xr-wrap {
+  display: block;
+  min-width: 300px;
+  max-width: 700px;
+}
+
+.xr-text-repr-fallback {
+  /* fallback to plain text repr when CSS is not injected (untrusted notebook) */
+  display: none;
+}
+
+.xr-header {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+  border-bottom: solid 1px var(--xr-border-color);
+}
+
+.xr-header > div,
+.xr-header > ul {
+  display: inline;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.xr-obj-type,
+.xr-array-name {
+  margin-left: 2px;
+  margin-right: 10px;
+}
+
+.xr-obj-type {
+  color: var(--xr-font-color2);
+}
+
+.xr-sections {
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: 150px auto auto 1fr 20px 20px;
+}
+
+.xr-section-item {
+  display: contents;
+}
+
+.xr-section-item input {
+  display: none;
+}
+
+.xr-section-item input + label {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-item input:enabled + label {
+  cursor: pointer;
+  color: var(--xr-font-color2);
+}
+
+.xr-section-item input:enabled + label:hover {
+  color: var(--xr-font-color0);
+}
+
+.xr-section-summary {
+  grid-column: 1;
+  color: var(--xr-font-color2);
+  font-weight: 500;
+}
+
+.xr-section-summary > span {
+  display: inline-block;
+  padding-left: 0.5em;
+}
+
+.xr-section-summary-in:disabled + label {
+  color: var(--xr-font-color2);
+}
+
+.xr-section-summary-in + label:before {
+  display: inline-block;
+  content: '►';
+  font-size: 11px;
+  width: 15px;
+  text-align: center;
+}
+
+.xr-section-summary-in:disabled + label:before {
+  color: var(--xr-disabled-color);
+}
+
+.xr-section-summary-in:checked + label:before {
+  content: '▼';
+}
+
+.xr-section-summary-in:checked + label > span {
+  display: none;
+}
+
+.xr-section-summary,
+.xr-section-inline-details {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.xr-section-inline-details {
+  grid-column: 2 / -1;
+}
+
+.xr-section-details {
+  display: none;
+  grid-column: 1 / -1;
+  margin-bottom: 5px;
+}
+
+.xr-section-summary-in:checked ~ .xr-section-details {
+  display: contents;
+}
+
+.xr-array-wrap {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 20px auto;
+}
+
+.xr-array-wrap > label {
+  grid-column: 1;
+  vertical-align: top;
+}
+
+.xr-preview {
+  color: var(--xr-font-color3);
+}
+
+.xr-array-preview,
+.xr-array-data {
+  padding: 0 5px !important;
+  grid-column: 2;
+}
+
+.xr-array-data,
+.xr-array-in:checked ~ .xr-array-preview {
+  display: none;
+}
+
+.xr-array-in:checked ~ .xr-array-data,
+.xr-array-preview {
+  display: inline-block;
+}
+
+.xr-dim-list {
+  display: inline-block !important;
+  list-style: none;
+  padding: 0 !important;
+  margin: 0;
+}
+
+.xr-dim-list li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.xr-dim-list:before {
+  content: '(';
+}
+
+.xr-dim-list:after {
+  content: ')';
+}
+
+.xr-dim-list li:not(:last-child):after {
+  content: ',';
+  padding-right: 5px;
+}
+
+.xr-has-index {
+  font-weight: bold;
+}
+
+.xr-var-list,
+.xr-var-item {
+  display: contents;
+}
+
+.xr-var-item > div,
+.xr-var-item label,
+.xr-var-item > .xr-var-name span {
+  background-color: var(--xr-background-color-row-even);
+  margin-bottom: 0;
+}
+
+.xr-var-item > .xr-var-name:hover span {
+  padding-right: 5px;
+}
+
+.xr-var-list > li:nth-child(odd) > div,
+.xr-var-list > li:nth-child(odd) > label,
+.xr-var-list > li:nth-child(odd) > .xr-var-name span {
+  background-color: var(--xr-background-color-row-odd);
+}
+
+.xr-var-name {
+  grid-column: 1;
+}
+
+.xr-var-dims {
+  grid-column: 2;
+}
+
+.xr-var-dtype {
+  grid-column: 3;
+  text-align: right;
+  color: var(--xr-font-color2);
+}
+
+.xr-var-preview {
+  grid-column: 4;
+}
+
+.xr-var-name,
+.xr-var-dims,
+.xr-var-dtype,
+.xr-preview,
+.xr-attrs dt {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-right: 10px;
+}
+
+.xr-var-name:hover,
+.xr-var-dims:hover,
+.xr-var-dtype:hover,
+.xr-attrs dt:hover {
+  overflow: visible;
+  width: auto;
+  z-index: 1;
+}
+
+.xr-var-attrs,
+.xr-var-data {
+  display: none;
+  background-color: var(--xr-background-color) !important;
+  padding-bottom: 5px !important;
+}
+
+.xr-var-attrs-in:checked ~ .xr-var-attrs,
+.xr-var-data-in:checked ~ .xr-var-data {
+  display: block;
+}
+
+.xr-var-data > table {
+  float: right;
+}
+
+.xr-var-name span,
+.xr-var-data,
+.xr-attrs {
+  padding-left: 25px !important;
+}
+
+.xr-attrs,
+.xr-var-attrs,
+.xr-var-data {
+  grid-column: 1 / -1;
+}
+
+dl.xr-attrs {
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 125px auto;
+}
+
+.xr-attrs dt,
+.xr-attrs dd {
+  padding: 0;
+  margin: 0;
+  float: left;
+  padding-right: 10px;
+  width: auto;
+}
+
+.xr-attrs dt {
+  font-weight: normal;
+  grid-column: 1;
+}
+
+.xr-attrs dt:hover span {
+  display: inline-block;
+  background: var(--xr-background-color);
+  padding-right: 10px;
+}
+
+.xr-attrs dd {
+  grid-column: 2;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.xr-icon-database,
+.xr-icon-file-text2 {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1.5em !important;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt;
+Dimensions:  (time: 18037)
+Coordinates:
+  * time     (time) datetime64[ns] 2019-03-21T09:36:00 ... 2019-03-21T14:37:00
+Data variables:
+    alt      (time) float64 nan 26.56 26.55 26.53 26.55 ... 26.11 26.11 26.1 nan
+    tas      (time) float64 nan 0.0 0.0 0.0 0.0 0.0 ... 0.0 0.0 0.0 0.0 0.0 nan
+    lat      (time) float64 nan 78.25 78.25 78.25 ... 78.25 78.25 78.25 nan
+    lat_dir  (time) object &#x27;&#x27; &#x27;N&#x27; &#x27;N&#x27; &#x27;N&#x27; &#x27;N&#x27; &#x27;N&#x27; &#x27;N&#x27; ... &#x27;N&#x27; &#x27;N&#x27; &#x27;N&#x27; &#x27;N&#x27; &#x27;N&#x27; &#x27;&#x27;
+    lon      (time) float64 nan 15.5 15.5 15.5 15.5 ... 15.5 15.5 15.5 15.5 nan
+    lon_dir  (time) object &#x27;&#x27; &#x27;E&#x27; &#x27;E&#x27; &#x27;E&#x27; &#x27;E&#x27; &#x27;E&#x27; &#x27;E&#x27; ... &#x27;E&#x27; &#x27;E&#x27; &#x27;E&#x27; &#x27;E&#x27; &#x27;E&#x27; &#x27;&#x27;
+    vs       (time) float64 nan 0.0 -0.0 0.0 0.0 0.0 ... -0.0 -0.1 0.0 0.0 nan
+    gs       (time) float64 0.0 0.0 0.0 0.0 0.0 0.0 ... 3.58 3.59 3.59 3.58 3.58
+    pitch    (time) float64 10.94 10.94 10.95 10.94 ... 10.47 10.47 10.47 10.47
+    roll     (time) float64 0.14 0.14 0.14 0.14 0.14 ... 0.1 0.11 0.09 0.1 0.1
+    heading  (time) float64 0.0 0.0 0.0 0.0 0.0 ... 148.7 148.7 148.7 148.7
+Attributes: (12/14)
+    description:  1Hz subset based on GPS1 and INS data processed by AWI engi...
+    instruments:  GPS1 and INS
+    version:      [0.1]
+    contact:      mario.mech@uni-koeln.de, martin.gehrmann@awi.de
+    institution:  [&#x27;Alfred-Wegener-Institut Helmholtz-Zentrum für Polar- und ...
+    author:       Dr. Mario Mech
+    ...           ...
+    featureType:  trajectory
+    mission:      AFLUX
+    platform:     Polar5
+    flight_id:    RF03
+    title:        Polar5 position and attitude data
+    history:      acquired by Polar5 during AFLUX campaign, quality checked b...</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-22c86a31-576b-404e-9271-a0134ac8c7c0' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-22c86a31-576b-404e-9271-a0134ac8c7c0' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 18037</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-4f2d410b-d395-48d8-93f9-e8fdd5c4c21a' class='xr-section-summary-in' type='checkbox'  checked><label for='section-4f2d410b-d395-48d8-93f9-e8fdd5c4c21a' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2019-03-21T09:36:00 ... 2019-03-...</div><input id='attrs-299630fc-3623-4963-9808-69d3f38da061' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-299630fc-3623-4963-9808-69d3f38da061' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-2f469d10-d0b1-4b4a-8133-e11de96f8a7d' class='xr-var-data-in' type='checkbox'><label for='data-2f469d10-d0b1-4b4a-8133-e11de96f8a7d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>time</dd><dt><span>long_name :</span></dt><dd>time in seconds since epoch</dd><dt><span>axis :</span></dt><dd>T</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;2019-03-21T09:36:00.000000000&#x27;, &#x27;2019-03-21T09:36:01.000000000&#x27;,
+       &#x27;2019-03-21T09:36:02.000000000&#x27;, ..., &#x27;2019-03-21T14:36:58.000000000&#x27;,
+       &#x27;2019-03-21T14:36:59.000000000&#x27;, &#x27;2019-03-21T14:37:00.000000000&#x27;],
+      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-acf26795-8195-48a2-b919-608d40e0c8f6' class='xr-section-summary-in' type='checkbox'  checked><label for='section-acf26795-8195-48a2-b919-608d40e0c8f6' class='xr-section-summary' >Data variables: <span>(11)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>alt</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-365440ad-122c-47f4-848e-f352e39c06ad' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-365440ad-122c-47f4-848e-f352e39c06ad' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-bbd3a4b9-f46c-42d5-9b81-d37b6eafc10d' class='xr-var-data-in' type='checkbox'><label for='data-bbd3a4b9-f46c-42d5-9b81-d37b6eafc10d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>height_above_reference_ellipsoid</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/elliptical height</dd><dt><span>positive :</span></dt><dd>up</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>axis :</span></dt><dd>Z</dd></dl></div><div class='xr-var-data'><pre>array([  nan, 26.56, 26.55, ..., 26.11, 26.1 ,   nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>tas</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-ae0ecc1d-a013-4c6c-b30c-07ec2d10f2d0' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ae0ecc1d-a013-4c6c-b30c-07ec2d10f2d0' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-10407977-c112-4736-af02-4eaceceb1a80' class='xr-var-data-in' type='checkbox'><label for='data-10407977-c112-4736-af02-4eaceceb1a80' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_speed_wrt_air</dd><dt><span>long_name :</span></dt><dd>calculated true airspeed</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>m/s</dd></dl></div><div class='xr-var-data'><pre>array([nan,  0.,  0., ...,  0.,  0., nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-73a8b95c-9e18-410d-90bc-25a44609c103' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-73a8b95c-9e18-410d-90bc-25a44609c103' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9c9916a1-c9b9-4da6-9173-bb31672f80f6' class='xr-var-data-in' type='checkbox'><label for='data-9c9916a1-c9b9-4da6-9173-bb31672f80f6' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>axis :</span></dt><dd>Y</dd></dl></div><div class='xr-var-data'><pre>array([      nan, 78.245897, 78.245897, ..., 78.245875, 78.245875,       nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat_dir</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>object</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-0e6111bb-83ed-4182-9dbc-08803bbe9314' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-0e6111bb-83ed-4182-9dbc-08803bbe9314' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f1f76d14-325e-4fd2-86e2-876951371928' class='xr-var-data-in' type='checkbox'><label for='data-f1f76d14-325e-4fd2-86e2-876951371928' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;&#x27;, &#x27;N&#x27;, &#x27;N&#x27;, ..., &#x27;N&#x27;, &#x27;N&#x27;, &#x27;&#x27;], dtype=object)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lon</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-cafad411-033a-4f43-a0b5-8f350261d861' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-cafad411-033a-4f43-a0b5-8f350261d861' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-691a9130-a343-4fea-b2ab-330d067439ba' class='xr-var-data-in' type='checkbox'><label for='data-691a9130-a343-4fea-b2ab-330d067439ba' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/longitude</dd><dt><span>units :</span></dt><dd>degree_east</dd><dt><span>axis :</span></dt><dd>X</dd></dl></div><div class='xr-var-data'><pre>array([      nan, 15.50175 , 15.50175 , ..., 15.501863, 15.501863,       nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lon_dir</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>object</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-72239cbb-304e-46e6-a7b8-9a87150a57c6' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-72239cbb-304e-46e6-a7b8-9a87150a57c6' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d3ef286a-ee10-457b-be49-e91e05b50248' class='xr-var-data-in' type='checkbox'><label for='data-d3ef286a-ee10-457b-be49-e91e05b50248' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;&#x27;, &#x27;E&#x27;, &#x27;E&#x27;, ..., &#x27;E&#x27;, &#x27;E&#x27;, &#x27;&#x27;], dtype=object)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>vs</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-21ae45d9-555f-4a49-a613-5b7d0beb798c' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-21ae45d9-555f-4a49-a613-5b7d0beb798c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6855b3e5-d4c9-4fc9-a4fb-4c4dbd0d191d' class='xr-var-data-in' type='checkbox'><label for='data-6855b3e5-d4c9-4fc9-a4fb-4c4dbd0d191d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_vertical_speed</dd><dt><span>long_name :</span></dt><dd>vertical speed</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>m/s</dd></dl></div><div class='xr-var-data'><pre>array([nan,  0., -0., ...,  0.,  0., nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>gs</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-628306df-cc3e-42b0-a048-537ecaaf7880' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-628306df-cc3e-42b0-a048-537ecaaf7880' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-2d12fd52-724c-49d0-8cab-df9d6ffb184d' class='xr-var-data-in' type='checkbox'><label for='data-2d12fd52-724c-49d0-8cab-df9d6ffb184d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_speed_wrt_ground</dd><dt><span>long_name :</span></dt><dd>groundspeed of platform</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>kts</dd></dl></div><div class='xr-var-data'><pre>array([0.  , 0.  , 0.  , ..., 3.59, 3.58, 3.58])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>pitch</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-a32c18bf-09c9-4e56-9122-35137f4e8251' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-a32c18bf-09c9-4e56-9122-35137f4e8251' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f989891e-8067-4a4d-a5eb-13f7d56b4cf6' class='xr-var-data-in' type='checkbox'><label for='data-f989891e-8067-4a4d-a5eb-13f7d56b4cf6' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_pitch_fore_up</dd><dt><span>long_name :</span></dt><dd>pitch angle of platform</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>degrees</dd></dl></div><div class='xr-var-data'><pre>array([10.94, 10.94, 10.95, ..., 10.47, 10.47, 10.47])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>roll</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-f99c5fcd-f5c4-4efd-b302-371632e659d9' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f99c5fcd-f5c4-4efd-b302-371632e659d9' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-38ac38ab-8b9b-4474-b8b1-5c62324790d1' class='xr-var-data-in' type='checkbox'><label for='data-38ac38ab-8b9b-4474-b8b1-5c62324790d1' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_roll_starboard_down</dd><dt><span>long_name :</span></dt><dd>roll angle of platform</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>degrees</dd></dl></div><div class='xr-var-data'><pre>array([0.14, 0.14, 0.14, ..., 0.09, 0.1 , 0.1 ])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>heading</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-e72cb779-f70e-4843-829b-8f955c93c153' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e72cb779-f70e-4843-829b-8f955c93c153' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b2645130-ef75-4ec7-b22d-657af426ea93' class='xr-var-data-in' type='checkbox'><label for='data-b2645130-ef75-4ec7-b22d-657af426ea93' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_yaw_fore_starboard</dd><dt><span>long_name :</span></dt><dd>true heading</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>degrees</dd></dl></div><div class='xr-var-data'><pre>array([  0.  ,   0.  ,   0.  , ..., 148.7 , 148.71, 148.7 ])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-c08bd1a3-b4fe-4706-bc59-29eb6d73896d' class='xr-section-summary-in' type='checkbox'  ><label for='section-c08bd1a3-b4fe-4706-bc59-29eb6d73896d' class='xr-section-summary' >Attributes: <span>(14)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>1Hz subset based on GPS1 and INS data processed by AWI engineers</dd><dt><span>instruments :</span></dt><dd>GPS1 and INS</dd><dt><span>version :</span></dt><dd>[0.1]</dd><dt><span>contact :</span></dt><dd>mario.mech@uni-koeln.de, martin.gehrmann@awi.de</dd><dt><span>institution :</span></dt><dd>[&#x27;Alfred-Wegener-Institut Helmholtz-Zentrum für Polar- und Meeresforschung&#x27;]</dd><dt><span>author :</span></dt><dd>Dr. Mario Mech</dd><dt><span>source :</span></dt><dd>DSHIP excerpt</dd><dt><span>Convention :</span></dt><dd>CF-1.8</dd><dt><span>featureType :</span></dt><dd>trajectory</dd><dt><span>mission :</span></dt><dd>AFLUX</dd><dt><span>platform :</span></dt><dd>Polar5</dd><dt><span>flight_id :</span></dt><dd>RF03</dd><dt><span>title :</span></dt><dd>Polar5 position and attitude data</dd><dt><span>history :</span></dt><dd>acquired by Polar5 during AFLUX campaign, quality checked by AWI and uploaded to DSHIP database, extracted and reformated by Mario Mech</dd></dl></div></li></ul></div></div></div></div>
+</div>
+</div>
+<div class="section" id="plot-the-flight-segment">
+<h2>Plot the flight segment<a class="headerlink" href="#plot-the-flight-segment" title="Permalink to this headline">¶</a></h2>
+<p>Now we can plot both the whole flight and the flight segment, so that we can show where the measurments have taken place before we plot them.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
+<span class="kn">import</span> <span class="nn">cartopy.feature</span> <span class="k">as</span> <span class="nn">cfeature</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;../mplstyle/book&quot;</span><span class="p">)</span>
+
+<span class="n">proj</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">NorthPolarStereo</span><span class="p">()</span>
+<span class="n">extent</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">5.0</span><span class="p">,</span> <span class="mf">24.0</span><span class="p">,</span> <span class="mf">78.0</span><span class="p">,</span> <span class="mf">83.0</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="n">proj</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_extent</span><span class="p">(</span><span class="n">extent</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="o">.</span><span class="n">OCEAN</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">add_feature</span><span class="p">(</span><span class="n">cfeature</span><span class="o">.</span><span class="n">LAND</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">gridlines</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">coastlines</span><span class="p">()</span>
+
+<span class="n">nya_lat</span> <span class="o">=</span> <span class="mf">78.924444</span>
+<span class="n">nya_lon</span> <span class="o">=</span> <span class="mf">11.928611</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">nya_lon</span><span class="p">,</span> <span class="n">nya_lat</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">nya_lon</span><span class="p">,</span> <span class="n">nya_lat</span><span class="o">+</span><span class="mf">0.05</span><span class="p">,</span> <span class="s1">&#39;Ny-Ålesund&#39;</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+
+<span class="n">line_all</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds_gps</span><span class="o">.</span><span class="n">lon</span><span class="p">,</span> <span class="n">ds_gps</span><span class="o">.</span><span class="n">lat</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+
+<span class="n">line</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ds_gps</span><span class="o">.</span><span class="n">lon</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)),</span>
+               <span class="n">ds_gps</span><span class="o">.</span><span class="n">lat</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="nb">slice</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">)),</span>
+               <span class="n">transform</span><span class="o">=</span><span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">())</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/kt19_33_0.png" src="../_images/kt19_33_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="plot-the-data">
+<h2>Plot the data<a class="headerlink" href="#plot-the-data" title="Permalink to this headline">¶</a></h2>
+<p>We can now select the data and plot it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">time_of_segment</span> <span class="o">=</span> <span class="n">ds_broad_irr</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">Time</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">))</span>
+
+<span class="n">Solar_F_dw</span> <span class="o">=</span> <span class="n">ds_broad_irr</span><span class="o">.</span><span class="n">Solar_F_dw</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">Time</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">))</span>
+<span class="n">Solar_F_up</span> <span class="o">=</span> <span class="n">ds_broad_irr</span><span class="o">.</span><span class="n">Solar_F_up</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">Time</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">))</span>
+<span class="n">Terr_F_dw</span>  <span class="o">=</span> <span class="n">ds_broad_irr</span><span class="o">.</span><span class="n">Terr_F_dw</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">Time</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">))</span>
+<span class="n">Terr_F_up</span>  <span class="o">=</span> <span class="n">ds_broad_irr</span><span class="o">.</span><span class="n">Terr_F_up</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">Time</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">))</span>
+<span class="n">KT19</span>       <span class="o">=</span> <span class="n">ds_broad_irr</span><span class="o">.</span><span class="n">KT19</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">Time</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We want to add also some information about ice coverage:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_sea_ice</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="s1">&#39;Polar5&#39;</span><span class="p">][</span><span class="s1">&#39;AMSR2_SIC&#39;</span><span class="p">][</span><span class="s1">&#39;AFLUX_P5_RF03&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span> <span class="o">=</span> <span class="nb">slice</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.dates</span> <span class="k">as</span> <span class="nn">mdates</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">cm</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">,</span> <span class="n">ax3</span><span class="p">,</span> <span class="n">ax4</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">gridspec_kw</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">height_ratios</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)))</span>
+
+<span class="n">kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">s</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">linewidths</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="n">cm</span><span class="o">.</span><span class="n">get_cmap</span><span class="p">(</span><span class="s1">&#39;viridis&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">colors</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">time_of_segment</span><span class="p">,</span> <span class="n">Solar_F_dw</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Solar Downward&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">time_of_segment</span><span class="p">,</span> <span class="n">Solar_F_up</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Solar Upward&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">time_of_segment</span><span class="p">,</span> <span class="n">Terr_F_dw</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Terrestrial Downward&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">time_of_segment</span><span class="p">,</span> <span class="n">Terr_F_up</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Terrestrial Upward&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="n">ax3</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">time_of_segment</span><span class="p">,</span> <span class="n">KT19</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Nadir Brightness Temperature&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.05</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center left&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.05</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center left&#39;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.05</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center left&#39;</span><span class="p">)</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$I$ [W m$^{-2}$]&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$I$ [W m$^{-2}$]&#39;</span><span class="p">)</span>
+<span class="n">ax3</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$T_b$ [K]&#39;</span><span class="p">)</span>
+
+<span class="c1"># plot AMSR2 sea ice concentration</span>
+<span class="n">im</span> <span class="o">=</span> <span class="n">ax4</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">ds_sea_ice</span><span class="o">.</span><span class="n">time</span><span class="p">,</span> <span class="n">ds_sea_ice</span><span class="o">.</span><span class="n">time</span><span class="p">]),</span>
+               <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]),</span>
+               <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">ds_sea_ice</span><span class="o">.</span><span class="n">sic</span><span class="p">]),</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Blues_r&#39;</span><span class="p">,</span> <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span>
+               <span class="n">shading</span><span class="o">=</span><span class="s1">&#39;auto&#39;</span><span class="p">)</span>
+<span class="n">cax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mf">0.87</span><span class="p">,</span> <span class="mf">0.085</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">ax4</span><span class="o">.</span><span class="n">get_position</span><span class="p">()</span><span class="o">.</span><span class="n">height</span><span class="p">])</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="n">cax</span><span class="o">=</span><span class="n">cax</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;horizontal&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Sea ice [%]&#39;</span><span class="p">)</span>
+<span class="n">ax4</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">,</span> <span class="n">labelleft</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">left</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="n">ax4</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_major_formatter</span><span class="p">(</span><span class="n">mdates</span><span class="o">.</span><span class="n">DateFormatter</span><span class="p">(</span><span class="s1">&#39;%H:%M&#39;</span><span class="p">))</span>
+<span class="n">ax4</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time (hh:mm) [UTC]&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/kt19_39_0.png" src="../_images/kt19_39_0.png" />
+</div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -288,12 +1895,32 @@
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="fish_eye_camera.html" title="previous page">Fish-eye camera</a>
-    <a class='right-next' id="next-link" href="dropsondes.html" title="next page">Dropsondes</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="fish_eye_camera.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Fish-eye camera</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="dropsondes.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Dropsondes</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>
@@ -312,11 +1939,9 @@
 
       </div>
     </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
-
-
-    
+  
   </body>
 </html>
