@@ -10,3 +10,4 @@ aiohttp
 ipyleaflet
 simplification
 ghp-import
+ac3airborne --install-option="-i https://test.pypi.org/simple/"
