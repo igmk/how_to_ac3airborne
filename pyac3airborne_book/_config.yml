@@ -23,4 +23,4 @@ repository:
   branch                    : main  # Which branch of the repository should be used when creating links (optional)
 
 launch_buttons:
-  binderhub_url: "https://mybinder.org/v2/gh/igmk/pyac3airborne_book/1bf16fc08037073e7a16b486ef9909859d524774"  # The URL for your BinderHub (e.g., https://mybinder.org)
+  binderhub_url: "https://mybinder.org"  # The URL for your BinderHub (e.g., https://mybinder.org)
