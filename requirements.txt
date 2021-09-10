@@ -10,3 +10,4 @@ aiohttp
 ipyleaflet
 simplification
 ghp-import
+ac3airborne
