@@ -1,0 +1,2 @@
+set -e
+pip install -i https://test.pypi.org/simple/ ac3airborne

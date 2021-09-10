@@ -6,7 +6,7 @@
 #######################################################################################
 # Book settings
 title                       : pyac3airborne-book  # The title of the book. Will be placed in the left navbar.
-author                      : Mario Mech  # The author of the book
+author                      : pyac3airborne community  # The author of the book
 copyright                   : "2021"  # Copyright year to be placed in the footer
 logo                        : logo.png  # A path to the book logo
 # bib file
@@ -14,3 +14,13 @@ bibtex_bibfiles:
     - references.bib
 execute:
   timeout: 120
+
+# configuration for Binder
+# Information about where the book exists on the web
+repository:
+  url                       : https://github.com/igmk/pyac3airborne_book  # Online location of the book
+  path_to_book              : pyac3airborne_book/  # Optional path to your book, relative to the repository root
+  branch                    : main  # Which branch of the repository should be used when creating links (optional)
+
+launch_buttons:
+  binderhub_url: "https://mybinder.org"  # The URL for your BinderHub (e.g., https://mybinder.org)

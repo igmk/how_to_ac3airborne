@@ -1,30 +1,33 @@
-- file: intro
+format: jb-article
+root: intro
+sections:
 - file: campaigns
   title: Campaigns
 - file: datasets
   title: Datasets
   sections:
-    - file: datasets/mirac_a
-      title: MiRAC-A
-    - file: datasets/mirac_p
-      title: MiRAC-P
-    - file: datasets/hatpro
-      title: HATPRO
-    - file: datasets/amali_cloud_top_height
-      title: AMALi
-    - file: datasets/fish_eye_camera
-      title: Fish-eye Camera
-    - file: datasets/kt19
-      title: KT-19
-    - file: datasets/dropsondes
-      title: Dropsondes
-    - file: datasets/gps_ins
-      title: GPS/INS
+  - file: datasets/mirac_a
+    title: MiRAC-A
+  - file: datasets/mirac_p
+    title: MiRAC-P
+  - file: datasets/hatpro
+    title: HATPRO
+  - file: datasets/amali_cloud_top_height
+    title: AMALi
+  - file: datasets/fish_eye_camera
+    title: Fish-eye Camera
+  - file: datasets/kt19
+    title: KT-19
+  - file: datasets/dropsondes
+    title: Dropsondes
+  - file: datasets/gps_ins
+    title: GPS/INS
 - file: flight_segmentation
   title: Flight-phase separation
 - file: code
   title: Toolbox and Examples
   sections:
+  - file: running_locally
   - file: examples/reading_the_flight_phase_files
     title: Reading the flight phase files
   - file: examples/flight_tracks
@@ -32,4 +35,4 @@
   - file: examples/land_ocean
     title: land-mask
 - file: references
-  title: References 
+  title: References
