@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>land-ocean mask &#8212; pyac3airborne-book</title>
+    <title>Land-ocean mask &#8212; pyac3airborne-book</title>
     
   <link href="../_static/css/theme.css" rel="stylesheet" />
   <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -54,7 +54,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="References" href="../references.html" />
-    <link rel="prev" title="Flight tracks" href="flight_tracks.html" />
+    <link rel="prev" title="Querying the flight phase files" href="reading_the_flight_phase_files.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -174,14 +174,9 @@
      Reading the flight phase files
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="flight_tracks.html">
-     Flight tracks
-    </a>
-   </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     land-mask
+     Land-ocean mask
     </a>
    </li>
   </ul>
@@ -283,17 +278,16 @@
               <div>
                 
   <div class="section" id="land-ocean-mask">
-<h1>land-ocean mask<a class="headerlink" href="#land-ocean-mask" title="Permalink to this headline">¶</a></h1>
-<p>In this example we show how a land ocean mask can be applied to the flight path. The decission is made based on <code class="docutils literal notranslate"><span class="pre">cartopy.io.shapereader.natural_earth(resolution='10m',</span> <span class="pre">category='physical',</span> <span class="pre">name='land')</span></code>. All functionality is packed into a routine <code class="docutils literal notranslate"><span class="pre">is_land()</span></code>, which is part of the ac3airborne toolbox.</p>
+<h1>Land-ocean mask<a class="headerlink" href="#land-ocean-mask" title="Permalink to this headline">¶</a></h1>
+<p>In this example we show how a land ocean mask can be applied to the flight path. The decision is based on <code class="docutils literal notranslate"><span class="pre">cartopy.io.shapereader.natural_earth(resolution='10m',</span> <span class="pre">category='physical',</span> <span class="pre">name='land')</span></code>. All functionality is packed into a routine <code class="docutils literal notranslate"><span class="pre">is_land()</span></code>, which is part of the <code class="docutils literal notranslate"><span class="pre">ac3airborne</span></code> toolbox.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ac3airborne.tools.is_land</span> <span class="k">as</span> <span class="nn">il</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ac3airborne.tools</span> <span class="k">import</span> <span class="n">is_land</span> <span class="k">as</span> <span class="n">il</span>
 <span class="kn">import</span> <span class="nn">ac3airborne</span>
 <span class="kn">from</span> <span class="nn">simplification.cutil</span> <span class="k">import</span> <span class="n">simplify_coords_idx</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container"></div>
 </div>
 <p>For example check if Cologne, Germany is on land:</p>
 <div class="cell docutils container">
@@ -317,18 +311,7 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
 <span class="kn">import</span> <span class="nn">cartopy.feature</span> <span class="k">as</span> <span class="nn">cfeature</span>
-<span class="c1">#import xarray as xr</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="c1">#campaign = &#39;ACLOUD&#39;</span>
-<span class="c1">#aircraft = &#39;P5&#39;</span>
-<span class="c1">#number   = &#39;RF14&#39;</span>
-<span class="c1">#date     = &#39;20170608&#39;</span>
-<span class="c1">#flight   = campaign + &#39;_&#39; + aircraft + &#39;_&#39; + number</span>
-
-<span class="c1"># read gps data</span>
-<span class="c1">#file = &#39;~/ac3airborne/campaigns/&#39;+campaign.lower()+&#39;/&#39;+aircraft.lower()+&#39;/gps_ins/&#39;+campaign+&#39;_polar&#39;+aircraft[1]+&#39;_&#39;+date+&#39;_&#39;+number+&#39;.nc&#39;</span>
-<span class="c1">#ds_gps = xr.open_dataset(file)</span>
 </pre></div>
 </div>
 </div>
@@ -436,11 +419,11 @@
 <div class='prev-next-bottom'>
     
     <div id="prev">
-        <a class="left-prev" href="flight_tracks.html" title="previous page">
+        <a class="left-prev" href="reading_the_flight_phase_files.html" title="previous page">
             <i class="prevnext-label fas fa-angle-left"></i>
             <div class="prevnext-info">
                 <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Flight tracks</p>
+                <p class="prevnext-title">Querying the <em>flight phase files</em></p>
             </div>
         </a>
     </div>
