@@ -1,4 +1,4 @@
-jupyter-book>0.11.0 # New toc structure
+jupyter-book==0.10.1 # New toc structure
 jupytext
 matplotlib
 numpy
