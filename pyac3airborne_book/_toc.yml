@@ -13,6 +13,8 @@
       title: HATPRO
     - file: datasets/amali_cloud_top_height
       title: AMALi
+    - file: datasets/nevzorov_and_pms
+      title: PMS and Nevzorov
     - file: datasets/fish_eye_camera
       title: Fish-eye Camera
     - file: datasets/kt19
