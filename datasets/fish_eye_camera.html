@@ -381,376 +381,121 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
-<defs>
-<symbol id="icon-database" viewBox="0 0 32 32">
-<path d="M16 0c-8.837 0-16 2.239-16 5v4c0 2.761 7.163 5 16 5s16-2.239 16-5v-4c0-2.761-7.163-5-16-5z"></path>
-<path d="M16 17c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
-<path d="M16 26c-8.837 0-16-2.239-16-5v6c0 2.761 7.163 5 16 5s16-2.239 16-5v-6c0 2.761-7.163 5-16 5z"></path>
-</symbol>
-<symbol id="icon-file-text2" viewBox="0 0 32 32">
-<path d="M28.681 7.159c-0.694-0.947-1.662-2.053-2.724-3.116s-2.169-2.030-3.116-2.724c-1.612-1.182-2.393-1.319-2.841-1.319h-15.5c-1.378 0-2.5 1.121-2.5 2.5v27c0 1.378 1.122 2.5 2.5 2.5h23c1.378 0 2.5-1.122 2.5-2.5v-19.5c0-0.448-0.137-1.23-1.319-2.841zM24.543 5.457c0.959 0.959 1.712 1.825 2.268 2.543h-4.811v-4.811c0.718 0.556 1.584 1.309 2.543 2.268zM28 29.5c0 0.271-0.229 0.5-0.5 0.5h-23c-0.271 0-0.5-0.229-0.5-0.5v-27c0-0.271 0.229-0.5 0.5-0.5 0 0 15.499-0 15.5 0v7c0 0.552 0.448 1 1 1h7v19.5z"></path>
-<path d="M23 26h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
-<path d="M23 22h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
-<path d="M23 18h-14c-0.552 0-1-0.448-1-1s0.448-1 1-1h14c0.552 0 1 0.448 1 1s-0.448 1-1 1z"></path>
-</symbol>
-</defs>
-</svg>
-<style>/* CSS stylesheet for displaying xarray objects in jupyterlab.
- *
- */
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ClientResponseError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">525</span><span class="n">bc100651e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ds_cam</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;FISH_EYE_CAMERA&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF05&#39;</span><span class="p">](</span><span class="n">hour</span><span class="o">=</span><span class="s1">&#39;10&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">ds_cam</span>
 
-:root {
-  --xr-font-color0: var(--jp-content-font-color0, rgba(0, 0, 0, 1));
-  --xr-font-color2: var(--jp-content-font-color2, rgba(0, 0, 0, 0.54));
-  --xr-font-color3: var(--jp-content-font-color3, rgba(0, 0, 0, 0.38));
-  --xr-border-color: var(--jp-border-color2, #e0e0e0);
-  --xr-disabled-color: var(--jp-layout-color3, #bdbdbd);
-  --xr-background-color: var(--jp-layout-color0, white);
-  --xr-background-color-row-even: var(--jp-layout-color1, white);
-  --xr-background-color-row-odd: var(--jp-layout-color2, #eeeeee);
-}
+<span class="nn">/usr/local/lib/python3.8/dist-packages/intake_xarray/base.py</span> in <span class="ni">to_dask</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">67</span>     <span class="k">def</span> <span class="nf">to_dask</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">68</span>         <span class="sd">&quot;&quot;&quot;Return xarray object where variables are dask arrays&quot;&quot;&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">69</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">read_chunked</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">70</span> 
+<span class="g g-Whitespace">     </span><span class="mi">71</span>     <span class="k">def</span> <span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 
-html[theme=dark],
-body.vscode-dark {
-  --xr-font-color0: rgba(255, 255, 255, 1);
-  --xr-font-color2: rgba(255, 255, 255, 0.54);
-  --xr-font-color3: rgba(255, 255, 255, 0.38);
-  --xr-border-color: #1F1F1F;
-  --xr-disabled-color: #515151;
-  --xr-background-color: #111111;
-  --xr-background-color-row-even: #111111;
-  --xr-background-color-row-odd: #313131;
-}
+<span class="nn">/usr/local/lib/python3.8/dist-packages/intake_xarray/base.py</span> in <span class="ni">read_chunked</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">42</span>     <span class="k">def</span> <span class="nf">read_chunked</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span>         <span class="sd">&quot;&quot;&quot;Return xarray object (which will have chunks)&quot;&quot;&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">44</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_load_metadata</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">45</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ds</span>
+<span class="g g-Whitespace">     </span><span class="mi">46</span> 
 
-.xr-wrap {
-  display: block;
-  min-width: 300px;
-  max-width: 700px;
-}
+<span class="nn">/usr/local/lib/python3.8/dist-packages/intake/source/base.py</span> in <span class="ni">_load_metadata</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">124</span>         <span class="sd">&quot;&quot;&quot;load metadata only if needed&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">125</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_schema</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">126</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_schema</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_schema</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">127</span>             <span class="bp">self</span><span class="o">.</span><span class="n">datashape</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_schema</span><span class="o">.</span><span class="n">datashape</span>
+<span class="g g-Whitespace">    </span><span class="mi">128</span>             <span class="bp">self</span><span class="o">.</span><span class="n">dtype</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_schema</span><span class="o">.</span><span class="n">dtype</span>
 
-.xr-text-repr-fallback {
-  /* fallback to plain text repr when CSS is not injected (untrusted notebook) */
-  display: none;
-}
+<span class="nn">/usr/local/lib/python3.8/dist-packages/intake_xarray/base.py</span> in <span class="ni">_get_schema</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span> 
+<span class="g g-Whitespace">     </span><span class="mi">17</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_ds</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">18</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_open_dataset</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span> 
+<span class="g g-Whitespace">     </span><span class="mi">20</span>             <span class="n">metadata</span> <span class="o">=</span> <span class="p">{</span>
 
-.xr-header {
-  padding-top: 6px;
-  padding-bottom: 6px;
-  margin-bottom: 4px;
-  border-bottom: solid 1px var(--xr-border-color);
-}
+<span class="nn">/usr/local/lib/python3.8/dist-packages/intake_xarray/netcdf.py</span> in <span class="ni">_open_dataset</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">85</span> 
+<span class="g g-Whitespace">     </span><span class="mi">86</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_can_be_local</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">87</span>             <span class="n">url</span> <span class="o">=</span> <span class="n">fsspec</span><span class="o">.</span><span class="n">open_local</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">urlpath</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">storage_options</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">88</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">89</span>             <span class="c1"># https://github.com/intake/filesystem_spec/issues/476#issuecomment-732372918</span>
 
-.xr-header > div,
-.xr-header > ul {
-  display: inline;
-  margin-top: 0;
-  margin-bottom: 0;
-}
+<span class="nn">/usr/local/lib/python3.8/dist-packages/fsspec/core.py</span> in <span class="ni">open_local</span><span class="nt">(url, mode, **storage_options)</span>
+<span class="g g-Whitespace">    </span><span class="mi">462</span>             <span class="s2">&quot; has attribute local_file=True&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">463</span>         <span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">464</span>     <span class="k">with</span> <span class="n">of</span> <span class="k">as</span> <span class="n">files</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">465</span>         <span class="n">paths</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">466</span>     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">has_magic</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
 
-.xr-obj-type,
-.xr-array-name {
-  margin-left: 2px;
-  margin-right: 10px;
-}
+<span class="nn">/usr/local/lib/python3.8/dist-packages/fsspec/core.py</span> in <span class="ni">__enter__</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">176</span>             <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">fs</span><span class="p">,</span> <span class="s2">&quot;open_many&quot;</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">177</span>                 <span class="c1"># check for concurrent cache download; or set up for upload</span>
+<span class="ne">--&gt; </span><span class="mi">178</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">files</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">open_many</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">179</span>                 <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">files</span>
+<span class="g g-Whitespace">    </span><span class="mi">180</span>             <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">fs</span><span class="p">,</span> <span class="s2">&quot;fs&quot;</span><span class="p">)</span> <span class="ow">and</span> <span class="n">fs</span><span class="o">.</span><span class="n">fs</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
 
-.xr-obj-type {
-  color: var(--xr-font-color2);
-}
+<span class="nn">/usr/local/lib/python3.8/dist-packages/fsspec/implementations/cached.py</span> in <span class="ni">&lt;lambda&gt;</span><span class="nt">(*args, **kw)</span>
+<span class="g g-Whitespace">    </span><span class="mi">384</span>             <span class="c1"># all the methods defined in this class. Note `open` here, since</span>
+<span class="g g-Whitespace">    </span><span class="mi">385</span>             <span class="c1"># it calls `_open`, but is actually in superclass</span>
+<span class="ne">--&gt; </span><span class="mi">386</span>             <span class="k">return</span> <span class="k">lambda</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">:</span> <span class="nb">getattr</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="n">item</span><span class="p">)(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">387</span>         <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;__reduce_ex__&quot;</span><span class="p">]:</span>
+<span class="g g-Whitespace">    </span><span class="mi">388</span>             <span class="k">raise</span> <span class="ne">AttributeError</span>
 
-.xr-sections {
-  padding-left: 0 !important;
-  display: grid;
-  grid-template-columns: 150px auto auto 1fr 20px 20px;
-}
+<span class="nn">/usr/local/lib/python3.8/dist-packages/fsspec/implementations/cached.py</span> in <span class="ni">open_many</span><span class="nt">(self, open_files)</span>
+<span class="g g-Whitespace">    </span><span class="mi">452</span>         <span class="k">if</span> <span class="n">downpath</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">453</span>             <span class="c1"># skip if all files are already cached and up to date</span>
+<span class="ne">--&gt; </span><span class="mi">454</span>             <span class="bp">self</span><span class="o">.</span><span class="n">fs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">downpath</span><span class="p">,</span> <span class="n">downfn</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">455</span> 
+<span class="g g-Whitespace">    </span><span class="mi">456</span>             <span class="c1"># update metadata - only happens when downloads are successful</span>
 
-.xr-section-item {
-  display: contents;
-}
+<span class="nn">/usr/local/lib/python3.8/dist-packages/fsspec/asyn.py</span> in <span class="ni">get</span><span class="nt">(self, rpath, lpath, recursive, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">292</span>         <span class="n">lpaths</span> <span class="o">=</span> <span class="n">other_paths</span><span class="p">(</span><span class="n">rpaths</span><span class="p">,</span> <span class="n">lpath</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">293</span>         <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">lp</span><span class="p">),</span> <span class="n">exist_ok</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">lp</span> <span class="ow">in</span> <span class="n">lpaths</span><span class="p">]</span>
+<span class="ne">--&gt; </span><span class="mi">294</span>         <span class="k">return</span> <span class="n">sync</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">loop</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">,</span> <span class="n">rpaths</span><span class="p">,</span> <span class="n">lpaths</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">295</span> 
+<span class="g g-Whitespace">    </span><span class="mi">296</span> 
 
-.xr-section-item input {
-  display: none;
-}
+<span class="nn">/usr/local/lib/python3.8/dist-packages/fsspec/asyn.py</span> in <span class="ni">sync</span><span class="nt">(loop, func, callback_timeout, *args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">69</span>     <span class="k">if</span> <span class="n">error</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+<span class="g g-Whitespace">     </span><span class="mi">70</span>         <span class="n">typ</span><span class="p">,</span> <span class="n">exc</span><span class="p">,</span> <span class="n">tb</span> <span class="o">=</span> <span class="n">error</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="ne">---&gt; </span><span class="mi">71</span>         <span class="k">raise</span> <span class="n">exc</span><span class="o">.</span><span class="n">with_traceback</span><span class="p">(</span><span class="n">tb</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span>         <span class="k">return</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
-.xr-section-item input + label {
-  color: var(--xr-disabled-color);
-}
+<span class="nn">/usr/local/lib/python3.8/dist-packages/fsspec/asyn.py</span> in <span class="ni">f</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">53</span>             <span class="k">if</span> <span class="n">callback_timeout</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">54</span>                 <span class="n">future</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">wait_for</span><span class="p">(</span><span class="n">future</span><span class="p">,</span> <span class="n">callback_timeout</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">55</span>             <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">await</span> <span class="n">future</span>
+<span class="g g-Whitespace">     </span><span class="mi">56</span>         <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">57</span>             <span class="n">error</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()</span>
 
-.xr-section-item input:enabled + label {
-  cursor: pointer;
-  color: var(--xr-font-color2);
-}
+<span class="nn">/usr/local/lib/python3.8/dist-packages/fsspec/asyn.py</span> in <span class="ni">_get</span><span class="nt">(self, rpaths, lpaths, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">277</span>         <span class="n">dirs</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">lp</span><span class="p">)</span> <span class="k">for</span> <span class="n">lp</span> <span class="ow">in</span> <span class="n">lpaths</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">278</span>         <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dirs</span><span class="p">]</span>
+<span class="ne">--&gt; </span><span class="mi">279</span>         <span class="k">return</span> <span class="n">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">280</span>             <span class="o">*</span><span class="p">[</span>
+<span class="g g-Whitespace">    </span><span class="mi">281</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">_get_file</span><span class="p">(</span><span class="n">rpath</span><span class="p">,</span> <span class="n">lpath</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
-.xr-section-item input:enabled + label:hover {
-  color: var(--xr-font-color0);
-}
+<span class="nn">/usr/local/lib/python3.8/dist-packages/fsspec/implementations/http.py</span> in <span class="ni">_get_file</span><span class="nt">(self, rpath, lpath, chunk_size, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">180</span>             <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="mi">404</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">181</span>                 <span class="k">raise</span> <span class="n">FileNotFoundError</span><span class="p">(</span><span class="n">rpath</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">182</span>             <span class="n">r</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">183</span>             <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">lpath</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">184</span>                 <span class="n">chunk</span> <span class="o">=</span> <span class="bp">True</span>
 
-.xr-section-summary {
-  grid-column: 1;
-  color: var(--xr-font-color2);
-  font-weight: 500;
-}
+<span class="nn">/usr/local/lib/python3.8/dist-packages/aiohttp/client_reqrep.py</span> in <span class="ni">raise_for_status</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">998</span>             <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">reason</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">999</span>             <span class="bp">self</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+<span class="ne">-&gt; </span><span class="mi">1000</span>             <span class="k">raise</span> <span class="n">ClientResponseError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1001</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">request_info</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1002</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">history</span><span class="p">,</span>
 
-.xr-section-summary > span {
-  display: inline-block;
-  padding-left: 0.5em;
-}
-
-.xr-section-summary-in:disabled + label {
-  color: var(--xr-font-color2);
-}
-
-.xr-section-summary-in + label:before {
-  display: inline-block;
-  content: '►';
-  font-size: 11px;
-  width: 15px;
-  text-align: center;
-}
-
-.xr-section-summary-in:disabled + label:before {
-  color: var(--xr-disabled-color);
-}
-
-.xr-section-summary-in:checked + label:before {
-  content: '▼';
-}
-
-.xr-section-summary-in:checked + label > span {
-  display: none;
-}
-
-.xr-section-summary,
-.xr-section-inline-details {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-.xr-section-inline-details {
-  grid-column: 2 / -1;
-}
-
-.xr-section-details {
-  display: none;
-  grid-column: 1 / -1;
-  margin-bottom: 5px;
-}
-
-.xr-section-summary-in:checked ~ .xr-section-details {
-  display: contents;
-}
-
-.xr-array-wrap {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: 20px auto;
-}
-
-.xr-array-wrap > label {
-  grid-column: 1;
-  vertical-align: top;
-}
-
-.xr-preview {
-  color: var(--xr-font-color3);
-}
-
-.xr-array-preview,
-.xr-array-data {
-  padding: 0 5px !important;
-  grid-column: 2;
-}
-
-.xr-array-data,
-.xr-array-in:checked ~ .xr-array-preview {
-  display: none;
-}
-
-.xr-array-in:checked ~ .xr-array-data,
-.xr-array-preview {
-  display: inline-block;
-}
-
-.xr-dim-list {
-  display: inline-block !important;
-  list-style: none;
-  padding: 0 !important;
-  margin: 0;
-}
-
-.xr-dim-list li {
-  display: inline-block;
-  padding: 0;
-  margin: 0;
-}
-
-.xr-dim-list:before {
-  content: '(';
-}
-
-.xr-dim-list:after {
-  content: ')';
-}
-
-.xr-dim-list li:not(:last-child):after {
-  content: ',';
-  padding-right: 5px;
-}
-
-.xr-has-index {
-  font-weight: bold;
-}
-
-.xr-var-list,
-.xr-var-item {
-  display: contents;
-}
-
-.xr-var-item > div,
-.xr-var-item label,
-.xr-var-item > .xr-var-name span {
-  background-color: var(--xr-background-color-row-even);
-  margin-bottom: 0;
-}
-
-.xr-var-item > .xr-var-name:hover span {
-  padding-right: 5px;
-}
-
-.xr-var-list > li:nth-child(odd) > div,
-.xr-var-list > li:nth-child(odd) > label,
-.xr-var-list > li:nth-child(odd) > .xr-var-name span {
-  background-color: var(--xr-background-color-row-odd);
-}
-
-.xr-var-name {
-  grid-column: 1;
-}
-
-.xr-var-dims {
-  grid-column: 2;
-}
-
-.xr-var-dtype {
-  grid-column: 3;
-  text-align: right;
-  color: var(--xr-font-color2);
-}
-
-.xr-var-preview {
-  grid-column: 4;
-}
-
-.xr-var-name,
-.xr-var-dims,
-.xr-var-dtype,
-.xr-preview,
-.xr-attrs dt {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  padding-right: 10px;
-}
-
-.xr-var-name:hover,
-.xr-var-dims:hover,
-.xr-var-dtype:hover,
-.xr-attrs dt:hover {
-  overflow: visible;
-  width: auto;
-  z-index: 1;
-}
-
-.xr-var-attrs,
-.xr-var-data {
-  display: none;
-  background-color: var(--xr-background-color) !important;
-  padding-bottom: 5px !important;
-}
-
-.xr-var-attrs-in:checked ~ .xr-var-attrs,
-.xr-var-data-in:checked ~ .xr-var-data {
-  display: block;
-}
-
-.xr-var-data > table {
-  float: right;
-}
-
-.xr-var-name span,
-.xr-var-data,
-.xr-attrs {
-  padding-left: 25px !important;
-}
-
-.xr-attrs,
-.xr-var-attrs,
-.xr-var-data {
-  grid-column: 1 / -1;
-}
-
-dl.xr-attrs {
-  padding: 0;
-  margin: 0;
-  display: grid;
-  grid-template-columns: 125px auto;
-}
-
-.xr-attrs dt,
-.xr-attrs dd {
-  padding: 0;
-  margin: 0;
-  float: left;
-  padding-right: 10px;
-  width: auto;
-}
-
-.xr-attrs dt {
-  font-weight: normal;
-  grid-column: 1;
-}
-
-.xr-attrs dt:hover span {
-  display: inline-block;
-  background: var(--xr-background-color);
-  padding-right: 10px;
-}
-
-.xr-attrs dd {
-  grid-column: 2;
-  white-space: pre-wrap;
-  word-break: break-all;
-}
-
-.xr-icon-database,
-.xr-icon-file-text2 {
-  display: inline-block;
-  vertical-align: middle;
-  width: 1em;
-  height: 1.5em !important;
-  stroke-width: 0;
-  stroke: currentColor;
-  fill: currentColor;
-}
-</style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt;
-Dimensions:         (dim_t: 506, dim_x: 901, dim_y: 901)
-Dimensions without coordinates: dim_t, dim_x, dim_y
-Data variables:
-    vza             (dim_y, dim_x) int32 ...
-    vaa             (dim_y, dim_x) int32 ...
-    radiance_red    (dim_t, dim_y, dim_x) int16 ...
-    radiance_green  (dim_t, dim_y, dim_x) int16 ...
-    radiance_blue   (dim_t, dim_y, dim_x) int16 ...
-    time            (dim_t) float32 10.0 10.0 10.01 10.01 ... 11.0 11.0 11.0
-    altitude        (dim_t) int16 2892 2895 2891 2900 ... 2883 2881 2883 2882
-    longitude       (dim_t) float32 -0.03472 -0.03262 -0.03084 ... 3.586 3.565
-    latitude        (dim_t) float32 79.86 79.86 79.86 ... 78.34 78.34 78.34
-Attributes:
-    Institution:  Leipzig Institute for Meteorology (LIM) - University of Lei...
-    Comment:      Date 2017-05-25</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-d426d73b-5ba8-4ab8-8ccb-ea4c944d2ea5' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-d426d73b-5ba8-4ab8-8ccb-ea4c944d2ea5' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span>dim_t</span>: 506</li><li><span>dim_x</span>: 901</li><li><span>dim_y</span>: 901</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-92d995f5-a8ea-4f45-9153-d6aa0afecd23' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-92d995f5-a8ea-4f45-9153-d6aa0afecd23' class='xr-section-summary'  title='Expand/collapse section'>Coordinates: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-4bd58bcb-1c17-4c18-81b4-1fca00ea8074' class='xr-section-summary-in' type='checkbox'  checked><label for='section-4bd58bcb-1c17-4c18-81b4-1fca00ea8074' class='xr-section-summary' >Data variables: <span>(9)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>vza</span></div><div class='xr-var-dims'>(dim_y, dim_x)</div><div class='xr-var-dtype'>int32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-b9c9cadd-3e95-4349-a27d-3569941a151b' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-b9c9cadd-3e95-4349-a27d-3569941a151b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-5112bb98-8f06-4695-bb3b-4a7c54fd77a4' class='xr-var-data-in' type='checkbox'><label for='data-5112bb98-8f06-4695-bb3b-4a7c54fd77a4' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>deg</dd><dt><span>scaling_factor :</span></dt><dd>0.01</dd></dl></div><div class='xr-var-data'><pre>[811801 values with dtype=int32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>vaa</span></div><div class='xr-var-dims'>(dim_y, dim_x)</div><div class='xr-var-dtype'>int32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-dea3d8d5-c956-48ee-86d9-269b8ec5c30a' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-dea3d8d5-c956-48ee-86d9-269b8ec5c30a' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-848c6fa6-3617-477d-bcd8-f185f4922bc1' class='xr-var-data-in' type='checkbox'><label for='data-848c6fa6-3617-477d-bcd8-f185f4922bc1' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>deg</dd><dt><span>scaling_factor :</span></dt><dd>0.01</dd></dl></div><div class='xr-var-data'><pre>[811801 values with dtype=int32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>radiance_red</span></div><div class='xr-var-dims'>(dim_t, dim_y, dim_x)</div><div class='xr-var-dtype'>int16</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-ab3c4c14-d13a-40e5-a448-e365dcde7ee0' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ab3c4c14-d13a-40e5-a448-e365dcde7ee0' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b69114e3-d571-498f-9d5b-55645e297b9f' class='xr-var-data-in' type='checkbox'><label for='data-b69114e3-d571-498f-9d5b-55645e297b9f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>W m-2 nm-1 sr-1</dd><dt><span>scaling_factor :</span></dt><dd>0.001</dd></dl></div><div class='xr-var-data'><pre>[410771306 values with dtype=int16]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>radiance_green</span></div><div class='xr-var-dims'>(dim_t, dim_y, dim_x)</div><div class='xr-var-dtype'>int16</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-b1699ebe-5d0c-4a98-994a-0173d5bfb2d9' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-b1699ebe-5d0c-4a98-994a-0173d5bfb2d9' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-34930576-76f6-4597-b340-6dfeb7a4314e' class='xr-var-data-in' type='checkbox'><label for='data-34930576-76f6-4597-b340-6dfeb7a4314e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>W m-2 nm-1 sr-1</dd><dt><span>scaling_factor :</span></dt><dd>0.001</dd></dl></div><div class='xr-var-data'><pre>[410771306 values with dtype=int16]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>radiance_blue</span></div><div class='xr-var-dims'>(dim_t, dim_y, dim_x)</div><div class='xr-var-dtype'>int16</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-a5c59311-cad0-492d-9521-cb57648f3e56' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-a5c59311-cad0-492d-9521-cb57648f3e56' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-03e59d02-00c1-4f4d-bd55-611d9d0442f9' class='xr-var-data-in' type='checkbox'><label for='data-03e59d02-00c1-4f4d-bd55-611d9d0442f9' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>W m-2 nm-1 sr-1</dd><dt><span>scaling_factor :</span></dt><dd>0.001</dd></dl></div><div class='xr-var-data'><pre>[410771306 values with dtype=int16]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>time</span></div><div class='xr-var-dims'>(dim_t)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-756d8151-af4c-4226-932a-6931abcd55d3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-756d8151-af4c-4226-932a-6931abcd55d3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-45a68762-1067-4ec3-b381-571b5f65f808' class='xr-var-data-in' type='checkbox'><label for='data-45a68762-1067-4ec3-b381-571b5f65f808' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>dec UTC</dd></dl></div><div class='xr-var-data'><pre>array([10.002486, 10.004156, 10.005819, ..., 10.995805, 10.997472, 10.999139],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>altitude</span></div><div class='xr-var-dims'>(dim_t)</div><div class='xr-var-dtype'>int16</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-5b96c03b-0ddd-43e6-8cef-c84356207be1' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-5b96c03b-0ddd-43e6-8cef-c84356207be1' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-bbdab766-0d55-4364-af21-cf1834c09651' class='xr-var-data-in' type='checkbox'><label for='data-bbdab766-0d55-4364-af21-cf1834c09651' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([2892, 2895, 2891, ..., 2881, 2883, 2882], dtype=int16)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>longitude</span></div><div class='xr-var-dims'>(dim_t)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-eae670bc-e588-4174-b14f-8cef220c33ee' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-eae670bc-e588-4174-b14f-8cef220c33ee' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-5343edab-90e7-459b-b413-f40bcd56cba9' class='xr-var-data-in' type='checkbox'><label for='data-5343edab-90e7-459b-b413-f40bcd56cba9' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>deg</dd></dl></div><div class='xr-var-data'><pre>array([-0.03472, -0.03262, -0.03084, ...,  3.60674,  3.58571,  3.56463],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>latitude</span></div><div class='xr-var-dims'>(dim_t)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-d31726bb-6b7c-46f9-a40a-041787db2e77' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-d31726bb-6b7c-46f9-a40a-041787db2e77' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-34801026-b7c4-4ff1-a551-44f65bc85d4f' class='xr-var-data-in' type='checkbox'><label for='data-34801026-b7c4-4ff1-a551-44f65bc85d4f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>deg</dd></dl></div><div class='xr-var-data'><pre>array([79.86481, 79.86037, 79.8559 , ..., 78.34373, 78.34406, 78.34438],
-      dtype=float32)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-ff0d9634-3153-4e27-ad7c-1c2fdc6a5316' class='xr-section-summary-in' type='checkbox'  checked><label for='section-ff0d9634-3153-4e27-ad7c-1c2fdc6a5316' class='xr-section-summary' >Attributes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Institution :</span></dt><dd>Leipzig Institute for Meteorology (LIM) - University of Leipzig</dd><dt><span>Comment :</span></dt><dd>Date 2017-05-25</dd></dl></div></li></ul></div></div></div></div>
+<span class="ne">ClientResponseError</span>: 504, message=&#39;Gateway Time-out&#39;, url=URL(&#39;https://hs.pangaea.de/Projects/AC3/ACLOUD_rad-fields/Canon_radiance_P5_170525_10UTC_Flight_05.nc&#39;)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
