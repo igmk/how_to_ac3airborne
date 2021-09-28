@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>HATPRO &#8212; pyac3airborne-book</title>
     
-  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -34,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -44,10 +41,10 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
@@ -58,14 +55,14 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="AMALi cloud top height" href="amali_cloud_top_height.html" />
     <link rel="prev" title="MiRAC-P" href="mirac_p.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -74,37 +71,42 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../index.html">
-  
-  <img src="../_static/logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">pyac3airborne-book</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">pyac3airborne-book</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
    Introduction
   </a>
  </li>
 </ul>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../campaigns.html">
    Campaigns
   </a>
  </li>
- <li class="toctree-l1 current active collapsible-parent">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../datasets.html">
    Datasets
   </a>
-  <ul class="current collapse-ul">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="mirac_a.html">
      MiRAC-A
@@ -151,19 +153,22 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../flight_segmentation.html">
    Flight-phase separation
   </a>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../code.html">
    Toolbox and Examples
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../running_locally.html">
      running pyac3airborne_book locally
@@ -179,9 +184,12 @@
      Land-ocean mask
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/awipev_overflights.html">
+     AWIPEV overflights
+    </a>
+   </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../references.html">
@@ -190,6 +198,7 @@
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -239,12 +248,12 @@
 
             <!-- Source interaction buttons -->
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -270,12 +279,11 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#data-access">
    Data access
@@ -298,8 +306,7 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
@@ -729,11 +736,11 @@ Attributes:
     title:        HATPRO brightness temperature
     history:      measured onboard Polar 5 during MOSAiC-ACA campaign; proces...
     contact:      n.risse@uni-koeln.de, mario.mech@uni-koeln.de
-    created:      2021-07-19</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-18f2c438-f7b0-493a-9821-5635a430163a' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-18f2c438-f7b0-493a-9821-5635a430163a' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>channel</span>: 14</li><li><span class='xr-has-index'>time</span>: 15553</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-1a56bd35-6324-461c-838f-d4813043f2f3' class='xr-section-summary-in' type='checkbox'  checked><label for='section-1a56bd35-6324-461c-838f-d4813043f2f3' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2020-09-13T09:20:01 ... 2020-09-...</div><input id='attrs-8e868e92-1140-4eac-9d6b-4116f8c75727' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-8e868e92-1140-4eac-9d6b-4116f8c75727' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4cbaf2bf-a73f-4114-9af6-fd71c9611717' class='xr-var-data-in' type='checkbox'><label for='data-4cbaf2bf-a73f-4114-9af6-fd71c9611717' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>time</dd><dt><span>long_name :</span></dt><dd>time in seconds since epoch</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;2020-09-13T09:20:01.000000000&#x27;, &#x27;2020-09-13T09:20:02.000000000&#x27;,
+    created:      2021-07-19</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-1ab97b86-39a7-43de-9dd0-03177ed7fe9a' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-1ab97b86-39a7-43de-9dd0-03177ed7fe9a' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>channel</span>: 14</li><li><span class='xr-has-index'>time</span>: 15553</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-91a465af-9cf8-4f3a-b7c3-15de3d333389' class='xr-section-summary-in' type='checkbox'  checked><label for='section-91a465af-9cf8-4f3a-b7c3-15de3d333389' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2020-09-13T09:20:01 ... 2020-09-...</div><input id='attrs-e48594c1-c85b-46aa-b1ae-bdfced12c9a2' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e48594c1-c85b-46aa-b1ae-bdfced12c9a2' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1841e601-f44c-4e9b-a5a9-3c20269aae2b' class='xr-var-data-in' type='checkbox'><label for='data-1841e601-f44c-4e9b-a5a9-3c20269aae2b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>time</dd><dt><span>long_name :</span></dt><dd>time in seconds since epoch</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;2020-09-13T09:20:01.000000000&#x27;, &#x27;2020-09-13T09:20:02.000000000&#x27;,
        &#x27;2020-09-13T09:20:03.000000000&#x27;, ..., &#x27;2020-09-13T14:59:43.000000000&#x27;,
        &#x27;2020-09-13T14:59:45.000000000&#x27;, &#x27;2020-09-13T14:59:46.000000000&#x27;],
-      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>channel</span></div><div class='xr-var-dims'>(channel)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>0 1 2 3 4 5 6 7 8 9 10 11 12 13</div><input id='attrs-07278bbc-c5e4-4f89-8dbf-0420da24eab9' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-07278bbc-c5e4-4f89-8dbf-0420da24eab9' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a369256f-dbb8-4c23-8685-73241dc038af' class='xr-var-data-in' type='checkbox'><label for='data-a369256f-dbb8-4c23-8685-73241dc038af' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>channel</dd><dt><span>long_name :</span></dt><dd>HATPRO radiometer channel number</dd></dl></div><div class='xr-var-data'><pre>array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-ae8854f1-f5ab-422c-95db-97432ceb9574' class='xr-section-summary-in' type='checkbox'  checked><label for='section-ae8854f1-f5ab-422c-95db-97432ceb9574' class='xr-section-summary' >Data variables: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>frequency</span></div><div class='xr-var-dims'>(channel)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-ab6118e8-a010-49eb-a98e-e3465ad17626' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ab6118e8-a010-49eb-a98e-e3465ad17626' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-28ab17d8-8963-46af-a617-2c74ad131f1d' class='xr-var-data-in' type='checkbox'><label for='data-28ab17d8-8963-46af-a617-2c74ad131f1d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>frequency</dd><dt><span>long_name :</span></dt><dd>HATPRO radiometer channel center frequency</dd><dt><span>units :</span></dt><dd>GHz</dd></dl></div><div class='xr-var-data'><pre>array([22.24, 23.04, 23.84, 25.44, 26.24, 27.84, 31.4 , 51.26, 52.28, 53.86,
-       54.94, 56.66, 57.3 , 58.  ], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>tb</span></div><div class='xr-var-dims'>(time, channel)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-d2623b48-0646-448c-b6d7-e41fab254a7d' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-d2623b48-0646-448c-b6d7-e41fab254a7d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-49c1d90b-e23b-4ace-baa9-6341c9304c43' class='xr-var-data-in' type='checkbox'><label for='data-49c1d90b-e23b-4ace-baa9-6341c9304c43' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>tb</dd><dt><span>long_name :</span></dt><dd>HATPRO brightness temperature</dd><dt><span>units :</span></dt><dd>K</dd><dt><span>description :</span></dt><dd>HATPRO brightness temperature measured with 1 second integration time</dd></dl></div><div class='xr-var-data'><pre>[217742 values with dtype=float32]</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-c2d53004-2631-4a67-9360-6e8f9f7deb3f' class='xr-section-summary-in' type='checkbox'  ><label for='section-c2d53004-2631-4a67-9360-6e8f9f7deb3f' class='xr-section-summary' >Attributes: <span>(12)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>institution :</span></dt><dd>Institute of Geophysics and Meteorology (IGM), University of Cologne</dd><dt><span>source :</span></dt><dd>airborne observation</dd><dt><span>author :</span></dt><dd>Nils Risse</dd><dt><span>convention :</span></dt><dd>CF-1.8</dd><dt><span>featureType :</span></dt><dd>trajectory</dd><dt><span>mission :</span></dt><dd>MOSAiC-ACA</dd><dt><span>platform :</span></dt><dd>Polar 5</dd><dt><span>flight_id :</span></dt><dd>RF11</dd><dt><span>title :</span></dt><dd>HATPRO brightness temperature</dd><dt><span>history :</span></dt><dd>measured onboard Polar 5 during MOSAiC-ACA campaign; processed, quality-checked and reformatted by University of Cologne</dd><dt><span>contact :</span></dt><dd>n.risse@uni-koeln.de, mario.mech@uni-koeln.de</dd><dt><span>created :</span></dt><dd>2021-07-19</dd></dl></div></li></ul></div></div></div></div>
+      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>channel</span></div><div class='xr-var-dims'>(channel)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>0 1 2 3 4 5 6 7 8 9 10 11 12 13</div><input id='attrs-c09df32f-962f-46ca-8e6e-df6e2174233f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c09df32f-962f-46ca-8e6e-df6e2174233f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3c89bd98-b6c3-4eec-bead-96f4b53b0f98' class='xr-var-data-in' type='checkbox'><label for='data-3c89bd98-b6c3-4eec-bead-96f4b53b0f98' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>channel</dd><dt><span>long_name :</span></dt><dd>HATPRO radiometer channel number</dd></dl></div><div class='xr-var-data'><pre>array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-6a5d6568-fac1-4732-96eb-acf65e469e5c' class='xr-section-summary-in' type='checkbox'  checked><label for='section-6a5d6568-fac1-4732-96eb-acf65e469e5c' class='xr-section-summary' >Data variables: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>frequency</span></div><div class='xr-var-dims'>(channel)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-972b8077-62dd-4c4f-a861-80aab0b754ef' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-972b8077-62dd-4c4f-a861-80aab0b754ef' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-eb623365-d5e8-4d63-8ced-39c0d69b5946' class='xr-var-data-in' type='checkbox'><label for='data-eb623365-d5e8-4d63-8ced-39c0d69b5946' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>frequency</dd><dt><span>long_name :</span></dt><dd>HATPRO radiometer channel center frequency</dd><dt><span>units :</span></dt><dd>GHz</dd></dl></div><div class='xr-var-data'><pre>array([22.24, 23.04, 23.84, 25.44, 26.24, 27.84, 31.4 , 51.26, 52.28, 53.86,
+       54.94, 56.66, 57.3 , 58.  ], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>tb</span></div><div class='xr-var-dims'>(time, channel)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-06722f35-5222-40b2-aadc-1790bd826636' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-06722f35-5222-40b2-aadc-1790bd826636' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a0b53110-e007-45db-89f3-6f24ef34f30a' class='xr-var-data-in' type='checkbox'><label for='data-a0b53110-e007-45db-89f3-6f24ef34f30a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>tb</dd><dt><span>long_name :</span></dt><dd>HATPRO brightness temperature</dd><dt><span>units :</span></dt><dd>K</dd><dt><span>description :</span></dt><dd>HATPRO brightness temperature measured with 1 second integration time</dd></dl></div><div class='xr-var-data'><pre>[217742 values with dtype=float32]</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-cb96b29a-bd02-4cda-9f9a-073ebeb28df5' class='xr-section-summary-in' type='checkbox'  ><label for='section-cb96b29a-bd02-4cda-9f9a-073ebeb28df5' class='xr-section-summary' >Attributes: <span>(12)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>institution :</span></dt><dd>Institute of Geophysics and Meteorology (IGM), University of Cologne</dd><dt><span>source :</span></dt><dd>airborne observation</dd><dt><span>author :</span></dt><dd>Nils Risse</dd><dt><span>convention :</span></dt><dd>CF-1.8</dd><dt><span>featureType :</span></dt><dd>trajectory</dd><dt><span>mission :</span></dt><dd>MOSAiC-ACA</dd><dt><span>platform :</span></dt><dd>Polar 5</dd><dt><span>flight_id :</span></dt><dd>RF11</dd><dt><span>title :</span></dt><dd>HATPRO brightness temperature</dd><dt><span>history :</span></dt><dd>measured onboard Polar 5 during MOSAiC-ACA campaign; processed, quality-checked and reformatted by University of Cologne</dd><dt><span>contact :</span></dt><dd>n.risse@uni-koeln.de, mario.mech@uni-koeln.de</dd><dt><span>created :</span></dt><dd>2021-07-19</dd></dl></div></li></ul></div></div></div></div>
 </div>
 <p>The dataset includes brightness temperatures (<code class="docutils literal notranslate"><span class="pre">tb</span></code>) observed by HATPRO at the 22 GHz water vapor absorption line (22.24, 23.04, 23.84, 25.44, 26.24, 27.84 GHz), at the 31.3 GHz window frequency and the 56 GHz oxygen absorption line (51.26, 52.28, 53.86, 54.94, 56.66, 57.3, 58.0 GHz).</p>
 </div>
@@ -866,12 +873,32 @@ Attributes:
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="mirac_p.html" title="previous page">MiRAC-P</a>
-    <a class='right-next' id="next-link" href="amali_cloud_top_height.html" title="next page">AMALi cloud top height</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="mirac_p.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">MiRAC-P</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="amali_cloud_top_height.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">AMALi cloud top height</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>
@@ -890,11 +917,9 @@ Attributes:
 
       </div>
     </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
-
-
-    
+  
   </body>
 </html>

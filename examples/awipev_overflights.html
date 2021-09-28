@@ -1,0 +1,633 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AWIPEV overflights &#8212; pyac3airborne-book</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="References" href="../references.html" />
+    <link rel="prev" title="Land-ocean mask" href="land_ocean.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">pyac3airborne-book</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../campaigns.html">
+   Campaigns
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../datasets.html">
+   Datasets
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datasets/mirac_a.html">
+     MiRAC-A
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datasets/mirac_p.html">
+     MiRAC-P
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datasets/hatpro.html">
+     HATPRO
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datasets/amali_cloud_top_height.html">
+     AMALi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datasets/fish_eye_camera.html">
+     Fish-eye Camera
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datasets/nevzorov_and_pms.html">
+     PMS and Nevzorov
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datasets/kt19.html">
+     KT-19
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datasets/dropsondes.html">
+     Dropsondes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datasets/gps_ins.html">
+     GPS/INS
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../flight_segmentation.html">
+   Flight-phase separation
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="../code.html">
+   Toolbox and Examples
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../running_locally.html">
+     running pyac3airborne_book locally
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="reading_the_flight_phase_files.html">
+     Reading the flight phase files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="land_ocean.html">
+     Land-ocean mask
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     AWIPEV overflights
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   References
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/examples/awipev_overflights.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/igmk/pyac3airborne_book/main?urlpath=tree/pyac3airborne_book/examples/awipev_overflights.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#flights-near-awipev-base">
+   Flights near AWIPEV Base
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#segments-near-awipev-base">
+   Segments near AWIPEV Base
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#flight-duration-near-awipev-base">
+   Flight duration near AWIPEV Base
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vertical-cross-section-of-overflights">
+   Vertical cross section of overflights
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="awipev-overflights">
+<h1>AWIPEV overflights<a class="headerlink" href="#awipev-overflights" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference external" href="https://www.awipev.eu/">AWIPEV Base</a> is a French-German Arctic Research Base at Ny-Ålesund, Svalbard, operated by the German Alfred Wegener Institute for Polar and Marine Research (AWI) and the French Polar Institute Paul Emile Victor (IPEV). At AWIPEV’s <a class="reference external" href="https://www.awipev.eu/awipev-observatories/atmosphere-observatory/">Atmosphere Observatory</a> long-term observations of atmospheric thermodynamics, clouds, aerosols and trace gases are collected using various in-situ and remote sensing instrumentation.</p>
+<p>To make use of the synergy between airborne and ground-based observations, Polar5 and Polar6 frequently overpassed the AWIPEV Base. The <code class="docutils literal notranslate"><span class="pre">flight-phase-separation</span></code> allows for a quick filtering of Ny-Ålesund overflights using the keywords listed under the <code class="docutils literal notranslate"><span class="pre">kinds</span></code> parameter of each segment. The use of the keyword will be presented here. Additionally, we will calculate the duration, Polar5 was within 15 km of AWIPEV for each research flight.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">ac3airborne</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;../mplstyle/book&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>At first we load the flight-phase separation and the intake catalog.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span> <span class="o">=</span> <span class="n">ac3airborne</span><span class="o">.</span><span class="n">get_flight_segments</span><span class="p">()</span>
+<span class="n">cat</span> <span class="o">=</span> <span class="n">ac3airborne</span><span class="o">.</span><span class="n">get_intake_catalog</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="flights-near-awipev-base">
+<h2>Flights near AWIPEV Base<a class="headerlink" href="#flights-near-awipev-base" title="Permalink to this headline">¶</a></h2>
+<p>With the help of meta information stored in <code class="docutils literal notranslate"><span class="pre">flight-phase-separation</span></code>, we can find the flights, which overpassed the AWIPEV Base.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">flight_id</span><span class="p">,</span> <span class="n">flight</span> <span class="ow">in</span> <span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        
+    <span class="n">awipev_remark</span> <span class="o">=</span> <span class="p">[</span><span class="n">event</span> <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">flight</span><span class="p">[</span><span class="s1">&#39;events&#39;</span><span class="p">]</span> 
+                     <span class="k">if</span> <span class="s1">&#39;Ny-Alesund&#39;</span> <span class="ow">in</span> <span class="n">event</span><span class="p">]</span>
+    
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">awipev_remark</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{flight_id}</span><span class="s1">: </span><span class="si">{awipev_remark}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ACLOUD_P5_RF04: [&#39;Ny-Alesund overflight&#39;]
+ACLOUD_P5_RF05: [&#39;Ny-Alesund overflight&#39;]
+ACLOUD_P5_RF08: [&#39;Ny-Alesund overflight&#39;]
+ACLOUD_P5_RF10: [&#39;Ny-Alesund overflight&#39;]
+ACLOUD_P5_RF11: [&#39;Ny-Alesund overflight with cross pattern&#39;]
+ACLOUD_P5_RF14: [&#39;Ny-Alesund overflight with cross pattern&#39;]
+ACLOUD_P5_RF18: [&#39;Ny-Alesund overflight with cross pattern&#39;]
+ACLOUD_P5_RF19: [&#39;Ny-Alesund overflight with cross pattern&#39;]
+ACLOUD_P5_RF21: [&#39;Ny-Alesund overflight&#39;]
+ACLOUD_P5_RF22: [&#39;Ny-Alesund overflight with cross pattern&#39;]
+AFLUX_P5_RF04: [&#39;Ny-Alesund overflight&#39;]
+AFLUX_P5_RF07: [&#39;Ny-Alesund overflight&#39;]
+AFLUX_P5_RF09: [&#39;Ny-Alesund overflight&#39;]
+AFLUX_P5_RF10: [&#39;Ny-Alesund overflight&#39;]
+AFLUX_P5_RF11: [&#39;Ny-Alesund overflight&#39;]
+AFLUX_P5_RF12: [&#39;Ny-Alesund overflight&#39;]
+AFLUX_P5_RF13: [&#39;Ny-Alesund overflight&#39;]
+AFLUX_P5_RF14: [&#39;Ny-Alesund overflight&#39;]
+MOSAiC-ACA_P5_RF05: [&#39;Ny-Alesund overflight&#39;]
+MOSAiC-ACA_P5_RF07: [&#39;Ny-Alesund overflight&#39;]
+MOSAiC-ACA_P5_RF08: [&#39;Ny-Alesund overflight&#39;]
+MOSAiC-ACA_P5_RF09: [&#39;Ny-Alesund overflight&#39;]
+MOSAiC-ACA_P5_RF11: [&#39;Ny-Alesund overflight&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Two types of overflights are distinguished:</p>
+<ul class="simple">
+<li><p><strong>Ny-Alesund overflight</strong>: straight overflight</p></li>
+<li><p><strong>Ny-Alesund overflight with cross pattern</strong>: cross pattern over Ny-Alesund</p></li>
+</ul>
+</div>
+<div class="section" id="segments-near-awipev-base">
+<h2>Segments near AWIPEV Base<a class="headerlink" href="#segments-near-awipev-base" title="Permalink to this headline">¶</a></h2>
+<p>Similarly, we can find the individual segments, which were within 15 km of the AWIPEV Base.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">flight_id</span><span class="p">,</span> <span class="n">flight</span> <span class="ow">in</span> <span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    
+    <span class="n">awipev_segment_id</span> <span class="o">=</span> <span class="p">[</span><span class="n">seg</span><span class="p">[</span><span class="s1">&#39;segment_id&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">seg</span> <span class="ow">in</span> <span class="n">flight</span><span class="p">[</span><span class="s1">&#39;segments&#39;</span><span class="p">]</span>
+                         <span class="k">if</span> <span class="n">seg</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;kinds&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+                         <span class="k">if</span> <span class="s1">&#39;nya_overflight&#39;</span> <span class="ow">in</span> <span class="n">seg</span><span class="p">[</span><span class="s1">&#39;kinds&#39;</span><span class="p">]]</span>
+    
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">awipev_segment_id</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">segments</span> <span class="o">=</span> <span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">awipev_segment_id</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="s1">&#39;</span><span class="si">{flight_id}</span><span class="s1">: </span><span class="si">{segments}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ACLOUD_P5_RF04: ACLOUD_P5_RF04_hl08, ACLOUD_P5_RF04_md
+ACLOUD_P5_RF05: ACLOUD_P5_RF05_ma, ACLOUD_P5_RF05_hl01, ACLOUD_P5_RF05_hl02
+ACLOUD_P5_RF08: ACLOUD_P5_RF08_ma, ACLOUD_P5_RF08_hl03
+ACLOUD_P5_RF10: ACLOUD_P5_RF10_ll01
+ACLOUD_P5_RF11: ACLOUD_P5_RF11_ma, ACLOUD_P5_RF11_hl01, ACLOUD_P5_RF11_cr01, ACLOUD_P5_RF11_ho01, ACLOUD_P5_RF11_hl02, ACLOUD_P5_RF11_hl09, ACLOUD_P5_RF11_md
+ACLOUD_P5_RF14: ACLOUD_P5_RF14_ma, ACLOUD_P5_RF14_hl01, ACLOUD_P5_RF14_cr02, ACLOUD_P5_RF14_md
+ACLOUD_P5_RF18: ACLOUD_P5_RF18_hl08, ACLOUD_P5_RF18_cr02, ACLOUD_P5_RF18_hl09
+ACLOUD_P5_RF19: ACLOUD_P5_RF19_ma, ACLOUD_P5_RF19_cr01
+ACLOUD_P5_RF21: ACLOUD_P5_RF21_hl01
+ACLOUD_P5_RF22: ACLOUD_P5_RF22_cr01, ACLOUD_P5_RF22_hl02, ACLOUD_P5_RF22_hl03, ACLOUD_P5_RF22_hl04, ACLOUD_P5_RF22_hl05, ACLOUD_P5_RF22_hl06, ACLOUD_P5_RF22_hl07, ACLOUD_P5_RF22_ld01, ACLOUD_P5_RF22_ll01, ACLOUD_P5_RF22_ma01, ACLOUD_P5_RF22_ml01
+AFLUX_P5_RF04: AFLUX_P5_RF04_hl01
+AFLUX_P5_RF07: AFLUX_P5_RF07_hl04, AFLUX_P5_RF07_hl05
+AFLUX_P5_RF09: AFLUX_P5_RF09_hl02, AFLUX_P5_RF09_hl04
+AFLUX_P5_RF10: AFLUX_P5_RF10_hl06
+AFLUX_P5_RF11: AFLUX_P5_RF11_hl01, AFLUX_P5_RF11_hl05
+AFLUX_P5_RF12: AFLUX_P5_RF12_hl02, AFLUX_P5_RF12_hl03, AFLUX_P5_RF12_hl04
+AFLUX_P5_RF13: AFLUX_P5_RF13_hl08, AFLUX_P5_RF13_hl09
+AFLUX_P5_RF14: AFLUX_P5_RF14_hl02, AFLUX_P5_RF14_hl05
+MOSAiC-ACA_P5_RF05: MOSAiC-ACA_P5_RF05_hl08
+MOSAiC-ACA_P5_RF07: MOSAiC-ACA_P5_RF07_hl01
+MOSAiC-ACA_P5_RF08: MOSAiC-ACA_P5_RF08_hl01, MOSAiC-ACA_P5_RF08_hl06, MOSAiC-ACA_P5_RF08_hl07
+MOSAiC-ACA_P5_RF09: MOSAiC-ACA_P5_RF09_hl01, MOSAiC-ACA_P5_RF09_hl09, MOSAiC-ACA_P5_RF09_md
+MOSAiC-ACA_P5_RF11: MOSAiC-ACA_P5_RF11_hl01, MOSAiC-ACA_P5_RF11_hl07, MOSAiC-ACA_P5_RF11_md
+</pre></div>
+</div>
+</div>
+</div>
+<p>Many segments are found to intersect with a 15 km radius around the AWIPEV Base. In the following example, we want to look at the flight duration within the 15 km radius.</p>
+</div>
+<div class="section" id="flight-duration-near-awipev-base">
+<h2>Flight duration near AWIPEV Base<a class="headerlink" href="#flight-duration-near-awipev-base" title="Permalink to this headline">¶</a></h2>
+<p>To calculate the distance in km between the aircraft and AWIPEV, we project the aircraft position to UTM 33N coordinates.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dist2awipev</span><span class="p">(</span><span class="n">ds_gps</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate distance of aircraft to AWIPEV Base in</span>
+<span class="sd">    UTM 33N coordinates</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="c1"># read coordinate systems</span>
+    <span class="n">crs_g</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">PlateCarree</span><span class="p">()</span>
+    <span class="n">crs_p</span> <span class="o">=</span> <span class="n">ccrs</span><span class="o">.</span><span class="n">UTM</span><span class="p">(</span><span class="n">zone</span><span class="o">=</span><span class="s1">&#39;33X&#39;</span><span class="p">)</span>
+            
+    <span class="c1"># awipev base: geographic --&gt; projected</span>
+    <span class="n">awipev_g</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">11.920833</span><span class="p">,</span> <span class="mf">78.923333</span><span class="p">]])</span>
+    <span class="n">awipev_p</span> <span class="o">=</span> <span class="n">crs_p</span><span class="o">.</span><span class="n">transform_points</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">awipev_g</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> 
+                                      <span class="n">y</span><span class="o">=</span><span class="n">awipev_g</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> 
+                                      <span class="n">src_crs</span><span class="o">=</span><span class="n">crs_g</span><span class="p">)</span>
+
+    <span class="c1"># aircraft: geographic --&gt; projected</span>
+    <span class="n">aircraft_g</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">ds_gps</span><span class="o">.</span><span class="n">lon</span><span class="o">.</span><span class="n">values</span><span class="p">,</span>
+                           <span class="n">ds_gps</span><span class="o">.</span><span class="n">lat</span><span class="o">.</span><span class="n">values</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">ix</span> <span class="o">=</span> <span class="o">~</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">aircraft_g</span><span class="p">)</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">aircraft_g</span> <span class="o">=</span> <span class="n">aircraft_g</span><span class="p">[</span><span class="n">ix</span><span class="p">,</span> <span class="p">:]</span>
+    <span class="n">aircraft_p</span> <span class="o">=</span> <span class="n">crs_p</span><span class="o">.</span><span class="n">transform_points</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">aircraft_g</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> 
+                                        <span class="n">y</span><span class="o">=</span><span class="n">aircraft_g</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> 
+                                        <span class="n">src_crs</span><span class="o">=</span><span class="n">crs_g</span><span class="p">)</span>
+    
+    <span class="c1"># distance between awipev base and aircraft in km</span>
+    <span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">aircraft_p</span><span class="o">-</span><span class="n">awipev_p</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1e-3</span>
+    
+    <span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">Dataset</span><span class="p">()</span>
+    <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ds_gps</span><span class="o">.</span><span class="n">time</span><span class="p">[</span><span class="n">ix</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+    <span class="n">ds</span><span class="p">[</span><span class="s1">&#39;dist&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;time&#39;</span><span class="p">),</span> <span class="n">d</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">ds</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using the defined function, we calculate the time, Polar5 was flying within 15 km of the AWIPEV Base.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">flights_awipev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+<span class="n">times_awipev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+
+<span class="k">for</span> <span class="n">flight_id</span><span class="p">,</span> <span class="n">flight</span> <span class="ow">in</span> <span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    
+    <span class="c1"># read gps data of flight</span>
+    <span class="n">ds_gps</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;GPS_INS&#39;</span><span class="p">][</span><span class="n">flight_id</span><span class="p">]</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
+    
+    <span class="c1"># calculate distance to AWIPEV</span>
+    <span class="n">ds_dist</span> <span class="o">=</span> <span class="n">dist2awipev</span><span class="p">(</span><span class="n">ds_gps</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">ds_dist</span><span class="p">[</span><span class="s1">&#39;dist&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">15</span><span class="p">:</span>
+        
+        <span class="n">time_sec</span> <span class="o">=</span> <span class="n">ds_dist</span><span class="p">[</span><span class="s1">&#39;dist&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">ds_dist</span><span class="p">[</span><span class="s1">&#39;dist&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">15</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+        <span class="n">times_awipev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">times_awipev</span><span class="p">,</span> <span class="n">time_sec</span><span class="o">/</span><span class="mi">60</span><span class="p">)</span>
+        
+        <span class="n">flights_awipev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">flights_awipev</span><span class="p">,</span> <span class="n">flight_id</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We display the overflight time for each research flight as bar plot.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">ix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">times_awipev</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">flights_awipev</span><span class="p">[</span><span class="n">ix</span><span class="p">],</span> <span class="n">times_awipev</span><span class="p">[</span><span class="n">ix</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Overflight duration [min]&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/awipev_overflights_15_0.png" src="../_images/awipev_overflights_15_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="vertical-cross-section-of-overflights">
+<h2>Vertical cross section of overflights<a class="headerlink" href="#vertical-cross-section-of-overflights" title="Permalink to this headline">¶</a></h2>
+<p>Using the altitude information stored in the GPS-INS dataset, we can plot a vertical cross section of the overflights as function of distance to AWIPEV.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+
+<span class="n">kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">flight_id</span><span class="p">,</span> <span class="n">flight</span> <span class="ow">in</span> <span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    
+    <span class="c1"># read gps data of flight</span>
+    <span class="n">ds_gps</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;GPS_INS&#39;</span><span class="p">][</span><span class="n">flight_id</span><span class="p">]</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
+        
+    <span class="c1"># calculate distance to AWIPEV</span>
+    <span class="n">ds_dist</span> <span class="o">=</span> <span class="n">dist2awipev</span><span class="p">(</span><span class="n">ds_gps</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">ds_dist</span><span class="p">[</span><span class="s1">&#39;dist&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">15</span><span class="p">:</span>
+        
+        <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">ds_dist</span><span class="p">[</span><span class="s1">&#39;dist&#39;</span><span class="p">],</span> <span class="n">ds_gps</span><span class="p">[</span><span class="s1">&#39;alt&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sel</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="n">ds_dist</span><span class="o">.</span><span class="n">time</span><span class="p">)</span><span class="o">*</span><span class="mf">1e-3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="n">flight_id</span><span class="p">,</span>
+                   <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Altitude [km]&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Distance to AWIPEV Base [km]&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower left&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/awipev_overflights_17_0.png" src="../_images/awipev_overflights_17_0.png" />
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./examples"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="land_ocean.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Land-ocean mask</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="../references.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">References</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By pyac3airborne community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
