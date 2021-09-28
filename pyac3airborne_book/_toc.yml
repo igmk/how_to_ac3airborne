@@ -33,5 +33,9 @@
       title: Reading the flight phase files
     - file: examples/land_ocean
       title: Land-ocean mask
+    - file: examples/awipev_overflights
+      title: AWIPEV overflights
+    - file: examples/polarstern_overflights
+      title: Polarstern overflights
   - file: references
     title: References
