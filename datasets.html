@@ -189,6 +189,11 @@
      AWIPEV overflights
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/polarstern_overflights.html">
+     Polarstern overflights
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1">
@@ -311,7 +316,7 @@
     
     <span class="c1"># set the index of flights, where a certain instrument</span>
     <span class="c1"># was not flown</span>
-    <span class="n">instr_dct</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([</span><span class="s1">&#39;P5&#39;</span><span class="p">,</span> <span class="s1">&#39;P6&#39;</span><span class="p">])</span>
+    <span class="n">instr_dct</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;P5&#39;</span><span class="p">:</span> <span class="p">{},</span> <span class="s1">&#39;P6&#39;</span><span class="p">:</span> <span class="p">{}}</span>
     <span class="n">instr_dct</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
         <span class="s1">&#39;HATPRO&#39;</span><span class="p">:</span> 
             <span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="s1">&#39;AFLUX&#39;</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="n">aircraft</span><span class="p">])],</span>
@@ -339,7 +344,7 @@
                                           <span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="p">[</span><span class="n">aircraft</span><span class="p">][</span><span class="n">dataset</span><span class="p">]))</span>
 
         <span class="c1"># replace values, where instrument was not flown</span>
-        <span class="n">ix_not_flown</span> <span class="o">=</span> <span class="n">instr_dct</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+        <span class="n">ix_not_flown</span> <span class="o">=</span> <span class="n">instr_dct</span><span class="p">[</span><span class="n">aircraft</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">ix_not_flown</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">assert</span> <span class="n">data_availability</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">ix_not_flown</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span>
             <span class="n">data_availability</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">ix_not_flown</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
