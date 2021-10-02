@@ -11,4 +11,3 @@ aiohttp
 ipyleaflet
 simplification
 ghp-import
-cartopy
