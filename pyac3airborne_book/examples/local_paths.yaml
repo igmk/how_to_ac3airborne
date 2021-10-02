@@ -1,0 +1,3 @@
+DROPSONDES: './data/dropsondes'
+BROADBAND_IRRADIANCE: '.data/broadband_irradiance'
+FISH_EYE: '.data/fish_eye'
