@@ -29,6 +29,8 @@
     title: Toolbox and Examples
     sections:
     - file: running_locally
+    - file: examples/caching_and_local_datasets
+    - title: Caching and local datasets
     - file: examples/reading_the_flight_phase_files
       title: Reading the flight phase files
     - file: examples/land_ocean
