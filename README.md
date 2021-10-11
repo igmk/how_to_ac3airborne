@@ -18,7 +18,7 @@ If you'd like to develop on and build the pyac3airborne_book book, you should:
 
 A fully-rendered HTML version of the book will be built in `pyac3airborne-book/_build/html/`.
 
-Now you need to add it to git, commit is and push it back.
+Now you need to add it to git, commit it and push it back.
 
 - `git add .`
 - `git commit -m "describe your work"`
