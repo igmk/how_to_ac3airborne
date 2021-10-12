@@ -16,7 +16,7 @@ If you'd like to develop on and build the pyac3airborne_book book, you should:
 - (Recommended) Remove the existing `pyac3airborne_book/_build/` directory
 - Run `jupyter-book build pyac3airborne_book/`
 
-A fully-rendered HTML version of the book will be built in `pyac3airborne-book/_build/html/`.
+A fully-rendered HTML version of the book will be built in `pyac3airborne_book/_build/html/`.
 
 Now you need to add it to git, commit it and push it back.
 
