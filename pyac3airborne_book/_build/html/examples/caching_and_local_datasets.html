@@ -1,0 +1,534 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Caching and local datasets &#8212; pyac3airborne-book</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Querying the flight phase files" href="reading_the_flight_phase_files.html" />
+    <link rel="prev" title="Running pyac3airborne_book locally" href="../running_locally.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">pyac3airborne-book</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="../datasets.html">
+   Datasets
+  </a>
+  <ul class="collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datasets/mirac_a.html">
+     MiRAC-A
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datasets/mirac_p.html">
+     MiRAC-P
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datasets/hatpro.html">
+     HATPRO
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datasets/amali_cloud_top_height.html">
+     AMALi
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datasets/fish_eye_camera.html">
+     Fish-eye camera
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datasets/nevzorov_and_pms.html">
+     PMS and Nevzorov
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datasets/kt19.html">
+     CMP22, CGR4 and KT-19
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datasets/dropsondes.html">
+     Dropsondes
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../datasets/gps_ins.html">
+     GPS and INS
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../flight_segmentation.html">
+   Flight-phase separation
+  </a>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="../code.html">
+   Toolbox and examples
+  </a>
+  <ul class="current collapse-ul">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../running_locally.html">
+     Running pyac3airborne_book locally
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Caching and local datasets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="reading_the_flight_phase_files.html">
+     Querying the flight phase files
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="land_ocean.html">
+     Land-ocean mask
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="awipev_overflights.html">
+     AWIPEV overflights
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="polarstern_overflights.html">
+     Polarstern overflights
+    </a>
+   </li>
+  </ul>
+  <i class="fas fa-chevron-down">
+  </i>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../references.html">
+   References
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/examples/caching_and_local_datasets.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/igmk/pyac3airborne_book/main?urlpath=tree/pyac3airborne_book/examples/caching_and_local_datasets.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loading-the-intake-catalog">
+   Loading the intake catalog
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-dropsonde-data">
+   Example: Dropsonde data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#option-1-download-into-temporary-folder">
+     Option 1: Download into temporary folder
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#option-2-permanent-download-into-local-directory">
+     Option 2: Permanent download into local directory
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#managing-directories-of-multiple-datasets">
+   Managing directories of multiple datasets
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="caching-and-local-datasets">
+<h1>Caching and local datasets<a class="headerlink" href="#caching-and-local-datasets" title="Permalink to this headline">¶</a></h1>
+<p>Datasets accessed via the intake catalog can be either downloaded into a temporary folder, from where they will be deleted after restarting python, or permanently into a specified directory. If the dataset is already contained within the specified directory, intake will load the data from the local source, instead of downloading it again from the remote server. This is recommended for large datasets or datasets which are used regularily.</p>
+<p>The following example shows, how to supply local directories to intake using the <code class="docutils literal notranslate"><span class="pre">simplecache</span></code> functionality. Directories of many local datasets are suggested to be stored in a single <code class="docutils literal notranslate"><span class="pre">.yaml</span></code> file to avoid the specification of local directories within the python routines.</p>
+<div class="section" id="loading-the-intake-catalog">
+<h2>Loading the intake catalog<a class="headerlink" href="#loading-the-intake-catalog" title="Permalink to this headline">¶</a></h2>
+<p>We load the intake catalog from ac3airborne, which contains paths to the remote servers, where files are stored.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ac3airborne</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">=</span> <span class="n">ac3airborne</span><span class="o">.</span><span class="n">get_intake_catalog</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="example-dropsonde-data">
+<h2>Example: Dropsonde data<a class="headerlink" href="#example-dropsonde-data" title="Permalink to this headline">¶</a></h2>
+<p>The caching functionality will be demonstrated with the dropsonde data published online on the PANGAEA data base. The file of the dataset on PANGAEA is contained in the intake catalog.</p>
+<div class="section" id="option-1-download-into-temporary-folder">
+<h3>Option 1: Download into temporary folder<a class="headerlink" href="#option-1-download-into-temporary-folder" title="Permalink to this headline">¶</a></h3>
+<p>The download into the temporary folder is the default behaviour. Usually the dataset is stored in the <code class="docutils literal notranslate"><span class="pre">/tmp</span></code> directory.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_dsd</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;DROPSONDES&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF23&#39;</span><span class="p">](</span><span class="n">i_sonde</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>By default, the variable name is not readable. By setting the parameter <code class="docutils literal notranslate"><span class="pre">same_names</span></code> of the <code class="docutils literal notranslate"><span class="pre">simplecache</span></code> group to <em>True</em> and supplying it to the <code class="docutils literal notranslate"><span class="pre">storage_options</span></code> parameter, the downloaded file has the same file name as the remote file (i.e. the file on PANGAEA).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kwds</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;simplecache&#39;</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span>
+    <span class="n">same_names</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_dsd</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;DROPSONDES&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF23&#39;</span><span class="p">](</span><span class="n">i_sonde</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="n">kwds</span><span class="p">)</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="option-2-permanent-download-into-local-directory">
+<h3>Option 2: Permanent download into local directory<a class="headerlink" href="#option-2-permanent-download-into-local-directory" title="Permalink to this headline">¶</a></h3>
+<p>Under the <code class="docutils literal notranslate"><span class="pre">storage_options</span></code> parameter, we can also specify the local directory of the dataset. The path will be supplied to the <code class="docutils literal notranslate"><span class="pre">same_names</span></code> parameter of the <code class="docutils literal notranslate"><span class="pre">simplecache</span></code> group as shown below. If the remote file is contained in the local directory, the local file will be read. Else, the remote file will be downloaded and stored at the specified location permanently. The next time, the data is imported, intake will use the local file.</p>
+<p>Here, we will store the data relative to the current working directory at <code class="docutils literal notranslate"><span class="pre">./data/dropsondes</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kwds</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;simplecache&#39;</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span>
+    <span class="n">cache_storage</span><span class="o">=</span><span class="s1">&#39;./data/dropsondes&#39;</span><span class="p">,</span> 
+    <span class="n">same_names</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_dsd</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;DROPSONDES&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF23&#39;</span><span class="p">](</span><span class="n">i_sonde</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="n">kwds</span><span class="p">)</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="managing-directories-of-multiple-datasets">
+<h2>Managing directories of multiple datasets<a class="headerlink" href="#managing-directories-of-multiple-datasets" title="Permalink to this headline">¶</a></h2>
+<p>Datasets may be stored locally in different directories. Instead of specifying the directory in every python script, we can use one file, where all paths are stored for each dataset. Here, we will use a <code class="docutils literal notranslate"><span class="pre">yaml</span></code> file, as it can be read easily into a python dictionary.</p>
+<p>The file may be structured like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DROPSONDES</span><span class="p">:</span> <span class="s1">&#39;/local/path/to/dropsondes&#39;</span>
+<span class="n">BROADBAND_IRRADIANCE</span><span class="p">:</span> <span class="s1">&#39;/local/path/to/broadband_irradiance&#39;</span>
+<span class="n">FISH_EYE</span><span class="p">:</span> <span class="s1">&#39;/local/path/to/fish_eye&#39;</span>
+</pre></div>
+</div>
+<p>In the following, the data will be downloaded in or used from the local <em>./data</em> folder of the current working directory.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">yaml</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we read the pre-defined yaml file</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./local_datasets.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">local_dir</span> <span class="o">=</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">local_dir</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;DROPSONDES&#39;: &#39;./data/dropsondes&#39;, &#39;BROADBAND_IRRADIANCE&#39;: &#39;./data/broadband_irradiance&#39;, &#39;FISH_EYE&#39;: &#39;./data/fish_eye&#39;}
+</pre></div>
+</div>
+</div>
+</div>
+<p>As a test, we will download the dropsonde data from ACLOUD RF05.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="s1">&#39;DROPSONDES&#39;</span>
+<span class="n">flight_id</span> <span class="o">=</span> <span class="s1">&#39;ACLOUD_P5_RF05&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can access the directory, where the data is stored using the dataset name.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">local_dir</span><span class="p">[</span><span class="n">dataset</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>./data/dropsondes
+</pre></div>
+</div>
+</div>
+</div>
+<p>We add the path now to the <code class="docutils literal notranslate"><span class="pre">storage_options</span></code> parameter.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kwds</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;simplecache&#39;</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span>
+    <span class="n">cache_storage</span><span class="o">=</span><span class="n">local_dir</span><span class="p">[</span><span class="n">dataset</span><span class="p">],</span> 
+    <span class="n">same_names</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we download or use the local dropsonde file. Afterwards, check if the directory <code class="docutils literal notranslate"><span class="pre">.data/dropsondes</span></code> was created and contains the file <code class="docutils literal notranslate"><span class="pre">DS_ACLOUD_Flight_05_20170525_V2.nc</span></code>. If the directory and the file already exist, the local file will be read.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">cat</span><span class="o">.</span><span class="n">P5</span><span class="p">[</span><span class="n">dataset</span><span class="p">][</span><span class="n">flight_id</span><span class="p">](</span><span class="n">i_sonde</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="n">kwds</span><span class="p">)</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./examples"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="../running_locally.html" title="previous page">Running pyac3airborne_book locally</a>
+    <a class='right-next' id="next-link" href="reading_the_flight_phase_files.html" title="next page">Querying the <em>flight phase files</em></a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By pyac3airborne community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
+  </body>
+</html>
