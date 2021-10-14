@@ -5,10 +5,9 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>running pyac3airborne_book locally &#8212; pyac3airborne-book</title>
+    <title>Running pyac3airborne_book locally &#8212; pyac3airborne-book</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -20,10 +19,14 @@
 
     
       
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -31,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -41,10 +44,10 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
@@ -53,16 +56,16 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Querying the flight phase files" href="examples/reading_the_flight_phase_files.html" />
-    <link rel="prev" title="Code examples to work with the data" href="code.html" />
+    <link rel="next" title="Caching and local datasets" href="examples/caching_and_local_datasets.html" />
+    <link rel="prev" title="Toolbox and examples" href="code.html" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-    
+
+
+
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
-
     
 
     <div class="container-xl">
@@ -71,42 +74,32 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">pyac3airborne-book</h1>
-      
-    </a>
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">pyac3airborne-book</h1>
+  
+</a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
    Introduction
   </a>
  </li>
 </ul>
-<ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="campaigns.html">
-   Campaigns
-  </a>
- </li>
- <li class="toctree-l1 has-children">
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="datasets.html">
    Datasets
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
+  <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="datasets/mirac_a.html">
      MiRAC-A
@@ -129,7 +122,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="datasets/fish_eye_camera.html">
-     Fish-eye Camera
+     Fish-eye camera
     </a>
    </li>
    <li class="toctree-l2">
@@ -139,7 +132,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="datasets/kt19.html">
-     KT-19
+     CMP22, CGR4 and KT-19
     </a>
    </li>
    <li class="toctree-l2">
@@ -149,34 +142,36 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="datasets/gps_ins.html">
-     GPS/INS
+     GPS and INS
     </a>
    </li>
   </ul>
+  <i class="fas fa-chevron-down">
+  </i>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="flight_segmentation.html">
    Flight-phase separation
   </a>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="code.html">
-   Toolbox and Examples
+   Toolbox and examples
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
+  <ul class="current collapse-ul">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     running pyac3airborne_book locally
+     Running pyac3airborne_book locally
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/caching_and_local_datasets.html">
+     Caching and local datasets
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="examples/reading_the_flight_phase_files.html">
-     Reading the flight phase files
+     Querying the flight phase files
     </a>
    </li>
    <li class="toctree-l2">
@@ -195,6 +190,8 @@
     </a>
    </li>
   </ul>
+  <i class="fas fa-chevron-down">
+  </i>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="references.html">
@@ -203,7 +200,6 @@
  </li>
 </ul>
 
-    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -253,12 +249,12 @@
 
             <!-- Source interaction buttons -->
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -267,49 +263,50 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#quick-and-dirty">
-   quick and dirty
+   Quick and dirty
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#via-git">
-   via git
+   Via git
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#interactive">
-     interactive
+     Interactive
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#compile-the-book">
-     compile the book
+     Compile the book
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#adding-new-articles">
-     adding new articles
+     Adding new articles
     </a>
     <ul class="nav section-nav flex-column">
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#text-articles">
-       text articles
+       Text articles
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#executable-notebook">
-       executable notebook
+       Executable notebook
       </a>
      </li>
      <li class="toc-h4 nav-item toc-entry">
       <a class="reference internal nav-link" href="#entry-in-the-table-of-contents">
-       entry in the table of contents
+       Entry in the table of contents
       </a>
      </li>
     </ul>
@@ -318,7 +315,8 @@
  </li>
 </ul>
 
-            </nav>
+        </nav>
+        
         </div>
     </div>
 </div>
@@ -328,7 +326,7 @@
               <div>
                 
   <div class="section" id="running-pyac3airborne-book-locally">
-<h1>running pyac3airborne_book locally<a class="headerlink" href="#running-pyac3airborne-book-locally" title="Permalink to this headline">¶</a></h1>
+<h1>Running pyac3airborne_book locally<a class="headerlink" href="#running-pyac3airborne-book-locally" title="Permalink to this headline">¶</a></h1>
 <p>There are multiple options to run the Code examples from this book locally.
 In any case, it will involve the following steps:</p>
 <ul class="simple">
@@ -339,7 +337,7 @@ In any case, it will involve the following steps:</p>
 </ul>
 <p>You can decide between the <a class="reference external" href="#quick-and-dirty">quick an dirty</a> method and the method <a class="reference external" href="#via-git">using <code class="docutils literal notranslate"><span class="pre">git</span></code></a>, which will also set you up to contribute to the book.</p>
 <div class="section" id="quick-and-dirty">
-<h2>quick and dirty<a class="headerlink" href="#quick-and-dirty" title="Permalink to this headline">¶</a></h2>
+<h2>Quick and dirty<a class="headerlink" href="#quick-and-dirty" title="Permalink to this headline">¶</a></h2>
 <p>If you just like to run the code of a single notebook and don’t care to much about the details, the quickest option might be to download the chapter you are viewing as an ipython notebook (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) via the download button (<i class="fas fa-download"></i>) on the top right of the page. If you don’t see the <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> option here, that’s because the source of the page can not be interpreted as a notebook and thus is not available for direct execution.</p>
 <p>If you would just run the downloaded code, the chance is high that some required libraries are not yet installed on your system. You can either do try and error to find out which libraries are required for the chapter you downloaded, or you can simply installed all requirements for the entire book by running the following command on your command line:</p>
 <p>Using pip</p>
@@ -357,18 +355,18 @@ their dependencies well.</p>
 </div>
 </div>
 <div class="section" id="via-git">
-<h2>via git<a class="headerlink" href="#via-git" title="Permalink to this headline">¶</a></h2>
+<h2>Via git<a class="headerlink" href="#via-git" title="Permalink to this headline">¶</a></h2>
 <p>If you like to do it more properly, you can also clone the repository via git. Depending on if you have SSH public key authentication set up or not, you can do this via SSH or HTTPS:</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="e0bb89aa-8fdf-47ee-acd8-5c43fdc2b905" name="47a6fc72-9e6d-4ef5-82de-ee672b495828" type="radio">
-</input><label class="tabbed-label" for="e0bb89aa-8fdf-47ee-acd8-5c43fdc2b905">
+<input checked="checked" id="b1168b90-3751-44f3-93bc-5f55a640ea00" name="3c90779f-a8b2-4272-86c5-600fa273e173" type="radio">
+</input><label class="tabbed-label" for="b1168b90-3751-44f3-93bc-5f55a640ea00">
 SSH</label><div class="tabbed-content docutils">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone git@github.com:igmk/pyac3airborne_book.git
 </pre></div>
 </div>
 </div>
-<input id="64362bad-c2a9-4456-98ca-4708416c3bf9" name="47a6fc72-9e6d-4ef5-82de-ee672b495828" type="radio">
-</input><label class="tabbed-label" for="64362bad-c2a9-4456-98ca-4708416c3bf9">
+<input id="d2f5d413-01f3-479c-b715-25a544a1cbcd" name="3c90779f-a8b2-4272-86c5-600fa273e173" type="radio">
+</input><label class="tabbed-label" for="d2f5d413-01f3-479c-b715-25a544a1cbcd">
 HTTPS</label><div class="tabbed-content docutils">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/igmk/pyac3airborne_book.git
 </pre></div>
@@ -386,7 +384,7 @@ Using virtualenv, you could create and activate an environment like:</p>
 . venv/bin/activate
 </pre></div>
 </div>
-<p>and the continue normally.</p>
+<p>and then continue normally.</p>
 </div>
 <p>You’ll have to install the dependencies as above, but as you already have all the files on your machine, you can also install it directly via:</p>
 <p>Using pip</p>
@@ -398,7 +396,7 @@ pip install -r requirements.txt
 their dependencies well.</p>
 <p>Depending on your needs, you can continue using <a class="reference external" href="#interactive">interactive notebooks</a> or <a class="reference external" href="#compile-the-book">compile the entire book</a>.</p>
 <div class="dropdown admonition">
-<p class="admonition-title">About MyST notebooks.</p>
+<p class="admonition-title">About MyST notebooks</p>
 <p>Internally, the book does not use the <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> file format as it is not well-suited for version control.
 Instead, we use <a class="reference external" href="https://myst-parser.readthedocs.io/">Markedly Structured Text</a> or MyST which is a variant of Markdown, optimized to contain executable code cells as in notebooks.
 The extension of MyST files is <code class="docutils literal notranslate"><span class="pre">.md</span></code>.
@@ -408,7 +406,7 @@ It is installed through the <code class="docutils literal notranslate"><span cla
 If that does not work, please have a look at the <a class="reference external" href="https://jupytext.readthedocs.io/en/latest/install.html">installation instructions</a> of <code class="docutils literal notranslate"><span class="pre">jupytext</span></code>.</p>
 </div>
 <div class="section" id="interactive">
-<h3>interactive<a class="headerlink" href="#interactive" title="Permalink to this headline">¶</a></h3>
+<h3>Interactive<a class="headerlink" href="#interactive" title="Permalink to this headline">¶</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">jupyter</span></code> itself is not installed by the requirements file. If you’re using <code class="docutils literal notranslate"><span class="pre">pip</span></code> you might want to install it as well:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install jupyter
 </pre></div>
@@ -440,7 +438,7 @@ If that does not work, please have a look at the <a class="reference external" h
 </div>
 </div>
 <div class="section" id="compile-the-book">
-<h3>compile the book<a class="headerlink" href="#compile-the-book" title="Permalink to this headline">¶</a></h3>
+<h3>Compile the book<a class="headerlink" href="#compile-the-book" title="Permalink to this headline">¶</a></h3>
 <p>You can also execute <code class="docutils literal notranslate"><span class="pre">jupyter-book</span></code> directly via:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jb build pyac3airborne_book
 </pre></div>
@@ -449,15 +447,15 @@ If that does not work, please have a look at the <a class="reference external" h
 This variant is especially useful if you like to work directly on the MyST files (see note below) using a text editor and should be done every time before you submit new changes to the book.</p>
 </div>
 <div class="section" id="adding-new-articles">
-<h3>adding new articles<a class="headerlink" href="#adding-new-articles" title="Permalink to this headline">¶</a></h3>
+<h3>Adding new articles<a class="headerlink" href="#adding-new-articles" title="Permalink to this headline">¶</a></h3>
 <p>Articles are generated from markdown files within the <code class="docutils literal notranslate"><span class="pre">pyac3airborne_book</span></code> folder of the git repository.
 The following instructions assume that you are working in that directory.</p>
 <div class="section" id="text-articles">
-<h4>text articles<a class="headerlink" href="#text-articles" title="Permalink to this headline">¶</a></h4>
+<h4>Text articles<a class="headerlink" href="#text-articles" title="Permalink to this headline">¶</a></h4>
 <p>Text articles can be created by adding standard markdown files using your favourite text editor.</p>
 </div>
 <div class="section" id="executable-notebook">
-<h4>executable notebook<a class="headerlink" href="#executable-notebook" title="Permalink to this headline">¶</a></h4>
+<h4>Executable notebook<a class="headerlink" href="#executable-notebook" title="Permalink to this headline">¶</a></h4>
 <p>If you want to add a new notebook, you can either start out from an existing <strong>MyST</strong> Markdown file by copying and modifying it, or you can create a new one from the jupyter notebook menu using <code class="docutils literal notranslate"><span class="pre">File</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">New</span> <span class="pre">Text</span> <span class="pre">Notebook</span></code> &gt; <code class="docutils literal notranslate"><span class="pre">MyST</span> <span class="pre">Markdown</span></code>.
 If you already have an existing ipython notebook and want to convert it to <strong>MyST</strong>, you can do this by running</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupytext --to myst your_notebook.ipynb
@@ -467,7 +465,7 @@ If you already have an existing ipython notebook and want to convert it to <stro
 After conversion, the <code class="docutils literal notranslate"><span class="pre">ipynb</span></code> file is not needed anymore and it should not be committed into the repository.</p>
 </div>
 <div class="section" id="entry-in-the-table-of-contents">
-<h4>entry in the table of contents<a class="headerlink" href="#entry-in-the-table-of-contents" title="Permalink to this headline">¶</a></h4>
+<h4>Entry in the table of contents<a class="headerlink" href="#entry-in-the-table-of-contents" title="Permalink to this headline">¶</a></h4>
 <p>After preparing your article or notebook, you’ll have to add it into the table of contents, such that it will actually show up in the compiled book.
 You can do this by modifying <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>, where you can add the articles file name without suffix.</p>
 </div>
@@ -498,32 +496,12 @@ You can do this by modifying <code class="docutils literal notranslate"><span cl
               </div>
               
         
+        <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="code.html" title="previous page">Toolbox and examples</a>
+    <a class='right-next' id="next-link" href="examples/caching_and_local_datasets.html" title="next page">Caching and local datasets</a>
 
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="code.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Code examples to work with the data</p>
-            </div>
-        </a>
-    </div>
-     <div id="next">
-        <a class="right-next" href="examples/reading_the_flight_phase_files.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Querying the <em>flight phase files</em></p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
-</div>
+        </div>
         
         </div>
     </div>
@@ -542,9 +520,11 @@ You can do this by modifying <code class="docutils literal notranslate"><span cl
 
       </div>
     </div>
-  
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-  
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
   </body>
 </html>
