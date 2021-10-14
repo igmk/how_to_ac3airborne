@@ -1,13 +1,13 @@
 jupyter-book==0.10.1 # New toc structure
-jupytext
-matplotlib
-numpy
-xarray
-intake[dataframe] # since intake 0.6.1 to_dask() doesn't work anymore without the [dataframe] specification due to a missing msgpack dependency
-intake-xarray
-h5netcdf
+jupytext==1.10.3
+matplotlib==3.3.4
+numpy==1.20.1
+xarray==0.17.0
+intake[dataframe]==0.6.0 # since intake 0.6.1 to_dask() doesn't work anymore without the [dataframe] specification due to a missing msgpack dependency
+intake-xarray==0.4.1
+h5netcdf==0.7.1
 fsspec!=0.9.0 # 0.9.0 has a bug which leads to incomplete reads via HTTP
-aiohttp
-ipyleaflet
-simplification
-ghp-import
+aiohttp==3.7.4.post0
+ipyleaflet==0.13.6
+simplification==0.5.12
+ghp-import==1.1.0
