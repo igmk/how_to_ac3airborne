@@ -1,3 +1,6 @@
 **/.nfs*
-pyac3airborne_book/_build
+.ipynb_checkpoints
+_build
+.DS_Store
+pyac3airborne_book/_build/
 pyac3airborne_book/examples/data
