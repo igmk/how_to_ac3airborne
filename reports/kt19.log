@@ -38,6 +38,6 @@ ds_broad_irr
 [0m[1;32m    136[0m                     [0;34m"argument name %r is not in the set of valid options %r"[0m[0;34m[0m[0;34m[0m[0m
 [1;32m    137[0m                     [0;34m%[0m [0;34m([0m[0mk[0m[0;34m,[0m [0mset[0m[0;34m([0m[0mOPTIONS[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mValueError[0m: argument name 'display_expand_attrs' is not in the set of valid options {'enable_cftimeindex', 'file_cache_maxsize', 'display_style', 'cmap_divergent', 'arithmetic_join', 'keep_attrs', 'display_width', 'cmap_sequential', 'display_max_rows', 'warn_for_unclosed_files'}
-ValueError: argument name 'display_expand_attrs' is not in the set of valid options {'enable_cftimeindex', 'file_cache_maxsize', 'display_style', 'cmap_divergent', 'arithmetic_join', 'keep_attrs', 'display_width', 'cmap_sequential', 'display_max_rows', 'warn_for_unclosed_files'}
+[0;31mValueError[0m: argument name 'display_expand_attrs' is not in the set of valid options {'display_width', 'cmap_divergent', 'cmap_sequential', 'display_max_rows', 'display_style', 'file_cache_maxsize', 'arithmetic_join', 'enable_cftimeindex', 'keep_attrs', 'warn_for_unclosed_files'}
+ValueError: argument name 'display_expand_attrs' is not in the set of valid options {'display_width', 'cmap_divergent', 'cmap_sequential', 'display_max_rows', 'display_style', 'file_cache_maxsize', 'arithmetic_join', 'enable_cftimeindex', 'keep_attrs', 'warn_for_unclosed_files'}
 
