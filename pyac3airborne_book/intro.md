@@ -12,6 +12,14 @@ The campaigns handled in the online description are:
 - Airborne measurements of radiative and turbulent FLUXes of energy and momentum in the Arctic boundary layer [AFLUX](https://home.uni-leipzig.de/~ehrlich/AFLUX_wiki_doku/doku.php?id=start) (data at {cite:t}`MechCollectionDataSets2021`)
 - MOSAiC Airborne observations in the Central Arctic [MOSAiC-ACA](https://home.uni-leipzig.de/~ehrlich/MOSAiC_ACA_wiki_doku/doku.php?id=start) (data at {cite:t}`MechCollectionDataSets2021a`)
 
+```{figure} img/tracks.png
+---
+height: 250px
+name: directive-fig
+---
+Flight tracks of the ACLOUD (left), AFLUX (center), and MOSAiC-ACA (right) campaigns.
+```
+
 During [ACLOUD](https://home.uni-leipzig.de/~ehrlich/ACLOUD_wiki_doku/doku.php) the campaign Physical feedback of Arctic PBL, Sea ice, Cloud And AerosoL (PASCAL) was conducted by the research vessel Polarstern. This will be important for analyzing Polarstern overflights.
 
 ## Some links
