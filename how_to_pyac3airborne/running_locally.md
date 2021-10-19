@@ -1,4 +1,4 @@
-# Running pyac3airborne_book locally
+# Running how_to_pyac3airborne locally
 
 There are multiple options to run the Code examples from this book locally.
 In any case, it will involve the following steps:
@@ -18,7 +18,7 @@ Using pip
 
 ```bash
 pip install jupyter
-pip install -r https://raw.githubusercontent.com/igmk/pyac3airborne_book/main/requirements.txt
+pip install -r https://raw.githubusercontent.com/igmk/how_to_pyac3airborne/main/requirements.txt
 pip install -i https://test.pypi.org/simple/ ac3airborne
 ```
 +++
@@ -37,17 +37,17 @@ If you like to do it more properly, you can also clone the repository via git. D
 
 ````{tabbed} SSH
 ```bash
-git clone git@github.com:igmk/pyac3airborne_book.git
+git clone git@github.com:igmk/how_to_pyac3airborne.git
 ```
 ````
 
 ````{tabbed} HTTPS
 ```bash
-git clone https://github.com/igmk/pyac3airborne_book.git
+git clone https://github.com/igmk/how_to_pyac3airborne.git
 ```
 ````
 
-This will create a local copy of the entire book repository in a newly created local folder `pyac3airbrone_book`.
+This will create a local copy of the entire book repository in a newly created local folder `how_to_pyac3airborne`.
 Please change into this directory.
 
 ````{admonition} Maybe use a virtual environment
@@ -110,13 +110,13 @@ jupyter lab
 ### Compile the book
 You can also execute `jupyter-book` directly via:
 ```bash
-jb build pyac3airborne_book
+jb build how_to_pyac3airborne
 ```
 which itself will run all code cells and output the results as HTML pages in a newly created folder.
 This variant is especially useful if you like to work directly on the MyST files (see note below) using a text editor and should be done every time before you submit new changes to the book.
 
 ### Adding new articles
-Articles are generated from markdown files within the `pyac3airborne_book` folder of the git repository.
+Articles are generated from markdown files within the `how_to_pyac3airborne` folder of the git repository.
 The following instructions assume that you are working in that directory.
 
 #### Text articles

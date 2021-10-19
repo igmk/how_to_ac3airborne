@@ -27,7 +27,7 @@
     title: Toolbox and examples
     sections:
     - file: running_locally
-      title: Running pyac3airborne_book locally
+      title: Running how_to_pyac3airborne locally
     - file: examples/caching_and_local_datasets
       title: Caching and local datasets
     - file: examples/reading_the_flight_phase_files
