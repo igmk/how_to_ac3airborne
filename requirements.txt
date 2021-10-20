@@ -11,3 +11,4 @@ aiohttp==3.7.4.post0
 ipyleaflet==0.13.6
 simplification==0.5.12
 ghp-import==1.1.0
+sphinxcontrib-bibtex==2.2.0
