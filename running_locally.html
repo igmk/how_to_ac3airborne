@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Running how_to_pyac3airborne locally &#8212; how_to_pyac3airborne</title>
+    <title>Running how_to_ac3airborne locally &#8212; how_to_ac3airborne</title>
     
   <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
@@ -79,7 +79,7 @@
   <img src="_static/logo.png" class="logo" alt="logo">
   
   
-  <h1 class="site-logo" id="site-title">how_to_pyac3airborne</h1>
+  <h1 class="site-logo" id="site-title">how_to_ac3airborne</h1>
   
 </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -161,7 +161,7 @@
   <ul class="current collapse-ul">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Running how_to_pyac3airborne locally
+     Running how_to_ac3airborne locally
     </a>
    </li>
    <li class="toctree-l2">
@@ -325,8 +325,8 @@
         
               <div>
                 
-  <div class="section" id="running-how-to-pyac3airborne-locally">
-<h1>Running how_to_pyac3airborne locally<a class="headerlink" href="#running-how-to-pyac3airborne-locally" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="running-how-to-ac3airborne-locally">
+<h1>Running how_to_ac3airborne locally<a class="headerlink" href="#running-how-to-ac3airborne-locally" title="Permalink to this headline">¶</a></h1>
 <p>There are multiple options to run the Code examples from this book locally.
 In any case, it will involve the following steps:</p>
 <ul class="simple">
@@ -342,7 +342,7 @@ In any case, it will involve the following steps:</p>
 <p>If you would just run the downloaded code, the chance is high that some required libraries are not yet installed on your system. You can either do try and error to find out which libraries are required for the chapter you downloaded, or you can simply installed all requirements for the entire book by running the following command on your command line:</p>
 <p>Using pip</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install jupyter
-pip install -r https://raw.githubusercontent.com/igmk/how_to_pyac3airborne/main/requirements.txt
+pip install -r https://raw.githubusercontent.com/igmk/how_to_ac3airborne/main/requirements.txt
 pip install -i https://test.pypi.org/simple/ ac3airborne
 </pre></div>
 </div>
@@ -358,22 +358,22 @@ their dependencies well.</p>
 <h2>Via git<a class="headerlink" href="#via-git" title="Permalink to this headline">¶</a></h2>
 <p>If you like to do it more properly, you can also clone the repository via git. Depending on if you have SSH public key authentication set up or not, you can do this via SSH or HTTPS:</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="90fe6e86-a48c-4e05-b9d1-fa5cff47dac6" name="7f8a359c-d90e-4aaf-8d33-dd00b5557072" type="radio">
-</input><label class="tabbed-label" for="90fe6e86-a48c-4e05-b9d1-fa5cff47dac6">
+<input checked="checked" id="2987f75a-9bc2-450d-bb51-aefbaea8ac2d" name="8ea7cd4f-7a57-4482-ba05-e6295c8628c9" type="radio">
+</input><label class="tabbed-label" for="2987f75a-9bc2-450d-bb51-aefbaea8ac2d">
 SSH</label><div class="tabbed-content docutils">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone git@github.com:igmk/how_to_pyac3airborne.git
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone git@github.com:igmk/how_to_ac3airborne.git
 </pre></div>
 </div>
 </div>
-<input id="e009636e-9238-40fa-bf40-bc46b898c65d" name="7f8a359c-d90e-4aaf-8d33-dd00b5557072" type="radio">
-</input><label class="tabbed-label" for="e009636e-9238-40fa-bf40-bc46b898c65d">
+<input id="2abf98e8-86f4-4c73-9599-092ece7bb49b" name="8ea7cd4f-7a57-4482-ba05-e6295c8628c9" type="radio">
+</input><label class="tabbed-label" for="2abf98e8-86f4-4c73-9599-092ece7bb49b">
 HTTPS</label><div class="tabbed-content docutils">
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/igmk/how_to_pyac3airborne.git
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/igmk/how_to_ac3airborne.git
 </pre></div>
 </div>
 </div>
 </div>
-<p>This will create a local copy of the entire book repository in a newly created local folder <code class="docutils literal notranslate"><span class="pre">how_to_pyac3airborne</span></code>.
+<p>This will create a local copy of the entire book repository in a newly created local folder <code class="docutils literal notranslate"><span class="pre">how_to_ac3airborne</span></code>.
 Please change into this directory.</p>
 <div class="dropdown tip admonition">
 <p class="admonition-title">Maybe use a virtual environment</p>
@@ -440,7 +440,7 @@ If that does not work, please have a look at the <a class="reference external" h
 <div class="section" id="compile-the-book">
 <h3>Compile the book<a class="headerlink" href="#compile-the-book" title="Permalink to this headline">¶</a></h3>
 <p>You can also execute <code class="docutils literal notranslate"><span class="pre">jupyter-book</span></code> directly via:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jb build how_to_pyac3airborne
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jb build how_to_ac3airborne
 </pre></div>
 </div>
 <p>which itself will run all code cells and output the results as HTML pages in a newly created folder.
@@ -448,7 +448,7 @@ This variant is especially useful if you like to work directly on the MyST files
 </div>
 <div class="section" id="adding-new-articles">
 <h3>Adding new articles<a class="headerlink" href="#adding-new-articles" title="Permalink to this headline">¶</a></h3>
-<p>Articles are generated from markdown files within the <code class="docutils literal notranslate"><span class="pre">how_to_pyac3airborne</span></code> folder of the git repository.
+<p>Articles are generated from markdown files within the <code class="docutils literal notranslate"><span class="pre">how_to_ac3airborne</span></code> folder of the git repository.
 The following instructions assume that you are working in that directory.</p>
 <div class="section" id="text-articles">
 <h4>Text articles<a class="headerlink" href="#text-articles" title="Permalink to this headline">¶</a></h4>
@@ -509,7 +509,7 @@ You can do this by modifying <code class="docutils literal notranslate"><span cl
     <div class="container">
       <p>
         
-          By pyac3airborne community<br/>
+          By ac3airborne community<br/>
         
             &copy; Copyright 2021.<br/>
       </p>
