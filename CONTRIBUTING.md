@@ -25,8 +25,8 @@ and "help wanted" is open to whoever wants to implement it.
 
 ## Write Documentation
 
-how_to_pyac3airborne could always use more documentation, whether as part of the
-official how_to_pyac3airborne docs, in docstrings, or even on the web in blog posts,
+how_to_ac3airborne could always use more documentation, whether as part of the
+official how_to_ac3airborne docs, in docstrings, or even on the web in blog posts,
 articles, and such.
 
 ## Submit Feedback
@@ -42,7 +42,7 @@ If you are proposing a feature:
 
 ## Get Started
 
-Ready to contribute? Here's how to set up `how_to_pyac3airborne` for local development.
+Ready to contribute? Here's how to set up `how_to_ac3airborne` for local development.
 
 1. Fork the repo on GitHub.
 2. Clone your fork locally.
@@ -53,4 +53,4 @@ Ready to contribute? Here's how to set up `how_to_pyac3airborne` for local devel
 
 ## Code of Conduct
 
-Please note that the how_to_pyac3airborne project is released with a [Contributor Code of Conduct](CONDUCT.md). By contributing to this project you agree to abide by its terms.
+Please note that the how_to_ac3airborne project is released with a [Contributor Code of Conduct](CONDUCT.md). By contributing to this project you agree to abide by its terms.
