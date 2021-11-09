@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AMALi cloud top height &#8212; how_to_ac3airborne</title>
     
-  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
 
     
   <link rel="stylesheet"
@@ -19,14 +20,10 @@
 
     
       
-  <link rel="stylesheet"
-    href="../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -34,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -44,10 +41,10 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
@@ -58,14 +55,14 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Fish-eye camera" href="fish_eye_camera.html" />
     <link rel="prev" title="HATPRO" href="hatpro.html" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-
-
-
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -74,32 +71,37 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../index.html">
-  
-  <img src="../_static/logo.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">how_to_ac3airborne</h1>
-  
-</a>
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">how_to_ac3airborne</h1>
+      
+    </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
    Introduction
   </a>
  </li>
 </ul>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active collapsible-parent">
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="../datasets.html">
    Datasets
   </a>
-  <ul class="current collapse-ul">
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="mirac_a.html">
      MiRAC-A
@@ -146,19 +148,22 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../flight_segmentation.html">
    Flight-phase separation
   </a>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../code.html">
    Toolbox and examples
   </a>
-  <ul class="collapse-ul">
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../running_locally.html">
      Running how_to_ac3airborne locally
@@ -190,8 +195,6 @@
     </a>
    </li>
   </ul>
-  <i class="fas fa-chevron-down">
-  </i>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../references.html">
@@ -200,6 +203,7 @@
  </li>
 </ul>
 
+    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -249,12 +253,12 @@
 
             <!-- Source interaction buttons -->
 
-
             <!-- Full screen (wrap in <a> to have style consistency -->
-            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                    title="Fullscreen mode"><i
-                        class="fas fa-expand"></i></button></a>
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -280,12 +284,11 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i>
-            Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#data-access">
    Data access
@@ -308,8 +311,7 @@
  </li>
 </ul>
 
-        </nav>
-        
+            </nav>
         </div>
     </div>
 </div>
@@ -392,6 +394,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No protocol specified
+No protocol specified
+</pre></div>
+</div>
 <div class="output text_html"><div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
 <defs>
 <symbol id="icon-database" viewBox="0 0 32 32">
@@ -763,10 +769,10 @@ Attributes:
     instruments:  AMALi
     version:      v0.1
     author:       Birte Kulla birte.kulla@uni-koeln.de
-    title:        Cloud top height along flight path</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-23447f51-aa59-4b0d-84ad-76d0648f3c2e' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-23447f51-aa59-4b0d-84ad-76d0648f3c2e' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 11895</li><li><span class='xr-has-index'>cloud_layer</span>: 10</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-4f630567-3a46-449f-9d60-9eaf3d141309' class='xr-section-summary-in' type='checkbox'  checked><label for='section-4f630567-3a46-449f-9d60-9eaf3d141309' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2017-05-27T13:05:00 ... 2017-05-...</div><input id='attrs-d32109d6-2f8e-41ba-8d86-045ca0d02c59' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-d32109d6-2f8e-41ba-8d86-045ca0d02c59' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-13b2663c-db55-4056-b9a5-7a07900f36c8' class='xr-var-data-in' type='checkbox'><label for='data-13b2663c-db55-4056-b9a5-7a07900f36c8' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>time</dd><dt><span>long_name :</span></dt><dd>time in seconds since epoch</dd><dt><span>axis :</span></dt><dd>T</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;2017-05-27T13:05:00.000000000&#x27;, &#x27;2017-05-27T13:05:01.000000000&#x27;,
+    title:        Cloud top height along flight path</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-4ad8439e-83c1-44e2-b700-33d88defadf0' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-4ad8439e-83c1-44e2-b700-33d88defadf0' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 11895</li><li><span class='xr-has-index'>cloud_layer</span>: 10</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-7fd052ea-5f16-46f4-a881-8ee2ab6ae695' class='xr-section-summary-in' type='checkbox'  checked><label for='section-7fd052ea-5f16-46f4-a881-8ee2ab6ae695' class='xr-section-summary' >Coordinates: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2017-05-27T13:05:00 ... 2017-05-...</div><input id='attrs-276b75c1-8e31-48a5-9086-3806c4f5eef7' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-276b75c1-8e31-48a5-9086-3806c4f5eef7' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-901f9b84-dd42-4dc5-9556-cb387cfde1fb' class='xr-var-data-in' type='checkbox'><label for='data-901f9b84-dd42-4dc5-9556-cb387cfde1fb' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>time</dd><dt><span>long_name :</span></dt><dd>time in seconds since epoch</dd><dt><span>axis :</span></dt><dd>T</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;2017-05-27T13:05:00.000000000&#x27;, &#x27;2017-05-27T13:05:01.000000000&#x27;,
        &#x27;2017-05-27T13:05:02.000000000&#x27;, ..., &#x27;2017-05-27T16:23:12.000000000&#x27;,
        &#x27;2017-05-27T16:23:13.000000000&#x27;, &#x27;2017-05-27T16:23:14.000000000&#x27;],
-      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>cloud_layer</span></div><div class='xr-var-dims'>(cloud_layer)</div><div class='xr-var-dtype'>int8</div><div class='xr-var-preview xr-preview'>1 2 3 4 5 6 7 8 9 10</div><input id='attrs-c2ae5a57-09be-4709-b9a5-71efcdea68fa' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c2ae5a57-09be-4709-b9a5-71efcdea68fa' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-cdbe9d47-031d-4d1a-8a98-0568e35422c6' class='xr-var-data-in' type='checkbox'><label for='data-cdbe9d47-031d-4d1a-8a98-0568e35422c6' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>cloud_layer</dd><dt><span>long_name :</span></dt><dd>cloud layer</dd><dt><span>description :</span></dt><dd>cloud layer counted from instrument towards surface (1 = highest cloud layer)</dd></dl></div><div class='xr-var-data'><pre>array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10], dtype=int8)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-b615f1c2-2af0-4c25-933c-b89af19f61d1' class='xr-section-summary-in' type='checkbox'  checked><label for='section-b615f1c2-2af0-4c25-933c-b89af19f61d1' class='xr-section-summary' >Data variables: <span>(7)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>n_cloud_layer</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-3d16f3a7-259f-4679-998b-0f5809238595' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-3d16f3a7-259f-4679-998b-0f5809238595' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-28ba4be8-1572-45f7-9399-a0520bf738ba' class='xr-var-data-in' type='checkbox'><label for='data-28ba4be8-1572-45f7-9399-a0520bf738ba' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>n_cloud_layer</dd><dt><span>long_name :</span></dt><dd>number of cloud layers</dd><dt><span>description :</span></dt><dd>number of cloud layers (&gt; 1 for multilayer clouds)</dd></dl></div><div class='xr-var-data'><pre>array([nan, nan, nan, ..., nan, nan, nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>cloud_top_height</span></div><div class='xr-var-dims'>(time, cloud_layer)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-d550d4d8-7f8f-4305-a70a-4d2001530d39' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-d550d4d8-7f8f-4305-a70a-4d2001530d39' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0aa5c3ad-a23e-40b7-817d-332d24acd6be' class='xr-var-data-in' type='checkbox'><label for='data-0aa5c3ad-a23e-40b7-817d-332d24acd6be' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>cloud_top_height</dd><dt><span>long_name :</span></dt><dd>cloud top height</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>description :</span></dt><dd>cloud top height derived from AMALi instrument for clouds within thick_cloud class</dd><dt><span>comment :</span></dt><dd>cloud top most likely from liquid layer</dd></dl></div><div class='xr-var-data'><pre>[118950 values with dtype=float64]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>cloud_mask</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-7981b475-1038-48a7-9163-06525d9e23b8' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-7981b475-1038-48a7-9163-06525d9e23b8' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1782c8cb-6058-41c1-b902-cecf63fa8a5f' class='xr-var-data-in' type='checkbox'><label for='data-1782c8cb-6058-41c1-b902-cecf63fa8a5f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>flag_masks :</span></dt><dd>1, 2, 3</dd><dt><span>flag_meanings :</span></dt><dd>no_cloud thin_cloud_or_haze thick_cloud</dd><dt><span>description :</span></dt><dd>no_cloud: optical depth of column below 0.3, thin_cloud_or_haze: optical depth of column between 0.3 and 1 (uncertainty +/- 100 %), thick_cloud: optical depth greater than 1</dd></dl></div><div class='xr-var-data'><pre>array([nan, nan, nan, ..., nan, nan, nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>instrument_status</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>int8</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-d7f86134-06a5-4b9d-9167-9a934e7dbbed' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-d7f86134-06a5-4b9d-9167-9a934e7dbbed' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-92323683-2aac-4ed5-adda-ab9f266665e4' class='xr-var-data-in' type='checkbox'><label for='data-92323683-2aac-4ed5-adda-ab9f266665e4' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>flag_masks :</span></dt><dd>0, 1</dd><dt><span>flag_meanings :</span></dt><dd>off on</dd><dt><span>description :</span></dt><dd>Status of AMALi instrument</dd></dl></div><div class='xr-var-data'><pre>array([0, 0, 0, ..., 0, 0, 0], dtype=int8)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>alt</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-8de81e95-07ac-4055-a5d4-aea9a6d7bb41' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-8de81e95-07ac-4055-a5d4-aea9a6d7bb41' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-dbad92aa-b7c0-422b-8b1b-ebc67e56db3e' class='xr-var-data-in' type='checkbox'><label for='data-dbad92aa-b7c0-422b-8b1b-ebc67e56db3e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>height_above_reference_ellipsoid</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/elliptical height</dd><dt><span>positive :</span></dt><dd>up</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>axis :</span></dt><dd>Z</dd></dl></div><div class='xr-var-data'><pre>array([30.66, 30.91, 31.05, ..., 32.21, 30.39, 28.8 ])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-fac924b0-abc4-4cff-92a2-d49a4ce48dcc' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-fac924b0-abc4-4cff-92a2-d49a4ce48dcc' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ee82b5c3-7b2c-4ac2-823d-7da5aa4367d4' class='xr-var-data-in' type='checkbox'><label for='data-ee82b5c3-7b2c-4ac2-823d-7da5aa4367d4' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>axis :</span></dt><dd>Y</dd></dl></div><div class='xr-var-data'><pre>array([78.244898, 78.245002, 78.245108, ..., 78.248737, 78.24863 , 78.248525])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lon</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-db01052b-0d67-4a4e-b991-62bb481cc033' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-db01052b-0d67-4a4e-b991-62bb481cc033' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b198e607-9fce-437f-97ca-e949bb2732ba' class='xr-var-data-in' type='checkbox'><label for='data-b198e607-9fce-437f-97ca-e949bb2732ba' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>axis :</span></dt><dd>X</dd></dl></div><div class='xr-var-data'><pre>array([15.487843, 15.485962, 15.484032, ..., 15.419302, 15.421148, 15.42298 ])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-e5303c0e-0449-493e-aa6f-75ec2d3e0230' class='xr-section-summary-in' type='checkbox'  checked><label for='section-e5303c0e-0449-493e-aa6f-75ec2d3e0230' class='xr-section-summary' >Attributes: <span>(7)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>Cloud top height along flight path based on AMALi observations</dd><dt><span>contact :</span></dt><dd>birte.kulla@uni-koeln.de, mario.mech@uni-koeln.de</dd><dt><span>institution :</span></dt><dd>Alfred Wegener Institute - Research Unit Potsdam, University of Cologne</dd><dt><span>instruments :</span></dt><dd>AMALi</dd><dt><span>version :</span></dt><dd>v0.1</dd><dt><span>author :</span></dt><dd>Birte Kulla birte.kulla@uni-koeln.de</dd><dt><span>title :</span></dt><dd>Cloud top height along flight path</dd></dl></div></li></ul></div></div></div></div>
+      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>cloud_layer</span></div><div class='xr-var-dims'>(cloud_layer)</div><div class='xr-var-dtype'>int8</div><div class='xr-var-preview xr-preview'>1 2 3 4 5 6 7 8 9 10</div><input id='attrs-418626cc-1040-44f9-9e4e-bd795e1539da' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-418626cc-1040-44f9-9e4e-bd795e1539da' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-2f0154e5-f47b-4d3a-9270-89ac57653208' class='xr-var-data-in' type='checkbox'><label for='data-2f0154e5-f47b-4d3a-9270-89ac57653208' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>cloud_layer</dd><dt><span>long_name :</span></dt><dd>cloud layer</dd><dt><span>description :</span></dt><dd>cloud layer counted from instrument towards surface (1 = highest cloud layer)</dd></dl></div><div class='xr-var-data'><pre>array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10], dtype=int8)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-fe4b4512-5aae-4f6e-8c1b-16ca4d76a72e' class='xr-section-summary-in' type='checkbox'  checked><label for='section-fe4b4512-5aae-4f6e-8c1b-16ca4d76a72e' class='xr-section-summary' >Data variables: <span>(7)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>n_cloud_layer</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-0dabdfac-d925-479b-bd79-ea2708669ec9' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-0dabdfac-d925-479b-bd79-ea2708669ec9' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-5c31bfaa-e892-4cb9-993f-a8f109b49d72' class='xr-var-data-in' type='checkbox'><label for='data-5c31bfaa-e892-4cb9-993f-a8f109b49d72' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>n_cloud_layer</dd><dt><span>long_name :</span></dt><dd>number of cloud layers</dd><dt><span>description :</span></dt><dd>number of cloud layers (&gt; 1 for multilayer clouds)</dd></dl></div><div class='xr-var-data'><pre>array([nan, nan, nan, ..., nan, nan, nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>cloud_top_height</span></div><div class='xr-var-dims'>(time, cloud_layer)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-186168ba-b4aa-448d-bc81-36abd1426bad' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-186168ba-b4aa-448d-bc81-36abd1426bad' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0d52ee4c-bf12-40f6-8fcc-d3f482f743d7' class='xr-var-data-in' type='checkbox'><label for='data-0d52ee4c-bf12-40f6-8fcc-d3f482f743d7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>cloud_top_height</dd><dt><span>long_name :</span></dt><dd>cloud top height</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>description :</span></dt><dd>cloud top height derived from AMALi instrument for clouds within thick_cloud class</dd><dt><span>comment :</span></dt><dd>cloud top most likely from liquid layer</dd></dl></div><div class='xr-var-data'><pre>[118950 values with dtype=float64]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>cloud_mask</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-39e2dd76-f16f-4300-b7c3-baa329ae869f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-39e2dd76-f16f-4300-b7c3-baa329ae869f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3cb4bd49-18ba-4efc-a029-e0dafad57dcb' class='xr-var-data-in' type='checkbox'><label for='data-3cb4bd49-18ba-4efc-a029-e0dafad57dcb' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>flag_masks :</span></dt><dd>1, 2, 3</dd><dt><span>flag_meanings :</span></dt><dd>no_cloud thin_cloud_or_haze thick_cloud</dd><dt><span>description :</span></dt><dd>no_cloud: optical depth of column below 0.3, thin_cloud_or_haze: optical depth of column between 0.3 and 1 (uncertainty +/- 100 %), thick_cloud: optical depth greater than 1</dd></dl></div><div class='xr-var-data'><pre>array([nan, nan, nan, ..., nan, nan, nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>instrument_status</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>int8</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-1021759c-924a-4d2e-bdbb-69d3b25291d5' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-1021759c-924a-4d2e-bdbb-69d3b25291d5' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9a02d068-97fd-41fb-b9bc-a4b4a7a2fe16' class='xr-var-data-in' type='checkbox'><label for='data-9a02d068-97fd-41fb-b9bc-a4b4a7a2fe16' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>flag_masks :</span></dt><dd>0, 1</dd><dt><span>flag_meanings :</span></dt><dd>off on</dd><dt><span>description :</span></dt><dd>Status of AMALi instrument</dd></dl></div><div class='xr-var-data'><pre>array([0, 0, 0, ..., 0, 0, 0], dtype=int8)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>alt</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-029255dd-60ae-45c1-80fa-7e1c6833d53c' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-029255dd-60ae-45c1-80fa-7e1c6833d53c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-241bda62-f4ed-43ea-a4d1-6ab47aeedd25' class='xr-var-data-in' type='checkbox'><label for='data-241bda62-f4ed-43ea-a4d1-6ab47aeedd25' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>height_above_reference_ellipsoid</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/elliptical height</dd><dt><span>positive :</span></dt><dd>up</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>axis :</span></dt><dd>Z</dd></dl></div><div class='xr-var-data'><pre>array([30.66, 30.91, 31.05, ..., 32.21, 30.39, 28.8 ])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-3c007ff9-705c-4219-8740-729c7543c3b7' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-3c007ff9-705c-4219-8740-729c7543c3b7' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d21c39d3-e6ce-4edd-867d-9fb597ac85ab' class='xr-var-data-in' type='checkbox'><label for='data-d21c39d3-e6ce-4edd-867d-9fb597ac85ab' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>axis :</span></dt><dd>Y</dd></dl></div><div class='xr-var-data'><pre>array([78.244898, 78.245002, 78.245108, ..., 78.248737, 78.24863 , 78.248525])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lon</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-b1760a18-2590-4d69-9f69-bf18ab63be13' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-b1760a18-2590-4d69-9f69-bf18ab63be13' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-66b8411a-5bad-4278-92a8-65992e9f12e6' class='xr-var-data-in' type='checkbox'><label for='data-66b8411a-5bad-4278-92a8-65992e9f12e6' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd><dt><span>axis :</span></dt><dd>X</dd></dl></div><div class='xr-var-data'><pre>array([15.487843, 15.485962, 15.484032, ..., 15.419302, 15.421148, 15.42298 ])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-fdef4978-3fe5-4eae-aa58-7eea4f97b718' class='xr-section-summary-in' type='checkbox'  checked><label for='section-fdef4978-3fe5-4eae-aa58-7eea4f97b718' class='xr-section-summary' >Attributes: <span>(7)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>Cloud top height along flight path based on AMALi observations</dd><dt><span>contact :</span></dt><dd>birte.kulla@uni-koeln.de, mario.mech@uni-koeln.de</dd><dt><span>institution :</span></dt><dd>Alfred Wegener Institute - Research Unit Potsdam, University of Cologne</dd><dt><span>instruments :</span></dt><dd>AMALi</dd><dt><span>version :</span></dt><dd>v0.1</dd><dt><span>author :</span></dt><dd>Birte Kulla birte.kulla@uni-koeln.de</dd><dt><span>title :</span></dt><dd>Cloud top height along flight path</dd></dl></div></li></ul></div></div></div></div>
 </div>
 <p>The dataset includes the cloud top height (<code class="docutils literal notranslate"><span class="pre">cloud_top_height</span></code>), the number of cloud layers (<code class="docutils literal notranslate"><span class="pre">n_cloud_layer</span></code>) and a cloud mask derived from the optical depth (<code class="docutils literal notranslate"><span class="pre">cloud_mask</span></code>). Additionally, the instrument status is provided and positional data of the aircraft (<code class="docutils literal notranslate"><span class="pre">lat</span></code>, <code class="docutils literal notranslate"><span class="pre">lon</span></code>, <code class="docutils literal notranslate"><span class="pre">alt</span></code>).</p>
 </div>
@@ -880,12 +886,32 @@ Attributes:
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="hatpro.html" title="previous page">HATPRO</a>
-    <a class='right-next' id="next-link" href="fish_eye_camera.html" title="next page">Fish-eye camera</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="hatpro.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">HATPRO</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="fish_eye_camera.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Fish-eye camera</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>
@@ -904,11 +930,9 @@ Attributes:
 
       </div>
     </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    
-  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
-
-
-    
+  
   </body>
 </html>
