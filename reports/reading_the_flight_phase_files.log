@@ -26,7 +26,7 @@ queried
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mAttributeError[0m                            Traceback (most recent call last)
-[0;32m/tmp/ipykernel_3026317/3917853595.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/tmp/ipykernel_3047807/3917853595.py[0m in [0;36m<module>[0;34m[0m
 [1;32m      2[0m [0mendtime[0m   [0;34m=[0m [0;34m'2017-06-08 12:45:00'[0m[0;34m[0m[0;34m[0m[0m
 [1;32m      3[0m [0;34m[0m[0m
 [0;32m----> 4[0;31m [0mqueried[0m [0;34m=[0m [0mflight_query[0m[0;34m.[0m[0mfindSegments[0m[0;34m([0m[0mstarttime[0m[0;34m,[0m [0mendtime[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m

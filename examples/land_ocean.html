@@ -293,9 +293,9 @@
 <p>In this example we show how a land ocean mask can be applied to the flight path. The decision is based on <code class="docutils literal notranslate"><span class="pre">cartopy.io.shapereader.natural_earth(resolution='10m',</span> <span class="pre">category='physical',</span> <span class="pre">name='land')</span></code>. All functionality is packed into a routine <code class="docutils literal notranslate"><span class="pre">is_land()</span></code>, which is part of the <code class="docutils literal notranslate"><span class="pre">ac3airborne</span></code> toolbox.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ac3airborne.tools</span> <span class="k">import</span> <span class="n">is_land</span> <span class="k">as</span> <span class="n">il</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ac3airborne.tools</span> <span class="kn">import</span> <span class="n">is_land</span> <span class="k">as</span> <span class="n">il</span>
 <span class="kn">import</span> <span class="nn">ac3airborne</span>
-<span class="kn">from</span> <span class="nn">simplification.cutil</span> <span class="k">import</span> <span class="n">simplify_coords_idx</span>
+<span class="kn">from</span> <span class="nn">simplification.cutil</span> <span class="kn">import</span> <span class="n">simplify_coords_idx</span>
 </pre></div>
 </div>
 </div>
@@ -346,6 +346,11 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_gps</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;GPS_INS&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Invalid MIT-MAGIC-COOKIE-1 key
 </pre></div>
 </div>
 </div>
