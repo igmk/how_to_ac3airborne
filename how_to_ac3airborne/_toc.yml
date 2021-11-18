@@ -3,6 +3,8 @@
   - file: datasets
     title: Datasets
     sections:
+    - file: datasets/nose_boom
+      title: Nose boom
     - file: datasets/mirac_a
       title: MiRAC-A
     - file: datasets/mirac_p
