@@ -1,0 +1,1163 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Getting started with ac3airborne &#8212; how_to_ac3airborne</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Datasets" href="datasets.html" />
+    <link rel="prev" title="Introduction" href="intro.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">how_to_ac3airborne</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="intro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
+   Getting started with ac3airborne
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="datasets.html">
+     Datasets
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+    <label for="toctree-checkbox-2">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/nose_boom.html">
+       Nose boom
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/mirac_a.html">
+       MiRAC-A
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/mirac_p.html">
+       MiRAC-P
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/hatpro.html">
+       HATPRO
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/amali_cloud_top_height.html">
+       AMALi
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/fish_eye_camera.html">
+       Fish-eye camera
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/nevzorov_and_pms.html">
+       PMS and Nevzorov
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/kt19.html">
+       CMP22, CGR4 and KT-19
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/dropsondes.html">
+       Dropsondes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/gps_ins.html">
+       GPS and INS
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="flight_segmentation.html">
+     Flight-phase separation
+    </a>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="code.html">
+     Toolbox and examples
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+    <label for="toctree-checkbox-3">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="running_locally.html">
+       Running how_to_ac3airborne locally
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="examples/caching_and_local_datasets.html">
+       Caching and local datasets
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="examples/reading_the_flight_phase_files.html">
+       Querying the flight phase files
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="examples/land_ocean.html">
+       Land-ocean mask
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="examples/awipev_overflights.html">
+       AWIPEV overflights
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="examples/polarstern_overflights.html">
+       Polarstern overflights
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="references.html">
+     References
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/getting_started.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/igmk/how_to_ac3airborne/main?urlpath=tree/how_to_ac3airborne/getting_started.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functionality">
+   Functionality
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#basic-methods">
+     Basic methods
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ac3airborne-get-flight-segments">
+       ac3airborne.get_flight_segments
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#contacts-flight-report">
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           contacts
+          </span>
+         </code>
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           flight_report
+          </span>
+         </code>
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#date-takeoff-landing">
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           date
+          </span>
+         </code>
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           takeoff
+          </span>
+         </code>
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           landing
+          </span>
+         </code>
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#events-remarks">
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           events
+          </span>
+         </code>
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           remarks
+          </span>
+         </code>
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#other-keys">
+         other keys
+        </a>
+       </li>
+       <li class="toc-h5 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#the-true-flight-segments">
+         The true flight
+         <code class="docutils literal notranslate">
+          <span class="pre">
+           segments
+          </span>
+         </code>
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ac3airborne-get-intake-catalog">
+       ac3airborne.get_intake_catalog
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#constants">
+     Constants
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="getting-started-with-ac3airborne">
+<h1>Getting started with ac3airborne<a class="headerlink" href="#getting-started-with-ac3airborne" title="Permalink to this headline">¶</a></h1>
+<p>Welcome to <strong>ac3airborne</strong>! We’re glad you’re here and we hope that you find this Python library to be useful for your needs. In order to help get you started with <strong>ac3airborne</strong>, we’ve put together this collection of tutorials to introduce you to the basic syntax and functionality of this library.</p>
+<p>For installation instructions, please see our <a class="reference external" href="https://github.com/igmk/ac3airborne">Github Repository</a>.</p>
+<p>This package intends to make the access to the airborne data collected within the various <a class="reference external" href="http://www.ac3-tr.de/">AC3</a> airborne campaigns more easy.</p>
+<p>In some of the examples you will see an icon like the first one on this picture:</p>
+<p><img alt="title" src="img/icons.png" /></p>
+<p>Just go with your mouse on it:</p>
+<p><img alt="title" src="img/binder.png" /></p>
+<p>Clicking on <em>Binder</em> an virtual environment will be opend and the page will be shown as a Jupyter Notebook in a Jupyter Hub, so that you can try the examples yourself!</p>
+<div class="section" id="functionality">
+<h2>Functionality<a class="headerlink" href="#functionality" title="Permalink to this headline">¶</a></h2>
+<p>First of all we want to import the <code class="docutils literal notranslate"><span class="pre">ac3airborne</span></code> module:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ac3airborne</span> <span class="k">as</span> <span class="nn">ac3a</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you want to check which version of the package is currently installed:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ac3a</span><span class="o">.</span><span class="n">__version__</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;0+unknown&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="basic-methods">
+<h3>Basic methods<a class="headerlink" href="#basic-methods" title="Permalink to this headline">¶</a></h3>
+<p>There are two basic methods which do most of the work in this library:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">get_flight_segments</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">get_intake_catalog</span></code></p></li>
+</ul>
+<div class="section" id="ac3airborne-get-flight-segments">
+<h4>ac3airborne.get_flight_segments<a class="headerlink" href="#ac3airborne-get-flight-segments" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span> <span class="o">=</span> <span class="n">ac3a</span><span class="o">.</span><span class="n">get_flight_segments</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This method downloads and parses flight segmentation information. Let’s look into its output:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">meta</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you can see, the method returns a dictionary. Let’s take a look to its keys:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">meta</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;P5&#39;, &#39;P6&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We have to keys, corresponding to the <em>polar 5</em> and to the <em>polar 6</em> aircrafts. We select one of them and take a look to the nested structure of the dictionary.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;ACLOUD_P5_RF04&#39;,
+ &#39;ACLOUD_P5_RF05&#39;,
+ &#39;ACLOUD_P5_RF06&#39;,
+ &#39;ACLOUD_P5_RF07&#39;,
+ &#39;ACLOUD_P5_RF08&#39;,
+ &#39;ACLOUD_P5_RF10&#39;,
+ &#39;ACLOUD_P5_RF11&#39;,
+ &#39;ACLOUD_P5_RF13&#39;,
+ &#39;ACLOUD_P5_RF14&#39;,
+ &#39;ACLOUD_P5_RF15&#39;,
+ &#39;ACLOUD_P5_RF16&#39;,
+ &#39;ACLOUD_P5_RF17&#39;,
+ &#39;ACLOUD_P5_RF18&#39;,
+ &#39;ACLOUD_P5_RF19&#39;,
+ &#39;ACLOUD_P5_RF20&#39;,
+ &#39;ACLOUD_P5_RF21&#39;,
+ &#39;ACLOUD_P5_RF22&#39;,
+ &#39;ACLOUD_P5_RF23&#39;,
+ &#39;ACLOUD_P5_RF25&#39;,
+ &#39;AFLUX_P5_RF02&#39;,
+ &#39;AFLUX_P5_RF03&#39;,
+ &#39;AFLUX_P5_RF04&#39;,
+ &#39;AFLUX_P5_RF05&#39;,
+ &#39;AFLUX_P5_RF06&#39;,
+ &#39;AFLUX_P5_RF07&#39;,
+ &#39;AFLUX_P5_RF08&#39;,
+ &#39;AFLUX_P5_RF09&#39;,
+ &#39;AFLUX_P5_RF10&#39;,
+ &#39;AFLUX_P5_RF11&#39;,
+ &#39;AFLUX_P5_RF12&#39;,
+ &#39;AFLUX_P5_RF13&#39;,
+ &#39;AFLUX_P5_RF14&#39;,
+ &#39;AFLUX_P5_RF15&#39;,
+ &#39;MOSAiC-ACA_P5_RF02&#39;,
+ &#39;MOSAiC-ACA_P5_RF03&#39;,
+ &#39;MOSAiC-ACA_P5_RF04&#39;,
+ &#39;MOSAiC-ACA_P5_RF05&#39;,
+ &#39;MOSAiC-ACA_P5_RF06&#39;,
+ &#39;MOSAiC-ACA_P5_RF07&#39;,
+ &#39;MOSAiC-ACA_P5_RF08&#39;,
+ &#39;MOSAiC-ACA_P5_RF09&#39;,
+ &#39;MOSAiC-ACA_P5_RF10&#39;,
+ &#39;MOSAiC-ACA_P5_RF11&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you can see, once we selected the aircraft, the second level of the nested dictionary consists of the names of the research flights. We can now select a specific flight and look deeper into it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;contacts&#39;,
+ &#39;date&#39;,
+ &#39;events&#39;,
+ &#39;flight_id&#39;,
+ &#39;flight_report&#39;,
+ &#39;landing&#39;,
+ &#39;mission&#39;,
+ &#39;name&#39;,
+ &#39;platform&#39;,
+ &#39;remarks&#39;,
+ &#39;segments&#39;,
+ &#39;takeoff&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We now see that this flight contains following informations:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">contacts</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">date</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">events</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">flight_id</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">flight_report</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">landing</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mission</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">platform</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">remarks</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">segments</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">takeoff</span></code></p></li>
+</ul>
+<div class="section" id="contacts-flight-report">
+<h5><code class="docutils literal notranslate"><span class="pre">contacts</span></code> <code class="docutils literal notranslate"><span class="pre">flight_report</span></code><a class="headerlink" href="#contacts-flight-report" title="Permalink to this headline">¶</a></h5>
+<p>The first it’s just the contact data for reference, for example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;contacts&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;email&#39;: &#39;mario.mech@uni-koeln.de&#39;,
+  &#39;name&#39;: &#39;Mario Mech&#39;,
+  &#39;tags&#39;: [&#39;pi&#39;, &#39;lc&#39;]}]
+</pre></div>
+</div>
+</div>
+</div>
+<p>The second is the location of the metadata:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;flight_report&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;https://home.uni-leipzig.de/~ehrlich/ACLOUD_wiki_doku/lib/exe/fetch.php?media=14_20170608_p5_acloud_flight_report.pdf&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="date-takeoff-landing">
+<h5><code class="docutils literal notranslate"><span class="pre">date</span></code> <code class="docutils literal notranslate"><span class="pre">takeoff</span></code> <code class="docutils literal notranslate"><span class="pre">landing</span></code><a class="headerlink" href="#date-takeoff-landing" title="Permalink to this headline">¶</a></h5>
+<p>The date of the flight, the time when it took of and when it landed:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;date&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.date(2017, 6, 8)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;takeoff&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2017, 6, 8, 7, 36, 50)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;landing&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>datetime.datetime(2017, 6, 8, 12, 51, 25)
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you can see the time is given as <code class="docutils literal notranslate"><span class="pre">datetime.date</span></code> or <code class="docutils literal notranslate"><span class="pre">datetime.datetime</span></code>object.</p>
+</div>
+<div class="section" id="events-remarks">
+<h5><code class="docutils literal notranslate"><span class="pre">events</span></code> <code class="docutils literal notranslate"><span class="pre">remarks</span></code><a class="headerlink" href="#events-remarks" title="Permalink to this headline">¶</a></h5>
+<p>Some metadata:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;events&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Ny-Alesund overflight with cross pattern&#39;,
+ &#39;Polarstern overflight with cross pattern&#39;,
+ &#39;Colocation with P6 at Polarstern&#39;,
+ &#39;A-train underflight&#39;,
+ &#39;Racetrack pattern over sea ice&#39;,
+ &#39;Radiometer calibration&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;remarks&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Thin broken clouds over sea ice&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="other-keys">
+<h5>other keys<a class="headerlink" href="#other-keys" title="Permalink to this headline">¶</a></h5>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;mission&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;ACLOUD&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;platform&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;P5&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;RF14&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;flight_id&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;ACLOUD_P5_RF14&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="the-true-flight-segments">
+<h5>The true flight <code class="docutils literal notranslate"><span class="pre">segments</span></code><a class="headerlink" href="#the-true-flight-segments" title="Permalink to this headline">¶</a></h5>
+<p>This is the key, which actually contains the segmented flight. Let’s take a closer look:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;segments&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>list
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you can see the <code class="docutils literal notranslate"><span class="pre">segments</span></code>-key does not contain a dictionary, as the previous levels. Instead it contains a list! Let’s take the first element:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;segments&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict
+</pre></div>
+</div>
+</div>
+</div>
+<p>So the <code class="docutils literal notranslate"><span class="pre">segment</span></code>-key contains actually a list of dictionary as value. Let’s just print this first segment:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;segments&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;dropsondes&#39;: [],
+ &#39;end&#39;: datetime.datetime(2017, 6, 8, 8, 8, 53),
+ &#39;irregularities&#39;: [&#39;whale-watching loop&#39;],
+ &#39;kinds&#39;: [&#39;major_ascend&#39;, &#39;nya_overflight&#39;, &#39;sveabreen_glacier_overflight&#39;],
+ &#39;levels&#39;: [100, 9700],
+ &#39;name&#39;: &#39;major ascend&#39;,
+ &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_ma&#39;,
+ &#39;start&#39;: datetime.datetime(2017, 6, 8, 7, 36, 50)}
+</pre></div>
+</div>
+</div>
+</div>
+<p>and it’s keys:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;segments&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;dropsondes&#39;,
+ &#39;end&#39;,
+ &#39;irregularities&#39;,
+ &#39;kinds&#39;,
+ &#39;levels&#39;,
+ &#39;name&#39;,
+ &#39;segment_id&#39;,
+ &#39;start&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you can see a flight segment usually contains:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">start</span></code> and <code class="docutils literal notranslate"><span class="pre">end</span></code> time</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">levels</span></code> height(s) of the flight</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">name</span></code> and <code class="docutils literal notranslate"><span class="pre">segment_id</span></code> to identify it</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kinds</span></code> or to which type of segments it belongs (<code class="docutils literal notranslate"><span class="pre">high_level</span></code>, <code class="docutils literal notranslate"><span class="pre">low_level</span></code> and so on)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">irregularities</span></code> some comments about irregularies</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dropsondes</span></code></p></li>
+</ul>
+<p>Take a look at <a class="reference external" href="https://igmk.github.io/how_to_ac3airborne/examples/reading_the_flight_phase_files.html">Querying the flight phase files</a> for a more advanced selection of the segments.</p>
+</div>
+</div>
+<div class="section" id="ac3airborne-get-intake-catalog">
+<h4>ac3airborne.get_intake_catalog<a class="headerlink" href="#ac3airborne-get-intake-catalog" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">=</span> <span class="n">ac3a</span><span class="o">.</span><span class="n">get_intake_catalog</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Open the intake data catalog. The catalog provides access to public AC3 airborne datasets without the need to manually specify URLs to the individual datasets. Let’s take a look into it:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">cat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>intake.catalog.local.YAMLFileCatalog
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you can see, this is not a dictionary, but it has keys that can be selected as a dictionary:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="nn">/usr/local/lib/python3.8/dist-packages/intake/catalog/base.py</span> in <span class="ni">__getattr__</span><span class="nt">(self, item)</span>
+<span class="g g-Whitespace">    </span><span class="mi">338</span>             <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">339</span>                 <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>  <span class="c1"># triggers reload_on_change</span>
+<span class="g g-Whitespace">    </span><span class="mi">340</span>             <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/intake/catalog/base.py</span> in <span class="ni">__getitem__</span><span class="nt">(self, key)</span>
+<span class="g g-Whitespace">    </span><span class="mi">409</span>             <span class="k">return</span> <span class="n">out</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">410</span>         <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">411</span> 
+
+<span class="ne">KeyError</span>: &#39;keys&#39;
+
+<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
+
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1476676</span><span class="o">/</span><span class="mf">2025812687.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/intake/catalog/base.py</span> in <span class="ni">__getattr__</span><span class="nt">(self, item)</span>
+<span class="g g-Whitespace">    </span><span class="mi">339</span>                 <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>  <span class="c1"># triggers reload_on_change</span>
+<span class="g g-Whitespace">    </span><span class="mi">340</span>             <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">341</span>                 <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span>         <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">343</span> 
+
+<span class="ne">AttributeError</span>: keys
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s take again the <em>polar 5</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;GPS_INS&#39;,
+ &#39;AMSR2_SIC&#39;,
+ &#39;CLOUD_TOP_HEIGHT&#39;,
+ &#39;MIRAC_A&#39;,
+ &#39;MIRAC_P&#39;,
+ &#39;HATPRO&#39;,
+ &#39;NEVZOROV&#39;,
+ &#39;CAS&#39;,
+ &#39;CDP&#39;,
+ &#39;CIP&#39;,
+ &#39;PIP&#39;,
+ &#39;PMS_COMBINED&#39;,
+ &#39;DROPSONDES&#39;,
+ &#39;FISH_EYE_CAMERA&#39;,
+ &#39;BROADBAND_IRRADIANCE&#39;,
+ &#39;NOSE_BOOM&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>These are the data set which are available for the <em>polar 5</em>. Let’s take <code class="docutils literal notranslate"><span class="pre">GPS_INS</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;GPS_INS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;ACLOUD_P5_RF04&#39;,
+ &#39;ACLOUD_P5_RF05&#39;,
+ &#39;ACLOUD_P5_RF06&#39;,
+ &#39;ACLOUD_P5_RF07&#39;,
+ &#39;ACLOUD_P5_RF08&#39;,
+ &#39;ACLOUD_P5_RF10&#39;,
+ &#39;ACLOUD_P5_RF11&#39;,
+ &#39;ACLOUD_P5_RF13&#39;,
+ &#39;ACLOUD_P5_RF14&#39;,
+ &#39;ACLOUD_P5_RF15&#39;,
+ &#39;ACLOUD_P5_RF16&#39;,
+ &#39;ACLOUD_P5_RF17&#39;,
+ &#39;ACLOUD_P5_RF18&#39;,
+ &#39;ACLOUD_P5_RF19&#39;,
+ &#39;ACLOUD_P5_RF20&#39;,
+ &#39;ACLOUD_P5_RF21&#39;,
+ &#39;ACLOUD_P5_RF22&#39;,
+ &#39;ACLOUD_P5_RF23&#39;,
+ &#39;ACLOUD_P5_RF25&#39;,
+ &#39;AFLUX_P5_RF02&#39;,
+ &#39;AFLUX_P5_RF03&#39;,
+ &#39;AFLUX_P5_RF04&#39;,
+ &#39;AFLUX_P5_RF05&#39;,
+ &#39;AFLUX_P5_RF06&#39;,
+ &#39;AFLUX_P5_RF07&#39;,
+ &#39;AFLUX_P5_RF08&#39;,
+ &#39;AFLUX_P5_RF09&#39;,
+ &#39;AFLUX_P5_RF10&#39;,
+ &#39;AFLUX_P5_RF11&#39;,
+ &#39;AFLUX_P5_RF12&#39;,
+ &#39;AFLUX_P5_RF13&#39;,
+ &#39;AFLUX_P5_RF14&#39;,
+ &#39;AFLUX_P5_RF15&#39;,
+ &#39;MOSAiC-ACA_P5_RF02&#39;,
+ &#39;MOSAiC-ACA_P5_RF03&#39;,
+ &#39;MOSAiC-ACA_P5_RF04&#39;,
+ &#39;MOSAiC-ACA_P5_RF05&#39;,
+ &#39;MOSAiC-ACA_P5_RF06&#39;,
+ &#39;MOSAiC-ACA_P5_RF07&#39;,
+ &#39;MOSAiC-ACA_P5_RF08&#39;,
+ &#39;MOSAiC-ACA_P5_RF09&#39;,
+ &#39;MOSAiC-ACA_P5_RF10&#39;,
+ &#39;MOSAiC-ACA_P5_RF11&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>These are the flight that are available for the given dataset. Let’s take again <code class="docutils literal notranslate"><span class="pre">ACLOUD_P5_RF14</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">cat</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;GPS_INS&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>intake_xarray.netcdf.NetCDFSource
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;GPS_INS&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ACLOUD_P5_RF14:
+  args:
+    urlpath: https://atmos.meteo.uni-koeln.de/ac3/acloud/p5/gps_ins/gps_ins_ACLOUD_polar5_20170608_RF14.nc
+  description: &#39;&#39;
+  driver: intake_xarray.netcdf.NetCDFSource
+  metadata:
+    catalog_dir: https://raw.githubusercontent.com/igmk/ac3airborne-intake/main/P5
+</pre></div>
+</div>
+</div>
+</div>
+<p>In order to read the data set, use the method <code class="docutils literal notranslate"><span class="pre">.to_dask()</span></code> (or sometimes <code class="docutils literal notranslate"><span class="pre">.read()</span></code>) as explained in the examples under <a class="reference external" href="https://igmk.github.io/how_to_ac3airborne/datasets.html">datasets</a></p>
+</div>
+</div>
+<div class="section" id="constants">
+<h3>Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h3>
+<p><strong>ac3airborne</strong> comes with some predefined constants, such the coordinates of Ny-Ålesund and Longyearbyen give as dictionaries:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ac3airborne.constants</span> <span class="k">as</span> <span class="nn">ac3c</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ac3c</span><span class="o">.</span><span class="n">NYA</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;Ny-Ålesund&#39;, &#39;lon&#39;: 11.922222, &#39;lat&#39;: 78.925}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ac3c</span><span class="o">.</span><span class="n">LYB</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;Longyearbyen&#39;, &#39;lon&#39;: 15.633333, &#39;lat&#39;: 78.216667}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ac3c</span><span class="o">.</span><span class="n">LYR</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;name&#39;: &#39;Svalbard Airport, Longyear&#39;,
+ &#39;icao&#39;: &#39;ENSB&#39;,
+ &#39;iata&#39;: &#39;LYR&#39;,
+ &#39;lon&#39;: 15.465556,
+ &#39;lat&#39;: 78.246111,
+ &#39;elev_m&#39;: 28.0,
+ &#39;elev_ft&#39;: 94.0}
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ac3c</span><span class="o">.</span><span class="n">LYR</span><span class="p">[</span><span class="s1">&#39;lon&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>15.465556
+</pre></div>
+</div>
+</div>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+            
+
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="intro.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">Introduction</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="datasets.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Datasets</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By ac3airborne community<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
