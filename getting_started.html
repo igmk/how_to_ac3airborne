@@ -431,7 +431,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;0+unknown&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;v0.0.6&#39;
 </pre></div>
 </div>
 </div>
@@ -854,42 +854,15 @@
 </div>
 </div>
 </div>
-<p>As you can see, this is not a dictionary, but it has keys that can be selected as a dictionary:</p>
+<p>As you can see, this is not a dictionary, but it has keys that can be selected as a dictionary. We can list them using <code class="docutils literal notranslate"><span class="pre">.walk(depth=1)</span></code> instead of <code class="docutils literal notranslate"><span class="pre">keys()</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">depth</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="nn">/usr/local/lib/python3.8/dist-packages/intake/catalog/base.py</span> in <span class="ni">__getattr__</span><span class="nt">(self, item)</span>
-<span class="g g-Whitespace">    </span><span class="mi">338</span>             <span class="k">try</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">339</span>                 <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>  <span class="c1"># triggers reload_on_change</span>
-<span class="g g-Whitespace">    </span><span class="mi">340</span>             <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
-
-<span class="nn">/usr/local/lib/python3.8/dist-packages/intake/catalog/base.py</span> in <span class="ni">__getitem__</span><span class="nt">(self, key)</span>
-<span class="g g-Whitespace">    </span><span class="mi">409</span>             <span class="k">return</span> <span class="n">out</span><span class="p">()</span>
-<span class="ne">--&gt; </span><span class="mi">410</span>         <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">411</span> 
-
-<span class="ne">KeyError</span>: &#39;keys&#39;
-
-<span class="n">During</span> <span class="n">handling</span> <span class="n">of</span> <span class="n">the</span> <span class="n">above</span> <span class="n">exception</span><span class="p">,</span> <span class="n">another</span> <span class="n">exception</span> <span class="n">occurred</span><span class="p">:</span>
-
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1493256</span><span class="o">/</span><span class="mf">2025812687.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
-
-<span class="nn">/usr/local/lib/python3.8/dist-packages/intake/catalog/base.py</span> in <span class="ni">__getattr__</span><span class="nt">(self, item)</span>
-<span class="g g-Whitespace">    </span><span class="mi">339</span>                 <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="n">item</span><span class="p">]</span>  <span class="c1"># triggers reload_on_change</span>
-<span class="g g-Whitespace">    </span><span class="mi">340</span>             <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
-<span class="ne">--&gt; </span><span class="mi">341</span>                 <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">342</span>         <span class="k">raise</span> <span class="ne">AttributeError</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">343</span> 
-
-<span class="ne">AttributeError</span>: keys
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;P5&#39;, &#39;P6&#39;, &#39;Polarstern&#39;]
 </pre></div>
 </div>
 </div>
@@ -897,7 +870,7 @@
 <p>Let’s take again the <em>polar 5</em>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">depth</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -925,7 +898,7 @@
 <p>These are the data set which are available for the <em>polar 5</em>. Let’s take <code class="docutils literal notranslate"><span class="pre">GPS_INS</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;GPS_INS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;GPS_INS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">depth</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
