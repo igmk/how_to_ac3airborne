@@ -1,42 +1,45 @@
 - file: intro
+- file: getting_started
+  title: Getting started with ac3airborne
+- file: datasets
+  title: Datasets
   sections:
-  - file: datasets
-    title: Datasets
-    sections:
-    - file: datasets/mirac_a
-      title: MiRAC-A
-    - file: datasets/mirac_p
-      title: MiRAC-P
-    - file: datasets/hatpro
-      title: HATPRO
-    - file: datasets/amali_cloud_top_height
-      title: AMALi
-    - file: datasets/fish_eye_camera
-      title: Fish-eye camera
-    - file: datasets/nevzorov_and_pms
-      title: PMS and Nevzorov
-    - file: datasets/kt19
-      title: CMP22, CGR4 and KT-19
-    - file: datasets/dropsondes
-      title: Dropsondes
-    - file: datasets/gps_ins
-      title: GPS and INS
-  - file: flight_segmentation
-    title: Flight-phase separation
-  - file: code
-    title: Toolbox and examples
-    sections:
-    - file: running_locally
-      title: Running how_to_ac3airborne locally
-    - file: examples/caching_and_local_datasets
-      title: Caching and local datasets
-    - file: examples/reading_the_flight_phase_files
-      title: Querying the flight phase files
-    - file: examples/land_ocean
-      title: Land-ocean mask
-    - file: examples/awipev_overflights
-      title: AWIPEV overflights
-    - file: examples/polarstern_overflights
-      title: Polarstern overflights
-  - file: references
-    title: References
+  - file: datasets/nose_boom
+    title: Nose boom
+  - file: datasets/mirac_a
+    title: MiRAC-A
+  - file: datasets/mirac_p
+    title: MiRAC-P
+  - file: datasets/hatpro
+    title: HATPRO
+  - file: datasets/amali_cloud_top_height
+    title: AMALi
+  - file: datasets/fish_eye_camera
+    title: Fish-eye camera
+  - file: datasets/nevzorov_and_pms
+    title: PMS and Nevzorov
+  - file: datasets/kt19
+    title: CMP22, CGR4 and KT-19
+  - file: datasets/dropsondes
+    title: Dropsondes
+  - file: datasets/gps_ins
+    title: GPS and INS
+- file: flight_segmentation
+  title: Flight-phase separation
+- file: code
+  title: Toolbox and examples
+  sections:
+  - file: running_locally
+    title: Running how_to_ac3airborne locally
+  - file: examples/caching_and_local_datasets
+    title: Caching and local datasets
+  - file: examples/reading_the_flight_phase_files
+    title: Querying the flight phase files
+  - file: examples/land_ocean
+    title: Land-ocean mask
+  - file: examples/awipev_overflights
+    title: AWIPEV overflights
+  - file: examples/polarstern_overflights
+    title: Polarstern overflights
+- file: references
+  title: References
