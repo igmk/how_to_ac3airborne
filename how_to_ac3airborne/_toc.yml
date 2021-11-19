@@ -1,4 +1,6 @@
 - file: intro
+  - file: getting_started
+    title: Getting started with ac3airborne
   sections:
   - file: datasets
     title: Datasets
