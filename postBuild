@@ -1,5 +1,3 @@
 set -e
-
-pip install -i https://test.pypi.org/simple/ ac3airborne
-
+pip install -i https://test.pypi.org/simple/ ac3airborne=0.0.6
 conda install -c conda-forge cartopy
