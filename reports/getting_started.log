@@ -37,7 +37,7 @@ list(cat.keys())
 During handling of the above exception, another exception occurred:
 
 [0;31mAttributeError[0m                            Traceback (most recent call last)
-[0;32m/tmp/ipykernel_1476676/2025812687.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/tmp/ipykernel_1493256/2025812687.py[0m in [0;36m<module>[0;34m[0m
 [0;32m----> 1[0;31m [0mlist[0m[0;34m([0m[0mcat[0m[0;34m.[0m[0mkeys[0m[0;34m([0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m
 [0;32m/usr/local/lib/python3.8/dist-packages/intake/catalog/base.py[0m in [0;36m__getattr__[0;34m(self, item)[0m
