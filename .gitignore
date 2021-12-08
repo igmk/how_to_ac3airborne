@@ -2,5 +2,5 @@
 .ipynb_checkpoints
 _build
 .DS_Store
-pyac3airborne_book/_build/
-pyac3airborne_book/examples/data
+how_to_ac3airborne/_build/
+how_to_ac3airborne/examples/data
