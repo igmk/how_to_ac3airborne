@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Getting started with ac3airborne &#8212; how_to_ac3airborne</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -20,10 +19,14 @@
 
     
       
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -31,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -41,10 +44,10 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
@@ -55,14 +58,14 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Datasets" href="datasets.html" />
     <link rel="prev" title="Introduction" href="intro.html" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-    
+
+
+
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
-
     
 
     <div class="container-xl">
@@ -71,42 +74,37 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">how_to_ac3airborne</h1>
-      
-    </a>
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">how_to_ac3airborne</h1>
+  
+</a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
    Introduction
   </a>
  </li>
 </ul>
-<ul class="current nav bd-sidenav">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    Getting started with ac3airborne
   </a>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="datasets.html">
    Datasets
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
+  <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="datasets/nose_boom.html">
      Nose boom
@@ -158,22 +156,19 @@
     </a>
    </li>
   </ul>
+  <i class="fas fa-chevron-down">
+  </i>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="flight_segmentation.html">
    Flight-phase separation
   </a>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="code.html">
    Toolbox and examples
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
+  <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="running_locally.html">
      Running how_to_ac3airborne locally
@@ -205,6 +200,8 @@
     </a>
    </li>
   </ul>
+  <i class="fas fa-chevron-down">
+  </i>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="references.html">
@@ -213,7 +210,6 @@
  </li>
 </ul>
 
-    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -263,12 +259,12 @@
 
             <!-- Source interaction buttons -->
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -294,11 +290,12 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#functionality">
    Functionality
@@ -367,8 +364,8 @@
         </a>
        </li>
        <li class="toc-h5 nav-item toc-entry">
-        <a class="reference internal nav-link" href="#the-true-flight-segments">
-         The true flight
+        <a class="reference internal nav-link" href="#the-flight-segments">
+         The flight
          <code class="docutils literal notranslate">
           <span class="pre">
            segments
@@ -394,7 +391,8 @@
  </li>
 </ul>
 
-            </nav>
+        </nav>
+        
         </div>
     </div>
 </div>
@@ -405,14 +403,14 @@
                 
   <div class="section" id="getting-started-with-ac3airborne">
 <h1>Getting started with ac3airborne<a class="headerlink" href="#getting-started-with-ac3airborne" title="Permalink to this headline">¶</a></h1>
-<p>Welcome to <strong>ac3airborne</strong>! We’re glad you’re here and we hope that you find this Python library to be useful for your needs. In order to help get you started with <strong>ac3airborne</strong>, we’ve put together this collection of tutorials to introduce you to the basic syntax and functionality of this library.</p>
+<p>Welcome to <strong>ac3airborne</strong>! We’re happy that you’re here and hope that you find this Python library to be useful for your needs. In order to help you to get started with <strong>ac3airborne</strong>, we’ve put together this collection of tutorials that should introduce you to the basic syntax and functionality of this library.</p>
 <p>For installation instructions, please see our <a class="reference external" href="https://github.com/igmk/ac3airborne">Github Repository</a>.</p>
 <p>This package intends to make the access to the airborne data collected within the various <a class="reference external" href="http://www.ac3-tr.de/">AC3</a> airborne campaigns more easy.</p>
 <p>In some of the examples you will see an icon like the first one on this picture:</p>
 <p><img alt="title" src="_images/icons.png" /></p>
 <p>Just go with your mouse on it:</p>
 <p><img alt="title" src="_images/binder.png" /></p>
-<p>Clicking on <em>Binder</em> an virtual environment will be opend and the page will be shown as a Jupyter Notebook in a Jupyter Hub, so that you can try the examples yourself!</p>
+<p>Clicking on <em>Binder</em> will start an virtual environment and the page will be shown as a Jupyter Notebook within a Jupyter Hub, so that you can try the examples yourself!</p>
 <div class="section" id="functionality">
 <h2>Functionality<a class="headerlink" href="#functionality" title="Permalink to this headline">¶</a></h2>
 <p>First of all we want to import the <code class="docutils literal notranslate"><span class="pre">ac3airborne</span></code> module:</p>
@@ -431,7 +429,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;v0.0.6&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;v0.0.6-1-ge71b0c1&#39;
 </pre></div>
 </div>
 </div>
@@ -478,7 +476,7 @@
 </div>
 </div>
 </div>
-<p>We have to keys, corresponding to the <em>polar 5</em> and to the <em>polar 6</em> aircrafts. We select one of them and take a look to the nested structure of the dictionary.</p>
+<p>We have to keys, corresponding to the <em>Polar 5</em> and to the <em>Polar 6</em> aircraft of the Alfred-Wegener-Institute for Polar and Marine research. We select one of them and take a look to the nested structure of the dictionary.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">])</span>
@@ -752,8 +750,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="the-true-flight-segments">
-<h5>The true flight <code class="docutils literal notranslate"><span class="pre">segments</span></code><a class="headerlink" href="#the-true-flight-segments" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="the-flight-segments">
+<h5>The flight <code class="docutils literal notranslate"><span class="pre">segments</span></code><a class="headerlink" href="#the-flight-segments" title="Permalink to this headline">¶</a></h5>
 <p>This is the key, which actually contains the segmented flight. Let’s take a closer look:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -791,9 +789,9 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;dropsondes&#39;: [],
  &#39;end&#39;: datetime.datetime(2017, 6, 8, 8, 8, 53),
  &#39;irregularities&#39;: [&#39;whale-watching loop&#39;],
- &#39;kinds&#39;: [&#39;major_ascend&#39;, &#39;nya_overflight&#39;, &#39;sveabreen_glacier_overflight&#39;],
+ &#39;kinds&#39;: [&#39;major_ascent&#39;, &#39;nya_overflight&#39;, &#39;sveabreen_glacier_overflight&#39;],
  &#39;levels&#39;: [100, 9700],
- &#39;name&#39;: &#39;major ascend&#39;,
+ &#39;name&#39;: &#39;major ascent&#39;,
  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_ma&#39;,
  &#39;start&#39;: datetime.datetime(2017, 6, 8, 7, 36, 50)}
 </pre></div>
@@ -950,7 +948,7 @@
 </div>
 </div>
 </div>
-<p>These are the flight that are available for the given dataset. Let’s take again <code class="docutils literal notranslate"><span class="pre">ACLOUD_P5_RF14</span></code>:</p>
+<p>These are the flights that are available for the given dataset. Let’s take again <code class="docutils literal notranslate"><span class="pre">ACLOUD_P5_RF14</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">cat</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;GPS_INS&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">])</span>
@@ -1075,32 +1073,12 @@
               </div>
               
         
+        <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">Introduction</a>
+    <a class='right-next' id="next-link" href="datasets.html" title="next page">Datasets</a>
 
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="intro.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Introduction</p>
-            </div>
-        </a>
-    </div>
-     <div id="next">
-        <a class="right-next" href="datasets.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Datasets</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
-</div>
+        </div>
         
         </div>
     </div>
@@ -1119,9 +1097,11 @@
 
       </div>
     </div>
-  
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-  
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
   </body>
 </html>

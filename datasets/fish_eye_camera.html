@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fish-eye camera &#8212; how_to_ac3airborne</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -20,10 +19,14 @@
 
     
       
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -31,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -41,10 +44,10 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
@@ -55,14 +58,14 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="PMS probes and Nevzorov" href="nevzorov_and_pms.html" />
     <link rel="prev" title="AMALi cloud top height" href="amali_cloud_top_height.html" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-    
+
+
+
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
-
     
 
     <div class="container-xl">
@@ -71,42 +74,37 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
-      
-      <img src="../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">how_to_ac3airborne</h1>
-      
-    </a>
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">how_to_ac3airborne</h1>
+  
+</a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
    Introduction
   </a>
  </li>
 </ul>
-<ul class="current nav bd-sidenav">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../getting_started.html">
    Getting started with ac3airborne
   </a>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="../datasets.html">
    Datasets
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
+  <ul class="current collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="nose_boom.html">
      Nose boom
@@ -158,22 +156,19 @@
     </a>
    </li>
   </ul>
+  <i class="fas fa-chevron-down">
+  </i>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../flight_segmentation.html">
    Flight-phase separation
   </a>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../code.html">
    Toolbox and examples
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
+  <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="../running_locally.html">
      Running how_to_ac3airborne locally
@@ -205,6 +200,8 @@
     </a>
    </li>
   </ul>
+  <i class="fas fa-chevron-down">
+  </i>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../references.html">
@@ -213,7 +210,6 @@
  </li>
 </ul>
 
-    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -263,12 +259,12 @@
 
             <!-- Source interaction buttons -->
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -294,11 +290,12 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#data-access">
    Data access
@@ -316,7 +313,8 @@
  </li>
 </ul>
 
-            </nav>
+        </nav>
+        
         </div>
     </div>
 </div>
@@ -406,8 +404,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No protocol specified
-No protocol specified
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Invalid MIT-MAGIC-COOKIE-1 key
 </pre></div>
 </div>
 <div class="output text_html"><div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
@@ -776,10 +773,10 @@ Data variables:
     latitude        (dim_t) float32 79.86 79.86 79.86 ... 78.34 78.34 78.34
 Attributes:
     Institution:  Leipzig Institute for Meteorology (LIM) - University of Lei...
-    Comment:      Date 2017-05-25</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-64263e4f-805e-48be-b769-4b6a69ef4e03' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-64263e4f-805e-48be-b769-4b6a69ef4e03' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span>dim_y</span>: 901</li><li><span>dim_x</span>: 901</li><li><span>dim_t</span>: 506</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-69028ab6-3f9d-4bb9-a54a-0dbff4193d9b' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-69028ab6-3f9d-4bb9-a54a-0dbff4193d9b' class='xr-section-summary'  title='Expand/collapse section'>Coordinates: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-a43a1aaa-6bde-4347-a507-dc7a0c4c92c8' class='xr-section-summary-in' type='checkbox'  checked><label for='section-a43a1aaa-6bde-4347-a507-dc7a0c4c92c8' class='xr-section-summary' >Data variables: <span>(9)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>vza</span></div><div class='xr-var-dims'>(dim_y, dim_x)</div><div class='xr-var-dtype'>int32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-47f73cfa-06c6-4767-8a8a-47e39451a4ad' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-47f73cfa-06c6-4767-8a8a-47e39451a4ad' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-452430dc-12ca-45cc-997f-fe4667d0747b' class='xr-var-data-in' type='checkbox'><label for='data-452430dc-12ca-45cc-997f-fe4667d0747b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>deg</dd><dt><span>scaling_factor :</span></dt><dd>0.01</dd></dl></div><div class='xr-var-data'><pre>[811801 values with dtype=int32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>vaa</span></div><div class='xr-var-dims'>(dim_y, dim_x)</div><div class='xr-var-dtype'>int32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-ef335bd5-c9f3-476c-b939-ab7c4a6dcc4d' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ef335bd5-c9f3-476c-b939-ab7c4a6dcc4d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e31207af-d5e6-4712-9bc3-5c27c1f19726' class='xr-var-data-in' type='checkbox'><label for='data-e31207af-d5e6-4712-9bc3-5c27c1f19726' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>deg</dd><dt><span>scaling_factor :</span></dt><dd>0.01</dd></dl></div><div class='xr-var-data'><pre>[811801 values with dtype=int32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>radiance_red</span></div><div class='xr-var-dims'>(dim_t, dim_y, dim_x)</div><div class='xr-var-dtype'>int16</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-e8507528-711a-4e42-87ed-20a636369e23' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e8507528-711a-4e42-87ed-20a636369e23' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b7c5146e-3f88-430b-806e-8e580337ee10' class='xr-var-data-in' type='checkbox'><label for='data-b7c5146e-3f88-430b-806e-8e580337ee10' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>W m-2 nm-1 sr-1</dd><dt><span>scaling_factor :</span></dt><dd>0.001</dd></dl></div><div class='xr-var-data'><pre>[410771306 values with dtype=int16]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>radiance_green</span></div><div class='xr-var-dims'>(dim_t, dim_y, dim_x)</div><div class='xr-var-dtype'>int16</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-381e4095-f44a-46b5-90c9-efe264fc5886' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-381e4095-f44a-46b5-90c9-efe264fc5886' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-7a8de94f-1008-4175-843b-2cbf7ba8ea34' class='xr-var-data-in' type='checkbox'><label for='data-7a8de94f-1008-4175-843b-2cbf7ba8ea34' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>W m-2 nm-1 sr-1</dd><dt><span>scaling_factor :</span></dt><dd>0.001</dd></dl></div><div class='xr-var-data'><pre>[410771306 values with dtype=int16]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>radiance_blue</span></div><div class='xr-var-dims'>(dim_t, dim_y, dim_x)</div><div class='xr-var-dtype'>int16</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-029646ba-4d2b-443a-a1bd-e175425f3693' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-029646ba-4d2b-443a-a1bd-e175425f3693' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-5ae0e17e-f276-4215-9308-1f40b2dcd8f8' class='xr-var-data-in' type='checkbox'><label for='data-5ae0e17e-f276-4215-9308-1f40b2dcd8f8' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>W m-2 nm-1 sr-1</dd><dt><span>scaling_factor :</span></dt><dd>0.001</dd></dl></div><div class='xr-var-data'><pre>[410771306 values with dtype=int16]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>time</span></div><div class='xr-var-dims'>(dim_t)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-70d1432c-a6e3-4d78-92be-6dc40d586194' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-70d1432c-a6e3-4d78-92be-6dc40d586194' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-40a6099d-4384-4231-8c85-930a284d949f' class='xr-var-data-in' type='checkbox'><label for='data-40a6099d-4384-4231-8c85-930a284d949f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>dec UTC</dd></dl></div><div class='xr-var-data'><pre>array([10.002486, 10.004156, 10.005819, ..., 10.995805, 10.997472, 10.999139],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>altitude</span></div><div class='xr-var-dims'>(dim_t)</div><div class='xr-var-dtype'>int16</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-d5aa621a-04c4-43f8-b054-048042b996b3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-d5aa621a-04c4-43f8-b054-048042b996b3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-68df9446-20ab-49fb-a8c7-c4f95708f8a1' class='xr-var-data-in' type='checkbox'><label for='data-68df9446-20ab-49fb-a8c7-c4f95708f8a1' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([2892, 2895, 2891, ..., 2881, 2883, 2882], dtype=int16)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>longitude</span></div><div class='xr-var-dims'>(dim_t)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-1cc21cfa-3deb-41f5-ba55-5220573a4619' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-1cc21cfa-3deb-41f5-ba55-5220573a4619' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3a4788e3-28c3-4a7d-b935-02edb1c8d9f5' class='xr-var-data-in' type='checkbox'><label for='data-3a4788e3-28c3-4a7d-b935-02edb1c8d9f5' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>deg</dd></dl></div><div class='xr-var-data'><pre>array([-0.03472, -0.03262, -0.03084, ...,  3.60674,  3.58571,  3.56463],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>latitude</span></div><div class='xr-var-dims'>(dim_t)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-5b9f91d5-b559-4ffb-8f55-97dcdc9eb2c1' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-5b9f91d5-b559-4ffb-8f55-97dcdc9eb2c1' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1a7ee64c-58a5-4073-a2de-d3b5332b9d67' class='xr-var-data-in' type='checkbox'><label for='data-1a7ee64c-58a5-4073-a2de-d3b5332b9d67' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>deg</dd></dl></div><div class='xr-var-data'><pre>array([79.86481, 79.86037, 79.8559 , ..., 78.34373, 78.34406, 78.34438],
-      dtype=float32)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-5419c108-595a-4dfe-b37a-eb8782ad276b' class='xr-section-summary-in' type='checkbox'  checked><label for='section-5419c108-595a-4dfe-b37a-eb8782ad276b' class='xr-section-summary' >Attributes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Institution :</span></dt><dd>Leipzig Institute for Meteorology (LIM) - University of Leipzig</dd><dt><span>Comment :</span></dt><dd>Date 2017-05-25</dd></dl></div></li></ul></div></div></div></div>
+    Comment:      Date 2017-05-25</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-06521e71-ee9e-4461-b972-fd37e852bba6' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-06521e71-ee9e-4461-b972-fd37e852bba6' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span>dim_y</span>: 901</li><li><span>dim_x</span>: 901</li><li><span>dim_t</span>: 506</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-7603ebaa-f4b2-4ec0-8906-be3eeac60e3f' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-7603ebaa-f4b2-4ec0-8906-be3eeac60e3f' class='xr-section-summary'  title='Expand/collapse section'>Coordinates: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-224a28df-b0f5-46f1-ac65-fa3bb6f47720' class='xr-section-summary-in' type='checkbox'  checked><label for='section-224a28df-b0f5-46f1-ac65-fa3bb6f47720' class='xr-section-summary' >Data variables: <span>(9)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>vza</span></div><div class='xr-var-dims'>(dim_y, dim_x)</div><div class='xr-var-dtype'>int32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-e61c62f6-e618-489a-8929-acc7c9149da2' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e61c62f6-e618-489a-8929-acc7c9149da2' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-08351131-3f69-4e03-8e81-4c259f526dea' class='xr-var-data-in' type='checkbox'><label for='data-08351131-3f69-4e03-8e81-4c259f526dea' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>deg</dd><dt><span>scaling_factor :</span></dt><dd>0.01</dd></dl></div><div class='xr-var-data'><pre>[811801 values with dtype=int32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>vaa</span></div><div class='xr-var-dims'>(dim_y, dim_x)</div><div class='xr-var-dtype'>int32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-c47c0a35-a342-4b4a-b4e8-c2245ad7ca1c' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c47c0a35-a342-4b4a-b4e8-c2245ad7ca1c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b8d27ef7-ed3f-433a-8f09-4007f88617cd' class='xr-var-data-in' type='checkbox'><label for='data-b8d27ef7-ed3f-433a-8f09-4007f88617cd' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>deg</dd><dt><span>scaling_factor :</span></dt><dd>0.01</dd></dl></div><div class='xr-var-data'><pre>[811801 values with dtype=int32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>radiance_red</span></div><div class='xr-var-dims'>(dim_t, dim_y, dim_x)</div><div class='xr-var-dtype'>int16</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-01b61189-3943-4491-af13-dcc397fa17a5' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-01b61189-3943-4491-af13-dcc397fa17a5' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-cafdf69c-cabf-4889-b8b2-cb075862e8dd' class='xr-var-data-in' type='checkbox'><label for='data-cafdf69c-cabf-4889-b8b2-cb075862e8dd' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>W m-2 nm-1 sr-1</dd><dt><span>scaling_factor :</span></dt><dd>0.001</dd></dl></div><div class='xr-var-data'><pre>[410771306 values with dtype=int16]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>radiance_green</span></div><div class='xr-var-dims'>(dim_t, dim_y, dim_x)</div><div class='xr-var-dtype'>int16</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-d352b7b6-948f-4362-ade6-ca6e4c31da8e' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-d352b7b6-948f-4362-ade6-ca6e4c31da8e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-296c8850-b85f-4090-a95b-758bbde8720a' class='xr-var-data-in' type='checkbox'><label for='data-296c8850-b85f-4090-a95b-758bbde8720a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>W m-2 nm-1 sr-1</dd><dt><span>scaling_factor :</span></dt><dd>0.001</dd></dl></div><div class='xr-var-data'><pre>[410771306 values with dtype=int16]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>radiance_blue</span></div><div class='xr-var-dims'>(dim_t, dim_y, dim_x)</div><div class='xr-var-dtype'>int16</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-21526361-63ef-4ee3-af3e-4f0055a0668a' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-21526361-63ef-4ee3-af3e-4f0055a0668a' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-7888e939-9154-48d9-a838-294592abbf39' class='xr-var-data-in' type='checkbox'><label for='data-7888e939-9154-48d9-a838-294592abbf39' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>W m-2 nm-1 sr-1</dd><dt><span>scaling_factor :</span></dt><dd>0.001</dd></dl></div><div class='xr-var-data'><pre>[410771306 values with dtype=int16]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>time</span></div><div class='xr-var-dims'>(dim_t)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-758ea809-479c-44d0-ad71-5eed795a0b87' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-758ea809-479c-44d0-ad71-5eed795a0b87' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-934a84be-5b4d-40d1-9824-83def2b7a1df' class='xr-var-data-in' type='checkbox'><label for='data-934a84be-5b4d-40d1-9824-83def2b7a1df' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>dec UTC</dd></dl></div><div class='xr-var-data'><pre>array([10.002486, 10.004156, 10.005819, ..., 10.995805, 10.997472, 10.999139],
+      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>altitude</span></div><div class='xr-var-dims'>(dim_t)</div><div class='xr-var-dtype'>int16</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-fbbb5f3f-94b3-425a-961c-200e187d8388' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-fbbb5f3f-94b3-425a-961c-200e187d8388' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c7375682-cd37-47df-9203-4a146ae64e43' class='xr-var-data-in' type='checkbox'><label for='data-c7375682-cd37-47df-9203-4a146ae64e43' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([2892, 2895, 2891, ..., 2881, 2883, 2882], dtype=int16)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>longitude</span></div><div class='xr-var-dims'>(dim_t)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-b3f244c9-c0cb-44ae-97a6-c7f95922febc' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-b3f244c9-c0cb-44ae-97a6-c7f95922febc' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d46a69c1-59db-4e13-b7ea-9cec668c48e3' class='xr-var-data-in' type='checkbox'><label for='data-d46a69c1-59db-4e13-b7ea-9cec668c48e3' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>deg</dd></dl></div><div class='xr-var-data'><pre>array([-0.03472, -0.03262, -0.03084, ...,  3.60674,  3.58571,  3.56463],
+      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>latitude</span></div><div class='xr-var-dims'>(dim_t)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-4dddbf8d-1700-4f49-bcb7-7a650f1b2275' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-4dddbf8d-1700-4f49-bcb7-7a650f1b2275' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-5369567d-3da5-4ee8-b8a9-85a24762dc37' class='xr-var-data-in' type='checkbox'><label for='data-5369567d-3da5-4ee8-b8a9-85a24762dc37' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>deg</dd></dl></div><div class='xr-var-data'><pre>array([79.86481, 79.86037, 79.8559 , ..., 78.34373, 78.34406, 78.34438],
+      dtype=float32)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-44cc1851-9dc8-4e39-a6f0-e760428735bb' class='xr-section-summary-in' type='checkbox'  checked><label for='section-44cc1851-9dc8-4e39-a6f0-e760428735bb' class='xr-section-summary' >Attributes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Institution :</span></dt><dd>Leipzig Institute for Meteorology (LIM) - University of Leipzig</dd><dt><span>Comment :</span></dt><dd>Date 2017-05-25</dd></dl></div></li></ul></div></div></div></div>
 </div>
 <p>The dataset includes the red, green and blue radiances (<code class="docutils literal notranslate"><span class="pre">radiance_red</span></code>, <code class="docutils literal notranslate"><span class="pre">radiance_green</span></code>, <code class="docutils literal notranslate"><span class="pre">radiance_blue</span></code>), the camera’s zenith and azimuth angles (<code class="docutils literal notranslate"><span class="pre">vza</span></code>, <code class="docutils literal notranslate"><span class="pre">vaa</span></code>), and information on the aircraft’s flight altitude (<code class="docutils literal notranslate"><span class="pre">altitude</span></code>) and position (<code class="docutils literal notranslate"><span class="pre">latitude</span></code>, <code class="docutils literal notranslate"><span class="pre">longitude</span></code>).</p>
 <p>Next, the time is converted from dec UTC to datetime:</p>
@@ -937,32 +934,12 @@ datetime64[ns]
               </div>
               
         
+        <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="amali_cloud_top_height.html" title="previous page">AMALi cloud top height</a>
+    <a class='right-next' id="next-link" href="nevzorov_and_pms.html" title="next page">PMS probes and Nevzorov</a>
 
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="amali_cloud_top_height.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">AMALi cloud top height</p>
-            </div>
-        </a>
-    </div>
-     <div id="next">
-        <a class="right-next" href="nevzorov_and_pms.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">PMS probes and Nevzorov</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
-</div>
+        </div>
         
         </div>
     </div>
@@ -981,9 +958,11 @@ datetime64[ns]
 
       </div>
     </div>
-  
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-  
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
   </body>
 </html>

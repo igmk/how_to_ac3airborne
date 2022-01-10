@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Querying the flight phase files &#8212; how_to_ac3airborne</title>
     
-  <link href="../_static/css/theme.css" rel="stylesheet" />
-  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -20,10 +19,14 @@
 
     
       
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
@@ -31,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="../_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -41,10 +44,10 @@
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
@@ -55,14 +58,14 @@
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Land-ocean mask" href="land_ocean.html" />
     <link rel="prev" title="Caching and local datasets" href="caching_and_local_datasets.html" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-    
+
+
+
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
-
     
 
     <div class="container-xl">
@@ -71,42 +74,37 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
-      
-      <img src="../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">how_to_ac3airborne</h1>
-      
-    </a>
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  <img src="../_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">how_to_ac3airborne</h1>
+  
+</a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
    Introduction
   </a>
  </li>
 </ul>
-<ul class="current nav bd-sidenav">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../getting_started.html">
    Getting started with ac3airborne
   </a>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="../datasets.html">
    Datasets
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
+  <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="../datasets/nose_boom.html">
      Nose boom
@@ -158,22 +156,19 @@
     </a>
    </li>
   </ul>
+  <i class="fas fa-chevron-down">
+  </i>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../flight_segmentation.html">
    Flight-phase separation
   </a>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="reference internal" href="../code.html">
    Toolbox and examples
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
+  <ul class="current collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="../running_locally.html">
      Running how_to_ac3airborne locally
@@ -205,6 +200,8 @@
     </a>
    </li>
   </ul>
+  <i class="fas fa-chevron-down">
+  </i>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../references.html">
@@ -213,7 +210,6 @@
  </li>
 </ul>
 
-    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -263,12 +259,12 @@
 
             <!-- Source interaction buttons -->
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -294,11 +290,12 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i>
+            Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#data-access">
    Data access
@@ -360,7 +357,8 @@
  </li>
 </ul>
 
-            </nav>
+        </nav>
+        
         </div>
     </div>
 </div>
@@ -455,8 +453,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>No protocol specified
-No protocol specified
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Invalid MIT-MAGIC-COOKIE-1 key
 </pre></div>
 </div>
 <div class="output text_html"><div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
@@ -839,10 +836,10 @@ Attributes: (12/14)
     platform:     Polar5
     flight_id:    RF14
     title:        Polar5 position and attitude data
-    history:      acquired by Polar5 during ACLOUD campaign, quality checked ...</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-ef6ef8f6-d25b-435c-9ae6-552ce0b6c955' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-ef6ef8f6-d25b-435c-9ae6-552ce0b6c955' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 20211</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-5b960c1d-0750-462d-9a7b-7b3475725535' class='xr-section-summary-in' type='checkbox'  checked><label for='section-5b960c1d-0750-462d-9a7b-7b3475725535' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2017-06-08T07:22:07 ... 2017-06-...</div><input id='attrs-a5b1b5c3-c851-4594-81ac-3d03e23e8ab4' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-a5b1b5c3-c851-4594-81ac-3d03e23e8ab4' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b3849d80-1f4a-474c-81bd-4455ce581a51' class='xr-var-data-in' type='checkbox'><label for='data-b3849d80-1f4a-474c-81bd-4455ce581a51' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>time</dd><dt><span>long_name :</span></dt><dd>time in seconds since epoch</dd><dt><span>axis :</span></dt><dd>T</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;2017-06-08T07:22:07.000000000&#x27;, &#x27;2017-06-08T07:22:08.000000000&#x27;,
+    history:      acquired by Polar5 during ACLOUD campaign, quality checked ...</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-6b8cb111-f41b-4e67-9166-de63b2267181' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-6b8cb111-f41b-4e67-9166-de63b2267181' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 20211</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-1263ebeb-fe9f-4d48-8890-fc5c5892e4d8' class='xr-section-summary-in' type='checkbox'  checked><label for='section-1263ebeb-fe9f-4d48-8890-fc5c5892e4d8' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2017-06-08T07:22:07 ... 2017-06-...</div><input id='attrs-d08ae7be-7124-463a-bef8-105d5f3ee90c' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-d08ae7be-7124-463a-bef8-105d5f3ee90c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9f56e413-1271-41d3-acb5-f0684abf4a19' class='xr-var-data-in' type='checkbox'><label for='data-9f56e413-1271-41d3-acb5-f0684abf4a19' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>time</dd><dt><span>long_name :</span></dt><dd>time in seconds since epoch</dd><dt><span>axis :</span></dt><dd>T</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;2017-06-08T07:22:07.000000000&#x27;, &#x27;2017-06-08T07:22:08.000000000&#x27;,
        &#x27;2017-06-08T07:22:09.000000000&#x27;, ..., &#x27;2017-06-08T12:59:05.000000000&#x27;,
        &#x27;2017-06-08T12:59:06.000000000&#x27;, &#x27;2017-06-08T12:59:07.000000000&#x27;],
-      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-c788f591-5854-4794-ab60-84040b25a873' class='xr-section-summary-in' type='checkbox'  checked><label for='section-c788f591-5854-4794-ab60-84040b25a873' class='xr-section-summary' >Data variables: <span>(11)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>alt</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-04175307-dc93-47fa-b225-309a88992e54' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-04175307-dc93-47fa-b225-309a88992e54' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c22eeda8-c867-40d4-8b74-ab6d17528c7b' class='xr-var-data-in' type='checkbox'><label for='data-c22eeda8-c867-40d4-8b74-ab6d17528c7b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>height_above_reference_ellipsoid</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/elliptical height</dd><dt><span>positive :</span></dt><dd>up</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>axis :</span></dt><dd>Z</dd></dl></div><div class='xr-var-data'><pre>array([  nan, 28.83, 28.85, ..., 24.57, 24.55,   nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>tas</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-e2a4bbfc-17a0-49bb-8de4-ee0ee273b296' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e2a4bbfc-17a0-49bb-8de4-ee0ee273b296' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-bb90e05e-799a-4e1d-925c-1ea30c96f78b' class='xr-var-data-in' type='checkbox'><label for='data-bb90e05e-799a-4e1d-925c-1ea30c96f78b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_speed_wrt_air</dd><dt><span>long_name :</span></dt><dd>calculated true airspeed</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>m/s</dd></dl></div><div class='xr-var-data'><pre>array([nan,  0.,  0., ...,  0.,  0., nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-c9606f3e-4e3a-4620-83f5-6e8c025df924' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c9606f3e-4e3a-4620-83f5-6e8c025df924' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ad9cbe45-72b9-4d43-8316-a6288fa85792' class='xr-var-data-in' type='checkbox'><label for='data-ad9cbe45-72b9-4d43-8316-a6288fa85792' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>axis :</span></dt><dd>Y</dd></dl></div><div class='xr-var-data'><pre>array([      nan, 78.24576 , 78.24576 , ..., 78.245787, 78.245788,       nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat_dir</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>object</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-8de9d2d8-8d8c-41a5-ac59-ae25c6c00fb7' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-8de9d2d8-8d8c-41a5-ac59-ae25c6c00fb7' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-37329e8e-77cf-4993-bb11-c4c48ca129d3' class='xr-var-data-in' type='checkbox'><label for='data-37329e8e-77cf-4993-bb11-c4c48ca129d3' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;&#x27;, &#x27;N&#x27;, &#x27;N&#x27;, ..., &#x27;N&#x27;, &#x27;N&#x27;, &#x27;&#x27;], dtype=object)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lon</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-11338f24-40e6-4384-ac26-7e7660e8994a' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-11338f24-40e6-4384-ac26-7e7660e8994a' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-47998844-6772-441b-bf92-a481cb5d5b45' class='xr-var-data-in' type='checkbox'><label for='data-47998844-6772-441b-bf92-a481cb5d5b45' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/longitude</dd><dt><span>units :</span></dt><dd>degree_east</dd><dt><span>axis :</span></dt><dd>X</dd></dl></div><div class='xr-var-data'><pre>array([      nan, 15.504153, 15.504153, ..., 15.50407 , 15.50407 ,       nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lon_dir</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>object</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-9aa8165a-f7c4-4034-932c-63302b753f57' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-9aa8165a-f7c4-4034-932c-63302b753f57' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b98aefd4-6dac-4ab9-bf38-0d67dd0a90d5' class='xr-var-data-in' type='checkbox'><label for='data-b98aefd4-6dac-4ab9-bf38-0d67dd0a90d5' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;&#x27;, &#x27;E&#x27;, &#x27;E&#x27;, ..., &#x27;E&#x27;, &#x27;E&#x27;, &#x27;&#x27;], dtype=object)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>vs</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-f356dfae-8f84-4356-bfdc-7d9eb71204da' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f356dfae-8f84-4356-bfdc-7d9eb71204da' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ef74a8d3-d657-4184-ad2b-cb95dc86db24' class='xr-var-data-in' type='checkbox'><label for='data-ef74a8d3-d657-4184-ad2b-cb95dc86db24' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_vertical_speed</dd><dt><span>long_name :</span></dt><dd>vertical speed</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>m/s</dd></dl></div><div class='xr-var-data'><pre>array([nan, 0.1, 0.1, ..., 0.1, 0. , nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>gs</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-39f8826a-dbb2-4fb0-9874-7f0b34a204ec' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-39f8826a-dbb2-4fb0-9874-7f0b34a204ec' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-54692b16-3a44-456f-8b22-4b0b64ace3e9' class='xr-var-data-in' type='checkbox'><label for='data-54692b16-3a44-456f-8b22-4b0b64ace3e9' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_speed_wrt_ground</dd><dt><span>long_name :</span></dt><dd>groundspeed of platform</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>kts</dd></dl></div><div class='xr-var-data'><pre>array([0.  , 0.  , 0.  , ..., 1.95, 1.98, 1.98])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>pitch</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-3dfa69c3-e936-4d84-b35c-e9a212a41d3b' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-3dfa69c3-e936-4d84-b35c-e9a212a41d3b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e49f31da-4861-41d8-874f-f07fad4bddb5' class='xr-var-data-in' type='checkbox'><label for='data-e49f31da-4861-41d8-874f-f07fad4bddb5' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_pitch_fore_up</dd><dt><span>long_name :</span></dt><dd>pitch angle of platform</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>degrees</dd></dl></div><div class='xr-var-data'><pre>array([12.23, 12.23, 12.23, ..., 11.72, 11.72, 11.72])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>roll</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-f712476e-3211-41c3-9056-619019980354' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f712476e-3211-41c3-9056-619019980354' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0dd1b654-d70f-4981-84af-74943b0a83b1' class='xr-var-data-in' type='checkbox'><label for='data-0dd1b654-d70f-4981-84af-74943b0a83b1' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_roll_starboard_down</dd><dt><span>long_name :</span></dt><dd>roll angle of platform</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>degrees</dd></dl></div><div class='xr-var-data'><pre>array([1.82, 1.82, 1.83, ..., 1.92, 1.93, 1.94])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>heading</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-fcb11a0f-aa03-4615-8bd3-de02e90ac6e3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-fcb11a0f-aa03-4615-8bd3-de02e90ac6e3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e28b3f86-c1ea-45ae-b57f-572a3cca08ce' class='xr-var-data-in' type='checkbox'><label for='data-e28b3f86-c1ea-45ae-b57f-572a3cca08ce' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_yaw_fore_starboard</dd><dt><span>long_name :</span></dt><dd>true heading</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>degrees</dd></dl></div><div class='xr-var-data'><pre>array([  0.  ,   0.  ,   0.  , ..., -73.84, -73.84, -73.83])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-91f03be6-a79c-410e-930f-682b8b9bb160' class='xr-section-summary-in' type='checkbox'  ><label for='section-91f03be6-a79c-410e-930f-682b8b9bb160' class='xr-section-summary' >Attributes: <span>(14)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>1Hz subset based on GPS1 and INS data processed by AWI engineers</dd><dt><span>instruments :</span></dt><dd>GPS1 and INS</dd><dt><span>version :</span></dt><dd>[0.1]</dd><dt><span>contact :</span></dt><dd>mario.mech@uni-koeln.de, martin.gehrmann@awi.de</dd><dt><span>institution :</span></dt><dd>[&#x27;Alfred-Wegener-Institut Helmholtz-Zentrum für Polar- und Meeresforschung&#x27;]</dd><dt><span>author :</span></dt><dd>Dr. Mario Mech</dd><dt><span>source :</span></dt><dd>DSHIP excerpt</dd><dt><span>Convention :</span></dt><dd>CF-1.8</dd><dt><span>featureType :</span></dt><dd>trajectory</dd><dt><span>mission :</span></dt><dd>ACLOUD</dd><dt><span>platform :</span></dt><dd>Polar5</dd><dt><span>flight_id :</span></dt><dd>RF14</dd><dt><span>title :</span></dt><dd>Polar5 position and attitude data</dd><dt><span>history :</span></dt><dd>acquired by Polar5 during ACLOUD campaign, quality checked by AWI and uploaded to DSHIP database, extracted and reformated by Mario Mech</dd></dl></div></li></ul></div></div></div></div>
+      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-ab8e2cc6-a07a-4b16-bc8f-bca13ceca4de' class='xr-section-summary-in' type='checkbox'  checked><label for='section-ab8e2cc6-a07a-4b16-bc8f-bca13ceca4de' class='xr-section-summary' >Data variables: <span>(11)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>alt</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-e8ab60b1-2847-4262-83fa-4491c5da4b65' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e8ab60b1-2847-4262-83fa-4491c5da4b65' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-08b0a44b-09de-4eb7-bf83-c0d222061db6' class='xr-var-data-in' type='checkbox'><label for='data-08b0a44b-09de-4eb7-bf83-c0d222061db6' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>height_above_reference_ellipsoid</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/elliptical height</dd><dt><span>positive :</span></dt><dd>up</dd><dt><span>units :</span></dt><dd>m</dd><dt><span>axis :</span></dt><dd>Z</dd></dl></div><div class='xr-var-data'><pre>array([  nan, 28.83, 28.85, ..., 24.57, 24.55,   nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>tas</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-a03688e4-ace9-4ca8-b1a7-9e1ec521c318' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-a03688e4-ace9-4ca8-b1a7-9e1ec521c318' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-db37fd2b-e068-41f0-9eaa-5bb9b8aa0315' class='xr-var-data-in' type='checkbox'><label for='data-db37fd2b-e068-41f0-9eaa-5bb9b8aa0315' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_speed_wrt_air</dd><dt><span>long_name :</span></dt><dd>calculated true airspeed</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>m/s</dd></dl></div><div class='xr-var-data'><pre>array([nan,  0.,  0., ...,  0.,  0., nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-0bc59101-291e-4c1a-baa2-982b8943c466' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-0bc59101-291e-4c1a-baa2-982b8943c466' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-03f8f341-deab-415b-9476-d037121c215e' class='xr-var-data-in' type='checkbox'><label for='data-03f8f341-deab-415b-9476-d037121c215e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd><dt><span>axis :</span></dt><dd>Y</dd></dl></div><div class='xr-var-data'><pre>array([      nan, 78.24576 , 78.24576 , ..., 78.245787, 78.245788,       nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat_dir</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>object</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-6c58e3a7-8258-4d37-866e-fae266e2381d' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-6c58e3a7-8258-4d37-866e-fae266e2381d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c2f81cd5-2413-43ce-b7b5-89b5af01060c' class='xr-var-data-in' type='checkbox'><label for='data-c2f81cd5-2413-43ce-b7b5-89b5af01060c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;&#x27;, &#x27;N&#x27;, &#x27;N&#x27;, ..., &#x27;N&#x27;, &#x27;N&#x27;, &#x27;&#x27;], dtype=object)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lon</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-1d1e2876-0f0e-4ba0-9104-ccaa3e4be501' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-1d1e2876-0f0e-4ba0-9104-ccaa3e4be501' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-71a65ca8-be4a-4900-9279-c5c55f8343d2' class='xr-var-data-in' type='checkbox'><label for='data-71a65ca8-be4a-4900-9279-c5c55f8343d2' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/longitude</dd><dt><span>units :</span></dt><dd>degree_east</dd><dt><span>axis :</span></dt><dd>X</dd></dl></div><div class='xr-var-data'><pre>array([      nan, 15.504153, 15.504153, ..., 15.50407 , 15.50407 ,       nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lon_dir</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>object</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-f9ab86a8-a680-45d3-9428-8da0f5a56cc0' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-f9ab86a8-a680-45d3-9428-8da0f5a56cc0' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-154b949b-fe2b-4a16-94be-905ab2f7688b' class='xr-var-data-in' type='checkbox'><label for='data-154b949b-fe2b-4a16-94be-905ab2f7688b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;&#x27;, &#x27;E&#x27;, &#x27;E&#x27;, ..., &#x27;E&#x27;, &#x27;E&#x27;, &#x27;&#x27;], dtype=object)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>vs</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-4e6ec9fc-8acc-4f76-a0ee-e2f2477740d3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-4e6ec9fc-8acc-4f76-a0ee-e2f2477740d3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-af12df30-5374-4f3b-b48c-e82412b7d579' class='xr-var-data-in' type='checkbox'><label for='data-af12df30-5374-4f3b-b48c-e82412b7d579' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_vertical_speed</dd><dt><span>long_name :</span></dt><dd>vertical speed</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>m/s</dd></dl></div><div class='xr-var-data'><pre>array([nan, 0.1, 0.1, ..., 0.1, 0. , nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>gs</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-b0a483d7-b8c1-4897-a51b-5b3f779a3049' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-b0a483d7-b8c1-4897-a51b-5b3f779a3049' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ed78522c-adc7-44e8-a11e-e6d332450fcb' class='xr-var-data-in' type='checkbox'><label for='data-ed78522c-adc7-44e8-a11e-e6d332450fcb' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_speed_wrt_ground</dd><dt><span>long_name :</span></dt><dd>groundspeed of platform</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>kts</dd></dl></div><div class='xr-var-data'><pre>array([0.  , 0.  , 0.  , ..., 1.95, 1.98, 1.98])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>pitch</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-9cf812da-8831-4bb1-9fb0-4ccbd2d9aadd' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-9cf812da-8831-4bb1-9fb0-4ccbd2d9aadd' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-99e50825-d9df-4f82-953a-ba93ac3041a5' class='xr-var-data-in' type='checkbox'><label for='data-99e50825-d9df-4f82-953a-ba93ac3041a5' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_pitch_fore_up</dd><dt><span>long_name :</span></dt><dd>pitch angle of platform</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>degrees</dd></dl></div><div class='xr-var-data'><pre>array([12.23, 12.23, 12.23, ..., 11.72, 11.72, 11.72])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>roll</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-9efcfa35-e90a-460e-adbe-1761e92f1a13' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-9efcfa35-e90a-460e-adbe-1761e92f1a13' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-2d545b5a-cbfd-481c-9d08-6d63abe6d8b1' class='xr-var-data-in' type='checkbox'><label for='data-2d545b5a-cbfd-481c-9d08-6d63abe6d8b1' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_roll_starboard_down</dd><dt><span>long_name :</span></dt><dd>roll angle of platform</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>degrees</dd></dl></div><div class='xr-var-data'><pre>array([1.82, 1.82, 1.83, ..., 1.92, 1.93, 1.94])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>heading</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-00f4f5fc-60a4-444f-b446-6ecffc2b9b70' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-00f4f5fc-60a4-444f-b446-6ecffc2b9b70' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-73f5f437-de08-42b6-a789-ef72fcdce3cb' class='xr-var-data-in' type='checkbox'><label for='data-73f5f437-de08-42b6-a789-ef72fcdce3cb' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_yaw_fore_starboard</dd><dt><span>long_name :</span></dt><dd>true heading</dd><dt><span>coordiantes :</span></dt><dd>lon lat alt</dd><dt><span>units :</span></dt><dd>degrees</dd></dl></div><div class='xr-var-data'><pre>array([  0.  ,   0.  ,   0.  , ..., -73.84, -73.84, -73.83])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-ef067a83-59ce-4cbd-9408-4fc639249024' class='xr-section-summary-in' type='checkbox'  ><label for='section-ef067a83-59ce-4cbd-9408-4fc639249024' class='xr-section-summary' >Attributes: <span>(14)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>1Hz subset based on GPS1 and INS data processed by AWI engineers</dd><dt><span>instruments :</span></dt><dd>GPS1 and INS</dd><dt><span>version :</span></dt><dd>[0.1]</dd><dt><span>contact :</span></dt><dd>mario.mech@uni-koeln.de, martin.gehrmann@awi.de</dd><dt><span>institution :</span></dt><dd>[&#x27;Alfred-Wegener-Institut Helmholtz-Zentrum für Polar- und Meeresforschung&#x27;]</dd><dt><span>author :</span></dt><dd>Dr. Mario Mech</dd><dt><span>source :</span></dt><dd>DSHIP excerpt</dd><dt><span>Convention :</span></dt><dd>CF-1.8</dd><dt><span>featureType :</span></dt><dd>trajectory</dd><dt><span>mission :</span></dt><dd>ACLOUD</dd><dt><span>platform :</span></dt><dd>Polar5</dd><dt><span>flight_id :</span></dt><dd>RF14</dd><dt><span>title :</span></dt><dd>Polar5 position and attitude data</dd><dt><span>history :</span></dt><dd>acquired by Polar5 during ACLOUD campaign, quality checked by AWI and uploaded to DSHIP database, extracted and reformated by Mario Mech</dd></dl></div></li></ul></div></div></div></div>
 </div>
 </div>
 <div class="section" id="load-polar-5-flight-phase-information">
@@ -1035,9 +1032,9 @@ Attributes: (12/14)
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;dropsondes&#39;: [],
   &#39;end&#39;: datetime.datetime(2017, 6, 8, 8, 8, 53),
   &#39;irregularities&#39;: [&#39;whale-watching loop&#39;],
-  &#39;kinds&#39;: [&#39;major_ascend&#39;, &#39;nya_overflight&#39;, &#39;sveabreen_glacier_overflight&#39;],
+  &#39;kinds&#39;: [&#39;major_ascent&#39;, &#39;nya_overflight&#39;, &#39;sveabreen_glacier_overflight&#39;],
   &#39;levels&#39;: [100, 9700],
-  &#39;name&#39;: &#39;major ascend&#39;,
+  &#39;name&#39;: &#39;major ascent&#39;,
   &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_ma&#39;,
   &#39;start&#39;: datetime.datetime(2017, 6, 8, 7, 36, 50)},
  {&#39;dropsondes&#39;: [],
@@ -1093,17 +1090,17 @@ Attributes: (12/14)
  {&#39;dropsondes&#39;: [],
   &#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 22, 43),
   &#39;irregularities&#39;: [&#39;not along straight line&#39;],
-  &#39;kinds&#39;: [&#39;large_descend&#39;, &#39;polarstern_overflight&#39;],
+  &#39;kinds&#39;: [&#39;large_descent&#39;, &#39;polarstern_overflight&#39;],
   &#39;levels&#39;: [9700, 200],
-  &#39;name&#39;: &#39;large descend 1&#39;,
+  &#39;name&#39;: &#39;large descent 1&#39;,
   &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_ld01&#39;,
   &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 10, 51)},
  {&#39;dropsondes&#39;: [],
   &#39;end&#39;: datetime.datetime(2017, 6, 8, 11, 11, 19),
   &#39;irregularities&#39;: [],
-  &#39;kinds&#39;: [&#39;large_ascend&#39;, &#39;polarstern_overflight&#39;],
+  &#39;kinds&#39;: [&#39;large_ascent&#39;, &#39;polarstern_overflight&#39;],
   &#39;levels&#39;: [2400, 9700],
-  &#39;name&#39;: &#39;large ascend 1&#39;,
+  &#39;name&#39;: &#39;large ascent 1&#39;,
   &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_la01&#39;,
   &#39;start&#39;: datetime.datetime(2017, 6, 8, 11, 2, 25)},
  {&#39;dropsondes&#39;: [],
@@ -1146,9 +1143,9 @@ Attributes: (12/14)
  {&#39;dropsondes&#39;: [],
   &#39;end&#39;: datetime.datetime(2017, 6, 8, 12, 51, 25),
   &#39;irregularities&#39;: [],
-  &#39;kinds&#39;: [&#39;major_descend&#39;, &#39;nya_overflight&#39;],
+  &#39;kinds&#39;: [&#39;major_descent&#39;, &#39;nya_overflight&#39;],
   &#39;levels&#39;: [9800, 100],
-  &#39;name&#39;: &#39;major descend&#39;,
+  &#39;name&#39;: &#39;major descent&#39;,
   &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_md&#39;,
   &#39;start&#39;: datetime.datetime(2017, 6, 8, 12, 25, 40)}]
 </pre></div>
@@ -1194,14 +1191,6 @@ Attributes: (12/14)
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;dropsondes&#39;: [],
-  &#39;end&#39;: datetime.datetime(2017, 6, 8, 8, 8, 53),
-  &#39;irregularities&#39;: [&#39;whale-watching loop&#39;],
-  &#39;kinds&#39;: [&#39;major_ascend&#39;, &#39;nya_overflight&#39;, &#39;sveabreen_glacier_overflight&#39;],
-  &#39;levels&#39;: [100, 9700],
-  &#39;name&#39;: &#39;major ascend&#39;,
-  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_ma&#39;,
-  &#39;start&#39;: datetime.datetime(2017, 6, 8, 7, 36, 50)},
- {&#39;dropsondes&#39;: [],
   &#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 10, 50),
   &#39;irregularities&#39;: [],
   &#39;kinds&#39;: [&#39;cross_pattern&#39;, &#39;polarstern_overflight&#39;],
@@ -1230,9 +1219,9 @@ Attributes: (12/14)
  {&#39;dropsondes&#39;: [],
   &#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 22, 43),
   &#39;irregularities&#39;: [&#39;not along straight line&#39;],
-  &#39;kinds&#39;: [&#39;large_descend&#39;, &#39;polarstern_overflight&#39;],
+  &#39;kinds&#39;: [&#39;large_descent&#39;, &#39;polarstern_overflight&#39;],
   &#39;levels&#39;: [9700, 200],
-  &#39;name&#39;: &#39;large descend 1&#39;,
+  &#39;name&#39;: &#39;large descent 1&#39;,
   &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_ld01&#39;,
   &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 10, 51)},
  {&#39;dropsondes&#39;: [],
@@ -1250,9 +1239,9 @@ Attributes: (12/14)
     &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 22, 44)},
    {&#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 31, 40),
     &#39;irregularities&#39;: [],
-    &#39;kinds&#39;: [&#39;procedure_turn&#39;, &#39;small_ascend&#39;],
+    &#39;kinds&#39;: [&#39;procedure_turn&#39;, &#39;small_ascent&#39;],
     &#39;levels&#39;: [200, 300],
-    &#39;name&#39;: &#39;racetrack pattern 1 ascend 1&#39;,
+    &#39;name&#39;: &#39;racetrack pattern 1 ascent 1&#39;,
     &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_rt01_a01&#39;,
     &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 29, 21)},
    {&#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 40, 26),
@@ -1264,9 +1253,9 @@ Attributes: (12/14)
     &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 31, 41)},
    {&#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 42, 40),
     &#39;irregularities&#39;: [],
-    &#39;kinds&#39;: [&#39;procedure_turn&#39;, &#39;small_ascend&#39;],
+    &#39;kinds&#39;: [&#39;procedure_turn&#39;, &#39;small_ascent&#39;],
     &#39;levels&#39;: [300, 1500],
-    &#39;name&#39;: &#39;racetrack pattern 1 ascend 2&#39;,
+    &#39;name&#39;: &#39;racetrack pattern 1 ascent 2&#39;,
     &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_rt01_a02&#39;,
     &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 40, 27)},
    {&#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 50, 3),
@@ -1278,9 +1267,9 @@ Attributes: (12/14)
     &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 42, 41)},
    {&#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 52, 53),
     &#39;irregularities&#39;: [],
-    &#39;kinds&#39;: [&#39;procedure_turn&#39;, &#39;small_ascend&#39;],
+    &#39;kinds&#39;: [&#39;procedure_turn&#39;, &#39;small_ascent&#39;],
     &#39;levels&#39;: [1500, 2400],
-    &#39;name&#39;: &#39;racetrack pattern 1 ascend 3&#39;,
+    &#39;name&#39;: &#39;racetrack pattern 1 ascent 3&#39;,
     &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_rt01_a03&#39;,
     &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 50, 4)},
    {&#39;end&#39;: datetime.datetime(2017, 6, 8, 11, 2, 1),
@@ -1295,9 +1284,9 @@ Attributes: (12/14)
  {&#39;dropsondes&#39;: [],
   &#39;end&#39;: datetime.datetime(2017, 6, 8, 11, 11, 19),
   &#39;irregularities&#39;: [],
-  &#39;kinds&#39;: [&#39;large_ascend&#39;, &#39;polarstern_overflight&#39;],
+  &#39;kinds&#39;: [&#39;large_ascent&#39;, &#39;polarstern_overflight&#39;],
   &#39;levels&#39;: [2400, 9700],
-  &#39;name&#39;: &#39;large ascend 1&#39;,
+  &#39;name&#39;: &#39;large ascent 1&#39;,
   &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_la01&#39;,
   &#39;start&#39;: datetime.datetime(2017, 6, 8, 11, 2, 25)},
  {&#39;dropsondes&#39;: [],
@@ -1336,15 +1325,7 @@ Attributes: (12/14)
     &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_cr02_l03&#39;,
     &#39;start&#39;: datetime.datetime(2017, 6, 8, 12, 24, 15)}],
   &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_cr02&#39;,
-  &#39;start&#39;: datetime.datetime(2017, 6, 8, 12, 5, 14)},
- {&#39;dropsondes&#39;: [],
-  &#39;end&#39;: datetime.datetime(2017, 6, 8, 12, 51, 25),
-  &#39;irregularities&#39;: [],
-  &#39;kinds&#39;: [&#39;major_descend&#39;, &#39;nya_overflight&#39;],
-  &#39;levels&#39;: [9800, 100],
-  &#39;name&#39;: &#39;major descend&#39;,
-  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_md&#39;,
-  &#39;start&#39;: datetime.datetime(2017, 6, 8, 12, 25, 40)}]
+  &#39;start&#39;: datetime.datetime(2017, 6, 8, 12, 5, 14)}]
 </pre></div>
 </div>
 </div>
@@ -1405,9 +1386,9 @@ Attributes: (12/14)
     &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 22, 44)},
    {&#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 31, 40),
     &#39;irregularities&#39;: [],
-    &#39;kinds&#39;: [&#39;procedure_turn&#39;, &#39;small_ascend&#39;],
+    &#39;kinds&#39;: [&#39;procedure_turn&#39;, &#39;small_ascent&#39;],
     &#39;levels&#39;: [200, 300],
-    &#39;name&#39;: &#39;racetrack pattern 1 ascend 1&#39;,
+    &#39;name&#39;: &#39;racetrack pattern 1 ascent 1&#39;,
     &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_rt01_a01&#39;,
     &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 29, 21)},
    {&#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 40, 26),
@@ -1419,9 +1400,9 @@ Attributes: (12/14)
     &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 31, 41)},
    {&#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 42, 40),
     &#39;irregularities&#39;: [],
-    &#39;kinds&#39;: [&#39;procedure_turn&#39;, &#39;small_ascend&#39;],
+    &#39;kinds&#39;: [&#39;procedure_turn&#39;, &#39;small_ascent&#39;],
     &#39;levels&#39;: [300, 1500],
-    &#39;name&#39;: &#39;racetrack pattern 1 ascend 2&#39;,
+    &#39;name&#39;: &#39;racetrack pattern 1 ascent 2&#39;,
     &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_rt01_a02&#39;,
     &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 40, 27)},
    {&#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 50, 3),
@@ -1433,9 +1414,9 @@ Attributes: (12/14)
     &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 42, 41)},
    {&#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 52, 53),
     &#39;irregularities&#39;: [],
-    &#39;kinds&#39;: [&#39;procedure_turn&#39;, &#39;small_ascend&#39;],
+    &#39;kinds&#39;: [&#39;procedure_turn&#39;, &#39;small_ascent&#39;],
     &#39;levels&#39;: [1500, 2400],
-    &#39;name&#39;: &#39;racetrack pattern 1 ascend 3&#39;,
+    &#39;name&#39;: &#39;racetrack pattern 1 ascent 3&#39;,
     &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_rt01_a03&#39;,
     &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 50, 4)},
    {&#39;end&#39;: datetime.datetime(2017, 6, 8, 11, 2, 1),
@@ -1488,9 +1469,9 @@ Attributes: (12/14)
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;dropsondes&#39;: [],
   &#39;end&#39;: datetime.datetime(2017, 6, 8, 8, 8, 53),
   &#39;irregularities&#39;: [&#39;whale-watching loop&#39;],
-  &#39;kinds&#39;: [&#39;major_ascend&#39;, &#39;nya_overflight&#39;, &#39;sveabreen_glacier_overflight&#39;],
+  &#39;kinds&#39;: [&#39;major_ascent&#39;, &#39;nya_overflight&#39;, &#39;sveabreen_glacier_overflight&#39;],
   &#39;levels&#39;: [100, 9700],
-  &#39;name&#39;: &#39;major ascend&#39;,
+  &#39;name&#39;: &#39;major ascent&#39;,
   &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_ma&#39;,
   &#39;start&#39;: datetime.datetime(2017, 6, 8, 7, 36, 50)},
  {&#39;dropsondes&#39;: [],
@@ -1608,9 +1589,9 @@ Attributes: (12/14)
  {&#39;dropsondes&#39;: [],
   &#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 22, 43),
   &#39;irregularities&#39;: [&#39;not along straight line&#39;],
-  &#39;kinds&#39;: [&#39;large_descend&#39;, &#39;polarstern_overflight&#39;],
+  &#39;kinds&#39;: [&#39;large_descent&#39;, &#39;polarstern_overflight&#39;],
   &#39;levels&#39;: [9700, 200],
-  &#39;name&#39;: &#39;large descend 1&#39;,
+  &#39;name&#39;: &#39;large descent 1&#39;,
   &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_ld01&#39;,
   &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 10, 51)},
  {&#39;end&#39;: datetime.datetime(2017, 6, 8, 11, 2, 24),
@@ -1620,9 +1601,9 @@ Attributes: (12/14)
  {&#39;dropsondes&#39;: [],
   &#39;end&#39;: datetime.datetime(2017, 6, 8, 11, 11, 19),
   &#39;irregularities&#39;: [],
-  &#39;kinds&#39;: [&#39;large_ascend&#39;, &#39;polarstern_overflight&#39;],
+  &#39;kinds&#39;: [&#39;large_ascent&#39;, &#39;polarstern_overflight&#39;],
   &#39;levels&#39;: [2400, 9700],
-  &#39;name&#39;: &#39;large ascend 1&#39;,
+  &#39;name&#39;: &#39;large ascent 1&#39;,
   &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_la01&#39;,
   &#39;start&#39;: datetime.datetime(2017, 6, 8, 11, 2, 25)},
  {&#39;dropsondes&#39;: [],
@@ -1685,9 +1666,9 @@ Attributes: (12/14)
  {&#39;dropsondes&#39;: [],
   &#39;end&#39;: datetime.datetime(2017, 6, 8, 12, 51, 25),
   &#39;irregularities&#39;: [],
-  &#39;kinds&#39;: [&#39;major_descend&#39;, &#39;nya_overflight&#39;],
+  &#39;kinds&#39;: [&#39;major_descent&#39;, &#39;nya_overflight&#39;],
   &#39;levels&#39;: [9800, 100],
-  &#39;name&#39;: &#39;major descend&#39;,
+  &#39;name&#39;: &#39;major descent&#39;,
   &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_md&#39;,
   &#39;start&#39;: datetime.datetime(2017, 6, 8, 12, 25, 40)}]
 </pre></div>
@@ -1839,9 +1820,9 @@ Attributes: (12/14)
  {&#39;dropsondes&#39;: [],
   &#39;end&#39;: datetime.datetime(2017, 6, 8, 12, 51, 25),
   &#39;irregularities&#39;: [],
-  &#39;kinds&#39;: [&#39;major_descend&#39;, &#39;nya_overflight&#39;],
+  &#39;kinds&#39;: [&#39;major_descent&#39;, &#39;nya_overflight&#39;],
   &#39;levels&#39;: [9800, 100],
-  &#39;name&#39;: &#39;major descend&#39;,
+  &#39;name&#39;: &#39;major descent&#39;,
   &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_md&#39;,
   &#39;start&#39;: datetime.datetime(2017, 6, 8, 12, 25, 40)}]
 </pre></div>
@@ -1967,18 +1948,18 @@ Attributes: (12/14)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/gmarroll/.local/lib/python3.8/site-packages/ac3airborne/tools/flightphase.py:27: UserWarning: the segment ACLOUD_P5_RF14_ma contains following irregularities: whale-watching loop
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/mech/.local/lib/python3.8/site-packages/ac3airborne/tools/flightphase.py:27: UserWarning: the segment ACLOUD_P5_RF14_ma contains following irregularities: whale-watching loop
   warnings.warn(str)
-/home/gmarroll/.local/lib/python3.8/site-packages/ac3airborne/tools/flightphase.py:27: UserWarning: the segment ACLOUD_P5_RF14_ld01 contains following irregularities: not along straight line
+/home/mech/.local/lib/python3.8/site-packages/ac3airborne/tools/flightphase.py:27: UserWarning: the segment ACLOUD_P5_RF14_ld01 contains following irregularities: not along straight line
   warnings.warn(str)
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;dropsondes&#39;: [],
   &#39;end&#39;: datetime.datetime(2017, 6, 8, 8, 8, 53),
   &#39;irregularities&#39;: [&#39;whale-watching loop&#39;],
-  &#39;kinds&#39;: [&#39;major_ascend&#39;, &#39;nya_overflight&#39;, &#39;sveabreen_glacier_overflight&#39;],
+  &#39;kinds&#39;: [&#39;major_ascent&#39;, &#39;nya_overflight&#39;, &#39;sveabreen_glacier_overflight&#39;],
   &#39;levels&#39;: [100, 9700],
-  &#39;name&#39;: &#39;major ascend&#39;,
+  &#39;name&#39;: &#39;major ascent&#39;,
   &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_ma&#39;,
   &#39;start&#39;: datetime.datetime(2017, 6, 8, 7, 36, 50)},
  {&#39;dropsondes&#39;: [],
@@ -2034,17 +2015,17 @@ Attributes: (12/14)
  {&#39;dropsondes&#39;: [],
   &#39;end&#39;: datetime.datetime(2017, 6, 8, 10, 22, 43),
   &#39;irregularities&#39;: [&#39;not along straight line&#39;],
-  &#39;kinds&#39;: [&#39;large_descend&#39;, &#39;polarstern_overflight&#39;],
+  &#39;kinds&#39;: [&#39;large_descent&#39;, &#39;polarstern_overflight&#39;],
   &#39;levels&#39;: [9700, 200],
-  &#39;name&#39;: &#39;large descend 1&#39;,
+  &#39;name&#39;: &#39;large descent 1&#39;,
   &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_ld01&#39;,
   &#39;start&#39;: datetime.datetime(2017, 6, 8, 10, 10, 51)},
  {&#39;dropsondes&#39;: [],
   &#39;end&#39;: datetime.datetime(2017, 6, 8, 11, 11, 19),
   &#39;irregularities&#39;: [],
-  &#39;kinds&#39;: [&#39;large_ascend&#39;, &#39;polarstern_overflight&#39;],
+  &#39;kinds&#39;: [&#39;large_ascent&#39;, &#39;polarstern_overflight&#39;],
   &#39;levels&#39;: [2400, 9700],
-  &#39;name&#39;: &#39;large ascend 1&#39;,
+  &#39;name&#39;: &#39;large ascent 1&#39;,
   &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_la01&#39;,
   &#39;start&#39;: datetime.datetime(2017, 6, 8, 11, 2, 25)},
  {&#39;dropsondes&#39;: [],
@@ -2087,9 +2068,9 @@ Attributes: (12/14)
  {&#39;dropsondes&#39;: [],
   &#39;end&#39;: datetime.datetime(2017, 6, 8, 12, 51, 25),
   &#39;irregularities&#39;: [],
-  &#39;kinds&#39;: [&#39;major_descend&#39;, &#39;nya_overflight&#39;],
+  &#39;kinds&#39;: [&#39;major_descent&#39;, &#39;nya_overflight&#39;],
   &#39;levels&#39;: [9800, 100],
-  &#39;name&#39;: &#39;major descend&#39;,
+  &#39;name&#39;: &#39;major descent&#39;,
   &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_md&#39;,
   &#39;start&#39;: datetime.datetime(2017, 6, 8, 12, 25, 40)}]
 </pre></div>
@@ -2152,9 +2133,9 @@ Attributes: (12/14)
  {&#39;dropsondes&#39;: [],
   &#39;end&#39;: datetime.datetime(2017, 6, 8, 12, 51, 25),
   &#39;irregularities&#39;: [],
-  &#39;kinds&#39;: [&#39;major_descend&#39;, &#39;nya_overflight&#39;],
+  &#39;kinds&#39;: [&#39;major_descent&#39;, &#39;nya_overflight&#39;],
   &#39;levels&#39;: [9800, 100],
-  &#39;name&#39;: &#39;major descend&#39;,
+  &#39;name&#39;: &#39;major descent&#39;,
   &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_md&#39;,
   &#39;start&#39;: datetime.datetime(2017, 6, 8, 12, 25, 40)}]
 </pre></div>
@@ -2211,32 +2192,12 @@ Attributes: (12/14)
               </div>
               
         
+        <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="caching_and_local_datasets.html" title="previous page">Caching and local datasets</a>
+    <a class='right-next' id="next-link" href="land_ocean.html" title="next page">Land-ocean mask</a>
 
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="caching_and_local_datasets.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Caching and local datasets</p>
-            </div>
-        </a>
-    </div>
-     <div id="next">
-        <a class="right-next" href="land_ocean.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Land-ocean mask</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
-</div>
+        </div>
         
         </div>
     </div>
@@ -2255,9 +2216,11 @@ Attributes: (12/14)
 
       </div>
     </div>
-  
-  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-  
+    
+  <script src="../_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
   </body>
 </html>
