@@ -1,0 +1,4 @@
+DROPSONDES:
+  ACLOUD: ./data/dropsondes/acloud
+  AFLUX: ./data/dropsondes/aflux
+  MOSAiC-ACA: ./data/dropsondes/mosaic-aca
