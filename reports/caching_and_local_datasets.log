@@ -1,34 +1,178 @@
 Traceback (most recent call last):
-  File "/usr/local/lib/python3.8/dist-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+  File "/work/nrisse/anaconda3/envs/pyac3/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
     executenb(
-  File "/usr/local/lib/python3.8/dist-packages/nbclient/client.py", line 1112, in execute
+  File "/work/nrisse/anaconda3/envs/pyac3/lib/python3.9/site-packages/nbclient/client.py", line 1117, in execute
     return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
-  File "/usr/local/lib/python3.8/dist-packages/nbclient/util.py", line 74, in wrapped
+  File "/work/nrisse/anaconda3/envs/pyac3/lib/python3.9/site-packages/nbclient/util.py", line 78, in wrapped
     return just_run(coro(*args, **kwargs))
-  File "/usr/local/lib/python3.8/dist-packages/nbclient/util.py", line 53, in just_run
+  File "/work/nrisse/anaconda3/envs/pyac3/lib/python3.9/site-packages/nbclient/util.py", line 57, in just_run
     return loop.run_until_complete(coro)
-  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+  File "/work/nrisse/anaconda3/envs/pyac3/lib/python3.9/asyncio/base_events.py", line 642, in run_until_complete
     return future.result()
-  File "/usr/local/lib/python3.8/dist-packages/nbclient/client.py", line 553, in async_execute
+  File "/work/nrisse/anaconda3/envs/pyac3/lib/python3.9/site-packages/nbclient/client.py", line 558, in async_execute
     await self.async_execute_cell(
-  File "/usr/local/lib/python3.8/dist-packages/nbclient/client.py", line 857, in async_execute_cell
+  File "/work/nrisse/anaconda3/envs/pyac3/lib/python3.9/site-packages/nbclient/client.py", line 862, in async_execute_cell
     self._check_raise_for_error(cell, exec_reply)
-  File "/usr/local/lib/python3.8/dist-packages/nbclient/client.py", line 760, in _check_raise_for_error
+  File "/work/nrisse/anaconda3/envs/pyac3/lib/python3.9/site-packages/nbclient/client.py", line 765, in _check_raise_for_error
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-with open('./local_datasets.yaml', 'r') as f:
-    local_dir = yaml.safe_load(f)
-print(local_dir)
+dct = {dataset: {}}
+
+for flight_id in flight_ids:
+    
+    # get mission from flight segmentation
+    mission = meta['P5'][flight_id]['mission']
+    
+    # define the path, to where data should be downloaded
+    path = f'./data/{dataset.lower()}/{mission.lower()}'
+    
+    # store the path in a dictionary
+    dct[dataset].update({mission: path})
+    
+    # define the parameters for caching
+    kwds = {'simplecache': dict(
+        cache_storage=path, 
+        same_names=True
+    )}
+    
+    # read the data to store it
+    cat.P5[dataset][flight_id](i_sonde=1, storage_options=kwds).to_dask()
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
-[0;32m/tmp/ipykernel_697451/2265664055.py[0m in [0;36m<module>[0;34m[0m
-[0;32m----> 1[0;31m [0;32mwith[0m [0mopen[0m[0;34m([0m[0;34m'./local_datasets.yaml'[0m[0;34m,[0m [0;34m'r'[0m[0;34m)[0m [0;32mas[0m [0mf[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      2[0m     [0mlocal_dir[0m [0;34m=[0m [0myaml[0m[0;34m.[0m[0msafe_load[0m[0;34m([0m[0mf[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      3[0m [0mprint[0m[0;34m([0m[0mlocal_dir[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;31mClientResponseError[0m                       Traceback (most recent call last)
+[0;32m/tmp/ipykernel_777691/3243682740.py[0m in [0;36m<module>[0;34m[0m
+[1;32m     19[0m [0;34m[0m[0m
+[1;32m     20[0m     [0;31m# read the data to store it[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 21[0;31m     [0mcat[0m[0;34m.[0m[0mP5[0m[0;34m[[0m[0mdataset[0m[0;34m][0m[0;34m[[0m[0mflight_id[0m[0;34m][0m[0;34m([0m[0mi_sonde[0m[0;34m=[0m[0;36m1[0m[0;34m,[0m [0mstorage_options[0m[0;34m=[0m[0mkwds[0m[0;34m)[0m[0;34m.[0m[0mto_dask[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m
+[0;32m/work/nrisse/anaconda3/envs/pyac3/lib/python3.9/site-packages/intake_xarray/base.py[0m in [0;36mto_dask[0;34m(self)[0m
+[1;32m     67[0m     [0;32mdef[0m [0mto_dask[0m[0;34m([0m[0mself[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     68[0m         [0;34m"""Return xarray object where variables are dask arrays"""[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 69[0;31m         [0;32mreturn[0m [0mself[0m[0;34m.[0m[0mread_chunked[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     70[0m [0;34m[0m[0m
+[1;32m     71[0m     [0;32mdef[0m [0mclose[0m[0;34m([0m[0mself[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: './local_datasets.yaml'
-FileNotFoundError: [Errno 2] No such file or directory: './local_datasets.yaml'
+[0;32m/work/nrisse/anaconda3/envs/pyac3/lib/python3.9/site-packages/intake_xarray/base.py[0m in [0;36mread_chunked[0;34m(self)[0m
+[1;32m     42[0m     [0;32mdef[0m [0mread_chunked[0m[0;34m([0m[0mself[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     43[0m         [0;34m"""Return xarray object (which will have chunks)"""[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 44[0;31m         [0mself[0m[0;34m.[0m[0m_load_metadata[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     45[0m         [0;32mreturn[0m [0mself[0m[0;34m.[0m[0m_ds[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     46[0m [0;34m[0m[0m
+
+[0;32m/work/nrisse/anaconda3/envs/pyac3/lib/python3.9/site-packages/intake/source/base.py[0m in [0;36m_load_metadata[0;34m(self)[0m
+[1;32m    234[0m         [0;34m"""load metadata only if needed"""[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    235[0m         [0;32mif[0m [0mself[0m[0;34m.[0m[0m_schema[0m [0;32mis[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 236[0;31m             [0mself[0m[0;34m.[0m[0m_schema[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_get_schema[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    237[0m             [0mself[0m[0;34m.[0m[0mdtype[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_schema[0m[0;34m.[0m[0mdtype[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    238[0m             [0mself[0m[0;34m.[0m[0mshape[0m [0;34m=[0m [0mself[0m[0;34m.[0m[0m_schema[0m[0;34m.[0m[0mshape[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/work/nrisse/anaconda3/envs/pyac3/lib/python3.9/site-packages/intake_xarray/base.py[0m in [0;36m_get_schema[0;34m(self)[0m
+[1;32m     16[0m [0;34m[0m[0m
+[1;32m     17[0m         [0;32mif[0m [0mself[0m[0;34m.[0m[0m_ds[0m [0;32mis[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 18[0;31m             [0mself[0m[0;34m.[0m[0m_open_dataset[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     19[0m [0;34m[0m[0m
+[1;32m     20[0m             metadata = {
+
+[0;32m/work/nrisse/anaconda3/envs/pyac3/lib/python3.9/site-packages/intake_xarray/netcdf.py[0m in [0;36m_open_dataset[0;34m(self)[0m
+[1;32m     85[0m [0;34m[0m[0m
+[1;32m     86[0m         [0;32mif[0m [0mself[0m[0;34m.[0m[0m_can_be_local[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 87[0;31m             [0murl[0m [0;34m=[0m [0mfsspec[0m[0;34m.[0m[0mopen_local[0m[0;34m([0m[0mself[0m[0;34m.[0m[0murlpath[0m[0;34m,[0m [0;34m**[0m[0mself[0m[0;34m.[0m[0mstorage_options[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     88[0m         [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     89[0m             [0;31m# https://github.com/intake/filesystem_spec/issues/476#issuecomment-732372918[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/work/nrisse/anaconda3/envs/pyac3/lib/python3.9/site-packages/fsspec/core.py[0m in [0;36mopen_local[0;34m(url, mode, **storage_options)[0m
+[1;32m    485[0m             [0;34m" has attribute local_file=True"[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    486[0m         )
+[0;32m--> 487[0;31m     [0;32mwith[0m [0mof[0m [0;32mas[0m [0mfiles[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    488[0m         [0mpaths[0m [0;34m=[0m [0;34m[[0m[0mf[0m[0;34m.[0m[0mname[0m [0;32mfor[0m [0mf[0m [0;32min[0m [0mfiles[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[1;32m    489[0m     [0;32mif[0m [0misinstance[0m[0;34m([0m[0murl[0m[0;34m,[0m [0mstr[0m[0;34m)[0m [0;32mand[0m [0;32mnot[0m [0mhas_magic[0m[0;34m([0m[0murl[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/work/nrisse/anaconda3/envs/pyac3/lib/python3.9/site-packages/fsspec/core.py[0m in [0;36m__enter__[0;34m(self)[0m
+[1;32m    182[0m             [0;32mif[0m [0mhasattr[0m[0;34m([0m[0mfs[0m[0;34m,[0m [0;34m"open_many"[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    183[0m                 [0;31m# check for concurrent cache download; or set up for upload[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 184[0;31m                 [0mself[0m[0;34m.[0m[0mfiles[0m [0;34m=[0m [0mfs[0m[0;34m.[0m[0mopen_many[0m[0;34m([0m[0mself[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    185[0m                 [0;32mreturn[0m [0mself[0m[0;34m.[0m[0mfiles[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    186[0m             [0;32mif[0m [0mhasattr[0m[0;34m([0m[0mfs[0m[0;34m,[0m [0;34m"fs"[0m[0;34m)[0m [0;32mand[0m [0mfs[0m[0;34m.[0m[0mfs[0m [0;32mis[0m [0;32mnot[0m [0;32mNone[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/work/nrisse/anaconda3/envs/pyac3/lib/python3.9/site-packages/fsspec/implementations/cached.py[0m in [0;36m<lambda>[0;34m(*args, **kw)[0m
+[1;32m    392[0m             [0;31m# all the methods defined in this class. Note `open` here, since[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    393[0m             [0;31m# it calls `_open`, but is actually in superclass[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 394[0;31m             return lambda *args, **kw: getattr(type(self), item).__get__(self)(
+[0m[1;32m    395[0m                 [0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkw[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    396[0m             )
+
+[0;32m/work/nrisse/anaconda3/envs/pyac3/lib/python3.9/site-packages/fsspec/implementations/cached.py[0m in [0;36mopen_many[0;34m(self, open_files)[0m
+[1;32m    501[0m         [0;32mif[0m [0mdownpath[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    502[0m             [0;31m# skip if all files are already cached and up to date[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 503[0;31m             [0mself[0m[0;34m.[0m[0mfs[0m[0;34m.[0m[0mget[0m[0;34m([0m[0mdownpath[0m[0;34m,[0m [0mdownfn[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    504[0m [0;34m[0m[0m
+[1;32m    505[0m             [0;31m# update metadata - only happens when downloads are successful[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/work/nrisse/anaconda3/envs/pyac3/lib/python3.9/site-packages/fsspec/asyn.py[0m in [0;36mwrapper[0;34m(*args, **kwargs)[0m
+[1;32m     89[0m     [0;32mdef[0m [0mwrapper[0m[0;34m([0m[0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     90[0m         [0mself[0m [0;34m=[0m [0mobj[0m [0;32mor[0m [0margs[0m[0;34m[[0m[0;36m0[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 91[0;31m         [0;32mreturn[0m [0msync[0m[0;34m([0m[0mself[0m[0;34m.[0m[0mloop[0m[0;34m,[0m [0mfunc[0m[0;34m,[0m [0;34m*[0m[0margs[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     92[0m [0;34m[0m[0m
+[1;32m     93[0m     [0;32mreturn[0m [0mwrapper[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/work/nrisse/anaconda3/envs/pyac3/lib/python3.9/site-packages/fsspec/asyn.py[0m in [0;36msync[0;34m(loop, func, timeout, *args, **kwargs)[0m
+[1;32m     69[0m         [0;32mraise[0m [0mFSTimeoutError[0m [0;32mfrom[0m [0mreturn_result[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     70[0m     [0;32melif[0m [0misinstance[0m[0;34m([0m[0mreturn_result[0m[0;34m,[0m [0mBaseException[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 71[0;31m         [0;32mraise[0m [0mreturn_result[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     72[0m     [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     73[0m         [0;32mreturn[0m [0mreturn_result[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/work/nrisse/anaconda3/envs/pyac3/lib/python3.9/site-packages/fsspec/asyn.py[0m in [0;36m_runner[0;34m(event, coro, result, timeout)[0m
+[1;32m     23[0m         [0mcoro[0m [0;34m=[0m [0masyncio[0m[0;34m.[0m[0mwait_for[0m[0;34m([0m[0mcoro[0m[0;34m,[0m [0mtimeout[0m[0;34m=[0m[0mtimeout[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     24[0m     [0;32mtry[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m---> 25[0;31m         [0mresult[0m[0;34m[[0m[0;36m0[0m[0;34m][0m [0;34m=[0m [0;32mawait[0m [0mcoro[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m     26[0m     [0;32mexcept[0m [0mException[0m [0;32mas[0m [0mex[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     27[0m         [0mresult[0m[0;34m[[0m[0;36m0[0m[0;34m][0m [0;34m=[0m [0mex[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/work/nrisse/anaconda3/envs/pyac3/lib/python3.9/site-packages/fsspec/asyn.py[0m in [0;36m_get[0;34m(self, rpath, lpath, recursive, callback, **kwargs)[0m
+[1;32m    457[0m             [0mcallback[0m[0;34m.[0m[0mbranch[0m[0;34m([0m[0mrpath[0m[0;34m,[0m [0mlpath[0m[0;34m,[0m [0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    458[0m             [0mcoros[0m[0;34m.[0m[0mappend[0m[0;34m([0m[0mself[0m[0;34m.[0m[0m_get_file[0m[0;34m([0m[0mrpath[0m[0;34m,[0m [0mlpath[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 459[0;31m         return await _run_coros_in_chunks(
+[0m[1;32m    460[0m             [0mcoros[0m[0;34m,[0m [0mbatch_size[0m[0;34m=[0m[0mbatch_size[0m[0;34m,[0m [0mcallback[0m[0;34m=[0m[0mcallback[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    461[0m         )
+
+[0;32m/work/nrisse/anaconda3/envs/pyac3/lib/python3.9/site-packages/fsspec/asyn.py[0m in [0;36m_run_coros_in_chunks[0;34m(coros, batch_size, callback, timeout)[0m
+[1;32m    211[0m         [0mchunk[0m [0;34m=[0m [0mcoros[0m[0;34m[[0m[0mstart[0m [0;34m:[0m [0mstart[0m [0;34m+[0m [0mbatch_size[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[1;32m    212[0m         [0;32mfor[0m [0mcoro[0m [0;32min[0m [0masyncio[0m[0;34m.[0m[0mas_completed[0m[0;34m([0m[0mchunk[0m[0;34m,[0m [0mtimeout[0m[0;34m=[0m[0mtimeout[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 213[0;31m             [0mresults[0m[0;34m.[0m[0mappend[0m[0;34m([0m[0;32mawait[0m [0mcoro[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    214[0m             [0mcallback[0m[0;34m.[0m[0mcall[0m[0;34m([0m[0;34m"relative_update"[0m[0;34m,[0m [0;36m1[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    215[0m     [0;32mreturn[0m [0mresults[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/work/nrisse/anaconda3/envs/pyac3/lib/python3.9/asyncio/tasks.py[0m in [0;36m_wait_for_one[0;34m()[0m
+[1;32m    612[0m             [0;31m# Dummy value from _on_timeout().[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    613[0m             [0;32mraise[0m [0mexceptions[0m[0;34m.[0m[0mTimeoutError[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 614[0;31m         [0;32mreturn[0m [0mf[0m[0;34m.[0m[0mresult[0m[0;34m([0m[0;34m)[0m  [0;31m# May raise f.exception().[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    615[0m [0;34m[0m[0m
+[1;32m    616[0m     [0;32mfor[0m [0mf[0m [0;32min[0m [0mtodo[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/work/nrisse/anaconda3/envs/pyac3/lib/python3.9/site-packages/fsspec/implementations/http.py[0m in [0;36m_get_file[0;34m(self, rpath, lpath, chunk_size, callback, **kwargs)[0m
+[1;32m    247[0m [0;34m[0m[0m
+[1;32m    248[0m             [0mcallback[0m[0;34m.[0m[0mset_size[0m[0;34m([0m[0msize[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 249[0;31m             [0mself[0m[0;34m.[0m[0m_raise_not_found_for_status[0m[0;34m([0m[0mr[0m[0;34m,[0m [0mrpath[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    250[0m             [0;32mwith[0m [0mopen[0m[0;34m([0m[0mlpath[0m[0;34m,[0m [0;34m"wb"[0m[0;34m)[0m [0;32mas[0m [0mfd[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    251[0m                 [0mchunk[0m [0;34m=[0m [0;32mTrue[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/work/nrisse/anaconda3/envs/pyac3/lib/python3.9/site-packages/fsspec/implementations/http.py[0m in [0;36m_raise_not_found_for_status[0;34m(self, response, url)[0m
+[1;32m    214[0m         [0;32mif[0m [0mresponse[0m[0;34m.[0m[0mstatus[0m [0;34m==[0m [0;36m404[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    215[0m             [0;32mraise[0m [0mFileNotFoundError[0m[0;34m([0m[0murl[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 216[0;31m         [0mresponse[0m[0;34m.[0m[0mraise_for_status[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    217[0m [0;34m[0m[0m
+[1;32m    218[0m     [0;32masync[0m [0;32mdef[0m [0m_cat_file[0m[0;34m([0m[0mself[0m[0;34m,[0m [0murl[0m[0;34m,[0m [0mstart[0m[0;34m=[0m[0;32mNone[0m[0;34m,[0m [0mend[0m[0;34m=[0m[0;32mNone[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+
+[0;32m/work/nrisse/anaconda3/envs/pyac3/lib/python3.9/site-packages/aiohttp/client_reqrep.py[0m in [0;36mraise_for_status[0;34m(self)[0m
+[1;32m    998[0m             [0;32massert[0m [0mself[0m[0;34m.[0m[0mreason[0m [0;32mis[0m [0;32mnot[0m [0;32mNone[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    999[0m             [0mself[0m[0;34m.[0m[0mrelease[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m-> 1000[0;31m             raise ClientResponseError(
+[0m[1;32m   1001[0m                 [0mself[0m[0;34m.[0m[0mrequest_info[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m   1002[0m                 [0mself[0m[0;34m.[0m[0mhistory[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mClientResponseError[0m: 503, message='Service Unavailable', url=URL('https://download.pangaea.de/dataset/921996/files/DS_AFLUX_Flight_20190319.nc')
+ClientResponseError: 503, message='Service Unavailable', url=URL('https://download.pangaea.de/dataset/921996/files/DS_AFLUX_Flight_20190319.nc')
 
