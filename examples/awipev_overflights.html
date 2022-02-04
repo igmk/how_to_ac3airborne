@@ -358,13 +358,21 @@
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">flights</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">campaign</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">,</span> <span class="s1">&#39;AFLUX&#39;</span><span class="p">,</span> <span class="s1">&#39;MOSAiC-ACA&#39;</span><span class="p">]:</span>
+    <span class="n">flights</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="n">campaign</span><span class="p">][</span><span class="s1">&#39;P5&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
 <div class="section" id="flights-near-awipev-base">
 <h2>Flights near AWIPEV Base<a class="headerlink" href="#flights-near-awipev-base" title="Permalink to this headline">¶</a></h2>
 <p>With the help of meta information stored in <code class="docutils literal notranslate"><span class="pre">flight-phase-separation</span></code>, we can find the flights, which overpassed the AWIPEV Base.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">flight_id</span><span class="p">,</span> <span class="n">flight</span> <span class="ow">in</span> <span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-        
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">flight_id</span><span class="p">,</span> <span class="n">flight</span> <span class="ow">in</span> <span class="n">flights</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="n">awipev_remark</span> <span class="o">=</span> <span class="p">[</span><span class="n">event</span> <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">flight</span><span class="p">[</span><span class="s1">&#39;events&#39;</span><span class="p">]</span> 
                      <span class="k">if</span> <span class="s1">&#39;Ny-Alesund&#39;</span> <span class="ow">in</span> <span class="n">event</span><span class="p">]</span>
     
@@ -412,7 +420,7 @@ MOSAiC-ACA_P5_RF11: [&#39;Ny-Alesund overflight&#39;]
 <p>Similarly, we can find the individual segments, which were within 15 km of the AWIPEV Base.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">flight_id</span><span class="p">,</span> <span class="n">flight</span> <span class="ow">in</span> <span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">flight_id</span><span class="p">,</span> <span class="n">flight</span> <span class="ow">in</span> <span class="n">flights</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     
     <span class="n">awipev_segment_id</span> <span class="o">=</span> <span class="p">[</span><span class="n">seg</span><span class="p">[</span><span class="s1">&#39;segment_id&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">seg</span> <span class="ow">in</span> <span class="n">flight</span><span class="p">[</span><span class="s1">&#39;segments&#39;</span><span class="p">]</span>
                          <span class="k">if</span> <span class="n">seg</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;kinds&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
@@ -502,10 +510,10 @@ MOSAiC-ACA_P5_RF11: hl01, hl07, md
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">flights_awipev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
 <span class="n">times_awipev</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
 
-<span class="k">for</span> <span class="n">flight_id</span><span class="p">,</span> <span class="n">flight</span> <span class="ow">in</span> <span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="k">for</span> <span class="n">flight_id</span><span class="p">,</span> <span class="n">flight</span> <span class="ow">in</span> <span class="n">flights</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     
     <span class="c1"># read gps data of flight</span>
-    <span class="n">ds_gps</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;GPS_INS&#39;</span><span class="p">][</span><span class="n">flight_id</span><span class="p">]</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
+    <span class="n">ds_gps</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="n">flight</span><span class="p">[</span><span class="s1">&#39;mission&#39;</span><span class="p">]][</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;GPS_INS&#39;</span><span class="p">][</span><span class="n">flight_id</span><span class="p">]</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
     
     <span class="c1"># calculate distance to AWIPEV</span>
     <span class="n">ds_dist</span> <span class="o">=</span> <span class="n">dist2awipev</span><span class="p">(</span><span class="n">ds_gps</span><span class="p">)</span>
@@ -532,7 +540,7 @@ MOSAiC-ACA_P5_RF11: hl01, hl07, md
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/awipev_overflights_15_0.png" src="../_images/awipev_overflights_15_0.png" />
+<img alt="../_images/awipev_overflights_16_0.png" src="../_images/awipev_overflights_16_0.png" />
 </div>
 </div>
 </div>
@@ -545,10 +553,10 @@ MOSAiC-ACA_P5_RF11: hl01, hl07, md
 
 <span class="n">kwargs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">marker</span><span class="o">=</span><span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.75</span><span class="p">)</span>
 
-<span class="k">for</span> <span class="n">flight_id</span><span class="p">,</span> <span class="n">flight</span> <span class="ow">in</span> <span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+<span class="k">for</span> <span class="n">flight_id</span><span class="p">,</span> <span class="n">flight</span> <span class="ow">in</span> <span class="n">flights</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     
     <span class="c1"># read gps data of flight</span>
-    <span class="n">ds_gps</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;GPS_INS&#39;</span><span class="p">][</span><span class="n">flight_id</span><span class="p">]</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
+    <span class="n">ds_gps</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="n">flight</span><span class="p">[</span><span class="s1">&#39;mission&#39;</span><span class="p">]][</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;GPS_INS&#39;</span><span class="p">][</span><span class="n">flight_id</span><span class="p">]</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
         
     <span class="c1"># calculate distance to AWIPEV</span>
     <span class="n">ds_dist</span> <span class="o">=</span> <span class="n">dist2awipev</span><span class="p">(</span><span class="n">ds_gps</span><span class="p">)</span>
@@ -570,7 +578,7 @@ MOSAiC-ACA_P5_RF11: hl01, hl07, md
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/awipev_overflights_17_0.png" src="../_images/awipev_overflights_17_0.png" />
+<img alt="../_images/awipev_overflights_18_0.png" src="../_images/awipev_overflights_18_0.png" />
 </div>
 </div>
 </div>

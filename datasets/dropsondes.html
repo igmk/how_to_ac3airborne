@@ -322,17 +322,7 @@
   <a class="reference internal nav-link" href="#load-polar-5-flight-phase-information">
    Load Polar 5 flight phase information
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#plots">
-   Plots
-  </a>
   <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#temperature-profile">
-     Temperature profile
-    </a>
-   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#humidity-profile">
      Humidity profile
@@ -379,7 +369,11 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="o">=</span> <span class="n">ac3airborne</span><span class="o">.</span><span class="n">get_intake_catalog</span><span class="p">()</span>
-<span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="o">.</span><span class="n">P5</span><span class="o">.</span><span class="n">DROPSONDES</span><span class="p">)</span>
+
+<span class="n">datasets</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">campaign</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">,</span> <span class="s1">&#39;AFLUX&#39;</span><span class="p">,</span><span class="s1">&#39;MOSAiC-ACA&#39;</span><span class="p">]:</span>
+    <span class="n">datasets</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="p">[</span><span class="n">campaign</span><span class="p">][</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;DROPSONDES&#39;</span><span class="p">]))</span>
+<span class="n">datasets</span>
 </pre></div>
 </div>
 </div>
@@ -425,7 +419,7 @@
 <p>To get an overview of the variables recorded by the dropsondes, we load the first dropsonde released during <code class="docutils literal notranslate"><span class="pre">ACLOUD_P5_RF05</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_dsd</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;DROPSONDES&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF05&#39;</span><span class="p">](</span><span class="n">i_sonde</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_dsd</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">][</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;DROPSONDES&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF05&#39;</span><span class="p">](</span><span class="n">i_sonde</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
 <span class="n">ds_dsd</span>
 </pre></div>
 </div>
@@ -804,13 +798,13 @@ Data variables:
 Attributes:
     Dropsonde_number_of_flight:  1
     Launch_Time_UTC:             09:09:10
-    Sonde_ID:                    162715269/RS904</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-bbfb7f4d-dfe2-4e8e-a17c-7e93fb4d4b1c' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-bbfb7f4d-dfe2-4e8e-a17c-7e93fb4d4b1c' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span>z</span>: 529</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-bdafbe4d-7f6e-4b66-9513-ad2a0130fa61' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-bdafbe4d-7f6e-4b66-9513-ad2a0130fa61' class='xr-section-summary'  title='Expand/collapse section'>Coordinates: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-c6083a3e-191b-495b-aa50-9cd13f836c58' class='xr-section-summary-in' type='checkbox'  checked><label for='section-c6083a3e-191b-495b-aa50-9cd13f836c58' class='xr-section-summary' >Data variables: <span>(12)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>GPS_Alt</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-e4dd5ffc-2236-4fab-ad2c-7ecc02c2e41d' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e4dd5ffc-2236-4fab-ad2c-7ecc02c2e41d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-677213cb-cd90-4165-acb1-e991a29a2a14' class='xr-var-data-in' type='checkbox'><label for='data-677213cb-cd90-4165-acb1-e991a29a2a14' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>GPS Altitude</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([2725.4 , 2722.74, 2720.09, ...,   20.91,   16.24,    8.88],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Baro_Alt</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-b22345d4-1cd2-43b5-a05a-fa5cda1edefc' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-b22345d4-1cd2-43b5-a05a-fa5cda1edefc' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-5dc26d70-0dc6-470d-bf04-6277d714e8bf' class='xr-var-data-in' type='checkbox'><label for='data-5dc26d70-0dc6-470d-bf04-6277d714e8bf' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Barometric altitude</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([2853.11, 2845.55, 2838.38, ...,   12.64,    7.71,    0.  ],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Time</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-f1ed0f90-26a3-40e4-9bc5-5991dc419016' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f1ed0f90-26a3-40e4-9bc5-5991dc419016' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0f91a7fc-e16c-48aa-a386-6cda44eb8bba' class='xr-var-data-in' type='checkbox'><label for='data-0f91a7fc-e16c-48aa-a386-6cda44eb8bba' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Time UTC</dd><dt><span>units :</span></dt><dd>decimal hours</dd></dl></div><div class='xr-var-data'><pre>array([9.153178, 9.153317, 9.153456, ..., 9.227137, 9.227276, 9.227494],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Lat</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-6ca7ce2b-fd11-4281-85ac-775e72c38690' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-6ca7ce2b-fd11-4281-85ac-775e72c38690' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8481aa86-5318-4c4a-8fbd-ae96e2ef4fc1' class='xr-var-data-in' type='checkbox'><label for='data-8481aa86-5318-4c4a-8fbd-ae96e2ef4fc1' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Latitude (North positive)</dd><dt><span>units :</span></dt><dd>degree</dd></dl></div><div class='xr-var-data'><pre>array([79.67851, 79.67851, 79.67851, ..., 79.66181, 79.66178, 79.66178],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Lon</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-70d29744-a0d6-443c-9799-023d27a23d7c' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-70d29744-a0d6-443c-9799-023d27a23d7c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8325ffbc-cf76-4aee-a607-aab07a1864a6' class='xr-var-data-in' type='checkbox'><label for='data-8325ffbc-cf76-4aee-a607-aab07a1864a6' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Longitude (East positive)</dd><dt><span>units :</span></dt><dd>degree</dd></dl></div><div class='xr-var-data'><pre>array([8.530977, 8.530977, 8.530977, ..., 8.512594, 8.512569, 8.512569],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Pressure</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-45e884d4-9ba1-4824-acdf-2545afbefec3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-45e884d4-9ba1-4824-acdf-2545afbefec3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f3991a3f-c968-4e47-8435-98d8be187d7f' class='xr-var-data-in' type='checkbox'><label for='data-f3991a3f-c968-4e47-8435-98d8be187d7f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Air pressure</dd><dt><span>units :</span></dt><dd>hPa</dd></dl></div><div class='xr-var-data'><pre>array([ 700.9 ,  701.58,  702.23, ..., 1017.28, 1017.93, 1018.95],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Temp</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-0b8189e1-05c9-4efe-8f5a-1d5fb63a4e82' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-0b8189e1-05c9-4efe-8f5a-1d5fb63a4e82' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b8834982-e183-4148-909d-af618599acaa' class='xr-var-data-in' type='checkbox'><label for='data-b8834982-e183-4148-909d-af618599acaa' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Air temperarure</dd><dt><span>units :</span></dt><dd>degC</dd><dt><span>comment :</span></dt><dd> as processed by ASPEN software V.3.3-543 (config: research-dropsonde)</dd></dl></div><div class='xr-var-data'><pre>array([  nan,   nan,   nan, ..., -9.67, -9.59, -9.54], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Temp_recon</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-968ee16d-a959-48f3-9740-54f720b43401' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-968ee16d-a959-48f3-9740-54f720b43401' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0c5f68f5-512d-425e-9a2c-99991bccc5bf' class='xr-var-data-in' type='checkbox'><label for='data-0c5f68f5-512d-425e-9a2c-99991bccc5bf' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Air temperature reconstructed</dd><dt><span>units :</span></dt><dd>degC</dd><dt><span>comment :</span></dt><dd>reconstructed temperature following Miloshevich et al. (2004) with tau=4.0 sek</dd></dl></div><div class='xr-var-data'><pre>array([  nan,   nan,   nan, ..., -9.41, -9.32, -9.2 ], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>RHum</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-b2cf4cff-3b1e-40f3-af65-44d4d310c0b0' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-b2cf4cff-3b1e-40f3-af65-44d4d310c0b0' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-cceaa4cf-3fce-4e5e-a20d-cdf823a9ee71' class='xr-var-data-in' type='checkbox'><label for='data-cceaa4cf-3fce-4e5e-a20d-cdf823a9ee71' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Relative humidity</dd><dt><span>units :</span></dt><dd>%</dd><dt><span>comment :</span></dt><dd> as processed by ASPEN software V.3.3-543 (config: research-dropsonde)</dd></dl></div><div class='xr-var-data'><pre>array([  nan,   nan,   nan, ..., 83.55, 83.63, 83.67], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>RHum_recon</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-dbdc0b8a-5ef2-49ee-b8d8-f7144ef2f8ef' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-dbdc0b8a-5ef2-49ee-b8d8-f7144ef2f8ef' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-72c0ae17-6a08-4f10-8dd6-909a9120b03a' class='xr-var-data-in' type='checkbox'><label for='data-72c0ae17-6a08-4f10-8dd6-909a9120b03a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Relative humidity reconstructed</dd><dt><span>units :</span></dt><dd>%</dd><dt><span>comment :</span></dt><dd>reconstructed relative humidity following Miloshevich et al. (2004) with tau=5.0 sek</dd></dl></div><div class='xr-var-data'><pre>array([  nan,   nan,   nan, ..., 81.38, 81.14, 80.85], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Wind_vel</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-121e69bb-2b06-4432-b199-7b22b7818767' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-121e69bb-2b06-4432-b199-7b22b7818767' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d67b5231-08c9-43df-be40-01f1f5364599' class='xr-var-data-in' type='checkbox'><label for='data-d67b5231-08c9-43df-be40-01f1f5364599' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Horizontal wind velocity</dd><dt><span>units :</span></dt><dd>m s-1</dd><dt><span>comment :</span></dt><dd> as processed by ASPEN software V.3.3-543 (config: research-dropsonde)</dd></dl></div><div class='xr-var-data'><pre>array([ nan,  nan,  nan, ..., 8.26, 8.11,  nan], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Wind_dir</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-0d93ffc7-4b8b-4019-bf61-eef9a57b8d67' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-0d93ffc7-4b8b-4019-bf61-eef9a57b8d67' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-7e6be546-11cf-4829-90ef-05e73cdad2aa' class='xr-var-data-in' type='checkbox'><label for='data-7e6be546-11cf-4829-90ef-05e73cdad2aa' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Horizontal wind direction</dd><dt><span>units :</span></dt><dd>degree</dd><dt><span>comment :</span></dt><dd> as processed by ASPEN software V.3.3-543 (config: research-dropsonde)</dd></dl></div><div class='xr-var-data'><pre>array([ nan,  nan,  nan, ..., 8.28, 8.48,  nan], dtype=float32)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-7c86000e-e995-4e4d-bdf9-3e436ce17569' class='xr-section-summary-in' type='checkbox'  checked><label for='section-7c86000e-e995-4e4d-bdf9-3e436ce17569' class='xr-section-summary' >Attributes: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Dropsonde_number_of_flight :</span></dt><dd>1</dd><dt><span>Launch_Time_UTC :</span></dt><dd>09:09:10</dd><dt><span>Sonde_ID :</span></dt><dd>162715269/RS904</dd></dl></div></li></ul></div></div></div></div>
+    Sonde_ID:                    162715269/RS904</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-c38dfdd4-d72c-4ed0-9454-54768b6dedf6' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-c38dfdd4-d72c-4ed0-9454-54768b6dedf6' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span>z</span>: 529</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-e6693c76-8f35-4566-8854-bbce7c9e3561' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-e6693c76-8f35-4566-8854-bbce7c9e3561' class='xr-section-summary'  title='Expand/collapse section'>Coordinates: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-27533564-900d-422d-9e26-712964de1da1' class='xr-section-summary-in' type='checkbox'  checked><label for='section-27533564-900d-422d-9e26-712964de1da1' class='xr-section-summary' >Data variables: <span>(12)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>GPS_Alt</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-edb37b54-08e0-4595-82c6-9e7747fa925c' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-edb37b54-08e0-4595-82c6-9e7747fa925c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-aece77a5-a93e-4058-a8f6-3c5102af9f11' class='xr-var-data-in' type='checkbox'><label for='data-aece77a5-a93e-4058-a8f6-3c5102af9f11' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>GPS Altitude</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([2725.4 , 2722.74, 2720.09, ...,   20.91,   16.24,    8.88],
+      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Baro_Alt</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-3d2754b0-6d2b-4e6f-8acf-9b4ebc2bc93e' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-3d2754b0-6d2b-4e6f-8acf-9b4ebc2bc93e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-5b6a1810-0b38-4d1f-8fc9-40d031f7c839' class='xr-var-data-in' type='checkbox'><label for='data-5b6a1810-0b38-4d1f-8fc9-40d031f7c839' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Barometric altitude</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([2853.11, 2845.55, 2838.38, ...,   12.64,    7.71,    0.  ],
+      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Time</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-a3bc2847-49b5-4476-9697-99eabc164c42' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-a3bc2847-49b5-4476-9697-99eabc164c42' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-791e950a-06c4-48da-ad46-16d47ad4fd36' class='xr-var-data-in' type='checkbox'><label for='data-791e950a-06c4-48da-ad46-16d47ad4fd36' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Time UTC</dd><dt><span>units :</span></dt><dd>decimal hours</dd></dl></div><div class='xr-var-data'><pre>array([9.153178, 9.153317, 9.153456, ..., 9.227137, 9.227276, 9.227494],
+      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Lat</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-8b08e7b0-008d-4f34-b10c-513db8914d7d' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-8b08e7b0-008d-4f34-b10c-513db8914d7d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4c969242-5a0c-4065-8497-356b2c70b731' class='xr-var-data-in' type='checkbox'><label for='data-4c969242-5a0c-4065-8497-356b2c70b731' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Latitude (North positive)</dd><dt><span>units :</span></dt><dd>degree</dd></dl></div><div class='xr-var-data'><pre>array([79.67851, 79.67851, 79.67851, ..., 79.66181, 79.66178, 79.66178],
+      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Lon</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-429bd2b0-63ae-426f-9f0c-9b10266f3fb3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-429bd2b0-63ae-426f-9f0c-9b10266f3fb3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-adc63bf3-c5ab-4408-8ce9-8019668eb746' class='xr-var-data-in' type='checkbox'><label for='data-adc63bf3-c5ab-4408-8ce9-8019668eb746' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Longitude (East positive)</dd><dt><span>units :</span></dt><dd>degree</dd></dl></div><div class='xr-var-data'><pre>array([8.530977, 8.530977, 8.530977, ..., 8.512594, 8.512569, 8.512569],
+      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Pressure</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-f0baded8-f196-4499-af56-ae6c9519b7d3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f0baded8-f196-4499-af56-ae6c9519b7d3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-05ee601d-6876-4b67-a109-a9649b782cec' class='xr-var-data-in' type='checkbox'><label for='data-05ee601d-6876-4b67-a109-a9649b782cec' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Air pressure</dd><dt><span>units :</span></dt><dd>hPa</dd></dl></div><div class='xr-var-data'><pre>array([ 700.9 ,  701.58,  702.23, ..., 1017.28, 1017.93, 1018.95],
+      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Temp</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-83dc05ea-af09-4b06-8951-5e2a49245f67' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-83dc05ea-af09-4b06-8951-5e2a49245f67' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-35909277-a479-4bf3-857d-8e11a33ca1cd' class='xr-var-data-in' type='checkbox'><label for='data-35909277-a479-4bf3-857d-8e11a33ca1cd' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Air temperarure</dd><dt><span>units :</span></dt><dd>degC</dd><dt><span>comment :</span></dt><dd> as processed by ASPEN software V.3.3-543 (config: research-dropsonde)</dd></dl></div><div class='xr-var-data'><pre>array([  nan,   nan,   nan, ..., -9.67, -9.59, -9.54], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Temp_recon</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-393e0b3f-8390-4444-b93a-60765e1eb676' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-393e0b3f-8390-4444-b93a-60765e1eb676' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-81324e95-f686-43d2-8682-ac3111dd2ee1' class='xr-var-data-in' type='checkbox'><label for='data-81324e95-f686-43d2-8682-ac3111dd2ee1' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Air temperature reconstructed</dd><dt><span>units :</span></dt><dd>degC</dd><dt><span>comment :</span></dt><dd>reconstructed temperature following Miloshevich et al. (2004) with tau=4.0 sek</dd></dl></div><div class='xr-var-data'><pre>array([  nan,   nan,   nan, ..., -9.41, -9.32, -9.2 ], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>RHum</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-3219e059-168f-4a92-afbc-4928e643bd49' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-3219e059-168f-4a92-afbc-4928e643bd49' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b3fc8496-f9c0-4c72-baf1-37def34c8a07' class='xr-var-data-in' type='checkbox'><label for='data-b3fc8496-f9c0-4c72-baf1-37def34c8a07' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Relative humidity</dd><dt><span>units :</span></dt><dd>%</dd><dt><span>comment :</span></dt><dd> as processed by ASPEN software V.3.3-543 (config: research-dropsonde)</dd></dl></div><div class='xr-var-data'><pre>array([  nan,   nan,   nan, ..., 83.55, 83.63, 83.67], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>RHum_recon</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-39852688-cf22-4d7c-94e7-7027d4e97c26' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-39852688-cf22-4d7c-94e7-7027d4e97c26' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-2553b249-d8c7-4cae-b9b4-922bfda3924f' class='xr-var-data-in' type='checkbox'><label for='data-2553b249-d8c7-4cae-b9b4-922bfda3924f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Relative humidity reconstructed</dd><dt><span>units :</span></dt><dd>%</dd><dt><span>comment :</span></dt><dd>reconstructed relative humidity following Miloshevich et al. (2004) with tau=5.0 sek</dd></dl></div><div class='xr-var-data'><pre>array([  nan,   nan,   nan, ..., 81.38, 81.14, 80.85], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Wind_vel</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-9a39bbcf-ac5c-4588-9f99-c441bab10698' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-9a39bbcf-ac5c-4588-9f99-c441bab10698' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-2081be60-2d99-48aa-bbdc-24b5b267d38d' class='xr-var-data-in' type='checkbox'><label for='data-2081be60-2d99-48aa-bbdc-24b5b267d38d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Horizontal wind velocity</dd><dt><span>units :</span></dt><dd>m s-1</dd><dt><span>comment :</span></dt><dd> as processed by ASPEN software V.3.3-543 (config: research-dropsonde)</dd></dl></div><div class='xr-var-data'><pre>array([ nan,  nan,  nan, ..., 8.26, 8.11,  nan], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Wind_dir</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-47198058-7406-41c5-9816-700e0a8e9e3e' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-47198058-7406-41c5-9816-700e0a8e9e3e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3aec5cb5-a6ac-4ebb-8803-217ef05030df' class='xr-var-data-in' type='checkbox'><label for='data-3aec5cb5-a6ac-4ebb-8803-217ef05030df' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Horizontal wind direction</dd><dt><span>units :</span></dt><dd>degree</dd><dt><span>comment :</span></dt><dd> as processed by ASPEN software V.3.3-543 (config: research-dropsonde)</dd></dl></div><div class='xr-var-data'><pre>array([ nan,  nan,  nan, ..., 8.28, 8.48,  nan], dtype=float32)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-67d30b29-1d75-4d41-a4e3-d177a32994d6' class='xr-section-summary-in' type='checkbox'  checked><label for='section-67d30b29-1d75-4d41-a4e3-d177a32994d6' class='xr-section-summary' >Attributes: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Dropsonde_number_of_flight :</span></dt><dd>1</dd><dt><span>Launch_Time_UTC :</span></dt><dd>09:09:10</dd><dt><span>Sonde_ID :</span></dt><dd>162715269/RS904</dd></dl></div></li></ul></div></div></div></div>
 </div>
 <div class="section" id="view-variables">
 <h3>View variables<a class="headerlink" href="#view-variables" title="Permalink to this headline">¶</a></h3>
@@ -866,17 +860,171 @@ Attributes:
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">:</span> <span class="p">{},</span> <span class="s1">&#39;AFLUX&#39;</span><span class="p">:</span> <span class="p">{},</span> <span class="s1">&#39;MOSAiC-ACA&#39;</span><span class="p">:</span> <span class="p">{}}</span>
-<span class="k">for</span> <span class="n">platform</span> <span class="ow">in</span> <span class="n">meta</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
-    <span class="k">for</span> <span class="n">flight</span> <span class="ow">in</span> <span class="n">platform</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
-        <span class="k">for</span> <span class="n">segment</span> <span class="ow">in</span> <span class="n">flight</span><span class="p">[</span><span class="s1">&#39;segments&#39;</span><span class="p">]:</span>
-            <span class="k">if</span> <span class="s1">&#39;dropsondes&#39;</span> <span class="ow">in</span> <span class="n">segment</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-                <span class="k">for</span> <span class="n">sonde</span> <span class="ow">in</span> <span class="n">segment</span><span class="p">[</span><span class="s1">&#39;dropsondes&#39;</span><span class="p">]:</span>
-                    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;segment_id&#39;</span><span class="p">:</span> <span class="n">segment</span><span class="p">[</span><span class="s1">&#39;segment_id&#39;</span><span class="p">],</span>
-                              <span class="s1">&#39;flight_id&#39;</span><span class="p">:</span> <span class="n">flight</span><span class="p">[</span><span class="s1">&#39;flight_id&#39;</span><span class="p">],</span>
-                              <span class="s1">&#39;date&#39;</span><span class="p">:</span> <span class="n">flight</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">],</span>
-                              <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">flight</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
-                             <span class="p">}</span>
-                    <span class="n">ds_dict</span><span class="p">[</span><span class="n">flight</span><span class="p">[</span><span class="s1">&#39;mission&#39;</span><span class="p">]][</span><span class="n">sonde</span><span class="p">]</span> <span class="o">=</span> <span class="n">params</span>
+<span class="k">for</span> <span class="n">campaign</span> <span class="ow">in</span> <span class="n">meta</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="k">for</span> <span class="n">platform</span> <span class="ow">in</span> <span class="n">campaign</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+        <span class="k">for</span> <span class="n">flight</span> <span class="ow">in</span> <span class="n">platform</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">segment</span> <span class="ow">in</span> <span class="n">flight</span><span class="p">[</span><span class="s1">&#39;segments&#39;</span><span class="p">]:</span>
+                <span class="k">if</span> <span class="s1">&#39;dropsondes&#39;</span> <span class="ow">in</span> <span class="n">segment</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span> <span class="ow">and</span> <span class="n">segment</span><span class="p">[</span><span class="s1">&#39;dropsondes&#39;</span><span class="p">]:</span>
+                    <span class="k">for</span> <span class="n">sonde</span> <span class="ow">in</span> <span class="n">segment</span><span class="p">[</span><span class="s1">&#39;dropsondes&#39;</span><span class="p">]:</span>
+                        <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;segment_id&#39;</span><span class="p">:</span> <span class="n">segment</span><span class="p">[</span><span class="s1">&#39;segment_id&#39;</span><span class="p">],</span>
+                                  <span class="s1">&#39;flight_id&#39;</span><span class="p">:</span> <span class="n">flight</span><span class="p">[</span><span class="s1">&#39;flight_id&#39;</span><span class="p">],</span>
+                                  <span class="s1">&#39;date&#39;</span><span class="p">:</span> <span class="n">flight</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">],</span>
+                                  <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="n">flight</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">],</span>
+                                 <span class="p">}</span>
+                        <span class="n">ds_dict</span><span class="p">[</span><span class="n">flight</span><span class="p">[</span><span class="s1">&#39;mission&#39;</span><span class="p">]][</span><span class="n">sonde</span><span class="p">]</span> <span class="o">=</span> <span class="n">params</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="n">sonde</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ACLOUD_P5_RF05_DS01
+ACLOUD_P5_RF05_DS02
+ACLOUD_P5_RF05_DS03
+ACLOUD_P5_RF05_DS04
+ACLOUD_P5_RF05_DS05
+ACLOUD_P5_RF05_DS06
+ACLOUD_P5_RF05_DS07
+ACLOUD_P5_RF06_DS01
+ACLOUD_P5_RF06_DS02
+ACLOUD_P5_RF06_DS03
+ACLOUD_P5_RF07_DS01
+ACLOUD_P5_RF07_DS02
+ACLOUD_P5_RF07_DS03
+ACLOUD_P5_RF10_DS01
+ACLOUD_P5_RF10_DS02
+ACLOUD_P5_RF11_DS01
+ACLOUD_P5_RF11_DS02
+ACLOUD_P5_RF11_DS03
+ACLOUD_P5_RF13_DS01
+ACLOUD_P5_RF13_DS02
+ACLOUD_P5_RF13_DS03
+ACLOUD_P5_RF14_DS01
+ACLOUD_P5_RF14_DS02
+ACLOUD_P5_RF14_DS03
+ACLOUD_P5_RF14_DS04
+ACLOUD_P5_RF14_DS05
+ACLOUD_P5_RF14_DS06
+ACLOUD_P5_RF16_DS01
+ACLOUD_P5_RF17_DS01
+ACLOUD_P5_RF17_DS02
+ACLOUD_P5_RF17_DS03
+ACLOUD_P5_RF18_DS01
+ACLOUD_P5_RF18_DS02
+ACLOUD_P5_RF18_DS03
+ACLOUD_P5_RF18_DS04
+ACLOUD_P5_RF18_DS05
+ACLOUD_P5_RF18_DS06
+ACLOUD_P5_RF18_DS07
+ACLOUD_P5_RF19_DS01
+ACLOUD_P5_RF19_DS02
+ACLOUD_P5_RF19_DS03
+ACLOUD_P5_RF19_DS04
+ACLOUD_P5_RF19_DS05
+ACLOUD_P5_RF20_DS01
+ACLOUD_P5_RF20_DS02
+ACLOUD_P5_RF20_DS03
+ACLOUD_P5_RF20_DS04
+ACLOUD_P5_RF21_DS01
+ACLOUD_P5_RF21_DS02
+ACLOUD_P5_RF22_DS01
+ACLOUD_P5_RF22_DS02
+ACLOUD_P5_RF22_DS03
+ACLOUD_P5_RF22_DS04
+ACLOUD_P5_RF23_DS01
+ACLOUD_P5_RF23_DS02
+AFLUX_P5_RF02_DS01
+AFLUX_P5_RF04_DS01
+AFLUX_P5_RF04_DS02
+AFLUX_P5_RF04_DS03
+AFLUX_P5_RF04_DS04
+AFLUX_P5_RF04_DS05
+AFLUX_P5_RF05_DS01
+AFLUX_P5_RF05_DS02
+AFLUX_P5_RF05_DS03
+AFLUX_P5_RF05_DS04
+AFLUX_P5_RF06_DS01
+AFLUX_P5_RF06_DS02
+AFLUX_P5_RF06_DS03
+AFLUX_P5_RF06_DS04
+AFLUX_P5_RF06_DS05
+AFLUX_P5_RF07_DS01
+AFLUX_P5_RF07_DS02
+AFLUX_P5_RF07_DS03
+AFLUX_P5_RF08_DS01
+AFLUX_P5_RF08_DS02
+AFLUX_P5_RF08_DS03
+AFLUX_P5_RF08_DS04
+AFLUX_P5_RF09_DS01
+AFLUX_P5_RF09_DS02
+AFLUX_P5_RF09_DS03
+AFLUX_P5_RF09_DS04
+AFLUX_P5_RF09_DS05
+AFLUX_P5_RF10_DS01
+AFLUX_P5_RF10_DS02
+AFLUX_P5_RF10_DS03
+AFLUX_P5_RF15_DS01
+AFLUX_P5_RF15_DS02
+AFLUX_P5_RF15_DS03
+MOSAiC-ACA_P5_RF05_DS01
+MOSAiC-ACA_P5_RF05_DS02
+MOSAiC-ACA_P5_RF05_DS03
+MOSAiC-ACA_P5_RF05_DS04
+MOSAiC-ACA_P5_RF05_DS05
+MOSAiC-ACA_P5_RF05_DS06
+MOSAiC-ACA_P5_RF06_DS01
+MOSAiC-ACA_P5_RF06_DS02
+MOSAiC-ACA_P5_RF06_DS03
+MOSAiC-ACA_P5_RF06_DS04
+MOSAiC-ACA_P5_RF06_DS05
+MOSAiC-ACA_P5_RF07_DS01
+MOSAiC-ACA_P5_RF07_DS02
+MOSAiC-ACA_P5_RF07_DS03
+MOSAiC-ACA_P5_RF07_DS04
+MOSAiC-ACA_P5_RF07_DS05
+MOSAiC-ACA_P5_RF07_DS06
+MOSAiC-ACA_P5_RF07_DS07
+MOSAiC-ACA_P5_RF07_DS08
+MOSAiC-ACA_P5_RF07_DS09
+MOSAiC-ACA_P5_RF07_DS10
+MOSAiC-ACA_P5_RF07_DS11
+MOSAiC-ACA_P5_RF07_DS12
+MOSAiC-ACA_P5_RF07_DS13
+MOSAiC-ACA_P5_RF07_DS14
+MOSAiC-ACA_P5_RF08_DS01
+MOSAiC-ACA_P5_RF08_DS02
+MOSAiC-ACA_P5_RF08_DS03
+MOSAiC-ACA_P5_RF08_DS04
+MOSAiC-ACA_P5_RF08_DS05
+MOSAiC-ACA_P5_RF08_DS06
+MOSAiC-ACA_P5_RF08_DS07
+MOSAiC-ACA_P5_RF09_DS01
+MOSAiC-ACA_P5_RF09_DS02
+MOSAiC-ACA_P5_RF09_DS03
+MOSAiC-ACA_P5_RF09_DS04
+MOSAiC-ACA_P5_RF09_DS05
+MOSAiC-ACA_P5_RF09_DS06
+MOSAiC-ACA_P5_RF09_DS07
+MOSAiC-ACA_P5_RF09_DS08
+MOSAiC-ACA_P5_RF09_DS09
+MOSAiC-ACA_P5_RF09_DS10
+MOSAiC-ACA_P5_RF09_DS11
+MOSAiC-ACA_P5_RF10_DS01
+MOSAiC-ACA_P5_RF10_DS02
+MOSAiC-ACA_P5_RF10_DS03
+MOSAiC-ACA_P5_RF10_DS04
+MOSAiC-ACA_P5_RF10_DS05
+MOSAiC-ACA_P5_RF10_DS06
+MOSAiC-ACA_P5_RF10_DS07
+MOSAiC-ACA_P5_RF10_DS08
+MOSAiC-ACA_P5_RF10_DS09
+MOSAiC-ACA_P5_RF10_DS10
+MOSAiC-ACA_P5_RF11_DS01
+MOSAiC-ACA_P5_RF11_DS02
+MOSAiC-ACA_P5_RF11_DS03
+MOSAiC-ACA_P5_RF11_DS04
+MOSAiC-ACA_P5_RF11_DS05
+MOSAiC-ACA_P5_RF11_DS06
+MOSAiC-ACA_P5_RF11_DS07
 </pre></div>
 </div>
 </div>
@@ -892,19 +1040,147 @@ Attributes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>58 dropsondes are available from ACLOUD.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>55 dropsondes are available from ACLOUD.
 33 dropsondes are available from AFLUX.
 60 dropsondes are available from MOSAiC-ACA.
 </pre></div>
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">it</span> <span class="ow">in</span> <span class="n">ds_dict</span><span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">it</span><span class="p">)</span>
+</pre></div>
 </div>
-<div class="section" id="plots">
-<h2>Plots<a class="headerlink" href="#plots" title="Permalink to this headline">¶</a></h2>
-<p>The next sections present the entire dataset by loading all dropsondes of the three campaigns and plotting vertical profiles of temperature, humidity and horizontal wind velocity.</p>
-<div class="section" id="temperature-profile">
-<h3>Temperature profile<a class="headerlink" href="#temperature-profile" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;ACLOUD_P5_RF05_DS01&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF05_hl02&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF05&#39;, &#39;date&#39;: datetime.date(2017, 5, 25), &#39;name&#39;: &#39;RF05&#39;})
+(&#39;ACLOUD_P5_RF05_DS02&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF05_hl02&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF05&#39;, &#39;date&#39;: datetime.date(2017, 5, 25), &#39;name&#39;: &#39;RF05&#39;})
+(&#39;ACLOUD_P5_RF05_DS03&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF05_hl03&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF05&#39;, &#39;date&#39;: datetime.date(2017, 5, 25), &#39;name&#39;: &#39;RF05&#39;})
+(&#39;ACLOUD_P5_RF05_DS04&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF05_hl05&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF05&#39;, &#39;date&#39;: datetime.date(2017, 5, 25), &#39;name&#39;: &#39;RF05&#39;})
+(&#39;ACLOUD_P5_RF05_DS05&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF05_hl07&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF05&#39;, &#39;date&#39;: datetime.date(2017, 5, 25), &#39;name&#39;: &#39;RF05&#39;})
+(&#39;ACLOUD_P5_RF05_DS06&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF05_hl09&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF05&#39;, &#39;date&#39;: datetime.date(2017, 5, 25), &#39;name&#39;: &#39;RF05&#39;})
+(&#39;ACLOUD_P5_RF05_DS07&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF05_hl10&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF05&#39;, &#39;date&#39;: datetime.date(2017, 5, 25), &#39;name&#39;: &#39;RF05&#39;})
+(&#39;ACLOUD_P5_RF06_DS01&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF06_hl03&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF06&#39;, &#39;date&#39;: datetime.date(2017, 5, 27), &#39;name&#39;: &#39;RF06&#39;})
+(&#39;ACLOUD_P5_RF06_DS02&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF06_hl03&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF06&#39;, &#39;date&#39;: datetime.date(2017, 5, 27), &#39;name&#39;: &#39;RF06&#39;})
+(&#39;ACLOUD_P5_RF06_DS03&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF06_hl04&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF06&#39;, &#39;date&#39;: datetime.date(2017, 5, 27), &#39;name&#39;: &#39;RF06&#39;})
+(&#39;ACLOUD_P5_RF07_DS01&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF07_hl03&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF07&#39;, &#39;date&#39;: datetime.date(2017, 5, 27), &#39;name&#39;: &#39;RF07&#39;})
+(&#39;ACLOUD_P5_RF07_DS02&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF07_hl03&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF07&#39;, &#39;date&#39;: datetime.date(2017, 5, 27), &#39;name&#39;: &#39;RF07&#39;})
+(&#39;ACLOUD_P5_RF07_DS03&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF07_hl03&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF07&#39;, &#39;date&#39;: datetime.date(2017, 5, 27), &#39;name&#39;: &#39;RF07&#39;})
+(&#39;ACLOUD_P5_RF10_DS01&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF10_hl01&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF10&#39;, &#39;date&#39;: datetime.date(2017, 5, 31), &#39;name&#39;: &#39;RF10&#39;})
+(&#39;ACLOUD_P5_RF10_DS02&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF10_hl01&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF10&#39;, &#39;date&#39;: datetime.date(2017, 5, 31), &#39;name&#39;: &#39;RF10&#39;})
+(&#39;ACLOUD_P5_RF11_DS01&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF11_hl06&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF11&#39;, &#39;date&#39;: datetime.date(2017, 6, 2), &#39;name&#39;: &#39;RF11&#39;})
+(&#39;ACLOUD_P5_RF11_DS02&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF11_hl08&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF11&#39;, &#39;date&#39;: datetime.date(2017, 6, 2), &#39;name&#39;: &#39;RF11&#39;})
+(&#39;ACLOUD_P5_RF11_DS03&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF11_hl09&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF11&#39;, &#39;date&#39;: datetime.date(2017, 6, 2), &#39;name&#39;: &#39;RF11&#39;})
+(&#39;ACLOUD_P5_RF13_DS01&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF13_hl01&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF13&#39;, &#39;date&#39;: datetime.date(2017, 6, 5), &#39;name&#39;: &#39;RF13&#39;})
+(&#39;ACLOUD_P5_RF13_DS02&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF13_hl02&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF13&#39;, &#39;date&#39;: datetime.date(2017, 6, 5), &#39;name&#39;: &#39;RF13&#39;})
+(&#39;ACLOUD_P5_RF13_DS03&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF13_hl03&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF13&#39;, &#39;date&#39;: datetime.date(2017, 6, 5), &#39;name&#39;: &#39;RF13&#39;})
+(&#39;ACLOUD_P5_RF14_DS01&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_hl02&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF14&#39;, &#39;date&#39;: datetime.date(2017, 6, 8), &#39;name&#39;: &#39;RF14&#39;})
+(&#39;ACLOUD_P5_RF14_DS02&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_hl03&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF14&#39;, &#39;date&#39;: datetime.date(2017, 6, 8), &#39;name&#39;: &#39;RF14&#39;})
+(&#39;ACLOUD_P5_RF14_DS03&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_hl03&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF14&#39;, &#39;date&#39;: datetime.date(2017, 6, 8), &#39;name&#39;: &#39;RF14&#39;})
+(&#39;ACLOUD_P5_RF14_DS04&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_hl04&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF14&#39;, &#39;date&#39;: datetime.date(2017, 6, 8), &#39;name&#39;: &#39;RF14&#39;})
+(&#39;ACLOUD_P5_RF14_DS05&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_hl05&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF14&#39;, &#39;date&#39;: datetime.date(2017, 6, 8), &#39;name&#39;: &#39;RF14&#39;})
+(&#39;ACLOUD_P5_RF14_DS06&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_hl07&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF14&#39;, &#39;date&#39;: datetime.date(2017, 6, 8), &#39;name&#39;: &#39;RF14&#39;})
+(&#39;ACLOUD_P5_RF16_DS01&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF16_np01&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF16&#39;, &#39;date&#39;: datetime.date(2017, 6, 13), &#39;name&#39;: &#39;RF16&#39;})
+(&#39;ACLOUD_P5_RF17_DS01&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF17_hl01&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF17&#39;, &#39;date&#39;: datetime.date(2017, 6, 14), &#39;name&#39;: &#39;RF17&#39;})
+(&#39;ACLOUD_P5_RF17_DS02&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF17_ld01&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF17&#39;, &#39;date&#39;: datetime.date(2017, 6, 14), &#39;name&#39;: &#39;RF17&#39;})
+(&#39;ACLOUD_P5_RF17_DS03&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF17_hl03&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF17&#39;, &#39;date&#39;: datetime.date(2017, 6, 14), &#39;name&#39;: &#39;RF17&#39;})
+(&#39;ACLOUD_P5_RF18_DS01&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF18_hl02&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF18&#39;, &#39;date&#39;: datetime.date(2017, 6, 16), &#39;name&#39;: &#39;RF18&#39;})
+(&#39;ACLOUD_P5_RF18_DS02&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF18_hl02&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF18&#39;, &#39;date&#39;: datetime.date(2017, 6, 16), &#39;name&#39;: &#39;RF18&#39;})
+(&#39;ACLOUD_P5_RF18_DS03&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF18_hl03&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF18&#39;, &#39;date&#39;: datetime.date(2017, 6, 16), &#39;name&#39;: &#39;RF18&#39;})
+(&#39;ACLOUD_P5_RF18_DS04&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF18_hl05&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF18&#39;, &#39;date&#39;: datetime.date(2017, 6, 16), &#39;name&#39;: &#39;RF18&#39;})
+(&#39;ACLOUD_P5_RF18_DS05&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF18_hl05&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF18&#39;, &#39;date&#39;: datetime.date(2017, 6, 16), &#39;name&#39;: &#39;RF18&#39;})
+(&#39;ACLOUD_P5_RF18_DS06&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF18_hl05&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF18&#39;, &#39;date&#39;: datetime.date(2017, 6, 16), &#39;name&#39;: &#39;RF18&#39;})
+(&#39;ACLOUD_P5_RF18_DS07&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF18_hl06&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF18&#39;, &#39;date&#39;: datetime.date(2017, 6, 16), &#39;name&#39;: &#39;RF18&#39;})
+(&#39;ACLOUD_P5_RF19_DS01&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF19_hl02&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF19&#39;, &#39;date&#39;: datetime.date(2017, 6, 17), &#39;name&#39;: &#39;RF19&#39;})
+(&#39;ACLOUD_P5_RF19_DS02&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF19_hl07&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF19&#39;, &#39;date&#39;: datetime.date(2017, 6, 17), &#39;name&#39;: &#39;RF19&#39;})
+(&#39;ACLOUD_P5_RF19_DS03&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF19_hl13&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF19&#39;, &#39;date&#39;: datetime.date(2017, 6, 17), &#39;name&#39;: &#39;RF19&#39;})
+(&#39;ACLOUD_P5_RF19_DS04&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF19_hl14&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF19&#39;, &#39;date&#39;: datetime.date(2017, 6, 17), &#39;name&#39;: &#39;RF19&#39;})
+(&#39;ACLOUD_P5_RF19_DS05&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF19_hl15&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF19&#39;, &#39;date&#39;: datetime.date(2017, 6, 17), &#39;name&#39;: &#39;RF19&#39;})
+(&#39;ACLOUD_P5_RF20_DS01&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF20_rt01&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF20&#39;, &#39;date&#39;: datetime.date(2017, 6, 18), &#39;name&#39;: &#39;RF20&#39;})
+(&#39;ACLOUD_P5_RF20_DS02&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF20_rt02&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF20&#39;, &#39;date&#39;: datetime.date(2017, 6, 18), &#39;name&#39;: &#39;RF20&#39;})
+(&#39;ACLOUD_P5_RF20_DS03&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF20_rt03&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF20&#39;, &#39;date&#39;: datetime.date(2017, 6, 18), &#39;name&#39;: &#39;RF20&#39;})
+(&#39;ACLOUD_P5_RF20_DS04&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF20_hl05&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF20&#39;, &#39;date&#39;: datetime.date(2017, 6, 18), &#39;name&#39;: &#39;RF20&#39;})
+(&#39;ACLOUD_P5_RF21_DS01&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF21_hl01&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF21&#39;, &#39;date&#39;: datetime.date(2017, 6, 20), &#39;name&#39;: &#39;RF21&#39;})
+(&#39;ACLOUD_P5_RF21_DS02&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF21_hl02&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF21&#39;, &#39;date&#39;: datetime.date(2017, 6, 20), &#39;name&#39;: &#39;RF21&#39;})
+(&#39;ACLOUD_P5_RF22_DS01&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF22_cr01&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF22&#39;, &#39;date&#39;: datetime.date(2017, 6, 23), &#39;name&#39;: &#39;RF22&#39;})
+(&#39;ACLOUD_P5_RF22_DS02&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF22_hl02&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF22&#39;, &#39;date&#39;: datetime.date(2017, 6, 23), &#39;name&#39;: &#39;RF22&#39;})
+(&#39;ACLOUD_P5_RF22_DS03&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF22_hl04&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF22&#39;, &#39;date&#39;: datetime.date(2017, 6, 23), &#39;name&#39;: &#39;RF22&#39;})
+(&#39;ACLOUD_P5_RF22_DS04&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF22_hl06&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF22&#39;, &#39;date&#39;: datetime.date(2017, 6, 23), &#39;name&#39;: &#39;RF22&#39;})
+(&#39;ACLOUD_P5_RF23_DS01&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF23_hl01&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF23&#39;, &#39;date&#39;: datetime.date(2017, 6, 25), &#39;name&#39;: &#39;RF23&#39;})
+(&#39;ACLOUD_P5_RF23_DS02&#39;, {&#39;segment_id&#39;: &#39;ACLOUD_P5_RF23_la01&#39;, &#39;flight_id&#39;: &#39;ACLOUD_P5_RF23&#39;, &#39;date&#39;: datetime.date(2017, 6, 25), &#39;name&#39;: &#39;RF23&#39;})
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">sonde_id</span><span class="p">,</span> <span class="n">params</span> <span class="ow">in</span> <span class="n">ds_dict</span><span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">sonde_id</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>01
+02
+03
+04
+05
+06
+07
+01
+02
+03
+01
+02
+03
+01
+02
+01
+02
+03
+01
+02
+03
+01
+02
+03
+04
+05
+06
+01
+01
+02
+03
+01
+02
+03
+04
+05
+06
+07
+01
+02
+03
+04
+05
+01
+02
+03
+04
+01
+02
+01
+02
+03
+04
+01
+02
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axes</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">sharex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -920,7 +1196,7 @@ Attributes:
 
         <span class="c1"># read dropsonde data</span>
         <span class="n">i_sonde</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sonde_id</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:])</span>
-        <span class="n">ds</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;DROPSONDES&#39;</span><span class="p">][</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;flight_id&#39;</span><span class="p">]](</span><span class="n">i_sonde</span><span class="o">=</span><span class="n">i_sonde</span><span class="p">)</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="n">mission</span><span class="p">][</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;DROPSONDES&#39;</span><span class="p">][</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;flight_id&#39;</span><span class="p">]](</span><span class="n">i_sonde</span><span class="o">=</span><span class="n">i_sonde</span><span class="p">)</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
 
         <span class="n">ax</span><span class="p">[</span><span class="n">mission</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">Temp_recon</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">GPS_Alt</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
@@ -932,20 +1208,7 @@ Attributes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_1968122</span><span class="o">/</span><span class="mf">2378587517.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span> 
-<span class="g g-Whitespace">     </span><span class="mi">12</span>         <span class="c1"># read dropsonde data</span>
-<span class="ne">---&gt; </span><span class="mi">13</span>         <span class="n">i_sonde</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sonde_id</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:])</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span>         <span class="n">ds</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;DROPSONDES&#39;</span><span class="p">][</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;flight_id&#39;</span><span class="p">]](</span><span class="n">i_sonde</span><span class="o">=</span><span class="n">i_sonde</span><span class="p">)</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span> 
-
-<span class="ne">ValueError</span>: invalid literal for int() with base 10: &#39;AD&#39;
-</pre></div>
-</div>
-<img alt="../_images/dropsondes_17_1.png" src="../_images/dropsondes_17_1.png" />
-</div>
+<img alt="../_images/dropsondes_18_0.png" src="../_images/dropsondes_18_0.png" />
 </div>
 </div>
 <div class="section" id="humidity-profile">
@@ -965,7 +1228,7 @@ Attributes:
 
         <span class="c1"># read dropsonde data</span>
         <span class="n">i_sonde</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sonde_id</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:])</span>
-        <span class="n">ds</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;DROPSONDES&#39;</span><span class="p">][</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;flight_id&#39;</span><span class="p">]](</span><span class="n">i_sonde</span><span class="o">=</span><span class="n">i_sonde</span><span class="p">)</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="n">mission</span><span class="p">][</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;DROPSONDES&#39;</span><span class="p">][</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;flight_id&#39;</span><span class="p">]](</span><span class="n">i_sonde</span><span class="o">=</span><span class="n">i_sonde</span><span class="p">)</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
 
         <span class="n">ax</span><span class="p">[</span><span class="n">mission</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">RHum_recon</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">GPS_Alt</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
@@ -977,7 +1240,7 @@ Attributes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/dropsondes_19_0.png" src="../_images/dropsondes_19_0.png" />
+<img alt="../_images/dropsondes_20_0.png" src="../_images/dropsondes_20_0.png" />
 </div>
 </div>
 </div>
@@ -999,7 +1262,7 @@ Attributes:
 
         <span class="c1"># read dropsonde data</span>
         <span class="n">i_sonde</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sonde_id</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:])</span>
-        <span class="n">ds</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;DROPSONDES&#39;</span><span class="p">][</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;flight_id&#39;</span><span class="p">]](</span><span class="n">i_sonde</span><span class="o">=</span><span class="n">i_sonde</span><span class="p">)</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
+        <span class="n">ds</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="n">mission</span><span class="p">][</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;DROPSONDES&#39;</span><span class="p">][</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;flight_id&#39;</span><span class="p">]](</span><span class="n">i_sonde</span><span class="o">=</span><span class="n">i_sonde</span><span class="p">)</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
 
         <span class="n">ax</span><span class="p">[</span><span class="n">mission</span><span class="p">]</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">ds</span><span class="o">.</span><span class="n">Wind_vel</span><span class="p">,</span> <span class="n">ds</span><span class="o">.</span><span class="n">GPS_Alt</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
@@ -1011,7 +1274,7 @@ Attributes:
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/dropsondes_21_0.png" src="../_images/dropsondes_21_0.png" />
+<img alt="../_images/dropsondes_22_0.png" src="../_images/dropsondes_22_0.png" />
 </div>
 </div>
 </div>

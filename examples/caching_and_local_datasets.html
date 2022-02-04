@@ -323,6 +323,11 @@
    Managing directories of multiple datasets
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#get-data-for-offline-usage">
+   Get data for offline usage
+  </a>
+ </li>
 </ul>
 
         </nav>
@@ -356,16 +361,24 @@
 </div>
 </div>
 </div>
+<p>Additionally we lead the flight-phase-seperation, which contains information on every research flight.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span> <span class="o">=</span> <span class="n">ac3airborne</span><span class="o">.</span><span class="n">get_flight_segments</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <div class="section" id="example-dropsonde-data">
 <h2>Example: Dropsonde data<a class="headerlink" href="#example-dropsonde-data" title="Permalink to this headline">¶</a></h2>
 <p>The caching functionality will be demonstrated with the dropsonde data published online on the PANGAEA data base. The file of the dataset on PANGAEA is contained in the intake catalog.</p>
 <div class="section" id="option-1-download-into-temporary-folder">
 <h3>Option 1: Download into temporary folder<a class="headerlink" href="#option-1-download-into-temporary-folder" title="Permalink to this headline">¶</a></h3>
-<p>The download into the temporary folder is the default behaviour. Usually the dataset is stored in the <code class="docutils literal notranslate"><span class="pre">/tmp</span></code> directory.</p>
+<p>The download into the temporary folder is the default behaviour. Usually the dataset is stored in the <code class="docutils literal notranslate"><span class="pre">/tmp</span></code> directory. We will download the first dropsonde of <code class="docutils literal notranslate"><span class="pre">ACLOUD_P5_RF23</span></code>. The parameter <code class="docutils literal notranslate"><span class="pre">i_sonde</span></code> describes the dropsonde number during the research flight.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_dsd</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;DROPSONDES&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF23&#39;</span><span class="p">](</span><span class="n">i_sonde</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_dsd</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">][</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;DROPSONDES&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF23&#39;</span><span class="p">](</span><span class="n">i_sonde</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -387,7 +400,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_dsd</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;DROPSONDES&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF23&#39;</span><span class="p">](</span><span class="n">i_sonde</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="n">kwds</span><span class="p">)</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_dsd</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">][</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;DROPSONDES&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF23&#39;</span><span class="p">](</span><span class="n">i_sonde</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="n">kwds</span><span class="p">)</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -409,7 +422,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_dsd</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;DROPSONDES&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF23&#39;</span><span class="p">](</span><span class="n">i_sonde</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="n">kwds</span><span class="p">)</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds_dsd</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">][</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;DROPSONDES&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF23&#39;</span><span class="p">](</span><span class="n">i_sonde</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="n">kwds</span><span class="p">)</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -481,10 +494,93 @@
 </div>
 </div>
 </div>
-<p>Now we download or use the local dropsonde file. Afterwards, check if the directory <code class="docutils literal notranslate"><span class="pre">.data/dropsondes</span></code> was created and contains the file <code class="docutils literal notranslate"><span class="pre">DS_ACLOUD_Flight_05_20170525_V2.nc</span></code>. If the directory and the file already exist, the local file will be read.</p>
+<p>Now we download or use the local dropsonde file. Afterwards, check if the directory <code class="docutils literal notranslate"><span class="pre">./data/dropsondes</span></code> has been created and contains the file <code class="docutils literal notranslate"><span class="pre">DS_ACLOUD_Flight_05_20170525_V2.nc</span></code>. If the directory and the file already exist, the local file will be read.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">cat</span><span class="o">.</span><span class="n">P5</span><span class="p">[</span><span class="n">dataset</span><span class="p">][</span><span class="n">flight_id</span><span class="p">](</span><span class="n">i_sonde</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="n">kwds</span><span class="p">)</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ds</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">][</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="n">dataset</span><span class="p">][</span><span class="n">flight_id</span><span class="p">](</span><span class="n">i_sonde</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="n">kwds</span><span class="p">)</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="get-data-for-offline-usage">
+<h2>Get data for offline usage<a class="headerlink" href="#get-data-for-offline-usage" title="Permalink to this headline">¶</a></h2>
+<p>The following example presents a way to download all the data of a certain instrument for all research flights for offline usage. At first, we get all the flights, for which data of the instrument is available.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="s1">&#39;DROPSONDES&#39;</span>
+<span class="n">flight_ids</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">campaign</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">,</span> <span class="s1">&#39;AFLUX&#39;</span><span class="p">,</span> <span class="s1">&#39;MOSAiC-ACA&#39;</span><span class="p">]:</span>
+    <span class="n">flight_ids</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="p">[</span><span class="n">campaign</span><span class="p">][</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;MiRAC-A&#39;</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">flight_ids</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;ACLOUD_P5_RF04&#39;, &#39;ACLOUD_P5_RF05&#39;, &#39;ACLOUD_P5_RF06&#39;, &#39;ACLOUD_P5_RF07&#39;, &#39;ACLOUD_P5_RF08&#39;, &#39;ACLOUD_P5_RF10&#39;, &#39;ACLOUD_P5_RF11&#39;, &#39;ACLOUD_P5_RF15&#39;, &#39;ACLOUD_P5_RF17&#39;, &#39;ACLOUD_P5_RF18&#39;, &#39;ACLOUD_P5_RF19&#39;, &#39;ACLOUD_P5_RF20&#39;, &#39;ACLOUD_P5_RF21&#39;, &#39;ACLOUD_P5_RF22&#39;, &#39;ACLOUD_P5_RF23&#39;, &#39;ACLOUD_P5_RF25&#39;, &#39;AFLUX_P5_RF03&#39;, &#39;AFLUX_P5_RF04&#39;, &#39;AFLUX_P5_RF05&#39;, &#39;AFLUX_P5_RF06&#39;, &#39;AFLUX_P5_RF07&#39;, &#39;AFLUX_P5_RF08&#39;, &#39;AFLUX_P5_RF09&#39;, &#39;AFLUX_P5_RF10&#39;, &#39;AFLUX_P5_RF11&#39;, &#39;AFLUX_P5_RF12&#39;, &#39;AFLUX_P5_RF13&#39;, &#39;AFLUX_P5_RF14&#39;, &#39;AFLUX_P5_RF15&#39;, &#39;MOSAiC-ACA_P5_RF05&#39;, &#39;MOSAiC-ACA_P5_RF06&#39;, &#39;MOSAiC-ACA_P5_RF07&#39;, &#39;MOSAiC-ACA_P5_RF08&#39;, &#39;MOSAiC-ACA_P5_RF09&#39;, &#39;MOSAiC-ACA_P5_RF10&#39;, &#39;MOSAiC-ACA_P5_RF11&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we simply loop over all the flights. In the case of the dropsondes, we set the <code class="docutils literal notranslate"><span class="pre">i_sonde</span></code> parameter to 1, since the dropsondes of the flights are contained all in the same file. This file will be downloaded, if it is not already contained in the directories. Dropsonde datasets are stored in seperate folders for every campaign. The paths, to where the data is downloaded is written into an empty yaml file.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">][</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="n">dataset</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;ACLOUD_P5_RF05&#39;,
+ &#39;ACLOUD_P5_RF06&#39;,
+ &#39;ACLOUD_P5_RF07&#39;,
+ &#39;ACLOUD_P5_RF10&#39;,
+ &#39;ACLOUD_P5_RF11&#39;,
+ &#39;ACLOUD_P5_RF13&#39;,
+ &#39;ACLOUD_P5_RF14&#39;,
+ &#39;ACLOUD_P5_RF16&#39;,
+ &#39;ACLOUD_P5_RF17&#39;,
+ &#39;ACLOUD_P5_RF18&#39;,
+ &#39;ACLOUD_P5_RF19&#39;,
+ &#39;ACLOUD_P5_RF20&#39;,
+ &#39;ACLOUD_P5_RF21&#39;,
+ &#39;ACLOUD_P5_RF22&#39;,
+ &#39;ACLOUD_P5_RF23&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dct</span> <span class="o">=</span> <span class="p">{</span><span class="n">dataset</span><span class="p">:</span> <span class="p">{}}</span>
+
+<span class="k">for</span> <span class="n">flight_id</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">][</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="n">dataset</span><span class="p">]):</span>
+    
+    <span class="c1"># get mission from flight_id segmentation</span>
+    <span class="n">mission</span> <span class="o">=</span> <span class="n">flight_id</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    
+    <span class="c1"># define the path, to where data should be downloaded</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;./data/</span><span class="si">{</span><span class="n">dataset</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s1">/</span><span class="si">{</span><span class="n">mission</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span>
+    
+    <span class="c1"># store the path in a dictionary</span>
+    <span class="n">dct</span><span class="p">[</span><span class="n">dataset</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">mission</span><span class="p">:</span> <span class="n">path</span><span class="p">})</span>
+    
+    <span class="c1"># define the parameters for caching</span>
+    <span class="n">kwds</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;simplecache&#39;</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span>
+        <span class="n">cache_storage</span><span class="o">=</span><span class="n">path</span><span class="p">,</span> 
+        <span class="n">same_names</span><span class="o">=</span><span class="kc">True</span>
+    <span class="p">)}</span>
+    
+    <span class="c1"># read the data to store it</span>
+    <span class="n">cat</span><span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">][</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="n">dataset</span><span class="p">][</span><span class="n">flight_id</span><span class="p">](</span><span class="n">i_sonde</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="n">kwds</span><span class="p">)</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># keep track of paths, were data is downloaded to</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./local_datasets_2.yaml&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">yaml</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">dct</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
