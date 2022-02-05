@@ -431,7 +431,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;0+untagged.8.g98972f6&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;v0.0.6-6-gc7dee44&#39;
 </pre></div>
 </div>
 </div>
@@ -478,27 +478,47 @@
 </div>
 </div>
 </div>
-<p>We have to keys, corresponding to the <em>Polar 5</em> and to the <em>Polar 6</em> aircraft of the Alfred-Wegener-Institute for Polar and Marine research. We select one of them and take a look to the nested structure of the dictionary.</p>
+<p>The keys correspond to the different campaigns. We select one of them and take a look to the nested structure of the dictionary.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_734994</span><span class="o">/</span><span class="mf">2512450667.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">type</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">])</span>
-
-<span class="ne">KeyError</span>: &#39;P5&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;P5&#39;, &#39;P6&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We have two keys, corresponding to the <em>Polar 5</em> and to the <em>Polar 6</em> aircraft of the Alfred-Wegener-Institute for Polar and Marine research.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">][</span><span class="s1">&#39;P5&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>dict
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">][</span><span class="s1">&#39;P5&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -521,39 +541,15 @@
  &#39;ACLOUD_P5_RF21&#39;,
  &#39;ACLOUD_P5_RF22&#39;,
  &#39;ACLOUD_P5_RF23&#39;,
- &#39;ACLOUD_P5_RF25&#39;,
- &#39;AFLUX_P5_RF02&#39;,
- &#39;AFLUX_P5_RF03&#39;,
- &#39;AFLUX_P5_RF04&#39;,
- &#39;AFLUX_P5_RF05&#39;,
- &#39;AFLUX_P5_RF06&#39;,
- &#39;AFLUX_P5_RF07&#39;,
- &#39;AFLUX_P5_RF08&#39;,
- &#39;AFLUX_P5_RF09&#39;,
- &#39;AFLUX_P5_RF10&#39;,
- &#39;AFLUX_P5_RF11&#39;,
- &#39;AFLUX_P5_RF12&#39;,
- &#39;AFLUX_P5_RF13&#39;,
- &#39;AFLUX_P5_RF14&#39;,
- &#39;AFLUX_P5_RF15&#39;,
- &#39;MOSAiC-ACA_P5_RF02&#39;,
- &#39;MOSAiC-ACA_P5_RF03&#39;,
- &#39;MOSAiC-ACA_P5_RF04&#39;,
- &#39;MOSAiC-ACA_P5_RF05&#39;,
- &#39;MOSAiC-ACA_P5_RF06&#39;,
- &#39;MOSAiC-ACA_P5_RF07&#39;,
- &#39;MOSAiC-ACA_P5_RF08&#39;,
- &#39;MOSAiC-ACA_P5_RF09&#39;,
- &#39;MOSAiC-ACA_P5_RF10&#39;,
- &#39;MOSAiC-ACA_P5_RF11&#39;]
+ &#39;ACLOUD_P5_RF25&#39;]
 </pre></div>
 </div>
 </div>
 </div>
-<p>As you can see, once we selected the aircraft, the second level of the nested dictionary consists of the names of the research flights. We can now select a specific flight and look deeper into it:</p>
+<p>As you can see, once we selected the campaign and the aircraft, the third level of the nested dictionary consists of the names of the research flights. We can now select a specific flight and look deeper into it:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">][</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -565,7 +561,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">][</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -606,7 +602,7 @@
 <p>The first it’s just the contact data for reference, for example:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;contacts&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">][</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;contacts&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -621,7 +617,7 @@
 <p>The second is the location of the metadata:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;flight_report&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">][</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;flight_report&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -637,7 +633,7 @@
 <p>The date of the flight, the time when it took of and when it landed:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;date&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">][</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;date&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -649,7 +645,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;takeoff&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">][</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;takeoff&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -661,7 +657,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;landing&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">][</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;landing&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -678,7 +674,7 @@
 <p>Some metadata:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;events&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">][</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;events&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -695,7 +691,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;remarks&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">][</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;remarks&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -710,7 +706,7 @@
 <h5>other keys<a class="headerlink" href="#other-keys" title="Permalink to this headline">¶</a></h5>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;mission&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">][</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;mission&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -722,7 +718,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;platform&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">][</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;platform&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -734,7 +730,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">][</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;name&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -746,7 +742,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;flight_id&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">][</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;flight_id&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -762,7 +758,7 @@
 <p>This is the key, which actually contains the segmented flight. Let’s take a closer look:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;segments&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">][</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;segments&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -775,7 +771,7 @@
 <p>As you can see the <code class="docutils literal notranslate"><span class="pre">segments</span></code>-key does not contain a dictionary, as the previous levels. Instead it contains a list! Let’s take the first element:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;segments&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">][</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;segments&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -788,7 +784,7 @@
 <p>So the <code class="docutils literal notranslate"><span class="pre">segment</span></code>-key contains actually a list of dictionary as value. Let’s just print this first segment:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;segments&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">][</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;segments&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -796,9 +792,9 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;dropsondes&#39;: [],
  &#39;end&#39;: datetime.datetime(2017, 6, 8, 8, 8, 53),
  &#39;irregularities&#39;: [&#39;whale-watching loop&#39;],
- &#39;kinds&#39;: [&#39;major_ascend&#39;, &#39;nya_overflight&#39;, &#39;sveabreen_glacier_overflight&#39;],
+ &#39;kinds&#39;: [&#39;major_ascent&#39;, &#39;nya_overflight&#39;, &#39;sveabreen_glacier_overflight&#39;],
  &#39;levels&#39;: [100, 9700],
- &#39;name&#39;: &#39;major ascend&#39;,
+ &#39;name&#39;: &#39;major ascent&#39;,
  &#39;segment_id&#39;: &#39;ACLOUD_P5_RF14_ma&#39;,
  &#39;start&#39;: datetime.datetime(2017, 6, 8, 7, 36, 50)}
 </pre></div>
@@ -808,7 +804,7 @@
 <p>and it’s keys:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;segments&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">][</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">][</span><span class="s1">&#39;segments&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
@@ -867,15 +863,15 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;P5&#39;, &#39;P6&#39;, &#39;Polarstern&#39;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;ACLOUD&#39;, &#39;PAMARCMiP&#39;, &#39;AFLUX&#39;, &#39;MOSAiC-ACA&#39;]
 </pre></div>
 </div>
 </div>
 </div>
-<p>Let’s take again the <em>polar 5</em>:</p>
+<p>Let’s take again the <em>polar 5</em> during ACLOUD:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">depth</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">][</span><span class="s1">&#39;P5&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">depth</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -883,15 +879,8 @@
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;GPS_INS&#39;,
  &#39;AMSR2_SIC&#39;,
  &#39;CLOUD_TOP_HEIGHT&#39;,
- &#39;MIRAC_A&#39;,
- &#39;MIRAC_P&#39;,
- &#39;HATPRO&#39;,
- &#39;NEVZOROV&#39;,
- &#39;CAS&#39;,
- &#39;CDP&#39;,
- &#39;CIP&#39;,
- &#39;PIP&#39;,
- &#39;PMS_COMBINED&#39;,
+ &#39;MiRAC-A&#39;,
+ &#39;MiRAC-P&#39;,
  &#39;DROPSONDES&#39;,
  &#39;FISH_EYE_CAMERA&#39;,
  &#39;BROADBAND_IRRADIANCE&#39;,
@@ -903,7 +892,7 @@
 <p>These are the data set which are available for the <em>polar 5</em>. Let’s take <code class="docutils literal notranslate"><span class="pre">GPS_INS</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;GPS_INS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">depth</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">][</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;GPS_INS&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">depth</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -926,31 +915,7 @@
  &#39;ACLOUD_P5_RF21&#39;,
  &#39;ACLOUD_P5_RF22&#39;,
  &#39;ACLOUD_P5_RF23&#39;,
- &#39;ACLOUD_P5_RF25&#39;,
- &#39;AFLUX_P5_RF02&#39;,
- &#39;AFLUX_P5_RF03&#39;,
- &#39;AFLUX_P5_RF04&#39;,
- &#39;AFLUX_P5_RF05&#39;,
- &#39;AFLUX_P5_RF06&#39;,
- &#39;AFLUX_P5_RF07&#39;,
- &#39;AFLUX_P5_RF08&#39;,
- &#39;AFLUX_P5_RF09&#39;,
- &#39;AFLUX_P5_RF10&#39;,
- &#39;AFLUX_P5_RF11&#39;,
- &#39;AFLUX_P5_RF12&#39;,
- &#39;AFLUX_P5_RF13&#39;,
- &#39;AFLUX_P5_RF14&#39;,
- &#39;AFLUX_P5_RF15&#39;,
- &#39;MOSAiC-ACA_P5_RF02&#39;,
- &#39;MOSAiC-ACA_P5_RF03&#39;,
- &#39;MOSAiC-ACA_P5_RF04&#39;,
- &#39;MOSAiC-ACA_P5_RF05&#39;,
- &#39;MOSAiC-ACA_P5_RF06&#39;,
- &#39;MOSAiC-ACA_P5_RF07&#39;,
- &#39;MOSAiC-ACA_P5_RF08&#39;,
- &#39;MOSAiC-ACA_P5_RF09&#39;,
- &#39;MOSAiC-ACA_P5_RF10&#39;,
- &#39;MOSAiC-ACA_P5_RF11&#39;]
+ &#39;ACLOUD_P5_RF25&#39;]
 </pre></div>
 </div>
 </div>
@@ -958,7 +923,7 @@
 <p>These are the flights that are available for the given dataset. Let’s take again <code class="docutils literal notranslate"><span class="pre">ACLOUD_P5_RF14</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">cat</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;GPS_INS&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">cat</span><span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">][</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;GPS_INS&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -970,7 +935,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;GPS_INS&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">]</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cat</span><span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">][</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;GPS_INS&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF14&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -981,7 +946,7 @@
   description: &#39;&#39;
   driver: intake_xarray.netcdf.NetCDFSource
   metadata:
-    catalog_dir: https://raw.githubusercontent.com/igmk/ac3airborne-intake/main/P5
+    catalog_dir: https://raw.githubusercontent.com/igmk/ac3airborne-intake/main/ACLOUD/P5
 </pre></div>
 </div>
 </div>
@@ -1035,8 +1000,8 @@
  &#39;iata&#39;: &#39;LYR&#39;,
  &#39;lon&#39;: 15.465556,
  &#39;lat&#39;: 78.246111,
- &#39;elev_m&#39;: 28.0,
- &#39;elev_ft&#39;: 94.0}
+ &#39;elev_m&#39;: 28,
+ &#39;elev_ft&#39;: 94}
 </pre></div>
 </div>
 </div>
