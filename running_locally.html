@@ -365,7 +365,7 @@ In any case, it will involve the following steps:</p>
 <p>Using pip</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install jupyter
 pip install -r https://raw.githubusercontent.com/igmk/how_to_ac3airborne/main/requirements.txt
-pip install -i https://test.pypi.org/simple/ ac3airborne
+pip install git+https://github.com/igmk/ac3airborne.git
 </pre></div>
 </div>
 <p>This won’t work with any notebooks that use <code class="docutils literal notranslate"><span class="pre">cartopy</span></code> to make maps,  <code class="docutils literal notranslate"><span class="pre">pip</span></code> does not manage
@@ -380,15 +380,15 @@ their dependencies well.</p>
 <h2>Via git<a class="headerlink" href="#via-git" title="Permalink to this headline">¶</a></h2>
 <p>If you like to do it more properly, you can also clone the repository via git. Depending on if you have SSH public key authentication set up or not, you can do this via SSH or HTTPS:</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="bd317b6f-8f67-480c-b29e-a64900625308" name="9961e5f0-733e-4bcd-a1dd-68f79924c43c" type="radio">
-</input><label class="tabbed-label" for="bd317b6f-8f67-480c-b29e-a64900625308">
+<input checked="checked" id="a207359f-dbc4-493f-aaf3-85869277364d" name="4c63b6d3-2f9c-467d-8922-6fd3266d48bf" type="radio">
+</input><label class="tabbed-label" for="a207359f-dbc4-493f-aaf3-85869277364d">
 SSH</label><div class="tabbed-content docutils">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone git@github.com:igmk/how_to_ac3airborne.git
 </pre></div>
 </div>
 </div>
-<input id="595898a6-5458-4a61-808c-d2213fc37652" name="9961e5f0-733e-4bcd-a1dd-68f79924c43c" type="radio">
-</input><label class="tabbed-label" for="595898a6-5458-4a61-808c-d2213fc37652">
+<input id="43ab1e85-8f53-4526-bde8-84505c916647" name="4c63b6d3-2f9c-467d-8922-6fd3266d48bf" type="radio">
+</input><label class="tabbed-label" for="43ab1e85-8f53-4526-bde8-84505c916647">
 HTTPS</label><div class="tabbed-content docutils">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/igmk/how_to_ac3airborne.git
 </pre></div>

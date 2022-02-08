@@ -19,7 +19,7 @@ Using pip
 ```bash
 pip install jupyter
 pip install -r https://raw.githubusercontent.com/igmk/how_to_ac3airborne/main/requirements.txt
-pip install -i https://test.pypi.org/simple/ ac3airborne
+pip install git+https://github.com/igmk/ac3airborne.git
 ```
 +++
 This won't work with any notebooks that use `cartopy` to make maps,  `pip` does not manage
