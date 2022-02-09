@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Datasets &#8212; how_to_ac3airborne</title>
     
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+  <link rel="stylesheet" href="_static/css/index.f658d18f9b420779cfdf24aa0a7e2d77.css">
 
     
   <link rel="stylesheet"
@@ -20,10 +19,14 @@
 
     
       
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e7340bb3dbd8dde6db86f25597f54a1b.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -31,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
     <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+  <link rel="preload" as="script" href="_static/js/index.d3f166471bb80abb5163.js">
 
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
@@ -41,10 +44,10 @@
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
@@ -55,14 +58,14 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Nose Boom Measurements" href="datasets/nose_boom.html" />
     <link rel="prev" title="Getting started with ac3airborne" href="getting_started.html" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
-    
+
+
+
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
-
     
 
     <div class="container-xl">
@@ -71,42 +74,37 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
-      
-      <img src="_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">how_to_ac3airborne</h1>
-      
-    </a>
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">how_to_ac3airborne</h1>
+  
+</a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="intro.html">
    Introduction
   </a>
  </li>
 </ul>
-<ul class="current nav bd-sidenav">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="getting_started.html">
    Getting started with ac3airborne
   </a>
  </li>
- <li class="toctree-l1 current active has-children">
+ <li class="toctree-l1 current active collapsible-parent">
   <a class="current reference internal" href="#">
    Datasets
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
+  <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="datasets/nose_boom.html">
      Nose boom
@@ -157,33 +155,20 @@
      GPS and INS
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/hawk.html">
-     HAWK
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/eagle.html">
-     EAGLE
-    </a>
-   </li>
   </ul>
+  <i class="fas fa-chevron-down">
+  </i>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="flight_segmentation.html">
    Flight-phase separation
   </a>
  </li>
- <li class="toctree-l1 has-children">
+ <li class="toctree-l1 collapsible-parent">
   <a class="reference internal" href="code.html">
    Toolbox and examples
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
+  <ul class="collapse-ul">
    <li class="toctree-l2">
     <a class="reference internal" href="running_locally.html">
      Running how_to_ac3airborne locally
@@ -215,6 +200,8 @@
     </a>
    </li>
   </ul>
+  <i class="fas fa-chevron-down">
+  </i>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="references.html">
@@ -223,7 +210,6 @@
  </li>
 </ul>
 
-    </div>
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
@@ -273,12 +259,12 @@
 
             <!-- Source interaction buttons -->
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
+            <!-- Full screen (wrap in <a> to have style consistency -->
+            <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                    data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                    title="Fullscreen mode"><i
+                        class="fas fa-expand"></i></button></a>
 
             <!-- Launch buttons -->
 
@@ -304,67 +290,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#acloud">
-   ACLOUD
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#p5">
-     P5
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#p6">
-     P6
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#aflux">
-   AFLUX
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
-     P5
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#mosaic-aca">
-   MOSAiC-ACA
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
-     P5
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#pamarcmip">
-   PAMARCMiP
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
-     P6
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -392,22 +317,54 @@
 <span class="n">ancillary</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;AMSR2_SIC&#39;</span><span class="p">]</span>
 
 
-<span class="k">def</span> <span class="nf">data_availability</span><span class="p">(</span><span class="n">mission</span><span class="p">,</span> <span class="n">platform</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">data_availability</span><span class="p">(</span><span class="n">aircraft</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Plot data availability matrix</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     
+    <span class="c1"># set the index of flights, where a certain instrument</span>
+    <span class="c1"># was not flown</span>
+    <span class="n">instr_dct</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;P5&#39;</span><span class="p">:</span> <span class="p">{},</span> <span class="s1">&#39;P6&#39;</span><span class="p">:</span> <span class="p">{}}</span>
+    <span class="n">instr_dct</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;HATPRO&#39;</span><span class="p">:</span> 
+            <span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="s1">&#39;AFLUX&#39;</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="n">aircraft</span><span class="p">])],</span>
+        <span class="s1">&#39;MIRAC_P&#39;</span><span class="p">:</span> 
+            <span class="p">[</span><span class="s1">&#39;MOSAiC-ACA&#39;</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="n">aircraft</span><span class="p">])],</span>
+        <span class="s1">&#39;NEVZOROV&#39;</span><span class="p">:</span> 
+            <span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="s1">&#39;AFLUX&#39;</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="n">aircraft</span><span class="p">])],</span>
+        <span class="s1">&#39;PMS_COMBINED&#39;</span><span class="p">:</span>
+            <span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="n">aircraft</span><span class="p">])],</span>
+        <span class="s1">&#39;CDP&#39;</span><span class="p">:</span> 
+            <span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="s1">&#39;AFLUX&#39;</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="n">aircraft</span><span class="p">])],</span>
+        <span class="s1">&#39;PIP&#39;</span><span class="p">:</span> 
+            <span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="n">aircraft</span><span class="p">])],</span>
+        <span class="s1">&#39;CIP&#39;</span><span class="p">:</span> 
+            <span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="n">aircraft</span><span class="p">])],</span>
+        <span class="s1">&#39;CAS&#39;</span><span class="p">:</span> 
+            <span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="s1">&#39;MOSAiC-ACA&#39;</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="n">aircraft</span><span class="p">])]</span>
+        <span class="p">}</span>
+
     <span class="c1"># store data availability in a matrix</span>
-    <span class="n">data_availability</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="p">[</span><span class="n">mission</span><span class="p">][</span><span class="n">platform</span><span class="p">])),</span>
-                                        <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="n">mission</span><span class="p">][</span><span class="n">platform</span><span class="p">]))))</span>
-    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">dataset</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="p">[</span><span class="n">mission</span><span class="p">][</span><span class="n">platform</span><span class="p">])):</span>
-        <span class="n">data_availability</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="n">mission</span><span class="p">][</span><span class="n">platform</span><span class="p">]),</span> 
-                                          <span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="p">[</span><span class="n">mission</span><span class="p">][</span><span class="n">platform</span><span class="p">][</span><span class="n">dataset</span><span class="p">]))</span>
+    <span class="n">data_availability</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="p">[</span><span class="n">aircraft</span><span class="p">])),</span>
+                                        <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="n">aircraft</span><span class="p">]))))</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">dataset</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="p">[</span><span class="n">aircraft</span><span class="p">])):</span>
+        <span class="n">data_availability</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="n">aircraft</span><span class="p">]),</span> 
+                                          <span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="p">[</span><span class="n">aircraft</span><span class="p">][</span><span class="n">dataset</span><span class="p">]))</span>
+
+        <span class="c1"># replace values, where instrument was not flown</span>
+        <span class="n">ix_not_flown</span> <span class="o">=</span> <span class="n">instr_dct</span><span class="p">[</span><span class="n">aircraft</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">dataset</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">ix_not_flown</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">assert</span> <span class="n">data_availability</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">ix_not_flown</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span>
+            <span class="n">data_availability</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">ix_not_flown</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
 
     <span class="c1"># plot data availability</span>
-    <span class="n">yscale</span> <span class="o">=</span> <span class="n">data_availability</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="o">+</span><span class="mf">0.4</span><span class="o">*</span><span class="n">yscale</span><span class="p">))</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span>
+                           <span class="n">constrained_layout</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Aircraft: </span><span class="si">{</span><span class="n">aircraft</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
     
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_facecolor</span><span class="p">(</span><span class="s1">&#39;grey&#39;</span><span class="p">)</span>
+
     <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">data_availability</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> 
                   <span class="nb">range</span><span class="p">(</span><span class="n">data_availability</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> 
                   <span class="n">data_availability</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> 
@@ -419,110 +376,57 @@
 
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">data_availability</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">data_availability</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
-
+    
     <span class="n">xlabels</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">ds_name</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="p">[</span><span class="n">mission</span><span class="p">][</span><span class="n">platform</span><span class="p">]):</span>
+    <span class="k">for</span> <span class="n">ds_name</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="p">[</span><span class="n">aircraft</span><span class="p">]):</span>
         <span class="k">if</span> <span class="n">ds_name</span> <span class="ow">in</span> <span class="n">ancillary</span><span class="p">:</span>
             <span class="n">ds_name</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">(ancillary)&#39;</span>
         <span class="n">xlabels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ds_name</span><span class="p">)</span>
-
+    
     <span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">xlabels</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
-    <span class="n">y_labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">flight_id</span><span class="o">+</span><span class="s1">&#39;, &#39;</span><span class="o">+</span><span class="n">flight</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span> 
-                <span class="k">for</span> <span class="n">flight_id</span><span class="p">,</span> <span class="n">flight</span> <span class="ow">in</span> <span class="n">meta</span><span class="p">[</span><span class="n">mission</span><span class="p">][</span><span class="n">platform</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">y_labels</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="n">aircraft</span><span class="p">])))</span>
 
     <span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labeltop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>
 
+
     <span class="n">available</span> <span class="o">=</span> <span class="n">mpatches</span><span class="o">.</span><span class="n">Patch</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Data available&#39;</span><span class="p">)</span>
     <span class="n">not_flown</span> <span class="o">=</span> <span class="n">mpatches</span><span class="o">.</span><span class="n">Patch</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Data missing or</span><span class="se">\n</span><span class="s1">instrument failed&#39;</span><span class="p">)</span>
+    <span class="n">missing</span> <span class="o">=</span> <span class="n">mpatches</span><span class="o">.</span><span class="n">Patch</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Instrument not</span><span class="se">\n</span><span class="s1">flown&#39;</span><span class="p">)</span>
 
-    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="o">=</span><span class="p">[</span><span class="n">available</span><span class="p">,</span> <span class="n">not_flown</span><span class="p">],</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="o">=</span><span class="p">[</span><span class="n">available</span><span class="p">,</span> <span class="n">not_flown</span><span class="p">,</span> <span class="n">missing</span><span class="p">],</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
               <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.01</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
 
     <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="acloud">
-<h2>ACLOUD<a class="headerlink" href="#acloud" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="p5">
-<h3>P5<a class="headerlink" href="#p5" title="Permalink to this headline">¶</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_availability</span><span class="p">(</span><span class="n">mission</span><span class="o">=</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">,</span> <span class="n">platform</span><span class="o">=</span><span class="s1">&#39;P5&#39;</span><span class="p">)</span>
+
+
+<span class="n">data_availability</span><span class="p">(</span><span class="n">aircraft</span><span class="o">=</span><span class="s1">&#39;P5&#39;</span><span class="p">)</span>
+<span class="n">data_availability</span><span class="p">(</span><span class="n">aircraft</span><span class="o">=</span><span class="s1">&#39;P6&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/datasets_3_0.png" src="_images/datasets_3_0.png" />
-</div>
-</div>
-</div>
-<div class="section" id="p6">
-<h3>P6<a class="headerlink" href="#p6" title="Permalink to this headline">¶</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_availability</span><span class="p">(</span><span class="n">mission</span><span class="o">=</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">,</span> <span class="n">platform</span><span class="o">=</span><span class="s1">&#39;P6&#39;</span><span class="p">)</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_673792</span><span class="o">/</span><span class="mf">2659882575.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">     </span><span class="mi">96</span> 
+<span class="g g-Whitespace">     </span><span class="mi">97</span> 
+<span class="ne">---&gt; </span><span class="mi">98</span> <span class="n">data_availability</span><span class="p">(</span><span class="n">aircraft</span><span class="o">=</span><span class="s1">&#39;P5&#39;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">99</span> <span class="n">data_availability</span><span class="p">(</span><span class="n">aircraft</span><span class="o">=</span><span class="s1">&#39;P6&#39;</span><span class="p">)</span>
+
+<span class="nn">/tmp/ipykernel_673792/2659882575.py</span> in <span class="ni">data_availability</span><span class="nt">(aircraft)</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span>     <span class="n">instr_dct</span><span class="p">[</span><span class="s1">&#39;P5&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span>         <span class="s1">&#39;HATPRO&#39;</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">25</span>             <span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span> <span class="ow">in</span> <span class="n">x</span> <span class="ow">or</span> <span class="s1">&#39;AFLUX&#39;</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="n">aircraft</span><span class="p">])],</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span>         <span class="s1">&#39;MIRAC_P&#39;</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span>             <span class="p">[</span><span class="s1">&#39;MOSAiC-ACA&#39;</span> <span class="ow">in</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="n">aircraft</span><span class="p">])],</span>
+
+<span class="ne">KeyError</span>: &#39;P5&#39;
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/datasets_5_0.png" src="_images/datasets_5_0.png" />
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="aflux">
-<h2>AFLUX<a class="headerlink" href="#aflux" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id1">
-<h3>P5<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_availability</span><span class="p">(</span><span class="n">mission</span><span class="o">=</span><span class="s1">&#39;AFLUX&#39;</span><span class="p">,</span> <span class="n">platform</span><span class="o">=</span><span class="s1">&#39;P5&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/datasets_8_0.png" src="_images/datasets_8_0.png" />
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="mosaic-aca">
-<h2>MOSAiC-ACA<a class="headerlink" href="#mosaic-aca" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id2">
-<h3>P5<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_availability</span><span class="p">(</span><span class="n">mission</span><span class="o">=</span><span class="s1">&#39;MOSAiC-ACA&#39;</span><span class="p">,</span> <span class="n">platform</span><span class="o">=</span><span class="s1">&#39;P5&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/datasets_11_0.png" src="_images/datasets_11_0.png" />
-</div>
-</div>
-</div>
-</div>
-<div class="section" id="pamarcmip">
-<h2>PAMARCMiP<a class="headerlink" href="#pamarcmip" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id3">
-<h3>P6<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_availability</span><span class="p">(</span><span class="n">mission</span><span class="o">=</span><span class="s1">&#39;PAMARCMiP&#39;</span><span class="p">,</span> <span class="n">platform</span><span class="o">=</span><span class="s1">&#39;P6&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/datasets_14_0.png" src="_images/datasets_14_0.png" />
 </div>
 </div>
 <div class="toctree-wrapper compound">
-</div>
-</div>
 </div>
 </div>
 
@@ -549,32 +453,12 @@
               </div>
               
         
+        <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="getting_started.html" title="previous page">Getting started with ac3airborne</a>
+    <a class='right-next' id="next-link" href="datasets/nose_boom.html" title="next page">Nose Boom Measurements</a>
 
-
-
-<div class='prev-next-bottom'>
-    
-    <div id="prev">
-        <a class="left-prev" href="getting_started.html" title="previous page">
-            <i class="prevnext-label fas fa-angle-left"></i>
-            <div class="prevnext-info">
-                <p class="prevnext-label">previous</p>
-                <p class="prevnext-title">Getting started with ac3airborne</p>
-            </div>
-        </a>
-    </div>
-     <div id="next">
-        <a class="right-next" href="datasets/nose_boom.html" title="next page">
-            <div class="prevnext-info">
-                <p class="prevnext-label">next</p>
-                <p class="prevnext-title">Nose Boom Measurements</p>
-            </div>
-            <i class="prevnext-label fas fa-angle-right"></i>
-        </a>
-     </div>
-
-</div>
+        </div>
         
         </div>
     </div>
@@ -593,9 +477,11 @@
 
       </div>
     </div>
-  
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-  
+    
+  <script src="_static/js/index.d3f166471bb80abb5163.js"></script>
+
+
+    
   </body>
 </html>
