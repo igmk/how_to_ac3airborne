@@ -31,7 +31,7 @@ The html version of the book is hosted on the `gh-pages` branch of this repo.
 - Navigating to your local build; and running,
 - `ghp-import -n -p -f how_to_ac3airborne/_build/html`
 
-This can be automatically done an action on github which builds the `gh-pages` branch. This is deactivated due to `pyac3airbone` being not available on *PyPi* More information on this hosting process can be found [here](https://jupyterbook.org/publish/gh-pages.html#manually-host-your-book-with-github-pages).
+This can be automatically done an action on github which builds the `gh-pages` branch. This is deactivated due to `ac3airbone` being not available on *PyPi* More information on this hosting process can be found [here](https://jupyterbook.org/publish/gh-pages.html#manually-host-your-book-with-github-pages).
 
 ## Contributors
 

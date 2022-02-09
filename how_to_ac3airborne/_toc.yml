@@ -24,6 +24,10 @@
     title: Dropsondes
   - file: datasets/gps_ins
     title: GPS and INS
+  - file: datasets/hawk
+    title: HAWK
+  - file: datasets/eagle
+    title: EAGLE
 - file: flight_segmentation
   title: Flight-phase separation
 - file: code
