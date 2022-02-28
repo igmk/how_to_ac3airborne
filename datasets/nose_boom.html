@@ -225,7 +225,10 @@
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+  <div>
+    <a href="#">This is a test</a>
+</div>
+
 </div>
 
 </div>
@@ -520,208 +523,135 @@
   import pandas.util.testing as tm
 </pre></div>
 </div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ClientResponseError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_595390</span><span class="o">/</span><span class="mf">2047428966.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">ds_p5</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">][</span><span class="s1">&#39;P5&#39;</span><span class="p">][</span><span class="s1">&#39;NOSE_BOOM&#39;</span><span class="p">][</span><span class="s1">&#39;ACLOUD_P5_RF07&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">ds_p5</span>
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+<span class="nn">/usr/local/lib/python3.8/dist-packages/intake/source/csv.py</span> in <span class="ni">read</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">140</span> 
+<span class="g g-Whitespace">    </span><span class="mi">141</span>     <span class="k">def</span> <span class="nf">read</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">142</span>         <span class="bp">self</span><span class="o">.</span><span class="n">_get_schema</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">143</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dataframe</span><span class="o">.</span><span class="n">compute</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">144</span> 
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>t</th>
-      <th>lon</th>
-      <th>lat</th>
-      <th>h</th>
-      <th>p</th>
-      <th>T</th>
-      <th>u</th>
-      <th>v</th>
-      <th>w</th>
-      <th>pitch</th>
-      <th>roll</th>
-      <th>thdg</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>46816.00</td>
-      <td>15.503975</td>
-      <td>78.245735</td>
-      <td>24.24</td>
-      <td>1018.5</td>
-      <td>-2.62</td>
-      <td>9.98</td>
-      <td>-2.26</td>
-      <td>-2.13</td>
-      <td>11.52</td>
-      <td>1.53</td>
-      <td>282.79</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>46816.01</td>
-      <td>15.503976</td>
-      <td>78.245735</td>
-      <td>24.24</td>
-      <td>1018.6</td>
-      <td>-2.62</td>
-      <td>9.90</td>
-      <td>-2.24</td>
-      <td>-2.10</td>
-      <td>11.52</td>
-      <td>1.53</td>
-      <td>282.79</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>46816.02</td>
-      <td>15.503976</td>
-      <td>78.245735</td>
-      <td>24.24</td>
-      <td>1017.6</td>
-      <td>-2.61</td>
-      <td>10.30</td>
-      <td>-2.34</td>
-      <td>-2.18</td>
-      <td>11.52</td>
-      <td>1.53</td>
-      <td>282.79</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>46816.03</td>
-      <td>15.503976</td>
-      <td>78.245735</td>
-      <td>24.24</td>
-      <td>1018.3</td>
-      <td>-2.61</td>
-      <td>10.22</td>
-      <td>-2.32</td>
-      <td>-2.17</td>
-      <td>11.52</td>
-      <td>1.52</td>
-      <td>282.79</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>46816.04</td>
-      <td>15.503975</td>
-      <td>78.245735</td>
-      <td>24.24</td>
-      <td>1018.2</td>
-      <td>-2.61</td>
-      <td>10.00</td>
-      <td>-2.27</td>
-      <td>-2.12</td>
-      <td>11.52</td>
-      <td>1.52</td>
-      <td>282.80</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>1251090</th>
-      <td>59326.90</td>
-      <td>15.504173</td>
-      <td>78.245728</td>
-      <td>26.54</td>
-      <td>1018.1</td>
-      <td>-2.56</td>
-      <td>9.00</td>
-      <td>-2.95</td>
-      <td>-1.99</td>
-      <td>11.90</td>
-      <td>1.71</td>
-      <td>288.12</td>
-    </tr>
-    <tr>
-      <th>1251091</th>
-      <td>59326.91</td>
-      <td>15.504173</td>
-      <td>78.245728</td>
-      <td>26.54</td>
-      <td>1018.1</td>
-      <td>-2.56</td>
-      <td>8.98</td>
-      <td>-2.94</td>
-      <td>-1.99</td>
-      <td>11.90</td>
-      <td>1.71</td>
-      <td>288.12</td>
-    </tr>
-    <tr>
-      <th>1251092</th>
-      <td>59326.92</td>
-      <td>15.504173</td>
-      <td>78.245728</td>
-      <td>26.54</td>
-      <td>1018.0</td>
-      <td>-2.58</td>
-      <td>8.96</td>
-      <td>-2.94</td>
-      <td>-1.99</td>
-      <td>11.90</td>
-      <td>1.71</td>
-      <td>288.12</td>
-    </tr>
-    <tr>
-      <th>1251093</th>
-      <td>59326.93</td>
-      <td>15.504173</td>
-      <td>78.245728</td>
-      <td>26.54</td>
-      <td>1017.8</td>
-      <td>-2.57</td>
-      <td>9.00</td>
-      <td>-2.95</td>
-      <td>-1.99</td>
-      <td>11.90</td>
-      <td>1.71</td>
-      <td>288.12</td>
-    </tr>
-    <tr>
-      <th>1251094</th>
-      <td>59326.94</td>
-      <td>15.504173</td>
-      <td>78.245728</td>
-      <td>26.54</td>
-      <td>1017.9</td>
-      <td>-2.57</td>
-      <td>9.05</td>
-      <td>-2.96</td>
-      <td>-2.00</td>
-      <td>11.90</td>
-      <td>1.71</td>
-      <td>288.12</td>
-    </tr>
-  </tbody>
-</table>
-<p>1251095 rows × 12 columns</p>
-</div></div></div>
+<span class="nn">/usr/local/lib/python3.8/dist-packages/intake/source/csv.py</span> in <span class="ni">_get_schema</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">125</span> 
+<span class="g g-Whitespace">    </span><span class="mi">126</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dataframe</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">127</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_open_dataset</span><span class="p">(</span><span class="n">urlpath</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">128</span> 
+<span class="g g-Whitespace">    </span><span class="mi">129</span>         <span class="n">dtypes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_dataframe</span><span class="o">.</span><span class="n">_meta</span><span class="o">.</span><span class="n">dtypes</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/intake/source/csv.py</span> in <span class="ni">_open_dataset</span><span class="nt">(self, urlpath)</span>
+<span class="g g-Whitespace">     </span><span class="mi">98</span> 
+<span class="g g-Whitespace">     </span><span class="mi">99</span>         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">pattern</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">100</span>             <span class="bp">self</span><span class="o">.</span><span class="n">_dataframe</span> <span class="o">=</span> <span class="n">dask</span><span class="o">.</span><span class="n">dataframe</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">101</span>                 <span class="n">urlpath</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_storage_options</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">102</span>                 <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">_csv_kwargs</span><span class="p">)</span>
+
+<span class="nn">/usr/lib/python3/dist-packages/dask/dataframe/io/csv.py</span> in <span class="ni">read</span><span class="nt">(urlpath, blocksize, collection, lineterminator, compression, sample, enforce, assume_missing, storage_options, include_path_column, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">564</span>         <span class="o">**</span><span class="n">kwargs</span>
+<span class="g g-Whitespace">    </span><span class="mi">565</span>     <span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">566</span>         <span class="k">return</span> <span class="n">read_pandas</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">567</span>             <span class="n">reader</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">568</span>             <span class="n">urlpath</span><span class="p">,</span>
+
+<span class="nn">/usr/lib/python3/dist-packages/dask/dataframe/io/csv.py</span> in <span class="ni">read_pandas</span><span class="nt">(reader, urlpath, blocksize, collection, lineterminator, compression, sample, enforce, assume_missing, storage_options, include_path_column, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">396</span>         <span class="n">sample</span> <span class="o">=</span> <span class="n">blocksize</span>
+<span class="g g-Whitespace">    </span><span class="mi">397</span>     <span class="n">b_lineterminator</span> <span class="o">=</span> <span class="n">lineterminator</span><span class="o">.</span><span class="n">encode</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">398</span>     <span class="n">b_out</span> <span class="o">=</span> <span class="n">read_bytes</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">399</span>         <span class="n">urlpath</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">400</span>         <span class="n">delimiter</span><span class="o">=</span><span class="n">b_lineterminator</span><span class="p">,</span>
+
+<span class="nn">/usr/lib/python3/dist-packages/dask/bytes/core.py</span> in <span class="ni">read_bytes</span><span class="nt">(urlpath, delimiter, not_zero, blocksize, sample, compression, include_path, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">156</span>         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">sample</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">157</span>             <span class="n">sample</span> <span class="o">=</span> <span class="n">parse_bytes</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">158</span>         <span class="k">with</span> <span class="n">OpenFile</span><span class="p">(</span><span class="n">fs</span><span class="p">,</span> <span class="n">paths</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">compression</span><span class="o">=</span><span class="n">compression</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">159</span>             <span class="c1"># read block without seek (because we start at zero)</span>
+<span class="g g-Whitespace">    </span><span class="mi">160</span>             <span class="k">if</span> <span class="n">delimiter</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/fsspec/core.py</span> in <span class="ni">__enter__</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">100</span>         <span class="n">mode</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mode</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;t&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;b&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">101</span> 
+<span class="ne">--&gt; </span><span class="mi">102</span>         <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fs</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">103</span> 
+<span class="g g-Whitespace">    </span><span class="mi">104</span>         <span class="bp">self</span><span class="o">.</span><span class="n">fobjects</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="p">]</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/fsspec/implementations/cached.py</span> in <span class="ni">&lt;lambda&gt;</span><span class="nt">(*args, **kw)</span>
+<span class="g g-Whitespace">    </span><span class="mi">384</span>             <span class="c1"># all the methods defined in this class. Note `open` here, since</span>
+<span class="g g-Whitespace">    </span><span class="mi">385</span>             <span class="c1"># it calls `_open`, but is actually in superclass</span>
+<span class="ne">--&gt; </span><span class="mi">386</span>             <span class="k">return</span> <span class="k">lambda</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">:</span> <span class="nb">getattr</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="n">item</span><span class="p">)(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">387</span>         <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;__reduce_ex__&quot;</span><span class="p">]:</span>
+<span class="g g-Whitespace">    </span><span class="mi">388</span>             <span class="k">raise</span> <span class="ne">AttributeError</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/fsspec/spec.py</span> in <span class="ni">open</span><span class="nt">(self, path, mode, block_size, cache_options, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">935</span>         <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">936</span>             <span class="n">ac</span> <span class="o">=</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;autocommit&quot;</span><span class="p">,</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_intrans</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">937</span>             <span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_open</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">938</span>                 <span class="n">path</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">939</span>                 <span class="n">mode</span><span class="o">=</span><span class="n">mode</span><span class="p">,</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/fsspec/implementations/cached.py</span> in <span class="ni">&lt;lambda&gt;</span><span class="nt">(*args, **kw)</span>
+<span class="g g-Whitespace">    </span><span class="mi">384</span>             <span class="c1"># all the methods defined in this class. Note `open` here, since</span>
+<span class="g g-Whitespace">    </span><span class="mi">385</span>             <span class="c1"># it calls `_open`, but is actually in superclass</span>
+<span class="ne">--&gt; </span><span class="mi">386</span>             <span class="k">return</span> <span class="k">lambda</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">:</span> <span class="nb">getattr</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="n">item</span><span class="p">)(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">387</span>         <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;__reduce_ex__&quot;</span><span class="p">]:</span>
+<span class="g g-Whitespace">    </span><span class="mi">388</span>             <span class="k">raise</span> <span class="ne">AttributeError</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/fsspec/implementations/cached.py</span> in <span class="ni">_open</span><span class="nt">(self, path, mode, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">637</span>                     <span class="n">f2</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">638</span>         <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">639</span>             <span class="bp">self</span><span class="o">.</span><span class="n">fs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">fn</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">640</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_open</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">mode</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">641</span> 
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/fsspec/asyn.py</span> in <span class="ni">get</span><span class="nt">(self, rpath, lpath, recursive, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">292</span>         <span class="n">lpaths</span> <span class="o">=</span> <span class="n">other_paths</span><span class="p">(</span><span class="n">rpaths</span><span class="p">,</span> <span class="n">lpath</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">293</span>         <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">lp</span><span class="p">),</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">lp</span> <span class="ow">in</span> <span class="n">lpaths</span><span class="p">]</span>
+<span class="ne">--&gt; </span><span class="mi">294</span>         <span class="k">return</span> <span class="n">sync</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">loop</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get</span><span class="p">,</span> <span class="n">rpaths</span><span class="p">,</span> <span class="n">lpaths</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">295</span> 
+<span class="g g-Whitespace">    </span><span class="mi">296</span> 
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/fsspec/asyn.py</span> in <span class="ni">sync</span><span class="nt">(loop, func, callback_timeout, *args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">69</span>     <span class="k">if</span> <span class="n">error</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+<span class="g g-Whitespace">     </span><span class="mi">70</span>         <span class="n">typ</span><span class="p">,</span> <span class="n">exc</span><span class="p">,</span> <span class="n">tb</span> <span class="o">=</span> <span class="n">error</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="ne">---&gt; </span><span class="mi">71</span>         <span class="k">raise</span> <span class="n">exc</span><span class="o">.</span><span class="n">with_traceback</span><span class="p">(</span><span class="n">tb</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span>         <span class="k">return</span> <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/fsspec/asyn.py</span> in <span class="ni">f</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">53</span>             <span class="k">if</span> <span class="n">callback_timeout</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">54</span>                 <span class="n">future</span> <span class="o">=</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">wait_for</span><span class="p">(</span><span class="n">future</span><span class="p">,</span> <span class="n">callback_timeout</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">55</span>             <span class="n">result</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="k">await</span> <span class="n">future</span>
+<span class="g g-Whitespace">     </span><span class="mi">56</span>         <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">57</span>             <span class="n">error</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">exc_info</span><span class="p">()</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/fsspec/asyn.py</span> in <span class="ni">_get</span><span class="nt">(self, rpaths, lpaths, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">277</span>         <span class="n">dirs</span> <span class="o">=</span> <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">lp</span><span class="p">)</span> <span class="k">for</span> <span class="n">lp</span> <span class="ow">in</span> <span class="n">lpaths</span><span class="p">]</span>
+<span class="g g-Whitespace">    </span><span class="mi">278</span>         <span class="p">[</span><span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">dirs</span><span class="p">]</span>
+<span class="ne">--&gt; </span><span class="mi">279</span>         <span class="k">return</span> <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">280</span>             <span class="o">*</span><span class="p">[</span>
+<span class="g g-Whitespace">    </span><span class="mi">281</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">_get_file</span><span class="p">(</span><span class="n">rpath</span><span class="p">,</span> <span class="n">lpath</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/fsspec/implementations/http.py</span> in <span class="ni">_get_file</span><span class="nt">(self, rpath, lpath, chunk_size, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">180</span>             <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="mi">404</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">181</span>                 <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="n">rpath</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">182</span>             <span class="n">r</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">183</span>             <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">lpath</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">184</span>                 <span class="n">chunk</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="nn">/usr/local/lib/python3.8/dist-packages/aiohttp/client_reqrep.py</span> in <span class="ni">raise_for_status</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">998</span>             <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">reason</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">999</span>             <span class="bp">self</span><span class="o">.</span><span class="n">release</span><span class="p">()</span>
+<span class="ne">-&gt; </span><span class="mi">1000</span>             <span class="k">raise</span> <span class="n">ClientResponseError</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1001</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">request_info</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1002</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">history</span><span class="p">,</span>
+
+<span class="ne">ClientResponseError</span>: 504, message=&#39;Gateway Time-out&#39;, url=URL(&#39;https://hs.pangaea.de/Projects/AC3/ACLOUD_meteo/Flight_20170527_09_P5_turbdata.asc.gz&#39;)
+</pre></div>
+</div>
+</div>
 </div>
 <p>The same for the polar 6:</p>
 <div class="cell docutils container">
@@ -1594,12 +1524,12 @@ Data variables:
     w        (t) float64 -2.13 -2.1 -2.18 -2.17 -2.12 ... -1.99 -1.99 -1.99 -2.0
     pitch    (t) float64 11.52 11.52 11.52 11.52 11.52 ... 11.9 11.9 11.9 11.9
     roll     (t) float64 1.53 1.53 1.53 1.52 1.52 ... 1.71 1.71 1.71 1.71 1.71
-    thdg     (t) float64 282.8 282.8 282.8 282.8 ... 288.1 288.1 288.1 288.1</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-693d0bf0-7107-47d0-94d0-5b0ce659ca62' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-693d0bf0-7107-47d0-94d0-5b0ce659ca62' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>t</span>: 1251095</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-9017253d-9c47-4c98-b748-2ef04f3aefb7' class='xr-section-summary-in' type='checkbox'  checked><label for='section-9017253d-9c47-4c98-b748-2ef04f3aefb7' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>t</span></div><div class='xr-var-dims'>(t)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2017-05-27T13:00:16 ... 2017-05-...</div><input id='attrs-9d2cad33-8e53-4e14-b446-0f371871d50f' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-9d2cad33-8e53-4e14-b446-0f371871d50f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-88c0ea88-8817-4d6e-915f-03a36ae43c6d' class='xr-var-data-in' type='checkbox'><label for='data-88c0ea88-8817-4d6e-915f-03a36ae43c6d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;2017-05-27T13:00:16.000000000&#x27;, &#x27;2017-05-27T13:00:16.009999872&#x27;,
+    thdg     (t) float64 282.8 282.8 282.8 282.8 ... 288.1 288.1 288.1 288.1</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-80d1b7e4-59db-4608-a4e2-af47e19ccc26' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-80d1b7e4-59db-4608-a4e2-af47e19ccc26' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>t</span>: 1251095</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-52fde150-393a-41c3-b835-4839993a7075' class='xr-section-summary-in' type='checkbox'  checked><label for='section-52fde150-393a-41c3-b835-4839993a7075' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>t</span></div><div class='xr-var-dims'>(t)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2017-05-27T13:00:16 ... 2017-05-...</div><input id='attrs-4a25a3c1-48b0-4d46-b0a0-0f80698ac228' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-4a25a3c1-48b0-4d46-b0a0-0f80698ac228' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-808e2de0-7015-435d-bb78-fa2fececfc78' class='xr-var-data-in' type='checkbox'><label for='data-808e2de0-7015-435d-bb78-fa2fececfc78' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([&#x27;2017-05-27T13:00:16.000000000&#x27;, &#x27;2017-05-27T13:00:16.009999872&#x27;,
        &#x27;2017-05-27T13:00:16.020000000&#x27;, ..., &#x27;2017-05-27T16:28:46.920000000&#x27;,
        &#x27;2017-05-27T16:28:46.930000128&#x27;, &#x27;2017-05-27T16:28:46.940000000&#x27;],
-      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-d1d847f4-1b7f-4113-ba5c-f498a22d73a8' class='xr-section-summary-in' type='checkbox'  checked><label for='section-d1d847f4-1b7f-4113-ba5c-f498a22d73a8' class='xr-section-summary' >Data variables: <span>(11)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>lon</span></div><div class='xr-var-dims'>(t)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>15.5 15.5 15.5 ... 15.5 15.5 15.5</div><input id='attrs-e6ae93a1-8771-436f-8b82-a4579fe5d96a' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-e6ae93a1-8771-436f-8b82-a4579fe5d96a' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-2e4c6a37-811b-4039-bd78-1f32c6e2fc7c' class='xr-var-data-in' type='checkbox'><label for='data-2e4c6a37-811b-4039-bd78-1f32c6e2fc7c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([15.5039749, 15.5039759, 15.5039759, ..., 15.5041733, 15.5041733,
-       15.5041733])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat</span></div><div class='xr-var-dims'>(t)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>78.25 78.25 78.25 ... 78.25 78.25</div><input id='attrs-99657028-617e-4abf-9b46-e42affa77208' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-99657028-617e-4abf-9b46-e42affa77208' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f1b8d26a-4a77-46eb-9373-8572beaac081' class='xr-var-data-in' type='checkbox'><label for='data-f1b8d26a-4a77-46eb-9373-8572beaac081' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([78.2457352, 78.2457352, 78.2457352, ..., 78.2457275, 78.2457275,
-       78.2457275])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>h</span></div><div class='xr-var-dims'>(t)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>24.24 24.24 24.24 ... 26.54 26.54</div><input id='attrs-c443451c-a108-4f14-8a88-983050a868a1' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-c443451c-a108-4f14-8a88-983050a868a1' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3e0bc554-c7c4-45ac-84c8-be4d5bcba4db' class='xr-var-data-in' type='checkbox'><label for='data-3e0bc554-c7c4-45ac-84c8-be4d5bcba4db' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([24.24, 24.24, 24.24, ..., 26.54, 26.54, 26.54])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>p</span></div><div class='xr-var-dims'>(t)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1.018e+03 1.019e+03 ... 1.018e+03</div><input id='attrs-7ead5f78-2e9a-4c95-aaf9-f7d30d70014a' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-7ead5f78-2e9a-4c95-aaf9-f7d30d70014a' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a8bd650c-a050-45d2-a277-34bbad2145d5' class='xr-var-data-in' type='checkbox'><label for='data-a8bd650c-a050-45d2-a277-34bbad2145d5' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([1018.5, 1018.6, 1017.6, ..., 1018. , 1017.8, 1017.9])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>T</span></div><div class='xr-var-dims'>(t)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-2.62 -2.62 -2.61 ... -2.57 -2.57</div><input id='attrs-59b7c43e-5c1b-470d-8cef-60dc74571a4e' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-59b7c43e-5c1b-470d-8cef-60dc74571a4e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e2512d2e-8b42-4c75-8710-cbdf722372d4' class='xr-var-data-in' type='checkbox'><label for='data-e2512d2e-8b42-4c75-8710-cbdf722372d4' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-2.62, -2.62, -2.61, ..., -2.58, -2.57, -2.57])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>u</span></div><div class='xr-var-dims'>(t)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>9.98 9.9 10.3 ... 8.96 9.0 9.05</div><input id='attrs-11ed1f6a-335f-4c80-bde6-da6877c640a6' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-11ed1f6a-335f-4c80-bde6-da6877c640a6' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f10dfc1e-2fc6-4fb1-b9f6-c7b177ce8206' class='xr-var-data-in' type='checkbox'><label for='data-f10dfc1e-2fc6-4fb1-b9f6-c7b177ce8206' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([ 9.98,  9.9 , 10.3 , ...,  8.96,  9.  ,  9.05])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>v</span></div><div class='xr-var-dims'>(t)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-2.26 -2.24 -2.34 ... -2.95 -2.96</div><input id='attrs-b4eb830a-ed04-4f1a-ae40-a066f3e693c2' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-b4eb830a-ed04-4f1a-ae40-a066f3e693c2' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-158de93d-6078-418f-b3c0-6783665305ed' class='xr-var-data-in' type='checkbox'><label for='data-158de93d-6078-418f-b3c0-6783665305ed' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-2.26, -2.24, -2.34, ..., -2.94, -2.95, -2.96])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>w</span></div><div class='xr-var-dims'>(t)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-2.13 -2.1 -2.18 ... -1.99 -2.0</div><input id='attrs-4c535d87-cf71-4094-ac3f-d136fcceab50' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-4c535d87-cf71-4094-ac3f-d136fcceab50' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-baaf11b7-2090-437a-ada6-52665667409b' class='xr-var-data-in' type='checkbox'><label for='data-baaf11b7-2090-437a-ada6-52665667409b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-2.13, -2.1 , -2.18, ..., -1.99, -1.99, -2.  ])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>pitch</span></div><div class='xr-var-dims'>(t)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>11.52 11.52 11.52 ... 11.9 11.9</div><input id='attrs-db779da8-882d-43a6-aa72-055a9c65828f' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-db779da8-882d-43a6-aa72-055a9c65828f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a0e2e270-78da-4aab-8eac-ca4a76453ff7' class='xr-var-data-in' type='checkbox'><label for='data-a0e2e270-78da-4aab-8eac-ca4a76453ff7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([11.52, 11.52, 11.52, ..., 11.9 , 11.9 , 11.9 ])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>roll</span></div><div class='xr-var-dims'>(t)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1.53 1.53 1.53 ... 1.71 1.71 1.71</div><input id='attrs-b4c971d4-2b69-4bfb-b4d8-3a2400006a43' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-b4c971d4-2b69-4bfb-b4d8-3a2400006a43' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-cacf97c1-3855-43e2-a639-0dc03f08a63b' class='xr-var-data-in' type='checkbox'><label for='data-cacf97c1-3855-43e2-a639-0dc03f08a63b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([1.53, 1.53, 1.53, ..., 1.71, 1.71, 1.71])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>thdg</span></div><div class='xr-var-dims'>(t)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>282.8 282.8 282.8 ... 288.1 288.1</div><input id='attrs-ea2ee44e-7074-49ec-8bc7-834f992fb6f8' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-ea2ee44e-7074-49ec-8bc7-834f992fb6f8' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ca540ef5-c93d-4869-bae3-7980633d9741' class='xr-var-data-in' type='checkbox'><label for='data-ca540ef5-c93d-4869-bae3-7980633d9741' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([282.79, 282.79, 282.79, ..., 288.12, 288.12, 288.12])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-8200cc7a-ef8f-4753-9d2e-fc6d812aa787' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-8200cc7a-ef8f-4753-9d2e-fc6d812aa787' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
+      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-3b844494-a5f7-47f0-b31b-171aa2c11692' class='xr-section-summary-in' type='checkbox'  checked><label for='section-3b844494-a5f7-47f0-b31b-171aa2c11692' class='xr-section-summary' >Data variables: <span>(11)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>lon</span></div><div class='xr-var-dims'>(t)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>15.5 15.5 15.5 ... 15.5 15.5 15.5</div><input id='attrs-96479181-8bb1-4d8f-a943-6a9f05f00f5a' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-96479181-8bb1-4d8f-a943-6a9f05f00f5a' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ff0b2921-b4d9-4371-a068-8f6c781a5172' class='xr-var-data-in' type='checkbox'><label for='data-ff0b2921-b4d9-4371-a068-8f6c781a5172' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([15.5039749, 15.5039759, 15.5039759, ..., 15.5041733, 15.5041733,
+       15.5041733])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat</span></div><div class='xr-var-dims'>(t)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>78.25 78.25 78.25 ... 78.25 78.25</div><input id='attrs-5ee53c98-e867-4efb-bfa4-2ed650898418' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-5ee53c98-e867-4efb-bfa4-2ed650898418' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b66a6d20-3550-4ab6-961c-0df40b5806c8' class='xr-var-data-in' type='checkbox'><label for='data-b66a6d20-3550-4ab6-961c-0df40b5806c8' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([78.2457352, 78.2457352, 78.2457352, ..., 78.2457275, 78.2457275,
+       78.2457275])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>h</span></div><div class='xr-var-dims'>(t)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>24.24 24.24 24.24 ... 26.54 26.54</div><input id='attrs-827e0941-e630-4a87-9a04-200b52c2639f' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-827e0941-e630-4a87-9a04-200b52c2639f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-22fa84a9-8651-44fa-895c-4939f2e8d498' class='xr-var-data-in' type='checkbox'><label for='data-22fa84a9-8651-44fa-895c-4939f2e8d498' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([24.24, 24.24, 24.24, ..., 26.54, 26.54, 26.54])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>p</span></div><div class='xr-var-dims'>(t)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1.018e+03 1.019e+03 ... 1.018e+03</div><input id='attrs-72cc7788-ff7c-4cd3-bcda-f33cd216c740' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-72cc7788-ff7c-4cd3-bcda-f33cd216c740' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c005c381-2a4a-4129-869d-0f057bfa06e2' class='xr-var-data-in' type='checkbox'><label for='data-c005c381-2a4a-4129-869d-0f057bfa06e2' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([1018.5, 1018.6, 1017.6, ..., 1018. , 1017.8, 1017.9])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>T</span></div><div class='xr-var-dims'>(t)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-2.62 -2.62 -2.61 ... -2.57 -2.57</div><input id='attrs-e4c5e3ae-f7ba-441f-a054-f3a94a81fb14' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-e4c5e3ae-f7ba-441f-a054-f3a94a81fb14' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c351382d-3ece-4a4c-adc4-4b35392615a1' class='xr-var-data-in' type='checkbox'><label for='data-c351382d-3ece-4a4c-adc4-4b35392615a1' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-2.62, -2.62, -2.61, ..., -2.58, -2.57, -2.57])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>u</span></div><div class='xr-var-dims'>(t)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>9.98 9.9 10.3 ... 8.96 9.0 9.05</div><input id='attrs-ee128a63-de5c-4db1-a3fa-8a9b1db9c6a3' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-ee128a63-de5c-4db1-a3fa-8a9b1db9c6a3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-48b05736-297b-4273-b727-dea0f83eda60' class='xr-var-data-in' type='checkbox'><label for='data-48b05736-297b-4273-b727-dea0f83eda60' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([ 9.98,  9.9 , 10.3 , ...,  8.96,  9.  ,  9.05])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>v</span></div><div class='xr-var-dims'>(t)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-2.26 -2.24 -2.34 ... -2.95 -2.96</div><input id='attrs-263acb7a-57f1-4ccc-8858-12f391d03d2b' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-263acb7a-57f1-4ccc-8858-12f391d03d2b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-29bad5ef-2d9e-4908-b98c-d910ab20d693' class='xr-var-data-in' type='checkbox'><label for='data-29bad5ef-2d9e-4908-b98c-d910ab20d693' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-2.26, -2.24, -2.34, ..., -2.94, -2.95, -2.96])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>w</span></div><div class='xr-var-dims'>(t)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>-2.13 -2.1 -2.18 ... -1.99 -2.0</div><input id='attrs-a7e61bcb-26de-43e1-ac2b-c709bf76f3d7' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-a7e61bcb-26de-43e1-ac2b-c709bf76f3d7' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-eccd6699-1f45-4b48-9b81-c1758d4b1fb4' class='xr-var-data-in' type='checkbox'><label for='data-eccd6699-1f45-4b48-9b81-c1758d4b1fb4' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-2.13, -2.1 , -2.18, ..., -1.99, -1.99, -2.  ])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>pitch</span></div><div class='xr-var-dims'>(t)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>11.52 11.52 11.52 ... 11.9 11.9</div><input id='attrs-f924d453-55c6-40ef-850f-c5fade1d2fdb' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-f924d453-55c6-40ef-850f-c5fade1d2fdb' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b6f047a9-3f43-4a24-88c5-da84d22cbcae' class='xr-var-data-in' type='checkbox'><label for='data-b6f047a9-3f43-4a24-88c5-da84d22cbcae' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([11.52, 11.52, 11.52, ..., 11.9 , 11.9 , 11.9 ])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>roll</span></div><div class='xr-var-dims'>(t)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>1.53 1.53 1.53 ... 1.71 1.71 1.71</div><input id='attrs-b5d19245-44b0-4629-a136-b499e28e5b70' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-b5d19245-44b0-4629-a136-b499e28e5b70' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-625ef24b-459a-4c3f-9127-22401594ac97' class='xr-var-data-in' type='checkbox'><label for='data-625ef24b-459a-4c3f-9127-22401594ac97' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([1.53, 1.53, 1.53, ..., 1.71, 1.71, 1.71])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>thdg</span></div><div class='xr-var-dims'>(t)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>282.8 282.8 282.8 ... 288.1 288.1</div><input id='attrs-299555f8-00ff-43bd-b46c-d691d7cf31ef' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-299555f8-00ff-43bd-b46c-d691d7cf31ef' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1ab454de-4821-4b4c-8d6f-cb9f66460b42' class='xr-var-data-in' type='checkbox'><label for='data-1ab454de-4821-4b4c-8d6f-cb9f66460b42' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([282.79, 282.79, 282.79, ..., 288.12, 288.12, 288.12])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-bdd710c7-3734-42a3-8e65-3717815dc798' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-bdd710c7-3734-42a3-8e65-3717815dc798' class='xr-section-summary'  title='Expand/collapse section'>Attributes: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'></dl></div></li></ul></div></div></div></div>
 </div>
 <p>The same for the polar 6:</p>
 <div class="cell docutils container">

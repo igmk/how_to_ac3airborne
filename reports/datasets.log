@@ -17,122 +17,21 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-%matplotlib inline
-import ac3airborne
-import matplotlib.pyplot as plt
-import matplotlib.patches as mpatches
-import numpy as np
-plt.style.use("mplstyle/book")
-
-# load intake catalog and flight segments
-cat = ac3airborne.get_intake_catalog()
-meta = ac3airborne.get_flight_segments()
-
-ancillary = ['AMSR2_SIC']
-
-
-def data_availability(aircraft):
-    """
-    Plot data availability matrix
-    """
-    
-    # set the index of flights, where a certain instrument
-    # was not flown
-    instr_dct = {'P5': {}, 'P6': {}}
-    instr_dct['P5'] = {
-        'HATPRO': 
-            ['ACLOUD' in x or 'AFLUX' in x for x in list(meta[aircraft])],
-        'MIRAC_P': 
-            ['MOSAiC-ACA' in x for x in list(meta[aircraft])],
-        'NEVZOROV': 
-            ['ACLOUD' in x or 'AFLUX' in x for x in list(meta[aircraft])],
-        'PMS_COMBINED':
-            ['ACLOUD' in x for x in list(meta[aircraft])],
-        'CDP': 
-            ['ACLOUD' in x or 'AFLUX' in x for x in list(meta[aircraft])],
-        'PIP': 
-            ['ACLOUD' in x for x in list(meta[aircraft])],
-        'CIP': 
-            ['ACLOUD' in x for x in list(meta[aircraft])],
-        'CAS': 
-            ['ACLOUD' in x or 'MOSAiC-ACA' in x for x in list(meta[aircraft])]
-        }
-
-    # store data availability in a matrix
-    data_availability = np.zeros(shape=(len(list(cat[aircraft])),
-                                        len(list(meta[aircraft]))))
-    for i, dataset in enumerate(list(cat[aircraft])):
-        data_availability[i, :] = np.isin(list(meta[aircraft]), 
-                                          list(cat[aircraft][dataset]))
-
-        # replace values, where instrument was not flown
-        ix_not_flown = instr_dct[aircraft].get(dataset)
-        if ix_not_flown is not None:
-            assert data_availability[i, ix_not_flown].sum() == 0
-            data_availability[i, ix_not_flown] = np.nan
-
-    # plot data availability
-    fig, ax = plt.subplots(1, 1, figsize=(10, 15), dpi=200,
-                           constrained_layout=True)
-
-    ax.set_title(f'Aircraft: {aircraft}')
-    
-    ax.set_facecolor('grey')
-
-    ax.pcolormesh(range(data_availability.shape[0]), 
-                  range(data_availability.shape[1]), 
-                  data_availability.T, 
-                  shading='nearest',
-                  vmin=0, 
-                  vmax=1, 
-                  cmap='RdYlGn', 
-                  edgecolors='#eeeeee')
-
-    ax.set_xticks(range(data_availability.shape[0]))
-    ax.set_yticks(range(data_availability.shape[1]))
-    
-    xlabels = []
-    for ds_name in list(cat[aircraft]):
-        if ds_name in ancillary:
-            ds_name += '\n(ancillary)'
-        xlabels.append(ds_name)
-    
-    ax.set_xticklabels(xlabels, rotation=90)
-    ax.set_yticklabels(list(list(meta[aircraft])))
-
-    ax.tick_params(labeltop=True)
-    ax.invert_yaxis()
-
-
-    available = mpatches.Patch(color='green', label='Data available')
-    not_flown = mpatches.Patch(color='red', label='Data missing or\ninstrument failed')
-    missing = mpatches.Patch(color='grey', label='Instrument not\nflown')
-
-    ax.legend(handles=[available, not_flown, missing], ncol=1,
-              bbox_to_anchor=(0, 1.01), loc='lower right')
-
-    plt.show()
-
-
-data_availability(aircraft='P5')
-data_availability(aircraft='P6')
+data_availability(mission='PAMARCMiP', platform='P6')
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mKeyError[0m                                  Traceback (most recent call last)
-[0;32m/tmp/ipykernel_673792/2659882575.py[0m in [0;36m<module>[0;34m[0m
-[1;32m     96[0m [0;34m[0m[0m
-[1;32m     97[0m [0;34m[0m[0m
-[0;32m---> 98[0;31m [0mdata_availability[0m[0;34m([0m[0maircraft[0m[0;34m=[0m[0;34m'P5'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m     99[0m [0mdata_availability[0m[0;34m([0m[0maircraft[0m[0;34m=[0m[0;34m'P6'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/tmp/ipykernel_594576/3170661857.py[0m in [0;36m<module>[0;34m[0m
+[0;32m----> 1[0;31m [0mdata_availability[0m[0;34m([0m[0mmission[0m[0;34m=[0m[0;34m'PAMARCMiP'[0m[0;34m,[0m [0mplatform[0m[0;34m=[0m[0;34m'P6'[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m
+[0;32m/tmp/ipykernel_594576/717516275.py[0m in [0;36mdata_availability[0;34m(mission, platform)[0m
+[1;32m     20[0m     [0;31m# store data availability in a matrix[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     21[0m     data_availability = np.zeros(shape=(len(list(cat[mission][platform])),
+[0;32m---> 22[0;31m                                         len(list(meta[mission][platform]))))
+[0m[1;32m     23[0m     [0;32mfor[0m [0mi[0m[0;34m,[0m [0mdataset[0m [0;32min[0m [0menumerate[0m[0;34m([0m[0mlist[0m[0;34m([0m[0mcat[0m[0;34m[[0m[0mmission[0m[0;34m][0m[0;34m[[0m[0mplatform[0m[0;34m][0m[0;34m)[0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     24[0m         data_availability[i, :] = np.isin(list(meta[mission][platform]), 
 
-[0;32m/tmp/ipykernel_673792/2659882575.py[0m in [0;36mdata_availability[0;34m(aircraft)[0m
-[1;32m     23[0m     instr_dct['P5'] = {
-[1;32m     24[0m         [0;34m'HATPRO'[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[0;32m---> 25[0;31m             [0;34m[[0m[0;34m'ACLOUD'[0m [0;32min[0m [0mx[0m [0;32mor[0m [0;34m'AFLUX'[0m [0;32min[0m [0mx[0m [0;32mfor[0m [0mx[0m [0;32min[0m [0mlist[0m[0;34m([0m[0mmeta[0m[0;34m[[0m[0maircraft[0m[0;34m][0m[0;34m)[0m[0;34m][0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m     26[0m         [0;34m'MIRAC_P'[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     27[0m             [0;34m[[0m[0;34m'MOSAiC-ACA'[0m [0;32min[0m [0mx[0m [0;32mfor[0m [0mx[0m [0;32min[0m [0mlist[0m[0;34m([0m[0mmeta[0m[0;34m[[0m[0maircraft[0m[0;34m][0m[0;34m)[0m[0;34m][0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
-
-[0;31mKeyError[0m: 'P5'
-KeyError: 'P5'
+[0;31mKeyError[0m: 'P6'
+KeyError: 'P6'
 

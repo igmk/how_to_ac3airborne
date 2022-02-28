@@ -220,7 +220,10 @@
 </nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+  <div>
+    <a href="#">This is a test</a>
+</div>
+
 </div>
 
 </div>
@@ -292,8 +295,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#airborne-campaigns-within-ac3">
-   Airborne campaigns within AC3
+  <a class="reference internal nav-link" href="#airborne-campaigns-within-ac-sup-3-sup">
+   Airborne campaigns within AC
+   <sup>
+    3
+   </sup>
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -315,32 +321,34 @@
                 
   <div class="section" id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
-<p>Welcome to the world of AC3 airborne data! It’s a collection of python code examples to get you started with the airborne data. It is a permantently growing and changing document and might never be finished. It follows the concept and ideas of the work done within the <a class="reference external" href="https://howto.eurec4a.eu/intro.html">EUREC4A</a> community.</p>
+<p>Welcome to the world of AC<sup>3</sup> airborne data! It is a collection of python code examples to get you started with the airborne data collected during the various airborne campaigns within the German DFG project - TRR 172, “ArctiC Amplification: Climate Relevant Atmospheric and SurfaCe Processes, and Feedback Mechanisms (AC<sup>3</sup>) <span id="id1">Wendisch <em>et al.</em> [<a class="reference internal" href="references.html#id7">WBB+17</a>]</span>, a joint research initiative of the Universities Leipzig (Leipzig Institute of Meteorology, LIM), Cologne (Institute of Geophysics and Meteorology, IGM), and Bremen and of the research institutes TROPOS (Leipzig) and Alfred Wegener Institute (AWI Bremerhaven and Potsdam). The document is permantently growing and changing and might never be finished. It follows the concept and ideas of the work done within the <a class="reference external" href="https://howto.eurec4a.eu/intro.html">EUREC4A</a> community.</p>
 <div class="section" id="idea">
 <h2>Idea<a class="headerlink" href="#idea" title="Permalink to this headline">¶</a></h2>
-<p>The book chapters show datasets that are accessible online, i.e., you don’t have to download anything in advance. Most datasets are accessed via the <a class="reference external" href="https://github.com/igmk/ac3airborne-intake">ac3airborne intake catalog</a>, which simply said takes care of the links to datasets in their most recent version. By implemented caching capabilities, it is only necessary to download the data the first time they are used. The scripts typically contain at minimum how to get a specific dataset and some simple plots of basic quantities. Most chapters include additional information from aircraft flight segments or further meta data, sometimes more sophisticated plots, or also a combination of variables from different datasets. In addition, some small tools are included to work with auxilliary data like sea ice coverage or land-mask.</p>
+<p>The book chapters show datasets that are accessible online, i.e., you don’t have to download anything in advance. Most datasets are accessed via the <a class="reference external" href="https://github.com/igmk/ac3airborne-intake">ac3airborne intake catalog</a>, which simply said takes care of the links to datasets in their most recent version. Most of the data is located on the <a class="reference external" href="https://www.pangaea.de/">PANGAEA</a> database if already published or on the <a class="reference external" href="https://cloud.ac3-tr.de">Nextcloud server of the AC<sup>3</sup> project</a> if they are still preliminary ot never planed to be published on PANGAEA. Some of the data that is publically available and only post-processed to fit the needs are hosted on a server at University of Cologne.</p>
+<p>By implemented caching capabilities, it is only necessary to download the data the first time they are used. The scripts typically contain at minimum a description on how to get a specific dataset and some simple plots of basic quantities. Most chapters include additional information from aircraft flight segments or further meta data, sometimes more sophisticated plots, or also a combination of variables from different datasets. In addition, some small tools are included to work with auxilliary data like sea ice coverage or land-mask.</p>
 </div>
-<div class="section" id="airborne-campaigns-within-ac3">
-<h2>Airborne campaigns within AC3<a class="headerlink" href="#airborne-campaigns-within-ac3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="airborne-campaigns-within-ac-sup-3-sup">
+<h2>Airborne campaigns within AC<sup>3</sup><a class="headerlink" href="#airborne-campaigns-within-ac-sup-3-sup" title="Permalink to this headline">¶</a></h2>
 <p>The campaigns handled in the online description are:</p>
 <ul class="simple">
-<li><p>Arctic CLoud Observations Using airborne measurements during polar Day <a class="reference external" href="https://home.uni-leipzig.de/~ehrlich/ACLOUD_wiki_doku/doku.php">ACLOUD</a> (data at <span id="id1">Ehrlich <em>et al.</em> [<a class="reference internal" href="references.html#id5">EWL+19b</a>]</span>)</p></li>
-<li><p>Airborne measurements of radiative and turbulent FLUXes of energy and momentum in the Arctic boundary layer <a class="reference external" href="https://home.uni-leipzig.de/~ehrlich/AFLUX_wiki_doku/doku.php?id=start">AFLUX</a> (data at <span id="id2">Mech <em>et al.</em> [<a class="reference internal" href="references.html#id6">MLE+21a</a>]</span>)</p></li>
-<li><p>MOSAiC Airborne observations in the Central Arctic <a class="reference external" href="https://home.uni-leipzig.de/~ehrlich/MOSAiC_ACA_wiki_doku/doku.php?id=start">MOSAiC-ACA</a> (data at <span id="id3">Mech <em>et al.</em> [<a class="reference internal" href="references.html#id8">MLE+21b</a>]</span>)</p></li>
+<li><p>Arctic CLoud Observations Using airborne measurements during polar Day <a class="reference external" href="https://home.uni-leipzig.de/~ehrlich/ACLOUD_wiki_doku/doku.php">ACLOUD</a> (data at <span id="id2">Ehrlich <em>et al.</em> [<a class="reference internal" href="references.html#id5">EWL+19b</a>]</span>)</p></li>
+<li><p>Airborne measurements of radiative and turbulent FLUXes of energy and momentum in the Arctic boundary layer <a class="reference external" href="https://home.uni-leipzig.de/~ehrlich/AFLUX_wiki_doku/doku.php?id=start">AFLUX</a> (data at <span id="id3">Mech <em>et al.</em> [<a class="reference internal" href="references.html#id6">MLE+21a</a>]</span>)</p></li>
+<li><p>MOSAiC Airborne observations in the Central Arctic <a class="reference external" href="https://home.uni-leipzig.de/~ehrlich/MOSAiC_ACA_wiki_doku/doku.php?id=start">MOSAiC-ACA</a> (data at <span id="id4">Mech <em>et al.</em> [<a class="reference internal" href="references.html#id8">MLE+21b</a>]</span>)</p></li>
 </ul>
 <div class="figure align-default" id="directive-fig">
 <a class="reference internal image-reference" href="_images/tracks.png"><img alt="_images/tracks.png" src="_images/tracks.png" style="height: 250px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Flight tracks of the ACLOUD (left), AFLUX (center), and MOSAiC-ACA (right) campaigns.</span><a class="headerlink" href="#directive-fig" title="Permalink to this image">¶</a></p>
 </div>
-<p>During <a class="reference external" href="https://home.uni-leipzig.de/~ehrlich/ACLOUD_wiki_doku/doku.php">ACLOUD</a> the campaign Physical feedback of Arctic PBL, Sea ice, Cloud And AerosoL (PASCAL) was conducted by the research vessel Polarstern. This will be important for analyzing Polarstern overflights.</p>
+<p>In addition, the flight tracks and sea ice coverage of the Polar Airborne Measurements and Arctic Regional Climate Model Simulation Project <a class="reference external" href="https://www.ac3-tr.de/overview/observations/pamarcmip-2018/">PAMARCMiP</a> have been included.</p>
+<p>During <a class="reference external" href="https://home.uni-leipzig.de/~ehrlich/ACLOUD_wiki_doku/doku.php">ACLOUD</a> the campaign Physical feedback of Arctic PBL, Sea ice, Cloud And AerosoL (PASCAL) was conducted by the research vessel Polarstern. The ship track of the Polarstern RV is part of the data catalog. This will be important for analyzing Polarstern overflights.</p>
 </div>
 <div class="section" id="some-links">
 <h2>Some links<a class="headerlink" href="#some-links" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="http://www.ac3-tr.de/">AC3 webpage</a></p></li>
-<li><p>The data description papers of ACLOUD from <span id="id4">Ehrlich <em>et al.</em> [<a class="reference internal" href="references.html#id2">EWL+19a</a>]</span> and for AFLUX and MOSAiC-ACA from <span id="id5">Mech <em>et al.</em> [<a class="reference internal" href="references.html#id10">MEH+21</a>]</span></p></li>
+<li><p>The data description papers of ACLOUD from <span id="id5">Ehrlich <em>et al.</em> [<a class="reference internal" href="references.html#id2">EWL+19a</a>]</span> and for AFLUX and MOSAiC-ACA from <span id="id6">Mech <em>et al.</em> [<a class="reference internal" href="references.html#id10">MEH+21</a>]</span></p></li>
 <li><p>Campaign wikis: <a class="reference external" href="https://home.uni-leipzig.de/~ehrlich/ACLOUD_wiki_doku/doku.php">ACLOUD</a>, <a class="reference external" href="https://home.uni-leipzig.de/~ehrlich/AFLUX_wiki_doku/doku.php?id=start">AFLUX</a>, and <a class="reference external" href="https://home.uni-leipzig.de/~ehrlich/MOSAiC_ACA_wiki_doku/doku.php?id=start">MOSAiC-ACA</a></p></li>
-<li><p>Master data collections on PANGAEA: ACLOUD from <span id="id6">Ehrlich <em>et al.</em> [<a class="reference internal" href="references.html#id5">EWL+19b</a>]</span>, AFLUX from <span id="id7">Mech <em>et al.</em> [<a class="reference internal" href="references.html#id6">MLE+21a</a>]</span>, and MOSAiC-ACA from <span id="id8">Mech <em>et al.</em> [<a class="reference internal" href="references.html#id8">MLE+21b</a>]</span></p></li>
+<li><p>Master data collections on PANGAEA: ACLOUD from <span id="id7">Ehrlich <em>et al.</em> [<a class="reference internal" href="references.html#id5">EWL+19b</a>]</span>, AFLUX from <span id="id8">Mech <em>et al.</em> [<a class="reference internal" href="references.html#id6">MLE+21a</a>]</span>, and MOSAiC-ACA from <span id="id9">Mech <em>et al.</em> [<a class="reference internal" href="references.html#id8">MLE+21b</a>]</span></p></li>
 </ul>
 <div class="toctree-wrapper compound">
 </div>

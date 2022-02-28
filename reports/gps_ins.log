@@ -17,18 +17,18 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# define colors for the flight tracks
-colors = [mcolors.to_hex(c)
-          for c in plt.cm.inferno(np.linspace(0, 1, len(datasets_p5)))]
+flights_p6 = {}
+for campaign in ['ACLOUD', 'PAMARCMiP']:
+    flights_p6.update(meta[campaign]['P6'])
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m/tmp/ipykernel_697263/3653655202.py[0m in [0;36m<module>[0;34m[0m
-[1;32m      1[0m [0;31m# define colors for the flight tracks[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      2[0m colors = [mcolors.to_hex(c)
-[0;32m----> 3[0;31m           for c in plt.cm.inferno(np.linspace(0, 1, len(datasets_p5)))]
+[0;31mKeyError[0m                                  Traceback (most recent call last)
+[0;32m/tmp/ipykernel_594936/1143688630.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      1[0m [0mflights_p6[0m [0;34m=[0m [0;34m{[0m[0;34m}[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      2[0m [0;32mfor[0m [0mcampaign[0m [0;32min[0m [0;34m[[0m[0;34m'ACLOUD'[0m[0;34m,[0m [0;34m'PAMARCMiP'[0m[0;34m][0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 3[0;31m     [0mflights_p6[0m[0;34m.[0m[0mupdate[0m[0;34m([0m[0mmeta[0m[0;34m[[0m[0mcampaign[0m[0;34m][0m[0;34m[[0m[0;34m'P6'[0m[0;34m][0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m
-[0;31mNameError[0m: name 'datasets_p5' is not defined
-NameError: name 'datasets_p5' is not defined
+[0;31mKeyError[0m: 'P6'
+KeyError: 'P6'
 
