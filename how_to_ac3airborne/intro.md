@@ -22,12 +22,15 @@ name: directive-fig
 Flight tracks of the ACLOUD (left), AFLUX (center), and MOSAiC-ACA (right) campaigns.
 ```
 
+In spring 2022, the [HALO-AC3](https://halo-ac3.de/) campaign will be conducted with the three aircraft HALO, Polar 5, and Polar 6. HALO will operate out of Kiruna (Sweden), whereas Polar 5 and Polar 6 will be based in Longyearbyen (Svalbard, Norway).
+
 In addition, the flight tracks and sea ice coverage of the Polar Airborne Measurements and Arctic Regional Climate Model Simulation Project [PAMARCMiP](https://www.ac3-tr.de/overview/observations/pamarcmip-2018/) have been included.
 
 During [ACLOUD](https://home.uni-leipzig.de/~ehrlich/ACLOUD_wiki_doku/doku.php) the campaign Physical feedback of Arctic PBL, Sea ice, Cloud And AerosoL (PASCAL) was conducted by the research vessel Polarstern. The ship track of the Polarstern RV is part of the data catalog. This will be important for analyzing Polarstern overflights.
 
 ## Some links
-* [AC3 webpage](http://www.ac3-tr.de/)
+* [AC3](http://www.ac3-tr.de/)
+* [HALO-AC3](https://halo-ac3.de/)
 * The data description papers of ACLOUD from {cite:t}`EhrlichComprehensiveSituRemote2019` and for AFLUX and MOSAiC-ACA from {cite:t}`MechMOSAiCACAAFLUXArctic2021`
 * Campaign wikis: [ACLOUD](https://home.uni-leipzig.de/~ehrlich/ACLOUD_wiki_doku/doku.php), [AFLUX](https://home.uni-leipzig.de/~ehrlich/AFLUX_wiki_doku/doku.php?id=start), and [MOSAiC-ACA](https://home.uni-leipzig.de/~ehrlich/MOSAiC_ACA_wiki_doku/doku.php?id=start)
 * Master data collections on PANGAEA: ACLOUD from {cite:t}`EhrlichCollectionDataSources2019`, AFLUX from {cite:t}`MechCollectionDataSets2021`, and MOSAiC-ACA from {cite:t}`MechCollectionDataSets2021a`
