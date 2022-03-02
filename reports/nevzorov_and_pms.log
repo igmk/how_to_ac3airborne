@@ -24,7 +24,7 @@ ds_nevzorov
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mClientResponseError[0m                       Traceback (most recent call last)
-[0;32m/tmp/ipykernel_1656821/2430003662.py[0m in [0;36m<module>[0;34m[0m
+[0;32m/tmp/ipykernel_1662367/2430003662.py[0m in [0;36m<module>[0;34m[0m
 [1;32m      1[0m [0mflight_id[0m [0;34m=[0m [0;34m'MOSAiC-ACA_P5_RF11'[0m [0;31m# id of flight we work on[0m[0;34m[0m[0;34m[0m[0m
 [0;32m----> 2[0;31m [0mds_nevzorov[0m [0;34m=[0m [0mcat[0m[0;34m[[0m[0;34m'MOSAiC-ACA'[0m[0;34m][0m[0;34m[[0m[0;34m'P5'[0m[0;34m][0m[0;34m[[0m[0;34m'NEVZOROV'[0m[0;34m][0m[0;34m[[0m[0mflight_id[0m[0;34m][0m[0;34m.[0m[0mto_dask[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m      3[0m [0mds_nevzorov[0m[0;34m[0m[0;34m[0m[0m
