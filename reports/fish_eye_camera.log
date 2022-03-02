@@ -22,8 +22,8 @@ ds_cam
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mClientResponseError[0m                       Traceback (most recent call last)
-[0;32m/tmp/ipykernel_594882/886006799.py[0m in [0;36m<module>[0;34m[0m
+[0;31mClientPayloadError[0m                        Traceback (most recent call last)
+[0;32m/tmp/ipykernel_1646329/886006799.py[0m in [0;36m<module>[0;34m[0m
 [0;32m----> 1[0;31m [0mds_cam[0m [0;34m=[0m [0mcat[0m[0;34m[[0m[0;34m'ACLOUD'[0m[0;34m][0m[0;34m[[0m[0;34m'P5'[0m[0;34m][0m[0;34m[[0m[0;34m'FISH_EYE_CAMERA'[0m[0;34m][0m[0;34m[[0m[0;34m'ACLOUD_P5_RF05'[0m[0;34m][0m[0;34m([0m[0mhour[0m[0;34m=[0m[0;34m'10'[0m[0;34m)[0m[0;34m.[0m[0mto_dask[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 [0m[1;32m      2[0m [0mds_cam[0m[0;34m[0m[0;34m[0m[0m
 
@@ -119,19 +119,26 @@ ds_cam
 [1;32m    281[0m                 [0mself[0m[0;34m.[0m[0m_get_file[0m[0;34m([0m[0mrpath[0m[0;34m,[0m [0mlpath[0m[0;34m,[0m [0;34m**[0m[0mkwargs[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
 [0;32m/usr/local/lib/python3.8/dist-packages/fsspec/implementations/http.py[0m in [0;36m_get_file[0;34m(self, rpath, lpath, chunk_size, **kwargs)[0m
-[1;32m    180[0m             [0;32mif[0m [0mr[0m[0;34m.[0m[0mstatus[0m [0;34m==[0m [0;36m404[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    181[0m                 [0;32mraise[0m [0mFileNotFoundError[0m[0;34m([0m[0mrpath[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0;32m--> 182[0;31m             [0mr[0m[0;34m.[0m[0mraise_for_status[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m    183[0m             [0;32mwith[0m [0mopen[0m[0;34m([0m[0mlpath[0m[0;34m,[0m [0;34m"wb"[0m[0;34m)[0m [0;32mas[0m [0mfd[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 [1;32m    184[0m                 [0mchunk[0m [0;34m=[0m [0;32mTrue[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    185[0m                 [0;32mwhile[0m [0mchunk[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 186[0;31m                     [0mchunk[0m [0;34m=[0m [0;32mawait[0m [0mr[0m[0;34m.[0m[0mcontent[0m[0;34m.[0m[0mread[0m[0;34m([0m[0mchunk_size[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    187[0m                     [0mfd[0m[0;34m.[0m[0mwrite[0m[0;34m([0m[0mchunk[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    188[0m [0;34m[0m[0m
 
-[0;32m/usr/local/lib/python3.8/dist-packages/aiohttp/client_reqrep.py[0m in [0;36mraise_for_status[0;34m(self)[0m
-[1;32m    998[0m             [0;32massert[0m [0mself[0m[0;34m.[0m[0mreason[0m [0;32mis[0m [0;32mnot[0m [0;32mNone[0m[0;34m[0m[0;34m[0m[0m
-[1;32m    999[0m             [0mself[0m[0;34m.[0m[0mrelease[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0;32m-> 1000[0;31m             raise ClientResponseError(
-[0m[1;32m   1001[0m                 [0mself[0m[0;34m.[0m[0mrequest_info[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
-[1;32m   1002[0m                 [0mself[0m[0;34m.[0m[0mhistory[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[0;32m/usr/local/lib/python3.8/dist-packages/aiohttp/streams.py[0m in [0;36mread[0;34m(self, n)[0m
+[1;32m    378[0m         [0;31m# without feeding any data[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    379[0m         [0;32mwhile[0m [0;32mnot[0m [0mself[0m[0;34m.[0m[0m_buffer[0m [0;32mand[0m [0;32mnot[0m [0mself[0m[0;34m.[0m[0m_eof[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 380[0;31m             [0;32mawait[0m [0mself[0m[0;34m.[0m[0m_wait[0m[0;34m([0m[0;34m"read"[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    381[0m [0;34m[0m[0m
+[1;32m    382[0m         [0;32mreturn[0m [0mself[0m[0;34m.[0m[0m_read_nowait[0m[0;34m([0m[0mn[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mClientResponseError[0m: 504, message='Gateway Time-out', url=URL('https://hs.pangaea.de/Projects/AC3/ACLOUD_rad-fields/Canon_radiance_P5_170525_10UTC_Flight_05.nc')
-ClientResponseError: 504, message='Gateway Time-out', url=URL('https://hs.pangaea.de/Projects/AC3/ACLOUD_rad-fields/Canon_radiance_P5_170525_10UTC_Flight_05.nc')
+[0;32m/usr/local/lib/python3.8/dist-packages/aiohttp/streams.py[0m in [0;36m_wait[0;34m(self, func_name)[0m
+[1;32m    304[0m             [0;32mif[0m [0mself[0m[0;34m.[0m[0m_timer[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    305[0m                 [0;32mwith[0m [0mself[0m[0;34m.[0m[0m_timer[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m--> 306[0;31m                     [0;32mawait[0m [0mwaiter[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m    307[0m             [0;32melse[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m    308[0m                 [0;32mawait[0m [0mwaiter[0m[0;34m[0m[0;34m[0m[0m
+
+[0;31mClientPayloadError[0m: Response payload is not completed
+ClientPayloadError: Response payload is not completed
 
