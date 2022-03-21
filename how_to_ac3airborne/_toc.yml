@@ -36,6 +36,8 @@
   - file: halo
     title: HALO
     sections:
+    - file: datasets/halo-ac3_data
+      title: plot a flight
     - file: datasets/hamp_raw_data
       title: HAMP
 - file: flight_segmentation
