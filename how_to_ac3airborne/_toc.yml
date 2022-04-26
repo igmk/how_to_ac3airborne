@@ -33,6 +33,16 @@
       title: HAWK
     - file: datasets/eagle
       title: EAGLE
+    - file: datasets/2d_spec
+      title: 2D Spec
+    - file: datasets/alabama
+      title: ALABAMA
+    - file: datasets/co_co2_h2o
+      title: Gases
+    - file: datasets/cvi
+      title: CVI
+    - file: datasets/opc
+      title: OPC
   - file: halo
     title: HALO
     sections:
