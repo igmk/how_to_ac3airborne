@@ -1,6 +1,6 @@
 # how_to_ac3airborne
 
-This book describes the data from the AC3 related airborne campaigns.
+This book describes the data from the AC3 related airborne campaigns, now including HALO-AC3.
 
 The compiled book with the data description and the examples can be found [here](https://igmk.github.io/how_to_ac3airborne/intro.html)
 

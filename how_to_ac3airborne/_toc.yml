@@ -2,42 +2,44 @@
 - file: getting_started
   title: Getting started with ac3airborne
 - file: datasets
-  title: Datasets
+  title: Campaigns
+- file: platforms
+  title: Platforms
   sections:
-  - file: datasets/nose_boom
-    title: Nose boom
-  - file: datasets/mirac_a
-    title: MiRAC-A
-  - file: datasets/mirac_p
-    title: MiRAC-P
-  - file: datasets/hatpro
-    title: HATPRO
-  - file: datasets/amali_cloud_top_height
-    title: AMALi
-  - file: datasets/hawk
-    title: HAWK
-  - file: datasets/eagle
-    title: EAGLE
-  - file: datasets/fish_eye_camera
-    title: Fish-eye camera
-  - file: datasets/nevzorov_and_pms
-    title: PMS and Nevzorov
-  - file: datasets/2d_spec
-    title: 2D-S
-  - file: datasets/opc
-    title: OPC
-  - file: datasets/co_co2_h2o
-    title: Trace gases
-  - file: datasets/cvi
-    title: CVI inlet
-  - file: datasets/alabama
-    title: Alabama
-  - file: datasets/kt19
-    title: CMP22, CGR4 and KT-19
-  - file: datasets/dropsondes
-    title: Dropsondes
-  - file: datasets/gps_ins
-    title: GPS and INS
+  - file: polar_5_6
+    title: Polar 5/6
+    sections:
+    - file: datasets/nose_boom
+      title: Nose boom
+    - file: datasets/mirac_a
+      title: MiRAC-A
+    - file: datasets/mirac_p
+      title: MiRAC-P
+    - file: datasets/hatpro
+      title: HATPRO
+    - file: datasets/amali_cloud_top_height
+      title: AMALi
+    - file: datasets/fish_eye_camera
+      title: Fish-eye camera
+    - file: datasets/nevzorov_and_pms
+      title: PMS and Nevzorov
+    - file: datasets/kt19
+      title: CMP22, CGR4 and KT-19
+    - file: datasets/dropsondes
+      title: Dropsondes
+    - file: datasets/gps_ins
+      title: GPS and INS
+    - file: datasets/hawk
+      title: HAWK
+    - file: datasets/eagle
+      title: EAGLE
+  - file: halo
+    title: HALO
+    sections:
+    - file: datasets/halo-ac3_data
+      title: plot a flight
+    - file: datasets/hamp_raw_data
+      title: HAMP
 - file: flight_segmentation
   title: Flight-phase separation
 - file: code
@@ -55,5 +57,7 @@
     title: AWIPEV overflights
   - file: examples/polarstern_overflights
     title: Polarstern overflights
+  - file: examples/amsr2_seaice
+    title: AMSR2 sea ice
 - file: references
   title: References
