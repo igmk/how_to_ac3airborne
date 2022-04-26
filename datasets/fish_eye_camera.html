@@ -45,6 +45,8 @@
     <script src="../_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="../_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -55,7 +57,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="PMS probes and Nevzorov" href="nevzorov_and_pms.html" />
-    <link rel="prev" title="Eagle" href="eagle.html" />
+    <link rel="prev" title="AMALi cloud top height" href="amali_cloud_top_height.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -98,95 +100,128 @@
    Getting started with ac3airborne
   </a>
  </li>
- <li class="toctree-l1 current active collapsible-parent">
+ <li class="toctree-l1">
   <a class="reference internal" href="../datasets.html">
-   Datasets
+   Campaigns
+  </a>
+ </li>
+ <li class="toctree-l1 current active collapsible-parent">
+  <a class="reference internal" href="../platforms.html">
+   Platforms
   </a>
   <ul class="current collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="nose_boom.html">
-     Nose boom
+   <li class="toctree-l2 current active collapsible-parent">
+    <a class="reference internal" href="../polar_5_6.html">
+     Polar 5/6
     </a>
+    <ul class="current collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="nose_boom.html">
+       Nose boom
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="mirac_a.html">
+       MiRAC-A
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="mirac_p.html">
+       MiRAC-P
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="hatpro.html">
+       HATPRO
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="amali_cloud_top_height.html">
+       AMALi
+      </a>
+     </li>
+     <li class="toctree-l3 current active">
+      <a class="current reference internal" href="#">
+       Fish-eye camera
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="nevzorov_and_pms.html">
+       PMS and Nevzorov
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="kt19.html">
+       CMP22, CGR4 and KT-19
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="dropsondes.html">
+       Dropsondes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="gps_ins.html">
+       GPS and INS
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="hawk.html">
+       HAWK
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="eagle.html">
+       EAGLE
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="2d_spec.html">
+       2D Spec
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="alabama.html">
+       ALABAMA
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="co_co2_h2o.html">
+       Gases
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="cvi.html">
+       CVI
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="opc.html">
+       OPC
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="mirac_a.html">
-     MiRAC-A
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="../halo.html">
+     HALO
     </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="mirac_p.html">
-     MiRAC-P
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="hatpro.html">
-     HATPRO
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="amali_cloud_top_height.html">
-     AMALi
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="hawk.html">
-     HAWK
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="eagle.html">
-     EAGLE
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Fish-eye camera
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="nevzorov_and_pms.html">
-     PMS and Nevzorov
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="2d_spec.html">
-     2D-S
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="opc.html">
-     OPC
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="co_co2_h2o.html">
-     Trace gases
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="cvi.html">
-     CVI inlet
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="alabama.html">
-     Alabama
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="kt19.html">
-     CMP22, CGR4 and KT-19
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="dropsondes.html">
-     Dropsondes
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="gps_ins.html">
-     GPS and INS
-    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="halo-ac3_data.html">
+       plot a flight
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="hamp_raw_data.html">
+       HAMP
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
    </li>
   </ul>
   <i class="fas fa-chevron-down">
@@ -230,6 +265,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="../examples/polarstern_overflights.html">
      Polarstern overflights
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../examples/amsr2_seaice.html">
+     AMSR2 sea ice
     </a>
    </li>
   </ul>
@@ -813,10 +853,10 @@ Data variables:
     latitude        (dim_t) float32 79.86 79.86 79.86 ... 78.34 78.34 78.34
 Attributes:
     Institution:  Leipzig Institute for Meteorology (LIM) - University of Lei...
-    Comment:      Date 2017-05-25</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-dad2dc08-cf44-4d89-8a05-12f087f686ec' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-dad2dc08-cf44-4d89-8a05-12f087f686ec' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span>dim_y</span>: 901</li><li><span>dim_x</span>: 901</li><li><span>dim_t</span>: 506</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-47ac51a8-ce79-4ceb-8a8f-e8585cf0d717' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-47ac51a8-ce79-4ceb-8a8f-e8585cf0d717' class='xr-section-summary'  title='Expand/collapse section'>Coordinates: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-d0e0e3ed-369c-4817-996e-fe921aa68730' class='xr-section-summary-in' type='checkbox'  checked><label for='section-d0e0e3ed-369c-4817-996e-fe921aa68730' class='xr-section-summary' >Data variables: <span>(9)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>vza</span></div><div class='xr-var-dims'>(dim_y, dim_x)</div><div class='xr-var-dtype'>int32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-96c92c28-4207-45ed-ac9f-cb207e2eca70' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-96c92c28-4207-45ed-ac9f-cb207e2eca70' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-46219318-fdbc-40af-943e-bcc643054641' class='xr-var-data-in' type='checkbox'><label for='data-46219318-fdbc-40af-943e-bcc643054641' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>deg</dd><dt><span>scaling_factor :</span></dt><dd>0.01</dd></dl></div><div class='xr-var-data'><pre>[811801 values with dtype=int32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>vaa</span></div><div class='xr-var-dims'>(dim_y, dim_x)</div><div class='xr-var-dtype'>int32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-a68da4e0-8feb-44db-8547-84f09784fb3d' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-a68da4e0-8feb-44db-8547-84f09784fb3d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e64da1f6-9e75-4ae6-b424-6bfb43c13733' class='xr-var-data-in' type='checkbox'><label for='data-e64da1f6-9e75-4ae6-b424-6bfb43c13733' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>deg</dd><dt><span>scaling_factor :</span></dt><dd>0.01</dd></dl></div><div class='xr-var-data'><pre>[811801 values with dtype=int32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>radiance_red</span></div><div class='xr-var-dims'>(dim_t, dim_y, dim_x)</div><div class='xr-var-dtype'>int16</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-4ae6c718-1549-4954-9798-a3d86bc20f80' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-4ae6c718-1549-4954-9798-a3d86bc20f80' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6b404cee-3f1b-4a51-b958-1e84f3f7db0f' class='xr-var-data-in' type='checkbox'><label for='data-6b404cee-3f1b-4a51-b958-1e84f3f7db0f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>W m-2 nm-1 sr-1</dd><dt><span>scaling_factor :</span></dt><dd>0.001</dd></dl></div><div class='xr-var-data'><pre>[410771306 values with dtype=int16]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>radiance_green</span></div><div class='xr-var-dims'>(dim_t, dim_y, dim_x)</div><div class='xr-var-dtype'>int16</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-4a4228ae-7671-4373-87fa-654369d75414' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-4a4228ae-7671-4373-87fa-654369d75414' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8705b8db-ee4b-45cf-b2d3-df2190c1db74' class='xr-var-data-in' type='checkbox'><label for='data-8705b8db-ee4b-45cf-b2d3-df2190c1db74' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>W m-2 nm-1 sr-1</dd><dt><span>scaling_factor :</span></dt><dd>0.001</dd></dl></div><div class='xr-var-data'><pre>[410771306 values with dtype=int16]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>radiance_blue</span></div><div class='xr-var-dims'>(dim_t, dim_y, dim_x)</div><div class='xr-var-dtype'>int16</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-266d0980-a953-4f4c-9306-4c36d0561552' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-266d0980-a953-4f4c-9306-4c36d0561552' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e196418f-ade9-4c42-967c-2a230ba5bd54' class='xr-var-data-in' type='checkbox'><label for='data-e196418f-ade9-4c42-967c-2a230ba5bd54' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>W m-2 nm-1 sr-1</dd><dt><span>scaling_factor :</span></dt><dd>0.001</dd></dl></div><div class='xr-var-data'><pre>[410771306 values with dtype=int16]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>time</span></div><div class='xr-var-dims'>(dim_t)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-8e99fe53-2bdc-4469-90f5-4acf3caee3df' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-8e99fe53-2bdc-4469-90f5-4acf3caee3df' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-427b96ef-2f1f-44a9-89a8-e9d26e309bdb' class='xr-var-data-in' type='checkbox'><label for='data-427b96ef-2f1f-44a9-89a8-e9d26e309bdb' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>dec UTC</dd></dl></div><div class='xr-var-data'><pre>array([10.002486, 10.004156, 10.005819, ..., 10.995805, 10.997472, 10.999139],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>altitude</span></div><div class='xr-var-dims'>(dim_t)</div><div class='xr-var-dtype'>int16</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-b802c25d-c165-4d94-8b3b-688621ad98c3' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-b802c25d-c165-4d94-8b3b-688621ad98c3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6fee012b-d9b4-470b-942e-104a36a71b27' class='xr-var-data-in' type='checkbox'><label for='data-6fee012b-d9b4-470b-942e-104a36a71b27' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([2892, 2895, 2891, ..., 2881, 2883, 2882], dtype=int16)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>longitude</span></div><div class='xr-var-dims'>(dim_t)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-45cce221-9dde-4e67-b5f6-8c107ae4eb61' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-45cce221-9dde-4e67-b5f6-8c107ae4eb61' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6a4350c7-e4d7-40c2-82bf-cc9f6b8fe5ec' class='xr-var-data-in' type='checkbox'><label for='data-6a4350c7-e4d7-40c2-82bf-cc9f6b8fe5ec' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>deg</dd></dl></div><div class='xr-var-data'><pre>array([-0.03472, -0.03262, -0.03084, ...,  3.60674,  3.58571,  3.56463],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>latitude</span></div><div class='xr-var-dims'>(dim_t)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-ca27fc39-f2d6-405e-813e-87d4344192c6' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ca27fc39-f2d6-405e-813e-87d4344192c6' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a0f131ee-4e25-496a-b892-e7f46f8d16c0' class='xr-var-data-in' type='checkbox'><label for='data-a0f131ee-4e25-496a-b892-e7f46f8d16c0' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>deg</dd></dl></div><div class='xr-var-data'><pre>array([79.86481, 79.86037, 79.8559 , ..., 78.34373, 78.34406, 78.34438],
-      dtype=float32)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-9ccb91d3-cd60-4def-a391-e8a49bac9aea' class='xr-section-summary-in' type='checkbox'  checked><label for='section-9ccb91d3-cd60-4def-a391-e8a49bac9aea' class='xr-section-summary' >Attributes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Institution :</span></dt><dd>Leipzig Institute for Meteorology (LIM) - University of Leipzig</dd><dt><span>Comment :</span></dt><dd>Date 2017-05-25</dd></dl></div></li></ul></div></div></div></div>
+    Comment:      Date 2017-05-25</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-7440e152-0806-449f-8aa5-d3b835023751' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-7440e152-0806-449f-8aa5-d3b835023751' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span>dim_y</span>: 901</li><li><span>dim_x</span>: 901</li><li><span>dim_t</span>: 506</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-dd16b51a-7702-465f-8b78-a44a7c774200' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-dd16b51a-7702-465f-8b78-a44a7c774200' class='xr-section-summary'  title='Expand/collapse section'>Coordinates: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-e6afec9e-f41c-4171-8531-4ca0a310fee0' class='xr-section-summary-in' type='checkbox'  checked><label for='section-e6afec9e-f41c-4171-8531-4ca0a310fee0' class='xr-section-summary' >Data variables: <span>(9)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>vza</span></div><div class='xr-var-dims'>(dim_y, dim_x)</div><div class='xr-var-dtype'>int32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-60c24504-b2ec-4200-973d-f4f17b039be0' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-60c24504-b2ec-4200-973d-f4f17b039be0' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-15d3f42b-f190-4fbd-ae88-5efdbaaaebed' class='xr-var-data-in' type='checkbox'><label for='data-15d3f42b-f190-4fbd-ae88-5efdbaaaebed' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>deg</dd><dt><span>scaling_factor :</span></dt><dd>0.01</dd></dl></div><div class='xr-var-data'><pre>[811801 values with dtype=int32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>vaa</span></div><div class='xr-var-dims'>(dim_y, dim_x)</div><div class='xr-var-dtype'>int32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-6f712b4f-f21a-4d0f-9478-f301a0089093' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-6f712b4f-f21a-4d0f-9478-f301a0089093' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1a289d55-f9c6-4dbe-980b-3ed0751830b7' class='xr-var-data-in' type='checkbox'><label for='data-1a289d55-f9c6-4dbe-980b-3ed0751830b7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>deg</dd><dt><span>scaling_factor :</span></dt><dd>0.01</dd></dl></div><div class='xr-var-data'><pre>[811801 values with dtype=int32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>radiance_red</span></div><div class='xr-var-dims'>(dim_t, dim_y, dim_x)</div><div class='xr-var-dtype'>int16</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-c705ab0a-da87-4521-980a-2179e89562f8' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c705ab0a-da87-4521-980a-2179e89562f8' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-5906c9d9-3fba-4d69-8411-7aa04bf536c8' class='xr-var-data-in' type='checkbox'><label for='data-5906c9d9-3fba-4d69-8411-7aa04bf536c8' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>W m-2 nm-1 sr-1</dd><dt><span>scaling_factor :</span></dt><dd>0.001</dd></dl></div><div class='xr-var-data'><pre>[410771306 values with dtype=int16]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>radiance_green</span></div><div class='xr-var-dims'>(dim_t, dim_y, dim_x)</div><div class='xr-var-dtype'>int16</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-bf187795-d0c1-4ccb-915d-a79235c09226' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-bf187795-d0c1-4ccb-915d-a79235c09226' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-98a6cf18-9620-4fef-8dbc-6115d74417f5' class='xr-var-data-in' type='checkbox'><label for='data-98a6cf18-9620-4fef-8dbc-6115d74417f5' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>W m-2 nm-1 sr-1</dd><dt><span>scaling_factor :</span></dt><dd>0.001</dd></dl></div><div class='xr-var-data'><pre>[410771306 values with dtype=int16]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>radiance_blue</span></div><div class='xr-var-dims'>(dim_t, dim_y, dim_x)</div><div class='xr-var-dtype'>int16</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-c6f187e5-0ac2-44a1-a48a-a7a2637951ca' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-c6f187e5-0ac2-44a1-a48a-a7a2637951ca' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-dde89392-e123-40ca-8889-7d1961d8cef5' class='xr-var-data-in' type='checkbox'><label for='data-dde89392-e123-40ca-8889-7d1961d8cef5' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>W m-2 nm-1 sr-1</dd><dt><span>scaling_factor :</span></dt><dd>0.001</dd></dl></div><div class='xr-var-data'><pre>[410771306 values with dtype=int16]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>time</span></div><div class='xr-var-dims'>(dim_t)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-093f261d-eed7-4930-a194-35e3f734fe5b' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-093f261d-eed7-4930-a194-35e3f734fe5b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-87b1578c-4962-4eea-8a10-839d83372159' class='xr-var-data-in' type='checkbox'><label for='data-87b1578c-4962-4eea-8a10-839d83372159' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>dec UTC</dd></dl></div><div class='xr-var-data'><pre>array([10.002486, 10.004156, 10.005819, ..., 10.995805, 10.997472, 10.999139],
+      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>altitude</span></div><div class='xr-var-dims'>(dim_t)</div><div class='xr-var-dtype'>int16</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-0c34e0f0-233f-4e3a-ba5d-a466ead6130e' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-0c34e0f0-233f-4e3a-ba5d-a466ead6130e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-1902413c-0e83-48c4-9279-b237ceaffeea' class='xr-var-data-in' type='checkbox'><label for='data-1902413c-0e83-48c4-9279-b237ceaffeea' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([2892, 2895, 2891, ..., 2881, 2883, 2882], dtype=int16)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>longitude</span></div><div class='xr-var-dims'>(dim_t)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-ce5089ab-4b43-4d17-a882-f372bc5cde27' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ce5089ab-4b43-4d17-a882-f372bc5cde27' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-372e85ba-4c04-4659-bfde-23b47b94a018' class='xr-var-data-in' type='checkbox'><label for='data-372e85ba-4c04-4659-bfde-23b47b94a018' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>deg</dd></dl></div><div class='xr-var-data'><pre>array([-0.03472, -0.03262, -0.03084, ...,  3.60674,  3.58571,  3.56463],
+      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>latitude</span></div><div class='xr-var-dims'>(dim_t)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-73903668-8d1f-4db9-a8b3-0e2668f75995' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-73903668-8d1f-4db9-a8b3-0e2668f75995' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-07581237-1419-401a-b707-28bb2a498fb4' class='xr-var-data-in' type='checkbox'><label for='data-07581237-1419-401a-b707-28bb2a498fb4' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>units :</span></dt><dd>deg</dd></dl></div><div class='xr-var-data'><pre>array([79.86481, 79.86037, 79.8559 , ..., 78.34373, 78.34406, 78.34438],
+      dtype=float32)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-6cd40264-c062-473e-9609-fce31215be1b' class='xr-section-summary-in' type='checkbox'  checked><label for='section-6cd40264-c062-473e-9609-fce31215be1b' class='xr-section-summary' >Attributes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Institution :</span></dt><dd>Leipzig Institute for Meteorology (LIM) - University of Leipzig</dd><dt><span>Comment :</span></dt><dd>Date 2017-05-25</dd></dl></div></li></ul></div></div></div></div>
 </div>
 <p>The dataset includes the red, green and blue radiances (<code class="docutils literal notranslate"><span class="pre">radiance_red</span></code>, <code class="docutils literal notranslate"><span class="pre">radiance_green</span></code>, <code class="docutils literal notranslate"><span class="pre">radiance_blue</span></code>), the camera’s zenith and azimuth angles (<code class="docutils literal notranslate"><span class="pre">vza</span></code>, <code class="docutils literal notranslate"><span class="pre">vaa</span></code>), and information on the aircraft’s flight altitude (<code class="docutils literal notranslate"><span class="pre">altitude</span></code>) and position (<code class="docutils literal notranslate"><span class="pre">latitude</span></code>, <code class="docutils literal notranslate"><span class="pre">longitude</span></code>).</p>
 <p>Next, the time is converted from dec UTC to datetime:</p>
@@ -976,7 +1016,7 @@ datetime64[ns]
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="eagle.html" title="previous page">Eagle</a>
+    <a class='left-prev' id="prev-link" href="amali_cloud_top_height.html" title="previous page">AMALi cloud top height</a>
     <a class='right-next' id="next-link" href="nevzorov_and_pms.html" title="next page">PMS probes and Nevzorov</a>
 
         </div>

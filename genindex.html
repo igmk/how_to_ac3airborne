@@ -45,6 +45,8 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -96,95 +98,128 @@
    Getting started with ac3airborne
   </a>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1">
   <a class="reference internal" href="datasets.html">
-   Datasets
+   Campaigns
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="platforms.html">
+   Platforms
   </a>
   <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/nose_boom.html">
-     Nose boom
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="polar_5_6.html">
+     Polar 5/6
     </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/nose_boom.html">
+       Nose boom
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/mirac_a.html">
+       MiRAC-A
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/mirac_p.html">
+       MiRAC-P
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/hatpro.html">
+       HATPRO
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/amali_cloud_top_height.html">
+       AMALi
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/fish_eye_camera.html">
+       Fish-eye camera
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/nevzorov_and_pms.html">
+       PMS and Nevzorov
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/kt19.html">
+       CMP22, CGR4 and KT-19
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/dropsondes.html">
+       Dropsondes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/gps_ins.html">
+       GPS and INS
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/hawk.html">
+       HAWK
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/eagle.html">
+       EAGLE
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/2d_spec.html">
+       2D Spec
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/alabama.html">
+       ALABAMA
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/co_co2_h2o.html">
+       Gases
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/cvi.html">
+       CVI
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/opc.html">
+       OPC
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/mirac_a.html">
-     MiRAC-A
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="halo.html">
+     HALO
     </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/mirac_p.html">
-     MiRAC-P
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/hatpro.html">
-     HATPRO
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/amali_cloud_top_height.html">
-     AMALi
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/hawk.html">
-     HAWK
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/eagle.html">
-     EAGLE
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/fish_eye_camera.html">
-     Fish-eye camera
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/nevzorov_and_pms.html">
-     PMS and Nevzorov
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/2d_spec.html">
-     2D-S
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/opc.html">
-     OPC
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/co_co2_h2o.html">
-     Trace gases
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/cvi.html">
-     CVI inlet
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/alabama.html">
-     Alabama
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/kt19.html">
-     CMP22, CGR4 and KT-19
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/dropsondes.html">
-     Dropsondes
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/gps_ins.html">
-     GPS and INS
-    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/halo-ac3_data.html">
+       plot a flight
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/hamp_raw_data.html">
+       HAMP
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
    </li>
   </ul>
   <i class="fas fa-chevron-down">
@@ -228,6 +263,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="examples/polarstern_overflights.html">
      Polarstern overflights
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/amsr2_seaice.html">
+     AMSR2 sea ice
     </a>
    </li>
   </ul>

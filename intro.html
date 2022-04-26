@@ -45,6 +45,8 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -97,95 +99,128 @@
    Getting started with ac3airborne
   </a>
  </li>
- <li class="toctree-l1 collapsible-parent">
+ <li class="toctree-l1">
   <a class="reference internal" href="datasets.html">
-   Datasets
+   Campaigns
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="platforms.html">
+   Platforms
   </a>
   <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/nose_boom.html">
-     Nose boom
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="polar_5_6.html">
+     Polar 5/6
     </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/nose_boom.html">
+       Nose boom
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/mirac_a.html">
+       MiRAC-A
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/mirac_p.html">
+       MiRAC-P
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/hatpro.html">
+       HATPRO
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/amali_cloud_top_height.html">
+       AMALi
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/fish_eye_camera.html">
+       Fish-eye camera
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/nevzorov_and_pms.html">
+       PMS and Nevzorov
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/kt19.html">
+       CMP22, CGR4 and KT-19
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/dropsondes.html">
+       Dropsondes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/gps_ins.html">
+       GPS and INS
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/hawk.html">
+       HAWK
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/eagle.html">
+       EAGLE
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/2d_spec.html">
+       2D Spec
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/alabama.html">
+       ALABAMA
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/co_co2_h2o.html">
+       Gases
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/cvi.html">
+       CVI
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/opc.html">
+       OPC
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/mirac_a.html">
-     MiRAC-A
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="halo.html">
+     HALO
     </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/mirac_p.html">
-     MiRAC-P
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/hatpro.html">
-     HATPRO
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/amali_cloud_top_height.html">
-     AMALi
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/hawk.html">
-     HAWK
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/eagle.html">
-     EAGLE
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/fish_eye_camera.html">
-     Fish-eye camera
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/nevzorov_and_pms.html">
-     PMS and Nevzorov
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/2d_spec.html">
-     2D-S
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/opc.html">
-     OPC
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/co_co2_h2o.html">
-     Trace gases
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/cvi.html">
-     CVI inlet
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/alabama.html">
-     Alabama
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/kt19.html">
-     CMP22, CGR4 and KT-19
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/dropsondes.html">
-     Dropsondes
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/gps_ins.html">
-     GPS and INS
-    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/halo-ac3_data.html">
+       plot a flight
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/hamp_raw_data.html">
+       HAMP
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
    </li>
   </ul>
   <i class="fas fa-chevron-down">
@@ -229,6 +264,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="examples/polarstern_overflights.html">
      Polarstern overflights
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/amsr2_seaice.html">
+     AMSR2 sea ice
     </a>
    </li>
   </ul>
@@ -349,7 +389,7 @@
 <p>Welcome to the world of AC<sup>3</sup> airborne data! It is a collection of python code examples to get you started with the airborne data collected during the various airborne campaigns within the German DFG project - TRR 172, “ArctiC Amplification: Climate Relevant Atmospheric and SurfaCe Processes, and Feedback Mechanisms (AC<sup>3</sup>) <span id="id1">Wendisch <em>et al.</em> [<a class="reference internal" href="references.html#id7">WBB+17</a>]</span>, a joint research initiative of the Universities Leipzig (Leipzig Institute of Meteorology, LIM), Cologne (Institute of Geophysics and Meteorology, IGM), and Bremen and of the research institutes TROPOS (Leipzig) and Alfred Wegener Institute (AWI Bremerhaven and Potsdam). The document is permantently growing and changing and might never be finished. It follows the concept and ideas of the work done within the <a class="reference external" href="https://howto.eurec4a.eu/intro.html">EUREC4A</a> community.</p>
 <div class="section" id="idea">
 <h2>Idea<a class="headerlink" href="#idea" title="Permalink to this headline">¶</a></h2>
-<p>The book chapters show datasets that are accessible online, i.e., you don’t have to download anything in advance. Most datasets are accessed via the <a class="reference external" href="https://github.com/igmk/ac3airborne-intake">ac3airborne intake catalog</a>, which simply said takes care of the links to datasets in their most recent version. Most of the data is located on the <a class="reference external" href="https://www.pangaea.de/">PANGAEA</a> database if already published or on the <a class="reference external" href="https://cloud.ac3-tr.de">Nextcloud server of the AC<sup>3</sup> project</a> if they are still preliminary or never planed to be published on PANGAEA. Some of the data that is publically available and only post-processed to fit the needs are hosted on a server at University of Cologne.</p>
+<p>The book chapters show datasets that are accessible online, i.e., you don’t have to download anything in advance. Most datasets are accessed via the <a class="reference external" href="https://github.com/igmk/ac3airborne-intake">ac3airborne intake catalog</a>, which simply said takes care of the links to datasets in their most recent version. Most of the data is located on the <a class="reference external" href="https://www.pangaea.de/">PANGAEA</a> database if already published or on the <a class="reference external" href="https://cloud.ac3-tr.de">Nextcloud server of the AC<sup>3</sup> project</a> if they are still preliminary ot never planed to be published on PANGAEA. Some of the data that is publically available and only post-processed to fit the needs are hosted on a server at University of Cologne.</p>
 <p>By implemented caching capabilities, it is only necessary to download the data the first time they are used. The scripts typically contain at minimum a description on how to get a specific dataset and some simple plots of basic quantities. Most chapters include additional information from aircraft flight segments or further meta data, sometimes more sophisticated plots, or also a combination of variables from different datasets. In addition, some small tools are included to work with auxilliary data like sea ice coverage or land-mask.</p>
 </div>
 <div class="section" id="airborne-campaigns-within-ac-sup-3-sup">
@@ -364,13 +404,15 @@
 <a class="reference internal image-reference" href="_images/tracks.png"><img alt="_images/tracks.png" src="_images/tracks.png" style="height: 250px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Flight tracks of the ACLOUD (left), AFLUX (center), and MOSAiC-ACA (right) campaigns.</span><a class="headerlink" href="#directive-fig" title="Permalink to this image">¶</a></p>
 </div>
+<p>In spring 2022, the <a class="reference external" href="https://halo-ac3.de/">HALO-AC3</a> campaign will be conducted with the three aircraft HALO, Polar 5, and Polar 6. HALO will operate out of Kiruna (Sweden), whereas Polar 5 and Polar 6 will be based in Longyearbyen (Svalbard, Norway).</p>
 <p>In addition, the flight tracks and sea ice coverage of the Polar Airborne Measurements and Arctic Regional Climate Model Simulation Project <a class="reference external" href="https://www.ac3-tr.de/overview/observations/pamarcmip-2018/">PAMARCMiP</a> have been included.</p>
 <p>During <a class="reference external" href="https://home.uni-leipzig.de/~ehrlich/ACLOUD_wiki_doku/doku.php">ACLOUD</a> the campaign Physical feedback of Arctic PBL, Sea ice, Cloud And AerosoL (PASCAL) was conducted by the research vessel Polarstern. The ship track of the Polarstern RV is part of the data catalog. This will be important for analyzing Polarstern overflights.</p>
 </div>
 <div class="section" id="some-links">
 <h2>Some links<a class="headerlink" href="#some-links" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p><a class="reference external" href="http://www.ac3-tr.de/">AC3 webpage</a></p></li>
+<li><p><a class="reference external" href="http://www.ac3-tr.de/">AC3</a></p></li>
+<li><p><a class="reference external" href="https://halo-ac3.de/">HALO-AC3</a></p></li>
 <li><p>The data description papers of ACLOUD from <span id="id5">Ehrlich <em>et al.</em> [<a class="reference internal" href="references.html#id2">EWL+19a</a>]</span> and for AFLUX and MOSAiC-ACA from <span id="id6">Mech <em>et al.</em> [<a class="reference internal" href="references.html#id10">MEH+21</a>]</span></p></li>
 <li><p>Campaign wikis: <a class="reference external" href="https://home.uni-leipzig.de/~ehrlich/ACLOUD_wiki_doku/doku.php">ACLOUD</a>, <a class="reference external" href="https://home.uni-leipzig.de/~ehrlich/AFLUX_wiki_doku/doku.php?id=start">AFLUX</a>, and <a class="reference external" href="https://home.uni-leipzig.de/~ehrlich/MOSAiC_ACA_wiki_doku/doku.php?id=start">MOSAiC-ACA</a></p></li>
 <li><p>Master data collections on PANGAEA: ACLOUD from <span id="id7">Ehrlich <em>et al.</em> [<a class="reference internal" href="references.html#id5">EWL+19b</a>]</span>, AFLUX from <span id="id8">Mech <em>et al.</em> [<a class="reference internal" href="references.html#id6">MLE+21a</a>]</span>, and MOSAiC-ACA from <span id="id9">Mech <em>et al.</em> [<a class="reference internal" href="references.html#id8">MLE+21b</a>]</span></p></li>

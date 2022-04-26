@@ -45,6 +45,8 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.7d483ff0a819d6edff12ce0b1ead3928.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -54,7 +56,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Nose Boom Measurements" href="datasets/nose_boom.html" />
+    <link rel="next" title="Platforms operated during AC3" href="platforms.html" />
     <link rel="prev" title="Getting started with ac3airborne" href="getting_started.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -98,95 +100,128 @@
    Getting started with ac3airborne
   </a>
  </li>
- <li class="toctree-l1 current active collapsible-parent">
+ <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
-   Datasets
+   Campaigns
+  </a>
+ </li>
+ <li class="toctree-l1 collapsible-parent">
+  <a class="reference internal" href="platforms.html">
+   Platforms
   </a>
   <ul class="collapse-ul">
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/nose_boom.html">
-     Nose boom
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="polar_5_6.html">
+     Polar 5/6
     </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/nose_boom.html">
+       Nose boom
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/mirac_a.html">
+       MiRAC-A
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/mirac_p.html">
+       MiRAC-P
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/hatpro.html">
+       HATPRO
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/amali_cloud_top_height.html">
+       AMALi
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/fish_eye_camera.html">
+       Fish-eye camera
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/nevzorov_and_pms.html">
+       PMS and Nevzorov
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/kt19.html">
+       CMP22, CGR4 and KT-19
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/dropsondes.html">
+       Dropsondes
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/gps_ins.html">
+       GPS and INS
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/hawk.html">
+       HAWK
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/eagle.html">
+       EAGLE
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/2d_spec.html">
+       2D Spec
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/alabama.html">
+       ALABAMA
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/co_co2_h2o.html">
+       Gases
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/cvi.html">
+       CVI
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/opc.html">
+       OPC
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/mirac_a.html">
-     MiRAC-A
+   <li class="toctree-l2 collapsible-parent">
+    <a class="reference internal" href="halo.html">
+     HALO
     </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/mirac_p.html">
-     MiRAC-P
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/hatpro.html">
-     HATPRO
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/amali_cloud_top_height.html">
-     AMALi
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/hawk.html">
-     HAWK
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/eagle.html">
-     EAGLE
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/fish_eye_camera.html">
-     Fish-eye camera
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/nevzorov_and_pms.html">
-     PMS and Nevzorov
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/2d_spec.html">
-     2D-S
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/opc.html">
-     OPC
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/co_co2_h2o.html">
-     Trace gases
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/cvi.html">
-     CVI inlet
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/alabama.html">
-     Alabama
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/kt19.html">
-     CMP22, CGR4 and KT-19
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/dropsondes.html">
-     Dropsondes
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="datasets/gps_ins.html">
-     GPS and INS
-    </a>
+    <ul class="collapse-ul">
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/halo-ac3_data.html">
+       plot a flight
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="datasets/hamp_raw_data.html">
+       HAMP
+      </a>
+     </li>
+    </ul>
+    <i class="fas fa-chevron-down">
+    </i>
    </li>
   </ul>
   <i class="fas fa-chevron-down">
@@ -230,6 +265,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="examples/polarstern_overflights.html">
      Polarstern overflights
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="examples/amsr2_seaice.html">
+     AMSR2 sea ice
     </a>
    </li>
   </ul>
@@ -333,10 +373,15 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#acloud">
-   ACLOUD
+  <a class="reference internal nav-link" href="#halo-ac3">
+   HALO-AC3
   </a>
   <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#halo">
+     HALO
+    </a>
+   </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#p5">
      P5
@@ -350,12 +395,29 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#acloud">
+   ACLOUD
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     P5
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     P6
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#aflux">
    AFLUX
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id1">
+    <a class="reference internal nav-link" href="#id3">
      P5
     </a>
    </li>
@@ -367,7 +429,7 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id2">
+    <a class="reference internal nav-link" href="#id4">
      P5
     </a>
    </li>
@@ -379,7 +441,7 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#id3">
+    <a class="reference internal nav-link" href="#id5">
      P6
     </a>
    </li>
@@ -469,13 +531,13 @@
 </div>
 </div>
 </div>
-<div class="section" id="acloud">
-<h2>ACLOUD<a class="headerlink" href="#acloud" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="p5">
-<h3>P5<a class="headerlink" href="#p5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="halo-ac3">
+<h2>HALO-AC3<a class="headerlink" href="#halo-ac3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="halo">
+<h3>HALO<a class="headerlink" href="#halo" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_availability</span><span class="p">(</span><span class="n">mission</span><span class="o">=</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">,</span> <span class="n">platform</span><span class="o">=</span><span class="s1">&#39;P5&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_availability</span><span class="p">(</span><span class="n">mission</span><span class="o">=</span><span class="s1">&#39;HALO-AC3&#39;</span><span class="p">,</span> <span class="n">platform</span><span class="o">=</span><span class="s1">&#39;HALO&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -484,43 +546,47 @@
 </div>
 </div>
 </div>
+<div class="section" id="p5">
+<h3>P5<a class="headerlink" href="#p5" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#data_availability(mission=&#39;HALO-AC3&#39;, platform=&#39;P5&#39;)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 <div class="section" id="p6">
 <h3>P6<a class="headerlink" href="#p6" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_availability</span><span class="p">(</span><span class="n">mission</span><span class="o">=</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">,</span> <span class="n">platform</span><span class="o">=</span><span class="s1">&#39;P6&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#data_availability(mission=&#39;HALO-AC3&#39;, platform=&#39;P6&#39;)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<img alt="_images/datasets_5_0.png" src="_images/datasets_5_0.png" />
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="aflux">
-<h2>AFLUX<a class="headerlink" href="#aflux" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="acloud">
+<h2>ACLOUD<a class="headerlink" href="#acloud" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id1">
 <h3>P5<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_availability</span><span class="p">(</span><span class="n">mission</span><span class="o">=</span><span class="s1">&#39;AFLUX&#39;</span><span class="p">,</span> <span class="n">platform</span><span class="o">=</span><span class="s1">&#39;P5&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_availability</span><span class="p">(</span><span class="n">mission</span><span class="o">=</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">,</span> <span class="n">platform</span><span class="o">=</span><span class="s1">&#39;P5&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/datasets_8_0.png" src="_images/datasets_8_0.png" />
+<img alt="_images/datasets_9_0.png" src="_images/datasets_9_0.png" />
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="mosaic-aca">
-<h2>MOSAiC-ACA<a class="headerlink" href="#mosaic-aca" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id2">
-<h3>P5<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h3>P6<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_availability</span><span class="p">(</span><span class="n">mission</span><span class="o">=</span><span class="s1">&#39;MOSAiC-ACA&#39;</span><span class="p">,</span> <span class="n">platform</span><span class="o">=</span><span class="s1">&#39;P5&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_availability</span><span class="p">(</span><span class="n">mission</span><span class="o">=</span><span class="s1">&#39;ACLOUD&#39;</span><span class="p">,</span> <span class="n">platform</span><span class="o">=</span><span class="s1">&#39;P6&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -530,13 +596,13 @@
 </div>
 </div>
 </div>
-<div class="section" id="pamarcmip">
-<h2>PAMARCMiP<a class="headerlink" href="#pamarcmip" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="aflux">
+<h2>AFLUX<a class="headerlink" href="#aflux" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id3">
-<h3>P6<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<h3>P5<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_availability</span><span class="p">(</span><span class="n">mission</span><span class="o">=</span><span class="s1">&#39;PAMARCMiP&#39;</span><span class="p">,</span> <span class="n">platform</span><span class="o">=</span><span class="s1">&#39;P6&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_availability</span><span class="p">(</span><span class="n">mission</span><span class="o">=</span><span class="s1">&#39;AFLUX&#39;</span><span class="p">,</span> <span class="n">platform</span><span class="o">=</span><span class="s1">&#39;P5&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -544,7 +610,37 @@
 <img alt="_images/datasets_14_0.png" src="_images/datasets_14_0.png" />
 </div>
 </div>
-<div class="toctree-wrapper compound">
+</div>
+</div>
+<div class="section" id="mosaic-aca">
+<h2>MOSAiC-ACA<a class="headerlink" href="#mosaic-aca" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h3>P5<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_availability</span><span class="p">(</span><span class="n">mission</span><span class="o">=</span><span class="s1">&#39;MOSAiC-ACA&#39;</span><span class="p">,</span> <span class="n">platform</span><span class="o">=</span><span class="s1">&#39;P5&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/datasets_17_0.png" src="_images/datasets_17_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="pamarcmip">
+<h2>PAMARCMiP<a class="headerlink" href="#pamarcmip" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h3>P6<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_availability</span><span class="p">(</span><span class="n">mission</span><span class="o">=</span><span class="s1">&#39;PAMARCMiP&#39;</span><span class="p">,</span> <span class="n">platform</span><span class="o">=</span><span class="s1">&#39;P6&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/datasets_20_0.png" src="_images/datasets_20_0.png" />
+</div>
 </div>
 </div>
 </div>
@@ -576,7 +672,7 @@
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="getting_started.html" title="previous page">Getting started with ac3airborne</a>
-    <a class='right-next' id="next-link" href="datasets/nose_boom.html" title="next page">Nose Boom Measurements</a>
+    <a class='right-next' id="next-link" href="platforms.html" title="next page">Platforms operated during AC<sup>3</sup></a>
 
         </div>
         

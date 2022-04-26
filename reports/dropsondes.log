@@ -17,7 +17,7 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-ds_dict = {'ACLOUD': {}, 'AFLUX': {}, 'MOSAiC-ACA': {}}
+ds_dict = {'ACLOUD': {}, 'AFLUX': {}, 'MOSAiC-ACA': {},'HALO-AC3': {}}
 for campaign in meta.values():
     for platform in campaign.values():
         for flight in platform.values():
@@ -34,13 +34,14 @@ for campaign in meta.values():
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
-[0;31mKeyError[0m                                  Traceback (most recent call last)
-[0;32m/tmp/ipykernel_933370/323801545.py[0m in [0;36m<module>[0;34m[0m
-[1;32m     11[0m                                   [0;34m'name'[0m[0;34m:[0m [0mflight[0m[0;34m[[0m[0;34m'name'[0m[0;34m][0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     12[0m                                  }
-[0;32m---> 13[0;31m                         [0mds_dict[0m[0;34m[[0m[0mflight[0m[0;34m[[0m[0;34m'mission'[0m[0;34m][0m[0;34m][0m[0;34m[[0m[0msonde[0m[0;34m][0m [0;34m=[0m [0mparams[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m     14[0m                         [0mprint[0m[0;34m([0m[0msonde[0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0;31mTypeError[0m                                 Traceback (most recent call last)
+[0;32m/tmp/ipykernel_2969676/916315469.py[0m in [0;36m<module>[0;34m[0m
+[1;32m      3[0m     [0;32mfor[0m [0mplatform[0m [0;32min[0m [0mcampaign[0m[0;34m.[0m[0mvalues[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      4[0m         [0;32mfor[0m [0mflight[0m [0;32min[0m [0mplatform[0m[0;34m.[0m[0mvalues[0m[0;34m([0m[0;34m)[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 5[0;31m             [0;32mfor[0m [0msegment[0m [0;32min[0m [0mflight[0m[0;34m[[0m[0;34m'segments'[0m[0;34m][0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      6[0m                 [0;32mif[0m [0;34m'dropsondes'[0m [0;32min[0m [0msegment[0m[0;34m.[0m[0mkeys[0m[0;34m([0m[0;34m)[0m [0;32mand[0m [0msegment[0m[0;34m[[0m[0;34m'dropsondes'[0m[0;34m][0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      7[0m                     [0;32mfor[0m [0msonde[0m [0;32min[0m [0msegment[0m[0;34m[[0m[0;34m'dropsondes'[0m[0;34m][0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mKeyError[0m: 'HALO-AC3'
-KeyError: 'HALO-AC3'
+[0;31mTypeError[0m: 'NoneType' object is not iterable
+TypeError: 'NoneType' object is not iterable
 
