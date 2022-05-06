@@ -1,55 +1,67 @@
 - file: intro
 - file: getting_started
   title: Getting started with ac3airborne
-- file: datasets
+- file: campaigns
   title: Campaigns
-- file: platforms
-  title: Platforms
+- file: datasets
+  title: Datasets
   sections:
   - file: polar_5_6
     title: Polar 5/6
     sections:
-    - file: datasets/nose_boom
+    - file: datasets/polar/nose_boom
       title: Nose boom
-    - file: datasets/mirac_a
+    - file: datasets/polar/mirac_a
       title: MiRAC-A
-    - file: datasets/mirac_p
+    - file: datasets/polar/mirac_p
       title: MiRAC-P
-    - file: datasets/hatpro
+    - file: datasets/polar/hatpro
       title: HATPRO
-    - file: datasets/amali_cloud_top_height
+    - file: datasets/polar/amali
       title: AMALi
-    - file: datasets/fish_eye_camera
+    - file: datasets/polar/fish_eye_camera
       title: Fish-eye camera
-    - file: datasets/nevzorov_and_pms
+    - file: datasets/polar/nevzorov_and_pms
       title: PMS and Nevzorov
-    - file: datasets/kt19
+    - file: datasets/polar/kt19
       title: CMP22, CGR4 and KT-19
-    - file: datasets/dropsondes
+    - file: datasets/polar/dropsondes
       title: Dropsondes
-    - file: datasets/gps_ins
-      title: GPS and INS
-    - file: datasets/hawk
+    - file: datasets/polar/gps_ins
+      title: Position and attitude
+    - file: datasets/polar/hawk
       title: HAWK
-    - file: datasets/eagle
+    - file: datasets/polar/eagle
       title: EAGLE
-    - file: datasets/2d_spec
+    - file: datasets/polar/2d_spec
       title: 2D Spec
-    - file: datasets/alabama
+    - file: datasets/polar/alabama
       title: ALABAMA
-    - file: datasets/co_co2_h2o
+    - file: datasets/polar/co_co2_h2o
       title: Gases
-    - file: datasets/cvi
+    - file: datasets/polar/cvi
       title: CVI
-    - file: datasets/opc
+    - file: datasets/polar/opc
       title: OPC
   - file: halo
     title: HALO
     sections:
-    - file: datasets/halo-ac3_data
+    - file: datasets/halo/halo-ac3_data
       title: plot a flight
-    - file: datasets/hamp_raw_data
-      title: HAMP
+    - file: datasets/halo/gps_ins
+      title: Position and attitude
+    - file: datasets/halo/bahamas
+      title: BAHAMAS
+    - file: datasets/halo/bacardi
+      title: BACARDI
+    - file: datasets/halo/dropsondes
+      title: Dropsondes
+    - file: datasets/halo/hamp_radiometer
+      title: HAMP radiometer
+    - file: datasets/halo/hamp_radar
+      title: HAMP radar
+    - file: datasets/halo/smart
+      title: SMART
 - file: flight_segmentation
   title: Flight-phase separation
 - file: code
