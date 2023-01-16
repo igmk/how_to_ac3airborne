@@ -2,6 +2,7 @@
 .ipynb_checkpoints
 _build
 .DS_Store
+.ac3cloud
 how_to_ac3airborne/_build/
 how_to_ac3airborne/examples/data
 how_to_ac3airborne/examples/local_datasets_2.yaml

@@ -1,4 +1,6 @@
-- file: intro
+format: jb-article
+root: intro
+sections:
 - file: getting_started
   title: Getting started with ac3airborne
 - file: campaigns

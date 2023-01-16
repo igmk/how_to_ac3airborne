@@ -15,7 +15,7 @@ bibtex_bibfiles:
 bibtex_reference_style:
     - author_year
 execute:
-  timeout: 120
+  timeout: 600
 
 
 # configuration for Binder

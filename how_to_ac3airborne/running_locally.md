@@ -35,15 +35,13 @@ Handling requirements in this project is not entirely straightforward, as the re
 
 If you like to do it more properly, you can also clone the repository via git. Depending on if you have SSH public key authentication set up or not, you can do this via SSH or HTTPS:
 
-````{tabbed} SSH
-```bash
-git clone git@github.com:igmk/how_to_ac3airborne.git
+````{tab-set}
+```{tab-item} SSH
+`git clone git@github.com:igmk/how_to_ac3airborne.git`
 ```
-````
 
-````{tabbed} HTTPS
-```bash
-git clone https://github.com/igmk/how_to_ac3airborne.git
+```{tab-item} HTTPS
+`git clone https://github.com/igmk/how_to_ac3airborne.git`
 ```
 ````
 
@@ -95,17 +93,22 @@ pip install jupyter
 ```
 
 Once everything is set up, you can either start your notebook server:
-````{panels}
-... either using classical notebooks
+
+::::{grid}
+:gutter: 2
+
+:::{grid-item-card} either using classical notebooks
 ```bash
 jupyter notebook
 ```
----
-... or using jupyter lab
+:::
+
+:::{grid-item-card} or using jupyter lab
 ```bash
 jupyter lab
 ```
-````
+:::
+::::
 
 ### Compile the book
 You can also execute `jupyter-book` directly via:
