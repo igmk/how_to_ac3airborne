@@ -10,6 +10,6 @@ By implemented caching capabilities, it is only necessary to download the data t
 * [ac3airborne](https://github.com/igmk/ac3airborne/) on github
 * [AC<sup>3</sup>](http://www.ac3-tr.de/) project page
 * [HALO-(AC)<sup>3</sup>](https://halo-ac3.de/) campaign
-* The data description papers of ACLOUD from {cite:t}`EhrlichComprehensiveSituRemote2019` and for AFLUX and MOSAiC-ACA from {cite:t}`MechMOSAiCACAAFLUXArctic2021`
+* The data description papers of ACLOUD from {cite:t}`EhrlichComprehensiveSituRemote2019` and for AFLUX and MOSAiC-ACA from {cite:t}`MechMOSAiCACAAFLUXArctic2022a`
 * Campaign wikis: [ACLOUD](https://home.uni-leipzig.de/~ehrlich/ACLOUD_wiki_doku/doku.php), [AFLUX](https://home.uni-leipzig.de/~ehrlich/AFLUX_wiki_doku/doku.php), [MOSAiC-ACA](https://home.uni-leipzig.de/~ehrlich/MOSAiC_ACA_wiki_doku/doku.php), and [HALO-(AC)<sup>3</sup>](https://home.uni-leipzig.de/~ehrlich/HALO_AC3_wiki_doku/doku.php)
 * Master data collections on PANGAEA: ACLOUD from {cite:t}`EhrlichCollectionDataSources2019`, AFLUX from {cite:t}`MechCollectionDataSets2021`, and MOSAiC-ACA from {cite:t}`MechCollectionDataSets2021a`
