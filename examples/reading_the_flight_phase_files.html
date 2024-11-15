@@ -1,111 +1,173 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Querying the flight phase files &#8212; how_to_ac3airborne</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'examples/reading_the_flight_phase_files';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Land-ocean mask" href="land_ocean.html" />
     <link rel="prev" title="Caching and local datasets" href="caching_and_local_datasets.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
-    
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../index.html">
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">how_to_ac3airborne</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="how_to_ac3airborne - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="how_to_ac3airborne - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -115,556 +177,304 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../getting_started.html">
-   Getting started with ac3airborne
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../campaigns.html">
-   Campaigns
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../datasets.html">
-   Datasets
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../polar_5_6.html">
-     Polar 5/6
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-    <label for="toctree-checkbox-2">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../datasets/polar/nose_boom.html">
-       Nose boom
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../datasets/polar/mirac_a.html">
-       MiRAC-A
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../datasets/polar/mirac_p.html">
-       MiRAC-P
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../datasets/polar/hatpro.html">
-       HATPRO
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../datasets/polar/amali.html">
-       AMALi
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../datasets/polar/fish_eye_camera.html">
-       Fish-eye camera
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../datasets/polar/nevzorov_and_pms.html">
-       PMS and Nevzorov
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../datasets/polar/kt19.html">
-       CMP22, CGR4 and KT-19
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../datasets/polar/dropsondes.html">
-       Dropsondes
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../datasets/polar/gps_ins.html">
-       Position and attitude
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../datasets/polar/hawk.html">
-       HAWK
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../datasets/polar/eagle.html">
-       EAGLE
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../datasets/polar/2d_spec.html">
-       2D Spec
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../datasets/polar/alabama.html">
-       ALABAMA
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../datasets/polar/co_co2_h2o.html">
-       Gases
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../datasets/polar/cvi.html">
-       CVI
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../datasets/polar/opc.html">
-       OPC
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../halo.html">
-     HALO
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-    <label for="toctree-checkbox-3">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../datasets/halo/halo-ac3_data.html">
-       plot a flight
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../datasets/halo/gps_ins.html">
-       Position and attitude
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../datasets/halo/bahamas.html">
-       BAHAMAS
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../datasets/halo/bacardi.html">
-       BACARDI
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../datasets/halo/dropsondes.html">
-       Dropsondes
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../datasets/halo/hamp_radiometer.html">
-       HAMP radiometer
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../datasets/halo/hamp_radar.html">
-       HAMP radar
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../datasets/halo/smart.html">
-       SMART
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../flight_segmentation.html">
-   Flight-phase separation
-  </a>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../code.html">
-   Toolbox and examples
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="../running_locally.html">
-     Running how_to_ac3airborne locally
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="caching_and_local_datasets.html">
-     Caching and local datasets
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Querying the flight phase files
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="land_ocean.html">
-     Land-ocean mask
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="awipev_overflights.html">
-     AWIPEV overflights
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="polarstern_overflights.html">
-     Polarstern overflights
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="amsr2_seaice.html">
-     AMSR2 sea ice
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../references.html">
-   References
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting started with ac3airborne</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../campaigns.html">Campaigns</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../datasets.html">Datasets</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../polar_5_6.html">Polar 5/6</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/polar/nose_boom.html">Nose boom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/polar/mirac_a.html">MiRAC-A</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/polar/mirac_p.html">MiRAC-P</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/polar/hatpro.html">HATPRO</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/polar/amali.html">AMALi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/polar/fish_eye_camera.html">Fish-eye camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/polar/nevzorov_and_pms.html">PMS and Nevzorov</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/polar/kt19.html">CMP22, CGR4 and KT-19</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/polar/dropsondes.html">Dropsondes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/polar/gps_ins.html">Position and attitude</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/polar/hawk.html">HAWK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/polar/eagle.html">EAGLE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/polar/2d_spec.html">2D Spec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/polar/alabama.html">ALABAMA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/polar/co_co2_h2o.html">Gases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/polar/cvi.html">CVI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/polar/opc.html">OPC</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../halo.html">HALO</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/halo/halo-ac3_data.html">plot a flight</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/halo/gps_ins.html">Position and attitude</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/halo/bahamas.html">BAHAMAS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/halo/bacardi.html">BACARDI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/halo/dropsondes.html">Dropsondes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/halo/hamp_radiometer.html">HAMP radiometer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/halo/hamp_radar.html">HAMP radar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/halo/smart.html">SMART</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../flight_segmentation.html">Flight-phase separation</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../code.html">Toolbox and examples</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../running_locally.html">Running how_to_ac3airborne locally</a></li>
+<li class="toctree-l2"><a class="reference internal" href="caching_and_local_datasets.html">Caching and local datasets</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Querying the flight phase files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="land_ocean.html">Land-ocean mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="awipev_overflights.html">AWIPEV overflights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="polarstern_overflights.html">Polarstern overflights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="amsr2_seaice.html">AMSR2 sea ice</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            <div>
-    <a href="#">This is a test</a>
-</div>
-
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/igmk/how_to_ac3airborne/main?urlpath=tree/how_to_ac3airborne/examples/reading_the_flight_phase_files.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/igmk/how_to_ac3airborne/main?urlpath=tree/how_to_ac3airborne/examples/reading_the_flight_phase_files.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/examples/reading_the_flight_phase_files.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/examples/reading_the_flight_phase_files.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
 
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#data-access">
-   Data access
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#get-data">
-   Get data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#load-polar-5-flight-phase-information">
-   Load Polar 5 flight phase information
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#plots">
-   Plots
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#query-all-segments-of-a-specific-kind">
-     Query all segments of a specific kind
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sorting-out-all-segments-given-a-list-of-kinds">
-     Sorting out all segments given a list of kinds
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#query-a-segment-with-a-specific-value-in-a-specific-attribute">
-     Query a segment with a specific value in a specific attribute
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#example-1-select-element-with-specific-name">
-       Example 1: Select element with specific name
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#example-2-specific-level">
-       Example 2: Specific level
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#warnings">
-   Warnings
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#select-a-segment-at-a-specific-time-or-within-a-specific-time-range">
-   Select a segment at a specific time or within a specific time range
-  </a>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Querying the flight phase files</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#data-access">
-   Data access
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#get-data">
-   Get data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#load-polar-5-flight-phase-information">
-   Load Polar 5 flight phase information
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#plots">
-   Plots
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#query-all-segments-of-a-specific-kind">
-     Query all segments of a specific kind
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#sorting-out-all-segments-given-a-list-of-kinds">
-     Sorting out all segments given a list of kinds
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#query-a-segment-with-a-specific-value-in-a-specific-attribute">
-     Query a segment with a specific value in a specific attribute
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#example-1-select-element-with-specific-name">
-       Example 1: Select element with specific name
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#example-2-specific-level">
-       Example 2: Specific level
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#warnings">
-   Warnings
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#select-a-segment-at-a-specific-time-or-within-a-specific-time-range">
-   Select a segment at a specific time or within a specific time range
-  </a>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Querying the flight phase files</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-access">Data access</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-data">Get data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-polar-5-flight-phase-information">Load Polar 5 flight phase information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plots">Plots</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#query-all-segments-of-a-specific-kind">Query all segments of a specific kind</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting-out-all-segments-given-a-list-of-kinds">Sorting out all segments given a list of kinds</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#query-a-segment-with-a-specific-value-in-a-specific-attribute">Query a segment with a specific value in a specific attribute</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-select-element-with-specific-name">Example 1: Select element with specific name</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-specific-level">Example 2: Specific level</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warnings">Warnings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-a-segment-at-a-specific-time-or-within-a-specific-time-range">Select a segment at a specific time or within a specific time range</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
-  <div class="tex2jax_ignore mathjax_ignore section" id="querying-the-flight-phase-files">
-<h1>Querying the <em>flight phase files</em><a class="headerlink" href="#querying-the-flight-phase-files" title="Permalink to this headline">#</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="querying-the-flight-phase-files">
+<h1>Querying the <em>flight phase files</em><a class="headerlink" href="#querying-the-flight-phase-files" title="Link to this heading">#</a></h1>
 <p>We introduce here some new methods to select the flight segments, querying for different criteria.</p>
-<div class="section" id="data-access">
-<h2>Data access<a class="headerlink" href="#data-access" title="Permalink to this headline">#</a></h2>
+<section id="data-access">
+<h2>Data access<a class="headerlink" href="#data-access" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>To analyse the data they first have to be loaded by importing the (AC)³airborne meta data catalogue. To do so the ac3airborne package has to be installed. More information on how to do that and about the catalog can be found <a class="reference external" href="https://github.com/igmk/ac3airborne-intake#ac3airborne-intake-catalogue">here</a>.</p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+
+<span class="n">load_dotenv</span><span class="p">()</span>
+
+<span class="n">ac3cloud_username</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;AC3_USER&#39;</span><span class="p">]</span>
+<span class="n">ac3cloud_password</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;AC3_PASSWORD&#39;</span><span class="p">]</span>
+
+<span class="n">credentials</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">ac3cloud_username</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">ac3cloud_password</span><span class="p">)</span>
+
+<span class="c1"># local caching</span>
+<span class="n">kwds</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;simplecache&#39;</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span>
+    <span class="n">cache_storage</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;INTAKE_CACHE&#39;</span><span class="p">],</span> 
+    <span class="n">same_names</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)}</span>
+</pre></div>
 </div>
-<div class="section" id="get-data">
-<h2>Get data<a class="headerlink" href="#get-data" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">os</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">load_dotenv</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">ac3cloud_username</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;AC3_USER&#39;</span><span class="p">]</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;dotenv&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="get-data">
+<h2>Get data<a class="headerlink" href="#get-data" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ac3airborne</span>
@@ -826,6 +636,9 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Invalid MIT-MAGIC-COOKIE-1 key
+</pre></div>
+</div>
 <div class="output text_html"><div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
 <defs>
 <symbol id="icon-database" viewBox="0 0 32 32">
@@ -857,7 +670,6 @@ title="Print to PDF"
 }
 
 html[theme=dark],
-body[data-theme=dark],
 body.vscode-dark {
   --xr-font-color0: rgba(255, 255, 255, 1);
   --xr-font-color2: rgba(255, 255, 255, 0.54);
@@ -870,7 +682,7 @@ body.vscode-dark {
 }
 
 .xr-wrap {
-  display: block !important;
+  display: block;
   min-width: 300px;
   max-width: 700px;
 }
@@ -1204,14 +1016,14 @@ Attributes: (12/15)
     platform:       P5
     flight_number:  RF14
     history:        acquired by P5 during ACLOUD campaign, quality checked by...
-    created:        2022-05-25</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-9087c7dd-9bc4-4772-857b-d0020048b2da' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-9087c7dd-9bc4-4772-857b-d0020048b2da' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 20211</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-3c36c9da-e3f4-4e40-a6fe-02a1b7b8fe56' class='xr-section-summary-in' type='checkbox'  checked><label for='section-3c36c9da-e3f4-4e40-a6fe-02a1b7b8fe56' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2017-06-08T07:22:07 ... 2017-06-...</div><input id='attrs-3e531670-a553-4758-a867-bfbf4f8fa79f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-3e531670-a553-4758-a867-bfbf4f8fa79f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c1c05ac7-5d9f-418b-81ae-c8e13792d42c' class='xr-var-data-in' type='checkbox'><label for='data-c1c05ac7-5d9f-418b-81ae-c8e13792d42c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>time</dd><dt><span>long_name :</span></dt><dd>time in seconds since epoch</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;2017-06-08T07:22:07.000000000&#x27;, &#x27;2017-06-08T07:22:08.000000000&#x27;,
+    created:        2022-05-25</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-8b3883d5-c3a1-459a-a58d-b5965da11310' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-8b3883d5-c3a1-459a-a58d-b5965da11310' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 20211</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-a26ff8ca-a82e-48e4-ad9a-d4ef01d0193e' class='xr-section-summary-in' type='checkbox'  checked><label for='section-a26ff8ca-a82e-48e4-ad9a-d4ef01d0193e' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2017-06-08T07:22:07 ... 2017-06-...</div><input id='attrs-3e79a29b-b9e8-4772-8f2d-4421c69f048a' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-3e79a29b-b9e8-4772-8f2d-4421c69f048a' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-338aabfd-581c-44e1-b0e8-3283670b2b52' class='xr-var-data-in' type='checkbox'><label for='data-338aabfd-581c-44e1-b0e8-3283670b2b52' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>time</dd><dt><span>long_name :</span></dt><dd>time in seconds since epoch</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;2017-06-08T07:22:07.000000000&#x27;, &#x27;2017-06-08T07:22:08.000000000&#x27;,
        &#x27;2017-06-08T07:22:09.000000000&#x27;, ..., &#x27;2017-06-08T12:59:05.000000000&#x27;,
        &#x27;2017-06-08T12:59:06.000000000&#x27;, &#x27;2017-06-08T12:59:07.000000000&#x27;],
-      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-2f832464-9da0-49d7-ad9e-7bd5cc1d6fb3' class='xr-section-summary-in' type='checkbox'  checked><label for='section-2f832464-9da0-49d7-ad9e-7bd5cc1d6fb3' class='xr-section-summary' >Data variables: <span>(8)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>alt</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-b87d7d66-0971-4472-832c-7d2418ee9a98' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-b87d7d66-0971-4472-832c-7d2418ee9a98' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4085cdc5-d443-4a07-a9ab-1f8919286e9e' class='xr-var-data-in' type='checkbox'><label for='data-4085cdc5-d443-4a07-a9ab-1f8919286e9e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>height_above_reference_ellipsoid</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/elliptical height</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([  nan, 28.83, 28.85, ..., 24.57, 24.55,   nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>gs</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-4bacf857-152b-458f-99e9-c550080bfbd5' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-4bacf857-152b-458f-99e9-c550080bfbd5' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9d2e4284-6d2c-49ce-b691-afb8476c8145' class='xr-var-data-in' type='checkbox'><label for='data-9d2e4284-6d2c-49ce-b691-afb8476c8145' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_speed_wrt_ground</dd><dt><span>long_name :</span></dt><dd>groundspeed of platform</dd><dt><span>units :</span></dt><dd>kts</dd></dl></div><div class='xr-var-data'><pre>array([nan,  0.,  0., ...,  0.,  0., nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-0a83f1e3-1d8c-44e4-a89c-1664d82ee162' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-0a83f1e3-1d8c-44e4-a89c-1664d82ee162' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-5257ec93-daf9-45d4-b827-ef078ad93f22' class='xr-var-data-in' type='checkbox'><label for='data-5257ec93-daf9-45d4-b827-ef078ad93f22' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd></dl></div><div class='xr-var-data'><pre>array([      nan, 78.24576 , 78.24576 , ..., 78.245787, 78.245788,       nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lon</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-401ee89c-d1f0-4de9-b111-cda850921303' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-401ee89c-d1f0-4de9-b111-cda850921303' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c03defa1-e0b7-4c2a-b253-38e5f9ba98ce' class='xr-var-data-in' type='checkbox'><label for='data-c03defa1-e0b7-4c2a-b253-38e5f9ba98ce' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd></dl></div><div class='xr-var-data'><pre>array([      nan, 15.504153, 15.504153, ..., 15.50407 , 15.50407 ,       nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>vs</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-d0b31823-d0be-4943-bda7-702534e59543' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-d0b31823-d0be-4943-bda7-702534e59543' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e3f9609d-a153-4299-b91f-6a1f950f3507' class='xr-var-data-in' type='checkbox'><label for='data-e3f9609d-a153-4299-b91f-6a1f950f3507' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_vertical_speed</dd><dt><span>long_name :</span></dt><dd>vertical speed</dd><dt><span>units :</span></dt><dd>m/s</dd></dl></div><div class='xr-var-data'><pre>array([nan, 0.1, 0.1, ..., 0.1, 0. , nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>pitch</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-ebb4a0d7-7da8-46fa-93bf-4a7ce91aa89d' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ebb4a0d7-7da8-46fa-93bf-4a7ce91aa89d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3d23d181-d119-41cd-a678-ad207031a7eb' class='xr-var-data-in' type='checkbox'><label for='data-3d23d181-d119-41cd-a678-ad207031a7eb' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_pitch_fore_up</dd><dt><span>long_name :</span></dt><dd>pitch angle of platform</dd><dt><span>units :</span></dt><dd>degrees</dd></dl></div><div class='xr-var-data'><pre>array([12.23, 12.23, 12.23, ..., 11.72, 11.72, 11.72])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>roll</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-0b43bfb2-0ad0-401c-9d48-33dc590fbe25' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-0b43bfb2-0ad0-401c-9d48-33dc590fbe25' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d2a964e1-fb75-468b-b264-cb62694fd61d' class='xr-var-data-in' type='checkbox'><label for='data-d2a964e1-fb75-468b-b264-cb62694fd61d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_roll_starboard_down</dd><dt><span>long_name :</span></dt><dd>roll angle of platform</dd><dt><span>units :</span></dt><dd>degrees</dd></dl></div><div class='xr-var-data'><pre>array([1.82, 1.82, 1.83, ..., 1.92, 1.93, 1.94])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>heading</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-5073ba22-5822-46c1-80e2-d7c11d56fa7a' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-5073ba22-5822-46c1-80e2-d7c11d56fa7a' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-16aaf0c6-44ee-4a7b-93b8-ceaae2b49b3f' class='xr-var-data-in' type='checkbox'><label for='data-16aaf0c6-44ee-4a7b-93b8-ceaae2b49b3f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_yaw_fore_starboard</dd><dt><span>long_name :</span></dt><dd>true heading</dd><dt><span>units :</span></dt><dd>degrees</dd></dl></div><div class='xr-var-data'><pre>array([  0.  ,   0.  ,   0.  , ..., -73.84, -73.84, -73.83])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-5c5bac2d-2683-431b-b896-45b891669293' class='xr-section-summary-in' type='checkbox'  ><label for='section-5c5bac2d-2683-431b-b896-45b891669293' class='xr-section-summary' >Attributes: <span>(15)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>title :</span></dt><dd>P5 position and attitude data</dd><dt><span>description :</span></dt><dd>1 Hz subset based on GPS1 and INS data processed by AWI engineers</dd><dt><span>instruments :</span></dt><dd>GPS1 and INS</dd><dt><span>version :</span></dt><dd>1.1</dd><dt><span>institution :</span></dt><dd>Alfred-Wegener-Institut Helmholtz-Zentrum für Polar- und Meeresforschung</dd><dt><span>author :</span></dt><dd>Dr. Mario Mech</dd><dt><span>contact :</span></dt><dd>mario.mech@uni-koeln.de, martin.gehrmann@awi.de</dd><dt><span>source :</span></dt><dd>DSHIP excerpt</dd><dt><span>convention :</span></dt><dd>CF-1.8</dd><dt><span>featureType :</span></dt><dd>trajectory</dd><dt><span>mission :</span></dt><dd>ACLOUD</dd><dt><span>platform :</span></dt><dd>P5</dd><dt><span>flight_number :</span></dt><dd>RF14</dd><dt><span>history :</span></dt><dd>acquired by P5 during ACLOUD campaign, quality checked by AWI and uploaded to DSHIP database, extracted and reformated by author</dd><dt><span>created :</span></dt><dd>2022-05-25</dd></dl></div></li></ul></div></div></div></div>
+      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-59b4e9f8-c564-4669-b5c3-70092664777c' class='xr-section-summary-in' type='checkbox'  checked><label for='section-59b4e9f8-c564-4669-b5c3-70092664777c' class='xr-section-summary' >Data variables: <span>(8)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>alt</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-e28d73f2-008c-42cd-9e5f-0dd2f4373bb2' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e28d73f2-008c-42cd-9e5f-0dd2f4373bb2' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-07356ecf-0af9-455d-bf60-a452f9b9a98c' class='xr-var-data-in' type='checkbox'><label for='data-07356ecf-0af9-455d-bf60-a452f9b9a98c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>height_above_reference_ellipsoid</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/elliptical height</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([  nan, 28.83, 28.85, ..., 24.57, 24.55,   nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>gs</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-9cf1048d-6773-49f4-ad55-3756bc6c3572' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-9cf1048d-6773-49f4-ad55-3756bc6c3572' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-54bb34ee-3acf-4076-ac31-2d176bceb425' class='xr-var-data-in' type='checkbox'><label for='data-54bb34ee-3acf-4076-ac31-2d176bceb425' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_speed_wrt_ground</dd><dt><span>long_name :</span></dt><dd>groundspeed of platform</dd><dt><span>units :</span></dt><dd>kts</dd></dl></div><div class='xr-var-data'><pre>array([nan,  0.,  0., ...,  0.,  0., nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-ef39405e-8259-43a0-b9be-ef849d204245' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ef39405e-8259-43a0-b9be-ef849d204245' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9fbc1a3e-791e-47d1-8c50-d6fbaee30d4a' class='xr-var-data-in' type='checkbox'><label for='data-9fbc1a3e-791e-47d1-8c50-d6fbaee30d4a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd></dl></div><div class='xr-var-data'><pre>array([      nan, 78.24576 , 78.24576 , ..., 78.245787, 78.245788,       nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lon</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-2a7112ac-510b-4d6a-8b01-0d3ab2140eba' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-2a7112ac-510b-4d6a-8b01-0d3ab2140eba' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e30561c8-c5e2-4c97-bbc4-a882c5fffa83' class='xr-var-data-in' type='checkbox'><label for='data-e30561c8-c5e2-4c97-bbc4-a882c5fffa83' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd></dl></div><div class='xr-var-data'><pre>array([      nan, 15.504153, 15.504153, ..., 15.50407 , 15.50407 ,       nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>vs</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-4b868733-99d2-4384-a8a2-c091c2a16907' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-4b868733-99d2-4384-a8a2-c091c2a16907' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-872173c3-7ac6-4a25-ae0e-b1a742adefee' class='xr-var-data-in' type='checkbox'><label for='data-872173c3-7ac6-4a25-ae0e-b1a742adefee' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_vertical_speed</dd><dt><span>long_name :</span></dt><dd>vertical speed</dd><dt><span>units :</span></dt><dd>m/s</dd></dl></div><div class='xr-var-data'><pre>array([nan, 0.1, 0.1, ..., 0.1, 0. , nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>pitch</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-a9043478-553b-4ae7-9dbf-ed890702e333' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-a9043478-553b-4ae7-9dbf-ed890702e333' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-94ffcf96-2ff1-4715-a1cb-f867eea28dcd' class='xr-var-data-in' type='checkbox'><label for='data-94ffcf96-2ff1-4715-a1cb-f867eea28dcd' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_pitch_fore_up</dd><dt><span>long_name :</span></dt><dd>pitch angle of platform</dd><dt><span>units :</span></dt><dd>degrees</dd></dl></div><div class='xr-var-data'><pre>array([12.23, 12.23, 12.23, ..., 11.72, 11.72, 11.72])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>roll</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-0ba6e9cf-84d7-43ce-84d1-5d40f01eeb40' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-0ba6e9cf-84d7-43ce-84d1-5d40f01eeb40' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-fb39dcf2-7c96-4c81-b2d2-7f19a615f155' class='xr-var-data-in' type='checkbox'><label for='data-fb39dcf2-7c96-4c81-b2d2-7f19a615f155' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_roll_starboard_down</dd><dt><span>long_name :</span></dt><dd>roll angle of platform</dd><dt><span>units :</span></dt><dd>degrees</dd></dl></div><div class='xr-var-data'><pre>array([1.82, 1.82, 1.83, ..., 1.92, 1.93, 1.94])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>heading</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-ae884f15-90dc-495b-a0cf-5aacdebb7836' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ae884f15-90dc-495b-a0cf-5aacdebb7836' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-04e5df61-869a-4f43-80c0-d32d3b3b0673' class='xr-var-data-in' type='checkbox'><label for='data-04e5df61-869a-4f43-80c0-d32d3b3b0673' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_yaw_fore_starboard</dd><dt><span>long_name :</span></dt><dd>true heading</dd><dt><span>units :</span></dt><dd>degrees</dd></dl></div><div class='xr-var-data'><pre>array([  0.  ,   0.  ,   0.  , ..., -73.84, -73.84, -73.83])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-55d55548-862d-4108-82e6-9044b828f914' class='xr-section-summary-in' type='checkbox'  ><label for='section-55d55548-862d-4108-82e6-9044b828f914' class='xr-section-summary' >Attributes: <span>(15)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>title :</span></dt><dd>P5 position and attitude data</dd><dt><span>description :</span></dt><dd>1 Hz subset based on GPS1 and INS data processed by AWI engineers</dd><dt><span>instruments :</span></dt><dd>GPS1 and INS</dd><dt><span>version :</span></dt><dd>1.1</dd><dt><span>institution :</span></dt><dd>Alfred-Wegener-Institut Helmholtz-Zentrum für Polar- und Meeresforschung</dd><dt><span>author :</span></dt><dd>Dr. Mario Mech</dd><dt><span>contact :</span></dt><dd>mario.mech@uni-koeln.de, martin.gehrmann@awi.de</dd><dt><span>source :</span></dt><dd>DSHIP excerpt</dd><dt><span>convention :</span></dt><dd>CF-1.8</dd><dt><span>featureType :</span></dt><dd>trajectory</dd><dt><span>mission :</span></dt><dd>ACLOUD</dd><dt><span>platform :</span></dt><dd>P5</dd><dt><span>flight_number :</span></dt><dd>RF14</dd><dt><span>history :</span></dt><dd>acquired by P5 during ACLOUD campaign, quality checked by AWI and uploaded to DSHIP database, extracted and reformated by author</dd><dt><span>created :</span></dt><dd>2022-05-25</dd></dl></div></li></ul></div></div></div></div>
 </div>
-</div>
-<div class="section" id="load-polar-5-flight-phase-information">
-<h2>Load Polar 5 flight phase information<a class="headerlink" href="#load-polar-5-flight-phase-information" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="load-polar-5-flight-phase-information">
+<h2>Load Polar 5 flight phase information<a class="headerlink" href="#load-polar-5-flight-phase-information" title="Link to this heading">#</a></h2>
 <p>Polar 5 flights are divided into segments to easily access start and end times of flight patterns. For more information have a look at the respective <a class="reference external" href="https://github.com/igmk/flight-phase-separation">github</a> repository.</p>
 <p>At first we want to load the flight segments of (AC)³airborne</p>
 <div class="cell docutils container">
@@ -1244,9 +1056,9 @@ Attributes: (12/15)
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="plots">
-<h2>Plots<a class="headerlink" href="#plots" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="plots">
+<h2>Plots<a class="headerlink" href="#plots" title="Link to this heading">#</a></h2>
 <p>First, the entire flight is plotted:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1288,11 +1100,11 @@ Attributes: (12/15)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/reading_the_flight_phase_files_16_0.png" src="../_images/reading_the_flight_phase_files_16_0.png" />
+<img alt="../_images/8850f39e140465759500af4789a51f8ae7fb0e109196a55a808ff9f08122e8d1.png" src="../_images/8850f39e140465759500af4789a51f8ae7fb0e109196a55a808ff9f08122e8d1.png" />
 </div>
 </div>
-<div class="section" id="query-all-segments-of-a-specific-kind">
-<h3>Query all segments of a specific kind<a class="headerlink" href="#query-all-segments-of-a-specific-kind" title="Permalink to this headline">#</a></h3>
+<section id="query-all-segments-of-a-specific-kind">
+<h3>Query all segments of a specific kind<a class="headerlink" href="#query-all-segments-of-a-specific-kind" title="Link to this heading">#</a></h3>
 <p>As an example only <code class="docutils literal notranslate"><span class="pre">high_level</span></code> flights are plotted in the following (only one kind of pattern):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1432,7 +1244,7 @@ Attributes: (12/15)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/reading_the_flight_phase_files_21_0.png" src="../_images/reading_the_flight_phase_files_21_0.png" />
+<img alt="../_images/e19c1ad6e60bb26068483b1a1f123b8d4de43f07012afa77853889b4fece9a43.png" src="../_images/e19c1ad6e60bb26068483b1a1f123b8d4de43f07012afa77853889b4fece9a43.png" />
 </div>
 </div>
 <p>Of course, also more than one kind of pattern can be selected:</p>
@@ -1591,12 +1403,12 @@ Attributes: (12/15)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/reading_the_flight_phase_files_25_0.png" src="../_images/reading_the_flight_phase_files_25_0.png" />
+<img alt="../_images/625a47d0e459362d25c1e61bf9843240f7c8619c60188cfebd3afc8d41cacb2e.png" src="../_images/625a47d0e459362d25c1e61bf9843240f7c8619c60188cfebd3afc8d41cacb2e.png" />
 </div>
 </div>
-</div>
-<div class="section" id="sorting-out-all-segments-given-a-list-of-kinds">
-<h3>Sorting out all segments given a list of kinds<a class="headerlink" href="#sorting-out-all-segments-given-a-list-of-kinds" title="Permalink to this headline">#</a></h3>
+</section>
+<section id="sorting-out-all-segments-given-a-list-of-kinds">
+<h3>Sorting out all segments given a list of kinds<a class="headerlink" href="#sorting-out-all-segments-given-a-list-of-kinds" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sort_out</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;short_turn&#39;</span><span class="p">,</span> <span class="s1">&#39;holding_pattern&#39;</span><span class="p">,</span> <span class="s1">&#39;major_ascent&#39;</span><span class="p">,</span> <span class="s1">&#39;major_descent&#39;</span><span class="p">,</span> <span class="s1">&#39;high_level&#39;</span><span class="p">]</span>
@@ -1865,14 +1677,14 @@ Attributes: (12/15)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/reading_the_flight_phase_files_29_0.png" src="../_images/reading_the_flight_phase_files_29_0.png" />
+<img alt="../_images/ae6b1482c05489911df3bd3fc9586aae188bce44260b4feaa71100d50124e731.png" src="../_images/ae6b1482c05489911df3bd3fc9586aae188bce44260b4feaa71100d50124e731.png" />
 </div>
 </div>
-</div>
-<div class="section" id="query-a-segment-with-a-specific-value-in-a-specific-attribute">
-<h3>Query a segment with a specific value in a specific attribute<a class="headerlink" href="#query-a-segment-with-a-specific-value-in-a-specific-attribute" title="Permalink to this headline">#</a></h3>
-<div class="section" id="example-1-select-element-with-specific-name">
-<h4>Example 1: Select element with specific name<a class="headerlink" href="#example-1-select-element-with-specific-name" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="query-a-segment-with-a-specific-value-in-a-specific-attribute">
+<h3>Query a segment with a specific value in a specific attribute<a class="headerlink" href="#query-a-segment-with-a-specific-value-in-a-specific-attribute" title="Link to this heading">#</a></h3>
+<section id="example-1-select-element-with-specific-name">
+<h4>Example 1: Select element with specific name<a class="headerlink" href="#example-1-select-element-with-specific-name" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">attribute</span> <span class="o">=</span> <span class="s1">&#39;name&#39;</span>
@@ -1967,7 +1779,7 @@ Attributes: (12/15)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/reading_the_flight_phase_files_34_0.png" src="../_images/reading_the_flight_phase_files_34_0.png" />
+<img alt="../_images/dafebc4d47f38781c6d5c23221757e35033d1ec772ebef7d55856aeea6b0ce95.png" src="../_images/dafebc4d47f38781c6d5c23221757e35033d1ec772ebef7d55856aeea6b0ce95.png" />
 </div>
 </div>
 <p>Also with inverted selection:</p>
@@ -2210,12 +2022,12 @@ Attributes: (12/15)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/reading_the_flight_phase_files_38_0.png" src="../_images/reading_the_flight_phase_files_38_0.png" />
+<img alt="../_images/2e6ae7773a2509918dc5042b7682f094cb83628cd288a7b506f7d440b42065c2.png" src="../_images/2e6ae7773a2509918dc5042b7682f094cb83628cd288a7b506f7d440b42065c2.png" />
 </div>
 </div>
-</div>
-<div class="section" id="example-2-specific-level">
-<h4>Example 2: Specific level<a class="headerlink" href="#example-2-specific-level" title="Permalink to this headline">#</a></h4>
+</section>
+<section id="example-2-specific-level">
+<h4>Example 2: Specific level<a class="headerlink" href="#example-2-specific-level" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">attribute</span> <span class="o">=</span> <span class="s1">&#39;levels&#39;</span>
@@ -2364,7 +2176,7 @@ Attributes: (12/15)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/reading_the_flight_phase_files_42_0.png" src="../_images/reading_the_flight_phase_files_42_0.png" />
+<img alt="../_images/ba43971f92e81788ad0b0537bbb44eb8c44d369fac89f20c1cc099deec531452.png" src="../_images/ba43971f92e81788ad0b0537bbb44eb8c44d369fac89f20c1cc099deec531452.png" />
 </div>
 </div>
 <p>But what if we want only a specific level without ascent and descent? We can require that the attribute value is strictly equal to the one, that we give, i.e. there are no other values:</p>
@@ -2434,14 +2246,14 @@ Attributes: (12/15)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/reading_the_flight_phase_files_46_0.png" src="../_images/reading_the_flight_phase_files_46_0.png" />
+<img alt="../_images/142461ed711ee3fae235f14679f8431d4276317b5a1222cb8dd585c4327b6f55.png" src="../_images/142461ed711ee3fae235f14679f8431d4276317b5a1222cb8dd585c4327b6f55.png" />
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="section" id="warnings">
-<h2>Warnings<a class="headerlink" href="#warnings" title="Permalink to this headline">#</a></h2>
+</section>
+</section>
+</section>
+<section id="warnings">
+<h2>Warnings<a class="headerlink" href="#warnings" title="Link to this heading">#</a></h2>
 <p>In the previous cells warnings were intentionally suppressed. But the flightphase tools normally also show a warning if some of the selected segments contain so-called “irregularities”. So we first reactivate the warnings:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2461,9 +2273,9 @@ Attributes: (12/15)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/mech/.local/lib/python3.10/site-packages/ac3airborne/tools/flightphase.py:27: UserWarning: the segment ACLOUD_P5_RF14_ma contains following irregularities: whale-watching loop
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/mech/.local/lib/python3.8/site-packages/ac3airborne/tools/flightphase.py:27: UserWarning: the segment ACLOUD_P5_RF14_ma contains following irregularities: whale-watching loop
   warnings.warn(str)
-/home/mech/.local/lib/python3.10/site-packages/ac3airborne/tools/flightphase.py:27: UserWarning: the segment ACLOUD_P5_RF14_ld01 contains following irregularities: not along straight line
+/home/mech/.local/lib/python3.8/site-packages/ac3airborne/tools/flightphase.py:27: UserWarning: the segment ACLOUD_P5_RF14_ld01 contains following irregularities: not along straight line
   warnings.warn(str)
 </pre></div>
 </div>
@@ -2591,9 +2403,9 @@ Attributes: (12/15)
 </div>
 </div>
 <p>The first part of the warning tells us which segment is generating the warning. In this case we have two warnings generated by the segments <code class="docutils literal notranslate"><span class="pre">ACLOUD_P5_RF14_ma</span></code> and <code class="docutils literal notranslate"><span class="pre">ACLOUD_P5_RF14_ld01</span></code>. The second part is the value of the attribute <code class="docutils literal notranslate"><span class="pre">irregularities</span></code>.  A warning is generated when this attribute is not empty. You can access the content of this attribute even if the warnings are suppressed, as you can see in the examples above.</p>
-</div>
-<div class="section" id="select-a-segment-at-a-specific-time-or-within-a-specific-time-range">
-<h2>Select a segment at a specific time or within a specific time range<a class="headerlink" href="#select-a-segment-at-a-specific-time-or-within-a-specific-time-range" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="select-a-segment-at-a-specific-time-or-within-a-specific-time-range">
+<h2>Select a segment at a specific time or within a specific time range<a class="headerlink" href="#select-a-segment-at-a-specific-time-or-within-a-specific-time-range" title="Link to this heading">#</a></h2>
 <p>If you want to select all the segments within a specific time range you can do it with the function <code class="docutils literal notranslate"><span class="pre">findSegments</span></code> which takes as parameters the start time and the end time in the <code class="docutils literal notranslate"><span class="pre">%Y-%m-%d</span> <span class="pre">%H:%M:%S</span></code> format.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2679,8 +2491,8 @@ Attributes: (12/15)
 </div>
 </div>
 </div>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2694,7 +2506,7 @@ Attributes: (12/15)
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./examples"
         },
         predefinedOutput: true
@@ -2702,50 +2514,117 @@ Attributes: (12/15)
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="caching_and_local_datasets.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Caching and local datasets</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="caching_and_local_datasets.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Caching and local datasets</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="land_ocean.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="land_ocean.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">Land-ocean mask</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-access">Data access</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-data">Get data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-polar-5-flight-phase-information">Load Polar 5 flight phase information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plots">Plots</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#query-all-segments-of-a-specific-kind">Query all segments of a specific kind</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting-out-all-segments-given-a-list-of-kinds">Sorting out all segments given a list of kinds</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#query-a-segment-with-a-specific-value-in-a-specific-attribute">Query a segment with a specific value in a specific attribute</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1-select-element-with-specific-name">Example 1: Select element with specific name</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2-specific-level">Example 2: Specific level</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warnings">Warnings</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-a-segment-at-a-specific-time-or-within-a-specific-time-range">Select a segment at a specific time or within a specific time range</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By ac3airborne community<br/>
-  
-      &copy; Copyright 2021.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By ac3airborne community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2021.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

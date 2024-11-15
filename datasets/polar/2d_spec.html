@@ -1,111 +1,173 @@
 
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="../../" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>2D-S &#8212; how_to_ac3airborne</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@jupyter-widgets/html-manager@^1.0.1/dist/embed-amd.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'datasets/polar/2d_spec';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="ALABAMA" href="alabama.html" />
     <link rel="prev" title="Eagle" href="eagle.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
-    
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
 
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../_static/logo.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">how_to_ac3airborne</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="how_to_ac3airborne - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="how_to_ac3airborne - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
@@ -115,485 +177,298 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="../../getting_started.html">
-   Getting started with ac3airborne
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../campaigns.html">
-   Campaigns
-  </a>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="../../datasets.html">
-   Datasets
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2 current active has-children">
-    <a class="reference internal" href="../../polar_5_6.html">
-     Polar 5/6
-    </a>
-    <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-    <label for="toctree-checkbox-2">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul class="current">
-     <li class="toctree-l3">
-      <a class="reference internal" href="nose_boom.html">
-       Nose boom
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="mirac_a.html">
-       MiRAC-A
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="mirac_p.html">
-       MiRAC-P
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="hatpro.html">
-       HATPRO
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="amali.html">
-       AMALi
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="fish_eye_camera.html">
-       Fish-eye camera
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="nevzorov_and_pms.html">
-       PMS and Nevzorov
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="kt19.html">
-       CMP22, CGR4 and KT-19
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="dropsondes.html">
-       Dropsondes
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="gps_ins.html">
-       Position and attitude
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="hawk.html">
-       HAWK
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="eagle.html">
-       EAGLE
-      </a>
-     </li>
-     <li class="toctree-l3 current active">
-      <a class="current reference internal" href="#">
-       2D Spec
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="alabama.html">
-       ALABAMA
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="co_co2_h2o.html">
-       Gases
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="cvi.html">
-       CVI
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="opc.html">
-       OPC
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toctree-l2 has-children">
-    <a class="reference internal" href="../../halo.html">
-     HALO
-    </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-    <label for="toctree-checkbox-3">
-     <i class="fas fa-chevron-down">
-     </i>
-    </label>
-    <ul>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../halo/halo-ac3_data.html">
-       plot a flight
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../halo/gps_ins.html">
-       Position and attitude
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../halo/bahamas.html">
-       BAHAMAS
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../halo/bacardi.html">
-       BACARDI
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../halo/dropsondes.html">
-       Dropsondes
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../halo/hamp_radiometer.html">
-       HAMP radiometer
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../halo/hamp_radar.html">
-       HAMP radar
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="../halo/smart.html">
-       SMART
-      </a>
-     </li>
-    </ul>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../flight_segmentation.html">
-   Flight-phase separation
-  </a>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../../code.html">
-   Toolbox and examples
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../running_locally.html">
-     Running how_to_ac3airborne locally
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../examples/caching_and_local_datasets.html">
-     Caching and local datasets
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../examples/reading_the_flight_phase_files.html">
-     Querying the flight phase files
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../examples/land_ocean.html">
-     Land-ocean mask
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../examples/awipev_overflights.html">
-     AWIPEV overflights
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../examples/polarstern_overflights.html">
-     Polarstern overflights
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../../examples/amsr2_seaice.html">
-     AMSR2 sea ice
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../../references.html">
-   References
-  </a>
- </li>
+<li class="toctree-l1"><a class="reference internal" href="../../getting_started.html">Getting started with ac3airborne</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../campaigns.html">Campaigns</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../../datasets.html">Datasets</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active has-children"><a class="reference internal" href="../../polar_5_6.html">Polar 5/6</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="nose_boom.html">Nose boom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mirac_a.html">MiRAC-A</a></li>
+<li class="toctree-l3"><a class="reference internal" href="mirac_p.html">MiRAC-P</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hatpro.html">HATPRO</a></li>
+<li class="toctree-l3"><a class="reference internal" href="amali.html">AMALi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fish_eye_camera.html">Fish-eye camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nevzorov_and_pms.html">PMS and Nevzorov</a></li>
+<li class="toctree-l3"><a class="reference internal" href="kt19.html">CMP22, CGR4 and KT-19</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dropsondes.html">Dropsondes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gps_ins.html">Position and attitude</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hawk.html">HAWK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eagle.html">EAGLE</a></li>
+<li class="toctree-l3 current active"><a class="current reference internal" href="#">2D Spec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="alabama.html">ALABAMA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="co_co2_h2o.html">Gases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cvi.html">CVI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="opc.html">OPC</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../halo.html">HALO</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../halo/halo-ac3_data.html">plot a flight</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../halo/gps_ins.html">Position and attitude</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../halo/bahamas.html">BAHAMAS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../halo/bacardi.html">BACARDI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../halo/dropsondes.html">Dropsondes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../halo/hamp_radiometer.html">HAMP radiometer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../halo/hamp_radar.html">HAMP radar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../halo/smart.html">SMART</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../flight_segmentation.html">Flight-phase separation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../code.html">Toolbox and examples</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../running_locally.html">Running how_to_ac3airborne locally</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/caching_and_local_datasets.html">Caching and local datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/reading_the_flight_phase_files.html">Querying the flight phase files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/land_ocean.html">Land-ocean mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/awipev_overflights.html">AWIPEV overflights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/polarstern_overflights.html">Polarstern overflights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../examples/amsr2_seaice.html">AMSR2 sea ice</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../references.html">References</a></li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            <div>
-    <a href="#">This is a test</a>
-</div>
-
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
 
 
-          
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
 
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
 <div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
 
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
     </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/igmk/how_to_ac3airborne/main?urlpath=tree/how_to_ac3airborne/datasets/polar/2d_spec.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/igmk/how_to_ac3airborne/main?urlpath=tree/how_to_ac3airborne/datasets/polar/2d_spec.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   
     <img src="../../_static/images/logo_binder.svg">
   </span>
-<span class="headerbtn__text-container">Binder</span>
+<span class="btn__text-container">Binder</span>
 </a>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/datasets/polar/2d_spec.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
   <i class="fas fa-expand"></i>
   </span>
 
 </button>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../_sources/datasets/polar/2d_spec.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
+`);
+</script>
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
 
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#data-access">
-   Data access
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#get-data">
-   Get data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dataset">
-   Dataset
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#view-variables">
-     View variables
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>2D-S</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#data-access">
-   Data access
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#get-data">
-   Get data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dataset">
-   Dataset
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#view-variables">
-     View variables
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>2D-S</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-access">Data access</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-data">Get data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset">Dataset</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#view-variables">View variables</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
-  <div class="tex2jax_ignore mathjax_ignore section" id="d-s">
-<h1>2D-S<a class="headerlink" href="#d-s" title="Permalink to this headline">#</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="d-s">
+<h1>2D-S<a class="headerlink" href="#d-s" title="Link to this heading">#</a></h1>
 <p>In-situ measurements of arctic cloud particle size distribution and volumic cloud particle diffusion properties using the 2D stereoscopic (2D-S, SPEC Inc.) and Polar Nephelometer (Gayet et al., 1997) probes.</p>
 <p>Each NetCDF file contains the data obtained during a single flight. The file contains the time, location and XXX of the measurements.</p>
 <p>The following example demonstrates the use of the 2D-S data collected during the MOSAIC-ACA and AFLUX campaign.</p>
 <p>If you have questions or if you would like to use the data for a publication, please don’t hesitate to get in contact with the dataset authors as stated in the dataset attributes <code class="docutils literal notranslate"><span class="pre">contact</span></code> or <code class="docutils literal notranslate"><span class="pre">author</span></code>.</p>
-<div class="section" id="data-access">
-<h2>Data access<a class="headerlink" href="#data-access" title="Permalink to this headline">#</a></h2>
+<section id="data-access">
+<h2>Data access<a class="headerlink" href="#data-access" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>To analyse the data they first have to be loaded by importing the (AC)³airborne meta data catalogue. To do so the ac3airborne package has to be installed. More information on how to do that and about the catalog can be found <a class="reference external" href="https://github.com/igmk/ac3airborne-intake#ac3airborne-intake-catalogue">here</a>.</p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+
+<span class="n">load_dotenv</span><span class="p">()</span>
+
+<span class="n">ac3cloud_username</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;AC3_USER&#39;</span><span class="p">]</span>
+<span class="n">ac3cloud_password</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;AC3_PASSWORD&#39;</span><span class="p">]</span>
+
+<span class="n">credentials</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">ac3cloud_username</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">ac3cloud_password</span><span class="p">)</span>
+
+<span class="c1"># local caching</span>
+<span class="n">kwds</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;simplecache&#39;</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span>
+    <span class="n">cache_storage</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;INTAKE_CACHE&#39;</span><span class="p">],</span> 
+    <span class="n">same_names</span><span class="o">=</span><span class="kc">True</span>
+<span class="p">)}</span>
+</pre></div>
 </div>
-<div class="section" id="get-data">
-<h2>Get data<a class="headerlink" href="#get-data" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">os</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">load_dotenv</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">ac3cloud_username</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;AC3_USER&#39;</span><span class="p">]</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;dotenv&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="get-data">
+<h2>Get data<a class="headerlink" href="#get-data" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ac3airborne</span>
@@ -614,8 +489,22 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;AFLUX_P5_RF02&#39;,
- &#39;AFLUX_P5_RF03&#39;,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;ACLOUD_P5_RF05&#39;,
+ &#39;ACLOUD_P5_RF06&#39;,
+ &#39;ACLOUD_P5_RF07&#39;,
+ &#39;ACLOUD_P5_RF10&#39;,
+ &#39;ACLOUD_P5_RF11&#39;,
+ &#39;ACLOUD_P5_RF13&#39;,
+ &#39;ACLOUD_P5_RF14&#39;,
+ &#39;ACLOUD_P5_RF16&#39;,
+ &#39;ACLOUD_P5_RF17&#39;,
+ &#39;ACLOUD_P5_RF18&#39;,
+ &#39;ACLOUD_P5_RF19&#39;,
+ &#39;ACLOUD_P5_RF20&#39;,
+ &#39;ACLOUD_P5_RF21&#39;,
+ &#39;ACLOUD_P5_RF22&#39;,
+ &#39;ACLOUD_P5_RF23&#39;,
+ &#39;AFLUX_P5_RF02&#39;,
  &#39;AFLUX_P5_RF04&#39;,
  &#39;AFLUX_P5_RF05&#39;,
  &#39;AFLUX_P5_RF06&#39;,
@@ -623,10 +512,6 @@ title="Print to PDF"
  &#39;AFLUX_P5_RF08&#39;,
  &#39;AFLUX_P5_RF09&#39;,
  &#39;AFLUX_P5_RF10&#39;,
- &#39;AFLUX_P5_RF11&#39;,
- &#39;AFLUX_P5_RF12&#39;,
- &#39;AFLUX_P5_RF13&#39;,
- &#39;AFLUX_P5_RF14&#39;,
  &#39;AFLUX_P5_RF15&#39;,
  &#39;MOSAiC-ACA_P5_RF05&#39;,
  &#39;MOSAiC-ACA_P5_RF06&#39;,
@@ -639,9 +524,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="dataset">
-<h2>Dataset<a class="headerlink" href="#dataset" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="dataset">
+<h2>Dataset<a class="headerlink" href="#dataset" title="Link to this heading">#</a></h2>
 <p>To get an overview of the variables recorded by the 2D-S, we load the dataset of the first AFLUX flight <code class="docutils literal notranslate"><span class="pre">AFLUX_P5_RF02</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -682,7 +567,6 @@ title="Print to PDF"
 }
 
 html[theme=dark],
-body[data-theme=dark],
 body.vscode-dark {
   --xr-font-color0: rgba(255, 255, 255, 1);
   --xr-font-color2: rgba(255, 255, 255, 0.54);
@@ -695,7 +579,7 @@ body.vscode-dark {
 }
 
 .xr-wrap {
-  display: block !important;
+  display: block;
   min-width: 300px;
   max-width: 700px;
 }
@@ -1004,151 +888,37 @@ dl.xr-attrs {
   fill: currentColor;
 }
 </style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt;
-Dimensions:                        (time: 17554, PN_angles: 56, diam2DS: 252,
-                                    diam2DS_AI: 122)
-Coordinates:
-  * time                           (time) int64 36107 36108 ... 53659 53660
-  * PN_angles                      (PN_angles) int64 3 4 5 5 ... 162 165 169 172
-  * diam2DS                        (diam2DS) int64 50 60 70 ... 2540 2550 2560
-  * diam2DS_AI                     (diam2DS_AI) int64 50 60 70 ... 1250 1260
-Data variables: (12/49)
-    altitude                       (time) float32 30.0 31.0 31.0 ... 31.0 31.0
-    latitude                       (time) float32 78.24 78.24 ... 78.24 78.24
-    longitude                      (time) float32 15.49 15.49 ... 15.5 15.5
-    air_temperature                (time) float32 -7.062 -7.148 ... -8.406
-    air_pressure                   (time) float32 988.7 988.5 ... 989.1 989.1
-    true_air_speed                 (time) float32 44.48 44.83 ... 9.117 9.453
-    ...                             ...
-    Ext_2DSV_Ice                   (time) float32 0.0 0.04498 0.0 ... nan nan
-    IWC_2DSV_BF95                  (time) float32 0.0 0.001404 0.0 ... nan nan
-    Ice_2DSV_MMD_BF95              (time) float32 nan 230.2 nan ... nan nan nan
-    PSD_2DSV_DC_DDp_Deq1           (time, diam2DS_AI) float32 ...
-    PSD_2DSV_DC_DDp_Dcc1           (time, diam2DS_AI) float32 ...
-    PSD_2DSV_DC_Ice_DDp_Dcc1       (time, diam2DS_AI) float32 ...
+Dimensions:     (z: 529)
+Dimensions without coordinates: z
+Data variables:
+    GPS_Alt     (z) float32 2.725e+03 2.723e+03 2.72e+03 ... 20.91 16.24 8.88
+    Baro_Alt    (z) float32 2.853e+03 2.846e+03 2.838e+03 ... 12.64 7.71 0.0
+    Time        (z) float32 9.153 9.153 9.153 9.154 ... 9.227 9.227 9.227 9.227
+    Lat         (z) float32 79.68 79.68 79.68 79.68 ... 79.66 79.66 79.66 79.66
+    Lon         (z) float32 8.531 8.531 8.531 8.531 ... 8.513 8.513 8.513 8.513
+    Pressure    (z) float32 700.9 701.6 702.2 ... 1.017e+03 1.018e+03 1.019e+03
+    Temp        (z) float32 nan nan nan nan nan ... -9.76 -9.67 -9.59 -9.54
+    Temp_recon  (z) float32 nan nan nan nan nan ... -9.55 -9.48 -9.41 -9.32 -9.2
+    RHum        (z) float32 nan nan nan nan nan ... 83.59 83.55 83.63 83.67
+    RHum_recon  (z) float32 nan nan nan nan nan ... 81.89 81.38 81.14 80.85
+    Wind_vel    (z) float32 nan nan nan nan nan nan ... 8.51 8.41 8.26 8.11 nan
+    Wind_dir    (z) float32 nan nan nan nan nan nan ... 7.55 8.11 8.28 8.48 nan
 Attributes:
-    description:  Regis Dupuy\nLaboratoire de Meteorologie Physique (LaMP, UM...
-    history:      Created 2021/09/22 18:23:53</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-7de7c717-45a2-404c-a656-95599a2ff601' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-7de7c717-45a2-404c-a656-95599a2ff601' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 17554</li><li><span class='xr-has-index'>PN_angles</span>: 56</li><li><span class='xr-has-index'>diam2DS</span>: 252</li><li><span class='xr-has-index'>diam2DS_AI</span>: 122</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-8592b18a-b092-4112-9b2d-481888a8dc51' class='xr-section-summary-in' type='checkbox'  checked><label for='section-8592b18a-b092-4112-9b2d-481888a8dc51' class='xr-section-summary' >Coordinates: <span>(4)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>36107 36108 36109 ... 53659 53660</div><input id='attrs-defec154-f1db-4506-a22b-cede3f7d81d0' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-defec154-f1db-4506-a22b-cede3f7d81d0' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8f5b4954-9c6f-413a-bdd2-ed1980705523' class='xr-var-data-in' type='checkbox'><label for='data-8f5b4954-9c6f-413a-bdd2-ed1980705523' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([36107, 36108, 36109, ..., 53658, 53659, 53660])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>PN_angles</span></div><div class='xr-var-dims'>(PN_angles)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>3 4 5 5 6 7 ... 158 162 165 169 172</div><input id='attrs-83fe6099-528a-4d3a-b1c3-719f49d6dd1b' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-83fe6099-528a-4d3a-b1c3-719f49d6dd1b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-2b85c2f7-4e9e-4f5e-87aa-122ec2c2222e' class='xr-var-data-in' type='checkbox'><label for='data-2b85c2f7-4e9e-4f5e-87aa-122ec2c2222e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([  3,   4,   5,   5,   6,   7,   8,   9,  10,  10,  15,  18,  22,  25,
-        29,  32,  36,  39,  43,  46,  50,  53,  57,  60,  64,  67,  71,  74,
-        78,  81,  85,  88,  92,  95,  99, 102, 106, 109, 113, 116, 120, 123,
-       127, 130, 134, 137, 141, 144, 148, 151, 155, 158, 162, 165, 169, 172])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>diam2DS</span></div><div class='xr-var-dims'>(diam2DS)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>50 60 70 80 ... 2530 2540 2550 2560</div><input id='attrs-e65537b7-a82e-4b34-be82-dc3534dfe5ee' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-e65537b7-a82e-4b34-be82-dc3534dfe5ee' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-453b6116-b776-46c4-bd5c-8221a8b5d77b' class='xr-var-data-in' type='checkbox'><label for='data-453b6116-b776-46c4-bd5c-8221a8b5d77b' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([  50,   60,   70, ..., 2540, 2550, 2560])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>diam2DS_AI</span></div><div class='xr-var-dims'>(diam2DS_AI)</div><div class='xr-var-dtype'>int64</div><div class='xr-var-preview xr-preview'>50 60 70 80 ... 1230 1240 1250 1260</div><input id='attrs-ecb92253-38ae-423b-808d-b785e8eafdd8' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-ecb92253-38ae-423b-808d-b785e8eafdd8' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-43440d21-0b60-4fdc-8518-18bec9658c53' class='xr-var-data-in' type='checkbox'><label for='data-43440d21-0b60-4fdc-8518-18bec9658c53' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([  50,   60,   70,   80,   90,  100,  110,  120,  130,  140,  150,  160,
-        170,  180,  190,  200,  210,  220,  230,  240,  250,  260,  270,  280,
-        290,  300,  310,  320,  330,  340,  350,  360,  370,  380,  390,  400,
-        410,  420,  430,  440,  450,  460,  470,  480,  490,  500,  510,  520,
-        530,  540,  550,  560,  570,  580,  590,  600,  610,  620,  630,  640,
-        650,  660,  670,  680,  690,  700,  710,  720,  730,  740,  750,  760,
-        770,  780,  790,  800,  810,  820,  830,  840,  850,  860,  870,  880,
-        890,  900,  910,  920,  930,  940,  950,  960,  970,  980,  990, 1000,
-       1010, 1020, 1030, 1040, 1050, 1060, 1070, 1080, 1090, 1100, 1110, 1120,
-       1130, 1140, 1150, 1160, 1170, 1180, 1190, 1200, 1210, 1220, 1230, 1240,
-       1250, 1260])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-e1e8cd61-d5a0-4652-a3ff-e64c967e0afc' class='xr-section-summary-in' type='checkbox'  ><label for='section-e1e8cd61-d5a0-4652-a3ff-e64c967e0afc' class='xr-section-summary' >Data variables: <span>(49)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>altitude</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-deb8e84e-7e0b-4776-8ab5-d5fbddc4b5d5' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-deb8e84e-7e0b-4776-8ab5-d5fbddc4b5d5' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3dd0191c-4084-4cb5-8a31-fe94c61223e4' class='xr-var-data-in' type='checkbox'><label for='data-3dd0191c-4084-4cb5-8a31-fe94c61223e4' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([30., 31., 31., ..., 31., 31., 31.], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>latitude</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-34cc3d6a-2243-4b1f-9849-c443a50b4e3f' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-34cc3d6a-2243-4b1f-9849-c443a50b4e3f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-6c543f1f-c3c7-4b9f-b384-013e09b1a9d6' class='xr-var-data-in' type='checkbox'><label for='data-6c543f1f-c3c7-4b9f-b384-013e09b1a9d6' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([78.24467, 78.24476, 78.24486, ..., 78.24448, 78.24452, 78.24457],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>longitude</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-25f5270a-cdeb-42a2-b735-7828ad337697' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-25f5270a-cdeb-42a2-b735-7828ad337697' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e6a31d66-5ba1-42c9-8ad5-6b29a1209fbe' class='xr-var-data-in' type='checkbox'><label for='data-e6a31d66-5ba1-42c9-8ad5-6b29a1209fbe' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([15.49167, 15.48991, 15.48826, ..., 15.49801, 15.49815, 15.49825],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>air_temperature</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-1e043d4e-4144-409b-a7d4-edb6cd448b7d' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-1e043d4e-4144-409b-a7d4-edb6cd448b7d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-66bd1033-8afd-44d4-96fb-8e3dc8614208' class='xr-var-data-in' type='checkbox'><label for='data-66bd1033-8afd-44d4-96fb-8e3dc8614208' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([-7.0625  , -7.148438, -7.359375, ..., -8.367188, -8.367188, -8.40625 ],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>air_pressure</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-edab780a-40c0-4090-852a-4ac21b854ccd' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-edab780a-40c0-4090-852a-4ac21b854ccd' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-87912a35-4933-4630-92d3-127048963021' class='xr-var-data-in' type='checkbox'><label for='data-87912a35-4933-4630-92d3-127048963021' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([988.6875, 988.5   , 988.5   , ..., 989.125 , 989.125 , 989.125 ],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>true_air_speed</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-9eecef49-fa79-4218-b899-f737d8898e54' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-9eecef49-fa79-4218-b899-f737d8898e54' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-38a8ce32-9269-4660-a7ac-36e6cc6bfe0d' class='xr-var-data-in' type='checkbox'><label for='data-38a8ce32-9269-4660-a7ac-36e6cc6bfe0d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([44.476562, 44.828125, 49.078125, ...,  9.398438,  9.117188,  9.453125],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Channels</span></div><div class='xr-var-dims'>(time, PN_angles)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-e5c4c778-c0eb-4b28-97e7-7ee4393f726b' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-e5c4c778-c0eb-4b28-97e7-7ee4393f726b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3ff78811-cd10-4528-b6be-8ed8bb5bda90' class='xr-var-data-in' type='checkbox'><label for='data-3ff78811-cd10-4528-b6be-8ed8bb5bda90' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>[983024 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Phase_function</span></div><div class='xr-var-dims'>(time, PN_angles)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-c6d6f224-d787-44c0-b1d2-31444811efbc' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-c6d6f224-d787-44c0-b1d2-31444811efbc' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a760d53d-bf34-4881-b731-d769fd3a28fb' class='xr-var-data-in' type='checkbox'><label for='data-a760d53d-bf34-4881-b731-d769fd3a28fb' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>[983024 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Ratio_channels_24_20</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-61a86a44-f2da-4352-9e8f-7f99400a7cc8' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-61a86a44-f2da-4352-9e8f-7f99400a7cc8' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-38753a1b-307a-4b17-b58f-afaf0eafcdab' class='xr-var-data-in' type='checkbox'><label for='data-38753a1b-307a-4b17-b58f-afaf0eafcdab' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([1.470703, 2.060547, 1.783203, ..., 0.      , 0.      , 0.      ],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Ratio_channels_07_51</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-e2e89110-0910-4e6f-b80e-b2fcd9cb26d4' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-e2e89110-0910-4e6f-b80e-b2fcd9cb26d4' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e7bc03c2-d7ca-44e1-8ff3-c98c579b8fc9' class='xr-var-data-in' type='checkbox'><label for='data-e7bc03c2-d7ca-44e1-8ff3-c98c579b8fc9' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([0.926758, 0.871094, 1.283203, ..., 0.      , 0.      , 0.      ],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Ratio_channels_47_10</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-81b67f4b-39a0-45e2-9679-096c704607d7' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-81b67f4b-39a0-45e2-9679-096c704607d7' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-29b006e7-2d59-4f9a-9165-989fdb4f8e68' class='xr-var-data-in' type='checkbox'><label for='data-29b006e7-2d59-4f9a-9165-989fdb4f8e68' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([0.70697 , 0.916443, 0.880981, ..., 0.      , 0.      , 0.      ],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Extinction_Coefficient</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-c70fac8b-bbb7-4374-98d7-094ac0b6856b' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-c70fac8b-bbb7-4374-98d7-094ac0b6856b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d5d0409a-bb25-4674-8f77-174aa820e361' class='xr-var-data-in' type='checkbox'><label for='data-d5d0409a-bb25-4674-8f77-174aa820e361' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([0.122559, 0.058289, 0.072266, ..., 0.      , 0.      , 0.      ],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Asymmetry_Parameter</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-804c44dd-c576-41dd-a9be-fa373f09b317' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-804c44dd-c576-41dd-a9be-fa373f09b317' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-dba37604-af76-42e3-9cb7-d8600d3dc4f2' class='xr-var-data-in' type='checkbox'><label for='data-dba37604-af76-42e3-9cb7-d8600d3dc4f2' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([0.830444, 0.80957 , 0.81366 , ..., 0.      , 0.      , 0.      ],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>PSD_2DSH_DC_DDp_Deq0</span></div><div class='xr-var-dims'>(time, diam2DS)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-912bccc1-66f1-47f7-a804-b4be7cddc4c1' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-912bccc1-66f1-47f7-a804-b4be7cddc4c1' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-63a61490-0647-4ad7-9c05-7de7923e23cb' class='xr-var-data-in' type='checkbox'><label for='data-63a61490-0647-4ad7-9c05-7de7923e23cb' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>[4423608 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>PSD_2DSH_DC_DDp_Dcc0</span></div><div class='xr-var-dims'>(time, diam2DS)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-fc2365b5-515c-4db9-a904-1b4051415e31' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-fc2365b5-515c-4db9-a904-1b4051415e31' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-de84c778-93d0-432b-a168-6cd41a1c5aa7' class='xr-var-data-in' type='checkbox'><label for='data-de84c778-93d0-432b-a168-6cd41a1c5aa7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>[4423608 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Total_2DSH_concentration_Deq0</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-544d35b6-afe3-4f25-a2c9-7f855d34a6cb' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-544d35b6-afe3-4f25-a2c9-7f855d34a6cb' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-7d16ac50-55f3-4cd2-a96b-846f0cd7c34f' class='xr-var-data-in' type='checkbox'><label for='data-7d16ac50-55f3-4cd2-a96b-846f0cd7c34f' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([5.549805, 5.885742, 3.207031, ..., 0.      , 0.      , 0.      ],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Total_2DSH_concentration_Dcc0</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-fc2a9753-32f3-4654-b47e-81e9622a24c3' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-fc2a9753-32f3-4654-b47e-81e9622a24c3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-94d99a2a-765e-478c-a361-a5feb5791ed6' class='xr-var-data-in' type='checkbox'><label for='data-94d99a2a-765e-478c-a361-a5feb5791ed6' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([6.592773, 5.767578, 2.851562, ..., 0.      , 0.      , 0.      ],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Deff_2DSH_Deq0</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-542ed052-fbab-4fff-9cb1-87f36bdfe586' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-542ed052-fbab-4fff-9cb1-87f36bdfe586' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-88f4fbc9-ae71-407c-b4e2-cc68ee10ab53' class='xr-var-data-in' type='checkbox'><label for='data-88f4fbc9-ae71-407c-b4e2-cc68ee10ab53' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([ 73.38861, 123.03137,  67.28662, ...,       nan,       nan,       nan],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Deff_2DSH_Dcc0</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-ab79bde1-8695-4211-a90b-099801e84569' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-ab79bde1-8695-4211-a90b-099801e84569' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-5c9795b7-2416-41c0-8f98-51c1f9d4d57a' class='xr-var-data-in' type='checkbox'><label for='data-5c9795b7-2416-41c0-8f98-51c1f9d4d57a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([155.8847  , 251.20282 ,  82.883545, ...,        nan,        nan,
-              nan], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Total_2DSH_concentration_Deq1</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-acfce926-0f91-4c9e-901b-49699d620423' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-acfce926-0f91-4c9e-901b-49699d620423' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-52775529-8416-43a1-96b5-6fc5ebd81d8c' class='xr-var-data-in' type='checkbox'><label for='data-52775529-8416-43a1-96b5-6fc5ebd81d8c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([6.09082 , 6.308594, 3.044922, ..., 0.      , 0.      , 0.      ],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Total_2DSH_concentration_Dcc1</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-05feb8e8-10e0-47c0-8739-9295d6d36174' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-05feb8e8-10e0-47c0-8739-9295d6d36174' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3cede351-9071-4140-a158-60792e82c80d' class='xr-var-data-in' type='checkbox'><label for='data-3cede351-9071-4140-a158-60792e82c80d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([7.196289, 6.142578, 2.583008, ..., 0.      , 0.      , 0.      ],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Total_2DSH_Ice_concentration</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-8b4f8919-ed2e-4d13-add0-bdb449d486a8' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-8b4f8919-ed2e-4d13-add0-bdb449d486a8' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3b474048-b924-4f3a-bc2e-c81359ea889d' class='xr-var-data-in' type='checkbox'><label for='data-3b474048-b924-4f3a-bc2e-c81359ea889d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([0.34314 , 1.035034, 0.      , ..., 0.      , 0.      , 0.      ],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Deff_2DSH_Deq1</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-ab8a0b5a-9957-49c0-ae0d-30d753205f85' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-ab8a0b5a-9957-49c0-ae0d-30d753205f85' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8b072fa6-0010-4d34-a2ef-7b2fc391406d' class='xr-var-data-in' type='checkbox'><label for='data-8b072fa6-0010-4d34-a2ef-7b2fc391406d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([ 78.69452, 135.703  ,  63.63318, ...,       nan,       nan,       nan],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Deff_2DSH_Dcc1</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-f010e667-0d6e-4dc9-9fa0-19ed050f588e' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-f010e667-0d6e-4dc9-9fa0-19ed050f588e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8ef94357-ea99-4dbe-8d9b-4428030219e9' class='xr-var-data-in' type='checkbox'><label for='data-8ef94357-ea99-4dbe-8d9b-4428030219e9' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([171.3377 , 281.83276,  84.59155, ...,       nan,       nan,       nan],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Ice_2DSH_Deff_BF95</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-f035cfdd-f82b-4cc9-9b31-2011bfd8a94e' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-f035cfdd-f82b-4cc9-9b31-2011bfd8a94e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-85da168e-b762-4357-bcb8-be1585c32cac' class='xr-var-data-in' type='checkbox'><label for='data-85da168e-b762-4357-bcb8-be1585c32cac' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([96.24243, 86.59308,      nan, ...,      nan,      nan,      nan],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Ext_2DSH_Ice</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-a236cce2-9ca5-46c1-91f6-9748f7dd47ee' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-a236cce2-9ca5-46c1-91f6-9748f7dd47ee' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-fd0ac2e3-d7a9-48de-8ebd-275a0ffbd92d' class='xr-var-data-in' type='checkbox'><label for='data-fd0ac2e3-d7a9-48de-8ebd-275a0ffbd92d' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([0.030579, 0.120972, 0.      , ...,      nan,      nan,      nan],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>IWC_2DSH_BF95</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-b76fbfd7-201e-4d7e-bf87-c749b6818cd2' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-b76fbfd7-201e-4d7e-bf87-c749b6818cd2' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0e41b2b5-a593-4f79-8c63-f1d549d92370' class='xr-var-data-in' type='checkbox'><label for='data-0e41b2b5-a593-4f79-8c63-f1d549d92370' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([0.000977, 0.003479, 0.      , ...,      nan,      nan,      nan],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Ice_2DSH_MMD_BF95</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-8970b588-852c-44b2-a84a-d4c06d6008a2' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-8970b588-852c-44b2-a84a-d4c06d6008a2' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-7f54f08d-f65c-480a-bf64-f1942f4483f0' class='xr-var-data-in' type='checkbox'><label for='data-7f54f08d-f65c-480a-bf64-f1942f4483f0' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([265.     , 402.14703,       nan, ...,       nan,       nan,       nan],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>PSD_2DSH_DC_DDp_Deq1</span></div><div class='xr-var-dims'>(time, diam2DS_AI)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-4ce20a6d-68fd-41ba-aeb1-667514347568' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-4ce20a6d-68fd-41ba-aeb1-667514347568' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e63c8ced-23ea-41c3-b6e8-ae2a2f66fffc' class='xr-var-data-in' type='checkbox'><label for='data-e63c8ced-23ea-41c3-b6e8-ae2a2f66fffc' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>[2141588 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>PSD_2DSH_DC_DDp_Dcc1</span></div><div class='xr-var-dims'>(time, diam2DS_AI)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-3ae79e6a-e10a-47d4-aca3-f5cacd0b82db' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-3ae79e6a-e10a-47d4-aca3-f5cacd0b82db' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-61e60680-7583-41c5-b1c4-04cd0aba0af4' class='xr-var-data-in' type='checkbox'><label for='data-61e60680-7583-41c5-b1c4-04cd0aba0af4' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>[2141588 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>PSD_2DSH_DC_Ice_DDp_Dcc1</span></div><div class='xr-var-dims'>(time, diam2DS_AI)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-a93f4f9c-9d40-424f-8d5c-e1b158f4bcf1' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-a93f4f9c-9d40-424f-8d5c-e1b158f4bcf1' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-7cb762ec-d3bd-4bbd-8428-1b6dc34ec140' class='xr-var-data-in' type='checkbox'><label for='data-7cb762ec-d3bd-4bbd-8428-1b6dc34ec140' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>[2141588 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>PSD_2DSV_DC_DDp_Deq0</span></div><div class='xr-var-dims'>(time, diam2DS)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-961b54b1-7d63-4982-a3e8-823624e63ced' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-961b54b1-7d63-4982-a3e8-823624e63ced' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-dc0fe476-84dd-432d-a47f-8408fabc6363' class='xr-var-data-in' type='checkbox'><label for='data-dc0fe476-84dd-432d-a47f-8408fabc6363' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>[4423608 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>PSD_2DSV_DC_DDp_Dcc0</span></div><div class='xr-var-dims'>(time, diam2DS)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-b6c0e4e5-6a28-46ca-8026-f17f667f2b14' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-b6c0e4e5-6a28-46ca-8026-f17f667f2b14' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-96125156-87bf-41bd-8780-5222ded4bfbe' class='xr-var-data-in' type='checkbox'><label for='data-96125156-87bf-41bd-8780-5222ded4bfbe' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>[4423608 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Total_2DSV_concentration_Deq0</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-9e6f3f63-94af-4998-82f8-2ac1b35cc69a' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-9e6f3f63-94af-4998-82f8-2ac1b35cc69a' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8213d4eb-adef-4614-bc35-165148983f5e' class='xr-var-data-in' type='checkbox'><label for='data-8213d4eb-adef-4614-bc35-165148983f5e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([0.      , 5.974609, 2.021484, ..., 0.      , 0.      , 0.      ],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Total_2DSV_concentration_Dcc0</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-a48f3b43-cf56-4a99-92b9-b422ee8a82e4' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-a48f3b43-cf56-4a99-92b9-b422ee8a82e4' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c9c8a2ae-0d18-48a4-a075-96f5ce4ffeff' class='xr-var-data-in' type='checkbox'><label for='data-c9c8a2ae-0d18-48a4-a075-96f5ce4ffeff' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([0.      , 5.433594, 2.696289, ..., 0.      , 0.      , 0.      ],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Deff_2DSV_Deq0</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-1e4181d9-4b0a-4096-916e-a6320a823547' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-1e4181d9-4b0a-4096-916e-a6320a823547' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a65dc973-61ac-456d-9b26-98c33066593a' class='xr-var-data-in' type='checkbox'><label for='data-a65dc973-61ac-456d-9b26-98c33066593a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([      nan, 107.27588,  59.85077, ...,       nan,       nan,       nan],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Deff_2DSV_Dcc0</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-7060220f-3a0f-44ca-baef-04542ccfe763' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-7060220f-3a0f-44ca-baef-04542ccfe763' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8bfe01bc-8ccd-427e-a66a-3ca9be5b9222' class='xr-var-data-in' type='checkbox'><label for='data-8bfe01bc-8ccd-427e-a66a-3ca9be5b9222' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([      nan, 178.4494 ,  66.43567, ...,       nan,       nan,       nan],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Total_2DSV_concentration_Deq1</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-763ce98f-00de-4214-856a-1cf052fc3934' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-763ce98f-00de-4214-856a-1cf052fc3934' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-7a497786-dd46-4dbb-b5f4-419a6e87083e' class='xr-var-data-in' type='checkbox'><label for='data-7a497786-dd46-4dbb-b5f4-419a6e87083e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([5.799805, 6.90625 , 1.828125, ..., 0.      , 0.      , 0.      ],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Total_2DSV_concentration_Dcc1</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-b5c81b7a-cf33-418a-8ac6-7ba656acd6ea' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-b5c81b7a-cf33-418a-8ac6-7ba656acd6ea' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-b9a090f4-668a-4537-9894-e043ff2c20c4' class='xr-var-data-in' type='checkbox'><label for='data-b9a090f4-668a-4537-9894-e043ff2c20c4' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([6.676758, 6.27832 , 2.542969, ..., 0.      , 0.      , 0.      ],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Total_2DSV_Ice_concentration</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-6b1564e1-b61f-4c23-be93-a34c9f742565' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-6b1564e1-b61f-4c23-be93-a34c9f742565' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-2d651f26-4ad0-4fa2-b0f2-22a5a3f10949' class='xr-var-data-in' type='checkbox'><label for='data-2d651f26-4ad0-4fa2-b0f2-22a5a3f10949' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([0.      , 0.687195, 0.      , ..., 0.      , 0.      , 0.      ],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Deff_2DSV_Deq1</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-34a7d13d-41fb-415c-9e73-f6b404a7b05b' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-34a7d13d-41fb-415c-9e73-f6b404a7b05b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-dbfaa577-3d6f-428a-8818-b7ed55f31b34' class='xr-var-data-in' type='checkbox'><label for='data-dbfaa577-3d6f-428a-8818-b7ed55f31b34' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([ 68.705444, 109.7254  ,  65.25    , ...,        nan,        nan,
-              nan], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Deff_2DSV_Dcc1</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-80c91b9c-6d8f-482c-961c-1ffab09aa774' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-80c91b9c-6d8f-482c-961c-1ffab09aa774' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-bea8dca6-abcc-497c-b06d-9db3daf602b2' class='xr-var-data-in' type='checkbox'><label for='data-bea8dca6-abcc-497c-b06d-9db3daf602b2' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([ 78.88031 , 176.43115 ,  70.335205, ...,        nan,        nan,
-              nan], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Ice_2DSV_Deff_BF95</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-b030e138-b56b-47ec-899b-040cfd5937b1' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-b030e138-b56b-47ec-899b-040cfd5937b1' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3420468f-7de7-4a07-ae95-05a9e5a345c3' class='xr-var-data-in' type='checkbox'><label for='data-3420468f-7de7-4a07-ae95-05a9e5a345c3' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([     nan, 95.13989,      nan, ...,      nan,      nan,      nan],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Ext_2DSV_Ice</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-4e7bec04-8d5d-48ca-a86b-f960dc6cecf8' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-4e7bec04-8d5d-48ca-a86b-f960dc6cecf8' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4d963cc6-11d1-4348-a7ed-abc0c1395b0a' class='xr-var-data-in' type='checkbox'><label for='data-4d963cc6-11d1-4348-a7ed-abc0c1395b0a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([0.      , 0.044983, 0.      , ...,      nan,      nan,      nan],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>IWC_2DSV_BF95</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-71f1292a-8fd1-4830-9dd6-4cbf2ee4bb5e' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-71f1292a-8fd1-4830-9dd6-4cbf2ee4bb5e' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-004b906f-bad2-4f6a-92a8-3953f19c5062' class='xr-var-data-in' type='checkbox'><label for='data-004b906f-bad2-4f6a-92a8-3953f19c5062' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([0.      , 0.001404, 0.      , ...,      nan,      nan,      nan],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Ice_2DSV_MMD_BF95</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-1aba09f5-526f-4c81-bb6d-8ba4ae3fc94c' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-1aba09f5-526f-4c81-bb6d-8ba4ae3fc94c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4b82a5bc-0023-4827-b979-20fbb1ca45ab' class='xr-var-data-in' type='checkbox'><label for='data-4b82a5bc-0023-4827-b979-20fbb1ca45ab' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>array([      nan, 230.15881,       nan, ...,       nan,       nan,       nan],
-      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>PSD_2DSV_DC_DDp_Deq1</span></div><div class='xr-var-dims'>(time, diam2DS_AI)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-86ef870b-8971-4448-8289-b680faa446b3' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-86ef870b-8971-4448-8289-b680faa446b3' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f2358d8f-7a87-4a69-9c54-69eaca57ba98' class='xr-var-data-in' type='checkbox'><label for='data-f2358d8f-7a87-4a69-9c54-69eaca57ba98' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>[2141588 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>PSD_2DSV_DC_DDp_Dcc1</span></div><div class='xr-var-dims'>(time, diam2DS_AI)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-9a569acc-bb19-4416-b16c-e1ba3e7339d6' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-9a569acc-bb19-4416-b16c-e1ba3e7339d6' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-41843c30-cad6-43ed-a109-195a449920b1' class='xr-var-data-in' type='checkbox'><label for='data-41843c30-cad6-43ed-a109-195a449920b1' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>[2141588 values with dtype=float32]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>PSD_2DSV_DC_Ice_DDp_Dcc1</span></div><div class='xr-var-dims'>(time, diam2DS_AI)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-bc81d28a-4f5e-4c53-8477-c18114e99f99' class='xr-var-attrs-in' type='checkbox' disabled><label for='attrs-bc81d28a-4f5e-4c53-8477-c18114e99f99' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-94689bd8-dbf0-4bb3-9f8b-e773a76a27df' class='xr-var-data-in' type='checkbox'><label for='data-94689bd8-dbf0-4bb3-9f8b-e773a76a27df' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'></dl></div><div class='xr-var-data'><pre>[2141588 values with dtype=float32]</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-d30e4f66-4cfb-4a3f-b32b-5be1f79011ad' class='xr-section-summary-in' type='checkbox'  checked><label for='section-d30e4f66-4cfb-4a3f-b32b-5be1f79011ad' class='xr-section-summary' >Attributes: <span>(2)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>description :</span></dt><dd>Regis Dupuy
-Laboratoire de Meteorologie Physique (LaMP, UMR6016, CNRS/UCA/OPGC) tel : +33 (0)4.73.40.73.62
-AFLUX
-Aircraft, PN, 2D-S
-20190324 20210922
-seconds after midnight (s)
-52
-1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan nan 
-latitude : Latitude AIRINS (degree)
-longitude : Longitude AIRINS (degree)
-altitude : Altitude from AIRINS (meter)
-air_temperature : Static air temperature from Non-deiced Rosemount impact temperature (Celsius)
-air_pressure : Static air pressure (hPa)
-true_air_speed : True air speed (m/s)
-PN_angles : Polar Nephelometer angles of measurements (degrees)
-,Channels : Power Function (W/sr)
-Phase_function : Phase function (/microns/sr)
-Ratio_channels_24_20: Power ratio at rainbow angles
-Ratio_channels_07_51: Power ratio representing halo at 22°
-Ratio_channels_47_10: Power ratio representing halo at 46°
-Extinction_Coefficient: Extinction coefficient based on the phase function (reciprocal kilometer)
-Asymmetry_Parameter
-diam2DS : 2DS diameters (microns)
-diam2DS_AI : 2DS diameters for ALL IN particle selection (microns)
-PSD_2DSH_DC_DDp_Deq0 : 2DS Horizontal particle size distribution taking into account all images and using surface equivalent diameter (sizes above 75 microns, #/L/bin)
-PSD_2DSH_DC_DDp_Dcc0 : 2DS Horizontal particle size distribution taking into account all images and using circumscribed circle diameter related to the image center of gravity (sizes above 75 microns, #/L/bin)
-Total_2DSH_concentration_Deq0 : Total 2DS Horizontal concentration taking into account all images and using surface equivalent diameter (sizes above 75 microns, #/L)
-Total_2DSH_concentration_Dcc0 : Total 2DS Horizontal concentration taking into account all images and using circumscribed circle diameter related to the image center of gravity (sizes above 75 microns, #/L)
-Deff_2DSH_Deq0 : 2DS Horizontal Effective Diameter taking into account all images and using surface equivalent diameter (sizes above 75 microns, microns) : computed using the ratio of the third moment over the second moment
-Deff_2DSH_Dcc0 : 2DS Horizontal Effective Diameter taking into account all images and using circumscribed circle diameter related to the image center of gravity (sizes above 75 microns,microns) : computed using the ratio of the third moment over the second moment
-PSD_2DSH_DC_DDp_Deq1 : 2DSH particle size distribution taking into account only complete images (not truncated) and using surface equivalent diameter (sizes above 75 microns, microns)
-PSD_2DSH_DC_DDp_Dcc1 : 2DSH particle size distribution taking into account only complete images (not truncated) and using circumscribed circle diameter related to the image center of gravity (sizes above 75 microns, microns)
-PSD_2DSH_DC_Ice_DDp_Dcc1 : 2DSH Ice particle size distribution taking into account non spherical particles only
-Total_2DSH_concentration_Deq1 : Total 2DS Horizontal concentration taking into account only complete images (not truncated) and using surface equivalent diameter (sizes above 75 microns, #/L)
-Total_2DSH_concentration_Dcc1 : Total 2DS Horizontal concentration taking into account only complete images (not truncated) and using circumscribed circle diameter related to the image center of gravity (sizes above 75 microns, #/L)
-Total_2DSH_Ice_concentration : Total 2DS Horizontal non spherical concentration taking into account only complete images (not truncated), using circumscribed circle diameter related to the image center of gravity and using circularity parameter for classification (Crosier 2011, area larger than 16 pixels, #/L)
-Deff_2DSH_Deq1 : 2DS Horizontal Effective Diameter taking into account only complete images (not truncated) and using surface equivalent diameter (sizes above 75 microns, microns) : computed using the ratio of the third moment over the second moment
-Deff_2DSH_Dcc1 : 2DS Horizontal Effective Diameter taking into account only complete images (not truncated) and using circumscribed circle diameter related to the image center of gravity (sizes above 75 microns, microns) : computed using the ratio of the third moment over the second moment
-Ice_2DSH_Deff_BF95 : 2DS Horizontal Ice Effective Diameter  estimated using only non spherical particles and definition of Gayet et al. 2002 (microns)
-Ext_2DSH_Ice : 2DS Horizontal Ice Extinction Coefficient as defined in Gayet et al. 2002 (reciprocal kilometer))
-IWC_2DSH_BF95 : 2DS Horizontal Ice Water Content estimated using only non spherical particles and Brown and Francis 1995 mass-diameter relationship (area larger than 16 pixels, g/m3)
-Ice_2DSH_MMD_BF95 : 2DS Horizontal Ice Mass Median Diameter estimated using only non spherical particles and Brown and Francis 1995 mass-diameter relationship (area larger than 16 pixels, microns)
-PSD_2DSV_DC_DDp_Deq0 : 2DS Vertical particle size distribution taking into account all images and using surface equivalent diameter (sizes above 75 microns, #/L/bin)
-PSD_2DSV_DC_DDp_Dcc0 : 2DS Vertical particle size distribution taking into account all images and using circumscribed circle diameter related to the image center of gravity (sizes above 75 microns, #/L/bin)
-Total_2DSV_concentration_Deq0 : Total 2DS Vertical concentration taking into account all images and using surface equivalent diameter (sizes above 75 microns, #/L)
-Total_2DSV_concentration_Dcc0 : Total 2DS Vertical concentration taking into account all images and using circumscribed circle diameter related to the image center of gravity (sizes above 75 microns, #/L)
-Deff_2DSV_Deq0 : 2DS Vertical Effective Diameter taking into account all images and using surface equivalent diameter (sizes above 75 microns, microns) : computed using the ratio of the third moment over the second moment
-Deff_2DSV_Dcc0 : 2DS Vertical Effective Diameter taking into account all images and using circumscribed circle diameter related to the image center of gravity (sizes above 75 microns,microns) : computed using the ratio of the third moment over the second moment
-PSD_2DSV_DC_DDp_Deq1 : 2DSV particle size distribution taking into account only complete images (not truncated) and using surface equivalent diameter (sizes above 75 microns, microns)
-PSD_2DSV_DC_DDp_Dcc1 : 2DSV particle size distribution taking into account only complete images (not truncated) and using circumscribed circle diameter related to the image center of gravity (sizes above 75 microns, microns)
-PSD_2DSV_DC_Ice_DDp_Dcc1 : 2DSV Ice particle size distribution taking into account non spherical particles only
-Total_2DSV_concentration_Deq1 : Total 2DS Vertical concentration taking into account only complete images (not truncated) and using surface equivalent diameter (sizes above 75 microns, #/L)
-Total_2DSV_concentration_Dcc1 : Total 2DS Vertical concentration taking into account only complete images (not truncated) and using circumscribed circle diameter related to the image center of gravity (sizes above 75 microns, #/L)
-Total_2DSV_Ice_concentration : Total 2DS Vertical non spherical concentration taking into account only complete images (not truncated), using circumscribed circle diameter related to the image center of gravity and using circularity parameter for classification (Crosier 2011, area larger than 16 pixels, #/L)
-Deff_2DSV_Deq1 : 2DSV Effective Diameter taking into account only complete images (not truncated) and using surface equivalent diameter (sizes above 75 microns, microns) : computed using the ratio of the third moment over the second moment
-Deff_2DSV_Dcc1 2DSV Effective Diameter taking into account only complete images (not truncated) and using circumscribed circle diameter related to the image center of gravity (sizes above 75 microns, microns) : computed using the ratio of the third moment over the second moment
-Ice_2DSV_Deff_BF95 : 2DSV Ice Effective Diameter  estimated using only non spherical particles and definition of Gayet et al. 2002 (microns)
-Ext_2DSV_Ice : 2DSV Ice Extinction Coefficient as defined in Gayet et al. 2002 (reciprocal kilometer))
-IWC_2DSV_BF95 : 2DSV Ice Water Content estimated using only non spherical particles and Brown and Francis 1995 mass-diameter relationship (area larger than 16 pixels, g/m3)
-Ice_2DSV_MMD_BF95 : 2DSV Ice Mass Median Diameter estimated using only non spherical particles and Brown and Francis 1995 mass-diameter relationship (area larger than 16 pixels, microns)
-5
-Aircraft took off at 36107
-Aircraft landed at 53661
-WARNING QUICK LOOK DATA - DO NOT USE FOR PUBLICATION
-ALL IN sampling method is used for classifying ice crystal from 2DS Horizontal and 2DS Vertical images
-</dd><dt><span>history :</span></dt><dd>Created 2021/09/22 18:23:53</dd></dl></div></li></ul></div></div></div></div>
+    Dropsonde_number_of_flight:  1
+    Launch_Time_UTC:             09:09:10
+    Sonde_ID:                    162715269/RS904</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-59d8b133-6fc8-4364-b4d2-a36562d95dfa' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-59d8b133-6fc8-4364-b4d2-a36562d95dfa' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span>z</span>: 529</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-2ed7f46e-baa9-4f56-b470-fcf74a00653f' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-2ed7f46e-baa9-4f56-b470-fcf74a00653f' class='xr-section-summary'  title='Expand/collapse section'>Coordinates: <span>(0)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'></ul></div></li><li class='xr-section-item'><input id='section-47d37837-7c87-4601-ae8d-b572ce08cced' class='xr-section-summary-in' type='checkbox'  checked><label for='section-47d37837-7c87-4601-ae8d-b572ce08cced' class='xr-section-summary' >Data variables: <span>(12)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>GPS_Alt</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-644a94e5-cbf8-4f36-831c-48ea25211e4a' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-644a94e5-cbf8-4f36-831c-48ea25211e4a' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-0ef47061-4b1f-4e5a-82d5-bce6ea46695e' class='xr-var-data-in' type='checkbox'><label for='data-0ef47061-4b1f-4e5a-82d5-bce6ea46695e' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>GPS Altitude</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([2725.4 , 2722.74, 2720.09, ...,   20.91,   16.24,    8.88],
+      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Baro_Alt</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-d45adbce-1e47-4543-b817-5614ef3602af' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-d45adbce-1e47-4543-b817-5614ef3602af' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-709508dd-191f-4568-acd1-d1ddb98b6e31' class='xr-var-data-in' type='checkbox'><label for='data-709508dd-191f-4568-acd1-d1ddb98b6e31' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Barometric altitude</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([2853.11, 2845.55, 2838.38, ...,   12.64,    7.71,    0.  ],
+      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Time</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-b0e87d08-bff7-41cf-b757-8c7cba9f6c22' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-b0e87d08-bff7-41cf-b757-8c7cba9f6c22' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e2c1d83b-f947-45c1-885b-4632d482317c' class='xr-var-data-in' type='checkbox'><label for='data-e2c1d83b-f947-45c1-885b-4632d482317c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Time UTC</dd><dt><span>units :</span></dt><dd>decimal hours</dd></dl></div><div class='xr-var-data'><pre>array([9.153178, 9.153317, 9.153456, ..., 9.227137, 9.227276, 9.227494],
+      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Lat</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-f725d029-faf0-4044-9c60-ec6b17cda92f' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f725d029-faf0-4044-9c60-ec6b17cda92f' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-a0177753-24bf-4280-8363-898e918c19b4' class='xr-var-data-in' type='checkbox'><label for='data-a0177753-24bf-4280-8363-898e918c19b4' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Latitude (North positive)</dd><dt><span>units :</span></dt><dd>degree</dd></dl></div><div class='xr-var-data'><pre>array([79.67851, 79.67851, 79.67851, ..., 79.66181, 79.66178, 79.66178],
+      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Lon</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-9f23399b-ba5b-4698-9922-a32ba788e7ac' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-9f23399b-ba5b-4698-9922-a32ba788e7ac' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-cbbc8b09-2c94-468f-8a02-319501e0b4be' class='xr-var-data-in' type='checkbox'><label for='data-cbbc8b09-2c94-468f-8a02-319501e0b4be' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Longitude (East positive)</dd><dt><span>units :</span></dt><dd>degree</dd></dl></div><div class='xr-var-data'><pre>array([8.530977, 8.530977, 8.530977, ..., 8.512594, 8.512569, 8.512569],
+      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Pressure</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-2fb39bfa-80e2-430f-9012-87e81ba43af5' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-2fb39bfa-80e2-430f-9012-87e81ba43af5' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-f0d663f6-6339-482c-b2bd-f84d7df48da2' class='xr-var-data-in' type='checkbox'><label for='data-f0d663f6-6339-482c-b2bd-f84d7df48da2' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Air pressure</dd><dt><span>units :</span></dt><dd>hPa</dd></dl></div><div class='xr-var-data'><pre>array([ 700.9 ,  701.58,  702.23, ..., 1017.28, 1017.93, 1018.95],
+      dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Temp</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-19b24ddb-6417-4a31-a94d-69fc5171d0b1' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-19b24ddb-6417-4a31-a94d-69fc5171d0b1' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d1c1f45a-651b-4cf1-80de-f50a76da4273' class='xr-var-data-in' type='checkbox'><label for='data-d1c1f45a-651b-4cf1-80de-f50a76da4273' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Air temperarure</dd><dt><span>units :</span></dt><dd>degC</dd><dt><span>comment :</span></dt><dd> as processed by ASPEN software V.3.3-543 (config: research-dropsonde)</dd></dl></div><div class='xr-var-data'><pre>array([  nan,   nan,   nan, ..., -9.67, -9.59, -9.54], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Temp_recon</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-4be512ba-4b1a-4a30-88fc-b518be0ad861' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-4be512ba-4b1a-4a30-88fc-b518be0ad861' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ca938018-c237-436f-b33b-50372502e9c7' class='xr-var-data-in' type='checkbox'><label for='data-ca938018-c237-436f-b33b-50372502e9c7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Air temperature reconstructed</dd><dt><span>units :</span></dt><dd>degC</dd><dt><span>comment :</span></dt><dd>reconstructed temperature following Miloshevich et al. (2004) with tau=4.0 sek</dd></dl></div><div class='xr-var-data'><pre>array([  nan,   nan,   nan, ..., -9.41, -9.32, -9.2 ], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>RHum</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-57af0863-abff-4163-bb4e-f763bc2c43f4' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-57af0863-abff-4163-bb4e-f763bc2c43f4' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-c710ad2b-205c-4818-ae8c-156fa32873e2' class='xr-var-data-in' type='checkbox'><label for='data-c710ad2b-205c-4818-ae8c-156fa32873e2' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Relative humidity</dd><dt><span>units :</span></dt><dd>%</dd><dt><span>comment :</span></dt><dd> as processed by ASPEN software V.3.3-543 (config: research-dropsonde)</dd></dl></div><div class='xr-var-data'><pre>array([  nan,   nan,   nan, ..., 83.55, 83.63, 83.67], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>RHum_recon</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-19e0dc4e-7160-4d74-aa70-033e80adb08c' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-19e0dc4e-7160-4d74-aa70-033e80adb08c' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9298386b-b66c-46f6-a2e9-f1352d84fcba' class='xr-var-data-in' type='checkbox'><label for='data-9298386b-b66c-46f6-a2e9-f1352d84fcba' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Relative humidity reconstructed</dd><dt><span>units :</span></dt><dd>%</dd><dt><span>comment :</span></dt><dd>reconstructed relative humidity following Miloshevich et al. (2004) with tau=5.0 sek</dd></dl></div><div class='xr-var-data'><pre>array([  nan,   nan,   nan, ..., 81.38, 81.14, 80.85], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Wind_vel</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-85889843-5a0f-4fad-a4ac-c4445931fd3d' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-85889843-5a0f-4fad-a4ac-c4445931fd3d' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-519a0d1f-e4e5-4304-a601-fb82798a6a68' class='xr-var-data-in' type='checkbox'><label for='data-519a0d1f-e4e5-4304-a601-fb82798a6a68' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Horizontal wind velocity</dd><dt><span>units :</span></dt><dd>m s-1</dd><dt><span>comment :</span></dt><dd> as processed by ASPEN software V.3.3-543 (config: research-dropsonde)</dd></dl></div><div class='xr-var-data'><pre>array([ nan,  nan,  nan, ..., 8.26, 8.11,  nan], dtype=float32)</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>Wind_dir</span></div><div class='xr-var-dims'>(z)</div><div class='xr-var-dtype'>float32</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-e56747dd-0592-452e-bfcf-dc3bc1100c95' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e56747dd-0592-452e-bfcf-dc3bc1100c95' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-4198874e-c22a-4690-b2e4-796a75cecb10' class='xr-var-data-in' type='checkbox'><label for='data-4198874e-c22a-4690-b2e4-796a75cecb10' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>long_name :</span></dt><dd>Horizontal wind direction</dd><dt><span>units :</span></dt><dd>degree</dd><dt><span>comment :</span></dt><dd> as processed by ASPEN software V.3.3-543 (config: research-dropsonde)</dd></dl></div><div class='xr-var-data'><pre>array([ nan,  nan,  nan, ..., 8.28, 8.48,  nan], dtype=float32)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-b7a11300-d968-40d5-a818-c45ea8adca4e' class='xr-section-summary-in' type='checkbox'  checked><label for='section-b7a11300-d968-40d5-a818-c45ea8adca4e' class='xr-section-summary' >Attributes: <span>(3)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>Dropsonde_number_of_flight :</span></dt><dd>1</dd><dt><span>Launch_Time_UTC :</span></dt><dd>09:09:10</dd><dt><span>Sonde_ID :</span></dt><dd>162715269/RS904</dd></dl></div></li></ul></div></div></div></div>
 </div>
-<div class="section" id="view-variables">
-<h3>View variables<a class="headerlink" href="#view-variables" title="Permalink to this headline">#</a></h3>
-</div>
-</div>
-</div>
+<section id="view-variables">
+<h3>View variables<a class="headerlink" href="#view-variables" title="Link to this heading">#</a></h3>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1162,7 +932,7 @@ ALL IN sampling method is used for classifying ice crystal from 2DS Horizontal a
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./datasets/polar"
         },
         predefinedOutput: true
@@ -1170,50 +940,108 @@ ALL IN sampling method is used for classifying ice crystal from 2DS Horizontal a
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="eagle.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Eagle</p>
-        </div>
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="eagle.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Eagle</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="alabama.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="alabama.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title">ALABAMA</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-access">Data access</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#get-data">Get data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset">Dataset</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#view-variables">View variables</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
   
-    By ac3airborne community<br/>
-  
-      &copy; Copyright 2021.<br/>
-</p>
-        </footer>
-    </div>
+  <div class="footer-item">
     
+<p class="component-author">
+By ac3airborne community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2021.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
 </div>
+          </footer>
+        
 
-
-      </div>
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

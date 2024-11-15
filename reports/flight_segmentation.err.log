@@ -1,0 +1,117 @@
+Traceback (most recent call last):
+  File "/home/mech/miniconda3/envs/how_to_ac3airborne/lib/python3.12/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/home/mech/miniconda3/envs/how_to_ac3airborne/lib/python3.12/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mech/miniconda3/envs/how_to_ac3airborne/lib/python3.12/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/mech/miniconda3/envs/how_to_ac3airborne/lib/python3.12/asyncio/base_events.py", line 685, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/mech/miniconda3/envs/how_to_ac3airborne/lib/python3.12/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/home/mech/miniconda3/envs/how_to_ac3airborne/lib/python3.12/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/mech/miniconda3/envs/how_to_ac3airborne/lib/python3.12/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import ac3airborne
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.colors import to_hex
+from matplotlib import cm
+import ipyleaflet
+from ipyleaflet import Polyline, Map, basemaps, basemap_to_tiles
+from simplification.cutil import simplify_coords_idx
+plt.style.use("mplstyle/book")
+
+
+def colors(n):
+    """Creates set of random colors of length n"""
+    
+    cmap = cm.get_cmap('gist_rainbow')
+    rnd = np.random.uniform(low=0, high=1, size=n)
+    cols = cmap(rnd)
+    
+    return cols
+
+
+def simplify_dataset(ds, tolerance):
+    indices_to_take = simplify_coords_idx(np.stack([ds.lat.values, ds.lon.values], axis=1), tolerance)
+    return ds.isel(time=indices_to_take)
+
+# load intake catalog and flight segments
+cat = ac3airborne.get_intake_catalog()
+meta = ac3airborne.get_flight_segments()
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mValidationError[0m                           Traceback (most recent call last)
+Cell [0;32mIn[1], line 27[0m
+[1;32m     24[0m     [38;5;28;01mreturn[39;00m ds[38;5;241m.[39misel(time[38;5;241m=[39mindices_to_take)
+[1;32m     26[0m [38;5;66;03m# load intake catalog and flight segments[39;00m
+[0;32m---> 27[0m cat [38;5;241m=[39m [43mac3airborne[49m[38;5;241;43m.[39;49m[43mget_intake_catalog[49m[43m([49m[43m)[49m
+[1;32m     28[0m meta [38;5;241m=[39m ac3airborne[38;5;241m.[39mget_flight_segments()
+
+File [0;32m~/miniconda3/envs/how_to_ac3airborne/lib/python3.12/site-packages/ac3airborne/__init__.py:60[0m, in [0;36mget_intake_catalog[0;34m()[0m
+[1;32m     53[0m [38;5;28;01mdef[39;00m [38;5;21mget_intake_catalog[39m():
+[1;32m     54[0m [38;5;250m    [39m[38;5;124;03m"""[39;00m
+[1;32m     55[0m [38;5;124;03m    Open the intake data catalog.[39;00m
+[1;32m     56[0m 
+[1;32m     57[0m [38;5;124;03m    The catalog provides access to public AC3 airborne datasets without the need to[39;00m
+[1;32m     58[0m [38;5;124;03m    manually specify URLs to the individual datasets.[39;00m
+[1;32m     59[0m [38;5;124;03m    """[39;00m
+[0;32m---> 60[0m     [38;5;28;01mreturn[39;00m [43mintake[49m[38;5;241;43m.[39;49m[43mopen_catalog[49m[43m([49m[38;5;124;43m"[39;49m[38;5;124;43mhttps://raw.githubusercontent.com/igmk/ac3airborne-intake/main/catalog.yaml[39;49m[38;5;124;43m"[39;49m[43m)[49m
+
+File [0;32m~/miniconda3/envs/how_to_ac3airborne/lib/python3.12/site-packages/intake/__init__.py:184[0m, in [0;36mopen_catalog[0;34m(uri, **kwargs)[0m
+[1;32m    177[0m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
+[1;32m    178[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;124mUnknown catalog driver [39m[38;5;124m'[39m[38;5;132;01m{[39;00mdriver[38;5;132;01m}[39;00m[38;5;124m'[39m[38;5;124m. [39m[38;5;124m"[39m
+[1;32m    179[0m         [38;5;124m"[39m[38;5;124mDo you need to install a new driver from the plugin directory? [39m[38;5;124m"[39m
+[1;32m    180[0m         [38;5;124m"[39m[38;5;124mhttps://intake.readthedocs.io/en/latest/plugin-directory.html[39m[38;5;130;01m\n[39;00m[38;5;124m"[39m
+[1;32m    181[0m         [38;5;124mf[39m[38;5;124m"[39m[38;5;124mCurrent registry: [39m[38;5;132;01m{[39;00m[38;5;28mlist[39m([38;5;28msorted[39m(registry))[38;5;132;01m}[39;00m[38;5;124m"[39m
+[1;32m    182[0m     )
+[1;32m    183[0m [38;5;28;01mtry[39;00m:
+[0;32m--> 184[0m     [38;5;28;01mreturn[39;00m [43mregistry[49m[43m[[49m[43mdriver[49m[43m][49m[43m([49m[43muri[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+[1;32m    185[0m [38;5;28;01mexcept[39;00m VersionError:
+[1;32m    186[0m     [38;5;66;03m# warn that we are switching to V2? The file will be read twice[39;00m
+[1;32m    187[0m     [38;5;28;01mreturn[39;00m from_yaml_file(uri, [38;5;241m*[39m[38;5;241m*[39mkwargs)
+
+File [0;32m~/miniconda3/envs/how_to_ac3airborne/lib/python3.12/site-packages/intake/catalog/local.py:613[0m, in [0;36mYAMLFileCatalog.__init__[0;34m(self, path, text, autoreload, **kwargs)[0m
+[1;32m    611[0m [38;5;28mself[39m[38;5;241m.[39mfilesystem [38;5;241m=[39m kwargs[38;5;241m.[39mpop([38;5;124m"[39m[38;5;124mfs[39m[38;5;124m"[39m, [38;5;28;01mNone[39;00m)
+[1;32m    612[0m [38;5;28mself[39m[38;5;241m.[39maccess [38;5;241m=[39m [38;5;124m"[39m[38;5;124mname[39m[38;5;124m"[39m [38;5;129;01mnot[39;00m [38;5;129;01min[39;00m kwargs
+[0;32m--> 613[0m [38;5;28;43msuper[39;49m[43m([49m[43mYAMLFileCatalog[49m[43m,[49m[43m [49m[38;5;28;43mself[39;49m[43m)[49m[38;5;241;43m.[39;49m[38;5;21;43m__init__[39;49m[43m([49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+
+File [0;32m~/miniconda3/envs/how_to_ac3airborne/lib/python3.12/site-packages/intake/catalog/base.py:128[0m, in [0;36mCatalog.__init__[0;34m(self, entries, name, description, metadata, ttl, getenv, getshell, persist_mode, storage_options, user_parameters)[0m
+[1;32m    126[0m [38;5;28mself[39m[38;5;241m.[39mupdated [38;5;241m=[39m time[38;5;241m.[39mtime()
+[1;32m    127[0m [38;5;28mself[39m[38;5;241m.[39m_entries [38;5;241m=[39m entries [38;5;28;01mif[39;00m entries [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m [38;5;28;01melse[39;00m [38;5;28mself[39m[38;5;241m.[39m_make_entries_container()
+[0;32m--> 128[0m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mforce_reload[49m[43m([49m[43m)[49m
+
+File [0;32m~/miniconda3/envs/how_to_ac3airborne/lib/python3.12/site-packages/intake/catalog/base.py:186[0m, in [0;36mCatalog.force_reload[0;34m(self)[0m
+[1;32m    184[0m [38;5;250m[39m[38;5;124;03m"""Imperative reload data now"""[39;00m
+[1;32m    185[0m [38;5;28mself[39m[38;5;241m.[39mupdated [38;5;241m=[39m time[38;5;241m.[39mtime()
+[0;32m--> 186[0m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43m_load[49m[43m([49m[43m)[49m
+
+File [0;32m~/miniconda3/envs/how_to_ac3airborne/lib/python3.12/site-packages/intake/catalog/local.py:648[0m, in [0;36mYAMLFileCatalog._load[0;34m(self, reload)[0m
+[1;32m    646[0m     logger[38;5;241m.[39mwarning([38;5;124m"[39m[38;5;124mUse of [39m[38;5;124m'[39m[38;5;124m!template[39m[38;5;124m'[39m[38;5;124m deprecated - fixing[39m[38;5;124m"[39m)
+[1;32m    647[0m     text [38;5;241m=[39m text[38;5;241m.[39mreplace([38;5;124m"[39m[38;5;124m!template [39m[38;5;124m"[39m, [38;5;124m"[39m[38;5;124m"[39m)
+[0;32m--> 648[0m [38;5;28;43mself[39;49m[38;5;241;43m.[39;49m[43mparse[49m[43m([49m[43mtext[49m[43m)[49m
+
+File [0;32m~/miniconda3/envs/how_to_ac3airborne/lib/python3.12/site-packages/intake/catalog/local.py:728[0m, in [0;36mYAMLFileCatalog.parse[0;34m(self, text)[0m
+[1;32m    726[0m result [38;5;241m=[39m CatalogParser(data, context[38;5;241m=[39mcontext, getenv[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39mgetenv, getshell[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39mgetshell)
+[1;32m    727[0m [38;5;28;01mif[39;00m result[38;5;241m.[39merrors:
+[0;32m--> 728[0m     [38;5;28;01mraise[39;00m exceptions[38;5;241m.[39mValidationError(
+[1;32m    729[0m         [38;5;124m"[39m[38;5;124mCatalog [39m[38;5;124m'[39m[38;5;132;01m{}[39;00m[38;5;124m'[39m[38;5;124m has validation errors:[39m[38;5;130;01m\n[39;00m[38;5;130;01m\n[39;00m[38;5;132;01m{}[39;00m[38;5;124m"[39m
+[1;32m    730[0m         [38;5;124m"[39m[38;5;124m"[39m[38;5;241m.[39mformat([38;5;28mself[39m[38;5;241m.[39mpath, [38;5;124m"[39m[38;5;130;01m\n[39;00m[38;5;124m"[39m[38;5;241m.[39mjoin(result[38;5;241m.[39merrors)),
+[1;32m    731[0m         result[38;5;241m.[39merrors,
+[1;32m    732[0m     )
+[1;32m    734[0m cfg [38;5;241m=[39m result[38;5;241m.[39mdata
+[1;32m    736[0m [38;5;28mself[39m[38;5;241m.[39m_entries [38;5;241m=[39m {}
+
+[0;31mValidationError[0m: Catalog 'https://raw.githubusercontent.com/igmk/ac3airborne-intake/main/catalog.yaml' has validation errors:
+
+("missing 'module'", {'module': 'intake_xarray'})
+
