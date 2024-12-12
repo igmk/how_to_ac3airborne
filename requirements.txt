@@ -6,7 +6,7 @@ xarray==0.19.0
 intake[dataframe]==0.6.0 # since intake 0.6.1 to_dask() doesn't work anymore without the [dataframe] specification due to a missing msgpack dependency
 intake-xarray==0.4.1
 h5netcdf==0.7.1
-fsspec==0.8.7
+fsspec>=0.8.7
 aiohttp==3.7.4.post0
 ipyleaflet==0.13.6
 simplification>=0.5.14
