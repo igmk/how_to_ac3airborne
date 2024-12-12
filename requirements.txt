@@ -11,4 +11,6 @@ aiohttp==3.7.4.post0
 ipyleaflet==0.13.6
 simplification>=0.5.14
 ghp-import==1.1.0
+ac3airborne @ git+https://github.com/igmk/ac3airborne@6c99052
+python-dotenv>=1.0.1
 # sphinxcontrib-bibtex==2.2.0
