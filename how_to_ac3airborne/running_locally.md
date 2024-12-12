@@ -7,8 +7,9 @@ In any case, it will involve the following steps:
 * install all required dependencies
 * run the code
 
-You can decide between the [quick an dirty](#quick-and-dirty) method and the method [using `git`](#via-git), which will also set you up to contribute to the book.
+You can decide between the [](#quick-and-dirty) method and the method [using `git`](#via-git), which will also set you up to contribute to the book.
 
+(quick-and-dirty)=
 ## Quick and dirty
 If you just like to run the code of a single notebook and don't care to much about the details, the quickest option might be to download the chapter you are viewing as an ipython notebook (`.ipynb`) via the download button (<i class="fas fa-download"></i>) on the top right of the page. If you don't see the `.ipynb` option here, that's because the source of the page can not be interpreted as a notebook and thus is not available for direct execution.
 
@@ -30,7 +31,7 @@ Afterwards, you can start a local notebook server (either `jupyter notebook` or 
 ```{note}
 Handling requirements in this project is not entirely straightforward, as the requirements strongly depend on which datasets are used. We use [intake catalogs](https://intake.readthedocs.io) to describe how a dataset can be accessed which simplifies a lot of things. But as a consequence the set of required libraries is not only determined by the code in this repository, but also by the entries in the catalog.
 ```
-
+(via-git)=
 ## Via git
 
 If you like to do it more properly, you can also clone the repository via git. Depending on if you have SSH public key authentication set up or not, you can do this via SSH or HTTPS:
@@ -85,6 +86,7 @@ It is installed through the `requirements.txt` and should register itself with `
 If that does not work, please have a look at the [installation instructions](https://jupytext.readthedocs.io/en/latest/install.html) of `jupytext`.
 ```
 
+(interactive)=
 ### Interactive
 `jupyter` itself is not installed by the requirements file. If you're using `pip` you might want to install it as well:
 
@@ -110,6 +112,7 @@ jupyter lab
 :::
 ::::
 
+(compile-the-book)=
 ### Compile the book
 You can also execute `jupyter-book` directly via:
 ```bash
