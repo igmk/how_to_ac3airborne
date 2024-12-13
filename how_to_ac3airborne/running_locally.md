@@ -7,12 +7,12 @@ In any case, it will involve the following steps:
 * install all required dependencies
 * run the code
 
-You can decide between the [quick an dirty](#quick-and-dirty) method and the method [using `git`](#via-git), which will also set you up to contribute to the book.
+You can decide between the [quick and dirty](#quick-and-dirty) method and the method [using `git`](#via-git), which will also set you up to contribute to the book.
 
 ## Quick and dirty
-If you just like to run the code of a single notebook and don't care to much about the details, the quickest option might be to download the chapter you are viewing as an ipython notebook (`.ipynb`) via the download button (<i class="fas fa-download"></i>) on the top right of the page. If you don't see the `.ipynb` option here, that's because the source of the page can not be interpreted as a notebook and thus is not available for direct execution.
+If you just like to run the code of a single notebook and don't care too much about the details, the quickest option might be to download the chapter you are viewing as an ipython notebook (`.ipynb`) via the download button (<i class="fas fa-download"></i>) on the top right of the page. If you don't see the `.ipynb` option here, that's because the source of the page can not be interpreted as a notebook and thus is not available for direct execution.
 
-If you would just run the downloaded code, the chance is high that some required libraries are not yet installed on your system. You can either do try and error to find out which libraries are required for the chapter you downloaded, or you can simply installed all requirements for the entire book by running the following command on your command line:
+If you would just run the downloaded code, the chance is high that some required libraries are not yet installed on your system. You can either do trial and error to find out which libraries are required for the chapter you downloaded, or you can simply install all requirements for the entire book by running the following command on your command line:
 
 Using pip
 
@@ -25,7 +25,7 @@ pip install git+https://github.com/igmk/ac3airborne.git
 This won't work with any notebooks that use `cartopy` to make maps,  `pip` does not manage
 their dependencies well.
 
-Afterwards, you can start a local notebook server (either `jupyter notebook` or `jupyter lab`) and run and modify the chapter locally.
+Afterward, you can start a local notebook server (either `jupyter notebook` or `jupyter lab`) and run and modify the chapter locally.
 
 ```{note}
 Handling requirements in this project is not entirely straightforward, as the requirements strongly depend on which datasets are used. We use [intake catalogs](https://intake.readthedocs.io) to describe how a dataset can be accessed which simplifies a lot of things. But as a consequence the set of required libraries is not only determined by the code in this repository, but also by the entries in the catalog.
