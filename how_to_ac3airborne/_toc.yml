@@ -5,6 +5,19 @@ sections:
   title: Getting started with ac3airborne
 - file: campaigns
   title: Campaigns
+  sections:
+  - file: campaigns/acloud
+    title: ACLOUD
+  - file: campaigns/aflux
+    title: AFLUX
+  - file: campaigns/mosaic-aca
+    title: MOSAiC-ACA
+  - file: campaigns/halo-ac3
+    title: HALO-(AC)3
+  - file: campaigns/hamag
+    title: HAMAG
+  - file: campaigns/compex-ec
+    title: COMPEX-EC
 - file: datasets
   title: Datasets
   sections:
