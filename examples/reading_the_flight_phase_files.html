@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Querying the flight phase files &#8212; how_to_ac3airborne</title>
   
@@ -14,49 +15,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.4cbf315f70debaebd550c87a6162cf0f.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'examples/reading_the_flight_phase_files';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -71,27 +72,23 @@
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -113,8 +110,13 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
     </header>
   
 
@@ -138,6 +140,8 @@
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../intro.html">
   
@@ -159,7 +163,7 @@
 
  <script>
  document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
     <span class="search-button__default-text">Search</span>
     <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -178,9 +182,14 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting started with ac3airborne</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../campaigns.html">Campaigns</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../datasets.html">Datasets</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../polar_5_6.html">Polar 5/6</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1"><a class="reference internal" href="../campaigns/acloud.html">ACLOUD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../campaigns/aflux.html">AFLUX</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../campaigns/mosaic-aca.html">MOSAiC-ACA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../campaigns/halo-ac3.html">HALO-(AC)3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../campaigns/hamag.html">HAMAG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../campaigns/compex-ec.html">COMPEX-EC</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../datasets.html">Datasets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../polar_5_6.html">Polar 5/6</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../datasets/polar/nose_boom.html">Nose boom</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../datasets/polar/mirac_a.html">MiRAC-A</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../datasets/polar/mirac_p.html">MiRAC-P</a></li>
@@ -199,22 +208,21 @@
 <li class="toctree-l3"><a class="reference internal" href="../datasets/polar/cvi.html">CVI</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../datasets/polar/opc.html">OPC</a></li>
 </ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../halo.html">HALO</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../halo.html">HALO</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l3"><a class="reference internal" href="../datasets/halo/halo-ac3_data.html">plot a flight</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../datasets/halo/gps_ins.html">Position and attitude</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../datasets/halo/bahamas.html">BAHAMAS</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../datasets/halo/bacardi.html">BACARDI</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../datasets/halo/dropsondes.html">Dropsondes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../datasets/halo/hamp_radiometer.html">HAMP radiometer</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../datasets/halo/hamp_radar.html">HAMP radar</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/halo/hamp_unified.html">HAMP radiometer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../datasets/halo/smart.html">SMART</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
-</li>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../flight_segmentation.html">Flight-phase separation</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../code.html">Toolbox and examples</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../code.html">Toolbox and examples</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../running_locally.html">Running how_to_ac3airborne locally</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching_and_local_datasets.html">Caching and local datasets</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Querying the flight phase files</a></li>
@@ -223,7 +231,7 @@
 <li class="toctree-l2"><a class="reference internal" href="polarstern_overflights.html">Polarstern overflights</a></li>
 <li class="toctree-l2"><a class="reference internal" href="amsr2_seaice.html">AMSR2 sea ice</a></li>
 </ul>
-</li>
+</details></li>
 <li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
 </ul>
 
@@ -240,7 +248,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -249,14 +257,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -281,14 +289,14 @@
       
       <li><a href="https://mybinder.org/v2/gh/igmk/how_to_ac3airborne/main?urlpath=tree/how_to_ac3airborne/examples/reading_the_flight_phase_files.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -365,10 +373,10 @@
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -376,14 +384,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -431,24 +439,19 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="querying-the-flight-phase-files">
-<h1>Querying the <em>flight phase files</em><a class="headerlink" href="#querying-the-flight-phase-files" title="Link to this heading">#</a></h1>
+<h1>Querying the <em>flight phase files</em><a class="headerlink" href="#querying-the-flight-phase-files" title="Permalink to this heading">#</a></h1>
 <p>We introduce here some new methods to select the flight segments, querying for different criteria.</p>
 <section id="data-access">
-<h2>Data access<a class="headerlink" href="#data-access" title="Link to this heading">#</a></h2>
+<h2>Data access<a class="headerlink" href="#data-access" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>To analyse the data they first have to be loaded by importing the (AC)³airborne meta data catalogue. To do so the ac3airborne package has to be installed. More information on how to do that and about the catalog can be found <a class="reference external" href="https://github.com/igmk/ac3airborne-intake#ac3airborne-intake-catalogue">here</a>.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dotenv</span><span class="w"> </span><span class="kn">import</span> <span class="n">load_dotenv</span>
 
 <span class="n">load_dotenv</span><span class="p">()</span>
-
-<span class="n">ac3cloud_username</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;AC3_USER&#39;</span><span class="p">]</span>
-<span class="n">ac3cloud_password</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;AC3_PASSWORD&#39;</span><span class="p">]</span>
-
-<span class="n">credentials</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">user</span><span class="o">=</span><span class="n">ac3cloud_username</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="n">ac3cloud_password</span><span class="p">)</span>
 
 <span class="c1"># local caching</span>
 <span class="n">kwds</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;simplecache&#39;</span><span class="p">:</span> <span class="nb">dict</span><span class="p">(</span>
@@ -458,26 +461,13 @@ document.write(`
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">os</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span> <span class="nn">dotenv</span> <span class="kn">import</span> <span class="n">load_dotenv</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">load_dotenv</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">ac3cloud_username</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;AC3_USER&#39;</span><span class="p">]</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;dotenv&#39;
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="get-data">
-<h2>Get data<a class="headerlink" href="#get-data" title="Link to this heading">#</a></h2>
+<h2>Get data<a class="headerlink" href="#get-data" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ac3airborne</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">ac3airborne</span>
 </pre></div>
 </div>
 </div>
@@ -636,7 +626,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Invalid MIT-MAGIC-COOKIE-1 key
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/intake_xarray/base.py:21: FutureWarning: The return type of `Dataset.dims` will be changed to return a set of dimension names in future, in order to be more consistent with `DataArray.dims`. To access a mapping from dimension names to lengths, please use `Dataset.sizes`.
+  &#39;dims&#39;: dict(self._ds.dims),
 </pre></div>
 </div>
 <div class="output text_html"><div><svg style="position: absolute; width: 0; height: 0; overflow: hidden">
@@ -669,12 +660,14 @@ document.write(`
   --xr-background-color-row-odd: var(--jp-layout-color2, #eeeeee);
 }
 
-html[theme=dark],
+html[theme="dark"],
+html[data-theme="dark"],
+body[data-theme="dark"],
 body.vscode-dark {
   --xr-font-color0: rgba(255, 255, 255, 1);
   --xr-font-color2: rgba(255, 255, 255, 0.54);
   --xr-font-color3: rgba(255, 255, 255, 0.38);
-  --xr-border-color: #1F1F1F;
+  --xr-border-color: #1f1f1f;
   --xr-disabled-color: #515151;
   --xr-background-color: #111111;
   --xr-background-color-row-even: #111111;
@@ -682,7 +675,7 @@ body.vscode-dark {
 }
 
 .xr-wrap {
-  display: block;
+  display: block !important;
   min-width: 300px;
   max-width: 700px;
 }
@@ -719,7 +712,7 @@ body.vscode-dark {
 .xr-sections {
   padding-left: 0 !important;
   display: grid;
-  grid-template-columns: 150px auto auto 1fr 20px 20px;
+  grid-template-columns: 150px auto auto 1fr 0 20px 0 20px;
 }
 
 .xr-section-item {
@@ -727,7 +720,9 @@ body.vscode-dark {
 }
 
 .xr-section-item input {
-  display: none;
+  display: inline-block;
+  opacity: 0;
+  height: 0;
 }
 
 .xr-section-item input + label {
@@ -737,6 +732,10 @@ body.vscode-dark {
 .xr-section-item input:enabled + label {
   cursor: pointer;
   color: var(--xr-font-color2);
+}
+
+.xr-section-item input:focus + label {
+  border: 2px solid var(--xr-font-color0);
 }
 
 .xr-section-item input:enabled + label:hover {
@@ -760,7 +759,7 @@ body.vscode-dark {
 
 .xr-section-summary-in + label:before {
   display: inline-block;
-  content: '►';
+  content: "►";
   font-size: 11px;
   width: 15px;
   text-align: center;
@@ -771,7 +770,7 @@ body.vscode-dark {
 }
 
 .xr-section-summary-in:checked + label:before {
-  content: '▼';
+  content: "▼";
 }
 
 .xr-section-summary-in:checked + label > span {
@@ -843,15 +842,15 @@ body.vscode-dark {
 }
 
 .xr-dim-list:before {
-  content: '(';
+  content: "(";
 }
 
 .xr-dim-list:after {
-  content: ')';
+  content: ")";
 }
 
 .xr-dim-list li:not(:last-child):after {
-  content: ',';
+  content: ",";
   padding-right: 5px;
 }
 
@@ -899,6 +898,11 @@ body.vscode-dark {
   grid-column: 4;
 }
 
+.xr-index-preview {
+  grid-column: 2 / 5;
+  color: var(--xr-font-color2);
+}
+
 .xr-var-name,
 .xr-var-dims,
 .xr-var-dtype,
@@ -920,14 +924,16 @@ body.vscode-dark {
 }
 
 .xr-var-attrs,
-.xr-var-data {
+.xr-var-data,
+.xr-index-data {
   display: none;
   background-color: var(--xr-background-color) !important;
   padding-bottom: 5px !important;
 }
 
 .xr-var-attrs-in:checked ~ .xr-var-attrs,
-.xr-var-data-in:checked ~ .xr-var-data {
+.xr-var-data-in:checked ~ .xr-var-data,
+.xr-index-data-in:checked ~ .xr-index-data {
   display: block;
 }
 
@@ -937,13 +943,16 @@ body.vscode-dark {
 
 .xr-var-name span,
 .xr-var-data,
+.xr-index-name div,
+.xr-index-data,
 .xr-attrs {
   padding-left: 25px !important;
 }
 
 .xr-attrs,
 .xr-var-attrs,
-.xr-var-data {
+.xr-var-data,
+.xr-index-data {
   grid-column: 1 / -1;
 }
 
@@ -981,7 +990,8 @@ dl.xr-attrs {
 }
 
 .xr-icon-database,
-.xr-icon-file-text2 {
+.xr-icon-file-text2,
+.xr-no-icon {
   display: inline-block;
   vertical-align: middle;
   width: 1em;
@@ -990,19 +1000,19 @@ dl.xr-attrs {
   stroke: currentColor;
   fill: currentColor;
 }
-</style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt;
+</style><pre class='xr-text-repr-fallback'>&lt;xarray.Dataset&gt; Size: 1MB
 Dimensions:  (time: 20211)
 Coordinates:
-  * time     (time) datetime64[ns] 2017-06-08T07:22:07 ... 2017-06-08T12:59:07
+  * time     (time) datetime64[ns] 162kB 2017-06-08T07:22:07 ... 2017-06-08T1...
 Data variables:
-    alt      (time) float64 nan 28.83 28.85 28.7 28.62 ... 24.62 24.57 24.55 nan
-    gs       (time) float64 nan 0.0 0.0 0.0 0.0 0.0 ... 0.0 0.0 0.0 0.0 0.0 nan
-    lat      (time) float64 nan 78.25 78.25 78.25 ... 78.25 78.25 78.25 nan
-    lon      (time) float64 nan 15.5 15.5 15.5 15.5 ... 15.5 15.5 15.5 15.5 nan
-    vs       (time) float64 nan 0.1 0.1 -0.0 -0.0 0.0 ... -0.1 -0.1 0.1 0.0 nan
-    pitch    (time) float64 12.23 12.23 12.23 12.22 ... 11.71 11.72 11.72 11.72
-    roll     (time) float64 1.82 1.82 1.83 1.83 1.82 ... 1.93 1.92 1.93 1.94
-    heading  (time) float64 0.0 0.0 0.0 0.0 0.0 ... -73.84 -73.84 -73.84 -73.83
+    alt      (time) float64 162kB ...
+    gs       (time) float64 162kB ...
+    lat      (time) float64 162kB ...
+    lon      (time) float64 162kB ...
+    vs       (time) float64 162kB ...
+    pitch    (time) float64 162kB ...
+    roll     (time) float64 162kB ...
+    heading  (time) float64 162kB ...
 Attributes: (12/15)
     title:          P5 position and attitude data
     description:    1 Hz subset based on GPS1 and INS data processed by AWI e...
@@ -1016,14 +1026,25 @@ Attributes: (12/15)
     platform:       P5
     flight_number:  RF14
     history:        acquired by P5 during ACLOUD campaign, quality checked by...
-    created:        2022-05-25</pre><div class='xr-wrap' hidden><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-8b3883d5-c3a1-459a-a58d-b5965da11310' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-8b3883d5-c3a1-459a-a58d-b5965da11310' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 20211</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-a26ff8ca-a82e-48e4-ad9a-d4ef01d0193e' class='xr-section-summary-in' type='checkbox'  checked><label for='section-a26ff8ca-a82e-48e4-ad9a-d4ef01d0193e' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2017-06-08T07:22:07 ... 2017-06-...</div><input id='attrs-3e79a29b-b9e8-4772-8f2d-4421c69f048a' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-3e79a29b-b9e8-4772-8f2d-4421c69f048a' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-338aabfd-581c-44e1-b0e8-3283670b2b52' class='xr-var-data-in' type='checkbox'><label for='data-338aabfd-581c-44e1-b0e8-3283670b2b52' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>time</dd><dt><span>long_name :</span></dt><dd>time in seconds since epoch</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;2017-06-08T07:22:07.000000000&#x27;, &#x27;2017-06-08T07:22:08.000000000&#x27;,
+    created:        2022-05-25</pre><div class='xr-wrap' style='display:none'><div class='xr-header'><div class='xr-obj-type'>xarray.Dataset</div></div><ul class='xr-sections'><li class='xr-section-item'><input id='section-fee22d2c-f33f-4555-bf4d-29f9496e26a5' class='xr-section-summary-in' type='checkbox' disabled ><label for='section-fee22d2c-f33f-4555-bf4d-29f9496e26a5' class='xr-section-summary'  title='Expand/collapse section'>Dimensions:</label><div class='xr-section-inline-details'><ul class='xr-dim-list'><li><span class='xr-has-index'>time</span>: 20211</li></ul></div><div class='xr-section-details'></div></li><li class='xr-section-item'><input id='section-497eafe8-4891-4a7b-9e63-5b38b1415df2' class='xr-section-summary-in' type='checkbox'  checked><label for='section-497eafe8-4891-4a7b-9e63-5b38b1415df2' class='xr-section-summary' >Coordinates: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span class='xr-has-index'>time</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>datetime64[ns]</div><div class='xr-var-preview xr-preview'>2017-06-08T07:22:07 ... 2017-06-...</div><input id='attrs-f7fc8d2a-fa3e-4d01-a5d6-89cdf3da675b' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-f7fc8d2a-fa3e-4d01-a5d6-89cdf3da675b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-ad86e43c-f682-49f1-8032-2cf314501c92' class='xr-var-data-in' type='checkbox'><label for='data-ad86e43c-f682-49f1-8032-2cf314501c92' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>time</dd><dt><span>long_name :</span></dt><dd>time in seconds since epoch</dd></dl></div><div class='xr-var-data'><pre>array([&#x27;2017-06-08T07:22:07.000000000&#x27;, &#x27;2017-06-08T07:22:08.000000000&#x27;,
        &#x27;2017-06-08T07:22:09.000000000&#x27;, ..., &#x27;2017-06-08T12:59:05.000000000&#x27;,
        &#x27;2017-06-08T12:59:06.000000000&#x27;, &#x27;2017-06-08T12:59:07.000000000&#x27;],
-      dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-59b4e9f8-c564-4669-b5c3-70092664777c' class='xr-section-summary-in' type='checkbox'  checked><label for='section-59b4e9f8-c564-4669-b5c3-70092664777c' class='xr-section-summary' >Data variables: <span>(8)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>alt</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-e28d73f2-008c-42cd-9e5f-0dd2f4373bb2' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e28d73f2-008c-42cd-9e5f-0dd2f4373bb2' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-07356ecf-0af9-455d-bf60-a452f9b9a98c' class='xr-var-data-in' type='checkbox'><label for='data-07356ecf-0af9-455d-bf60-a452f9b9a98c' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>height_above_reference_ellipsoid</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/elliptical height</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>array([  nan, 28.83, 28.85, ..., 24.57, 24.55,   nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>gs</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-9cf1048d-6773-49f4-ad55-3756bc6c3572' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-9cf1048d-6773-49f4-ad55-3756bc6c3572' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-54bb34ee-3acf-4076-ac31-2d176bceb425' class='xr-var-data-in' type='checkbox'><label for='data-54bb34ee-3acf-4076-ac31-2d176bceb425' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_speed_wrt_ground</dd><dt><span>long_name :</span></dt><dd>groundspeed of platform</dd><dt><span>units :</span></dt><dd>kts</dd></dl></div><div class='xr-var-data'><pre>array([nan,  0.,  0., ...,  0.,  0., nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-ef39405e-8259-43a0-b9be-ef849d204245' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ef39405e-8259-43a0-b9be-ef849d204245' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-9fbc1a3e-791e-47d1-8c50-d6fbaee30d4a' class='xr-var-data-in' type='checkbox'><label for='data-9fbc1a3e-791e-47d1-8c50-d6fbaee30d4a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd></dl></div><div class='xr-var-data'><pre>array([      nan, 78.24576 , 78.24576 , ..., 78.245787, 78.245788,       nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lon</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-2a7112ac-510b-4d6a-8b01-0d3ab2140eba' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-2a7112ac-510b-4d6a-8b01-0d3ab2140eba' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-e30561c8-c5e2-4c97-bbc4-a882c5fffa83' class='xr-var-data-in' type='checkbox'><label for='data-e30561c8-c5e2-4c97-bbc4-a882c5fffa83' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd></dl></div><div class='xr-var-data'><pre>array([      nan, 15.504153, 15.504153, ..., 15.50407 , 15.50407 ,       nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>vs</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-4b868733-99d2-4384-a8a2-c091c2a16907' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-4b868733-99d2-4384-a8a2-c091c2a16907' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-872173c3-7ac6-4a25-ae0e-b1a742adefee' class='xr-var-data-in' type='checkbox'><label for='data-872173c3-7ac6-4a25-ae0e-b1a742adefee' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_vertical_speed</dd><dt><span>long_name :</span></dt><dd>vertical speed</dd><dt><span>units :</span></dt><dd>m/s</dd></dl></div><div class='xr-var-data'><pre>array([nan, 0.1, 0.1, ..., 0.1, 0. , nan])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>pitch</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-a9043478-553b-4ae7-9dbf-ed890702e333' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-a9043478-553b-4ae7-9dbf-ed890702e333' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-94ffcf96-2ff1-4715-a1cb-f867eea28dcd' class='xr-var-data-in' type='checkbox'><label for='data-94ffcf96-2ff1-4715-a1cb-f867eea28dcd' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_pitch_fore_up</dd><dt><span>long_name :</span></dt><dd>pitch angle of platform</dd><dt><span>units :</span></dt><dd>degrees</dd></dl></div><div class='xr-var-data'><pre>array([12.23, 12.23, 12.23, ..., 11.72, 11.72, 11.72])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>roll</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-0ba6e9cf-84d7-43ce-84d1-5d40f01eeb40' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-0ba6e9cf-84d7-43ce-84d1-5d40f01eeb40' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-fb39dcf2-7c96-4c81-b2d2-7f19a615f155' class='xr-var-data-in' type='checkbox'><label for='data-fb39dcf2-7c96-4c81-b2d2-7f19a615f155' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_roll_starboard_down</dd><dt><span>long_name :</span></dt><dd>roll angle of platform</dd><dt><span>units :</span></dt><dd>degrees</dd></dl></div><div class='xr-var-data'><pre>array([1.82, 1.82, 1.83, ..., 1.92, 1.93, 1.94])</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>heading</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-ae884f15-90dc-495b-a0cf-5aacdebb7836' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-ae884f15-90dc-495b-a0cf-5aacdebb7836' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-04e5df61-869a-4f43-80c0-d32d3b3b0673' class='xr-var-data-in' type='checkbox'><label for='data-04e5df61-869a-4f43-80c0-d32d3b3b0673' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_yaw_fore_starboard</dd><dt><span>long_name :</span></dt><dd>true heading</dd><dt><span>units :</span></dt><dd>degrees</dd></dl></div><div class='xr-var-data'><pre>array([  0.  ,   0.  ,   0.  , ..., -73.84, -73.84, -73.83])</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-55d55548-862d-4108-82e6-9044b828f914' class='xr-section-summary-in' type='checkbox'  ><label for='section-55d55548-862d-4108-82e6-9044b828f914' class='xr-section-summary' >Attributes: <span>(15)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>title :</span></dt><dd>P5 position and attitude data</dd><dt><span>description :</span></dt><dd>1 Hz subset based on GPS1 and INS data processed by AWI engineers</dd><dt><span>instruments :</span></dt><dd>GPS1 and INS</dd><dt><span>version :</span></dt><dd>1.1</dd><dt><span>institution :</span></dt><dd>Alfred-Wegener-Institut Helmholtz-Zentrum für Polar- und Meeresforschung</dd><dt><span>author :</span></dt><dd>Dr. Mario Mech</dd><dt><span>contact :</span></dt><dd>mario.mech@uni-koeln.de, martin.gehrmann@awi.de</dd><dt><span>source :</span></dt><dd>DSHIP excerpt</dd><dt><span>convention :</span></dt><dd>CF-1.8</dd><dt><span>featureType :</span></dt><dd>trajectory</dd><dt><span>mission :</span></dt><dd>ACLOUD</dd><dt><span>platform :</span></dt><dd>P5</dd><dt><span>flight_number :</span></dt><dd>RF14</dd><dt><span>history :</span></dt><dd>acquired by P5 during ACLOUD campaign, quality checked by AWI and uploaded to DSHIP database, extracted and reformated by author</dd><dt><span>created :</span></dt><dd>2022-05-25</dd></dl></div></li></ul></div></div></div></div>
+      shape=(20211,), dtype=&#x27;datetime64[ns]&#x27;)</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-87583355-d0fa-4e56-a5ce-d278f358603b' class='xr-section-summary-in' type='checkbox'  checked><label for='section-87583355-d0fa-4e56-a5ce-d278f358603b' class='xr-section-summary' >Data variables: <span>(8)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-var-name'><span>alt</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-b76a2016-5307-45bd-a93e-30e8e5e844a6' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-b76a2016-5307-45bd-a93e-30e8e5e844a6' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-69d63af2-f7f6-497d-acaf-ab68fed5839a' class='xr-var-data-in' type='checkbox'><label for='data-69d63af2-f7f6-497d-acaf-ab68fed5839a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>height_above_reference_ellipsoid</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/elliptical height</dd><dt><span>units :</span></dt><dd>m</dd></dl></div><div class='xr-var-data'><pre>[20211 values with dtype=float64]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>gs</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-1f497d18-eab5-4465-8fe4-3d522bca8b08' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-1f497d18-eab5-4465-8fe4-3d522bca8b08' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3c066bbb-f8cc-42e7-bd00-a426ff5426c8' class='xr-var-data-in' type='checkbox'><label for='data-3c066bbb-f8cc-42e7-bd00-a426ff5426c8' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_speed_wrt_ground</dd><dt><span>long_name :</span></dt><dd>groundspeed of platform</dd><dt><span>units :</span></dt><dd>kts</dd></dl></div><div class='xr-var-data'><pre>[20211 values with dtype=float64]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lat</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-e7f5a7b5-d2d8-4cef-9f61-51feb682d418' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-e7f5a7b5-d2d8-4cef-9f61-51feb682d418' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-731c6ffe-5627-4355-bf58-affbb3bdedf2' class='xr-var-data-in' type='checkbox'><label for='data-731c6ffe-5627-4355-bf58-affbb3bdedf2' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>latitude</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/latitude</dd><dt><span>units :</span></dt><dd>degrees_north</dd></dl></div><div class='xr-var-data'><pre>[20211 values with dtype=float64]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>lon</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-9cd9c81a-20fc-474c-b11b-7836eb66f6bf' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-9cd9c81a-20fc-474c-b11b-7836eb66f6bf' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-8b7c3e28-b1bf-4dec-a633-644e5b31ff22' class='xr-var-data-in' type='checkbox'><label for='data-8b7c3e28-b1bf-4dec-a633-644e5b31ff22' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>longitude</dd><dt><span>long_name :</span></dt><dd>WGS84 datum/longitude</dd><dt><span>units :</span></dt><dd>degrees_east</dd></dl></div><div class='xr-var-data'><pre>[20211 values with dtype=float64]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>vs</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-360afc2a-c919-4a31-8ae8-257b2f7cf3c8' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-360afc2a-c919-4a31-8ae8-257b2f7cf3c8' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-3b5a38cd-3d82-42e0-94ad-a1d629e368e7' class='xr-var-data-in' type='checkbox'><label for='data-3b5a38cd-3d82-42e0-94ad-a1d629e368e7' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_vertical_speed</dd><dt><span>long_name :</span></dt><dd>vertical speed</dd><dt><span>units :</span></dt><dd>m/s</dd></dl></div><div class='xr-var-data'><pre>[20211 values with dtype=float64]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>pitch</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-6d5c532c-c66e-448d-86b2-d9aa17903a3b' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-6d5c532c-c66e-448d-86b2-d9aa17903a3b' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-57ee89c0-9702-4255-9df1-b6923117ce3a' class='xr-var-data-in' type='checkbox'><label for='data-57ee89c0-9702-4255-9df1-b6923117ce3a' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_pitch_fore_up</dd><dt><span>long_name :</span></dt><dd>pitch angle of platform</dd><dt><span>units :</span></dt><dd>degrees</dd></dl></div><div class='xr-var-data'><pre>[20211 values with dtype=float64]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>roll</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-08026354-e5ad-437e-acac-8162628600b4' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-08026354-e5ad-437e-acac-8162628600b4' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-d8d08746-46ca-4ad4-80d9-7438cfa609d6' class='xr-var-data-in' type='checkbox'><label for='data-d8d08746-46ca-4ad4-80d9-7438cfa609d6' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_roll_starboard_down</dd><dt><span>long_name :</span></dt><dd>roll angle of platform</dd><dt><span>units :</span></dt><dd>degrees</dd></dl></div><div class='xr-var-data'><pre>[20211 values with dtype=float64]</pre></div></li><li class='xr-var-item'><div class='xr-var-name'><span>heading</span></div><div class='xr-var-dims'>(time)</div><div class='xr-var-dtype'>float64</div><div class='xr-var-preview xr-preview'>...</div><input id='attrs-9a632bc1-4517-4b4b-a2fb-7549684abf43' class='xr-var-attrs-in' type='checkbox' ><label for='attrs-9a632bc1-4517-4b4b-a2fb-7549684abf43' title='Show/Hide attributes'><svg class='icon xr-icon-file-text2'><use xlink:href='#icon-file-text2'></use></svg></label><input id='data-15e5e5d4-79ba-46c4-85ec-f9cdee6479d3' class='xr-var-data-in' type='checkbox'><label for='data-15e5e5d4-79ba-46c4-85ec-f9cdee6479d3' title='Show/Hide data repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-var-attrs'><dl class='xr-attrs'><dt><span>standard_name :</span></dt><dd>platform_yaw_fore_starboard</dd><dt><span>long_name :</span></dt><dd>true heading</dd><dt><span>units :</span></dt><dd>degrees</dd></dl></div><div class='xr-var-data'><pre>[20211 values with dtype=float64]</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-a98e9461-e4aa-440f-b493-e0bbb8fe9a61' class='xr-section-summary-in' type='checkbox'  ><label for='section-a98e9461-e4aa-440f-b493-e0bbb8fe9a61' class='xr-section-summary' >Indexes: <span>(1)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><ul class='xr-var-list'><li class='xr-var-item'><div class='xr-index-name'><div>time</div></div><div class='xr-index-preview'>PandasIndex</div><input type='checkbox' disabled/><label></label><input id='index-4b7575f5-66f6-4642-ac03-1b72c0ccde73' class='xr-index-data-in' type='checkbox'/><label for='index-4b7575f5-66f6-4642-ac03-1b72c0ccde73' title='Show/Hide index repr'><svg class='icon xr-icon-database'><use xlink:href='#icon-database'></use></svg></label><div class='xr-index-data'><pre>PandasIndex(DatetimeIndex([&#x27;2017-06-08 07:22:07&#x27;, &#x27;2017-06-08 07:22:08&#x27;,
+               &#x27;2017-06-08 07:22:09&#x27;, &#x27;2017-06-08 07:22:10&#x27;,
+               &#x27;2017-06-08 07:22:11&#x27;, &#x27;2017-06-08 07:22:12&#x27;,
+               &#x27;2017-06-08 07:22:13&#x27;, &#x27;2017-06-08 07:22:14&#x27;,
+               &#x27;2017-06-08 07:22:15&#x27;, &#x27;2017-06-08 07:22:16&#x27;,
+               ...
+               &#x27;2017-06-08 12:58:58&#x27;, &#x27;2017-06-08 12:58:59&#x27;,
+               &#x27;2017-06-08 12:59:00&#x27;, &#x27;2017-06-08 12:59:01&#x27;,
+               &#x27;2017-06-08 12:59:02&#x27;, &#x27;2017-06-08 12:59:03&#x27;,
+               &#x27;2017-06-08 12:59:04&#x27;, &#x27;2017-06-08 12:59:05&#x27;,
+               &#x27;2017-06-08 12:59:06&#x27;, &#x27;2017-06-08 12:59:07&#x27;],
+              dtype=&#x27;datetime64[ns]&#x27;, name=&#x27;time&#x27;, length=20211, freq=None))</pre></div></li></ul></div></li><li class='xr-section-item'><input id='section-e67c1809-0145-4e93-ab02-3785fcb02b3c' class='xr-section-summary-in' type='checkbox'  ><label for='section-e67c1809-0145-4e93-ab02-3785fcb02b3c' class='xr-section-summary' >Attributes: <span>(15)</span></label><div class='xr-section-inline-details'></div><div class='xr-section-details'><dl class='xr-attrs'><dt><span>title :</span></dt><dd>P5 position and attitude data</dd><dt><span>description :</span></dt><dd>1 Hz subset based on GPS1 and INS data processed by AWI engineers</dd><dt><span>instruments :</span></dt><dd>GPS1 and INS</dd><dt><span>version :</span></dt><dd>1.1</dd><dt><span>institution :</span></dt><dd>Alfred-Wegener-Institut Helmholtz-Zentrum für Polar- und Meeresforschung</dd><dt><span>author :</span></dt><dd>Dr. Mario Mech</dd><dt><span>contact :</span></dt><dd>mario.mech@uni-koeln.de, martin.gehrmann@awi.de</dd><dt><span>source :</span></dt><dd>DSHIP excerpt</dd><dt><span>convention :</span></dt><dd>CF-1.8</dd><dt><span>featureType :</span></dt><dd>trajectory</dd><dt><span>mission :</span></dt><dd>ACLOUD</dd><dt><span>platform :</span></dt><dd>P5</dd><dt><span>flight_number :</span></dt><dd>RF14</dd><dt><span>history :</span></dt><dd>acquired by P5 during ACLOUD campaign, quality checked by AWI and uploaded to DSHIP database, extracted and reformated by author</dd><dt><span>created :</span></dt><dd>2022-05-25</dd></dl></div></li></ul></div></div></div></div>
 </div>
 </section>
 <section id="load-polar-5-flight-phase-information">
-<h2>Load Polar 5 flight phase information<a class="headerlink" href="#load-polar-5-flight-phase-information" title="Link to this heading">#</a></h2>
+<h2>Load Polar 5 flight phase information<a class="headerlink" href="#load-polar-5-flight-phase-information" title="Permalink to this heading">#</a></h2>
 <p>Polar 5 flights are divided into segments to easily access start and end times of flight patterns. For more information have a look at the respective <a class="reference external" href="https://github.com/igmk/flight-phase-separation">github</a> repository.</p>
 <p>At first we want to load the flight segments of (AC)³airborne</p>
 <div class="cell docutils container">
@@ -1036,7 +1057,7 @@ Attributes: (12/15)
 <p>In order to simplify things we can import the module <code class="docutils literal notranslate"><span class="pre">flightphase</span></code> from the <code class="docutils literal notranslate"><span class="pre">ac3airborne.tools</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ac3airborne.tools</span> <span class="kn">import</span> <span class="n">flightphase</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">ac3airborne.tools</span><span class="w"> </span><span class="kn">import</span> <span class="n">flightphase</span>
 </pre></div>
 </div>
 </div>
@@ -1058,16 +1079,16 @@ Attributes: (12/15)
 </div>
 </section>
 <section id="plots">
-<h2>Plots<a class="headerlink" href="#plots" title="Link to this heading">#</a></h2>
+<h2>Plots<a class="headerlink" href="#plots" title="Permalink to this heading">#</a></h2>
 <p>First, the entire flight is plotted:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">warnings</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">warnings</span>
 <span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
 
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">cartopy.crs</span> <span class="k">as</span> <span class="nn">ccrs</span>
-<span class="kn">import</span> <span class="nn">cartopy.feature</span> <span class="k">as</span> <span class="nn">cfeature</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cartopy.crs</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">ccrs</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">cartopy.feature</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cfeature</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;../mplstyle/book&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1100,11 +1121,11 @@ Attributes: (12/15)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8850f39e140465759500af4789a51f8ae7fb0e109196a55a808ff9f08122e8d1.png" src="../_images/8850f39e140465759500af4789a51f8ae7fb0e109196a55a808ff9f08122e8d1.png" />
+<img alt="../_images/a131d1949e190badae06b5ed901275dbe290efda26551b43c9fcca6c08e75d70.png" src="../_images/a131d1949e190badae06b5ed901275dbe290efda26551b43c9fcca6c08e75d70.png" />
 </div>
 </div>
 <section id="query-all-segments-of-a-specific-kind">
-<h3>Query all segments of a specific kind<a class="headerlink" href="#query-all-segments-of-a-specific-kind" title="Link to this heading">#</a></h3>
+<h3>Query all segments of a specific kind<a class="headerlink" href="#query-all-segments-of-a-specific-kind" title="Permalink to this heading">#</a></h3>
 <p>As an example only <code class="docutils literal notranslate"><span class="pre">high_level</span></code> flights are plotted in the following (only one kind of pattern):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1244,7 +1265,7 @@ Attributes: (12/15)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e19c1ad6e60bb26068483b1a1f123b8d4de43f07012afa77853889b4fece9a43.png" src="../_images/e19c1ad6e60bb26068483b1a1f123b8d4de43f07012afa77853889b4fece9a43.png" />
+<img alt="../_images/5a21f73e619ca9e178b85a6b5e9518a2e99ad17f67e727ed9b01ad31954eb593.png" src="../_images/5a21f73e619ca9e178b85a6b5e9518a2e99ad17f67e727ed9b01ad31954eb593.png" />
 </div>
 </div>
 <p>Of course, also more than one kind of pattern can be selected:</p>
@@ -1403,12 +1424,12 @@ Attributes: (12/15)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/625a47d0e459362d25c1e61bf9843240f7c8619c60188cfebd3afc8d41cacb2e.png" src="../_images/625a47d0e459362d25c1e61bf9843240f7c8619c60188cfebd3afc8d41cacb2e.png" />
+<img alt="../_images/a35c995d5b9f39c5c4aa8ef6dc29ae306009e52ed362d04f774e4934d9e66db6.png" src="../_images/a35c995d5b9f39c5c4aa8ef6dc29ae306009e52ed362d04f774e4934d9e66db6.png" />
 </div>
 </div>
 </section>
 <section id="sorting-out-all-segments-given-a-list-of-kinds">
-<h3>Sorting out all segments given a list of kinds<a class="headerlink" href="#sorting-out-all-segments-given-a-list-of-kinds" title="Link to this heading">#</a></h3>
+<h3>Sorting out all segments given a list of kinds<a class="headerlink" href="#sorting-out-all-segments-given-a-list-of-kinds" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sort_out</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;short_turn&#39;</span><span class="p">,</span> <span class="s1">&#39;holding_pattern&#39;</span><span class="p">,</span> <span class="s1">&#39;major_ascent&#39;</span><span class="p">,</span> <span class="s1">&#39;major_descent&#39;</span><span class="p">,</span> <span class="s1">&#39;high_level&#39;</span><span class="p">]</span>
@@ -1677,14 +1698,14 @@ Attributes: (12/15)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ae6b1482c05489911df3bd3fc9586aae188bce44260b4feaa71100d50124e731.png" src="../_images/ae6b1482c05489911df3bd3fc9586aae188bce44260b4feaa71100d50124e731.png" />
+<img alt="../_images/457d3ec8e42a8901d8f124220a85037af5b760c728f745119041f387e92b989d.png" src="../_images/457d3ec8e42a8901d8f124220a85037af5b760c728f745119041f387e92b989d.png" />
 </div>
 </div>
 </section>
 <section id="query-a-segment-with-a-specific-value-in-a-specific-attribute">
-<h3>Query a segment with a specific value in a specific attribute<a class="headerlink" href="#query-a-segment-with-a-specific-value-in-a-specific-attribute" title="Link to this heading">#</a></h3>
+<h3>Query a segment with a specific value in a specific attribute<a class="headerlink" href="#query-a-segment-with-a-specific-value-in-a-specific-attribute" title="Permalink to this heading">#</a></h3>
 <section id="example-1-select-element-with-specific-name">
-<h4>Example 1: Select element with specific name<a class="headerlink" href="#example-1-select-element-with-specific-name" title="Link to this heading">#</a></h4>
+<h4>Example 1: Select element with specific name<a class="headerlink" href="#example-1-select-element-with-specific-name" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">attribute</span> <span class="o">=</span> <span class="s1">&#39;name&#39;</span>
@@ -1779,7 +1800,7 @@ Attributes: (12/15)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/dafebc4d47f38781c6d5c23221757e35033d1ec772ebef7d55856aeea6b0ce95.png" src="../_images/dafebc4d47f38781c6d5c23221757e35033d1ec772ebef7d55856aeea6b0ce95.png" />
+<img alt="../_images/609af46fd6e0a525f181d7989f071440cdc24c49f019d52c5cc66cf13b840fcc.png" src="../_images/609af46fd6e0a525f181d7989f071440cdc24c49f019d52c5cc66cf13b840fcc.png" />
 </div>
 </div>
 <p>Also with inverted selection:</p>
@@ -2022,12 +2043,12 @@ Attributes: (12/15)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2e6ae7773a2509918dc5042b7682f094cb83628cd288a7b506f7d440b42065c2.png" src="../_images/2e6ae7773a2509918dc5042b7682f094cb83628cd288a7b506f7d440b42065c2.png" />
+<img alt="../_images/6367a399982de030dde945cd246536667d4724a0563e89fec90198fee6e2b740.png" src="../_images/6367a399982de030dde945cd246536667d4724a0563e89fec90198fee6e2b740.png" />
 </div>
 </div>
 </section>
 <section id="example-2-specific-level">
-<h4>Example 2: Specific level<a class="headerlink" href="#example-2-specific-level" title="Link to this heading">#</a></h4>
+<h4>Example 2: Specific level<a class="headerlink" href="#example-2-specific-level" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">attribute</span> <span class="o">=</span> <span class="s1">&#39;levels&#39;</span>
@@ -2176,7 +2197,7 @@ Attributes: (12/15)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ba43971f92e81788ad0b0537bbb44eb8c44d369fac89f20c1cc099deec531452.png" src="../_images/ba43971f92e81788ad0b0537bbb44eb8c44d369fac89f20c1cc099deec531452.png" />
+<img alt="../_images/c594afedf082b21ab4e9479dd766e1b17383cd717bc47c6629d0c3f1624ff54c.png" src="../_images/c594afedf082b21ab4e9479dd766e1b17383cd717bc47c6629d0c3f1624ff54c.png" />
 </div>
 </div>
 <p>But what if we want only a specific level without ascent and descent? We can require that the attribute value is strictly equal to the one, that we give, i.e. there are no other values:</p>
@@ -2246,14 +2267,14 @@ Attributes: (12/15)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/142461ed711ee3fae235f14679f8431d4276317b5a1222cb8dd585c4327b6f55.png" src="../_images/142461ed711ee3fae235f14679f8431d4276317b5a1222cb8dd585c4327b6f55.png" />
+<img alt="../_images/2617ac2b0951d340c867797516222fddd8355bf829ebb015c2387b36c6894c1d.png" src="../_images/2617ac2b0951d340c867797516222fddd8355bf829ebb015c2387b36c6894c1d.png" />
 </div>
 </div>
 </section>
 </section>
 </section>
 <section id="warnings">
-<h2>Warnings<a class="headerlink" href="#warnings" title="Link to this heading">#</a></h2>
+<h2>Warnings<a class="headerlink" href="#warnings" title="Permalink to this heading">#</a></h2>
 <p>In the previous cells warnings were intentionally suppressed. But the flightphase tools normally also show a warning if some of the selected segments contain so-called “irregularities”. So we first reactivate the warnings:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2273,9 +2294,9 @@ Attributes: (12/15)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/mech/.local/lib/python3.8/site-packages/ac3airborne/tools/flightphase.py:27: UserWarning: the segment ACLOUD_P5_RF14_ma contains following irregularities: whale-watching loop
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/ac3airborne/tools/flightphase.py:27: UserWarning: the segment ACLOUD_P5_RF14_ma contains following irregularities: whale-watching loop
   warnings.warn(str)
-/home/mech/.local/lib/python3.8/site-packages/ac3airborne/tools/flightphase.py:27: UserWarning: the segment ACLOUD_P5_RF14_ld01 contains following irregularities: not along straight line
+/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/ac3airborne/tools/flightphase.py:27: UserWarning: the segment ACLOUD_P5_RF14_ld01 contains following irregularities: not along straight line
   warnings.warn(str)
 </pre></div>
 </div>
@@ -2405,7 +2426,7 @@ Attributes: (12/15)
 <p>The first part of the warning tells us which segment is generating the warning. In this case we have two warnings generated by the segments <code class="docutils literal notranslate"><span class="pre">ACLOUD_P5_RF14_ma</span></code> and <code class="docutils literal notranslate"><span class="pre">ACLOUD_P5_RF14_ld01</span></code>. The second part is the value of the attribute <code class="docutils literal notranslate"><span class="pre">irregularities</span></code>.  A warning is generated when this attribute is not empty. You can access the content of this attribute even if the warnings are suppressed, as you can see in the examples above.</p>
 </section>
 <section id="select-a-segment-at-a-specific-time-or-within-a-specific-time-range">
-<h2>Select a segment at a specific time or within a specific time range<a class="headerlink" href="#select-a-segment-at-a-specific-time-or-within-a-specific-time-range" title="Link to this heading">#</a></h2>
+<h2>Select a segment at a specific time or within a specific time range<a class="headerlink" href="#select-a-segment-at-a-specific-time-or-within-a-specific-time-range" title="Permalink to this heading">#</a></h2>
 <p>If you want to select all the segments within a specific time range you can do it with the function <code class="docutils literal notranslate"><span class="pre">findSegments</span></code> which takes as parameters the start time and the end time in the <code class="docutils literal notranslate"><span class="pre">%Y-%m-%d</span> <span class="pre">%H:%M:%S</span></code> format.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2521,7 +2542,7 @@ Attributes: (12/15)
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -2621,8 +2642,8 @@ By ac3airborne community
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

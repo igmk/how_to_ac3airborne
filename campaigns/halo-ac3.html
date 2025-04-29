@@ -1,0 +1,674 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>HALO-(AC)3 &#8212; how_to_ac3airborne</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.4cbf315f70debaebd550c87a6162cf0f.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'campaigns/halo-ac3';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="HAMAG" href="hamag.html" />
+    <link rel="prev" title="MOSAiC-ACA" href="mosaic-aca.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="how_to_ac3airborne - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="how_to_ac3airborne - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../getting_started.html">Getting started with ac3airborne</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../campaigns.html">Campaigns</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="acloud.html">ACLOUD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="aflux.html">AFLUX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mosaic-aca.html">MOSAiC-ACA</a></li>
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">HALO-(AC)<sup>3</sup></a></li>
+
+
+
+<li class="toctree-l2"><a class="reference internal" href="hamag.html">HAMAG</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="compex-ec.html">COMPEX-EC</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../datasets.html">Datasets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../polar_5_6.html">Polar 5/6</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/polar/nose_boom.html">Nose boom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/polar/mirac_a.html">MiRAC-A</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/polar/mirac_p.html">MiRAC-P</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/polar/hatpro.html">HATPRO</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/polar/amali.html">AMALi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/polar/fish_eye_camera.html">Fish-eye camera</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/polar/nevzorov_and_pms.html">PMS and Nevzorov</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/polar/kt19.html">CMP22, CGR4 and KT-19</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/polar/dropsondes.html">Dropsondes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/polar/gps_ins.html">Position and attitude</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/polar/hawk.html">HAWK</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/polar/eagle.html">EAGLE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/polar/2d_spec.html">2D Spec</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/polar/alabama.html">ALABAMA</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/polar/co_co2_h2o.html">Gases</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/polar/cvi.html">CVI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/polar/opc.html">OPC</a></li>
+</ul>
+</details></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../halo.html">HALO</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/halo/halo-ac3_data.html">plot a flight</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/halo/gps_ins.html">Position and attitude</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/halo/bahamas.html">BAHAMAS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/halo/bacardi.html">BACARDI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/halo/dropsondes.html">Dropsondes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/halo/hamp_unified.html">HAMP radiometer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../datasets/halo/smart.html">SMART</a></li>
+</ul>
+</details></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../flight_segmentation.html">Flight-phase separation</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../code.html">Toolbox and examples</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../running_locally.html">Running how_to_ac3airborne locally</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/caching_and_local_datasets.html">Caching and local datasets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/reading_the_flight_phase_files.html">Querying the flight phase files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/land_ocean.html">Land-ocean mask</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/awipev_overflights.html">AWIPEV overflights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/polarstern_overflights.html">Polarstern overflights</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples/amsr2_seaice.html">AMSR2 sea ice</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/igmk/how_to_ac3airborne/main?urlpath=tree/how_to_ac3airborne/campaigns/halo-ac3.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Binder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/campaigns/halo-ac3.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>HALO-(AC)<sup>3</sup></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">HALO-(AC)<sup>3</sup></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#polar-5">Polar 5</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#polar-6">Polar 6</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#halo">HALO</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="halo-ac-3">
+<h1>HALO-(AC)<sup>3</sup><a class="headerlink" href="#halo-ac-3" title="Permalink to this heading">#</a></h1>
+<p><a class="reference external" href="https://halo-ac3.de/">HALO-(AC)<sup>3</sup></a> - Polar 5 (remote sensing) and Polar 6 (in-situ) out of Longyearbyen and HALO (remote sensing) based in Kiruna (5.3.-15.4.2022) - (data: Polar 5 {cite:t} <code class="docutils literal notranslate"><span class="pre">MechCollectionDataSources2024</span></code>, Polar 6 <em>Herber et al. (2024)</em>, and HALO {cite:t} <code class="docutils literal notranslate"><span class="pre">EhrlichCollectionDataSources2024</span></code>)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="kn">import</span><span class="w"> </span><span class="nn">ac3airborne</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.patches</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mpatches</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s2">&quot;../mplstyle/book&quot;</span><span class="p">)</span>
+
+<span class="c1"># load intake catalog and flight segments</span>
+<span class="n">cat</span> <span class="o">=</span> <span class="n">ac3airborne</span><span class="o">.</span><span class="n">get_intake_catalog</span><span class="p">()</span>
+<span class="n">meta</span> <span class="o">=</span> <span class="n">ac3airborne</span><span class="o">.</span><span class="n">get_flight_segments</span><span class="p">()</span>
+
+<span class="n">ancillary</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;AMSR2_SIC&#39;</span><span class="p">]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">data_availability</span><span class="p">(</span><span class="n">mission</span><span class="p">,</span> <span class="n">platform</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Plot data availability matrix</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="c1"># store data availability in a matrix</span>
+    <span class="n">data_availability</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="p">[</span><span class="n">mission</span><span class="p">][</span><span class="n">platform</span><span class="p">])),</span>
+                                        <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="n">mission</span><span class="p">][</span><span class="n">platform</span><span class="p">]))))</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">dataset</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="p">[</span><span class="n">mission</span><span class="p">][</span><span class="n">platform</span><span class="p">])):</span>
+        <span class="n">data_availability</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">meta</span><span class="p">[</span><span class="n">mission</span><span class="p">][</span><span class="n">platform</span><span class="p">]),</span> 
+                                          <span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="p">[</span><span class="n">mission</span><span class="p">][</span><span class="n">platform</span><span class="p">][</span><span class="n">dataset</span><span class="p">]))</span>
+
+    <span class="c1"># plot data availability</span>
+    <span class="n">yscale</span> <span class="o">=</span> <span class="n">data_availability</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">3</span><span class="o">+</span><span class="mf">0.4</span><span class="o">*</span><span class="n">yscale</span><span class="p">))</span>
+    
+    <span class="n">ax</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">data_availability</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> 
+                  <span class="nb">range</span><span class="p">(</span><span class="n">data_availability</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> 
+                  <span class="n">data_availability</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> 
+                  <span class="n">shading</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">,</span>
+                  <span class="n">vmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> 
+                  <span class="n">vmax</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> 
+                  <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;RdYlGn&#39;</span><span class="p">,</span> 
+                  <span class="n">edgecolors</span><span class="o">=</span><span class="s1">&#39;#eeeeee&#39;</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">data_availability</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">data_availability</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+
+    <span class="n">xlabels</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">ds_name</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="p">[</span><span class="n">mission</span><span class="p">][</span><span class="n">platform</span><span class="p">]):</span>
+        <span class="k">if</span> <span class="n">ds_name</span> <span class="ow">in</span> <span class="n">ancillary</span><span class="p">:</span>
+            <span class="n">ds_name</span> <span class="o">+=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">(ancillary)&#39;</span>
+        <span class="n">xlabels</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ds_name</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">xlabels</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+    <span class="n">y_labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">flight_id</span><span class="o">+</span><span class="s1">&#39;, &#39;</span><span class="o">+</span><span class="n">flight</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span> 
+                <span class="k">for</span> <span class="n">flight_id</span><span class="p">,</span> <span class="n">flight</span> <span class="ow">in</span> <span class="n">meta</span><span class="p">[</span><span class="n">mission</span><span class="p">][</span><span class="n">platform</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">y_labels</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labeltop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">invert_yaxis</span><span class="p">()</span>
+
+    <span class="n">available</span> <span class="o">=</span> <span class="n">mpatches</span><span class="o">.</span><span class="n">Patch</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Data available&#39;</span><span class="p">)</span>
+    <span class="n">not_flown</span> <span class="o">=</span> <span class="n">mpatches</span><span class="o">.</span><span class="n">Patch</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Data missing or</span><span class="se">\n</span><span class="s1">instrument failed&#39;</span><span class="p">)</span>
+
+    <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">handles</span><span class="o">=</span><span class="p">[</span><span class="n">available</span><span class="p">,</span> <span class="n">not_flown</span><span class="p">],</span> <span class="n">ncol</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+              <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.01</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;lower right&#39;</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="polar-5">
+<h1>Polar 5<a class="headerlink" href="#polar-5" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_availability</span><span class="p">(</span><span class="n">mission</span><span class="o">=</span><span class="s1">&#39;HALO-AC3&#39;</span><span class="p">,</span> <span class="n">platform</span><span class="o">=</span><span class="s1">&#39;P5&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/342850107b2afd73b0242e1109be64906e751b9549d42dfe8d19548fa0aa3f3a.png" src="../_images/342850107b2afd73b0242e1109be64906e751b9549d42dfe8d19548fa0aa3f3a.png" />
+</div>
+</div>
+</section>
+<section id="polar-6">
+<h1>Polar 6<a class="headerlink" href="#polar-6" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_availability</span><span class="p">(</span><span class="n">mission</span><span class="o">=</span><span class="s1">&#39;HALO-AC3&#39;</span><span class="p">,</span> <span class="n">platform</span><span class="o">=</span><span class="s1">&#39;P6&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/7bcdf17d30465874eb08454b6c0ea367f8fc28989a21f9d909ab8cff0cf20c79.png" src="../_images/7bcdf17d30465874eb08454b6c0ea367f8fc28989a21f9d909ab8cff0cf20c79.png" />
+</div>
+</div>
+</section>
+<section id="halo">
+<h1>HALO<a class="headerlink" href="#halo" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data_availability</span><span class="p">(</span><span class="n">mission</span><span class="o">=</span><span class="s1">&#39;HALO-AC3&#39;</span><span class="p">,</span> <span class="n">platform</span><span class="o">=</span><span class="s1">&#39;HALO&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/3b62f83cacded70fee5ca8dce1e88fde286e44e9410aa913df40caaa4d04493d.png" src="../_images/3b62f83cacded70fee5ca8dce1e88fde286e44e9410aa913df40caaa4d04493d.png" />
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./campaigns"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="mosaic-aca.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">MOSAiC-ACA</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="hamag.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">HAMAG</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">HALO-(AC)<sup>3</sup></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#polar-5">Polar 5</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#polar-6">Polar 6</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#halo">HALO</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By ac3airborne community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2021.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
