@@ -18,6 +18,8 @@ sections:
     title: HAMAG
   - file: campaigns/compex-ec
     title: COMPEX-EC
+  - file: campaigns/compex
+    title: COMPEX
 - file: datasets
   title: Datasets
   sections:
