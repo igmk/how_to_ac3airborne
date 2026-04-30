@@ -1,0 +1,189 @@
+Traceback (most recent call last):
+  File "/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+ds_lwp = cat['ACLOUD']['P5']['MiRAC-A_LWP']['ACLOUD_P5_RF05'].to_dask()
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mClientResponseError[39m                       Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[15][39m[32m, line 1[39m
+[32m----> [39m[32m1[39m ds_lwp = [43mcat[49m[43m[[49m[33;43m'[39;49m[33;43mACLOUD[39;49m[33;43m'[39;49m[43m][49m[43m[[49m[33;43m'[39;49m[33;43mP5[39;49m[33;43m'[39;49m[43m][49m[43m[[49m[33;43m'[39;49m[33;43mMiRAC-A_LWP[39;49m[33;43m'[39;49m[43m][49m[43m[[49m[33;43m'[39;49m[33;43mACLOUD_P5_RF05[39;49m[33;43m'[39;49m[43m][49m[43m.[49m[43mto_dask[49m[43m([49m[43m)[49m
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/intake_xarray/base.py:69[39m, in [36mDataSourceMixin.to_dask[39m[34m(self)[39m
+[32m     67[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mto_dask[39m([38;5;28mself[39m):
+[32m     68[39m [38;5;250m    [39m[33;03m"""Return xarray object where variables are dask arrays"""[39;00m
+[32m---> [39m[32m69[39m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[43m.[49m[43mread_chunked[49m[43m([49m[43m)[49m
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/intake_xarray/base.py:44[39m, in [36mDataSourceMixin.read_chunked[39m[34m(self)[39m
+[32m     42[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mread_chunked[39m([38;5;28mself[39m):
+[32m     43[39m [38;5;250m    [39m[33;03m"""Return xarray object (which will have chunks)"""[39;00m
+[32m---> [39m[32m44[39m     [38;5;28;43mself[39;49m[43m.[49m[43m_load_metadata[49m[43m([49m[43m)[49m
+[32m     45[39m     [38;5;28;01mreturn[39;00m [38;5;28mself[39m._ds
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/intake/source/base.py:236[39m, in [36mDataSourceBase._load_metadata[39m[34m(self)[39m
+[32m    234[39m [38;5;250m[39m[33;03m"""load metadata only if needed"""[39;00m
+[32m    235[39m [38;5;28;01mif[39;00m [38;5;28mself[39m._schema [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[32m--> [39m[32m236[39m     [38;5;28mself[39m._schema = [38;5;28;43mself[39;49m[43m.[49m[43m_get_schema[49m[43m([49m[43m)[49m
+[32m    237[39m     [38;5;28mself[39m.dtype = [38;5;28mself[39m._schema.dtype
+[32m    238[39m     [38;5;28mself[39m.shape = [38;5;28mself[39m._schema.shape
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/intake_xarray/base.py:18[39m, in [36mDataSourceMixin._get_schema[39m[34m(self)[39m
+[32m     15[39m [38;5;28mself[39m.urlpath = [38;5;28mself[39m._get_cache([38;5;28mself[39m.urlpath)[[32m0[39m]
+[32m     17[39m [38;5;28;01mif[39;00m [38;5;28mself[39m._ds [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[32m---> [39m[32m18[39m     [38;5;28;43mself[39;49m[43m.[49m[43m_open_dataset[49m[43m([49m[43m)[49m
+[32m     20[39m     metadata = {
+[32m     21[39m         [33m'[39m[33mdims[39m[33m'[39m: [38;5;28mdict[39m([38;5;28mself[39m._ds.dims),
+[32m     22[39m         [33m'[39m[33mdata_vars[39m[33m'[39m: {k: [38;5;28mlist[39m([38;5;28mself[39m._ds[k].coords)
+[32m     23[39m                       [38;5;28;01mfor[39;00m k [38;5;129;01min[39;00m [38;5;28mself[39m._ds.data_vars.keys()},
+[32m     24[39m         [33m'[39m[33mcoords[39m[33m'[39m: [38;5;28mtuple[39m([38;5;28mself[39m._ds.coords.keys()),
+[32m     25[39m     }
+[32m     26[39m     [38;5;28;01mif[39;00m [38;5;28mgetattr[39m([38;5;28mself[39m, [33m'[39m[33mon_server[39m[33m'[39m, [38;5;28;01mFalse[39;00m):
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/intake_xarray/netcdf.py:87[39m, in [36mNetCDFSource._open_dataset[39m[34m(self)[39m
+[32m     84[39m     _open_dataset = xr.open_dataset
+[32m     86[39m [38;5;28;01mif[39;00m [38;5;28mself[39m._can_be_local:
+[32m---> [39m[32m87[39m     url = [43mfsspec[49m[43m.[49m[43mopen_local[49m[43m([49m[38;5;28;43mself[39;49m[43m.[49m[43murlpath[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[38;5;28;43mself[39;49m[43m.[49m[43mstorage_options[49m[43m)[49m
+[32m     88[39m [38;5;28;01melse[39;00m:
+[32m     89[39m     [38;5;66;03m# https://github.com/intake/filesystem_spec/issues/476#issuecomment-732372918[39;00m
+[32m     90[39m     url = fsspec.open([38;5;28mself[39m.urlpath, **[38;5;28mself[39m.storage_options).open()
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/fsspec/core.py:533[39m, in [36mopen_local[39m[34m(url, mode, **storage_options)[39m
+[32m    528[39m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mgetattr[39m(of[[32m0[39m].fs, [33m"[39m[33mlocal_file[39m[33m"[39m, [38;5;28;01mFalse[39;00m):
+[32m    529[39m     [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
+[32m    530[39m         [33m"[39m[33mopen_local can only be used on a filesystem which[39m[33m"[39m
+[32m    531[39m         [33m"[39m[33m has attribute local_file=True[39m[33m"[39m
+[32m    532[39m     )
+[32m--> [39m[32m533[39m [43m[49m[38;5;28;43;01mwith[39;49;00m[43m [49m[43mof[49m[43m [49m[38;5;28;43;01mas[39;49;00m[43m [49m[43mfiles[49m[43m:[49m
+[32m    534[39m [43m    [49m[43mpaths[49m[43m [49m[43m=[49m[43m [49m[43m[[49m[43mf[49m[43m.[49m[43mname[49m[43m [49m[38;5;28;43;01mfor[39;49;00m[43m [49m[43mf[49m[43m [49m[38;5;129;43;01min[39;49;00m[43m [49m[43mfiles[49m[43m][49m
+[32m    535[39m [38;5;28;01mif[39;00m ([38;5;28misinstance[39m(url, [38;5;28mstr[39m) [38;5;129;01mand[39;00m [38;5;129;01mnot[39;00m has_magic(url)) [38;5;129;01mor[39;00m [38;5;28misinstance[39m(url, Path):
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/fsspec/core.py:184[39m, in [36mOpenFiles.__enter__[39m[34m(self)[39m
+[32m    181[39m [38;5;28;01mwhile[39;00m [38;5;28;01mTrue[39;00m:
+[32m    182[39m     [38;5;28;01mif[39;00m [38;5;28mhasattr[39m(fs, [33m"[39m[33mopen_many[39m[33m"[39m):
+[32m    183[39m         [38;5;66;03m# check for concurrent cache download; or set up for upload[39;00m
+[32m--> [39m[32m184[39m         [38;5;28mself[39m.files = [43mfs[49m[43m.[49m[43mopen_many[49m[43m([49m[38;5;28;43mself[39;49m[43m)[49m
+[32m    185[39m         [38;5;28;01mreturn[39;00m [38;5;28mself[39m.files
+[32m    186[39m     [38;5;28;01mif[39;00m [38;5;28mhasattr[39m(fs, [33m"[39m[33mfs[39m[33m"[39m) [38;5;129;01mand[39;00m fs.fs [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/fsspec/implementations/cached.py:458[39m, in [36mCachingFileSystem.__getattribute__.<locals>.<lambda>[39m[34m(*args, **kw)[39m
+[32m    411[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34m__getattribute__[39m([38;5;28mself[39m, item):
+[32m    412[39m     [38;5;28;01mif[39;00m item [38;5;129;01min[39;00m {
+[32m    413[39m         [33m"[39m[33mload_cache[39m[33m"[39m,
+[32m    414[39m         [33m"[39m[33m_open[39m[33m"[39m,
+[32m   (...)[39m[32m    456[39m         [38;5;66;03m# all the methods defined in this class. Note `open` here, since[39;00m
+[32m    457[39m         [38;5;66;03m# it calls `_open`, but is actually in superclass[39;00m
+[32m--> [39m[32m458[39m         [38;5;28;01mreturn[39;00m [38;5;28;01mlambda[39;00m *args, **kw: [38;5;28;43mgetattr[39;49m[43m([49m[38;5;28;43mtype[39;49m[43m([49m[38;5;28;43mself[39;49m[43m)[49m[43m,[49m[43m [49m[43mitem[49m[43m)[49m[43m.[49m[34;43m__get__[39;49m[43m([49m[38;5;28;43mself[39;49m[43m)[49m[43m([49m
+[32m    459[39m [43m            [49m[43m*[49m[43margs[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkw[49m
+[32m    460[39m [43m        [49m[43m)[49m
+[32m    461[39m     [38;5;28;01mif[39;00m item [38;5;129;01min[39;00m [[33m"[39m[33m__reduce_ex__[39m[33m"[39m]:
+[32m    462[39m         [38;5;28;01mraise[39;00m [38;5;167;01mAttributeError[39;00m
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/fsspec/implementations/cached.py:567[39m, in [36mWholeFileCacheFileSystem.open_many[39m[34m(self, open_files, **kwargs)[39m
+[32m    564[39m downfn = [fn [38;5;28;01mfor[39;00m fn, d [38;5;129;01min[39;00m [38;5;28mzip[39m(downfn0, details) [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m d]
+[32m    565[39m [38;5;28;01mif[39;00m downpath:
+[32m    566[39m     [38;5;66;03m# skip if all files are already cached and up to date[39;00m
+[32m--> [39m[32m567[39m     [38;5;28;43mself[39;49m[43m.[49m[43mfs[49m[43m.[49m[43mget[49m[43m([49m[43mdownpath[49m[43m,[49m[43m [49m[43mdownfn[49m[43m)[49m
+[32m    569[39m     [38;5;66;03m# update metadata - only happens when downloads are successful[39;00m
+[32m    570[39m     newdetail = [
+[32m    571[39m         {
+[32m    572[39m             [33m"[39m[33moriginal[39m[33m"[39m: path,
+[32m   (...)[39m[32m    578[39m         [38;5;28;01mfor[39;00m path [38;5;129;01min[39;00m downpath
+[32m    579[39m     ]
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/fsspec/asyn.py:118[39m, in [36msync_wrapper.<locals>.wrapper[39m[34m(*args, **kwargs)[39m
+[32m    115[39m [38;5;129m@functools[39m.wraps(func)
+[32m    116[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mwrapper[39m(*args, **kwargs):
+[32m    117[39m     [38;5;28mself[39m = obj [38;5;129;01mor[39;00m args[[32m0[39m]
+[32m--> [39m[32m118[39m     [38;5;28;01mreturn[39;00m [43msync[49m[43m([49m[38;5;28;43mself[39;49m[43m.[49m[43mloop[49m[43m,[49m[43m [49m[43mfunc[49m[43m,[49m[43m [49m[43m*[49m[43margs[49m[43m,[49m[43m [49m[43m*[49m[43m*[49m[43mkwargs[49m[43m)[49m
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/fsspec/asyn.py:103[39m, in [36msync[39m[34m(loop, func, timeout, *args, **kwargs)[39m
+[32m    101[39m     [38;5;28;01mraise[39;00m FSTimeoutError [38;5;28;01mfrom[39;00m[38;5;250m [39m[34;01mreturn_result[39;00m
+[32m    102[39m [38;5;28;01melif[39;00m [38;5;28misinstance[39m(return_result, [38;5;167;01mBaseException[39;00m):
+[32m--> [39m[32m103[39m     [38;5;28;01mraise[39;00m return_result
+[32m    104[39m [38;5;28;01melse[39;00m:
+[32m    105[39m     [38;5;28;01mreturn[39;00m return_result
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/fsspec/asyn.py:56[39m, in [36m_runner[39m[34m(event, coro, result, timeout)[39m
+[32m     54[39m     coro = asyncio.wait_for(coro, timeout=timeout)
+[32m     55[39m [38;5;28;01mtry[39;00m:
+[32m---> [39m[32m56[39m     result[[32m0[39m] = [38;5;28;01mawait[39;00m coro
+[32m     57[39m [38;5;28;01mexcept[39;00m [38;5;167;01mException[39;00m [38;5;28;01mas[39;00m ex:
+[32m     58[39m     result[[32m0[39m] = ex
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/fsspec/asyn.py:681[39m, in [36mAsyncFileSystem._get[39m[34m(self, rpath, lpath, recursive, callback, maxdepth, **kwargs)[39m
+[32m    679[39m     get_file = callback.branch_coro([38;5;28mself[39m._get_file)
+[32m    680[39m     coros.append(get_file(rpath, lpath, **kwargs))
+[32m--> [39m[32m681[39m [38;5;28;01mreturn[39;00m [38;5;28;01mawait[39;00m _run_coros_in_chunks(
+[32m    682[39m     coros, batch_size=batch_size, callback=callback
+[32m    683[39m )
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/fsspec/asyn.py:280[39m, in [36m_run_coros_in_chunks[39m[34m(coros, batch_size, callback, timeout, return_exceptions, nofiles)[39m
+[32m    278[39m     done, pending = [38;5;28;01mawait[39;00m asyncio.wait(pending, return_when=asyncio.FIRST_COMPLETED)
+[32m    279[39m     [38;5;28;01mwhile[39;00m done:
+[32m--> [39m[32m280[39m         result, k = [38;5;28;01mawait[39;00m done.pop()
+[32m    281[39m         results[k] = result
+[32m    283[39m [38;5;28;01mreturn[39;00m results
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/fsspec/asyn.py:257[39m, in [36m_run_coros_in_chunks.<locals>._run_coro[39m[34m(coro, i)[39m
+[32m    255[39m [38;5;28;01masync[39;00m [38;5;28;01mdef[39;00m[38;5;250m [39m[34m_run_coro[39m(coro, i):
+[32m    256[39m     [38;5;28;01mtry[39;00m:
+[32m--> [39m[32m257[39m         [38;5;28;01mreturn[39;00m [38;5;28;01mawait[39;00m asyncio.wait_for(coro, timeout=timeout), i
+[32m    258[39m     [38;5;28;01mexcept[39;00m [38;5;167;01mException[39;00m [38;5;28;01mas[39;00m e:
+[32m    259[39m         [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m return_exceptions:
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/asyncio/tasks.py:452[39m, in [36mwait_for[39m[34m(fut, timeout)[39m
+[32m    449[39m loop = events.get_running_loop()
+[32m    451[39m [38;5;28;01mif[39;00m timeout [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[32m--> [39m[32m452[39m     [38;5;28;01mreturn[39;00m [38;5;28;01mawait[39;00m fut
+[32m    454[39m [38;5;28;01mif[39;00m timeout <= [32m0[39m:
+[32m    455[39m     fut = ensure_future(fut, loop=loop)
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/fsspec/callbacks.py:81[39m, in [36mCallback.branch_coro.<locals>.func[39m[34m(path1, path2, **kwargs)[39m
+[32m     78[39m [38;5;129m@wraps[39m(fn)
+[32m     79[39m [38;5;28;01masync[39;00m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mfunc[39m(path1, path2: [38;5;28mstr[39m, **kwargs):
+[32m     80[39m     [38;5;28;01mwith[39;00m [38;5;28mself[39m.branched(path1, path2, **kwargs) [38;5;28;01mas[39;00m child:
+[32m---> [39m[32m81[39m         [38;5;28;01mreturn[39;00m [38;5;28;01mawait[39;00m fn(path1, path2, callback=child, **kwargs)
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/fsspec/implementations/http.py:253[39m, in [36mHTTPFileSystem._get_file[39m[34m(self, rpath, lpath, chunk_size, callback, **kwargs)[39m
+[32m    250[39m     size = [38;5;28;01mNone[39;00m
+[32m    252[39m callback.set_size(size)
+[32m--> [39m[32m253[39m [38;5;28;43mself[39;49m[43m.[49m[43m_raise_not_found_for_status[49m[43m([49m[43mr[49m[43m,[49m[43m [49m[43mrpath[49m[43m)[49m
+[32m    254[39m [38;5;28;01mif[39;00m isfilelike(lpath):
+[32m    255[39m     outfile = lpath
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/fsspec/implementations/http.py:219[39m, in [36mHTTPFileSystem._raise_not_found_for_status[39m[34m(self, response, url)[39m
+[32m    217[39m [38;5;28;01mif[39;00m response.status == [32m404[39m:
+[32m    218[39m     [38;5;28;01mraise[39;00m [38;5;167;01mFileNotFoundError[39;00m(url)
+[32m--> [39m[32m219[39m [43mresponse[49m[43m.[49m[43mraise_for_status[49m[43m([49m[43m)[49m
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/aiohttp/client_reqrep.py:1161[39m, in [36mClientResponse.raise_for_status[39m[34m(self)[39m
+[32m   1158[39m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m._in_context:
+[32m   1159[39m     [38;5;28mself[39m.release()
+[32m-> [39m[32m1161[39m [38;5;28;01mraise[39;00m ClientResponseError(
+[32m   1162[39m     [38;5;28mself[39m.request_info,
+[32m   1163[39m     [38;5;28mself[39m.history,
+[32m   1164[39m     status=[38;5;28mself[39m.status,
+[32m   1165[39m     message=[38;5;28mself[39m.reason,
+[32m   1166[39m     headers=[38;5;28mself[39m.headers,
+[32m   1167[39m )
+
+[31mClientResponseError[39m: 503, message='Service Unavailable', url='https://download.pangaea.de/dataset/933387/files/ACLOUD_RF05_20170525_liquid_water_path.nc'
+

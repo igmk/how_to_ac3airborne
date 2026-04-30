@@ -1,0 +1,130 @@
+Traceback (most recent call last):
+  File "/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import matplotlib.pyplot as plt
+from matplotlib import cm
+import matplotlib.dates as mdates
+
+fig, (ax1, ax2, ax3) = plt.subplots(
+    3, 1, figsize=(12, 8), constrained_layout=True,
+    sharex=True, gridspec_kw=dict(height_ratios=[0.1, 1, 1]))
+
+# cloud mask
+cmap = cm.Greys_r.copy()
+cmap.set_bad('pink')
+ax1.pcolormesh(
+    ds_cm.time,
+    np.array([0, 1]),
+    np.array([ds_cm.cloud_mask, ds_cm.cloud_mask]),
+    cmap=cmap, vmin=0, vmax=1,
+    shading='nearest')
+ax1.tick_params(axis='y', labelleft=False, left=False)
+ax1.spines[:].set_visible(True)
+
+for ax in (ax2, ax3):
+
+    # flight altitude
+    ax.plot(
+        ds_l1.time,
+        ds_l1.alt*1e-3,
+        color='gray', linewidth=0.5, linestyle='--',
+        label='flight altitude',
+        zorder=1
+    )
+
+    # laser beam limit
+    ax.plot(
+        ds_l1.time,
+        ds_l1.lowest_laser_height*1e-3,
+        color='gray', linewidth=0.5, linestyle=':',
+        label='lidar beam limit',
+        zorder=1
+    )
+
+    # surface altitude
+    ax.plot(
+        ds_l1.time,
+        ds_l1.surf_alt*1e-3,
+        color='k', linewidth=0.5, linestyle='-',
+        label='surface altitude',
+        zorder=1
+    )
+
+# backscatter
+im = ax2.pcolormesh(
+    ds_l1.time,
+    ds_l1.height*1e-3,
+    ds_l1.log_beta.sel(i_channel=0).T,
+    shading='nearest',
+    cmap='Greys',
+    vmin=-9, vmax=-4,
+    zorder=0
+)
+fig.colorbar(im, ax=ax2, label='log(beta)')
+
+# cloud top heights for each layer
+if new:
+    da_cth = ds_cth.cth.stack({'tl': ['time', 'cloud_layer']})
+else:
+    try:
+        ds_cth = read_cloud_top_height(flight_id)
+    except KeyError:
+        print('Not available')
+        plt.close()
+        return
+    da_cth = ds_cth.cloud_top_height.stack({'tl': ['time', 'cloud_layer']})
+
+im = ax2.scatter(
+    x=da_cth.time,
+    y=da_cth*1e-3,
+    c=da_cth.cloud_layer, s=1, vmin=1, vmax=9, cmap='Set1',
+    zorder=2)
+fig.colorbar(im, ax=ax2, label='cloud layer (1 = highest cloud top)')
+
+# flag values
+cmap = cm.tab20c.copy()
+cmap.set_bad('pink')
+im = ax3.pcolormesh(
+    ds_l1.time,
+    ds_l1.height*1e-3,
+    ds_l1.quality_flag.T,
+    shading='nearest',
+    vmin=1,
+    vmax=20,
+    cmap=cmap,
+    zorder=0
+)
+fig.colorbar(im, ax=ax3, label='quality_flag')
+
+for ax in [ax2, ax3]:
+    ax.set_ylim(-0.3, 5.4)
+    ax.legend(loc='upper right')
+    ax.set_ylabel('Height [km]')
+
+ax3.xaxis.set_major_formatter(mdates.DateFormatter('%H:%M'))
+------------------
+
+
+  [36mCell[39m[36m [39m[32mIn[10][39m[32m, line 71[39m
+[31m    [39m[31mreturn[39m
+    ^
+[31mSyntaxError[39m[31m:[39m 'return' outside function
+
+
