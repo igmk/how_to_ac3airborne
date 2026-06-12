@@ -1,0 +1,215 @@
+Traceback (most recent call last):
+  File "/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/asyncio/base_events.py", line 654, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+data_availability(mission='COMPEX', platform='P5')
+------------------
+
+
+[31m---------------------------------------------------------------------------[39m
+[31mScannerError[39m                              Traceback (most recent call last)
+[36mCell[39m[36m [39m[32mIn[2][39m[32m, line 1[39m
+[32m----> [39m[32m1[39m [43mdata_availability[49m[43m([49m[43mmission[49m[43m=[49m[33;43m'[39;49m[33;43mCOMPEX[39;49m[33;43m'[39;49m[43m,[49m[43m [49m[43mplatform[49m[43m=[49m[33;43m'[39;49m[33;43mP5[39;49m[33;43m'[39;49m[43m)[49m
+
+[36mCell[39m[36m [39m[32mIn[1][39m[32m, line 29[39m, in [36mdata_availability[39m[34m(mission, platform)[39m
+[32m     23[39m data_availability = np.zeros(shape=([38;5;28mlen[39m([38;5;28mlist[39m(cat[mission][platform])),
+[32m     24[39m                                     [38;5;28mlen[39m(flights)))
+[32m     25[39m [38;5;28;01mfor[39;00m i, dataset [38;5;129;01min[39;00m [38;5;28menumerate[39m([38;5;28mlist[39m(cat[mission][platform])):
+[32m     26[39m     [38;5;66;03m# data_availability[i, :] = np.isin(list(meta[mission][platform]), [39;00m
+[32m     27[39m     [38;5;66;03m#                                   list(cat[mission][platform][dataset]))[39;00m
+[32m     28[39m     data_availability[i, :] = np.isin(flights, 
+[32m---> [39m[32m29[39m                                       [38;5;28;43mlist[39;49m[43m([49m[43mcat[49m[43m[[49m[43mmission[49m[43m][49m[43m[[49m[43mplatform[49m[43m][49m[43m[[49m[43mdataset[49m[43m][49m[43m)[49m)
+[32m     31[39m [38;5;66;03m# plot data availability[39;00m
+[32m     32[39m yscale = data_availability.shape[[32m1[39m]
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/intake/catalog/base.py:309[39m, in [36mCatalog.__iter__[39m[34m(self)[39m
+[32m    307[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34m__iter__[39m([38;5;28mself[39m):
+[32m    308[39m [38;5;250m    [39m[33;03m"""Return an iterator over catalog entry names."""[39;00m
+[32m--> [39m[32m309[39m     [38;5;28;01mreturn[39;00m [38;5;28miter[39m([38;5;28;43mself[39;49m[43m.[49m[43m_get_entries[49m[43m([49m[43m)[49m)
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/intake/catalog/utils.py:42[39m, in [36mreload_on_change.<locals>.wrapper[39m[34m(self, *args, **kwargs)[39m
+[32m     40[39m [38;5;129m@functools[39m.wraps(f)
+[32m     41[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mwrapper[39m([38;5;28mself[39m, *args, **kwargs):
+[32m---> [39m[32m42[39m     [38;5;28;43mself[39;49m[43m.[49m[43mreload[49m[43m([49m[43m)[49m
+[32m     43[39m     [38;5;28;01mreturn[39;00m f([38;5;28mself[39m, *args, **kwargs)
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/intake/catalog/base.py:163[39m, in [36mCatalog.reload[39m[34m(self)[39m
+[32m    161[39m [38;5;250m[39m[33;03m"""Reload catalog if sufficient time has passed"""[39;00m
+[32m    162[39m [38;5;28;01mif[39;00m time.time() - [38;5;28mself[39m.updated > [38;5;28mself[39m.ttl:
+[32m--> [39m[32m163[39m     [38;5;28;43mself[39;49m[43m.[49m[43mforce_reload[49m[43m([49m[43m)[49m
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/intake/catalog/base.py:158[39m, in [36mCatalog.force_reload[39m[34m(self)[39m
+[32m    156[39m [38;5;250m[39m[33;03m"""Imperative reload data now"""[39;00m
+[32m    157[39m [38;5;28mself[39m.updated = time.time()
+[32m--> [39m[32m158[39m [38;5;28;43mself[39;49m[43m.[49m[43m_load[49m[43m([49m[43m)[49m
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/intake/catalog/local.py:603[39m, in [36mYAMLFileCatalog._load[39m[34m(self, reload)[39m
+[32m    601[39m     logger.warning([33m"[39m[33mUse of [39m[33m'[39m[33m!template[39m[33m'[39m[33m deprecated - fixing[39m[33m"[39m)
+[32m    602[39m     text = text.replace([33m'[39m[33m!template [39m[33m'[39m, [33m'[39m[33m'[39m)
+[32m--> [39m[32m603[39m [38;5;28;43mself[39;49m[43m.[49m[43mparse[49m[43m([49m[43mtext[49m[43m)[49m
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/intake/catalog/local.py:672[39m, in [36mYAMLFileCatalog.parse[39m[34m(self, text)[39m
+[32m    660[39m [38;5;250m[39m[33;03m"""Create entries from catalog text[39;00m
+[32m    661[39m 
+[32m    662[39m [33;03mNormally the text comes from the file at self.path via the ``_load()``[39;00m
+[32m   (...)[39m[32m    669[39m [33;03m    YAML formatted catalog spec[39;00m
+[32m    670[39m [33;03m"""[39;00m
+[32m    671[39m [38;5;28mself[39m.text = text
+[32m--> [39m[32m672[39m data = [43myaml_load[49m[43m([49m[38;5;28;43mself[39;49m[43m.[49m[43mtext[49m[43m)[49m
+[32m    674[39m [38;5;28;01mif[39;00m data [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[32m    675[39m     [38;5;28;01mraise[39;00m exceptions.CatalogException([33m'[39m[33mNo YAML data in file[39m[33m'[39m)
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/intake/utils.py:78[39m, in [36myaml_load[39m[34m(stream)[39m
+[32m     76[39m [38;5;250m[39m[33;03m"""Parse YAML in a context where duplicate keys raise exception"""[39;00m
+[32m     77[39m [38;5;28;01mwith[39;00m no_duplicate_yaml():
+[32m---> [39m[32m78[39m     [38;5;28;01mreturn[39;00m [43myaml[49m[43m.[49m[43msafe_load[49m[43m([49m[43mstream[49m[43m)[49m
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/yaml/__init__.py:125[39m, in [36msafe_load[39m[34m(stream)[39m
+[32m    117[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34msafe_load[39m(stream):
+[32m    118[39m [38;5;250m    [39m[33;03m"""[39;00m
+[32m    119[39m [33;03m    Parse the first YAML document in a stream[39;00m
+[32m    120[39m [33;03m    and produce the corresponding Python object.[39;00m
+[32m   (...)[39m[32m    123[39m [33;03m    to be safe for untrusted input.[39;00m
+[32m    124[39m [33;03m    """[39;00m
+[32m--> [39m[32m125[39m     [38;5;28;01mreturn[39;00m [43mload[49m[43m([49m[43mstream[49m[43m,[49m[43m [49m[43mSafeLoader[49m[43m)[49m
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/yaml/__init__.py:81[39m, in [36mload[39m[34m(stream, Loader)[39m
+[32m     79[39m loader = Loader(stream)
+[32m     80[39m [38;5;28;01mtry[39;00m:
+[32m---> [39m[32m81[39m     [38;5;28;01mreturn[39;00m [43mloader[49m[43m.[49m[43mget_single_data[49m[43m([49m[43m)[49m
+[32m     82[39m [38;5;28;01mfinally[39;00m:
+[32m     83[39m     loader.dispose()
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/yaml/constructor.py:49[39m, in [36mBaseConstructor.get_single_data[39m[34m(self)[39m
+[32m     47[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mget_single_data[39m([38;5;28mself[39m):
+[32m     48[39m     [38;5;66;03m# Ensure that the stream contains a single document and construct it.[39;00m
+[32m---> [39m[32m49[39m     node = [38;5;28;43mself[39;49m[43m.[49m[43mget_single_node[49m[43m([49m[43m)[49m
+[32m     50[39m     [38;5;28;01mif[39;00m node [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+[32m     51[39m         [38;5;28;01mreturn[39;00m [38;5;28mself[39m.construct_document(node)
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/yaml/composer.py:36[39m, in [36mComposer.get_single_node[39m[34m(self)[39m
+[32m     34[39m document = [38;5;28;01mNone[39;00m
+[32m     35[39m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m.check_event(StreamEndEvent):
+[32m---> [39m[32m36[39m     document = [38;5;28;43mself[39;49m[43m.[49m[43mcompose_document[49m[43m([49m[43m)[49m
+[32m     38[39m [38;5;66;03m# Ensure that the stream contains no more documents.[39;00m
+[32m     39[39m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m.check_event(StreamEndEvent):
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/yaml/composer.py:55[39m, in [36mComposer.compose_document[39m[34m(self)[39m
+[32m     52[39m [38;5;28mself[39m.get_event()
+[32m     54[39m [38;5;66;03m# Compose the root node.[39;00m
+[32m---> [39m[32m55[39m node = [38;5;28;43mself[39;49m[43m.[49m[43mcompose_node[49m[43m([49m[38;5;28;43;01mNone[39;49;00m[43m,[49m[43m [49m[38;5;28;43;01mNone[39;49;00m[43m)[49m
+[32m     57[39m [38;5;66;03m# Drop the DOCUMENT-END event.[39;00m
+[32m     58[39m [38;5;28mself[39m.get_event()
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/yaml/composer.py:84[39m, in [36mComposer.compose_node[39m[34m(self, parent, index)[39m
+[32m     82[39m     node = [38;5;28mself[39m.compose_sequence_node(anchor)
+[32m     83[39m [38;5;28;01melif[39;00m [38;5;28mself[39m.check_event(MappingStartEvent):
+[32m---> [39m[32m84[39m     node = [38;5;28;43mself[39;49m[43m.[49m[43mcompose_mapping_node[49m[43m([49m[43manchor[49m[43m)[49m
+[32m     85[39m [38;5;28mself[39m.ascend_resolver()
+[32m     86[39m [38;5;28;01mreturn[39;00m node
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/yaml/composer.py:133[39m, in [36mComposer.compose_mapping_node[39m[34m(self, anchor)[39m
+[32m    129[39m item_key = [38;5;28mself[39m.compose_node(node, [38;5;28;01mNone[39;00m)
+[32m    130[39m [38;5;66;03m#if item_key in node.value:[39;00m
+[32m    131[39m [38;5;66;03m#    raise ComposerError("while composing a mapping", start_event.start_mark,[39;00m
+[32m    132[39m [38;5;66;03m#            "found duplicate key", key_event.start_mark)[39;00m
+[32m--> [39m[32m133[39m item_value = [38;5;28;43mself[39;49m[43m.[49m[43mcompose_node[49m[43m([49m[43mnode[49m[43m,[49m[43m [49m[43mitem_key[49m[43m)[49m
+[32m    134[39m [38;5;66;03m#node.value[item_key] = item_value[39;00m
+[32m    135[39m node.value.append((item_key, item_value))
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/yaml/composer.py:84[39m, in [36mComposer.compose_node[39m[34m(self, parent, index)[39m
+[32m     82[39m     node = [38;5;28mself[39m.compose_sequence_node(anchor)
+[32m     83[39m [38;5;28;01melif[39;00m [38;5;28mself[39m.check_event(MappingStartEvent):
+[32m---> [39m[32m84[39m     node = [38;5;28;43mself[39;49m[43m.[49m[43mcompose_mapping_node[49m[43m([49m[43manchor[49m[43m)[49m
+[32m     85[39m [38;5;28mself[39m.ascend_resolver()
+[32m     86[39m [38;5;28;01mreturn[39;00m node
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/yaml/composer.py:133[39m, in [36mComposer.compose_mapping_node[39m[34m(self, anchor)[39m
+[32m    129[39m item_key = [38;5;28mself[39m.compose_node(node, [38;5;28;01mNone[39;00m)
+[32m    130[39m [38;5;66;03m#if item_key in node.value:[39;00m
+[32m    131[39m [38;5;66;03m#    raise ComposerError("while composing a mapping", start_event.start_mark,[39;00m
+[32m    132[39m [38;5;66;03m#            "found duplicate key", key_event.start_mark)[39;00m
+[32m--> [39m[32m133[39m item_value = [38;5;28;43mself[39;49m[43m.[49m[43mcompose_node[49m[43m([49m[43mnode[49m[43m,[49m[43m [49m[43mitem_key[49m[43m)[49m
+[32m    134[39m [38;5;66;03m#node.value[item_key] = item_value[39;00m
+[32m    135[39m node.value.append((item_key, item_value))
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/yaml/composer.py:84[39m, in [36mComposer.compose_node[39m[34m(self, parent, index)[39m
+[32m     82[39m     node = [38;5;28mself[39m.compose_sequence_node(anchor)
+[32m     83[39m [38;5;28;01melif[39;00m [38;5;28mself[39m.check_event(MappingStartEvent):
+[32m---> [39m[32m84[39m     node = [38;5;28;43mself[39;49m[43m.[49m[43mcompose_mapping_node[49m[43m([49m[43manchor[49m[43m)[49m
+[32m     85[39m [38;5;28mself[39m.ascend_resolver()
+[32m     86[39m [38;5;28;01mreturn[39;00m node
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/yaml/composer.py:127[39m, in [36mComposer.compose_mapping_node[39m[34m(self, anchor)[39m
+[32m    125[39m [38;5;28;01mif[39;00m anchor [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+[32m    126[39m     [38;5;28mself[39m.anchors[anchor] = node
+[32m--> [39m[32m127[39m [38;5;28;01mwhile[39;00m [38;5;129;01mnot[39;00m [38;5;28;43mself[39;49m[43m.[49m[43mcheck_event[49m[43m([49m[43mMappingEndEvent[49m[43m)[49m:
+[32m    128[39m     [38;5;66;03m#key_event = self.peek_event()[39;00m
+[32m    129[39m     item_key = [38;5;28mself[39m.compose_node(node, [38;5;28;01mNone[39;00m)
+[32m    130[39m     [38;5;66;03m#if item_key in node.value:[39;00m
+[32m    131[39m     [38;5;66;03m#    raise ComposerError("while composing a mapping", start_event.start_mark,[39;00m
+[32m    132[39m     [38;5;66;03m#            "found duplicate key", key_event.start_mark)[39;00m
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/yaml/parser.py:98[39m, in [36mParser.check_event[39m[34m(self, *choices)[39m
+[32m     96[39m [38;5;28;01mif[39;00m [38;5;28mself[39m.current_event [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[32m     97[39m     [38;5;28;01mif[39;00m [38;5;28mself[39m.state:
+[32m---> [39m[32m98[39m         [38;5;28mself[39m.current_event = [38;5;28;43mself[39;49m[43m.[49m[43mstate[49m[43m([49m[43m)[49m
+[32m     99[39m [38;5;28;01mif[39;00m [38;5;28mself[39m.current_event [38;5;129;01mis[39;00m [38;5;129;01mnot[39;00m [38;5;28;01mNone[39;00m:
+[32m    100[39m     [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m choices:
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/yaml/parser.py:428[39m, in [36mParser.parse_block_mapping_key[39m[34m(self)[39m
+[32m    427[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mparse_block_mapping_key[39m([38;5;28mself[39m):
+[32m--> [39m[32m428[39m     [38;5;28;01mif[39;00m [38;5;28;43mself[39;49m[43m.[49m[43mcheck_token[49m[43m([49m[43mKeyToken[49m[43m)[49m:
+[32m    429[39m         token = [38;5;28mself[39m.get_token()
+[32m    430[39m         [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m.check_token(KeyToken, ValueToken, BlockEndToken):
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/yaml/scanner.py:116[39m, in [36mScanner.check_token[39m[34m(self, *choices)[39m
+[32m    113[39m [38;5;28;01mdef[39;00m[38;5;250m [39m[34mcheck_token[39m([38;5;28mself[39m, *choices):
+[32m    114[39m     [38;5;66;03m# Check if the next token is one of the given types.[39;00m
+[32m    115[39m     [38;5;28;01mwhile[39;00m [38;5;28mself[39m.need_more_tokens():
+[32m--> [39m[32m116[39m         [38;5;28;43mself[39;49m[43m.[49m[43mfetch_more_tokens[49m[43m([49m[43m)[49m
+[32m    117[39m     [38;5;28;01mif[39;00m [38;5;28mself[39m.tokens:
+[32m    118[39m         [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m choices:
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/yaml/scanner.py:223[39m, in [36mScanner.fetch_more_tokens[39m[34m(self)[39m
+[32m    221[39m [38;5;66;03m# Is it the value indicator?[39;00m
+[32m    222[39m [38;5;28;01mif[39;00m ch == [33m'[39m[33m:[39m[33m'[39m [38;5;129;01mand[39;00m [38;5;28mself[39m.check_value():
+[32m--> [39m[32m223[39m     [38;5;28;01mreturn[39;00m [38;5;28;43mself[39;49m[43m.[49m[43mfetch_value[49m[43m([49m[43m)[49m
+[32m    225[39m [38;5;66;03m# Is it an alias?[39;00m
+[32m    226[39m [38;5;28;01mif[39;00m ch == [33m'[39m[33m*[39m[33m'[39m:
+
+[36mFile [39m[32m/net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/yaml/scanner.py:577[39m, in [36mScanner.fetch_value[39m[34m(self)[39m
+[32m    572[39m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m.flow_level:
+[32m    573[39m 
+[32m    574[39m     [38;5;66;03m# We are allowed to start a complex value if and only if[39;00m
+[32m    575[39m     [38;5;66;03m# we can start a simple key.[39;00m
+[32m    576[39m     [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m.allow_simple_key:
+[32m--> [39m[32m577[39m         [38;5;28;01mraise[39;00m ScannerError([38;5;28;01mNone[39;00m, [38;5;28;01mNone[39;00m,
+[32m    578[39m                 [33m"[39m[33mmapping values are not allowed here[39m[33m"[39m,
+[32m    579[39m                 [38;5;28mself[39m.get_mark())
+[32m    581[39m [38;5;66;03m# If this value starts a new block mapping, we need to add[39;00m
+[32m    582[39m [38;5;66;03m# BLOCK-MAPPING-START.  It will be detected as an error later by[39;00m
+[32m    583[39m [38;5;66;03m# the parser.[39;00m
+[32m    584[39m [38;5;28;01mif[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m.flow_level:
+
+[31mScannerError[39m: mapping values are not allowed here
+  in "<unicode string>", line 15, column 8:
+       args:
+           ^
+

@@ -616,7 +616,7 @@ document.write(`
 <span class="sd">    Plot data availability matrix</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">flights</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">meta</span><span class="p">[</span><span class="n">mission</span><span class="p">][</span><span class="n">platform</span><span class="p">][</span><span class="n">d</span><span class="p">][</span><span class="s1">&#39;mission&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">mission</span><span class="p">,</span>  <span class="n">meta</span><span class="p">[</span><span class="n">mission</span><span class="p">][</span><span class="n">platform</span><span class="p">]))</span>
-    <span class="n">flights_dc</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">mission</span> <span class="o">==</span> <span class="n">meta</span><span class="p">[</span><span class="n">mission</span><span class="p">][</span><span class="n">platform</span><span class="p">][</span><span class="n">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">&#39;mission&#39;</span><span class="p">],</span>  <span class="n">meta</span><span class="p">[</span><span class="n">mission</span><span class="p">][</span><span class="n">platform</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
+    <span class="n">flights_dict</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">d</span><span class="p">:</span> <span class="n">mission</span> <span class="o">==</span> <span class="n">meta</span><span class="p">[</span><span class="n">mission</span><span class="p">][</span><span class="n">platform</span><span class="p">][</span><span class="n">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]][</span><span class="s1">&#39;mission&#39;</span><span class="p">],</span>  <span class="n">meta</span><span class="p">[</span><span class="n">mission</span><span class="p">][</span><span class="n">platform</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">()))</span>
     <span class="c1"># store data availability in a matrix</span>
     <span class="c1"># data_availability = np.zeros(shape=(len(list(cat[mission][platform])),</span>
     <span class="c1">#                                     len(list(meta[mission][platform]))))</span>
@@ -654,7 +654,7 @@ document.write(`
     <span class="c1"># y_labels = [flight_id+&#39;, &#39;+flight[&#39;date&#39;].strftime(&#39;%Y-%m-%d&#39;) </span>
     <span class="c1">#             for flight_id, flight in meta[mission][platform].items()]</span>
     <span class="n">y_labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">flight_id</span><span class="o">+</span><span class="s1">&#39;, &#39;</span><span class="o">+</span><span class="n">flight</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s1">&#39;%Y-%m-</span><span class="si">%d</span><span class="s1">&#39;</span><span class="p">)</span> 
-                <span class="k">for</span> <span class="n">flight_id</span><span class="p">,</span> <span class="n">flight</span> <span class="ow">in</span> <span class="n">flights_dc</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
+                <span class="k">for</span> <span class="n">flight_id</span><span class="p">,</span> <span class="n">flight</span> <span class="ow">in</span> <span class="n">flights_dict</span><span class="o">.</span><span class="n">items</span><span class="p">()]</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">(</span><span class="n">y_labels</span><span class="p">)</span>
 
     <span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labeltop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -681,7 +681,198 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7316238aaf01f7e565a3eacfae86efa59ab88d35daa47ca91648f4b4a1bc66f6.png" src="../_images/7316238aaf01f7e565a3eacfae86efa59ab88d35daa47ca91648f4b4a1bc66f6.png" />
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ScannerError</span><span class="g g-Whitespace">                              </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">data_availability</span><span class="p">(</span><span class="n">mission</span><span class="o">=</span><span class="s1">&#39;COMPEX&#39;</span><span class="p">,</span> <span class="n">platform</span><span class="o">=</span><span class="s1">&#39;P5&#39;</span><span class="p">)</span>
+
+<span class="nn">Cell In[1], line 29,</span> in <span class="ni">data_availability</span><span class="nt">(mission, platform)</span>
+<span class="g g-Whitespace">     </span><span class="mi">23</span> <span class="n">data_availability</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="p">[</span><span class="n">mission</span><span class="p">][</span><span class="n">platform</span><span class="p">])),</span>
+<span class="g g-Whitespace">     </span><span class="mi">24</span>                                     <span class="nb">len</span><span class="p">(</span><span class="n">flights</span><span class="p">)))</span>
+<span class="g g-Whitespace">     </span><span class="mi">25</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">dataset</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="p">[</span><span class="n">mission</span><span class="p">][</span><span class="n">platform</span><span class="p">])):</span>
+<span class="g g-Whitespace">     </span><span class="mi">26</span>     <span class="c1"># data_availability[i, :] = np.isin(list(meta[mission][platform]), </span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span>     <span class="c1">#                                   list(cat[mission][platform][dataset]))</span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span>     <span class="n">data_availability</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="p">:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">isin</span><span class="p">(</span><span class="n">flights</span><span class="p">,</span> 
+<span class="ne">---&gt; </span><span class="mi">29</span>                                       <span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="p">[</span><span class="n">mission</span><span class="p">][</span><span class="n">platform</span><span class="p">][</span><span class="n">dataset</span><span class="p">]))</span>
+<span class="g g-Whitespace">     </span><span class="mi">31</span> <span class="c1"># plot data availability</span>
+<span class="g g-Whitespace">     </span><span class="mi">32</span> <span class="n">yscale</span> <span class="o">=</span> <span class="n">data_availability</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="nn">File /net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/intake/catalog/base.py:309,</span> in <span class="ni">Catalog.__iter__</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">307</span> <span class="k">def</span><span class="w"> </span><span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">308</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Return an iterator over catalog entry names.&quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">309</span>     <span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_get_entries</span><span class="p">())</span>
+
+<span class="nn">File /net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/intake/catalog/utils.py:42,</span> in <span class="ni">reload_on_change.&lt;locals&gt;.wrapper</span><span class="nt">(self, *args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">40</span> <span class="nd">@functools</span><span class="o">.</span><span class="n">wraps</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">41</span> <span class="k">def</span><span class="w"> </span><span class="nf">wrapper</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">42</span>     <span class="bp">self</span><span class="o">.</span><span class="n">reload</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span>     <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nn">File /net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/intake/catalog/base.py:163,</span> in <span class="ni">Catalog.reload</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">161</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Reload catalog if sufficient time has passed&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">162</span> <span class="k">if</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span> <span class="o">-</span> <span class="bp">self</span><span class="o">.</span><span class="n">updated</span> <span class="o">&gt;</span> <span class="bp">self</span><span class="o">.</span><span class="n">ttl</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">163</span>     <span class="bp">self</span><span class="o">.</span><span class="n">force_reload</span><span class="p">()</span>
+
+<span class="nn">File /net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/intake/catalog/base.py:158,</span> in <span class="ni">Catalog.force_reload</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">156</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Imperative reload data now&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">157</span> <span class="bp">self</span><span class="o">.</span><span class="n">updated</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="ne">--&gt; </span><span class="mi">158</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load</span><span class="p">()</span>
+
+<span class="nn">File /net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/intake/catalog/local.py:603,</span> in <span class="ni">YAMLFileCatalog._load</span><span class="nt">(self, reload)</span>
+<span class="g g-Whitespace">    </span><span class="mi">601</span>     <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;Use of &#39;!template&#39; deprecated - fixing&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">602</span>     <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;!template &#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">603</span> <span class="bp">self</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+
+<span class="nn">File /net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/intake/catalog/local.py:672,</span> in <span class="ni">YAMLFileCatalog.parse</span><span class="nt">(self, text)</span>
+<span class="g g-Whitespace">    </span><span class="mi">660</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Create entries from catalog text</span>
+<span class="g g-Whitespace">    </span><span class="mi">661</span><span class="sd"> </span>
+<span class="g g-Whitespace">    </span><span class="mi">662</span><span class="sd"> Normally the text comes from the file at self.path via the ``_load()``</span>
+<span class="sd">   (...)    669     YAML formatted catalog spec</span>
+<span class="g g-Whitespace">    </span><span class="mi">670</span><span class="sd"> &quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">671</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">text</span>
+<span class="ne">--&gt; </span><span class="mi">672</span> <span class="n">data</span> <span class="o">=</span> <span class="n">yaml_load</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">674</span> <span class="k">if</span> <span class="n">data</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">675</span>     <span class="k">raise</span> <span class="n">exceptions</span><span class="o">.</span><span class="n">CatalogException</span><span class="p">(</span><span class="s1">&#39;No YAML data in file&#39;</span><span class="p">)</span>
+
+<span class="nn">File /net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/intake/utils.py:78,</span> in <span class="ni">yaml_load</span><span class="nt">(stream)</span>
+<span class="g g-Whitespace">     </span><span class="mi">76</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;Parse YAML in a context where duplicate keys raise exception&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">     </span><span class="mi">77</span> <span class="k">with</span> <span class="n">no_duplicate_yaml</span><span class="p">():</span>
+<span class="ne">---&gt; </span><span class="mi">78</span>     <span class="k">return</span> <span class="n">yaml</span><span class="o">.</span><span class="n">safe_load</span><span class="p">(</span><span class="n">stream</span><span class="p">)</span>
+
+<span class="nn">File /net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/yaml/__init__.py:125,</span> in <span class="ni">safe_load</span><span class="nt">(stream)</span>
+<span class="g g-Whitespace">    </span><span class="mi">117</span> <span class="k">def</span><span class="w"> </span><span class="nf">safe_load</span><span class="p">(</span><span class="n">stream</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">118</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">119</span><span class="sd">     Parse the first YAML document in a stream</span>
+<span class="g g-Whitespace">    </span><span class="mi">120</span><span class="sd">     and produce the corresponding Python object.</span>
+<span class="sd">   (...)    123     to be safe for untrusted input.</span>
+<span class="g g-Whitespace">    </span><span class="mi">124</span><span class="sd">     &quot;&quot;&quot;</span>
+<span class="ne">--&gt; </span><span class="mi">125</span>     <span class="k">return</span> <span class="n">load</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span> <span class="n">SafeLoader</span><span class="p">)</span>
+
+<span class="nn">File /net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/yaml/__init__.py:81,</span> in <span class="ni">load</span><span class="nt">(stream, Loader)</span>
+<span class="g g-Whitespace">     </span><span class="mi">79</span> <span class="n">loader</span> <span class="o">=</span> <span class="n">Loader</span><span class="p">(</span><span class="n">stream</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">80</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">81</span>     <span class="k">return</span> <span class="n">loader</span><span class="o">.</span><span class="n">get_single_data</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span> <span class="k">finally</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">83</span>     <span class="n">loader</span><span class="o">.</span><span class="n">dispose</span><span class="p">()</span>
+
+<span class="nn">File /net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/yaml/constructor.py:49,</span> in <span class="ni">BaseConstructor.get_single_data</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">47</span> <span class="k">def</span><span class="w"> </span><span class="nf">get_single_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">48</span>     <span class="c1"># Ensure that the stream contains a single document and construct it.</span>
+<span class="ne">---&gt; </span><span class="mi">49</span>     <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_single_node</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">50</span>     <span class="k">if</span> <span class="n">node</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">51</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">construct_document</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+
+<span class="nn">File /net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/yaml/composer.py:36,</span> in <span class="ni">Composer.get_single_node</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">34</span> <span class="n">document</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="g g-Whitespace">     </span><span class="mi">35</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_event</span><span class="p">(</span><span class="n">StreamEndEvent</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">36</span>     <span class="n">document</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compose_document</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">38</span> <span class="c1"># Ensure that the stream contains no more documents.</span>
+<span class="g g-Whitespace">     </span><span class="mi">39</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_event</span><span class="p">(</span><span class="n">StreamEndEvent</span><span class="p">):</span>
+
+<span class="nn">File /net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/yaml/composer.py:55,</span> in <span class="ni">Composer.compose_document</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">     </span><span class="mi">52</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_event</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">54</span> <span class="c1"># Compose the root node.</span>
+<span class="ne">---&gt; </span><span class="mi">55</span> <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compose_node</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">57</span> <span class="c1"># Drop the DOCUMENT-END event.</span>
+<span class="g g-Whitespace">     </span><span class="mi">58</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_event</span><span class="p">()</span>
+
+<span class="nn">File /net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/yaml/composer.py:84,</span> in <span class="ni">Composer.compose_node</span><span class="nt">(self, parent, index)</span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span>     <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compose_sequence_node</span><span class="p">(</span><span class="n">anchor</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">83</span> <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_event</span><span class="p">(</span><span class="n">MappingStartEvent</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">84</span>     <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compose_mapping_node</span><span class="p">(</span><span class="n">anchor</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">85</span> <span class="bp">self</span><span class="o">.</span><span class="n">ascend_resolver</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">86</span> <span class="k">return</span> <span class="n">node</span>
+
+<span class="nn">File /net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/yaml/composer.py:133,</span> in <span class="ni">Composer.compose_mapping_node</span><span class="nt">(self, anchor)</span>
+<span class="g g-Whitespace">    </span><span class="mi">129</span> <span class="n">item_key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compose_node</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">130</span> <span class="c1">#if item_key in node.value:</span>
+<span class="g g-Whitespace">    </span><span class="mi">131</span> <span class="c1">#    raise ComposerError(&quot;while composing a mapping&quot;, start_event.start_mark,</span>
+<span class="g g-Whitespace">    </span><span class="mi">132</span> <span class="c1">#            &quot;found duplicate key&quot;, key_event.start_mark)</span>
+<span class="ne">--&gt; </span><span class="mi">133</span> <span class="n">item_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compose_node</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">item_key</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">134</span> <span class="c1">#node.value[item_key] = item_value</span>
+<span class="g g-Whitespace">    </span><span class="mi">135</span> <span class="n">node</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">item_key</span><span class="p">,</span> <span class="n">item_value</span><span class="p">))</span>
+
+<span class="nn">File /net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/yaml/composer.py:84,</span> in <span class="ni">Composer.compose_node</span><span class="nt">(self, parent, index)</span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span>     <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compose_sequence_node</span><span class="p">(</span><span class="n">anchor</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">83</span> <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_event</span><span class="p">(</span><span class="n">MappingStartEvent</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">84</span>     <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compose_mapping_node</span><span class="p">(</span><span class="n">anchor</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">85</span> <span class="bp">self</span><span class="o">.</span><span class="n">ascend_resolver</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">86</span> <span class="k">return</span> <span class="n">node</span>
+
+<span class="nn">File /net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/yaml/composer.py:133,</span> in <span class="ni">Composer.compose_mapping_node</span><span class="nt">(self, anchor)</span>
+<span class="g g-Whitespace">    </span><span class="mi">129</span> <span class="n">item_key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compose_node</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">130</span> <span class="c1">#if item_key in node.value:</span>
+<span class="g g-Whitespace">    </span><span class="mi">131</span> <span class="c1">#    raise ComposerError(&quot;while composing a mapping&quot;, start_event.start_mark,</span>
+<span class="g g-Whitespace">    </span><span class="mi">132</span> <span class="c1">#            &quot;found duplicate key&quot;, key_event.start_mark)</span>
+<span class="ne">--&gt; </span><span class="mi">133</span> <span class="n">item_value</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compose_node</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">item_key</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">134</span> <span class="c1">#node.value[item_key] = item_value</span>
+<span class="g g-Whitespace">    </span><span class="mi">135</span> <span class="n">node</span><span class="o">.</span><span class="n">value</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">item_key</span><span class="p">,</span> <span class="n">item_value</span><span class="p">))</span>
+
+<span class="nn">File /net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/yaml/composer.py:84,</span> in <span class="ni">Composer.compose_node</span><span class="nt">(self, parent, index)</span>
+<span class="g g-Whitespace">     </span><span class="mi">82</span>     <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compose_sequence_node</span><span class="p">(</span><span class="n">anchor</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">83</span> <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_event</span><span class="p">(</span><span class="n">MappingStartEvent</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">84</span>     <span class="n">node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compose_mapping_node</span><span class="p">(</span><span class="n">anchor</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">85</span> <span class="bp">self</span><span class="o">.</span><span class="n">ascend_resolver</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">86</span> <span class="k">return</span> <span class="n">node</span>
+
+<span class="nn">File /net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/yaml/composer.py:127,</span> in <span class="ni">Composer.compose_mapping_node</span><span class="nt">(self, anchor)</span>
+<span class="g g-Whitespace">    </span><span class="mi">125</span> <span class="k">if</span> <span class="n">anchor</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">126</span>     <span class="bp">self</span><span class="o">.</span><span class="n">anchors</span><span class="p">[</span><span class="n">anchor</span><span class="p">]</span> <span class="o">=</span> <span class="n">node</span>
+<span class="ne">--&gt; </span><span class="mi">127</span> <span class="k">while</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_event</span><span class="p">(</span><span class="n">MappingEndEvent</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">128</span>     <span class="c1">#key_event = self.peek_event()</span>
+<span class="g g-Whitespace">    </span><span class="mi">129</span>     <span class="n">item_key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">compose_node</span><span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">130</span>     <span class="c1">#if item_key in node.value:</span>
+<span class="g g-Whitespace">    </span><span class="mi">131</span>     <span class="c1">#    raise ComposerError(&quot;while composing a mapping&quot;, start_event.start_mark,</span>
+<span class="g g-Whitespace">    </span><span class="mi">132</span>     <span class="c1">#            &quot;found duplicate key&quot;, key_event.start_mark)</span>
+
+<span class="nn">File /net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/yaml/parser.py:98,</span> in <span class="ni">Parser.check_event</span><span class="nt">(self, *choices)</span>
+<span class="g g-Whitespace">     </span><span class="mi">96</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_event</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">97</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">:</span>
+<span class="ne">---&gt; </span><span class="mi">98</span>         <span class="bp">self</span><span class="o">.</span><span class="n">current_event</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">state</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">99</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">current_event</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">100</span>     <span class="k">if</span> <span class="ow">not</span> <span class="n">choices</span><span class="p">:</span>
+
+<span class="nn">File /net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/yaml/parser.py:428,</span> in <span class="ni">Parser.parse_block_mapping_key</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">427</span> <span class="k">def</span><span class="w"> </span><span class="nf">parse_block_mapping_key</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">428</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_token</span><span class="p">(</span><span class="n">KeyToken</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">429</span>         <span class="n">token</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_token</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">430</span>         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_token</span><span class="p">(</span><span class="n">KeyToken</span><span class="p">,</span> <span class="n">ValueToken</span><span class="p">,</span> <span class="n">BlockEndToken</span><span class="p">):</span>
+
+<span class="nn">File /net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/yaml/scanner.py:116,</span> in <span class="ni">Scanner.check_token</span><span class="nt">(self, *choices)</span>
+<span class="g g-Whitespace">    </span><span class="mi">113</span> <span class="k">def</span><span class="w"> </span><span class="nf">check_token</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">choices</span><span class="p">):</span>
+<span class="g g-Whitespace">    </span><span class="mi">114</span>     <span class="c1"># Check if the next token is one of the given types.</span>
+<span class="g g-Whitespace">    </span><span class="mi">115</span>     <span class="k">while</span> <span class="bp">self</span><span class="o">.</span><span class="n">need_more_tokens</span><span class="p">():</span>
+<span class="ne">--&gt; </span><span class="mi">116</span>         <span class="bp">self</span><span class="o">.</span><span class="n">fetch_more_tokens</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">117</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">tokens</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">118</span>         <span class="k">if</span> <span class="ow">not</span> <span class="n">choices</span><span class="p">:</span>
+
+<span class="nn">File /net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/yaml/scanner.py:223,</span> in <span class="ni">Scanner.fetch_more_tokens</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">221</span> <span class="c1"># Is it the value indicator?</span>
+<span class="g g-Whitespace">    </span><span class="mi">222</span> <span class="k">if</span> <span class="n">ch</span> <span class="o">==</span> <span class="s1">&#39;:&#39;</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">check_value</span><span class="p">():</span>
+<span class="ne">--&gt; </span><span class="mi">223</span>     <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">fetch_value</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">225</span> <span class="c1"># Is it an alias?</span>
+<span class="g g-Whitespace">    </span><span class="mi">226</span> <span class="k">if</span> <span class="n">ch</span> <span class="o">==</span> <span class="s1">&#39;*&#39;</span><span class="p">:</span>
+
+<span class="nn">File /net/sever/mech/miniconda3/envs/howtoac3/lib/python3.11/site-packages/yaml/scanner.py:577,</span> in <span class="ni">Scanner.fetch_value</span><span class="nt">(self)</span>
+<span class="g g-Whitespace">    </span><span class="mi">572</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">flow_level</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">573</span> 
+<span class="g g-Whitespace">    </span><span class="mi">574</span>     <span class="c1"># We are allowed to start a complex value if and only if</span>
+<span class="g g-Whitespace">    </span><span class="mi">575</span>     <span class="c1"># we can start a simple key.</span>
+<span class="g g-Whitespace">    </span><span class="mi">576</span>     <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">allow_simple_key</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">577</span>         <span class="k">raise</span> <span class="n">ScannerError</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">578</span>                 <span class="s2">&quot;mapping values are not allowed here&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">579</span>                 <span class="bp">self</span><span class="o">.</span><span class="n">get_mark</span><span class="p">())</span>
+<span class="g g-Whitespace">    </span><span class="mi">581</span> <span class="c1"># If this value starts a new block mapping, we need to add</span>
+<span class="g g-Whitespace">    </span><span class="mi">582</span> <span class="c1"># BLOCK-MAPPING-START.  It will be detected as an error later by</span>
+<span class="g g-Whitespace">    </span><span class="mi">583</span> <span class="c1"># the parser.</span>
+<span class="g g-Whitespace">    </span><span class="mi">584</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">flow_level</span><span class="p">:</span>
+
+<span class="ne">ScannerError</span>: mapping values are not allowed here
+  <span class="ow">in</span> <span class="s2">&quot;&lt;unicode string&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">15</span><span class="p">,</span> <span class="n">column</span> <span class="mi">8</span><span class="p">:</span>
+       <span class="n">args</span><span class="p">:</span>
+           <span class="o">^</span>
+</pre></div>
+</div>
 </div>
 </div>
 </section>
