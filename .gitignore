@@ -6,3 +6,4 @@ _build
 how_to_ac3airborne/_build/
 how_to_ac3airborne/examples/data
 how_to_ac3airborne/examples/local_datasets_2.yaml
+how_to_ac3airborne/examples/halo-ac3_aircraft_collocations.ipynb

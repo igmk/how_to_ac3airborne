@@ -26,8 +26,15 @@ Flight tracks of the campaigns covered by ac3airborne.
 * [AC<sup>3</sup>](http://www.ac3-tr.de/) project page
 * [HALO-(AC)<sup>3</sup>](https://halo-ac3.de/) campaign and publication (*Wendisch et al., 2024*) 
 * The data description papers for ACLOUD (*Ehrlich et al., 2019a*), for AFLUX and MOSAiC-ACA (*Mech et al., 2022*), and for HALO-(AC)<sup>3</sup> (*Ehrlich et al., 2025*)
-* Campaign wikis/blogs: [ACLOUD](https://home.uni-leipzig.de/~ehrlich/ACLOUD_wiki_doku/doku.php), [AFLUX](https://home.uni-leipzig.de/~ehrlich/AFLUX_wiki_doku/doku.php), [MOSAiC-ACA](https://home.uni-leipzig.de/~ehrlich/MOSAiC_ACA_wiki_doku/doku.php), [HALO-(AC)<sup>3</sup>](https://home.uni-leipzig.de/~ehrlich/HALO_AC3_wiki_doku/doku.php), [HAMAG](https://blog.uni-koeln.de/awares/category/campaigns-conf/hamag/), and [COMPEX-EC](https://blog.uni-koeln.de/awares/category/campaigns-conf/compex-ec/) 
-* Master data collections on PANGAEA: ACLOUD (*Ehrlich et al., 2019b*), AFLUX (*Mech et al., 2021a*), MOSAiC-ACA (*Mech et al., 2021b*), and HALO-(AC)<sup>3</sup> Polar 5 (*Mech et al., 2024*), Polar 6 (*Herber et al., 2024*), and HALO (*Ehrlich et al., 2024*)
+* Campaign wikis/blogs: [ACLOUD](https://home.uni-leipzig.de/~ehrlich/ACLOUD_wiki_doku/doku.php), [AFLUX](https://home.uni-leipzig.de/~ehrlich/AFLUX_wiki_doku/doku.php), [MOSAiC-ACA](https://home.uni-leipzig.de/~ehrlich/MOSAiC_ACA_wiki_doku/doku.php), [HALO-(AC)<sup>3</sup>](https://home.uni-leipzig.de/~ehrlich/HALO_AC3_wiki_doku/doku.php), [HAMAG](https://blog.uni-koeln.de/awares/category/campaigns-conf/hamag/), [COMPEX-EC](https://blog.uni-koeln.de/awares/category/campaigns-conf/compex-ec/), and COMPEX [blog](https://blog.uni-koeln.de/awares/category/campaigns-conf/compex/) and [wiki](https://home.uni-leipzig.de/~ehrlich/COMPEX_wiki_doku/doku.php) 
+* Master data collections on PANGAEA: 
+    * ACLOUD (*Ehrlich et al., 2019b*)
+    * AFLUX (*Mech et al., 2021a*)
+    * MOSAiC-ACA (*Mech et al., 2021b*)
+    * HALO-(AC)<sup>3</sup>: Polar 5 (*Mech et al., 2024*), Polar 6 (*Herber et al., 2024*), and HALO (*Ehrlich et al., 2024*)
+    * HAMAG (*Mech et al., 2026*)
+    * COMPEX-EC (*Mech et al., 2026*)
+    * COMPEX (still in preparation)
 
 
 
